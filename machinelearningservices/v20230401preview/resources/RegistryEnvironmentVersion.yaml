@@ -1,0 +1,55 @@
+$token: azure-native:machinelearningservices/v20230401preview:RegistryEnvironmentVersion
+description: Azure Resource Manager resource envelope.
+properties:
+  environmentVersionProperties:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:EnvironmentVersionResponse"
+    description: "[Required] Additional attributes of the entity."
+  name:
+    type: string
+    description: The name of the resource
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - environmentVersionProperties
+  - name
+  - systemData
+  - type
+inputProperties:
+  environmentName:
+    type: string
+    description: Container name.
+    willReplaceOnChanges: true
+  environmentVersionProperties:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:EnvironmentVersion"
+    description: "[Required] Additional attributes of the entity."
+  registryName:
+    type: string
+    description: Name of Azure Machine Learning registry. This is case-insensitive
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  version:
+    type: string
+    description: Version identifier.
+    willReplaceOnChanges: true
+requiredInputs:
+  - environmentName
+  - environmentVersionProperties
+  - registryName
+  - resourceGroupName
+aliases:
+  - type: azure-native:machinelearningservices:RegistryEnvironmentVersion
+  - type: azure-native:machinelearningservices/v20221001preview:RegistryEnvironmentVersion
+  - type: azure-native:machinelearningservices/v20221201preview:RegistryEnvironmentVersion
+  - type: azure-native:machinelearningservices/v20230201preview:RegistryEnvironmentVersion
+  - type: azure-native:machinelearningservices/v20230401:RegistryEnvironmentVersion

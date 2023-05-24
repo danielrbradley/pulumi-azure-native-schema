@@ -1,0 +1,18 @@
+$token: azure-native:migrate/v20220501preview:AutomationArtifactResponse
+description: Class for automation artifact.
+properties:
+  artifacts:
+    type: object
+    additionalProperties:
+      type: string
+    description: Gets or sets the artifacts.
+  azureFileShareProfile:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:AzureFileShareHydrationProfileResponse"
+    description: "Azure file share profile for hydration of application folders not mounted on\r
+
+      the container file system."
+  status:
+    type: string
+    description: Gets or sets the status of automation artifacts.
+type: object

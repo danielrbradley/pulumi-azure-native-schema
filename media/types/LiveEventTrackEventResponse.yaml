@@ -1,0 +1,14 @@
+$token: azure-native:media:LiveEventTrackEventResponse
+description: The live event track event.
+properties:
+  data:
+    type: object
+    $ref: "#/types/azure-native:media:LiveEventTrackEventDataResponse"
+    description: Event data.
+  eventTime:
+    type: string
+    description: The time event raised.
+  eventType:
+    type: string
+    description: The type of the track event.
+type: object

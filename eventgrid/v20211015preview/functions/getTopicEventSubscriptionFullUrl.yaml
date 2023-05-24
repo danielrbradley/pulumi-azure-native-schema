@@ -1,0 +1,28 @@
+$token: azure-native:eventgrid/v20211015preview:getTopicEventSubscriptionFullUrl
+description: Get the full endpoint URL for an event subscription for topic.
+inputs:
+  properties:
+    eventSubscriptionName:
+      type: string
+      description: Name of the event subscription.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group within the user's subscription.
+      willReplaceOnChanges: true
+    topicName:
+      type: string
+      description: Name of the domain topic.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - eventSubscriptionName
+    - resourceGroupName
+    - topicName
+outputs:
+  description: Full endpoint url of an event subscription
+  properties:
+    endpointUrl:
+      type: string
+      description: The URL that represents the endpoint of the destination of an event subscription.
+  type: object

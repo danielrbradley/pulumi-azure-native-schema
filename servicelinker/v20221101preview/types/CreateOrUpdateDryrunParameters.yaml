@@ -1,0 +1,81 @@
+$token: azure-native:servicelinker/v20221101preview:CreateOrUpdateDryrunParameters
+description: The dryrun parameters for creation or update a linker
+properties:
+  actionName:
+    type: string
+    description: |-
+      The name of action for you dryrun job.
+      Expected value is 'createOrUpdate'.
+    const: createOrUpdate
+  authInfo:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:AccessKeyInfoBase"
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:SecretAuthInfo"
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:ServicePrincipalCertificateAuthInfo"
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:ServicePrincipalSecretAuthInfo"
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:SystemAssignedIdentityAuthInfo"
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:UserAccountAuthInfo"
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:UserAssignedIdentityAuthInfo"
+    discriminator:
+      propertyName: authType
+      mapping:
+        accessKey: "#/types/azure-native:servicelinker/v20221101preview:AccessKeyInfoBase"
+        secret: "#/types/azure-native:servicelinker/v20221101preview:SecretAuthInfo"
+        servicePrincipalCertificate: "#/types/azure-native:servicelinker/v20221101preview:ServicePrincipalCertificateAuthInfo"
+        servicePrincipalSecret: "#/types/azure-native:servicelinker/v20221101preview:ServicePrincipalSecretAuthInfo"
+        systemAssignedIdentity: "#/types/azure-native:servicelinker/v20221101preview:SystemAssignedIdentityAuthInfo"
+        userAccount: "#/types/azure-native:servicelinker/v20221101preview:UserAccountAuthInfo"
+        userAssignedIdentity: "#/types/azure-native:servicelinker/v20221101preview:UserAssignedIdentityAuthInfo"
+    description: The authentication type.
+  clientType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:servicelinker/v20221101preview:ClientType"
+    description: The application client type
+  configurationInfo:
+    type: object
+    $ref: "#/types/azure-native:servicelinker/v20221101preview:ConfigurationInfo"
+    description: The connection information consumed by applications, including secrets, connection strings.
+  publicNetworkSolution:
+    type: object
+    $ref: "#/types/azure-native:servicelinker/v20221101preview:PublicNetworkSolution"
+    description: The network solution.
+  scope:
+    type: string
+    description: connection scope in source service.
+  secretStore:
+    type: object
+    $ref: "#/types/azure-native:servicelinker/v20221101preview:SecretStore"
+    description: An option to store secret value in secure place
+  targetService:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:AzureResource"
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:ConfluentBootstrapServer"
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:ConfluentSchemaRegistry"
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:SelfHostedServer"
+    discriminator:
+      propertyName: type
+      mapping:
+        AzureResource: "#/types/azure-native:servicelinker/v20221101preview:AzureResource"
+        ConfluentBootstrapServer: "#/types/azure-native:servicelinker/v20221101preview:ConfluentBootstrapServer"
+        ConfluentSchemaRegistry: "#/types/azure-native:servicelinker/v20221101preview:ConfluentSchemaRegistry"
+        SelfHostedServer: "#/types/azure-native:servicelinker/v20221101preview:SelfHostedServer"
+    description: The target service properties
+  vNetSolution:
+    type: object
+    $ref: "#/types/azure-native:servicelinker/v20221101preview:VNetSolution"
+    description: The VNet solution.
+type: object
+required:
+  - actionName

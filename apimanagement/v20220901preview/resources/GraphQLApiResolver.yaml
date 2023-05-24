@@ -1,0 +1,55 @@
+$token: azure-native:apimanagement/v20220901preview:GraphQLApiResolver
+description: GraphQL API Resolver details.
+properties:
+  description:
+    type: string
+    description: Description of the resolver. May include HTML formatting tags.
+  displayName:
+    type: string
+    description: Resolver Name.
+  name:
+    type: string
+    description: The name of the resource
+  path:
+    type: string
+    description: Path is type/field being resolved.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - name
+  - type
+inputProperties:
+  apiId:
+    type: string
+    description: API revision identifier. Must be unique in the current API Management service instance. Non-current revision has ;rev=n as a suffix where n is the revision number.
+    willReplaceOnChanges: true
+  description:
+    type: string
+    description: Description of the resolver. May include HTML formatting tags.
+  displayName:
+    type: string
+    description: Resolver Name.
+  path:
+    type: string
+    description: Path is type/field being resolved.
+  resolverId:
+    type: string
+    description: Resolver identifier within a GraphQL API. Must be unique in the current API Management service instance.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  serviceName:
+    type: string
+    description: The name of the API Management service.
+    willReplaceOnChanges: true
+requiredInputs:
+  - apiId
+  - resourceGroupName
+  - serviceName
+aliases:
+  - type: azure-native:apimanagement:GraphQLApiResolver
+  - type: azure-native:apimanagement/v20220801:GraphQLApiResolver

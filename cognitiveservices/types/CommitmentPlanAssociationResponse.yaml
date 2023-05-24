@@ -1,0 +1,10 @@
+$token: azure-native:cognitiveservices:CommitmentPlanAssociationResponse
+description: The commitment plan association.
+properties:
+  commitmentPlanId:
+    type: string
+    description: The Azure resource id of the commitment plan.
+  commitmentPlanLocation:
+    type: string
+    description: The location of of the commitment plan.
+type: object

@@ -1,0 +1,75 @@
+$token: azure-native:cognitiveservices/v20221201:CommitmentPlan
+description: Cognitive Services account commitment plan.
+properties:
+  etag:
+    type: string
+    description: Resource Etag.
+  kind:
+    type: string
+    description: The Kind of the resource.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  properties:
+    type: object
+    $ref: "#/types/azure-native:cognitiveservices/v20221201:CommitmentPlanPropertiesResponse"
+    description: Properties of Cognitive Services account commitment plan.
+  sku:
+    type: object
+    $ref: "#/types/azure-native:cognitiveservices/v20221201:SkuResponse"
+    description: The resource model definition representing SKU
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:cognitiveservices/v20221201:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - etag
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  commitmentPlanName:
+    type: string
+    description: The name of the commitmentPlan associated with the Cognitive Services Account
+    willReplaceOnChanges: true
+  kind:
+    type: string
+    description: The Kind of the resource.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:cognitiveservices/v20221201:CommitmentPlanProperties"
+    description: Properties of Cognitive Services account commitment plan.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  sku:
+    type: object
+    $ref: "#/types/azure-native:cognitiveservices/v20221201:Sku"
+    description: The resource model definition representing SKU
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+requiredInputs:
+  - resourceGroupName
+aliases:
+  - type: azure-native:cognitiveservices:CommitmentPlan

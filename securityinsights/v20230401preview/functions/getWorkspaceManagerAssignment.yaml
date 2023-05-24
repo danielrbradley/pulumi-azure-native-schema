@@ -1,0 +1,66 @@
+$token: azure-native:securityinsights/v20230401preview:getWorkspaceManagerAssignment
+description: Gets a workspace manager assignment
+inputs:
+  properties:
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    workspaceManagerAssignmentName:
+      type: string
+      description: The name of the workspace manager assignment
+      willReplaceOnChanges: true
+    workspaceName:
+      type: string
+      description: The name of the workspace.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - workspaceManagerAssignmentName
+    - workspaceName
+outputs:
+  description: The workspace manager assignment
+  properties:
+    etag:
+      type: string
+      description: Resource Etag.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    items:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:securityinsights/v20230401preview:AssignmentItemResponse"
+      description: List of resources included in this workspace manager assignment
+    lastJobEndTime:
+      type: string
+      description: The time the last job associated to this assignment ended at
+    lastJobProvisioningState:
+      type: string
+      description: State of the last job associated to this assignment
+    name:
+      type: string
+      description: The name of the resource
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:securityinsights/v20230401preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    targetResourceName:
+      type: string
+      description: The resource name of the workspace manager group targeted by the workspace manager assignment
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - etag
+    - id
+    - items
+    - lastJobEndTime
+    - lastJobProvisioningState
+    - name
+    - systemData
+    - targetResourceName
+    - type

@@ -1,0 +1,60 @@
+$token: azure-native:relay:HybridConnectionAuthorizationRule
+properties:
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  rights:
+    type: array
+    items:
+      type: string
+    description: The rights associated with the rule.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:relay:SystemDataResponse"
+    description: The system meta data relating to this resource.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.EventHub/Namespaces" or "Microsoft.EventHub/Namespaces/EventHubs"
+type: object
+required:
+  - location
+  - name
+  - rights
+  - systemData
+  - type
+inputProperties:
+  authorizationRuleName:
+    type: string
+    description: The authorization rule name.
+    willReplaceOnChanges: true
+  hybridConnectionName:
+    type: string
+    description: The hybrid connection name.
+    willReplaceOnChanges: true
+  namespaceName:
+    type: string
+    description: The namespace name
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: Name of the Resource group within the Azure subscription.
+    willReplaceOnChanges: true
+  rights:
+    type: array
+    items:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:relay:AccessRights"
+    description: The rights associated with the rule.
+requiredInputs:
+  - hybridConnectionName
+  - namespaceName
+  - resourceGroupName
+  - rights
+aliases:
+  - type: azure-native:relay/v20160701:HybridConnectionAuthorizationRule
+  - type: azure-native:relay/v20170401:HybridConnectionAuthorizationRule
+  - type: azure-native:relay/v20211101:HybridConnectionAuthorizationRule

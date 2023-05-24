@@ -1,0 +1,46 @@
+$token: azure-native:apimanagement:getProductWiki
+description: |-
+  Gets the details of the Wiki for a Product specified by its identifier.
+  API Version: 2022-08-01.
+inputs:
+  properties:
+    productId:
+      type: string
+      description: Product identifier. Must be unique in the current API Management service instance.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    serviceName:
+      type: string
+      description: The name of the API Management service.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - productId
+    - resourceGroupName
+    - serviceName
+outputs:
+  description: Wiki properties
+  properties:
+    documents:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:apimanagement:WikiDocumentationContractResponse"
+      description: Collection wiki documents included into this wiki.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - type

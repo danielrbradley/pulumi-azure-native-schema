@@ -1,0 +1,17 @@
+$token: azure-native:compute/v20230301:DiskRestorePointAttributesResponse
+description: Disk Restore Point details.
+properties:
+  encryption:
+    type: object
+    $ref: "#/types/azure-native:compute/v20230301:RestorePointEncryptionResponse"
+    description: Encryption at rest settings for disk restore point. It is an optional property that can be specified in the input while creating a restore point.
+  id:
+    type: string
+    description: Resource Id
+  sourceDiskRestorePoint:
+    type: object
+    $ref: "#/types/azure-native:compute/v20230301:ApiEntityReferenceResponse"
+    description: Resource Id of the source disk restore point.
+type: object
+required:
+  - id

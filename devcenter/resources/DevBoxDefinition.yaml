@@ -1,0 +1,111 @@
+$token: azure-native:devcenter:DevBoxDefinition
+properties:
+  activeImageReference:
+    type: object
+    $ref: "#/types/azure-native:devcenter:ImageReferenceResponse"
+    description: Image reference information for the currently active image (only populated during updates).
+  hibernateSupport:
+    type: string
+    description: Indicates whether Dev Boxes created with this definition are capable of hibernation. Not all images are capable of supporting hibernation. To find out more see https://aka.ms/devbox/hibernate
+  imageReference:
+    type: object
+    $ref: "#/types/azure-native:devcenter:ImageReferenceResponse"
+    description: Image reference information.
+  imageValidationErrorDetails:
+    type: object
+    $ref: "#/types/azure-native:devcenter:ImageValidationErrorDetailsResponse"
+    description: Details for image validator error. Populated when the image validation is not successful.
+  imageValidationStatus:
+    type: string
+    description: Validation status of the configured image.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  osStorageType:
+    type: string
+    description: The storage type used for the Operating System disk of Dev Boxes created using this definition.
+  provisioningState:
+    type: string
+    description: The provisioning state of the resource.
+  sku:
+    type: object
+    $ref: "#/types/azure-native:devcenter:SkuResponse"
+    description: The SKU for Dev Boxes created using this definition.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:devcenter:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - activeImageReference
+  - imageReference
+  - imageValidationErrorDetails
+  - imageValidationStatus
+  - location
+  - name
+  - osStorageType
+  - provisioningState
+  - sku
+  - systemData
+  - type
+inputProperties:
+  devBoxDefinitionName:
+    type: string
+    description: The name of the Dev Box definition.
+    willReplaceOnChanges: true
+  devCenterName:
+    type: string
+    description: The name of the devcenter.
+    willReplaceOnChanges: true
+  hibernateSupport:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:devcenter:HibernateSupport"
+    description: Indicates whether Dev Boxes created with this definition are capable of hibernation. Not all images are capable of supporting hibernation. To find out more see https://aka.ms/devbox/hibernate
+  imageReference:
+    type: object
+    $ref: "#/types/azure-native:devcenter:ImageReference"
+    description: Image reference information.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  osStorageType:
+    type: string
+    description: The storage type used for the Operating System disk of Dev Boxes created using this definition.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  sku:
+    type: object
+    $ref: "#/types/azure-native:devcenter:Sku"
+    description: The SKU for Dev Boxes created using this definition.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+requiredInputs:
+  - devCenterName
+  - imageReference
+  - osStorageType
+  - resourceGroupName
+  - sku
+aliases:
+  - type: azure-native:devcenter/v20220801preview:DevBoxDefinition
+  - type: azure-native:devcenter/v20220901preview:DevBoxDefinition
+  - type: azure-native:devcenter/v20221012preview:DevBoxDefinition
+  - type: azure-native:devcenter/v20221111preview:DevBoxDefinition
+  - type: azure-native:devcenter/v20230101preview:DevBoxDefinition

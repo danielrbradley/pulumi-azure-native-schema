@@ -1,0 +1,41 @@
+$token: azure-native:eventgrid:getTopicEventSubscriptionDeliveryAttributes
+description: |-
+  Get all delivery attributes for an event subscription for topic.
+  API Version: 2022-06-15.
+inputs:
+  properties:
+    eventSubscriptionName:
+      type: string
+      description: Name of the event subscription.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group within the user's subscription.
+      willReplaceOnChanges: true
+    topicName:
+      type: string
+      description: Name of the domain topic.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - eventSubscriptionName
+    - resourceGroupName
+    - topicName
+outputs:
+  description: Result of the Get delivery attributes operation.
+  properties:
+    value:
+      type: array
+      items:
+        oneOf:
+          - type: object
+            $ref: "#/types/azure-native:eventgrid:DynamicDeliveryAttributeMappingResponse"
+          - type: object
+            $ref: "#/types/azure-native:eventgrid:StaticDeliveryAttributeMappingResponse"
+        discriminator:
+          propertyName: type
+          mapping:
+            Dynamic: "#/types/azure-native:eventgrid:DynamicDeliveryAttributeMappingResponse"
+            Static: "#/types/azure-native:eventgrid:StaticDeliveryAttributeMappingResponse"
+      description: A collection of DeliveryAttributeMapping
+  type: object

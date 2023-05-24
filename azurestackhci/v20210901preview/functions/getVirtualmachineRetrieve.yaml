@@ -1,0 +1,93 @@
+$token: azure-native:azurestackhci/v20210901preview:getVirtualmachineRetrieve
+description: Gets virtual machines by resource name
+inputs:
+  properties:
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    virtualmachinesName:
+      type: string
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - virtualmachinesName
+outputs:
+  description: The virtual machine resource definition.
+  properties:
+    extendedLocation:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:ExtendedLocationResponse"
+      description: The extendedLocation of the resource.
+    guestAgentProfile:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:GuestAgentProfileResponse"
+      description: Guest agent status properties.
+    hardwareProfile:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesResponseHardwareProfile"
+      description: HardwareProfile - Specifies the hardware settings for the virtual machine.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    identity:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:IdentityResponse"
+      description: Identity for the resource.
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    name:
+      type: string
+      description: The name of the resource
+    networkProfile:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesResponseNetworkProfile"
+      description: NetworkProfile - describes the network configuration the virtual machine
+    osProfile:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesResponseOsProfile"
+      description: OsProfile - describes the configuration of the operating system and sets login data
+    provisioningState:
+      type: string
+    resourceName:
+      type: string
+      description: name of the object to be used in moc
+    securityProfile:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesResponseSecurityProfile"
+      description: SecurityProfile - Specifies the security settings for the virtual machine.
+    status:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualMachineStatusResponse"
+      description: VirtualMachineStatus defines the observed state of virtualmachines
+    storageProfile:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesResponseStorageProfile"
+      description: StorageProfile - contains information about the disks and storage information for the virtual machine
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:SystemDataResponse"
+      description: Metadata pertaining to creation and last modification of the resource.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+    vmId:
+      type: string
+      description: Unique identifier for the vm resource.
+  type: object
+  required:
+    - id
+    - location
+    - name
+    - provisioningState
+    - status
+    - systemData
+    - type
+    - vmId

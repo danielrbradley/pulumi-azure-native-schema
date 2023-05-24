@@ -1,0 +1,8 @@
+$token: azure-native:labservices:VirtualMachineAdditionalCapabilities
+description: The additional capabilities for a lab VM.
+properties:
+  installGpuDrivers:
+    $ref: "#/types/azure-native:labservices:EnableState"
+    description: Flag to pre-install dedicated GPU drivers.
+    default: Disabled
+type: object

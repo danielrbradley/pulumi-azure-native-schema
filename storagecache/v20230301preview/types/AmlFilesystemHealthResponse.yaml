@@ -1,0 +1,13 @@
+$token: azure-native:storagecache/v20230301preview:AmlFilesystemHealthResponse
+description: An indication of AML file system health. Gives more information about health than just that related to provisioning.
+properties:
+  state:
+    type: string
+    description: List of AML file system health states.
+  statusCode:
+    type: string
+    description: Server-defined error code for the AML file system health
+  statusDescription:
+    type: string
+    description: Describes the health state.
+type: object

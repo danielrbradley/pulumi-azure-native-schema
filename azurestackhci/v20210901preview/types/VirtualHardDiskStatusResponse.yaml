@@ -1,0 +1,14 @@
+$token: azure-native:azurestackhci/v20210901preview:VirtualHardDiskStatusResponse
+description: VirtualHardDiskStatus defines the observed state of virtualharddisks
+properties:
+  errorCode:
+    type: string
+    description: VirtualHardDisk provisioning error code
+  errorMessage:
+    type: string
+    description: Descriptive error message
+  provisioningStatus:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualHardDiskStatusResponseProvisioningStatus"
+    description: The provisioning status of the virtual hard disk
+type: object

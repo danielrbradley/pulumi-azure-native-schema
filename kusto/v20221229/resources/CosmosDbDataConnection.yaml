@@ -1,0 +1,128 @@
+$token: azure-native:kusto/v20221229:CosmosDbDataConnection
+description: Class representing a CosmosDb data connection.
+properties:
+  cosmosDbAccountResourceId:
+    type: string
+    description: The resource ID of the Cosmos DB account used to create the data connection.
+  cosmosDbContainer:
+    type: string
+    description: The name of an existing container in the Cosmos DB database.
+  cosmosDbDatabase:
+    type: string
+    description: The name of an existing database in the Cosmos DB account.
+  kind:
+    type: string
+    description: |-
+      Kind of the endpoint for the data connection
+      Expected value is 'CosmosDb'.
+    const: CosmosDb
+  location:
+    type: string
+    description: Resource location.
+  managedIdentityObjectId:
+    type: string
+    description: The object ID of the managed identity resource.
+  managedIdentityResourceId:
+    type: string
+    description: The resource ID of a managed system or user-assigned identity. The identity is used to authenticate with Cosmos DB.
+  mappingRuleName:
+    type: string
+    description: The name of an existing mapping rule to use when ingesting the retrieved data.
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: The provisioned state of the resource.
+  retrievalStartDate:
+    type: string
+    description: Optional. If defined, the data connection retrieves Cosmos DB documents created or updated after the specified retrieval start date.
+  tableName:
+    type: string
+    description: The case-sensitive name of the existing target table in your cluster. Retrieved data is ingested into this table.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - cosmosDbAccountResourceId
+  - cosmosDbContainer
+  - cosmosDbDatabase
+  - kind
+  - managedIdentityObjectId
+  - managedIdentityResourceId
+  - name
+  - provisioningState
+  - tableName
+  - type
+inputProperties:
+  clusterName:
+    type: string
+    description: The name of the Kusto cluster.
+    willReplaceOnChanges: true
+  cosmosDbAccountResourceId:
+    type: string
+    description: The resource ID of the Cosmos DB account used to create the data connection.
+  cosmosDbContainer:
+    type: string
+    description: The name of an existing container in the Cosmos DB database.
+  cosmosDbDatabase:
+    type: string
+    description: The name of an existing database in the Cosmos DB account.
+  dataConnectionName:
+    type: string
+    description: The name of the data connection.
+    willReplaceOnChanges: true
+  databaseName:
+    type: string
+    description: The name of the database in the Kusto cluster.
+    willReplaceOnChanges: true
+  kind:
+    type: string
+    description: |-
+      Kind of the endpoint for the data connection
+      Expected value is 'CosmosDb'.
+    const: CosmosDb
+  location:
+    type: string
+    description: Resource location.
+  managedIdentityResourceId:
+    type: string
+    description: The resource ID of a managed system or user-assigned identity. The identity is used to authenticate with Cosmos DB.
+  mappingRuleName:
+    type: string
+    description: The name of an existing mapping rule to use when ingesting the retrieved data.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group containing the Kusto cluster.
+    willReplaceOnChanges: true
+  retrievalStartDate:
+    type: string
+    description: Optional. If defined, the data connection retrieves Cosmos DB documents created or updated after the specified retrieval start date.
+  tableName:
+    type: string
+    description: The case-sensitive name of the existing target table in your cluster. Retrieved data is ingested into this table.
+requiredInputs:
+  - clusterName
+  - cosmosDbAccountResourceId
+  - cosmosDbContainer
+  - cosmosDbDatabase
+  - databaseName
+  - kind
+  - managedIdentityResourceId
+  - resourceGroupName
+  - tableName
+aliases:
+  - type: azure-native:kusto:CosmosDbDataConnection
+  - type: azure-native:kusto/v20190121:CosmosDbDataConnection
+  - type: azure-native:kusto/v20190515:CosmosDbDataConnection
+  - type: azure-native:kusto/v20190907:CosmosDbDataConnection
+  - type: azure-native:kusto/v20191109:CosmosDbDataConnection
+  - type: azure-native:kusto/v20200215:CosmosDbDataConnection
+  - type: azure-native:kusto/v20200614:CosmosDbDataConnection
+  - type: azure-native:kusto/v20200918:CosmosDbDataConnection
+  - type: azure-native:kusto/v20210101:CosmosDbDataConnection
+  - type: azure-native:kusto/v20210827:CosmosDbDataConnection
+  - type: azure-native:kusto/v20220201:CosmosDbDataConnection
+  - type: azure-native:kusto/v20220707:CosmosDbDataConnection
+  - type: azure-native:kusto/v20221111:CosmosDbDataConnection

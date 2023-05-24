@@ -1,0 +1,5 @@
+$token: azure-native:dataprotection:AlertsState
+type: string
+enum:
+  - value: Enabled
+  - value: Disabled

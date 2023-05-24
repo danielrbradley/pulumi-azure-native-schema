@@ -1,0 +1,30 @@
+$token: azure-native:datafactory/v20180601:getExposureControlFeatureValue
+description: Get exposure control feature for specific location.
+inputs:
+  properties:
+    featureName:
+      type: string
+      description: The feature name.
+    featureType:
+      type: string
+      description: The feature type.
+    locationId:
+      type: string
+      description: The location identifier.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - locationId
+outputs:
+  description: The exposure control response.
+  properties:
+    featureName:
+      type: string
+      description: The feature name.
+    value:
+      type: string
+      description: The feature value.
+  type: object
+  required:
+    - featureName
+    - value

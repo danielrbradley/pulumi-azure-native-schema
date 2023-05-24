@@ -1,0 +1,117 @@
+$token: azure-native:devcenter/v20230101preview:Pool
+description: A pool of Virtual Machines.
+properties:
+  devBoxDefinitionName:
+    type: string
+    description: Name of a Dev Box definition in parent Project of this Pool
+  healthStatus:
+    type: string
+    description: Overall health status of the Pool. Indicates whether or not the Pool is available to create Dev Boxes.
+  healthStatusDetails:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:devcenter/v20230101preview:HealthStatusDetailResponse"
+    description: Details on the Pool health status to help diagnose issues. This is only populated when the pool status indicates the pool is in a non-healthy state
+  licenseType:
+    type: string
+    description: Specifies the license type indicating the caller has already acquired licenses for the Dev Boxes that will be created.
+  localAdministrator:
+    type: string
+    description: Indicates whether owners of Dev Boxes in this pool are added as local administrators on the Dev Box.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  networkConnectionName:
+    type: string
+    description: Name of a Network Connection in parent Project of this Pool
+  provisioningState:
+    type: string
+    description: The provisioning state of the resource.
+  stopOnDisconnect:
+    type: object
+    $ref: "#/types/azure-native:devcenter/v20230101preview:StopOnDisconnectConfigurationResponse"
+    description: Stop on disconnect configuration settings for Dev Boxes created in this pool.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:devcenter/v20230101preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - devBoxDefinitionName
+  - healthStatus
+  - healthStatusDetails
+  - licenseType
+  - localAdministrator
+  - location
+  - name
+  - networkConnectionName
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  devBoxDefinitionName:
+    type: string
+    description: Name of a Dev Box definition in parent Project of this Pool
+  licenseType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:devcenter/v20230101preview:LicenseType"
+    description: Specifies the license type indicating the caller has already acquired licenses for the Dev Boxes that will be created.
+  localAdministrator:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:devcenter/v20230101preview:LocalAdminStatus"
+    description: Indicates whether owners of Dev Boxes in this pool are added as local administrators on the Dev Box.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  networkConnectionName:
+    type: string
+    description: Name of a Network Connection in parent Project of this Pool
+  poolName:
+    type: string
+    description: Name of the pool.
+    willReplaceOnChanges: true
+  projectName:
+    type: string
+    description: The name of the project.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  stopOnDisconnect:
+    type: object
+    $ref: "#/types/azure-native:devcenter/v20230101preview:StopOnDisconnectConfiguration"
+    description: Stop on disconnect configuration settings for Dev Boxes created in this pool.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+requiredInputs:
+  - devBoxDefinitionName
+  - licenseType
+  - localAdministrator
+  - networkConnectionName
+  - projectName
+  - resourceGroupName
+aliases:
+  - type: azure-native:devcenter:Pool
+  - type: azure-native:devcenter/v20220801preview:Pool
+  - type: azure-native:devcenter/v20220901preview:Pool
+  - type: azure-native:devcenter/v20221012preview:Pool
+  - type: azure-native:devcenter/v20221111preview:Pool

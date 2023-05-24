@@ -1,0 +1,50 @@
+$token: azure-native:insights/v20180601preview:GuestDiagnosticsSettingsAssociation
+description: Virtual machine guest diagnostic settings resource.
+properties:
+  guestDiagnosticSettingsName:
+    type: string
+    description: The guest diagnostic settings name.
+  location:
+    type: string
+    description: Resource location
+  name:
+    type: string
+    description: Azure resource name
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags
+  type:
+    type: string
+    description: Azure resource type
+type: object
+required:
+  - guestDiagnosticSettingsName
+  - location
+  - name
+  - type
+inputProperties:
+  associationName:
+    type: string
+    description: The name of the diagnostic settings association.
+    willReplaceOnChanges: true
+  guestDiagnosticSettingsName:
+    type: string
+    description: The guest diagnostic settings name.
+  location:
+    type: string
+    description: Resource location
+    willReplaceOnChanges: true
+  resourceUri:
+    type: string
+    description: The fully qualified ID of the resource, including the resource name and resource type.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags
+requiredInputs:
+  - guestDiagnosticSettingsName
+  - resourceUri

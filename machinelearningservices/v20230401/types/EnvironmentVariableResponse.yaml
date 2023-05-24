@@ -1,0 +1,11 @@
+$token: azure-native:machinelearningservices/v20230401:EnvironmentVariableResponse
+description: Environment Variables for the container
+properties:
+  type:
+    type: string
+    description: "Type of the Environment Variable. Possible values are: local - For local variable"
+    default: local
+  value:
+    type: string
+    description: Value of the Environment variable
+type: object

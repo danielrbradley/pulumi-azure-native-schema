@@ -1,0 +1,6 @@
+$token: azure-native:azurestackhci/v20210901preview:OperatingSystemTypes
+description: operating system type that the gallery image uses. Expected to be linux or windows
+type: string
+enum:
+  - value: Windows
+  - value: Linux

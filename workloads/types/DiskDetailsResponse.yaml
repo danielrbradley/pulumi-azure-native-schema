@@ -1,0 +1,26 @@
+$token: azure-native:workloads:DiskDetailsResponse
+description: The supported disk size details for a disk type.
+properties:
+  diskTier:
+    type: string
+    description: The disk tier, e.g. P10, E10.
+  iopsReadWrite:
+    type: number
+    description: The disk Iops.
+  maximumSupportedDiskCount:
+    type: number
+    description: The maximum supported disk count.
+  mbpsReadWrite:
+    type: number
+    description: The disk provisioned throughput in MBps.
+  minimumSupportedDiskCount:
+    type: number
+    description: The minimum supported disk count.
+  sizeGB:
+    type: number
+    description: The disk size in GB.
+  sku:
+    type: object
+    $ref: "#/types/azure-native:workloads:DiskSkuResponse"
+    description: The type of disk sku. For example, Standard_LRS, Standard_ZRS, Premium_LRS, Premium_ZRS.
+type: object

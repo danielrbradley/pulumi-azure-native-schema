@@ -1,0 +1,92 @@
+$token: azure-native:sql/v20220801preview:getSensitivityLabel
+description: Gets the sensitivity label of a given column
+inputs:
+  properties:
+    columnName:
+      type: string
+      description: The name of the column.
+      willReplaceOnChanges: true
+    databaseName:
+      type: string
+      description: The name of the database.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+      willReplaceOnChanges: true
+    schemaName:
+      type: string
+      description: The name of the schema.
+      willReplaceOnChanges: true
+    sensitivityLabelSource:
+      type: string
+      description: The source of the sensitivity label.
+      willReplaceOnChanges: true
+    serverName:
+      type: string
+      description: The name of the server.
+      willReplaceOnChanges: true
+    tableName:
+      type: string
+      description: The name of the table.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - columnName
+    - databaseName
+    - resourceGroupName
+    - schemaName
+    - sensitivityLabelSource
+    - serverName
+    - tableName
+outputs:
+  description: A sensitivity label.
+  properties:
+    columnName:
+      type: string
+      description: The column name.
+    id:
+      type: string
+      description: Resource ID.
+    informationType:
+      type: string
+      description: The information type.
+    informationTypeId:
+      type: string
+      description: The information type ID.
+    isDisabled:
+      type: boolean
+      description: Is sensitivity recommendation disabled. Applicable for recommended sensitivity label only. Specifies whether the sensitivity recommendation on this column is disabled (dismissed) or not.
+    labelId:
+      type: string
+      description: The label ID.
+    labelName:
+      type: string
+      description: The label name.
+    managedBy:
+      type: string
+      description: Resource that manages the sensitivity label.
+    name:
+      type: string
+      description: Resource name.
+    rank:
+      type: string
+    schemaName:
+      type: string
+      description: The schema name.
+    tableName:
+      type: string
+      description: The table name.
+    type:
+      type: string
+      description: Resource type.
+  type: object
+  required:
+    - columnName
+    - id
+    - isDisabled
+    - managedBy
+    - name
+    - schemaName
+    - tableName
+    - type

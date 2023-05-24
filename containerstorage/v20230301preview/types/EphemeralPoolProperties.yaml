@@ -1,0 +1,21 @@
+$token: azure-native:containerstorage/v20230301preview:EphemeralPoolProperties
+description: Ephemeral Pool Properties
+properties:
+  diskFormat:
+    type: boolean
+    description: Consent to format the local disks.
+    default: false
+  diskSelector:
+    type: array
+    items:
+      type: string
+    description: Template name or KV pairs containing disk selection criteria, e.g. model="Microsoft NVMe Direct Disk" to match all Lsv2 NVMe disks.
+  disks:
+    type: array
+    items:
+      type: string
+    description: Only required if individual disk selection is desired. Path to disk, e.g. <nodename>:/dev/sda or WWN. Supports specifying multiple disks (same syntax as tags).
+type: object
+required:
+  - diskSelector
+  - disks

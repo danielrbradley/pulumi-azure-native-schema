@@ -1,0 +1,7 @@
+$token: azure-native:streamanalytics:AuthenticationMode
+description: Authentication Mode.
+type: string
+enum:
+  - value: Msi
+  - value: UserToken
+  - value: ConnectionString

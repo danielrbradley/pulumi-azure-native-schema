@@ -1,0 +1,236 @@
+$token: azure-native:containerinstance/v20230201preview:ContainerGroup
+description: A container group.
+properties:
+  containers:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230201preview:ContainerResponse"
+    description: The containers within the container group.
+  diagnostics:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230201preview:ContainerGroupDiagnosticsResponse"
+    description: The diagnostic information for a container group.
+  dnsConfig:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230201preview:DnsConfigurationResponse"
+    description: The DNS config information for a container group.
+  encryptionProperties:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230201preview:EncryptionPropertiesResponse"
+    description: The encryption properties for a container group.
+  extensions:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230201preview:DeploymentExtensionSpecResponse"
+    description: extensions used by virtual kubelet
+  identity:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230201preview:ContainerGroupIdentityResponse"
+    description: The identity of the container group, if configured.
+  imageRegistryCredentials:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230201preview:ImageRegistryCredentialResponse"
+    description: The image registry credentials by which the container group is created from.
+  initContainers:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230201preview:InitContainerDefinitionResponse"
+    description: The init containers for a container group.
+  instanceView:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230201preview:ContainerGroupPropertiesResponseInstanceView"
+    description: The instance view of the container group. Only valid in response.
+  ipAddress:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230201preview:IpAddressResponse"
+    description: The IP address type of the container group.
+  isCustomProvisioningTimeout:
+    type: string
+    description: Flag indicating whether a custom value was provided for the provisioningTimeoutInSeconds property
+  location:
+    type: string
+    description: The resource location.
+  name:
+    type: string
+    description: The resource name.
+  osType:
+    type: string
+    description: The operating system type required by the containers in the container group.
+  provisioningState:
+    type: string
+    description: The provisioning state of the container group. This only appears in the response.
+  provisioningTimeoutInSeconds:
+    type: integer
+    description: Time in seconds in which a container group deployment would timeout and fail. The allowed maximum value is 1800 seconds. If value is not provided, property is given maximum value by default.
+  restartPolicy:
+    type: string
+    description: |
+      Restart policy for all containers within the container group. 
+      - `Always` Always restart
+      - `OnFailure` Restart on failure
+      - `Never` Never restart
+  sku:
+    type: string
+    description: The SKU for a container group.
+  subnetIds:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230201preview:ContainerGroupSubnetIdResponse"
+    description: The subnet resource IDs for a container group.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: The resource tags.
+  type:
+    type: string
+    description: The resource type.
+  volumes:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230201preview:VolumeResponse"
+    description: The list of volumes that can be mounted by containers in this container group.
+  zones:
+    type: array
+    items:
+      type: string
+    description: The zones for the container group.
+type: object
+required:
+  - containers
+  - instanceView
+  - isCustomProvisioningTimeout
+  - name
+  - osType
+  - provisioningState
+  - type
+inputProperties:
+  containerGroupName:
+    type: string
+    description: The name of the container group.
+    willReplaceOnChanges: true
+  containers:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230201preview:Container"
+    description: The containers within the container group.
+  diagnostics:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230201preview:ContainerGroupDiagnostics"
+    description: The diagnostic information for a container group.
+  dnsConfig:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230201preview:DnsConfiguration"
+    description: The DNS config information for a container group.
+  encryptionProperties:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230201preview:EncryptionProperties"
+    description: The encryption properties for a container group.
+  extensions:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230201preview:DeploymentExtensionSpec"
+    description: extensions used by virtual kubelet
+  identity:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230201preview:ContainerGroupIdentity"
+    description: The identity of the container group, if configured.
+  imageRegistryCredentials:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230201preview:ImageRegistryCredential"
+    description: The image registry credentials by which the container group is created from.
+  initContainers:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230201preview:InitContainerDefinition"
+    description: The init containers for a container group.
+  ipAddress:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230201preview:IpAddress"
+    description: The IP address type of the container group.
+  location:
+    type: string
+    description: The resource location.
+  osType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:containerinstance/v20230201preview:OperatingSystemTypes"
+    description: The operating system type required by the containers in the container group.
+  provisioningTimeoutInSeconds:
+    type: integer
+    description: Time in seconds in which a container group deployment would timeout and fail. The allowed maximum value is 1800 seconds. If value is not provided, property is given maximum value by default.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group.
+    willReplaceOnChanges: true
+  restartPolicy:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:containerinstance/v20230201preview:ContainerGroupRestartPolicy"
+    description: |
+      Restart policy for all containers within the container group. 
+      - `Always` Always restart
+      - `OnFailure` Restart on failure
+      - `Never` Never restart
+  sku:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:containerinstance/v20230201preview:ContainerGroupSku"
+    description: The SKU for a container group.
+  subnetIds:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230201preview:ContainerGroupSubnetId"
+    description: The subnet resource IDs for a container group.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: The resource tags.
+  volumes:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230201preview:Volume"
+    description: The list of volumes that can be mounted by containers in this container group.
+  zones:
+    type: array
+    items:
+      type: string
+    description: The zones for the container group.
+requiredInputs:
+  - containers
+  - osType
+  - resourceGroupName
+aliases:
+  - type: azure-native:containerinstance:ContainerGroup
+  - type: azure-native:containerinstance/v20170801preview:ContainerGroup
+  - type: azure-native:containerinstance/v20171001preview:ContainerGroup
+  - type: azure-native:containerinstance/v20171201preview:ContainerGroup
+  - type: azure-native:containerinstance/v20180201preview:ContainerGroup
+  - type: azure-native:containerinstance/v20180401:ContainerGroup
+  - type: azure-native:containerinstance/v20180601:ContainerGroup
+  - type: azure-native:containerinstance/v20180901:ContainerGroup
+  - type: azure-native:containerinstance/v20181001:ContainerGroup
+  - type: azure-native:containerinstance/v20191201:ContainerGroup
+  - type: azure-native:containerinstance/v20201101:ContainerGroup
+  - type: azure-native:containerinstance/v20210301:ContainerGroup
+  - type: azure-native:containerinstance/v20210701:ContainerGroup
+  - type: azure-native:containerinstance/v20210901:ContainerGroup
+  - type: azure-native:containerinstance/v20211001:ContainerGroup
+  - type: azure-native:containerinstance/v20220901:ContainerGroup
+  - type: azure-native:containerinstance/v20221001preview:ContainerGroup
+  - type: azure-native:containerinstance/v20230501:ContainerGroup

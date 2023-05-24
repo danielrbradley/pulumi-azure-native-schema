@@ -1,0 +1,8 @@
+$token: azure-native:hybridcompute/v20230315preview:PrivateCloudKind
+description: Indicates which kind of VM fabric the instance is an instance of, such as HCI or SCVMM etc.
+type: string
+enum:
+  - value: AVS
+  - value: HCI
+  - value: SCVMM
+  - value: VMware

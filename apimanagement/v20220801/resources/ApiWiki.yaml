@@ -1,0 +1,45 @@
+$token: azure-native:apimanagement/v20220801:ApiWiki
+description: Wiki properties
+properties:
+  documents:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:apimanagement/v20220801:WikiDocumentationContractResponse"
+    description: Collection wiki documents included into this wiki.
+  name:
+    type: string
+    description: The name of the resource
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - name
+  - type
+inputProperties:
+  apiId:
+    type: string
+    description: API identifier. Must be unique in the current API Management service instance.
+    willReplaceOnChanges: true
+  documents:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:apimanagement/v20220801:WikiDocumentationContract"
+    description: Collection wiki documents included into this wiki.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  serviceName:
+    type: string
+    description: The name of the API Management service.
+    willReplaceOnChanges: true
+requiredInputs:
+  - apiId
+  - resourceGroupName
+  - serviceName
+aliases:
+  - type: azure-native:apimanagement:ApiWiki
+  - type: azure-native:apimanagement/v20220901preview:ApiWiki

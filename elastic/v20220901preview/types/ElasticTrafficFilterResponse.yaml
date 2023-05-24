@@ -1,0 +1,28 @@
+$token: azure-native:elastic/v20220901preview:ElasticTrafficFilterResponse
+description: Elastic traffic filter object
+properties:
+  description:
+    type: string
+    description: Description of the elastic filter
+  id:
+    type: string
+    description: Id of the elastic filter
+  includeByDefault:
+    type: boolean
+    description: IncludeByDefault for the elastic filter
+  name:
+    type: string
+    description: Name of the elastic filter
+  region:
+    type: string
+    description: Region of the elastic filter
+  rules:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:elastic/v20220901preview:ElasticTrafficFilterRuleResponse"
+    description: Rules in the elastic filter
+  type:
+    type: string
+    description: Type of the elastic filter
+type: object

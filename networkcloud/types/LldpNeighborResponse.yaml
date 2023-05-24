@@ -1,0 +1,20 @@
+$token: azure-native:networkcloud:LldpNeighborResponse
+properties:
+  portDescription:
+    type: string
+    description: The descriptive information about the port on the connected device.
+  portName:
+    type: string
+    description: The system-assigned name of the port on the connected device.
+  systemDescription:
+    type: string
+    description: The descriptive information about the connected device.
+  systemName:
+    type: string
+    description: The system-assigned name of the connected device.
+type: object
+required:
+  - portDescription
+  - portName
+  - systemDescription
+  - systemName

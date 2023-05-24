@@ -1,0 +1,9 @@
+$token: azure-native:healthbot/v20220808:Sku
+description: The resource model definition representing SKU
+properties:
+  name:
+    $ref: "#/types/azure-native:healthbot/v20220808:SkuName"
+    description: The name of the Azure Health Bot SKU
+type: object
+required:
+  - name

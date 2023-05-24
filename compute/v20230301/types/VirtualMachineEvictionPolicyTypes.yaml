@@ -1,0 +1,6 @@
+$token: azure-native:compute/v20230301:VirtualMachineEvictionPolicyTypes
+description: Specifies the eviction policy for the Azure Spot virtual machine and Azure Spot scale set. For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2019-03-01. For Azure Spot scale sets, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2017-10-30-preview.
+type: string
+enum:
+  - value: Deallocate
+  - value: Delete

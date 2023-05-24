@@ -1,0 +1,242 @@
+$token: azure-native:containerinstance/v20230501:ContainerGroup
+description: A container group.
+properties:
+  confidentialComputeProperties:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230501:ConfidentialComputePropertiesResponse"
+    description: The properties for confidential container group
+  containers:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230501:ContainerResponse"
+    description: The containers within the container group.
+  diagnostics:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230501:ContainerGroupDiagnosticsResponse"
+    description: The diagnostic information for a container group.
+  dnsConfig:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230501:DnsConfigurationResponse"
+    description: The DNS config information for a container group.
+  encryptionProperties:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230501:EncryptionPropertiesResponse"
+    description: The encryption properties for a container group.
+  extensions:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230501:DeploymentExtensionSpecResponse"
+    description: extensions used by virtual kubelet
+  identity:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230501:ContainerGroupIdentityResponse"
+    description: The identity of the container group, if configured.
+  imageRegistryCredentials:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230501:ImageRegistryCredentialResponse"
+    description: The image registry credentials by which the container group is created from.
+  initContainers:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230501:InitContainerDefinitionResponse"
+    description: The init containers for a container group.
+  instanceView:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230501:ContainerGroupPropertiesResponseInstanceView"
+    description: The instance view of the container group. Only valid in response.
+  ipAddress:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230501:IpAddressResponse"
+    description: The IP address type of the container group.
+  location:
+    type: string
+    description: The resource location.
+  name:
+    type: string
+    description: The resource name.
+  osType:
+    type: string
+    description: The operating system type required by the containers in the container group.
+  priority:
+    type: string
+    description: The priority of the container group.
+  provisioningState:
+    type: string
+    description: The provisioning state of the container group. This only appears in the response.
+  restartPolicy:
+    type: string
+    description: |
+      Restart policy for all containers within the container group. 
+      - `Always` Always restart
+      - `OnFailure` Restart on failure
+      - `Never` Never restart
+  sku:
+    type: string
+    description: The SKU for a container group.
+  subnetIds:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230501:ContainerGroupSubnetIdResponse"
+    description: The subnet resource IDs for a container group.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: The resource tags.
+  type:
+    type: string
+    description: The resource type.
+  volumes:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230501:VolumeResponse"
+    description: The list of volumes that can be mounted by containers in this container group.
+  zones:
+    type: array
+    items:
+      type: string
+    description: The zones for the container group.
+type: object
+required:
+  - containers
+  - instanceView
+  - name
+  - osType
+  - provisioningState
+  - type
+inputProperties:
+  confidentialComputeProperties:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230501:ConfidentialComputeProperties"
+    description: The properties for confidential container group
+  containerGroupName:
+    type: string
+    description: The name of the container group.
+    willReplaceOnChanges: true
+  containers:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230501:Container"
+    description: The containers within the container group.
+  diagnostics:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230501:ContainerGroupDiagnostics"
+    description: The diagnostic information for a container group.
+  dnsConfig:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230501:DnsConfiguration"
+    description: The DNS config information for a container group.
+  encryptionProperties:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230501:EncryptionProperties"
+    description: The encryption properties for a container group.
+  extensions:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230501:DeploymentExtensionSpec"
+    description: extensions used by virtual kubelet
+  identity:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230501:ContainerGroupIdentity"
+    description: The identity of the container group, if configured.
+  imageRegistryCredentials:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230501:ImageRegistryCredential"
+    description: The image registry credentials by which the container group is created from.
+  initContainers:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230501:InitContainerDefinition"
+    description: The init containers for a container group.
+  ipAddress:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230501:IpAddress"
+    description: The IP address type of the container group.
+  location:
+    type: string
+    description: The resource location.
+  osType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:containerinstance/v20230501:OperatingSystemTypes"
+    description: The operating system type required by the containers in the container group.
+  priority:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:containerinstance/v20230501:ContainerGroupPriority"
+    description: The priority of the container group.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group.
+    willReplaceOnChanges: true
+  restartPolicy:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:containerinstance/v20230501:ContainerGroupRestartPolicy"
+    description: |
+      Restart policy for all containers within the container group. 
+      - `Always` Always restart
+      - `OnFailure` Restart on failure
+      - `Never` Never restart
+  sku:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:containerinstance/v20230501:ContainerGroupSku"
+    description: The SKU for a container group.
+  subnetIds:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230501:ContainerGroupSubnetId"
+    description: The subnet resource IDs for a container group.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: The resource tags.
+  volumes:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerinstance/v20230501:Volume"
+    description: The list of volumes that can be mounted by containers in this container group.
+  zones:
+    type: array
+    items:
+      type: string
+    description: The zones for the container group.
+requiredInputs:
+  - containers
+  - osType
+  - resourceGroupName
+aliases:
+  - type: azure-native:containerinstance:ContainerGroup
+  - type: azure-native:containerinstance/v20170801preview:ContainerGroup
+  - type: azure-native:containerinstance/v20171001preview:ContainerGroup
+  - type: azure-native:containerinstance/v20171201preview:ContainerGroup
+  - type: azure-native:containerinstance/v20180201preview:ContainerGroup
+  - type: azure-native:containerinstance/v20180401:ContainerGroup
+  - type: azure-native:containerinstance/v20180601:ContainerGroup
+  - type: azure-native:containerinstance/v20180901:ContainerGroup
+  - type: azure-native:containerinstance/v20181001:ContainerGroup
+  - type: azure-native:containerinstance/v20191201:ContainerGroup
+  - type: azure-native:containerinstance/v20201101:ContainerGroup
+  - type: azure-native:containerinstance/v20210301:ContainerGroup
+  - type: azure-native:containerinstance/v20210701:ContainerGroup
+  - type: azure-native:containerinstance/v20210901:ContainerGroup
+  - type: azure-native:containerinstance/v20211001:ContainerGroup
+  - type: azure-native:containerinstance/v20220901:ContainerGroup
+  - type: azure-native:containerinstance/v20221001preview:ContainerGroup
+  - type: azure-native:containerinstance/v20230201preview:ContainerGroup

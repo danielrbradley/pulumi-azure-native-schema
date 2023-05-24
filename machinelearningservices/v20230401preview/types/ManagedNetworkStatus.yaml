@@ -1,0 +1,6 @@
+$token: azure-native:machinelearningservices/v20230401preview:ManagedNetworkStatus
+description: Status for the managed network of a machine learning workspace.
+type: string
+enum:
+  - value: Inactive
+  - value: Active

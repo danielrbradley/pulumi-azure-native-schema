@@ -1,0 +1,39 @@
+$token: azure-native:azurearcdata/v20230315preview:SqlServerDatabaseResourceProperties
+description: The properties of Arc Sql Server database resource
+properties:
+  backupInformation:
+    type: object
+    $ref: "#/types/azure-native:azurearcdata/v20230315preview:SqlServerDatabaseResourcePropertiesBackupInformation"
+  collationName:
+    type: string
+    description: Collation of the database.
+  compatibilityLevel:
+    type: integer
+    description: Compatibility level of the database
+  databaseCreationDate:
+    type: string
+    description: Creation date of the database.
+  databaseOptions:
+    type: object
+    $ref: "#/types/azure-native:azurearcdata/v20230315preview:SqlServerDatabaseResourcePropertiesDatabaseOptions"
+    description: List of features that are enabled for the database
+  isReadOnly:
+    type: boolean
+    description: Whether the database is read only or not.
+  recoveryMode:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:azurearcdata/v20230315preview:RecoveryMode"
+    description: Status of the database.
+  sizeMB:
+    type: number
+    description: Size of the database.
+  spaceAvailableMB:
+    type: number
+    description: Space left of the database.
+  state:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:azurearcdata/v20230315preview:DatabaseState"
+    description: State of the database.
+type: object

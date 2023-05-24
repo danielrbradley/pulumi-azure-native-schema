@@ -1,0 +1,42 @@
+$token: azure-native:web/v20220301:listWebAppApplicationSettings
+description: Description for Gets the application settings of an app.
+inputs:
+  properties:
+    name:
+      type: string
+      description: Name of the app.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the resource group to which the resource belongs.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - name
+    - resourceGroupName
+outputs:
+  description: String dictionary resource.
+  properties:
+    id:
+      type: string
+      description: Resource Id.
+    kind:
+      type: string
+      description: Kind of resource.
+    name:
+      type: string
+      description: Resource Name.
+    properties:
+      type: object
+      additionalProperties:
+        type: string
+      description: Settings.
+    type:
+      type: string
+      description: Resource type.
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - type

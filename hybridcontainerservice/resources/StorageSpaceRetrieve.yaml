@@ -1,0 +1,67 @@
+$token: azure-native:hybridcontainerservice:StorageSpaceRetrieve
+properties:
+  extendedLocation:
+    type: object
+    $ref: "#/types/azure-native:hybridcontainerservice:StorageSpacesResponseExtendedLocation"
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  properties:
+    type: object
+    $ref: "#/types/azure-native:hybridcontainerservice:StorageSpacesPropertiesResponse"
+    description: HybridAKSStorageSpec defines the desired state of HybridAKSStorage
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:hybridcontainerservice:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - location
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  extendedLocation:
+    type: object
+    $ref: "#/types/azure-native:hybridcontainerservice:StorageSpacesExtendedLocation"
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:hybridcontainerservice:StorageSpacesProperties"
+    description: HybridAKSStorageSpec defines the desired state of HybridAKSStorage
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  storageSpacesName:
+    type: string
+    description: Parameter for the name of the storage object
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+requiredInputs:
+  - resourceGroupName
+aliases:
+  - type: azure-native:hybridcontainerservice:storageSpaceRetrieve
+  - type: azure-native:hybridcontainerservice/v20220501preview:StorageSpaceRetrieve
+  - type: azure-native:hybridcontainerservice/v20220501preview:storageSpaceRetrieve
+  - type: azure-native:hybridcontainerservice/v20220901preview:StorageSpaceRetrieve
+  - type: azure-native:hybridcontainerservice/v20220901preview:storageSpaceRetrieve

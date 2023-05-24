@@ -1,0 +1,16 @@
+$token: azure-native:appplatform/v20230101preview:ApplicationLiveViewPropertiesResponse
+description: Application Live View properties payload
+properties:
+  components:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:appplatform/v20230101preview:ApplicationLiveViewComponentResponse"
+    description: Component details of Application Live View
+  provisioningState:
+    type: string
+    description: State of the Application Live View.
+type: object
+required:
+  - components
+  - provisioningState

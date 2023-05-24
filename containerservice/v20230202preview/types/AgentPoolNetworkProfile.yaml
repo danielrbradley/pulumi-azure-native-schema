@@ -1,0 +1,21 @@
+$token: azure-native:containerservice/v20230202preview:AgentPoolNetworkProfile
+description: Network settings of an agent pool.
+properties:
+  allowedHostPorts:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerservice/v20230202preview:PortRange"
+    description: The port ranges that are allowed to access. The specified ranges are allowed to overlap.
+  applicationSecurityGroups:
+    type: array
+    items:
+      type: string
+    description: The IDs of the application security groups which agent pool will associate when created.
+  nodePublicIPTags:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerservice/v20230202preview:IPTag"
+    description: IPTags of instance-level public IPs.
+type: object

@@ -1,0 +1,8 @@
+$token: azure-native:workloads/v20230401:ErrorResponseInnerError
+description: Object containing more specific information than  the current object about the error.
+properties:
+  innerError:
+    type: object
+    $ref: "#/types/azure-native:workloads/v20230401:ErrorResponse"
+    description: Standard error object.
+type: object

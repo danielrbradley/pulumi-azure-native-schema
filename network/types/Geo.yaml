@@ -1,0 +1,13 @@
+$token: azure-native:network:Geo
+description: The Geo for CIDR advertising. Should be an Geo code.
+type: string
+enum:
+  - value: GLOBAL
+  - value: AFRI
+  - value: APAC
+  - value: EURO
+  - value: LATAM
+  - value: NAM
+  - value: ME
+  - value: OCEANIA
+  - value: AQ

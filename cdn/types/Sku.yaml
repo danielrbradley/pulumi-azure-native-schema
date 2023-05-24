@@ -1,0 +1,9 @@
+$token: azure-native:cdn:Sku
+properties:
+  name:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:cdn:SkuName"
+    description: Name of the pricing tier.
+    willReplaceOnChanges: true
+type: object

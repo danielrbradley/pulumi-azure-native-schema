@@ -1,0 +1,15 @@
+$token: azure-native:managednetworkfabric:InternalNetworkPatchablePropertiesResponseIpv4Routes
+description: staticIpv4Route model.
+properties:
+  nextHop:
+    type: array
+    items:
+      type: string
+    description: List of next hop IPv4 addresses.
+  prefix:
+    type: string
+    description: IPv4 prefix of the staticIpv4Route.
+type: object
+required:
+  - nextHop
+  - prefix

@@ -1,0 +1,22 @@
+$token: azure-native:storagecache/v20230501:AmlFilesystemClientInfoResponse
+description: AML file system client information
+properties:
+  containerStorageInterface:
+    type: object
+    $ref: "#/types/azure-native:storagecache/v20230501:AmlFilesystemContainerStorageInterfaceResponse"
+    description: Container Storage Interface information for the AML file system.
+  lustreVersion:
+    type: string
+    description: The version of Lustre running in the AML file system
+  mgsAddress:
+    type: string
+    description: The IPv4 address used by clients to mount the AML file system's Lustre Management Service (MGS).
+  mountCommand:
+    type: string
+    description: Recommended command to mount the AML file system
+type: object
+required:
+  - containerStorageInterface
+  - lustreVersion
+  - mgsAddress
+  - mountCommand

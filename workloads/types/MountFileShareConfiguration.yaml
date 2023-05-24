@@ -1,0 +1,20 @@
+$token: azure-native:workloads:MountFileShareConfiguration
+description: Gets or sets the file share configuration where the transport directory fileshare already exists, and user wishes to mount the fileshare as a part of the create infra flow.
+properties:
+  configurationType:
+    type: string
+    description: |-
+      The type of file share config.
+      Expected value is 'Mount'.
+    const: Mount
+  id:
+    type: string
+    description: The fileshare resource ID
+  privateEndpointId:
+    type: string
+    description: The private endpoint resource ID
+type: object
+required:
+  - configurationType
+  - id
+  - privateEndpointId

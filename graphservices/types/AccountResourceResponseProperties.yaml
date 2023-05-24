@@ -1,0 +1,17 @@
+$token: azure-native:graphservices:AccountResourceResponseProperties
+description: Property bag from billing account
+properties:
+  appId:
+    type: string
+    description: Customer owned application ID
+  billingPlanId:
+    type: string
+    description: Billing Plan Id
+  provisioningState:
+    type: string
+    description: Provisioning state.
+type: object
+required:
+  - appId
+  - billingPlanId
+  - provisioningState

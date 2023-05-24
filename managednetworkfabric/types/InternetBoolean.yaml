@@ -1,0 +1,6 @@
+$token: azure-native:managednetworkfabric:InternetBoolean
+description: "Internet access. Example: true | false."
+type: string
+enum:
+  - value: "true"
+  - value: "false"

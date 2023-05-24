@@ -1,0 +1,162 @@
+$token: azure-native:machinelearningservices/v20230401preview:AutoMLJob
+description: "AutoMLJob class.\r
+
+  Use this class for executing AutoML tasks like Classification/Regression etc.\r
+
+  See TaskType enum for all the tasks supported."
+properties:
+  componentId:
+    type: string
+    description: ARM resource ID of the component resource.
+  computeId:
+    type: string
+    description: ARM resource ID of the compute resource.
+  description:
+    type: string
+    description: The asset description text.
+  displayName:
+    type: string
+    description: Display name of job.
+  environmentId:
+    type: string
+    description: "The ARM resource ID of the Environment specification for the job.\r
+
+      This is optional value to provide, if not provided, AutoML will default this to Production AutoML curated environment version when running the job."
+  environmentVariables:
+    type: object
+    additionalProperties:
+      type: string
+    description: Environment variables included in the job.
+  experimentName:
+    type: string
+    description: The name of the experiment the job belongs to. If not set, the job is placed in the "Default" experiment.
+    default: Default
+  identity:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:AmlToken"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:ManagedIdentity"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:UserIdentity"
+    discriminator:
+      propertyName: identityType
+      mapping:
+        AMLToken: "#/types/azure-native:machinelearningservices/v20230401preview:AmlToken"
+        Managed: "#/types/azure-native:machinelearningservices/v20230401preview:ManagedIdentity"
+        UserIdentity: "#/types/azure-native:machinelearningservices/v20230401preview:UserIdentity"
+    description: "Identity configuration. If set, this should be one of AmlToken, ManagedIdentity, UserIdentity or null.\r
+
+      Defaults to AmlToken if null."
+  isArchived:
+    type: boolean
+    description: Is the asset archived?
+    default: false
+  jobType:
+    type: string
+    description: |-
+      Enum to determine the type of job.
+      Expected value is 'AutoML'.
+    const: AutoML
+  notificationSetting:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:NotificationSetting"
+    description: Notification setting for the job
+  outputs:
+    type: object
+    additionalProperties:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:CustomModelJobOutput"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MLFlowModelJobOutput"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MLTableJobOutput"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:TritonModelJobOutput"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:UriFileJobOutput"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:UriFolderJobOutput"
+      discriminator:
+        propertyName: jobOutputType
+        mapping:
+          custom_model: "#/types/azure-native:machinelearningservices/v20230401preview:CustomModelJobOutput"
+          mlflow_model: "#/types/azure-native:machinelearningservices/v20230401preview:MLFlowModelJobOutput"
+          mltable: "#/types/azure-native:machinelearningservices/v20230401preview:MLTableJobOutput"
+          triton_model: "#/types/azure-native:machinelearningservices/v20230401preview:TritonModelJobOutput"
+          uri_file: "#/types/azure-native:machinelearningservices/v20230401preview:UriFileJobOutput"
+          uri_folder: "#/types/azure-native:machinelearningservices/v20230401preview:UriFolderJobOutput"
+    description: Mapping of output data bindings used in the job.
+  properties:
+    type: object
+    additionalProperties:
+      type: string
+    description: The asset property dictionary.
+  queueSettings:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:QueueSettings"
+    description: Queue settings for the job
+  resources:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:JobResourceConfiguration"
+    description: Compute Resource configuration for the job.
+  secretsConfiguration:
+    type: object
+    additionalProperties:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20230401preview:SecretConfiguration"
+    description: Configuration for secrets to be made available during runtime.
+  services:
+    type: object
+    additionalProperties:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20230401preview:JobService"
+    description: "List of JobEndpoints.\r
+
+      For local jobs, a job endpoint will have an endpoint value of FileStreamObject."
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Tag dictionary. Tags can be added, removed, and updated.
+  taskDetails:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:Classification"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:Forecasting"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:ImageClassification"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:ImageClassificationMultilabel"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:ImageInstanceSegmentation"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:ImageObjectDetection"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:Regression"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:TextClassification"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:TextClassificationMultilabel"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:TextNer"
+    discriminator:
+      propertyName: taskType
+      mapping:
+        Classification: "#/types/azure-native:machinelearningservices/v20230401preview:Classification"
+        Forecasting: "#/types/azure-native:machinelearningservices/v20230401preview:Forecasting"
+        ImageClassification: "#/types/azure-native:machinelearningservices/v20230401preview:ImageClassification"
+        ImageClassificationMultilabel: "#/types/azure-native:machinelearningservices/v20230401preview:ImageClassificationMultilabel"
+        ImageInstanceSegmentation: "#/types/azure-native:machinelearningservices/v20230401preview:ImageInstanceSegmentation"
+        ImageObjectDetection: "#/types/azure-native:machinelearningservices/v20230401preview:ImageObjectDetection"
+        Regression: "#/types/azure-native:machinelearningservices/v20230401preview:Regression"
+        TextClassification: "#/types/azure-native:machinelearningservices/v20230401preview:TextClassification"
+        TextClassificationMultilabel: "#/types/azure-native:machinelearningservices/v20230401preview:TextClassificationMultilabel"
+        TextNER: "#/types/azure-native:machinelearningservices/v20230401preview:TextNer"
+    description: "[Required] This represents scenario which can be one of Tables/NLP/Image"
+type: object
+required:
+  - jobType
+  - taskDetails

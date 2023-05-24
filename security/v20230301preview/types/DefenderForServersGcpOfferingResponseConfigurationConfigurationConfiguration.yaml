@@ -1,0 +1,12 @@
+$token: azure-native:security/v20230301preview:DefenderForServersGcpOfferingResponseConfigurationConfigurationConfiguration
+description: configuration for Microsoft Defender for Server VM scanning
+properties:
+  exclusionTags:
+    type: object
+    additionalProperties:
+      type: string
+    description: VM tags that indicate that VM should not be scanned
+  scanningMode:
+    type: string
+    description: The scanning mode for the VM scan.
+type: object

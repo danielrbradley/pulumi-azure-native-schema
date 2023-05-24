@@ -1,0 +1,21 @@
+$token: azure-native:azurestackhci/v20210901preview:MarketplaceGalleryImageStatusResponse
+description: MarketplaceGalleryImageStatus defines the observed state of marketplacegalleryimages
+properties:
+  downloadStatus:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:MarketplaceGalleryImageStatusResponseDownloadStatus"
+    description: The download status of the marketplace gallery image
+  errorCode:
+    type: string
+    description: Marketplace gallery image provisioning error code
+  errorMessage:
+    type: string
+    description: Descriptive error message
+  progressPercentage:
+    type: number
+    description: The progress of the operation in percentage
+  provisioningStatus:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:MarketplaceGalleryImageStatusResponseProvisioningStatus"
+    description: The provisioning status of the marketplace gallery image
+type: object

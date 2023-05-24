@@ -1,0 +1,13 @@
+$token: azure-native:machinelearningservices/v20230201preview:ImageMetadataResponse
+description: Returns metadata about the operating system image for this compute instance.
+properties:
+  currentImageVersion:
+    type: string
+    description: Specifies the current operating system image version this compute instance is running on.
+  isLatestOsImageVersion:
+    type: boolean
+    description: Specifies whether this compute instance is running on the latest operating system image.
+  latestImageVersion:
+    type: string
+    description: Specifies the latest available operating system image version.
+type: object

@@ -1,0 +1,6 @@
+$token: azure-native:dbforpostgresql/v20221201:ArmServerKeyType
+description: Data encryption type to depict if it is System Managed vs Azure Key vault.
+type: string
+enum:
+  - value: SystemManaged
+  - value: AzureKeyVault

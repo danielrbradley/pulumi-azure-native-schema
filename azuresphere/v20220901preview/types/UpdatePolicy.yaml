@@ -1,0 +1,6 @@
+$token: azure-native:azuresphere/v20220901preview:UpdatePolicy
+description: Update policy of the device group.
+type: string
+enum:
+  - value: UpdateAll
+  - value: No3rdPartyAppUpdates

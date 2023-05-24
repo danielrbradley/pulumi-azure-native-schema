@@ -1,0 +1,72 @@
+$token: azure-native:migrate/v20220501preview:WorkloadInstanceModelPropertiesResponse
+description: Workload instance model properties.
+properties:
+  allowedOperations:
+    type: array
+    items:
+      type: string
+    description: Gets or sets the allowed scenarios on the workload instance.
+  currentJob:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:WorkloadInstanceModelPropertiesResponseCurrentJob"
+  customProperties:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:migrate/v20220501preview:ApacheTomcatWorkloadInstanceModelCustomPropertiesResponse"
+      - type: object
+        $ref: "#/types/azure-native:migrate/v20220501preview:IISWorkloadInstanceModelCustomPropertiesResponse"
+    discriminator:
+      propertyName: instanceType
+      mapping:
+        ApacheTomcatWorkloadInstanceModelCustomProperties: "#/types/azure-native:migrate/v20220501preview:ApacheTomcatWorkloadInstanceModelCustomPropertiesResponse"
+        IISWorkloadInstanceModelCustomProperties: "#/types/azure-native:migrate/v20220501preview:IISWorkloadInstanceModelCustomPropertiesResponse"
+    description: Workload instance model custom properties.
+  displayName:
+    type: string
+    description: Gets or sets the display name.
+  healthErrors:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:HealthErrorModelResponse"
+    description: Gets or sets the list of health errors.
+  lastSuccessfulReplicationCycleTime:
+    type: string
+    description: Gets or sets the Last successful replication cycle time.
+  masterSiteName:
+    type: string
+    description: Gets or Sets the master site name.
+  migrateAgentId:
+    type: string
+    description: Gets or sets the migrate agent id associated with the workload instance.
+  name:
+    type: string
+    description: Gets or sets the workload instance name.
+  provisioningState:
+    type: string
+    description: Gets or sets the provisioning state of the workload instance.
+  replicationHealth:
+    type: string
+    description: Gets or sets the replication health of the workload instance.
+  replicationStatus:
+    type: string
+    description: Gets or sets the replication state of the workload instance.
+  replicationStatusDescription:
+    type: string
+    description: Gets or sets the workload replication state description.
+  sourceName:
+    type: string
+    description: Gets or sets the source name.
+  sourcePlatform:
+    type: string
+    description: Gets or sets the source platform.
+type: object
+required:
+  - allowedOperations
+  - currentJob
+  - healthErrors
+  - lastSuccessfulReplicationCycleTime
+  - provisioningState
+  - replicationHealth
+  - replicationStatus
+  - replicationStatusDescription

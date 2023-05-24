@@ -1,0 +1,13 @@
+$token: azure-native:azurestackhci/v20230301:DefaultExtensionDetailsResponse
+description: Properties for a particular default extension category.
+properties:
+  category:
+    type: string
+    description: Default extension category
+  consentTime:
+    type: string
+    description: Consent time for extension category
+type: object
+required:
+  - category
+  - consentTime

@@ -1,0 +1,13 @@
+$token: azure-native:azurestackhci/v20210901preview:VirtualnetworksPropertiesRoutes
+description: Route is associated with a subnet.
+properties:
+  addressPrefix:
+    type: string
+    description: AddressPrefix - The destination CIDR to which the route applies.
+  name:
+    type: string
+    description: Name - name of the subnet
+  nextHopIpAddress:
+    type: string
+    description: NextHopIPAddress - The IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop type is VirtualAppliance.
+type: object

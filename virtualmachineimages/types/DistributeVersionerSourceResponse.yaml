@@ -1,0 +1,12 @@
+$token: azure-native:virtualmachineimages:DistributeVersionerSourceResponse
+description: Generates version number based on version number of source image
+properties:
+  scheme:
+    type: string
+    description: |-
+      Version numbering scheme to be used.
+      Expected value is 'Source'.
+    const: Source
+type: object
+required:
+  - scheme

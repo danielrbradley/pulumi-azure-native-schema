@@ -1,0 +1,38 @@
+$token: azure-native:appplatform/v20220301preview:getBuildServiceBuildResultLog
+description: Get a KPack build result log download URL.
+inputs:
+  properties:
+    buildName:
+      type: string
+      description: The name of the build resource.
+      willReplaceOnChanges: true
+    buildResultName:
+      type: string
+      description: The name of the build result resource.
+      willReplaceOnChanges: true
+    buildServiceName:
+      type: string
+      description: The name of the build service resource.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+      willReplaceOnChanges: true
+    serviceName:
+      type: string
+      description: The name of the Service resource.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - buildName
+    - buildResultName
+    - buildServiceName
+    - resourceGroupName
+    - serviceName
+outputs:
+  description: Build result log resource properties payload
+  properties:
+    blobUrl:
+      type: string
+      description: The public download URL of this build result log
+  type: object

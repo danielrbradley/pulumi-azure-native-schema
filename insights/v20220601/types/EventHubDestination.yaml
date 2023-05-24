@@ -1,0 +1,11 @@
+$token: azure-native:insights/v20220601:EventHubDestination
+properties:
+  eventHubResourceId:
+    type: string
+    description: The resource ID of the event hub.
+  name:
+    type: string
+    description: "A friendly name for the destination. \r
+
+      This name should be unique across all destinations (regardless of type) within the data collection rule."
+type: object

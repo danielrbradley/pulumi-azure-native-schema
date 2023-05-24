@@ -1,0 +1,38 @@
+$token: azure-native:compute/v20230301:RestorePointSourceVMOSDiskResponse
+description: Describes an Operating System disk.
+properties:
+  caching:
+    type: string
+    description: Gets the caching type.
+  diskRestorePoint:
+    type: object
+    $ref: "#/types/azure-native:compute/v20230301:DiskRestorePointAttributesResponse"
+    description: Contains Disk Restore Point properties.
+  diskSizeGB:
+    type: integer
+    description: Gets the disk size in GB.
+  encryptionSettings:
+    type: object
+    $ref: "#/types/azure-native:compute/v20230301:DiskEncryptionSettingsResponse"
+    description: Gets the disk encryption settings.
+  managedDisk:
+    type: object
+    $ref: "#/types/azure-native:compute/v20230301:ManagedDiskParametersResponse"
+    description: Gets the managed disk details
+  name:
+    type: string
+    description: Gets the disk name.
+  osType:
+    type: string
+    description: Gets the Operating System type.
+  writeAcceleratorEnabled:
+    type: boolean
+    description: Shows true if the disk is write-accelerator enabled.
+type: object
+required:
+  - caching
+  - diskSizeGB
+  - encryptionSettings
+  - name
+  - osType
+  - writeAcceleratorEnabled

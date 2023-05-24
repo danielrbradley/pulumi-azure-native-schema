@@ -1,0 +1,21 @@
+$token: azure-native:network/v20221101:VirtualApplianceNicPropertiesResponse
+description: Network Virtual Appliance NIC properties.
+properties:
+  instanceName:
+    type: string
+    description: Instance on which nic is attached.
+  name:
+    type: string
+    description: NIC name.
+  privateIpAddress:
+    type: string
+    description: Private IP address.
+  publicIpAddress:
+    type: string
+    description: Public IP address.
+type: object
+required:
+  - instanceName
+  - name
+  - privateIpAddress
+  - publicIpAddress

@@ -1,0 +1,13 @@
+$token: azure-native:migrate/v20220501preview:MigrationConfigurationResponse
+description: MigrationConfiguration properties.
+properties:
+  keyVaultResourceId:
+    type: string
+    description: Gets or sets the key vault resource Id.
+  migrationSolutionResourceId:
+    type: string
+    description: Gets or sets the migration solution resource Id.
+  storageAccountResourceId:
+    type: string
+    description: Gets or sets the storage account resource Id.
+type: object

@@ -1,0 +1,29 @@
+$token: azure-native:migrate/v20180202:getProjectKeys
+description: Gets the Log Analytics Workspace ID and Primary Key for the specified project.
+inputs:
+  properties:
+    projectName:
+      type: string
+      description: Name of the Azure Migrate project.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the Azure Resource Group that project is part of.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - projectName
+    - resourceGroupName
+outputs:
+  description: ID and Key for Migration Project.
+  properties:
+    workspaceId:
+      type: string
+      description: ID of Migration Project.
+    workspaceKey:
+      type: string
+      description: Key of Migration Project.
+  type: object
+  required:
+    - workspaceId
+    - workspaceKey

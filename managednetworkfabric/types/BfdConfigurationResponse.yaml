@@ -1,0 +1,17 @@
+$token: azure-native:managednetworkfabric:BfdConfigurationResponse
+description: BFD configuration properties
+properties:
+  administrativeState:
+    type: string
+    description: "Administrative state of the BfdConfiguration. Example: Enabled | Disabled."
+  interval:
+    type: integer
+    description: "interval in milliseconds. Example: 300."
+  multiplier:
+    type: integer
+    description: "Multiplier for the Bfd Configuration. Example: 3."
+type: object
+required:
+  - administrativeState
+  - interval
+  - multiplier

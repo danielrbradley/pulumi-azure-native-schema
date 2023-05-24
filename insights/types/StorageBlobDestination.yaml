@@ -1,0 +1,14 @@
+$token: azure-native:insights:StorageBlobDestination
+properties:
+  containerName:
+    type: string
+    description: The container name of the Storage Blob.
+  name:
+    type: string
+    description: "A friendly name for the destination. \r
+
+      This name should be unique across all destinations (regardless of type) within the data collection rule."
+  storageAccountResourceId:
+    type: string
+    description: The resource ID of the storage account.
+type: object

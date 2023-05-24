@@ -1,0 +1,64 @@
+$token: azure-native:agfoodplatform:getPrivateEndpointConnection
+description: |-
+  Get Private endpoint connection object.
+  API Version: 2021-09-01-preview.
+inputs:
+  properties:
+    farmBeatsResourceName:
+      type: string
+      description: FarmBeats resource name.
+      willReplaceOnChanges: true
+    privateEndpointConnectionName:
+      type: string
+      description: Private endpoint connection name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - farmBeatsResourceName
+    - privateEndpointConnectionName
+    - resourceGroupName
+outputs:
+  description: The private endpoint connection resource.
+  properties:
+    groupIds:
+      type: array
+      items:
+        type: string
+      description: The group ids for the private endpoint resource.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+    name:
+      type: string
+      description: The name of the resource
+    privateEndpoint:
+      type: object
+      $ref: "#/types/azure-native:agfoodplatform:PrivateEndpointResponse"
+      description: The private endpoint resource.
+    privateLinkServiceConnectionState:
+      type: object
+      $ref: "#/types/azure-native:agfoodplatform:PrivateLinkServiceConnectionStateResponse"
+      description: A collection of information about the state of the connection between service consumer and provider.
+    provisioningState:
+      type: string
+      description: The provisioning state of the private endpoint connection resource.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:agfoodplatform:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - groupIds
+    - id
+    - name
+    - privateLinkServiceConnectionState
+    - provisioningState
+    - systemData
+    - type

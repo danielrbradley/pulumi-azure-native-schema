@@ -1,0 +1,117 @@
+$token: azure-native:cognitiveservices/v20221201:AccountPropertiesResponse
+description: Properties of Cognitive Services account.
+properties:
+  allowedFqdnList:
+    type: array
+    items:
+      type: string
+  apiProperties:
+    type: object
+    $ref: "#/types/azure-native:cognitiveservices/v20221201:ApiPropertiesResponse"
+    description: The api properties for special APIs.
+  callRateLimit:
+    type: object
+    $ref: "#/types/azure-native:cognitiveservices/v20221201:CallRateLimitResponse"
+    description: The call rate limit Cognitive Services account.
+  capabilities:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:cognitiveservices/v20221201:SkuCapabilityResponse"
+    description: Gets the capabilities of the cognitive services account. Each item indicates the capability of a specific feature. The values are read-only and for reference only.
+  commitmentPlanAssociations:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:cognitiveservices/v20221201:CommitmentPlanAssociationResponse"
+    description: The commitment plan associations of Cognitive Services account.
+  customSubDomainName:
+    type: string
+    description: Optional subdomain name used for token-based authentication.
+  dateCreated:
+    type: string
+    description: Gets the date of cognitive services account creation.
+  deletionDate:
+    type: string
+    description: The deletion date, only available for deleted account.
+  disableLocalAuth:
+    type: boolean
+  dynamicThrottlingEnabled:
+    type: boolean
+    description: The flag to enable dynamic throttling.
+  encryption:
+    type: object
+    $ref: "#/types/azure-native:cognitiveservices/v20221201:EncryptionResponse"
+    description: The encryption properties for this resource.
+  endpoint:
+    type: string
+    description: Endpoint of the created account.
+  endpoints:
+    type: object
+    additionalProperties:
+      type: string
+  internalId:
+    type: string
+    description: The internal identifier (deprecated, do not use this property).
+  isMigrated:
+    type: boolean
+    description: If the resource is migrated from an existing key.
+  locations:
+    type: object
+    $ref: "#/types/azure-native:cognitiveservices/v20221201:MultiRegionSettingsResponse"
+    description: The multiregion settings of Cognitive Services account.
+  migrationToken:
+    type: string
+    description: Resource migration token.
+  networkAcls:
+    type: object
+    $ref: "#/types/azure-native:cognitiveservices/v20221201:NetworkRuleSetResponse"
+    description: A collection of rules governing the accessibility from specific network locations.
+  privateEndpointConnections:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:cognitiveservices/v20221201:PrivateEndpointConnectionResponse"
+    description: The private endpoint connection associated with the Cognitive Services account.
+  provisioningState:
+    type: string
+    description: Gets the status of the cognitive services account at the time the operation was called.
+  publicNetworkAccess:
+    type: string
+    description: Whether or not public endpoint access is allowed for this account.
+  quotaLimit:
+    type: object
+    $ref: "#/types/azure-native:cognitiveservices/v20221201:QuotaLimitResponse"
+  restore:
+    type: boolean
+  restrictOutboundNetworkAccess:
+    type: boolean
+  scheduledPurgeDate:
+    type: string
+    description: The scheduled purge date, only available for deleted account.
+  skuChangeInfo:
+    type: object
+    $ref: "#/types/azure-native:cognitiveservices/v20221201:SkuChangeInfoResponse"
+    description: Sku change info of account.
+  userOwnedStorage:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:cognitiveservices/v20221201:UserOwnedStorageResponse"
+    description: The storage accounts for this resource.
+type: object
+required:
+  - callRateLimit
+  - capabilities
+  - commitmentPlanAssociations
+  - dateCreated
+  - deletionDate
+  - endpoint
+  - endpoints
+  - internalId
+  - isMigrated
+  - privateEndpointConnections
+  - provisioningState
+  - quotaLimit
+  - scheduledPurgeDate
+  - skuChangeInfo

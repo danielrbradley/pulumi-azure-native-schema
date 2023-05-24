@@ -1,0 +1,5 @@
+$token: azure-native:eventhub/v20221001preview:ApplicationGroupPolicyType
+description: Application Group Policy types
+type: string
+enum:
+  - value: ThrottlingPolicy

@@ -1,0 +1,28 @@
+$token: azure-native:migrate/v20220501preview:WorkloadDeploymentModelProperties
+description: Workload deployment model properties.
+properties:
+  customProperties:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:migrate/v20220501preview:ApacheTomcatAKSWorkloadDeploymentModelCustomProperties"
+      - type: object
+        $ref: "#/types/azure-native:migrate/v20220501preview:IISAKSWorkloadDeploymentModelCustomProperties"
+    discriminator:
+      propertyName: instanceType
+      mapping:
+        ApacheTomcatAKSWorkloadDeploymentModelCustomProperties: "#/types/azure-native:migrate/v20220501preview:ApacheTomcatAKSWorkloadDeploymentModelCustomProperties"
+        IISAKSWorkloadDeploymentModelCustomProperties: "#/types/azure-native:migrate/v20220501preview:IISAKSWorkloadDeploymentModelCustomProperties"
+    description: Workload deployment model custom properties.
+  displayName:
+    type: string
+    description: Gets or sets the display name.
+  targetPlatform:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:migrate/v20220501preview:WorkloadDeploymentTarget"
+    description: Gets or sets the deployment target platform.
+  workloadInstanceProperties:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:WorkloadInstanceModelProperties"
+    description: Workload instance model properties.
+type: object

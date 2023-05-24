@@ -1,0 +1,9 @@
+$token: azure-native:machinelearningservices/v20221201preview:SystemCreatedAcrAccountResponse
+properties:
+  acrAccountSku:
+    type: string
+  armResourceId:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20221201preview:ArmResourceIdResponse"
+    description: ARM ResourceId of a resource
+type: object

@@ -1,0 +1,23 @@
+$token: azure-native:servicelinker/v20221101preview:PermissionsMissingDryrunPrerequisiteResultResponse
+description: The represent of missing permissions
+properties:
+  permissions:
+    type: array
+    items:
+      type: string
+    description: The permission list
+  recommendedRole:
+    type: string
+    description: The recommended role to resolve permissions missing
+  scope:
+    type: string
+    description: The permission scope
+  type:
+    type: string
+    description: |-
+      The type of dryrun result.
+      Expected value is 'permissionsMissing'.
+    const: permissionsMissing
+type: object
+required:
+  - type

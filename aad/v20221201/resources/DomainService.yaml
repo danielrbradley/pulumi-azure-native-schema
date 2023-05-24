@@ -1,0 +1,174 @@
+$token: azure-native:aad/v20221201:DomainService
+description: Domain service.
+properties:
+  configDiagnostics:
+    type: object
+    $ref: "#/types/azure-native:aad/v20221201:ConfigDiagnosticsResponse"
+    description: Configuration diagnostics data containing latest execution from client.
+  deploymentId:
+    type: string
+    description: Deployment Id
+  domainConfigurationType:
+    type: string
+    description: Domain Configuration Type
+  domainName:
+    type: string
+    description: The name of the Azure domain that the user would like to deploy Domain Services to.
+  domainSecuritySettings:
+    type: object
+    $ref: "#/types/azure-native:aad/v20221201:DomainSecuritySettingsResponse"
+    description: DomainSecurity Settings
+  etag:
+    type: string
+    description: Resource etag
+  filteredSync:
+    type: string
+    description: Enabled or Disabled flag to turn on Group-based filtered sync
+  ldapsSettings:
+    type: object
+    $ref: "#/types/azure-native:aad/v20221201:LdapsSettingsResponse"
+    description: Secure LDAP Settings
+  location:
+    type: string
+    description: Resource location
+  migrationProperties:
+    type: object
+    $ref: "#/types/azure-native:aad/v20221201:MigrationPropertiesResponse"
+    description: Migration Properties
+  name:
+    type: string
+    description: Resource name
+  notificationSettings:
+    type: object
+    $ref: "#/types/azure-native:aad/v20221201:NotificationSettingsResponse"
+    description: Notification Settings
+  provisioningState:
+    type: string
+    description: the current deployment or provisioning state, which only appears in the response.
+  replicaSets:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:aad/v20221201:ReplicaSetResponse"
+    description: List of ReplicaSets
+  resourceForestSettings:
+    type: object
+    $ref: "#/types/azure-native:aad/v20221201:ResourceForestSettingsResponse"
+    description: Resource Forest Settings
+  sku:
+    type: string
+    description: Sku Type
+  syncApplicationId:
+    type: string
+    description: The unique sync application id of the Azure AD Domain Services deployment.
+  syncOwner:
+    type: string
+    description: SyncOwner ReplicaSet Id
+  syncScope:
+    type: string
+    description: All or CloudOnly, All users in AAD are synced to AAD DS domain or only users actively syncing in the cloud
+    default: All
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:aad/v20221201:SystemDataResponse"
+    description: The system meta data relating to this resource.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags
+  tenantId:
+    type: string
+    description: Azure Active Directory Tenant Id
+  type:
+    type: string
+    description: Resource type
+  version:
+    type: integer
+    description: Data Model Version
+type: object
+required:
+  - deploymentId
+  - migrationProperties
+  - name
+  - provisioningState
+  - syncApplicationId
+  - syncOwner
+  - systemData
+  - tenantId
+  - type
+  - version
+inputProperties:
+  configDiagnostics:
+    type: object
+    $ref: "#/types/azure-native:aad/v20221201:ConfigDiagnostics"
+    description: Configuration diagnostics data containing latest execution from client.
+  domainConfigurationType:
+    type: string
+    description: Domain Configuration Type
+  domainName:
+    type: string
+    description: The name of the Azure domain that the user would like to deploy Domain Services to.
+  domainSecuritySettings:
+    type: object
+    $ref: "#/types/azure-native:aad/v20221201:DomainSecuritySettings"
+    description: DomainSecurity Settings
+  domainServiceName:
+    type: string
+    description: The name of the domain service.
+    willReplaceOnChanges: true
+  filteredSync:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:aad/v20221201:FilteredSync"
+    description: Enabled or Disabled flag to turn on Group-based filtered sync
+  ldapsSettings:
+    type: object
+    $ref: "#/types/azure-native:aad/v20221201:LdapsSettings"
+    description: Secure LDAP Settings
+  location:
+    type: string
+    description: Resource location
+    willReplaceOnChanges: true
+  notificationSettings:
+    type: object
+    $ref: "#/types/azure-native:aad/v20221201:NotificationSettings"
+    description: Notification Settings
+  replicaSets:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:aad/v20221201:ReplicaSet"
+    description: List of ReplicaSets
+  resourceForestSettings:
+    type: object
+    $ref: "#/types/azure-native:aad/v20221201:ResourceForestSettings"
+    description: Resource Forest Settings
+  resourceGroupName:
+    type: string
+    description: The name of the resource group within the user's subscription. The name is case insensitive.
+    willReplaceOnChanges: true
+  sku:
+    type: string
+    description: Sku Type
+  syncScope:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:aad/v20221201:SyncScope"
+    description: All or CloudOnly, All users in AAD are synced to AAD DS domain or only users actively syncing in the cloud
+    default: All
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags
+requiredInputs:
+  - resourceGroupName
+aliases:
+  - type: azure-native:aad:DomainService
+  - type: azure-native:aad/v20170101:DomainService
+  - type: azure-native:aad/v20170601:DomainService
+  - type: azure-native:aad/v20200101:DomainService
+  - type: azure-native:aad/v20210301:DomainService
+  - type: azure-native:aad/v20210501:DomainService
+  - type: azure-native:aad/v20220901:DomainService

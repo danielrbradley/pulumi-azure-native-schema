@@ -1,0 +1,10 @@
+$token: azure-native:managednetworkfabric/v20230201preview:InternalNetworkPatchablePropertiesResponseConnectedIPv6Subnets
+description: connectedIPv6Subnet model.
+properties:
+  annotation:
+    type: string
+    description: Switch configuration description.
+  prefix:
+    type: string
+    description: Ipv6 Prefix of the connectedIPv6Subnet.
+type: object

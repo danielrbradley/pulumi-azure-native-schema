@@ -1,0 +1,10 @@
+$token: azure-native:network/v20221101:VirtualApplianceAdditionalNicPropertiesResponse
+description: Network Virtual Appliance Additional NIC properties.
+properties:
+  hasPublicIp:
+    type: boolean
+    description: Customer Intent for Public Ip on additional nic
+  name:
+    type: string
+    description: Customer Name for additional nic
+type: object

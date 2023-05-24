@@ -1,0 +1,58 @@
+$token: azure-native:machinelearningservices/v20221201preview:RegressionTrainingSettings
+description: Regression Training related configuration.
+properties:
+  allowedTrainingAlgorithms:
+    type: array
+    items:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:machinelearningservices/v20221201preview:RegressionModels"
+    description: Allowed models for regression task.
+  blockedTrainingAlgorithms:
+    type: array
+    items:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:machinelearningservices/v20221201preview:RegressionModels"
+    description: Blocked models for regression task.
+  enableDnnTraining:
+    type: boolean
+    description: Enable recommendation of DNN models.
+    default: false
+  enableModelExplainability:
+    type: boolean
+    description: Flag to turn on explainability on best model.
+    default: true
+  enableOnnxCompatibleModels:
+    type: boolean
+    description: Flag for enabling onnx compatible models.
+    default: false
+  enableStackEnsemble:
+    type: boolean
+    description: Enable stack ensemble run.
+    default: true
+  enableVoteEnsemble:
+    type: boolean
+    description: Enable voting ensemble run.
+    default: true
+  ensembleModelDownloadTimeout:
+    type: string
+    description: "During VotingEnsemble and StackEnsemble model generation, multiple fitted models from the previous child runs are downloaded.\r
+
+      Configure this parameter with a higher value than 300 secs, if more time is needed."
+    default: PT5M
+  stackEnsembleSettings:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20221201preview:StackEnsembleSettings"
+    description: Stack ensemble settings for stack ensemble run.
+  trainingMode:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:machinelearningservices/v20221201preview:TrainingMode"
+    description: "TrainingMode mode - Setting to 'auto' is same as setting it to 'non-distributed' for now, however in the future may result in mixed mode or heuristics based mode selection. Default is 'auto'.\r
+
+      If 'Distributed' then only distributed featurization is used and distributed algorithms are chosen.\r
+
+      If 'NonDistributed' then only non distributed algorithms are chosen."
+    default: Auto
+type: object

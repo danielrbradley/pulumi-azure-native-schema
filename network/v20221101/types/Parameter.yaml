@@ -1,0 +1,19 @@
+$token: azure-native:network/v20221101:Parameter
+description: Parameters for an Action.
+properties:
+  asPath:
+    type: array
+    items:
+      type: string
+    description: List of AS paths.
+  community:
+    type: array
+    items:
+      type: string
+    description: List of BGP communities.
+  routePrefix:
+    type: array
+    items:
+      type: string
+    description: List of route prefixes.
+type: object

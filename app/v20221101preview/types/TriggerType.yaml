@@ -1,0 +1,7 @@
+$token: azure-native:app/v20221101preview:TriggerType
+description: Trigger type of the job
+type: string
+enum:
+  - value: Scheduled
+  - value: Event
+  - value: Manual

@@ -1,0 +1,44 @@
+$token: azure-native:migrate/v20220501preview:TargetStorageProfile
+description: Storage profile for the directory on the target container.
+properties:
+  azureFileShareProfile:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:AzureFileShareHydrationProfile"
+    description: "Azure file share profile for hydration of application folders not mounted on\r
+
+      the container file system."
+  hydrationStorageProviderType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:migrate/v20220501preview:TargetHydrationStorageProviderType"
+    description: "Gets or sets the storage provider type on the target.\r
+
+      Applicable when StorageProjectionType is not ContainerFileSystem."
+  persistentVolumeId:
+    type: string
+    description: "Gets or sets the target persistent volume id.\r
+
+      Applicable when StorageProjectionType is PersistentVolume and on using an\r
+
+      existing PersistentVolume."
+  storageAccessType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:migrate/v20220501preview:TargetStorageAccessType"
+    description: Gets or sets the target storage access type.
+  storageProjectionType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:migrate/v20220501preview:TargetStorageProjectionType"
+    description: Gets or sets the target projection type.
+  targetName:
+    type: string
+    description: Gets or sets the name of the projected volume on the target environment.
+  targetSize:
+    type: string
+    description: "Gets or sets the storage size on the target.\r
+
+      Applicable when StorageProjectionType is PersistentVolume and on creating a new\r
+
+      PersistentVolume."
+type: object

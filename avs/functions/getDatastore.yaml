@@ -1,0 +1,61 @@
+$token: azure-native:avs:getDatastore
+description: |-
+  A datastore resource
+  API Version: 2022-05-01.
+inputs:
+  properties:
+    clusterName:
+      type: string
+      description: Name of the cluster in the private cloud
+      willReplaceOnChanges: true
+    datastoreName:
+      type: string
+      description: Name of the datastore in the private cloud cluster
+      willReplaceOnChanges: true
+    privateCloudName:
+      type: string
+      description: Name of the private cloud
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - clusterName
+    - datastoreName
+    - privateCloudName
+    - resourceGroupName
+outputs:
+  description: A datastore resource
+  properties:
+    diskPoolVolume:
+      type: object
+      $ref: "#/types/azure-native:avs:DiskPoolVolumeResponse"
+      description: An iSCSI volume
+    id:
+      type: string
+      description: Resource ID.
+    name:
+      type: string
+      description: Resource name.
+    netAppVolume:
+      type: object
+      $ref: "#/types/azure-native:avs:NetAppVolumeResponse"
+      description: An Azure NetApp Files volume
+    provisioningState:
+      type: string
+      description: The state of the datastore provisioning
+    status:
+      type: string
+      description: The operational status of the datastore
+    type:
+      type: string
+      description: Resource type.
+  type: object
+  required:
+    - id
+    - name
+    - provisioningState
+    - status
+    - type

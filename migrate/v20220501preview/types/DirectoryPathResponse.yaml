@@ -1,0 +1,15 @@
+$token: azure-native:migrate/v20220501preview:DirectoryPathResponse
+description: Second level entity for virtual directories.
+properties:
+  id:
+    type: string
+    description: Gets the ID.
+  physical:
+    type: string
+    description: Gets or sets the physical path of the directory on the web server.
+  virtual:
+    type: string
+    description: Gets or sets the virtual path for the directory.
+type: object
+required:
+  - id

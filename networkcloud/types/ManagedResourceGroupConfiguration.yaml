@@ -1,0 +1,9 @@
+$token: azure-native:networkcloud:ManagedResourceGroupConfiguration
+properties:
+  location:
+    type: string
+    description: The location of the managed resource group. If not specified, the location of the parent resource is chosen.
+  name:
+    type: string
+    description: The name for the managed resource group. If not specified, the unique name is automatically generated.
+type: object

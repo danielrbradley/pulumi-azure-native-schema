@@ -1,0 +1,52 @@
+$token: azure-native:apimanagement/v20220801:getTagByOperation
+description: Get tag associated with the Operation.
+inputs:
+  properties:
+    apiId:
+      type: string
+      description: API revision identifier. Must be unique in the current API Management service instance. Non-current revision has ;rev=n as a suffix where n is the revision number.
+      willReplaceOnChanges: true
+    operationId:
+      type: string
+      description: Operation identifier within an API. Must be unique in the current API Management service instance.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    serviceName:
+      type: string
+      description: The name of the API Management service.
+      willReplaceOnChanges: true
+    tagId:
+      type: string
+      description: Tag identifier. Must be unique in the current API Management service instance.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - apiId
+    - operationId
+    - resourceGroupName
+    - serviceName
+    - tagId
+outputs:
+  description: Tag Contract details.
+  properties:
+    displayName:
+      type: string
+      description: Tag name.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - displayName
+    - id
+    - name
+    - type

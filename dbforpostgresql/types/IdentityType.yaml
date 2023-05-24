@@ -1,0 +1,6 @@
+$token: azure-native:dbforpostgresql:IdentityType
+description: the types of identities associated with this resource; currently restricted to 'SystemAssigned and UserAssigned'
+type: string
+enum:
+  - value: None
+  - value: UserAssigned

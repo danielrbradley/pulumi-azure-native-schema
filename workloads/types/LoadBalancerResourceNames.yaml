@@ -1,0 +1,22 @@
+$token: azure-native:workloads:LoadBalancerResourceNames
+description: The resource names object for load balancer and related resources.
+properties:
+  backendPoolNames:
+    type: array
+    items:
+      type: string
+    description: The list of backend pool names. Currently, ACSS deploys only one backend pool and hence, size of this list should be 1
+  frontendIpConfigurationNames:
+    type: array
+    items:
+      type: string
+    description: The list of frontend IP configuration names. If provided as input, size of this list should be 2 for cs layer and should be 1 for database layer.
+  healthProbeNames:
+    type: array
+    items:
+      type: string
+    description: The list of health probe names. If provided as input, size of this list should be 2 for cs layer and should be 1 for database layer.
+  loadBalancerName:
+    type: string
+    description: The full resource name for load balancer. If this value is not provided, load balancer will be name as {ASCS/DB}-loadBalancer.
+type: object

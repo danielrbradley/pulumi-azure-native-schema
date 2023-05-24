@@ -1,0 +1,10 @@
+$token: azure-native:storage:SignedIdentifier
+properties:
+  accessPolicy:
+    type: object
+    $ref: "#/types/azure-native:storage:AccessPolicy"
+    description: Access policy
+  id:
+    type: string
+    description: An unique identifier of the stored access policy.
+type: object

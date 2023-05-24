@@ -1,0 +1,15 @@
+$token: azure-native:insights:DataImportSourcesEventHub
+description: Definition of Event Hub configuration.
+properties:
+  consumerGroup:
+    type: string
+    description: Event Hub consumer group name
+  name:
+    type: string
+    description: "A friendly name for the data source. \r
+
+      This name should be unique across all data sources (regardless of type) within the data collection rule."
+  stream:
+    type: string
+    description: The stream to collect from EventHub
+type: object

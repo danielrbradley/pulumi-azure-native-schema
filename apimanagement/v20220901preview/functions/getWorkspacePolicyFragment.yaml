@@ -1,0 +1,57 @@
+$token: azure-native:apimanagement/v20220901preview:getWorkspacePolicyFragment
+description: Gets a policy fragment.
+inputs:
+  properties:
+    format:
+      type: string
+      description: Policy fragment content format.
+    id:
+      type: string
+      description: A resource identifier.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    serviceName:
+      type: string
+      description: The name of the API Management service.
+      willReplaceOnChanges: true
+    workspaceId:
+      type: string
+      description: Workspace identifier. Must be unique in the current API Management service instance.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - id
+    - resourceGroupName
+    - serviceName
+    - workspaceId
+outputs:
+  description: Policy fragment contract details.
+  properties:
+    description:
+      type: string
+      description: Policy fragment description.
+    format:
+      type: string
+      description: Format of the policy fragment content.
+      default: xml
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+    value:
+      type: string
+      description: Contents of the policy fragment.
+  type: object
+  required:
+    - id
+    - name
+    - type
+    - value

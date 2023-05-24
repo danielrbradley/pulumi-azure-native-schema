@@ -1,0 +1,50 @@
+$token: azure-native:authorization/v20220801preview:getVariableValueAtManagementGroup
+description: This operation retrieves a single variable value; given its name,  management group it was created at and the variable it's created for.
+inputs:
+  properties:
+    managementGroupId:
+      type: string
+      description: The ID of the management group.
+      willReplaceOnChanges: true
+    variableName:
+      type: string
+      description: The name of the variable to operate on.
+      willReplaceOnChanges: true
+    variableValueName:
+      type: string
+      description: The name of the variable value to operate on.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - managementGroupId
+    - variableName
+    - variableValueName
+outputs:
+  description: The variable value.
+  properties:
+    id:
+      type: string
+      description: The ID of the variable.
+    name:
+      type: string
+      description: The name of the variable.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:authorization/v20220801preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource (Microsoft.Authorization/variables/values).
+    values:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:authorization/v20220801preview:PolicyVariableValueColumnValueResponse"
+      description: Variable value column value array.
+  type: object
+  required:
+    - id
+    - name
+    - systemData
+    - type
+    - values

@@ -1,0 +1,7 @@
+$token: azure-native:compute/v20230301:CachingTypes
+description: "Specifies the caching requirements. Possible values are: **None,** **ReadOnly,** **ReadWrite.** The defaulting behavior is: **None for Standard storage. ReadOnly for Premium storage.**"
+type: string
+enum:
+  - value: None
+  - value: ReadOnly
+  - value: ReadWrite

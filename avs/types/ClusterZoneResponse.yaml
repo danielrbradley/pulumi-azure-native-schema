@@ -1,0 +1,15 @@
+$token: azure-native:avs:ClusterZoneResponse
+description: Zone and associated hosts info
+properties:
+  hosts:
+    type: array
+    items:
+      type: string
+    description: List of hosts belonging to the availability zone in a cluster
+  zone:
+    type: string
+    description: Availability zone identifier
+type: object
+required:
+  - hosts
+  - zone

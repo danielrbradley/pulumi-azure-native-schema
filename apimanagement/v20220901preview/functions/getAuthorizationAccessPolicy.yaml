@@ -1,0 +1,54 @@
+$token: azure-native:apimanagement/v20220901preview:getAuthorizationAccessPolicy
+description: Gets the details of the authorization access policy specified by its identifier.
+inputs:
+  properties:
+    authorizationAccessPolicyId:
+      type: string
+      description: Identifier of the authorization access policy.
+      willReplaceOnChanges: true
+    authorizationId:
+      type: string
+      description: Identifier of the authorization.
+      willReplaceOnChanges: true
+    authorizationProviderId:
+      type: string
+      description: Identifier of the authorization provider.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    serviceName:
+      type: string
+      description: The name of the API Management service.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - authorizationAccessPolicyId
+    - authorizationId
+    - authorizationProviderId
+    - resourceGroupName
+    - serviceName
+outputs:
+  description: Authorization access policy contract.
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    objectId:
+      type: string
+      description: The Object Id
+    tenantId:
+      type: string
+      description: The Tenant Id
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - type

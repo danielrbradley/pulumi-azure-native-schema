@@ -1,0 +1,7 @@
+$token: azure-native:datafactory/v20180601:ConfigurationType
+description: The type of the spark config.
+type: string
+enum:
+  - value: Default
+  - value: Customized
+  - value: Artifact

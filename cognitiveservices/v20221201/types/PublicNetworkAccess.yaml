@@ -1,0 +1,6 @@
+$token: azure-native:cognitiveservices/v20221201:PublicNetworkAccess
+description: Whether or not public endpoint access is allowed for this account.
+type: string
+enum:
+  - value: Enabled
+  - value: Disabled

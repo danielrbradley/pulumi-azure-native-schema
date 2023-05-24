@@ -1,0 +1,13 @@
+$token: azure-native:devcenter/v20230101preview:HealthStatusDetailResponse
+description: Pool health status detail.
+properties:
+  code:
+    type: string
+    description: An identifier for the issue.
+  message:
+    type: string
+    description: A message describing the issue, intended to be suitable for display in a user interface
+type: object
+required:
+  - code
+  - message

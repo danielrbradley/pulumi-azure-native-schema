@@ -1,0 +1,8 @@
+$token: azure-native:network/v20221101:PublicIpAddressDnsSettingsDomainNameLabelScope
+description: The domain name label scope. If a domain name label and a domain name label scope are specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system with a hashed value includes in FQDN.
+type: string
+enum:
+  - value: TenantReuse
+  - value: SubscriptionReuse
+  - value: ResourceGroupReuse
+  - value: NoReuse

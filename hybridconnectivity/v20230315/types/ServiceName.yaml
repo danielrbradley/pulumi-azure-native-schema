@@ -1,0 +1,6 @@
+$token: azure-native:hybridconnectivity/v20230315:ServiceName
+description: The name of the service. It is an optional property, if not provided, service configuration tokens issue code would be by passed.
+type: string
+enum:
+  - value: SSH
+  - value: WAC

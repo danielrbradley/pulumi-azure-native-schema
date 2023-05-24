@@ -1,0 +1,55 @@
+$token: azure-native:apimanagement/v20220901preview:WorkspaceApiRelease
+description: ApiRelease details.
+properties:
+  apiId:
+    type: string
+    description: Identifier of the API the release belongs to.
+  createdDateTime:
+    type: string
+    description: "The time the API was released. The date conforms to the following format: yyyy-MM-ddTHH:mm:ssZ as specified by the ISO 8601 standard."
+  name:
+    type: string
+    description: The name of the resource
+  notes:
+    type: string
+    description: Release Notes
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  updatedDateTime:
+    type: string
+    description: The time the API release was updated.
+type: object
+required:
+  - createdDateTime
+  - name
+  - type
+  - updatedDateTime
+inputProperties:
+  apiId:
+    type: string
+    description: Identifier of the API the release belongs to.
+  notes:
+    type: string
+    description: Release Notes
+  releaseId:
+    type: string
+    description: Release identifier within an API. Must be unique in the current API Management service instance.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  serviceName:
+    type: string
+    description: The name of the API Management service.
+    willReplaceOnChanges: true
+  workspaceId:
+    type: string
+    description: Workspace identifier. Must be unique in the current API Management service instance.
+    willReplaceOnChanges: true
+requiredInputs:
+  - apiId
+  - resourceGroupName
+  - serviceName
+  - workspaceId

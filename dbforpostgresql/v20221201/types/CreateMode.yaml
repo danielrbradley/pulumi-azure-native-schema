@@ -1,0 +1,10 @@
+$token: azure-native:dbforpostgresql/v20221201:CreateMode
+description: The mode to create a new PostgreSQL server.
+type: string
+enum:
+  - value: Default
+  - value: Create
+  - value: Update
+  - value: PointInTimeRestore
+  - value: GeoRestore
+  - value: Replica

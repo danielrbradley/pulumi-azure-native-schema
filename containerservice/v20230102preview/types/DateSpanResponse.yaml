@@ -1,0 +1,13 @@
+$token: azure-native:containerservice/v20230102preview:DateSpanResponse
+description: For example, between '2022-12-23' and '2023-01-05'.
+properties:
+  end:
+    type: string
+    description: The end date of the date span.
+  start:
+    type: string
+    description: The start date of the date span.
+type: object
+required:
+  - end
+  - start

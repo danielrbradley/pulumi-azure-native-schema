@@ -1,0 +1,13 @@
+$token: azure-native:containerservice/v20230301:ManagedClusterAzureMonitorProfileMetricsResponse
+description: Metrics profile for the Azure Monitor managed service for Prometheus addon. Collect out-of-the-box Kubernetes infrastructure metrics to send to an Azure Monitor Workspace and configure additional scraping for custom targets. See aka.ms/AzureManagedPrometheus for an overview.
+properties:
+  enabled:
+    type: boolean
+    description: Whether to enable or disable the Azure Managed Prometheus addon for Prometheus monitoring. See aka.ms/AzureManagedPrometheus-aks-enable for details on enabling and disabling.
+  kubeStateMetrics:
+    type: object
+    $ref: "#/types/azure-native:containerservice/v20230301:ManagedClusterAzureMonitorProfileKubeStateMetricsResponse"
+    description: Kube State Metrics profile for the Azure Managed Prometheus addon. These optional settings are for the kube-state-metrics pod that is deployed with the addon. See aka.ms/AzureManagedPrometheus-optional-parameters for details.
+type: object
+required:
+  - enabled

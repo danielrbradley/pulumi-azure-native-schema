@@ -1,0 +1,16 @@
+$token: azure-native:machinelearningservices/v20230401:NlpVerticalLimitSettingsResponse
+description: Job execution constraints.
+properties:
+  maxConcurrentTrials:
+    type: integer
+    description: Maximum Concurrent AutoML iterations.
+    default: 1
+  maxTrials:
+    type: integer
+    description: Number of AutoML iterations.
+    default: 1
+  timeout:
+    type: string
+    description: AutoML job timeout.
+    default: P7D
+type: object

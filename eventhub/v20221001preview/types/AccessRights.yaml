@@ -1,0 +1,6 @@
+$token: azure-native:eventhub/v20221001preview:AccessRights
+type: string
+enum:
+  - value: Manage
+  - value: Send
+  - value: Listen

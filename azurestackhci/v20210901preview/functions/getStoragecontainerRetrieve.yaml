@@ -1,0 +1,70 @@
+$token: azure-native:azurestackhci/v20210901preview:getStoragecontainerRetrieve
+description: Gets storagecontainers by resource name
+inputs:
+  properties:
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    storagecontainersName:
+      type: string
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - storagecontainersName
+outputs:
+  description: The storage container resource definition.
+  properties:
+    availableSizeMB:
+      type: number
+      description: Amount of space available on the disk in MB
+    containerSizeMB:
+      type: number
+      description: Total size of the disk in MB
+    extendedLocation:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:StoragecontainersResponseExtendedLocation"
+    id:
+      type: string
+      description: Resource Id
+    location:
+      type: string
+      description: The resource location
+    name:
+      type: string
+      description: Resource Name
+    path:
+      type: string
+      description: Path of the storage container on the disk
+    provisioningState:
+      type: string
+    resourceName:
+      type: string
+      description: name of the object to be used in moc
+    status:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:StorageContainerStatusResponse"
+      description: storageContainerStatus defines the observed state of storagecontainers
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:SystemDataResponse"
+      description: Metadata pertaining to creation and last modification of the resource.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags
+    type:
+      type: string
+      description: Resource Type
+  type: object
+  required:
+    - availableSizeMB
+    - containerSizeMB
+    - id
+    - location
+    - name
+    - status
+    - systemData
+    - type

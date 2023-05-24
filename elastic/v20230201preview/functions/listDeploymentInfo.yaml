@@ -1,0 +1,46 @@
+$token: azure-native:elastic/v20230201preview:listDeploymentInfo
+description: The properties of deployment in Elastic cloud corresponding to the Elastic monitor resource.
+inputs:
+  properties:
+    monitorName:
+      type: string
+      description: Monitor resource name
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group to which the Elastic resource belongs.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - monitorName
+    - resourceGroupName
+outputs:
+  description: The properties of deployment in Elastic cloud corresponding to the Elastic monitor resource.
+  properties:
+    deploymentUrl:
+      type: string
+      description: Deployment URL of the elasticsearch in Elastic cloud deployment.
+    diskCapacity:
+      type: string
+      description: Disk capacity of the elasticsearch in Elastic cloud deployment.
+    marketplaceSaasInfo:
+      type: object
+      $ref: "#/types/azure-native:elastic/v20230201preview:MarketplaceSaaSInfoResponse"
+      description: Marketplace SaaS Info of the resource.
+    memoryCapacity:
+      type: string
+      description: RAM capacity of the elasticsearch in Elastic cloud deployment.
+    status:
+      type: string
+      description: The Elastic deployment status.
+    version:
+      type: string
+      description: Version of the elasticsearch in Elastic cloud deployment.
+  type: object
+  required:
+    - deploymentUrl
+    - diskCapacity
+    - marketplaceSaasInfo
+    - memoryCapacity
+    - status
+    - version

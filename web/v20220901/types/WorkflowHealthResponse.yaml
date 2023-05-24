@@ -1,0 +1,13 @@
+$token: azure-native:web/v20220901:WorkflowHealthResponse
+description: Represents the workflow health.
+properties:
+  error:
+    type: object
+    $ref: "#/types/azure-native:web/v20220901:ErrorEntityResponse"
+    description: Gets or sets the workflow error.
+  state:
+    type: string
+    description: Gets or sets the workflow health state.
+type: object
+required:
+  - state

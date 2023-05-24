@@ -1,0 +1,20 @@
+$token: azure-native:netapp/v20220901:VolumePropertiesResponseDataProtection
+description: DataProtection type volumes include an object containing details of the replication
+properties:
+  backup:
+    type: object
+    $ref: "#/types/azure-native:netapp/v20220901:VolumeBackupPropertiesResponse"
+    description: Backup Properties
+  replication:
+    type: object
+    $ref: "#/types/azure-native:netapp/v20220901:ReplicationObjectResponse"
+    description: Replication properties
+  snapshot:
+    type: object
+    $ref: "#/types/azure-native:netapp/v20220901:VolumeSnapshotPropertiesResponse"
+    description: Snapshot properties.
+  volumeRelocation:
+    type: object
+    $ref: "#/types/azure-native:netapp/v20220901:VolumeRelocationPropertiesResponse"
+    description: VolumeRelocation properties
+type: object

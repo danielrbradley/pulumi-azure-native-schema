@@ -1,0 +1,20 @@
+$token: azure-native:containerservice/v20230201:ManagedClusterSecurityProfileResponse
+description: Security profile for the container service cluster.
+properties:
+  azureKeyVaultKms:
+    type: object
+    $ref: "#/types/azure-native:containerservice/v20230201:AzureKeyVaultKmsResponse"
+    description: Azure Key Vault [key management service](https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/) settings for the security profile.
+  defender:
+    type: object
+    $ref: "#/types/azure-native:containerservice/v20230201:ManagedClusterSecurityProfileDefenderResponse"
+    description: Microsoft Defender settings for the security profile.
+  imageCleaner:
+    type: object
+    $ref: "#/types/azure-native:containerservice/v20230201:ManagedClusterSecurityProfileImageCleanerResponse"
+    description: Image Cleaner settings for the security profile.
+  workloadIdentity:
+    type: object
+    $ref: "#/types/azure-native:containerservice/v20230201:ManagedClusterSecurityProfileWorkloadIdentityResponse"
+    description: Workload identity settings for the security profile. Workload identity enables Kubernetes applications to access Azure cloud resources securely with Azure AD. See https://aka.ms/aks/wi for more details.
+type: object

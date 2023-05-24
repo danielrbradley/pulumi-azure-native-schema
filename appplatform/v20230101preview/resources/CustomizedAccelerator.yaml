@@ -1,0 +1,59 @@
+$token: azure-native:appplatform/v20230101preview:CustomizedAccelerator
+description: Customized accelerator resource
+properties:
+  name:
+    type: string
+    description: The name of the resource.
+  properties:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230101preview:CustomizedAcceleratorPropertiesResponse"
+    description: Customized accelerator properties payload
+  sku:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230101preview:SkuResponse"
+    description: Sku of the customized accelerator resource
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230101preview:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  type:
+    type: string
+    description: The type of the resource.
+type: object
+required:
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  applicationAcceleratorName:
+    type: string
+    description: The name of the application accelerator.
+    willReplaceOnChanges: true
+  customizedAcceleratorName:
+    type: string
+    description: The name of the customized accelerator.
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230101preview:CustomizedAcceleratorProperties"
+    description: Customized accelerator properties payload
+  resourceGroupName:
+    type: string
+    description: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+    willReplaceOnChanges: true
+  serviceName:
+    type: string
+    description: The name of the Service resource.
+    willReplaceOnChanges: true
+  sku:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230101preview:Sku"
+    description: Sku of the customized accelerator resource
+requiredInputs:
+  - applicationAcceleratorName
+  - resourceGroupName
+  - serviceName
+aliases:
+  - type: azure-native:appplatform/v20221101preview:CustomizedAccelerator
+  - type: azure-native:appplatform/v20230301preview:CustomizedAccelerator

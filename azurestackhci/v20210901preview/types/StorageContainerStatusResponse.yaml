@@ -1,0 +1,20 @@
+$token: azure-native:azurestackhci/v20210901preview:StorageContainerStatusResponse
+description: storageContainerStatus defines the observed state of storagecontainers
+properties:
+  availableSizeMB:
+    type: number
+    description: Amount of space available on the disk in MB
+  containerSizeMB:
+    type: number
+    description: Total size of the disk in MB
+  errorCode:
+    type: string
+    description: StorageContainer provisioning error code
+  errorMessage:
+    type: string
+    description: Descriptive error message
+  provisioningStatus:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:StorageContainerStatusResponseProvisioningStatus"
+    description: The provisioning status of the storage container
+type: object

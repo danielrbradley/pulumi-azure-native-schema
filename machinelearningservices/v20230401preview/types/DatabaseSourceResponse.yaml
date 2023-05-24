@@ -1,0 +1,30 @@
+$token: azure-native:machinelearningservices/v20230401preview:DatabaseSourceResponse
+properties:
+  connection:
+    type: string
+    description: Workspace connection for data import source storage
+  query:
+    type: string
+    description: SQL Query statement for data import Database source
+  sourceType:
+    type: string
+    description: |-
+      Enum to determine the type of data.
+      Expected value is 'database'.
+    const: database
+  storedProcedure:
+    type: string
+    description: SQL StoredProcedure on data import Database source
+  storedProcedureParams:
+    type: array
+    items:
+      type: object
+      additionalProperties:
+        type: string
+    description: SQL StoredProcedure parameters
+  tableName:
+    type: string
+    description: Name of the table on data import Database source
+type: object
+required:
+  - sourceType

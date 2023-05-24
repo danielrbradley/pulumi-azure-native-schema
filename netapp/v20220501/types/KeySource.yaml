@@ -1,0 +1,8 @@
+$token: azure-native:netapp/v20220501:KeySource
+description: "The encryption keySource (provider). Possible values (case-insensitive):  Microsoft.NetApp, Microsoft.KeyVault"
+type: string
+enum:
+  - description: Microsoft-managed key encryption
+    value: Microsoft.NetApp
+  - description: Customer-managed key encryption
+    value: Microsoft.KeyVault

@@ -1,0 +1,26 @@
+$token: azure-native:cognitiveservices/v20221201:CommitmentPlanProperties
+description: Properties of Cognitive Services account commitment plan.
+properties:
+  autoRenew:
+    type: boolean
+    description: AutoRenew commitment plan.
+  commitmentPlanGuid:
+    type: string
+    description: Commitment plan guid.
+  current:
+    type: object
+    $ref: "#/types/azure-native:cognitiveservices/v20221201:CommitmentPeriod"
+    description: Cognitive Services account commitment period.
+  hostingModel:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:cognitiveservices/v20221201:HostingModel"
+    description: Account hosting model.
+  next:
+    type: object
+    $ref: "#/types/azure-native:cognitiveservices/v20221201:CommitmentPeriod"
+    description: Cognitive Services account commitment period.
+  planType:
+    type: string
+    description: Commitment plan type.
+type: object

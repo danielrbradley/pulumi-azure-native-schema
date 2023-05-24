@@ -1,0 +1,251 @@
+$token: azure-native:networkcloud/v20221212preview:VirtualMachine
+properties:
+  adminUsername:
+    type: string
+    description: The name of the administrator to which the ssh public keys will be added into the authorized keys.
+  bareMetalMachineId:
+    type: string
+    description: The resource ID of the bare metal machine the virtual machine has landed to.
+  bootMethod:
+    type: string
+    description: Selects the boot method for the virtual machine.
+    default: UEFI
+  cloudServicesNetworkAttachment:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:NetworkAttachmentResponse"
+    description: The cloud service network that provides platform-level services for the virtual machine.
+  clusterId:
+    type: string
+    description: The resource ID of the cluster the virtual machine is created for.
+  cpuCores:
+    type: number
+    description: The number of CPU cores in the virtual machine.
+  detailedStatus:
+    type: string
+    description: The more detailed status of the virtual machine.
+  detailedStatusMessage:
+    type: string
+    description: The descriptive message about the current detailed status.
+  extendedLocation:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:ExtendedLocationResponse"
+    description: The extended location of the cluster associated with the resource.
+  isolateEmulatorThread:
+    type: string
+    description: Field Deprecated, the value will be ignored if provided. The indicator of whether one of the specified CPU cores is isolated to run the emulator thread for this virtual machine.
+    default: "True"
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  memorySizeGB:
+    type: number
+    description: The memory size of the virtual machine in GB.
+  name:
+    type: string
+    description: The name of the resource
+  networkAttachments:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:NetworkAttachmentResponse"
+    description: The list of network attachments to the virtual machine.
+  networkData:
+    type: string
+    description: The Base64 encoded cloud-init network data.
+  placementHints:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:VirtualMachinePlacementHintResponse"
+    description: The scheduling hints for the virtual machine.
+  powerState:
+    type: string
+    description: The power state of the virtual machine.
+  provisioningState:
+    type: string
+    description: The provisioning state of the virtual machine.
+  sshPublicKeys:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:SshPublicKeyResponse"
+    description: The list of ssh public keys. Each key will be added to the virtual machine using the cloud-init ssh_authorized_keys mechanism for the adminUsername.
+  storageProfile:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:StorageProfileResponse"
+    description: The storage profile that specifies size and other parameters about the disks related to the virtual machine.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  userData:
+    type: string
+    description: The Base64 encoded cloud-init user data.
+  virtioInterface:
+    type: string
+    description: Field Deprecated, use virtualizationModel instead. The type of the virtio interface.
+    default: Modern
+  vmDeviceModel:
+    type: string
+    description: The type of the device model to use.
+    default: T2
+  vmImage:
+    type: string
+    description: The virtual machine image that is currently provisioned to the OS disk, using the full url and tag notation used to pull the image.
+  vmImageRepositoryCredentials:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:ImageRepositoryCredentialsResponse"
+    description: The credentials used to login to the image repository that has access to the specified image.
+  volumes:
+    type: array
+    items:
+      type: string
+    description: The resource IDs of volumes that are attached to the virtual machine.
+type: object
+required:
+  - adminUsername
+  - bareMetalMachineId
+  - cloudServicesNetworkAttachment
+  - clusterId
+  - cpuCores
+  - detailedStatus
+  - detailedStatusMessage
+  - extendedLocation
+  - location
+  - memorySizeGB
+  - name
+  - powerState
+  - provisioningState
+  - storageProfile
+  - systemData
+  - type
+  - vmImage
+  - volumes
+inputProperties:
+  adminUsername:
+    type: string
+    description: The name of the administrator to which the ssh public keys will be added into the authorized keys.
+    willReplaceOnChanges: true
+  bootMethod:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:networkcloud/v20221212preview:VirtualMachineBootMethod"
+    description: Selects the boot method for the virtual machine.
+    default: UEFI
+    willReplaceOnChanges: true
+  cloudServicesNetworkAttachment:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:NetworkAttachment"
+    description: The cloud service network that provides platform-level services for the virtual machine.
+    willReplaceOnChanges: true
+  cpuCores:
+    type: number
+    description: The number of CPU cores in the virtual machine.
+    willReplaceOnChanges: true
+  extendedLocation:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:ExtendedLocation"
+    description: The extended location of the cluster associated with the resource.
+  isolateEmulatorThread:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:networkcloud/v20221212preview:VirtualMachineIsolateEmulatorThread"
+    description: Field Deprecated, the value will be ignored if provided. The indicator of whether one of the specified CPU cores is isolated to run the emulator thread for this virtual machine.
+    default: "True"
+    willReplaceOnChanges: true
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  memorySizeGB:
+    type: number
+    description: The memory size of the virtual machine in GB.
+    willReplaceOnChanges: true
+  networkAttachments:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:NetworkAttachment"
+    description: The list of network attachments to the virtual machine.
+    willReplaceOnChanges: true
+  networkData:
+    type: string
+    description: The Base64 encoded cloud-init network data.
+    willReplaceOnChanges: true
+  placementHints:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:VirtualMachinePlacementHint"
+    description: The scheduling hints for the virtual machine.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  sshPublicKeys:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:SshPublicKey"
+    description: The list of ssh public keys. Each key will be added to the virtual machine using the cloud-init ssh_authorized_keys mechanism for the adminUsername.
+    willReplaceOnChanges: true
+  storageProfile:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:StorageProfile"
+    description: The storage profile that specifies size and other parameters about the disks related to the virtual machine.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  userData:
+    type: string
+    description: The Base64 encoded cloud-init user data.
+    willReplaceOnChanges: true
+  virtioInterface:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:networkcloud/v20221212preview:VirtualMachineVirtioInterfaceType"
+    description: Field Deprecated, use virtualizationModel instead. The type of the virtio interface.
+    default: Modern
+    willReplaceOnChanges: true
+  virtualMachineName:
+    type: string
+    description: The name of the virtual machine.
+    willReplaceOnChanges: true
+  vmDeviceModel:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:networkcloud/v20221212preview:VirtualMachineDeviceModelType"
+    description: The type of the device model to use.
+    default: T2
+    willReplaceOnChanges: true
+  vmImage:
+    type: string
+    description: The virtual machine image that is currently provisioned to the OS disk, using the full url and tag notation used to pull the image.
+    willReplaceOnChanges: true
+  vmImageRepositoryCredentials:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:ImageRepositoryCredentials"
+    description: The credentials used to login to the image repository that has access to the specified image.
+requiredInputs:
+  - adminUsername
+  - cloudServicesNetworkAttachment
+  - cpuCores
+  - extendedLocation
+  - memorySizeGB
+  - resourceGroupName
+  - storageProfile
+  - vmImage
+aliases:
+  - type: azure-native:networkcloud:VirtualMachine

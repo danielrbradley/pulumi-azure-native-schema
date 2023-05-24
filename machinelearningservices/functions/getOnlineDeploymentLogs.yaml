@@ -1,0 +1,43 @@
+$token: azure-native:machinelearningservices:getOnlineDeploymentLogs
+description: |-
+  
+  API Version: 2022-10-01.
+inputs:
+  properties:
+    containerType:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:machinelearningservices:ContainerType"
+      description: The type of container to retrieve logs from.
+      default: InferenceServer
+    deploymentName:
+      type: string
+      description: The name and identifier for the endpoint.
+      willReplaceOnChanges: true
+    endpointName:
+      type: string
+      description: Inference endpoint name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    tail:
+      type: integer
+      description: The maximum number of lines to tail.
+    workspaceName:
+      type: string
+      description: Name of Azure Machine Learning workspace.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - deploymentName
+    - endpointName
+    - resourceGroupName
+    - workspaceName
+outputs:
+  properties:
+    content:
+      type: string
+      description: The retrieved online deployment logs.
+  type: object

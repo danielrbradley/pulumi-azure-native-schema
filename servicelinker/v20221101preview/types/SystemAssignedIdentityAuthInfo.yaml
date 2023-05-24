@@ -1,0 +1,25 @@
+$token: azure-native:servicelinker/v20221101preview:SystemAssignedIdentityAuthInfo
+description: The authentication info when authType is systemAssignedIdentity
+properties:
+  authType:
+    type: string
+    description: |-
+      The authentication type.
+      Expected value is 'systemAssignedIdentity'.
+    const: systemAssignedIdentity
+  deleteOrUpdateBehavior:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:servicelinker/v20221101preview:DeleteOrUpdateBehavior"
+    description: Indicates whether to clean up previous operation when Linker is updating or deleting
+  roles:
+    type: array
+    items:
+      type: string
+    description: Optional, this value specifies the Azure role to be assigned
+  userName:
+    type: string
+    description: Username created in the database which is mapped to a user in AAD.
+type: object
+required:
+  - authType

@@ -1,0 +1,15 @@
+$token: azure-native:managednetworkfabric/v20230201preview:NetworkFabricPropertiesResponseManagementNetworkConfiguration
+description: Configuration to be used to setup the management network.
+properties:
+  infrastructureVpnConfiguration:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:NetworkFabricPropertiesResponseInfrastructureVpnConfiguration"
+    description: Configuration for infrastructure vpn.
+  workloadVpnConfiguration:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:NetworkFabricPropertiesResponseWorkloadVpnConfiguration"
+    description: Configuration for workload vpn.
+type: object
+required:
+  - infrastructureVpnConfiguration
+  - workloadVpnConfiguration

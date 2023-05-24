@@ -1,0 +1,10 @@
+$token: azure-native:network:ApplicationGatewayCustomErrorResponse
+description: Custom error of an application gateway.
+properties:
+  customErrorPageUrl:
+    type: string
+    description: Error page URL of the application gateway custom error.
+  statusCode:
+    type: string
+    description: Status code of the application gateway custom error.
+type: object

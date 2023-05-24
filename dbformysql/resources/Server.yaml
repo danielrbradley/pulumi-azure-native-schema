@@ -1,0 +1,181 @@
+$token: azure-native:dbformysql:Server
+properties:
+  administratorLogin:
+    type: string
+    description: The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).
+  availabilityZone:
+    type: string
+    description: availability Zone information of the server.
+  backup:
+    type: object
+    $ref: "#/types/azure-native:dbformysql:BackupResponse"
+    description: Backup related properties of a server.
+  dataEncryption:
+    type: object
+    $ref: "#/types/azure-native:dbformysql:DataEncryptionResponse"
+    description: The Data Encryption for CMK.
+  fullyQualifiedDomainName:
+    type: string
+    description: The fully qualified domain name of a server.
+  highAvailability:
+    type: object
+    $ref: "#/types/azure-native:dbformysql:HighAvailabilityResponse"
+    description: High availability related properties of a server.
+  identity:
+    type: object
+    $ref: "#/types/azure-native:dbformysql:IdentityResponse"
+    description: The cmk identity for the server.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  maintenanceWindow:
+    type: object
+    $ref: "#/types/azure-native:dbformysql:MaintenanceWindowResponse"
+    description: Maintenance window of a server.
+  name:
+    type: string
+    description: The name of the resource
+  network:
+    type: object
+    $ref: "#/types/azure-native:dbformysql:NetworkResponse"
+    description: Network related properties of a server.
+  replicaCapacity:
+    type: integer
+    description: The maximum number of replicas that a primary server can have.
+  replicationRole:
+    type: string
+    description: The replication role.
+  sku:
+    type: object
+    $ref: "#/types/azure-native:dbformysql:SkuResponse"
+    description: The SKU (pricing tier) of the server.
+  sourceServerResourceId:
+    type: string
+    description: The source MySQL server id.
+  state:
+    type: string
+    description: The state of a server.
+  storage:
+    type: object
+    $ref: "#/types/azure-native:dbformysql:StorageResponse"
+    description: Storage related properties of a server.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:dbformysql:SystemDataResponse"
+    description: The system metadata relating to this resource.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  version:
+    type: string
+    description: Server version.
+type: object
+required:
+  - fullyQualifiedDomainName
+  - location
+  - name
+  - replicaCapacity
+  - state
+  - systemData
+  - type
+inputProperties:
+  administratorLogin:
+    type: string
+    description: The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).
+    willReplaceOnChanges: true
+  administratorLoginPassword:
+    type: string
+    description: The password of the administrator login (required for server creation).
+  availabilityZone:
+    type: string
+    description: availability Zone information of the server.
+    willReplaceOnChanges: true
+  backup:
+    type: object
+    $ref: "#/types/azure-native:dbformysql:Backup"
+    description: Backup related properties of a server.
+  createMode:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:dbformysql:CreateMode"
+    description: The mode to create a new MySQL server.
+    willReplaceOnChanges: true
+  dataEncryption:
+    type: object
+    $ref: "#/types/azure-native:dbformysql:DataEncryption"
+    description: The Data Encryption for CMK.
+  highAvailability:
+    type: object
+    $ref: "#/types/azure-native:dbformysql:HighAvailability"
+    description: High availability related properties of a server.
+  identity:
+    type: object
+    $ref: "#/types/azure-native:dbformysql:Identity"
+    description: The cmk identity for the server.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  maintenanceWindow:
+    type: object
+    $ref: "#/types/azure-native:dbformysql:MaintenanceWindow"
+    description: Maintenance window of a server.
+  network:
+    type: object
+    $ref: "#/types/azure-native:dbformysql:Network"
+    description: Network related properties of a server.
+    willReplaceOnChanges: true
+  replicationRole:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:dbformysql:ReplicationRole"
+    description: The replication role.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  restorePointInTime:
+    type: string
+    description: Restore point creation time (ISO8601 format), specifying the time to restore from.
+    willReplaceOnChanges: true
+  serverName:
+    type: string
+    description: The name of the server.
+    willReplaceOnChanges: true
+  sku:
+    type: object
+    $ref: "#/types/azure-native:dbformysql:Sku"
+    description: The SKU (pricing tier) of the server.
+  sourceServerResourceId:
+    type: string
+    description: The source MySQL server id.
+    willReplaceOnChanges: true
+  storage:
+    type: object
+    $ref: "#/types/azure-native:dbformysql:Storage"
+    description: Storage related properties of a server.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  version:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:dbformysql:ServerVersion"
+    description: Server version.
+requiredInputs:
+  - resourceGroupName
+aliases:
+  - type: azure-native:dbformysql/v20200701preview:Server
+  - type: azure-native:dbformysql/v20200701privatepreview:Server
+  - type: azure-native:dbformysql/v20210501:Server
+  - type: azure-native:dbformysql/v20210501preview:Server
+  - type: azure-native:dbformysql/v20211201preview:Server
+  - type: azure-native:dbformysql/v20220101:Server
+  - type: azure-native:dbformysql/v20220930preview:Server

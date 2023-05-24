@@ -1,0 +1,124 @@
+$token: azure-native:networkcloud/v20221212preview:CloudServicesNetwork
+description: |-
+  Upon creation, the additional services that are provided by the platform will be allocated and
+  represented in the status of this resource. All resources associated with this cloud services network will be part
+  of the same layer 2 (L2) isolation domain. At least one service network must be created but may be reused across many
+  virtual machines and/or Hybrid AKS clusters.
+properties:
+  additionalEgressEndpoints:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:EgressEndpointResponse"
+    description: The list of egress endpoints. This allows for connection from a Hybrid AKS cluster to the specified endpoint.
+  clusterId:
+    type: string
+    description: The resource ID of the Network Cloud cluster this cloud services network is associated with.
+  detailedStatus:
+    type: string
+    description: The more detailed status of the cloud services network.
+  detailedStatusMessage:
+    type: string
+    description: The descriptive message about the current detailed status.
+  enableDefaultEgressEndpoints:
+    type: string
+    description: The indicator of whether the platform default endpoints are allowed for the egress traffic.
+    default: "True"
+  enabledEgressEndpoints:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:EgressEndpointResponse"
+    description: The full list of additional and default egress endpoints that are currently enabled.
+  extendedLocation:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:ExtendedLocationResponse"
+    description: The extended location of the cluster associated with the resource.
+  hybridAksClustersAssociatedIds:
+    type: array
+    items:
+      type: string
+    description: The list of Hybrid AKS cluster resource IDs that are associated with this cloud services network.
+  interfaceName:
+    type: string
+    description: The name of the interface that will be present in the virtual machine to represent this network.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: The provisioning state of the cloud services network.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  virtualMachinesAssociatedIds:
+    type: array
+    items:
+      type: string
+    description: The list of virtual machine resource IDs, excluding any Hybrid AKS virtual machines, that are currently using this cloud services network.
+type: object
+required:
+  - clusterId
+  - detailedStatus
+  - detailedStatusMessage
+  - enabledEgressEndpoints
+  - extendedLocation
+  - hybridAksClustersAssociatedIds
+  - interfaceName
+  - location
+  - name
+  - provisioningState
+  - systemData
+  - type
+  - virtualMachinesAssociatedIds
+inputProperties:
+  additionalEgressEndpoints:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:EgressEndpoint"
+    description: The list of egress endpoints. This allows for connection from a Hybrid AKS cluster to the specified endpoint.
+  cloudServicesNetworkName:
+    type: string
+    description: The name of the cloud services network.
+    willReplaceOnChanges: true
+  enableDefaultEgressEndpoints:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:networkcloud/v20221212preview:CloudServicesNetworkEnableDefaultEgressEndpoints"
+    description: The indicator of whether the platform default endpoints are allowed for the egress traffic.
+    default: "True"
+  extendedLocation:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:ExtendedLocation"
+    description: The extended location of the cluster associated with the resource.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+requiredInputs:
+  - extendedLocation
+  - resourceGroupName
+aliases:
+  - type: azure-native:networkcloud:CloudServicesNetwork

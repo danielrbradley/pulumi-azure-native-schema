@@ -1,0 +1,12 @@
+$token: azure-native:storagecache/v20230501:AmlFilesystemIdentity
+description: Managed Identity properties.
+properties:
+  type:
+    $ref: "#/types/azure-native:storagecache/v20230501:AmlFilesystemIdentityType"
+    description: The type of identity used for the resource.
+  userAssignedIdentities:
+    type: array
+    items:
+      type: string
+    description: A dictionary where each key is a user assigned identity resource ID, and each key's value is an empty dictionary.
+type: object

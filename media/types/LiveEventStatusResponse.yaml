@@ -1,0 +1,28 @@
+$token: azure-native:media:LiveEventStatusResponse
+description: The live event status.
+properties:
+  healthDescriptions:
+    type: array
+    items:
+      type: string
+    description: List of strings justifying the health status.
+  healthStatus:
+    type: string
+    description: Health status of last 20 seconds.
+  ingestion:
+    type: object
+    $ref: "#/types/azure-native:media:LiveEventIngestionResponse"
+    description: Live event ingestion entry.
+  lastUpdatedTime:
+    type: string
+    description: Last updated UTC time of this status.
+  state:
+    type: string
+    description: Current state of the live event. See https://go.microsoft.com/fwlink/?linkid=2139012 for more information.
+  trackStatus:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:media:LiveEventTrackStatusResponse"
+    description: Track entry list.
+type: object

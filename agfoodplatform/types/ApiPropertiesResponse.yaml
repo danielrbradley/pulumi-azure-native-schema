@@ -1,0 +1,7 @@
+$token: azure-native:agfoodplatform:ApiPropertiesResponse
+description: Api properties.
+properties:
+  apiFreshnessTimeInMinutes:
+    type: integer
+    description: Interval in minutes for which the weather data for the api needs to be refreshed.
+type: object

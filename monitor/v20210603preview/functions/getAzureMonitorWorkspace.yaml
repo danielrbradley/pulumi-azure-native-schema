@@ -1,0 +1,69 @@
+$token: azure-native:monitor/v20210603preview:getAzureMonitorWorkspace
+description: Returns the specific Azure Monitor workspace
+inputs:
+  properties:
+    azureMonitorWorkspaceName:
+      type: string
+      description: The name of the Azure Monitor workspace.  The name is case insensitive
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - azureMonitorWorkspaceName
+    - resourceGroupName
+outputs:
+  description: An Azure Monitor Workspace definition
+  properties:
+    accountId:
+      type: string
+      description: The immutable ID of the Azure Monitor workspace. This property is read-only.
+    defaultIngestionSettings:
+      type: object
+      $ref: "#/types/azure-native:monitor/v20210603preview:AzureMonitorWorkspaceResponseDefaultIngestionSettings"
+      description: The Data Collection Rule and Endpoint used for ingestion by default.
+    etag:
+      type: string
+      description: Resource entity tag (ETag)
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    metrics:
+      type: object
+      $ref: "#/types/azure-native:monitor/v20210603preview:AzureMonitorWorkspaceResponseMetrics"
+      description: Information about metrics for the Azure Monitor workspace
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+      description: The provisioning state of the Azure Monitor workspace. Set to Succeeded if everything is healthy.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:monitor/v20210603preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - accountId
+    - defaultIngestionSettings
+    - etag
+    - id
+    - location
+    - metrics
+    - name
+    - provisioningState
+    - systemData
+    - type

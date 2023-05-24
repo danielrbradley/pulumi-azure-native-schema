@@ -1,0 +1,20 @@
+$token: azure-native:containerservice/v20230202preview:GuardrailsProfile
+description: The Guardrails profile.
+properties:
+  excludedNamespaces:
+    type: array
+    items:
+      type: string
+    description: List of namespaces excluded from guardrails checks
+  level:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:containerservice/v20230202preview:Level"
+    description: The guardrails level to be used. By default, Guardrails is enabled for all namespaces except those that AKS excludes via systemExcludedNamespaces
+  version:
+    type: string
+    description: The version of constraints to use
+type: object
+required:
+  - level
+  - version

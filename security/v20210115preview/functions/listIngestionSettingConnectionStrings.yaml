@@ -1,0 +1,23 @@
+$token: azure-native:security/v20210115preview:listIngestionSettingConnectionStrings
+description: Connection strings for ingesting security scan logs and data.
+inputs:
+  properties:
+    ingestionSettingName:
+      type: string
+      description: Name of the ingestion setting
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - ingestionSettingName
+outputs:
+  description: Connection string for ingesting security data and logs
+  properties:
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:security/v20210115preview:IngestionConnectionStringResponse"
+      description: Connection strings
+  type: object
+  required:
+    - value

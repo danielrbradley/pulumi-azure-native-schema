@@ -1,0 +1,29 @@
+$token: azure-native:storagecache:AmlFilesystemArchiveResponseStatus
+description: The status of the archive
+properties:
+  errorCode:
+    type: string
+    description: Server-defined error code for the archive operation
+  errorMessage:
+    type: string
+    description: Server-defined error message for the archive operation
+  lastCompletionTime:
+    type: string
+    description: The time of the last completed archive operation
+  lastStartedTime:
+    type: string
+    description: The time the latest archive operation started
+  percentComplete:
+    type: integer
+    description: The completion percentage of the archive operation
+  state:
+    type: string
+    description: The state of the archive operation
+type: object
+required:
+  - errorCode
+  - errorMessage
+  - lastCompletionTime
+  - lastStartedTime
+  - percentComplete
+  - state

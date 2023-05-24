@@ -1,0 +1,15 @@
+$token: azure-native:azuresphere/v20220901preview:Image
+description: An image resource belonging to a catalog resource.
+properties:
+  image:
+    type: string
+    description: Image as a UTF-8 encoded base 64 string on image create. This field contains the image URI on image reads.
+  imageId:
+    type: string
+    description: Image ID
+  regionalDataBoundary:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:azuresphere/v20220901preview:RegionalDataBoundary"
+    description: Regional data boundary for an image
+type: object

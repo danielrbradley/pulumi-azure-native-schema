@@ -1,0 +1,47 @@
+$token: azure-native:apimanagement/v20220901preview:getProductGroupLink
+description: Gets the group link for the product.
+inputs:
+  properties:
+    groupLinkId:
+      type: string
+      description: Product-Group link identifier. Must be unique in the current API Management service instance.
+      willReplaceOnChanges: true
+    productId:
+      type: string
+      description: Product identifier. Must be unique in the current API Management service instance.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    serviceName:
+      type: string
+      description: The name of the API Management service.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - groupLinkId
+    - productId
+    - resourceGroupName
+    - serviceName
+outputs:
+  description: Product-group link details.
+  properties:
+    groupId:
+      type: string
+      description: Full resource Id of a group.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - groupId
+    - id
+    - name
+    - type

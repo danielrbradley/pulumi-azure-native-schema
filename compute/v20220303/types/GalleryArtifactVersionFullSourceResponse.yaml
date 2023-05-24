@@ -1,0 +1,10 @@
+$token: azure-native:compute/v20220303:GalleryArtifactVersionFullSourceResponse
+description: The source of the gallery artifact version.
+properties:
+  communityGalleryImageId:
+    type: string
+    description: The resource Id of the source Community Gallery Image.  Only required when using Community Gallery Image as a source.
+  id:
+    type: string
+    description: The id of the gallery artifact version source. Can specify a disk uri, snapshot uri, user image or storage account resource.
+type: object

@@ -1,0 +1,17 @@
+$token: azure-native:web/v20220901:StaticSiteDatabaseConnectionConfigurationFileOverviewResponse
+description: A database connection configuration file
+properties:
+  contents:
+    type: string
+    description: The Base64 encoding of the file contents.
+  fileName:
+    type: string
+    description: The name of the configuration file.
+  type:
+    type: string
+    description: The type of configuration file.
+type: object
+required:
+  - contents
+  - fileName
+  - type

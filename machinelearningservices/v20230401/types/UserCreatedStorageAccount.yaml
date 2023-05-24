@@ -1,0 +1,7 @@
+$token: azure-native:machinelearningservices/v20230401:UserCreatedStorageAccount
+properties:
+  armResourceId:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401:ArmResourceId"
+    description: ARM ResourceId of a resource
+type: object

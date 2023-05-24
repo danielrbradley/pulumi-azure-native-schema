@@ -1,0 +1,6 @@
+$token: azure-native:workloads/v20230401:SAPHighAvailabilityType
+description: The high availability type.
+type: string
+enum:
+  - value: AvailabilitySet
+  - value: AvailabilityZone

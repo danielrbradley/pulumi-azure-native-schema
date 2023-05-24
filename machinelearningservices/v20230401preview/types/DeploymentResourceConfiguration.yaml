@@ -1,0 +1,25 @@
+$token: azure-native:machinelearningservices/v20230401preview:DeploymentResourceConfiguration
+properties:
+  instanceCount:
+    type: integer
+    description: Optional number of instances or nodes used by the compute target.
+    default: 1
+  instanceType:
+    type: string
+    description: Optional type of VM used as supported by the compute target.
+  locations:
+    type: array
+    items:
+      type: string
+    description: Locations where the job can run.
+  maxInstanceCount:
+    type: integer
+    description: "Optional max allowed number of instances or nodes to be used by the compute target.\r
+
+      For use with elastic training, currently supported by PyTorch distribution type only."
+  properties:
+    type: object
+    additionalProperties:
+      $ref: pulumi.json#/Any
+    description: Additional properties bag.
+type: object

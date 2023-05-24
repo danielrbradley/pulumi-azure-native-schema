@@ -1,0 +1,6 @@
+$token: azure-native:sqlvirtualmachine:Commit
+description: Replica commit mode in availability group.
+type: string
+enum:
+  - value: Synchronous_Commit
+  - value: Asynchronous_Commit

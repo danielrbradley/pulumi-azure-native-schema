@@ -1,0 +1,12 @@
+$token: azure-native:costmanagement/v20221001:ExportExecutionListResultResponse
+description: Result of listing the run history of an export.
+properties:
+  value:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:costmanagement/v20221001:ExportRunResponse"
+    description: A list of export runs.
+type: object
+required:
+  - value

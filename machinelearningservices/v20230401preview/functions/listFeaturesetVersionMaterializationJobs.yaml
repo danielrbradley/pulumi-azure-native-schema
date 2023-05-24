@@ -1,0 +1,51 @@
+$token: azure-native:machinelearningservices/v20230401preview:listFeaturesetVersionMaterializationJobs
+description: A paginated list of FeaturesetJob entities.
+inputs:
+  properties:
+    featureWindowEnd:
+      type: string
+      description: End time of the feature window to filter materialization jobs.
+    featureWindowStart:
+      type: string
+      description: Start time of the feature window to filter materialization jobs.
+    filters:
+      type: string
+      description: "Comma-separated list of tag names (and optionally values). Example: tag1,tag2=value2"
+    name:
+      type: string
+      description: Container name. This is case-sensitive.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    skip:
+      type: string
+      description: Continuation token for pagination.
+    version:
+      type: string
+      description: Version identifier. This is case-sensitive.
+      willReplaceOnChanges: true
+    workspaceName:
+      type: string
+      description: Name of Azure Machine Learning workspace.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - name
+    - resourceGroupName
+    - version
+    - workspaceName
+outputs:
+  description: A paginated list of FeaturesetJob entities.
+  properties:
+    nextLink:
+      type: string
+      description: The link to the next page of FeaturesetJob objects. If null, there are no additional pages.
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:FeaturesetJobResponse"
+      description: An array of objects of type FeaturesetJob.
+  type: object

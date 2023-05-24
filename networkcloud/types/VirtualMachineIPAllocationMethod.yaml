@@ -1,0 +1,10 @@
+$token: azure-native:networkcloud:VirtualMachineIPAllocationMethod
+description: |-
+  The IP allocation mechanism for the virtual machine.
+  Dynamic and Static are only valid for l3Network which may also specify Disabled.
+  Otherwise, Disabled is the only permitted value.
+type: string
+enum:
+  - value: Dynamic
+  - value: Static
+  - value: Disabled

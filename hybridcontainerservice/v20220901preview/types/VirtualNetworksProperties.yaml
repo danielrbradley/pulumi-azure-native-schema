@@ -1,0 +1,30 @@
+$token: azure-native:hybridcontainerservice/v20220901preview:VirtualNetworksProperties
+description: HybridAKSNetworkSpec defines the desired state of HybridAKSNetwork
+properties:
+  dnsServers:
+    type: array
+    items:
+      type: string
+    description: Address of the DNS servers associated with the network
+  gateway:
+    type: string
+    description: Address of the Gateway associated with the network
+  infraVnetProfile:
+    type: object
+    $ref: "#/types/azure-native:hybridcontainerservice/v20220901preview:VirtualNetworksPropertiesInfraVnetProfile"
+  ipAddressPrefix:
+    type: string
+    description: IP Address Prefix of the network
+  vipPool:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:hybridcontainerservice/v20220901preview:VirtualNetworksPropertiesVipPool"
+    description: Virtual IP Pool for Kubernetes
+  vmipPool:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:hybridcontainerservice/v20220901preview:VirtualNetworksPropertiesVmipPool"
+    description: IP Pool for Virtual Machines
+type: object

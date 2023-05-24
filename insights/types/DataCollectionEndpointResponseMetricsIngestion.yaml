@@ -1,0 +1,9 @@
+$token: azure-native:insights:DataCollectionEndpointResponseMetricsIngestion
+description: The endpoint used by clients to ingest metrics.
+properties:
+  endpoint:
+    type: string
+    description: The endpoint. This property is READ-ONLY.
+type: object
+required:
+  - endpoint

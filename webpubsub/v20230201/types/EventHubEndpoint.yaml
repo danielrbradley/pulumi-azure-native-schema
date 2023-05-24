@@ -1,0 +1,22 @@
+$token: azure-native:webpubsub/v20230201:EventHubEndpoint
+description: "An Event Hub endpoint. \r
+
+  The managed identity of Web PubSub service must be enabled, and the identity should have the \"Azure Event Hubs Data sender\" role to access Event Hub."
+properties:
+  eventHubName:
+    type: string
+    description: The name of the Event Hub.
+  fullyQualifiedNamespace:
+    type: string
+    description: The fully qualified namespace name of the Event Hub resource. For example, "example.servicebus.windows.net".
+  type:
+    type: string
+    description: |-
+      
+      Expected value is 'EventHub'.
+    const: EventHub
+type: object
+required:
+  - eventHubName
+  - fullyQualifiedNamespace
+  - type

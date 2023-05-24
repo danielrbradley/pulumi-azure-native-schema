@@ -1,0 +1,21 @@
+$token: azure-native:appplatform/v20230301preview:ApplicationLiveViewComponentResponse
+description: Application Live View properties payload
+properties:
+  instances:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:appplatform/v20230301preview:ApplicationLiveViewInstanceResponse"
+    description: Collection of instances belong to Application Live View.
+  name:
+    $ref: pulumi.json#/Any
+    description: Name of the component.
+  resourceRequests:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:ApplicationLiveViewResourceRequestsResponse"
+    description: The requested resource quantity for required CPU and Memory.
+type: object
+required:
+  - instances
+  - name
+  - resourceRequests

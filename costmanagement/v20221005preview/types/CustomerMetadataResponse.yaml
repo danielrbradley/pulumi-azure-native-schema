@@ -1,0 +1,13 @@
+$token: azure-native:costmanagement/v20221005preview:CustomerMetadataResponse
+description: The customer billing metadata
+properties:
+  billingAccountId:
+    type: string
+    description: Customer billing account id
+  billingProfileId:
+    type: string
+    description: Customer billing profile id
+type: object
+required:
+  - billingAccountId
+  - billingProfileId

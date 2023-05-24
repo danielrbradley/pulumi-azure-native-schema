@@ -1,0 +1,33 @@
+$token: azure-native:managednetworkfabric/v20230201preview:getNetworkDeviceStatus
+description: Get the running status of the Network Device.
+inputs:
+  properties:
+    networkDeviceName:
+      type: string
+      description: Name of the NetworkDevice.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - networkDeviceName
+    - resourceGroupName
+outputs:
+  description: Get Device status response properties.
+  properties:
+    operationalStatus:
+      type: string
+      description: Primary or Secondary power end.
+    powerCycleState:
+      type: string
+      description: On or Off power cycle state.
+    serialNumber:
+      type: string
+      description: The serial number of the device
+  type: object
+  required:
+    - operationalStatus
+    - powerCycleState
+    - serialNumber

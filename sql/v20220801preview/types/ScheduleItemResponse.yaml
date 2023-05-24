@@ -1,0 +1,21 @@
+$token: azure-native:sql/v20220801preview:ScheduleItemResponse
+description: Schedule info describing when the server should be started or stopped.
+properties:
+  startDay:
+    type: string
+    description: Start day.
+  startTime:
+    type: string
+    description: Start time.
+  stopDay:
+    type: string
+    description: Stop day.
+  stopTime:
+    type: string
+    description: Stop time.
+type: object
+required:
+  - startDay
+  - startTime
+  - stopDay
+  - stopTime

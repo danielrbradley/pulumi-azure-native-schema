@@ -1,0 +1,12 @@
+$token: azure-native:appplatform/v20230301preview:ApplicationAcceleratorInstanceResponse
+properties:
+  name:
+    type: string
+    description: Name of the Application Accelerator instance.
+  status:
+    type: string
+    description: Status of the Application Accelerator instance. It can be Pending, Running, Succeeded, Failed, Unknown.
+type: object
+required:
+  - name
+  - status

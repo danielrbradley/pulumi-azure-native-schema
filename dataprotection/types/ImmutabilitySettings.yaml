@@ -1,0 +1,9 @@
+$token: azure-native:dataprotection:ImmutabilitySettings
+description: Immutability Settings at vault level
+properties:
+  state:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:dataprotection:ImmutabilityState"
+    description: Immutability state
+type: object

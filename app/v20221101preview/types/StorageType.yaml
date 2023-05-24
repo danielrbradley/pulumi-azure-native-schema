@@ -1,0 +1,7 @@
+$token: azure-native:app/v20221101preview:StorageType
+description: Storage type for the volume. If not provided, use EmptyDir.
+type: string
+enum:
+  - value: AzureFile
+  - value: EmptyDir
+  - value: Secret

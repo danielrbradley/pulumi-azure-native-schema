@@ -1,0 +1,52 @@
+$token: azure-native:agfoodplatform/v20210901preview:getSolution
+description: Get installed Solution details by Solution id.
+inputs:
+  properties:
+    farmBeatsResourceName:
+      type: string
+      description: FarmBeats resource name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    solutionId:
+      type: string
+      description: Solution Id of the solution.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - farmBeatsResourceName
+    - resourceGroupName
+    - solutionId
+outputs:
+  description: Solution resource.
+  properties:
+    eTag:
+      type: string
+      description: The ETag value to implement optimistic concurrency.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+    name:
+      type: string
+      description: The name of the resource
+    properties:
+      type: object
+      $ref: "#/types/azure-native:agfoodplatform/v20210901preview:SolutionPropertiesResponse"
+      description: Solution resource properties.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:agfoodplatform/v20210901preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - eTag
+    - id
+    - name
+    - properties
+    - systemData
+    - type

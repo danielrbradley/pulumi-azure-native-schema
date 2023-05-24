@@ -1,0 +1,37 @@
+$token: azure-native:agfoodplatform:SolutionPropertiesResponse
+description: Solution resource properties.
+properties:
+  marketplacePublisherId:
+    type: string
+    description: SaaS application Publisher Id.
+  offerId:
+    type: string
+    description: SaaS application Offer Id.
+  partnerId:
+    type: string
+    description: Partner Id of the Solution.
+  planId:
+    type: string
+    description: SaaS application Plan Id.
+  saasSubscriptionId:
+    type: string
+    description: SaaS subscriptionId of the installed SaaS application.
+  saasSubscriptionName:
+    type: string
+    description: SaaS subscription name of the installed SaaS application.
+  solutionId:
+    type: string
+    description: Solution Id.
+  termId:
+    type: string
+    description: SaaS application Term Id.
+type: object
+required:
+  - marketplacePublisherId
+  - offerId
+  - partnerId
+  - planId
+  - saasSubscriptionId
+  - saasSubscriptionName
+  - solutionId
+  - termId

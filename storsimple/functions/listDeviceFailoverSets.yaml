@@ -1,0 +1,33 @@
+$token: azure-native:storsimple:listDeviceFailoverSets
+description: |-
+  Returns all failover sets for a given device and their eligibility for participating in a failover. A failover set refers to a set of volume containers that need to be failed-over as a single unit to maintain data integrity.
+  API Version: 2017-06-01.
+inputs:
+  properties:
+    deviceName:
+      type: string
+      description: The device name
+      willReplaceOnChanges: true
+    managerName:
+      type: string
+      description: The manager name
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The resource group name
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - deviceName
+    - managerName
+    - resourceGroupName
+outputs:
+  description: The list of failover sets.
+  properties:
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:storsimple:FailoverSetResponse"
+      description: The list of failover sets.
+  type: object

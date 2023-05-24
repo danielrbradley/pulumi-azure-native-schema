@@ -1,0 +1,7 @@
+$token: azure-native:workloads/v20221101preview:DiskSkuResponse
+description: The disk sku.
+properties:
+  name:
+    type: string
+    description: Defines the disk sku name.
+type: object

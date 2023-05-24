@@ -1,0 +1,9 @@
+$token: azure-native:machinelearningservices/v20221201preview:ComputeInstanceAutologgerSettings
+description: Specifies settings for autologger.
+properties:
+  mlflowAutologger:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:machinelearningservices/v20221201preview:MlflowAutologger"
+    description: Indicates whether mlflow autologger is enabled for notebooks.
+type: object

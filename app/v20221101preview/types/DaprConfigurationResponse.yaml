@@ -1,0 +1,9 @@
+$token: azure-native:app/v20221101preview:DaprConfigurationResponse
+description: Configuration properties Dapr component
+properties:
+  version:
+    type: string
+    description: The version of Dapr
+type: object
+required:
+  - version

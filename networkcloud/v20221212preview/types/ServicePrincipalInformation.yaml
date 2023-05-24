@@ -1,0 +1,20 @@
+$token: azure-native:networkcloud/v20221212preview:ServicePrincipalInformation
+properties:
+  applicationId:
+    type: string
+    description: The application ID, also known as client ID, of the service principal.
+  password:
+    type: string
+    description: The password of the service principal.
+  principalId:
+    type: string
+    description: The principal ID, also known as the object ID, of the service principal.
+  tenantId:
+    type: string
+    description: The tenant ID, also known as the directory ID, of the tenant in which the service principal is created.
+type: object
+required:
+  - applicationId
+  - password
+  - principalId
+  - tenantId

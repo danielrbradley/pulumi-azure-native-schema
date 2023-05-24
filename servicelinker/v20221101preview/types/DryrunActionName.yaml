@@ -1,0 +1,5 @@
+$token: azure-native:servicelinker/v20221101preview:DryrunActionName
+description: The name of action for you dryrun job.
+type: string
+enum:
+  - value: createOrUpdate

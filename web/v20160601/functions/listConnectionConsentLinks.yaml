@@ -1,0 +1,36 @@
+$token: azure-native:web/v20160601:listConnectionConsentLinks
+description: Lists the consent links of a connection
+inputs:
+  properties:
+    connectionName:
+      type: string
+      description: Connection name
+      willReplaceOnChanges: true
+    parameters:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:web/v20160601:ConsentLinkParameterDefinition"
+      description: Collection of resources
+    resourceGroupName:
+      type: string
+      description: The resource group
+      willReplaceOnChanges: true
+    subscriptionId:
+      type: string
+      description: Subscription Id
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - connectionName
+    - resourceGroupName
+outputs:
+  description: Collection of consent links
+  properties:
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:web/v20160601:ConsentLinkDefinitionResponse"
+      description: Collection of resources
+  type: object

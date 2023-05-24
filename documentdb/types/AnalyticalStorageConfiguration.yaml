@@ -1,0 +1,9 @@
+$token: azure-native:documentdb:AnalyticalStorageConfiguration
+description: Analytical storage specific properties.
+properties:
+  schemaType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:documentdb:AnalyticalStorageSchemaType"
+    description: Describes the types of schema for analytical storage.
+type: object

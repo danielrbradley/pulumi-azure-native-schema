@@ -1,0 +1,52 @@
+$token: azure-native:synapse:getSqlPoolTransparentDataEncryption
+description: |-
+  Get a SQL pool's transparent data encryption configuration.
+  API Version: 2021-06-01.
+inputs:
+  properties:
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    sqlPoolName:
+      type: string
+      description: SQL pool name
+      willReplaceOnChanges: true
+    transparentDataEncryptionName:
+      type: string
+      description: The name of the transparent data encryption configuration.
+      willReplaceOnChanges: true
+    workspaceName:
+      type: string
+      description: The name of the workspace.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - sqlPoolName
+    - transparentDataEncryptionName
+    - workspaceName
+outputs:
+  description: Represents a Sql pool transparent data encryption configuration.
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    location:
+      type: string
+      description: Resource location.
+    name:
+      type: string
+      description: The name of the resource
+    status:
+      type: string
+      description: The status of the database transparent data encryption.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - location
+    - name
+    - type

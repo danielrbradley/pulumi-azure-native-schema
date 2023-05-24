@@ -1,0 +1,72 @@
+$token: azure-native:servicelinker/v20221101preview:ConnectorDryrun
+description: a dryrun job resource
+properties:
+  name:
+    type: string
+    description: The name of the resource
+  operationPreviews:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:servicelinker/v20221101preview:DryrunOperationPreviewResponse"
+    description: the preview of the operations for creation
+  parameters:
+    type: object
+    $ref: "#/types/azure-native:servicelinker/v20221101preview:CreateOrUpdateDryrunParametersResponse"
+    description: The parameters of the dryrun
+  prerequisiteResults:
+    type: array
+    items:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:servicelinker/v20221101preview:BasicErrorDryrunPrerequisiteResultResponse"
+        - type: object
+          $ref: "#/types/azure-native:servicelinker/v20221101preview:PermissionsMissingDryrunPrerequisiteResultResponse"
+      discriminator:
+        propertyName: type
+        mapping:
+          basicError: "#/types/azure-native:servicelinker/v20221101preview:BasicErrorDryrunPrerequisiteResultResponse"
+          permissionsMissing: "#/types/azure-native:servicelinker/v20221101preview:PermissionsMissingDryrunPrerequisiteResultResponse"
+    description: the result of the dryrun
+  provisioningState:
+    type: string
+    description: "The provisioning state. "
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:servicelinker/v20221101preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - name
+  - operationPreviews
+  - prerequisiteResults
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  dryrunName:
+    type: string
+    description: The name of dryrun.
+    willReplaceOnChanges: true
+  location:
+    type: string
+    description: The name of Azure region.
+    willReplaceOnChanges: true
+  parameters:
+    type: object
+    $ref: "#/types/azure-native:servicelinker/v20221101preview:CreateOrUpdateDryrunParameters"
+    description: The parameters of the dryrun
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  subscriptionId:
+    type: string
+    description: The ID of the target subscription.
+    willReplaceOnChanges: true
+requiredInputs:
+  - location
+  - resourceGroupName

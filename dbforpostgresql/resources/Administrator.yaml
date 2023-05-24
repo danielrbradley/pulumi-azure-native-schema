@@ -1,0 +1,59 @@
+$token: azure-native:dbforpostgresql:Administrator
+properties:
+  name:
+    type: string
+    description: The name of the resource
+  objectId:
+    type: string
+    description: The objectId of the Active Directory administrator.
+  principalName:
+    type: string
+    description: Active Directory administrator principal name.
+  principalType:
+    type: string
+    description: The principal type used to represent the type of Active Directory Administrator.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tenantId:
+    type: string
+    description: The tenantId of the Active Directory administrator.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - name
+  - systemData
+  - type
+inputProperties:
+  objectId:
+    type: string
+    description: Guid of the objectId for the administrator.
+    willReplaceOnChanges: true
+  principalName:
+    type: string
+    description: Active Directory administrator principal name.
+  principalType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:dbforpostgresql:PrincipalType"
+    description: The principal type used to represent the type of Active Directory Administrator.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  serverName:
+    type: string
+    description: The name of the server.
+    willReplaceOnChanges: true
+  tenantId:
+    type: string
+    description: The tenantId of the Active Directory administrator.
+requiredInputs:
+  - resourceGroupName
+  - serverName
+aliases:
+  - type: azure-native:dbforpostgresql/v20220308preview:Administrator
+  - type: azure-native:dbforpostgresql/v20221201:Administrator

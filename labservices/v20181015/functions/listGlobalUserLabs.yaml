@@ -1,0 +1,21 @@
+$token: azure-native:labservices/v20181015:listGlobalUserLabs
+description: List labs for the user.
+inputs:
+  properties:
+    userName:
+      type: string
+      description: The name of the user.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - userName
+outputs:
+  description: Lists the labs owned by a user
+  properties:
+    labs:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:labservices/v20181015:LabDetailsResponse"
+      description: List of all the labs
+  type: object

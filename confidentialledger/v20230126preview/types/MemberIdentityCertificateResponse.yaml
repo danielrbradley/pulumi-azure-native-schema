@@ -1,0 +1,15 @@
+$token: azure-native:confidentialledger/v20230126preview:MemberIdentityCertificateResponse
+description: Object representing MemberIdentityCertificate for Managed CCF.
+properties:
+  certificate:
+    type: string
+    description: Member Identity Certificate
+  encryptionkey:
+    type: string
+    description: Member Identity Certificate Encryption Key
+  tags:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:confidentialledger/v20230126preview:CertificateTagsResponse"
+type: object

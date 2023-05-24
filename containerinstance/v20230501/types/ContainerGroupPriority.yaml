@@ -1,0 +1,6 @@
+$token: azure-native:containerinstance/v20230501:ContainerGroupPriority
+description: The priority of the container group.
+type: string
+enum:
+  - value: Regular
+  - value: Spot

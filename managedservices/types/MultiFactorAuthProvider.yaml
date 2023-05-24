@@ -1,0 +1,6 @@
+$token: azure-native:managedservices:MultiFactorAuthProvider
+description: The multi-factor authorization provider to be used for just-in-time access requests.
+type: string
+enum:
+  - value: Azure
+  - value: None

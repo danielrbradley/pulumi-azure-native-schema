@@ -1,0 +1,9 @@
+$token: azure-native:chaos/v20230401preview:SimpleFilterParameters
+description: Model that represents the Simple filter parameters.
+properties:
+  zones:
+    type: array
+    items:
+      type: string
+    description: List of Azure availability zones to filter targets by.
+type: object

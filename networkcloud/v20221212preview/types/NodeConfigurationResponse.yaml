@@ -1,0 +1,43 @@
+$token: azure-native:networkcloud/v20221212preview:NodeConfigurationResponse
+properties:
+  agentPoolId:
+    type: string
+    description: The resource ID of the agent pool that contains the nodes in this configuration.
+  agentPoolName:
+    type: string
+    description: The name of the agent pool that contains the nodes in this configuration.
+  cpuCores:
+    type: number
+    description: The number of CPU cores in the virtual machine.
+  diskSizeGB:
+    type: number
+    description: The root disk size of the virtual machine in GB.
+  memorySizeGB:
+    type: number
+    description: The memory size of the virtual machine in GB.
+  nodePoolName:
+    type: string
+    description: Field deprecated, use agentPoolName instead. This field will be removed in a future version but will reflect the name of the agent pool that contains the nodes in this configuration.
+  nodes:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:NodeResponse"
+    description: The list of nodes that utilize this configuration.
+  vmCount:
+    type: number
+    description: The number of virtual machines that use this configuration.
+  vmSize:
+    type: string
+    description: The name of the VM size supplied during the creation of the cluster.
+type: object
+required:
+  - agentPoolId
+  - agentPoolName
+  - cpuCores
+  - diskSizeGB
+  - memorySizeGB
+  - nodePoolName
+  - nodes
+  - vmCount
+  - vmSize

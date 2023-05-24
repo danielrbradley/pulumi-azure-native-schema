@@ -1,0 +1,8 @@
+$token: azure-native:machinelearningservices/v20230401preview:MonitoringModelType
+description: "[Required] The type of the model monitored."
+type: string
+enum:
+  - description: A model trained for classification tasks.
+    value: Classification
+  - description: A model trained for regressions tasks.
+    value: Regression

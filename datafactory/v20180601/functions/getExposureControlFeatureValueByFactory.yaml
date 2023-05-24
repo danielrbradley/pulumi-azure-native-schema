@@ -1,0 +1,35 @@
+$token: azure-native:datafactory/v20180601:getExposureControlFeatureValueByFactory
+description: Get exposure control feature for specific factory.
+inputs:
+  properties:
+    factoryName:
+      type: string
+      description: The factory name.
+      willReplaceOnChanges: true
+    featureName:
+      type: string
+      description: The feature name.
+    featureType:
+      type: string
+      description: The feature type.
+    resourceGroupName:
+      type: string
+      description: The resource group name.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - factoryName
+    - resourceGroupName
+outputs:
+  description: The exposure control response.
+  properties:
+    featureName:
+      type: string
+      description: The feature name.
+    value:
+      type: string
+      description: The feature value.
+  type: object
+  required:
+    - featureName
+    - value

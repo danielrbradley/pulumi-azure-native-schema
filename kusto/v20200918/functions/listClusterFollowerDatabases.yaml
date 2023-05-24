@@ -1,0 +1,26 @@
+$token: azure-native:kusto/v20200918:listClusterFollowerDatabases
+description: Returns a list of databases that are owned by this cluster and were followed by another cluster.
+inputs:
+  properties:
+    clusterName:
+      type: string
+      description: The name of the Kusto cluster.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group containing the Kusto cluster.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - clusterName
+    - resourceGroupName
+outputs:
+  description: The list Kusto database principals operation response.
+  properties:
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:kusto/v20200918:FollowerDatabaseDefinitionResponse"
+      description: The list of follower database result.
+  type: object

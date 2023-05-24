@@ -1,0 +1,19 @@
+$token: azure-native:machinelearningservices:RegistryRegionArmDetails
+description: Details for each region the registry is in
+properties:
+  acrDetails:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices:AcrDetails"
+    description: List of ACR accounts
+  location:
+    type: string
+    description: The location where the registry exists
+  storageAccountDetails:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices:StorageAccountDetails"
+    description: List of storage accounts
+type: object

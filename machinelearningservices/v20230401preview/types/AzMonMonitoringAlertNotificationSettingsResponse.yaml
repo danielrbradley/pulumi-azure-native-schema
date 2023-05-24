@@ -1,0 +1,11 @@
+$token: azure-native:machinelearningservices/v20230401preview:AzMonMonitoringAlertNotificationSettingsResponse
+properties:
+  alertNotificationType:
+    type: string
+    description: |-
+      
+      Expected value is 'AzureMonitor'.
+    const: AzureMonitor
+type: object
+required:
+  - alertNotificationType

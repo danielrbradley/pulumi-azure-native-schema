@@ -1,0 +1,32 @@
+$token: azure-native:migrate/v20220501preview:WorkloadDeploymentModelPropertiesResponseCurrentJob
+properties:
+  displayName:
+    type: string
+    description: Gets or sets the workflow friendly display name.
+  endTime:
+    type: string
+    description: Gets or sets end time of the workflow.
+  id:
+    type: string
+    description: Gets or sets workflow Id.
+  name:
+    type: string
+    description: Gets or sets workflow name.
+  scenarioName:
+    type: string
+    description: Gets or sets workload scenario name.
+  startTime:
+    type: string
+    description: Gets or sets start time of the workflow.
+  state:
+    type: string
+    description: Gets or sets workflow state.
+type: object
+required:
+  - displayName
+  - endTime
+  - id
+  - name
+  - scenarioName
+  - startTime
+  - state

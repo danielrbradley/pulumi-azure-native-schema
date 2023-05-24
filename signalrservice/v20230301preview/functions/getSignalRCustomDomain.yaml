@@ -1,0 +1,56 @@
+$token: azure-native:signalrservice/v20230301preview:getSignalRCustomDomain
+description: Get a custom domain.
+inputs:
+  properties:
+    name:
+      type: string
+      description: Custom domain name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    resourceName:
+      type: string
+      description: The name of the resource.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - name
+    - resourceGroupName
+    - resourceName
+outputs:
+  description: A custom domain
+  properties:
+    customCertificate:
+      type: object
+      $ref: "#/types/azure-native:signalrservice/v20230301preview:ResourceReferenceResponse"
+      description: Reference to a resource.
+    domainName:
+      type: string
+      description: The custom domain name.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+      description: Provisioning state of the resource.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:signalrservice/v20230301preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - customCertificate
+    - domainName
+    - id
+    - name
+    - provisioningState
+    - systemData
+    - type

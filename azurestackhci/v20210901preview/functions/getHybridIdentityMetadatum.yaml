@@ -1,0 +1,58 @@
+$token: azure-native:azurestackhci/v20210901preview:getHybridIdentityMetadatum
+description: Implements HybridIdentityMetadata GET method.
+inputs:
+  properties:
+    metadataName:
+      type: string
+      description: Name of the HybridIdentityMetadata.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    virtualMachineName:
+      type: string
+      description: Name of the vm.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - metadataName
+    - resourceGroupName
+    - virtualMachineName
+outputs:
+  description: Defines the HybridIdentityMetadata.
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    identity:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:IdentityResponse"
+      description: Identity for the resource.
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+      description: The provisioning state.
+    publicKey:
+      type: string
+      description: The Public Key.
+    resourceUid:
+      type: string
+      description: The unique identifier for the resource.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:SystemDataResponse"
+      description: The system data.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - identity
+    - name
+    - provisioningState
+    - systemData
+    - type

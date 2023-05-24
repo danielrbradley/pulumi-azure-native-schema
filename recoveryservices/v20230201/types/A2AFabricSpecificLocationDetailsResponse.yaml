@@ -1,0 +1,44 @@
+$token: azure-native:recoveryservices/v20230201:A2AFabricSpecificLocationDetailsResponse
+description: ExtendedLocation details data.
+properties:
+  initialPrimaryExtendedLocation:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices/v20230201:ExtendedLocationResponse"
+    description: The initial primary ExtendedLocation.
+  initialPrimaryFabricLocation:
+    type: string
+    description: Initial primary fabric location info.
+  initialPrimaryZone:
+    type: string
+    description: The initial source zone info.
+  initialRecoveryExtendedLocation:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices/v20230201:ExtendedLocationResponse"
+    description: The initial recovery ExtendedLocation.
+  initialRecoveryFabricLocation:
+    type: string
+    description: The initial recovery fabric location info.
+  initialRecoveryZone:
+    type: string
+    description: The initial target zone info.
+  primaryExtendedLocation:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices/v20230201:ExtendedLocationResponse"
+    description: The primary ExtendedLocation.
+  primaryFabricLocation:
+    type: string
+    description: Primary fabric location info.
+  primaryZone:
+    type: string
+    description: Source zone info.
+  recoveryExtendedLocation:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices/v20230201:ExtendedLocationResponse"
+    description: The recovery ExtendedLocation.
+  recoveryFabricLocation:
+    type: string
+    description: The recovery fabric location info.
+  recoveryZone:
+    type: string
+    description: The target zone info.
+type: object

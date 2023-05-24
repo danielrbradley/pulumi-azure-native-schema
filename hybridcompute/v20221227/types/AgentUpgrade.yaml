@@ -1,0 +1,13 @@
+$token: azure-native:hybridcompute/v20221227:AgentUpgrade
+description: The info w.r.t Agent Upgrade.
+properties:
+  correlationId:
+    type: string
+    description: The correlation ID passed in from RSM per upgrade.
+  desiredVersion:
+    type: string
+    description: Specifies the version info w.r.t AgentUpgrade for the machine.
+  enableAutomaticUpgrade:
+    type: boolean
+    description: Specifies if RSM should try to upgrade this machine
+type: object

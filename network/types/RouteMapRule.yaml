@@ -1,0 +1,24 @@
+$token: azure-native:network:RouteMapRule
+description: A RouteMap Rule.
+properties:
+  actions:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:network:Action"
+    description: List of actions which will be applied on a match.
+  matchCriteria:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:network:Criterion"
+    description: List of matching criterion which will be applied to traffic.
+  name:
+    type: string
+    description: The unique name for the rule.
+  nextStepIfMatched:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:network:NextStep"
+    description: Next step after rule is evaluated. Current supported behaviors are 'Continue'(to next rule) and 'Terminate'.
+type: object

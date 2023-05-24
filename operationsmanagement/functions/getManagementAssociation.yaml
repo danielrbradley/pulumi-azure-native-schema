@@ -1,0 +1,58 @@
+$token: azure-native:operationsmanagement:getManagementAssociation
+description: |-
+  Retrieves the user ManagementAssociation.
+  API Version: 2015-11-01-preview.
+inputs:
+  properties:
+    managementAssociationName:
+      type: string
+      description: User ManagementAssociation Name.
+      willReplaceOnChanges: true
+    providerName:
+      type: string
+      description: Provider name for the parent resource.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group to get. The name is case insensitive.
+      willReplaceOnChanges: true
+    resourceName:
+      type: string
+      description: Parent resource name.
+      willReplaceOnChanges: true
+    resourceType:
+      type: string
+      description: Resource type for the parent resource
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - managementAssociationName
+    - providerName
+    - resourceGroupName
+    - resourceName
+    - resourceType
+outputs:
+  description: The container for solution.
+  properties:
+    id:
+      type: string
+      description: Resource ID.
+    location:
+      type: string
+      description: Resource location
+    name:
+      type: string
+      description: Resource name.
+    properties:
+      type: object
+      $ref: "#/types/azure-native:operationsmanagement:ManagementAssociationPropertiesResponse"
+      description: Properties for ManagementAssociation object supported by the OperationsManagement resource provider.
+    type:
+      type: string
+      description: Resource type.
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - type

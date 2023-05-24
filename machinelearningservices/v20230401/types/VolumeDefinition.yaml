@@ -1,0 +1,34 @@
+$token: azure-native:machinelearningservices/v20230401:VolumeDefinition
+description: Describes the volume configuration for the container
+properties:
+  bind:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401:BindOptions"
+    description: Bind Options of the mount
+  consistency:
+    type: string
+    description: Consistency of the volume
+  readOnly:
+    type: boolean
+    description: Indicate whether to mount volume as readOnly. Default value for this is false.
+  source:
+    type: string
+    description: Source of the mount. For bind mounts this is the host path.
+  target:
+    type: string
+    description: Target of the mount. For bind mounts this is the path in the container.
+  tmpfs:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401:TmpfsOptions"
+    description: tmpfs option of the mount
+  type:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:machinelearningservices/v20230401:VolumeDefinitionType"
+    description: "Type of Volume Definition. Possible Values: bind,volume,tmpfs,npipe"
+    default: bind
+  volume:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401:VolumeOptions"
+    description: Volume Options of the mount
+type: object

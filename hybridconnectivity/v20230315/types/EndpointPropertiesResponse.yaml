@@ -1,0 +1,16 @@
+$token: azure-native:hybridconnectivity/v20230315:EndpointPropertiesResponse
+description: Endpoint details
+properties:
+  provisioningState:
+    type: string
+    description: The resource provisioning state.
+  resourceId:
+    type: string
+    description: The resource Id of the connectivity endpoint (optional).
+  type:
+    type: string
+    description: The type of endpoint.
+type: object
+required:
+  - provisioningState
+  - type

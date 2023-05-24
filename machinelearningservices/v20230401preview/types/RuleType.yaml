@@ -1,0 +1,7 @@
+$token: azure-native:machinelearningservices/v20230401preview:RuleType
+description: Type of a managed network Outbound Rule of a machine learning workspace.
+type: string
+enum:
+  - value: FQDN
+  - value: PrivateEndpoint
+  - value: ServiceTag

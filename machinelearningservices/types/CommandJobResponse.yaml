@@ -1,0 +1,169 @@
+$token: azure-native:machinelearningservices:CommandJobResponse
+description: Command job definition.
+properties:
+  codeId:
+    type: string
+    description: ARM resource ID of the code asset.
+  command:
+    type: string
+    description: '[Required] The command to execute on startup of the job. eg. "python train.py"'
+  componentId:
+    type: string
+    description: ARM resource ID of the component resource.
+  computeId:
+    type: string
+    description: ARM resource ID of the compute resource.
+  description:
+    type: string
+    description: The asset description text.
+  displayName:
+    type: string
+    description: Display name of job.
+  distribution:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices:MpiResponse"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices:PyTorchResponse"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices:TensorFlowResponse"
+    discriminator:
+      propertyName: distributionType
+      mapping:
+        Mpi: "#/types/azure-native:machinelearningservices:MpiResponse"
+        PyTorch: "#/types/azure-native:machinelearningservices:PyTorchResponse"
+        TensorFlow: "#/types/azure-native:machinelearningservices:TensorFlowResponse"
+    description: Distribution configuration of the job. If set, this should be one of Mpi, Tensorflow, PyTorch, or null.
+  environmentId:
+    type: string
+    description: "[Required] The ARM resource ID of the Environment specification for the job."
+  environmentVariables:
+    type: object
+    additionalProperties:
+      type: string
+    description: Environment variables included in the job.
+  experimentName:
+    type: string
+    description: The name of the experiment the job belongs to. If not set, the job is placed in the "Default" experiment.
+    default: Default
+  identity:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices:AmlTokenResponse"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices:ManagedIdentityResponse"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices:UserIdentityResponse"
+    discriminator:
+      propertyName: identityType
+      mapping:
+        AMLToken: "#/types/azure-native:machinelearningservices:AmlTokenResponse"
+        Managed: "#/types/azure-native:machinelearningservices:ManagedIdentityResponse"
+        UserIdentity: "#/types/azure-native:machinelearningservices:UserIdentityResponse"
+    description: "Identity configuration. If set, this should be one of AmlToken, ManagedIdentity, UserIdentity or null.\r
+
+      Defaults to AmlToken if null."
+  inputs:
+    type: object
+    additionalProperties:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices:CustomModelJobInputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices:LiteralJobInputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices:MLFlowModelJobInputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices:MLTableJobInputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices:TritonModelJobInputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices:UriFileJobInputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices:UriFolderJobInputResponse"
+      discriminator:
+        propertyName: jobInputType
+        mapping:
+          custom_model: "#/types/azure-native:machinelearningservices:CustomModelJobInputResponse"
+          literal: "#/types/azure-native:machinelearningservices:LiteralJobInputResponse"
+          mlflow_model: "#/types/azure-native:machinelearningservices:MLFlowModelJobInputResponse"
+          mltable: "#/types/azure-native:machinelearningservices:MLTableJobInputResponse"
+          triton_model: "#/types/azure-native:machinelearningservices:TritonModelJobInputResponse"
+          uri_file: "#/types/azure-native:machinelearningservices:UriFileJobInputResponse"
+          uri_folder: "#/types/azure-native:machinelearningservices:UriFolderJobInputResponse"
+    description: Mapping of input data bindings used in the job.
+  isArchived:
+    type: boolean
+    description: Is the asset archived?
+    default: false
+  jobType:
+    type: string
+    description: |-
+      Enum to determine the type of job.
+      Expected value is 'Command'.
+    const: Command
+  limits:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices:CommandJobLimitsResponse"
+    description: Command Job limit.
+  outputs:
+    type: object
+    additionalProperties:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices:CustomModelJobOutputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices:MLFlowModelJobOutputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices:MLTableJobOutputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices:TritonModelJobOutputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices:UriFileJobOutputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices:UriFolderJobOutputResponse"
+      discriminator:
+        propertyName: jobOutputType
+        mapping:
+          custom_model: "#/types/azure-native:machinelearningservices:CustomModelJobOutputResponse"
+          mlflow_model: "#/types/azure-native:machinelearningservices:MLFlowModelJobOutputResponse"
+          mltable: "#/types/azure-native:machinelearningservices:MLTableJobOutputResponse"
+          triton_model: "#/types/azure-native:machinelearningservices:TritonModelJobOutputResponse"
+          uri_file: "#/types/azure-native:machinelearningservices:UriFileJobOutputResponse"
+          uri_folder: "#/types/azure-native:machinelearningservices:UriFolderJobOutputResponse"
+    description: Mapping of output data bindings used in the job.
+  parameters:
+    $ref: pulumi.json#/Any
+    description: Input parameters.
+  properties:
+    type: object
+    additionalProperties:
+      type: string
+    description: The asset property dictionary.
+  resources:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices:JobResourceConfigurationResponse"
+    description: Compute Resource configuration for the job.
+  services:
+    type: object
+    additionalProperties:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices:JobServiceResponse"
+    description: "List of JobEndpoints.\r
+
+      For local jobs, a job endpoint will have an endpoint value of FileStreamObject."
+  status:
+    type: string
+    description: Status of the job.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Tag dictionary. Tags can be added, removed, and updated.
+type: object
+required:
+  - command
+  - environmentId
+  - jobType
+  - parameters
+  - status

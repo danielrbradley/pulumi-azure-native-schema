@@ -1,0 +1,46 @@
+$token: azure-native:machinelearningservices/v20230201preview:FeaturesetVersionResponse
+description: Dto object representing feature set version
+properties:
+  description:
+    type: string
+    description: The asset description text.
+  entities:
+    type: array
+    items:
+      type: string
+    description: Specifies list of entities
+  isAnonymous:
+    type: boolean
+    description: If the name version are system generated (anonymous registration).
+    default: false
+  isArchived:
+    type: boolean
+    description: Is the asset archived?
+    default: false
+  materializationSettings:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230201preview:MaterializationSettingsResponse"
+    description: Specifies the materialization settings
+  properties:
+    type: object
+    additionalProperties:
+      type: string
+    description: The asset property dictionary.
+  provisioningState:
+    type: string
+    description: Provisioning state for the featureset version container.
+  specification:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230201preview:FeaturesetSpecificationResponse"
+    description: Specifies the feature spec details
+  stage:
+    type: string
+    description: Specifies the asset stage
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Tag dictionary. Tags can be added, removed, and updated.
+type: object
+required:
+  - provisioningState

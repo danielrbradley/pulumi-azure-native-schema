@@ -1,0 +1,18 @@
+$token: azure-native:machinelearningservices/v20221201preview:NlpLearningRateScheduler
+description: The type of learning rate schedule to use during the training procedure.
+type: string
+enum:
+  - description: No learning rate schedule.
+    value: None
+  - description: Linear warmup and decay.
+    value: Linear
+  - description: Linear warmup then cosine decay.
+    value: Cosine
+  - description: Linear warmup, cosine decay, then restart to initial LR.
+    value: CosineWithRestarts
+  - description: Increase linearly then polynomially decay.
+    value: Polynomial
+  - description: Constant learning rate.
+    value: Constant
+  - description: Linear warmup followed by constant value.
+    value: ConstantWithWarmup

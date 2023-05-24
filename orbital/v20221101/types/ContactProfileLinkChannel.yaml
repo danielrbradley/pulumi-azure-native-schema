@@ -1,0 +1,34 @@
+$token: azure-native:orbital/v20221101:ContactProfileLinkChannel
+description: Contact Profile Link Channel.
+properties:
+  bandwidthMHz:
+    type: number
+    description: Bandwidth in MHz.
+  centerFrequencyMHz:
+    type: number
+    description: Center Frequency in MHz.
+  decodingConfiguration:
+    type: string
+    description: Currently unused.
+  demodulationConfiguration:
+    type: string
+    description: Copy of the modem configuration file such as Kratos QRadio or Kratos QuantumRx. Only valid for downlink directions. If provided, the modem connects to the customer endpoint and sends demodulated data instead of a VITA.49 stream.
+  encodingConfiguration:
+    type: string
+    description: Currently unused.
+  endPoint:
+    type: object
+    $ref: "#/types/azure-native:orbital/v20221101:EndPoint"
+    description: Customer end point to store and retrieve data during a contact with the spacecraft.
+  modulationConfiguration:
+    type: string
+    description: Copy of the modem configuration file such as Kratos QRadio. Only valid for uplink directions. If provided, the modem connects to the customer endpoint and accepts commands from the customer instead of a VITA.49 stream.
+  name:
+    type: string
+    description: Channel name.
+type: object
+required:
+  - bandwidthMHz
+  - centerFrequencyMHz
+  - endPoint
+  - name

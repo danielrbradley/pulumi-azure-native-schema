@@ -1,0 +1,6 @@
+$token: azure-native:machinelearningservices/v20230201preview:VolumeOptions
+properties:
+  nocopy:
+    type: boolean
+    description: Indicate whether volume is nocopy
+type: object

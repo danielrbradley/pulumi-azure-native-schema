@@ -1,0 +1,7 @@
+$token: azure-native:workloads:SslPreference
+description: Gets or sets certificate preference if secure communication is enabled.
+type: string
+enum:
+  - value: Disabled
+  - value: RootCertificate
+  - value: ServerCertificate

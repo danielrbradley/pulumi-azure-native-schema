@@ -1,0 +1,9 @@
+$token: azure-native:costmanagement/v20221001preview:TagInheritancePropertiesResponse
+description: The properties of the tag inheritance setting.
+properties:
+  preferContainerTags:
+    type: boolean
+    description: When resource has the same tag as subscription or resource group and this property is set to true - the subscription or resource group tag will be applied. If subscription and resource group tags are also the same, subscription tag will be applied.
+type: object
+required:
+  - preferContainerTags

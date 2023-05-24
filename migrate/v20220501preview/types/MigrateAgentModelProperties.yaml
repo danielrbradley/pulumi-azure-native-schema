@@ -1,0 +1,18 @@
+$token: azure-native:migrate/v20220501preview:MigrateAgentModelProperties
+description: MigrateAgent model properties.
+properties:
+  authenticationIdentity:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:IdentityModel"
+    description: Identity model.
+  customProperties:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:VMwareMigrateAgentModelCustomProperties"
+    description: MigrateAgent model custom properties.
+  machineId:
+    type: string
+    description: Gets or sets the machine Id where MigrateAgent is running.
+  machineName:
+    type: string
+    description: Gets or sets the machine name where MigrateAgent is running.
+type: object

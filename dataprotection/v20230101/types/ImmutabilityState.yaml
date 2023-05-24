@@ -1,0 +1,7 @@
+$token: azure-native:dataprotection/v20230101:ImmutabilityState
+description: Immutability state
+type: string
+enum:
+  - value: Disabled
+  - value: Unlocked
+  - value: Locked

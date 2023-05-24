@@ -1,0 +1,10 @@
+$token: azure-native:appplatform/v20230101preview:ScaleRuleAuth
+description: Auth Secrets for Azure Spring Apps App Instance Scale Rule
+properties:
+  secretRef:
+    type: string
+    description: Name of the Azure Spring Apps App Instance secret from which to pull the auth params.
+  triggerParameter:
+    type: string
+    description: Trigger Parameter that uses the secret
+type: object

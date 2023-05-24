@@ -1,0 +1,8 @@
+$token: azure-native:compute/v20230301:RestorePointSourceMetadata
+description: Describes the properties of the Virtual Machine for which the restore point was created. The properties provided are a subset and the snapshot of the overall Virtual Machine properties captured at the time of the restore point creation.
+properties:
+  storageProfile:
+    type: object
+    $ref: "#/types/azure-native:compute/v20230301:RestorePointSourceVMStorageProfile"
+    description: Gets the storage profile.
+type: object

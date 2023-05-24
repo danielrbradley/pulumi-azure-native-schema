@@ -1,0 +1,12 @@
+$token: azure-native:datadog/v20220601:DatadogHostMetadataResponse
+properties:
+  agentVersion:
+    type: string
+    description: The agent version.
+  installMethod:
+    type: object
+    $ref: "#/types/azure-native:datadog/v20220601:DatadogInstallMethodResponse"
+  logsAgent:
+    type: object
+    $ref: "#/types/azure-native:datadog/v20220601:DatadogLogsAgentResponse"
+type: object

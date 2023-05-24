@@ -1,0 +1,4 @@
+$token: azure-native:insights/v20220601:KnownPrometheusForwarderDataSourceStreams
+type: string
+enum:
+  - value: Microsoft-PrometheusMetrics

@@ -1,0 +1,7 @@
+$token: azure-native:cognitiveservices:RequestMatchPatternResponse
+properties:
+  method:
+    type: string
+  path:
+    type: string
+type: object

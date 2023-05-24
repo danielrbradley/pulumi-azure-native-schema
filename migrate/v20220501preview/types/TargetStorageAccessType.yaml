@@ -1,0 +1,6 @@
+$token: azure-native:migrate/v20220501preview:TargetStorageAccessType
+description: Gets or sets the target storage access type.
+type: string
+enum:
+  - value: Shared
+  - value: Exclusive

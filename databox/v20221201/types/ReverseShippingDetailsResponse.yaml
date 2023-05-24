@@ -1,0 +1,19 @@
+$token: azure-native:databox/v20221201:ReverseShippingDetailsResponse
+description: Reverse Shipping Address and contact details for a job.
+properties:
+  contactDetails:
+    type: object
+    $ref: "#/types/azure-native:databox/v20221201:ContactInfoResponse"
+    description: Contact Info.
+  isUpdated:
+    type: boolean
+    description: "A flag to indicate whether Reverse Shipping details are updated or not after device has been prepared.\r
+
+      Read only field"
+  shippingAddress:
+    type: object
+    $ref: "#/types/azure-native:databox/v20221201:ShippingAddressResponse"
+    description: Shipping address where customer wishes to receive the device.
+type: object
+required:
+  - isUpdated

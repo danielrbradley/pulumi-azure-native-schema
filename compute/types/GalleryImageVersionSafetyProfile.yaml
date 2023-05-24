@@ -1,0 +1,7 @@
+$token: azure-native:compute:GalleryImageVersionSafetyProfile
+description: This is the safety profile of the Gallery Image Version.
+properties:
+  allowDeletionOfReplicatedLocations:
+    type: boolean
+    description: Indicates whether or not removing this Gallery Image Version from replicated regions is allowed.
+type: object

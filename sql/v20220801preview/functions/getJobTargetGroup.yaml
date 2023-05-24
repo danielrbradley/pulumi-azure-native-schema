@@ -1,0 +1,50 @@
+$token: azure-native:sql/v20220801preview:getJobTargetGroup
+description: Gets a target group.
+inputs:
+  properties:
+    jobAgentName:
+      type: string
+      description: The name of the job agent.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+      willReplaceOnChanges: true
+    serverName:
+      type: string
+      description: The name of the server.
+      willReplaceOnChanges: true
+    targetGroupName:
+      type: string
+      description: The name of the target group.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - jobAgentName
+    - resourceGroupName
+    - serverName
+    - targetGroupName
+outputs:
+  description: A group of job targets.
+  properties:
+    id:
+      type: string
+      description: Resource ID.
+    members:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:sql/v20220801preview:JobTargetResponse"
+      description: Members of the target group.
+    name:
+      type: string
+      description: Resource name.
+    type:
+      type: string
+      description: Resource type.
+  type: object
+  required:
+    - id
+    - members
+    - name
+    - type

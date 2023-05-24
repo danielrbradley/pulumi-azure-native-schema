@@ -1,0 +1,48 @@
+$token: azure-native:storsimple/v20161001:getChapSetting
+description: Returns the properties of the specified chap setting name.
+inputs:
+  properties:
+    chapUserName:
+      type: string
+      description: The user name of chap to be fetched.
+      willReplaceOnChanges: true
+    deviceName:
+      type: string
+      description: The device name.
+      willReplaceOnChanges: true
+    managerName:
+      type: string
+      description: The manager name
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The resource group name
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - chapUserName
+    - deviceName
+    - managerName
+    - resourceGroupName
+outputs:
+  description: Challenge-Handshake Authentication Protocol (CHAP) setting
+  properties:
+    id:
+      type: string
+      description: The identifier.
+    name:
+      type: string
+      description: The name.
+    password:
+      type: object
+      $ref: "#/types/azure-native:storsimple/v20161001:AsymmetricEncryptedSecretResponse"
+      description: The chap password.
+    type:
+      type: string
+      description: The type.
+  type: object
+  required:
+    - id
+    - name
+    - password
+    - type

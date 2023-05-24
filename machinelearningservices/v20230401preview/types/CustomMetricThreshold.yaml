@@ -1,0 +1,12 @@
+$token: azure-native:machinelearningservices/v20230401preview:CustomMetricThreshold
+properties:
+  metric:
+    type: string
+    description: "[Required] The user-defined metric to calculate."
+  threshold:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MonitoringThreshold"
+    description: The threshold value. If null, a default value will be set depending on the selected metric.
+type: object
+required:
+  - metric

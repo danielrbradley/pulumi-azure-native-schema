@@ -1,0 +1,8 @@
+$token: azure-native:sqlvirtualmachine/v20230101preview:TroubleshootingAdditionalPropertiesResponse
+description: SQL VM Troubleshooting additional properties.
+properties:
+  unhealthyReplicaInfo:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:UnhealthyReplicaInfoResponse"
+    description: The unhealthy replica information
+type: object

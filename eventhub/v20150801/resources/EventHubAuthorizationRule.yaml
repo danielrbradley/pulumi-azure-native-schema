@@ -1,0 +1,65 @@
+$token: azure-native:eventhub/v20150801:EventHubAuthorizationRule
+description: Single item in a List or Get AuthorizationRule operation
+properties:
+  location:
+    type: string
+    description: Resource location
+  name:
+    type: string
+    description: Resource name
+  rights:
+    type: array
+    items:
+      type: string
+    description: The rights associated with the rule.
+  type:
+    type: string
+    description: Resource type
+type: object
+required:
+  - name
+  - rights
+  - type
+inputProperties:
+  authorizationRuleName:
+    type: string
+    description: The authorization rule name.
+    willReplaceOnChanges: true
+  eventHubName:
+    type: string
+    description: The Event Hub name
+    willReplaceOnChanges: true
+  location:
+    type: string
+    description: Data center location.
+  name:
+    type: string
+    description: Name of the AuthorizationRule.
+  namespaceName:
+    type: string
+    description: The Namespace name
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: Name of the resource group within the azure subscription.
+    willReplaceOnChanges: true
+  rights:
+    type: array
+    items:
+      $ref: "#/types/azure-native:eventhub/v20150801:AccessRights"
+    description: The rights associated with the rule.
+requiredInputs:
+  - eventHubName
+  - namespaceName
+  - resourceGroupName
+  - rights
+aliases:
+  - type: azure-native:eventhub:EventHubAuthorizationRule
+  - type: azure-native:eventhub/v20140901:EventHubAuthorizationRule
+  - type: azure-native:eventhub/v20170401:EventHubAuthorizationRule
+  - type: azure-native:eventhub/v20180101preview:EventHubAuthorizationRule
+  - type: azure-native:eventhub/v20210101preview:EventHubAuthorizationRule
+  - type: azure-native:eventhub/v20210601preview:EventHubAuthorizationRule
+  - type: azure-native:eventhub/v20211101:EventHubAuthorizationRule
+  - type: azure-native:eventhub/v20220101preview:EventHubAuthorizationRule
+  - type: azure-native:eventhub/v20221001preview:EventHubAuthorizationRule

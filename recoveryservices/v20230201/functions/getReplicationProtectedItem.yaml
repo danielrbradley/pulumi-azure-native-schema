@@ -1,0 +1,56 @@
+$token: azure-native:recoveryservices/v20230201:getReplicationProtectedItem
+description: Gets the details of an ASR replication protected item.
+inputs:
+  properties:
+    fabricName:
+      type: string
+      description: Fabric unique name.
+      willReplaceOnChanges: true
+    protectionContainerName:
+      type: string
+      description: Protection container name.
+      willReplaceOnChanges: true
+    replicatedProtectedItemName:
+      type: string
+      description: Replication protected item name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group where the recovery services vault is present.
+      willReplaceOnChanges: true
+    resourceName:
+      type: string
+      description: The name of the recovery services vault.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - fabricName
+    - protectionContainerName
+    - replicatedProtectedItemName
+    - resourceGroupName
+    - resourceName
+outputs:
+  description: Replication protected item.
+  properties:
+    id:
+      type: string
+      description: Resource Id
+    location:
+      type: string
+      description: Resource Location
+    name:
+      type: string
+      description: Resource Name
+    properties:
+      type: object
+      $ref: "#/types/azure-native:recoveryservices/v20230201:ReplicationProtectedItemPropertiesResponse"
+      description: The custom data.
+    type:
+      type: string
+      description: Resource Type
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - type

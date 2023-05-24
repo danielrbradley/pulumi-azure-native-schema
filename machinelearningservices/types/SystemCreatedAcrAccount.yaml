@@ -1,0 +1,13 @@
+$token: azure-native:machinelearningservices:SystemCreatedAcrAccount
+properties:
+  acrAccountName:
+    type: string
+    description: Name of the ACR account
+  acrAccountSku:
+    type: string
+    description: SKU of the ACR account
+  armResourceId:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices:ArmResourceId"
+    description: This is populated once the ACR account is created.
+type: object

@@ -1,0 +1,36 @@
+$token: azure-native:appplatform/v20230101preview:AcceleratorGitRepositoryResponse
+properties:
+  authSetting:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:appplatform/v20230101preview:AcceleratorBasicAuthSettingResponse"
+      - type: object
+        $ref: "#/types/azure-native:appplatform/v20230101preview:AcceleratorPublicSettingResponse"
+      - type: object
+        $ref: "#/types/azure-native:appplatform/v20230101preview:AcceleratorSshSettingResponse"
+    discriminator:
+      propertyName: authType
+      mapping:
+        BasicAuth: "#/types/azure-native:appplatform/v20230101preview:AcceleratorBasicAuthSettingResponse"
+        Public: "#/types/azure-native:appplatform/v20230101preview:AcceleratorPublicSettingResponse"
+        SSH: "#/types/azure-native:appplatform/v20230101preview:AcceleratorSshSettingResponse"
+    description: Properties of the auth setting payload.
+  branch:
+    type: string
+    description: Git repository branch to be used.
+  commit:
+    type: string
+    description: Git repository commit to be used.
+  gitTag:
+    type: string
+    description: Git repository tag to be used.
+  intervalInSeconds:
+    type: integer
+    description: Interval for checking for updates to Git or image repository.
+  url:
+    type: string
+    description: Git repository URL for the accelerator.
+type: object
+required:
+  - authSetting
+  - url

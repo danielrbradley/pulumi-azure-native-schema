@@ -1,0 +1,43 @@
+$token: azure-native:documentdb/v20230415:getCassandraDataCenter
+description: Get the properties of a managed Cassandra data center.
+inputs:
+  properties:
+    clusterName:
+      type: string
+      description: Managed Cassandra cluster name.
+      willReplaceOnChanges: true
+    dataCenterName:
+      type: string
+      description: Data center name in a managed Cassandra cluster.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - clusterName
+    - dataCenterName
+    - resourceGroupName
+outputs:
+  description: A managed Cassandra data center.
+  properties:
+    id:
+      type: string
+      description: The unique resource identifier of the database account.
+    name:
+      type: string
+      description: The name of the database account.
+    properties:
+      type: object
+      $ref: "#/types/azure-native:documentdb/v20230415:DataCenterResourceResponseProperties"
+      description: Properties of a managed Cassandra data center.
+    type:
+      type: string
+      description: The type of Azure resource.
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - type

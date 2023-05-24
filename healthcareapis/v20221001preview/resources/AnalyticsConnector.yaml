@@ -1,0 +1,96 @@
+$token: azure-native:healthcareapis/v20221001preview:AnalyticsConnector
+description: Analytics Connector definition.
+properties:
+  dataDestinationConfiguration:
+    type: object
+    $ref: "#/types/azure-native:healthcareapis/v20221001preview:AnalyticsConnectorDataLakeDataDestinationResponse"
+    description: Data destination configuration for Analytics Connector.
+  dataMappingConfiguration:
+    type: object
+    $ref: "#/types/azure-native:healthcareapis/v20221001preview:AnalyticsConnectorFhirToParquetMappingResponse"
+    description: Data mapping configuration for Analytics Connector.
+  dataSourceConfiguration:
+    type: object
+    $ref: "#/types/azure-native:healthcareapis/v20221001preview:AnalyticsConnectorFhirServiceDataSourceResponse"
+    description: Data source for Analytics Connector.
+  etag:
+    type: string
+    description: An etag associated with the resource, used for optimistic concurrency when editing it.
+  identity:
+    type: object
+    $ref: "#/types/azure-native:healthcareapis/v20221001preview:ServiceManagedIdentityResponseIdentity"
+    description: Setting indicating whether the service has a managed identity associated with it.
+  location:
+    type: string
+    description: The resource location.
+  name:
+    type: string
+    description: The resource name.
+  provisioningState:
+    type: string
+    description: The provisioning state.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:healthcareapis/v20221001preview:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The resource type.
+type: object
+required:
+  - dataDestinationConfiguration
+  - dataMappingConfiguration
+  - dataSourceConfiguration
+  - name
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  analyticsConnectorName:
+    type: string
+    description: The name of Analytics Connector resource.
+    willReplaceOnChanges: true
+  dataDestinationConfiguration:
+    type: object
+    $ref: "#/types/azure-native:healthcareapis/v20221001preview:AnalyticsConnectorDataLakeDataDestination"
+    description: Data destination configuration for Analytics Connector.
+  dataMappingConfiguration:
+    type: object
+    $ref: "#/types/azure-native:healthcareapis/v20221001preview:AnalyticsConnectorFhirToParquetMapping"
+    description: Data mapping configuration for Analytics Connector.
+  dataSourceConfiguration:
+    type: object
+    $ref: "#/types/azure-native:healthcareapis/v20221001preview:AnalyticsConnectorFhirServiceDataSource"
+    description: Data source for Analytics Connector.
+  identity:
+    type: object
+    $ref: "#/types/azure-native:healthcareapis/v20221001preview:ServiceManagedIdentityIdentity"
+    description: Setting indicating whether the service has a managed identity associated with it.
+  location:
+    type: string
+    description: The resource location.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group that contains the service instance.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  workspaceName:
+    type: string
+    description: The name of workspace resource.
+    willReplaceOnChanges: true
+requiredInputs:
+  - dataDestinationConfiguration
+  - dataMappingConfiguration
+  - dataSourceConfiguration
+  - resourceGroupName
+  - workspaceName

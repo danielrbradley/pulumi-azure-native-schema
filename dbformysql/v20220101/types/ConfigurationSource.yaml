@@ -1,0 +1,6 @@
+$token: azure-native:dbformysql/v20220101:ConfigurationSource
+description: Source of the configuration.
+type: string
+enum:
+  - value: system-default
+  - value: user-override

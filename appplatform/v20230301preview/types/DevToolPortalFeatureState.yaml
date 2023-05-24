@@ -1,0 +1,8 @@
+$token: azure-native:appplatform/v20230301preview:DevToolPortalFeatureState
+description: State of the plugin
+type: string
+enum:
+  - description: Enable the plugin in Dev Tool Portal.
+    value: Enabled
+  - description: Disable the plugin in Dev Tool Portal.
+    value: Disabled

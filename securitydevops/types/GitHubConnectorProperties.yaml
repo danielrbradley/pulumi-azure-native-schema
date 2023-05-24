@@ -1,0 +1,13 @@
+$token: azure-native:securitydevops:GitHubConnectorProperties
+description: Properties of the ARM resource for /subscriptions/xxx/resourceGroups/xxx/providers/Microsoft.SecurityDevOps/gitHubConnectors.
+properties:
+  code:
+    type: string
+    description: "Gets or sets one-time OAuth code to exchange for refresh and access tokens.\r
+
+      \r
+
+      Only used during PUT operations. The secret is cleared during GET.\r
+
+      In general, RPaaS does not return any property marked as a secret."
+type: object

@@ -1,0 +1,7 @@
+$token: azure-native:kubernetes/v20221001preview:AzureHybridBenefit
+description: Indicates whether Azure Hybrid Benefit is opted in
+type: string
+enum:
+  - value: "True"
+  - value: "False"
+  - value: NotApplicable

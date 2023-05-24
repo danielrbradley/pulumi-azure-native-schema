@@ -1,0 +1,6 @@
+$token: azure-native:network/v20190201:IPAllocationMethod
+description: The Private IP allocation method.
+type: string
+enum:
+  - value: Static
+  - value: Dynamic

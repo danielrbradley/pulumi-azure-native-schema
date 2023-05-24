@@ -1,0 +1,16 @@
+$token: azure-native:web/v20220901:WorkflowEnvelopeResponseProperties
+description: Additional workflow properties.
+properties:
+  files:
+    type: object
+    additionalProperties:
+      $ref: pulumi.json#/Any
+    description: Gets or sets the files.
+  flowState:
+    type: string
+    description: Gets or sets the state of the workflow.
+  health:
+    type: object
+    $ref: "#/types/azure-native:web/v20220901:WorkflowHealthResponse"
+    description: Gets or sets workflow health.
+type: object

@@ -1,0 +1,10 @@
+$token: azure-native:machinelearningservices/v20230401preview:MonitoringFeatureFilterType
+description: "[Required] Specifies the feature filter to leverage when selecting features to calculate metrics over."
+type: string
+enum:
+  - description: Includes all features.
+    value: AllFeatures
+  - description: Only includes the top contributing features, measured by feature attribution.
+    value: TopNByAttribution
+  - description: Includes a user-defined subset of features.
+    value: FeatureSubset

@@ -1,0 +1,17 @@
+$token: azure-native:app:WorkloadProfile
+description: Workload profile to scope container app execution.
+properties:
+  maximumCount:
+    type: integer
+    description: The maximum capacity.
+  minimumCount:
+    type: integer
+    description: The minimum capacity.
+  workloadProfileType:
+    type: string
+    description: Workload profile type for the workloads to run on.
+type: object
+required:
+  - maximumCount
+  - minimumCount
+  - workloadProfileType

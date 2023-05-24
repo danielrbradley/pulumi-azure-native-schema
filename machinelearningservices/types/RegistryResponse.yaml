@@ -1,0 +1,34 @@
+$token: azure-native:machinelearningservices:RegistryResponse
+description: Details of the Registry
+properties:
+  discoveryUrl:
+    type: string
+    description: Discovery URL for the Registry
+  intellectualPropertyPublisher:
+    type: string
+    description: IntellectualPropertyPublisher for the registry
+  managedResourceGroup:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices:ArmResourceIdResponse"
+    description: ResourceId of the managed RG if the registry has system created resources
+  mlFlowRegistryUri:
+    type: string
+    description: MLFlow Registry URI for the Registry
+  publicNetworkAccess:
+    type: string
+    description: "Is the Registry accessible from the internet?\r
+
+      Possible values: \"Enabled\" or \"Disabled\""
+  regionDetails:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices:RegistryRegionArmDetailsResponse"
+    description: Details of each region the registry is in
+  registryPrivateEndpointConnections:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices:RegistryPrivateEndpointConnectionResponse"
+    description: Private endpoint connections info used for pending connections in private link portal
+type: object

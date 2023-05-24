@@ -1,0 +1,9 @@
+$token: azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesResponseSecurityProfile
+description: SecurityProfile - Specifies the security settings for the virtual machine.
+properties:
+  enableTPM:
+    type: boolean
+  uefiSettings:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesResponseUefiSettings"
+type: object

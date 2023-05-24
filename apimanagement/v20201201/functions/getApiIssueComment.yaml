@@ -1,0 +1,59 @@
+$token: azure-native:apimanagement/v20201201:getApiIssueComment
+description: Gets the details of the issue Comment for an API specified by its identifier.
+inputs:
+  properties:
+    apiId:
+      type: string
+      description: API identifier. Must be unique in the current API Management service instance.
+      willReplaceOnChanges: true
+    commentId:
+      type: string
+      description: Comment identifier within an Issue. Must be unique in the current Issue.
+      willReplaceOnChanges: true
+    issueId:
+      type: string
+      description: Issue identifier. Must be unique in the current API Management service instance.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group.
+      willReplaceOnChanges: true
+    serviceName:
+      type: string
+      description: The name of the API Management service.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - apiId
+    - commentId
+    - issueId
+    - resourceGroupName
+    - serviceName
+outputs:
+  description: Issue Comment Contract details.
+  properties:
+    createdDate:
+      type: string
+      description: Date and time when the comment was created.
+    id:
+      type: string
+      description: Resource ID.
+    name:
+      type: string
+      description: Resource name.
+    text:
+      type: string
+      description: Comment text.
+    type:
+      type: string
+      description: Resource type for API Management resource.
+    userId:
+      type: string
+      description: A resource identifier for the user who left the comment.
+  type: object
+  required:
+    - id
+    - name
+    - text
+    - type
+    - userId

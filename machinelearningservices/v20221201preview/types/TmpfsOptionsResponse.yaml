@@ -1,0 +1,6 @@
+$token: azure-native:machinelearningservices/v20221201preview:TmpfsOptionsResponse
+properties:
+  size:
+    type: integer
+    description: Mention the Tmpfs size
+type: object

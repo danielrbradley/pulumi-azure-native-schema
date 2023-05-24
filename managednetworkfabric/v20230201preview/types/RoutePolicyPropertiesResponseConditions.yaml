@@ -1,0 +1,18 @@
+$token: azure-native:managednetworkfabric/v20230201preview:RoutePolicyPropertiesResponseConditions
+description: Route Policy condition model.
+properties:
+  action:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:RoutePolicyPropertiesResponseAction"
+    description: Route policy action properties.
+  annotation:
+    type: string
+    description: Switch configuration description.
+  match:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:RoutePolicyPropertiesResponseMatch"
+    description: Route policy match properties.
+  sequenceNumber:
+    type: integer
+    description: sequenceNumber of the route policy.
+type: object

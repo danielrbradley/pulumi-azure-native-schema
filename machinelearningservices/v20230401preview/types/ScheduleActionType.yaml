@@ -1,0 +1,8 @@
+$token: azure-native:machinelearningservices/v20230401preview:ScheduleActionType
+description: "[Required] Specifies the action type of the schedule"
+type: string
+enum:
+  - value: CreateJob
+  - value: InvokeBatchEndpoint
+  - value: ImportData
+  - value: CreateMonitor

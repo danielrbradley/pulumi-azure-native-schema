@@ -1,0 +1,13 @@
+$token: azure-native:machinelearningservices:InstanceTypeSchema
+description: Instance type schema.
+properties:
+  nodeSelector:
+    type: object
+    additionalProperties:
+      type: string
+    description: Node Selector
+  resources:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices:InstanceTypeSchemaResources"
+    description: Resource requests/limits for this instance type
+type: object

@@ -1,0 +1,7 @@
+$token: azure-native:network:GatewayLoadBalancerTunnelProtocol
+description: Protocol of gateway load balancer tunnel interface.
+type: string
+enum:
+  - value: None
+  - value: Native
+  - value: VXLAN

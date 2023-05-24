@@ -1,0 +1,6 @@
+$token: azure-native:machinelearningservices/v20230401preview:JobLimitsType
+description: "[Required] JobLimit type."
+type: string
+enum:
+  - value: Command
+  - value: Sweep

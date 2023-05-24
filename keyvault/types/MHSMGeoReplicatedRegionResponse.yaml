@@ -1,0 +1,15 @@
+$token: azure-native:keyvault:MHSMGeoReplicatedRegionResponse
+description: A region that this managed HSM Pool has been extended to.
+properties:
+  isPrimary:
+    type: boolean
+    description: A boolean value that indicates whether the region is the primary region or a secondary region.
+  name:
+    type: string
+    description: Name of the geo replicated region.
+  provisioningState:
+    type: string
+    description: Provisioning state of the geo replicated region.
+type: object
+required:
+  - provisioningState

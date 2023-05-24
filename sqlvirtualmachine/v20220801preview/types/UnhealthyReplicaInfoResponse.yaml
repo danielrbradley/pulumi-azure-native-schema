@@ -1,0 +1,7 @@
+$token: azure-native:sqlvirtualmachine/v20220801preview:UnhealthyReplicaInfoResponse
+description: SQL VM Troubleshoot UnhealthyReplica scenario information.
+properties:
+  availabilityGroupName:
+    type: string
+    description: The name of the availability group
+type: object

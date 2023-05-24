@@ -1,0 +1,10 @@
+$token: azure-native:devhub/v20221011preview:WorkflowRunStatus
+description: Describes the status of the workflow run
+type: string
+enum:
+  - description: Workflow run is queued
+    value: queued
+  - description: Workflow run is inprogress
+    value: inprogress
+  - description: Workflow run is completed
+    value: completed

@@ -1,0 +1,52 @@
+$token: azure-native:app:IngressResponse
+description: Container App Ingress configuration.
+properties:
+  allowInsecure:
+    type: boolean
+    description: Bool indicating if HTTP connections to is allowed. If set to false HTTP connections are automatically redirected to HTTPS connections
+    default: false
+  clientCertificateMode:
+    type: string
+    description: Client certificate mode for mTLS authentication. Ignore indicates server drops client certificate on forwarding. Accept indicates server forwards client certificate but does not require a client certificate. Require indicates server requires a client certificate.
+  corsPolicy:
+    type: object
+    $ref: "#/types/azure-native:app:CorsPolicyResponse"
+    description: CORS policy for container app
+  customDomains:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:app:CustomDomainResponse"
+    description: custom domain bindings for Container Apps' hostnames.
+  exposedPort:
+    type: integer
+    description: Exposed Port in containers for TCP traffic from ingress
+  external:
+    type: boolean
+    description: Bool indicating if app exposes an external http endpoint
+    default: false
+  fqdn:
+    type: string
+    description: Hostname.
+  ipSecurityRestrictions:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:app:IpSecurityRestrictionRuleResponse"
+    description: Rules to restrict incoming IP address.
+  targetPort:
+    type: integer
+    description: Target Port in containers for traffic from ingress
+  traffic:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:app:TrafficWeightResponse"
+    description: Traffic weights for app's revisions
+  transport:
+    type: string
+    description: Ingress transport protocol
+    default: auto
+type: object
+required:
+  - fqdn

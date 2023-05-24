@@ -1,0 +1,16 @@
+$token: azure-native:workloads/v20230401:SapLandscapeMonitorMetricThresholdsResponse
+description: Gets or sets the Threshold Values for Top Metrics Health.
+properties:
+  green:
+    type: number
+    description: Gets or sets the threshold value for Green.
+  name:
+    type: string
+    description: Gets or sets the name of the threshold.
+  red:
+    type: number
+    description: Gets or sets the threshold value for Red.
+  yellow:
+    type: number
+    description: Gets or sets the threshold value for Yellow.
+type: object

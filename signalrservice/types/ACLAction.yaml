@@ -1,0 +1,6 @@
+$token: azure-native:signalrservice:ACLAction
+description: Azure Networking ACL Action.
+type: string
+enum:
+  - value: Allow
+  - value: Deny

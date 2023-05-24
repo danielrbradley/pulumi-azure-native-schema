@@ -1,0 +1,88 @@
+$token: azure-native:azuresphere/v20220901preview:DeviceGroup
+description: An device group resource belonging to a product resource.
+properties:
+  allowCrashDumpsCollection:
+    type: string
+    description: Flag to define if the user allows for crash dump collection.
+  description:
+    type: string
+    description: Description of the device group.
+  hasDeployment:
+    type: boolean
+    description: Deployment status for the device group.
+  name:
+    type: string
+    description: The name of the resource
+  osFeedType:
+    type: string
+    description: Operating system feed type of the device group.
+  provisioningState:
+    type: string
+    description: The status of the last operation.
+  regionalDataBoundary:
+    type: string
+    description: Regional data boundary for the device group.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:azuresphere/v20220901preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  updatePolicy:
+    type: string
+    description: Update policy of the device group.
+type: object
+required:
+  - hasDeployment
+  - name
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  allowCrashDumpsCollection:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:azuresphere/v20220901preview:AllowCrashDumpCollection"
+    description: Flag to define if the user allows for crash dump collection.
+  catalogName:
+    type: string
+    description: Name of catalog
+    willReplaceOnChanges: true
+  description:
+    type: string
+    description: Description of the device group.
+  deviceGroupName:
+    type: string
+    description: Name of device group.
+    willReplaceOnChanges: true
+  osFeedType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:azuresphere/v20220901preview:OSFeedType"
+    description: Operating system feed type of the device group.
+  productName:
+    type: string
+    description: Name of product.
+    willReplaceOnChanges: true
+  regionalDataBoundary:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:azuresphere/v20220901preview:RegionalDataBoundary"
+    description: Regional data boundary for the device group.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  updatePolicy:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:azuresphere/v20220901preview:UpdatePolicy"
+    description: Update policy of the device group.
+requiredInputs:
+  - catalogName
+  - productName
+  - resourceGroupName
+aliases:
+  - type: azure-native:azuresphere:DeviceGroup

@@ -1,0 +1,5 @@
+$token: azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesDataDisks
+properties:
+  name:
+    type: string
+type: object

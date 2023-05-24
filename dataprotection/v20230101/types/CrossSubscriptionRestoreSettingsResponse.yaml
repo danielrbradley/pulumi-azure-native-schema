@@ -1,0 +1,7 @@
+$token: azure-native:dataprotection/v20230101:CrossSubscriptionRestoreSettingsResponse
+description: CrossSubscriptionRestore Settings
+properties:
+  state:
+    type: string
+    description: CrossSubscriptionRestore state
+type: object

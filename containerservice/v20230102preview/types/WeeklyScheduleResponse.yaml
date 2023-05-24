@@ -1,0 +1,13 @@
+$token: azure-native:containerservice/v20230102preview:WeeklyScheduleResponse
+description: "For schedules like: 'recur every Monday' or 'recur every 3 weeks on Wednesday'."
+properties:
+  dayOfWeek:
+    type: string
+    description: Specifies on which day of the week the maintenance occurs.
+  intervalWeeks:
+    type: integer
+    description: Specifies the number of weeks between each set of occurrences.
+type: object
+required:
+  - dayOfWeek
+  - intervalWeeks

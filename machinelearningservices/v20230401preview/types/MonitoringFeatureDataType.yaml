@@ -1,0 +1,8 @@
+$token: azure-native:machinelearningservices/v20230401preview:MonitoringFeatureDataType
+description: "[Required] Specifies the data type of the metric threshold."
+type: string
+enum:
+  - description: Used for features of numerical data type.
+    value: Numerical
+  - description: Used for features of categorical data type.
+    value: Categorical

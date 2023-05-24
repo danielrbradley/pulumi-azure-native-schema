@@ -1,0 +1,10 @@
+$token: azure-native:signalrservice:ResourceLogConfiguration
+description: Resource log configuration of a Microsoft.SignalRService resource.
+properties:
+  categories:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:signalrservice:ResourceLogCategory"
+    description: Gets or sets the list of category configurations.
+type: object

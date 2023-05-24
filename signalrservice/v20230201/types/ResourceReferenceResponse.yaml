@@ -1,0 +1,7 @@
+$token: azure-native:signalrservice/v20230201:ResourceReferenceResponse
+description: Reference to a resource.
+properties:
+  id:
+    type: string
+    description: Resource ID.
+type: object

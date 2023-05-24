@@ -1,0 +1,25 @@
+$token: azure-native:network/v20221101:WebApplicationFirewallScrubbingRules
+description: Allow certain variables to be scrubbed on WAF logs
+properties:
+  matchVariable:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:network/v20221101:ScrubbingRuleEntryMatchVariable"
+    description: The variable to be scrubbed from the logs.
+  selector:
+    type: string
+    description: When matchVariable is a collection, operator used to specify which elements in the collection this rule applies to.
+  selectorMatchOperator:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:network/v20221101:ScrubbingRuleEntryMatchOperator"
+    description: When matchVariable is a collection, operate on the selector to specify which elements in the collection this rule applies to.
+  state:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:network/v20221101:ScrubbingRuleEntryState"
+    description: Defines the state of log scrubbing rule. Default value is Enabled.
+type: object
+required:
+  - matchVariable
+  - selectorMatchOperator

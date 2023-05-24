@@ -1,0 +1,50 @@
+$token: azure-native:insights:DataCollectionRuleResponseDestinations
+description: The specification of destinations.
+properties:
+  azureMonitorMetrics:
+    type: object
+    $ref: "#/types/azure-native:insights:DestinationsSpecResponseAzureMonitorMetrics"
+    description: Azure Monitor Metrics destination.
+  eventHubs:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:insights:EventHubDestinationResponse"
+    description: List of Event Hubs destinations.
+  eventHubsDirect:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:insights:EventHubDirectDestinationResponse"
+    description: List of Event Hubs Direct destinations.
+  logAnalytics:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:insights:LogAnalyticsDestinationResponse"
+    description: List of Log Analytics destinations.
+  monitoringAccounts:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:insights:MonitoringAccountDestinationResponse"
+    description: List of monitoring account destinations.
+  storageAccounts:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:insights:StorageBlobDestinationResponse"
+    description: List of storage accounts destinations.
+  storageBlobsDirect:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:insights:StorageBlobDestinationResponse"
+    description: List of Storage Blob Direct destinations. To be used only for sending data directly to store from the agent.
+  storageTablesDirect:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:insights:StorageTableDestinationResponse"
+    description: List of Storage Table Direct destinations.
+type: object

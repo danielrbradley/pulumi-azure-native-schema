@@ -1,0 +1,16 @@
+$token: azure-native:appplatform/v20230301preview:ApplicationAcceleratorPropertiesResponse
+description: Application accelerator properties payload
+properties:
+  components:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:appplatform/v20230301preview:ApplicationAcceleratorComponentResponse"
+    description: Collection of components belong to application accelerator.
+  provisioningState:
+    type: string
+    description: State of the application accelerator.
+type: object
+required:
+  - components
+  - provisioningState

@@ -1,0 +1,14 @@
+$token: azure-native:securitydevops/v20220901preview:AzureDevOpsProjectMetadataResponse
+description: Project onboarding info.
+properties:
+  autoDiscovery:
+    type: string
+  name:
+    type: string
+    description: Gets or sets name of the AzureDevOps Project.
+  repos:
+    type: array
+    items:
+      type: string
+    description: Gets or sets repositories.
+type: object

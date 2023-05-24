@@ -1,0 +1,7 @@
+$token: azure-native:documentdb/v20221115preview:MinimalTlsVersion
+description: Indicates the minimum allowed Tls version. The default is Tls 1.0, except for Cassandra and Mongo API's, which only work with Tls 1.2.
+type: string
+enum:
+  - value: Tls
+  - value: Tls11
+  - value: Tls12

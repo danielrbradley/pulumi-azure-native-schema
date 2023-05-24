@@ -1,0 +1,41 @@
+$token: azure-native:appplatform/v20230301preview:ConfigServerGitPropertyResponse
+description: Property of git.
+properties:
+  hostKey:
+    type: string
+    description: Public sshKey of git repository.
+  hostKeyAlgorithm:
+    type: string
+    description: SshKey algorithm of git repository.
+  label:
+    type: string
+    description: Label of the repository
+  password:
+    type: string
+    description: Password of git repository basic auth.
+  privateKey:
+    type: string
+    description: Private sshKey algorithm of git repository.
+  repositories:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:appplatform/v20230301preview:GitPatternRepositoryResponse"
+    description: Repositories of git.
+  searchPaths:
+    type: array
+    items:
+      type: string
+    description: Searching path of the repository
+  strictHostKeyChecking:
+    type: boolean
+    description: Strict host key checking or not.
+  uri:
+    type: string
+    description: URI of the repository
+  username:
+    type: string
+    description: Username of git repository basic auth.
+type: object
+required:
+  - uri

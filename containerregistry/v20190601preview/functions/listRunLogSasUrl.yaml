@@ -1,0 +1,31 @@
+$token: azure-native:containerregistry/v20190601preview:listRunLogSasUrl
+description: Gets a link to download the run logs.
+inputs:
+  properties:
+    registryName:
+      type: string
+      description: The name of the container registry.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group to which the container registry belongs.
+      willReplaceOnChanges: true
+    runId:
+      type: string
+      description: The run ID.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - registryName
+    - resourceGroupName
+    - runId
+outputs:
+  description: The result of get log link operation.
+  properties:
+    logArtifactLink:
+      type: string
+      description: The link to logs in registry for a run on a azure container registry.
+    logLink:
+      type: string
+      description: The link to logs for a run on a azure container registry.
+  type: object

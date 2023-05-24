@@ -1,0 +1,13 @@
+$token: azure-native:digitaltwins:ConnectionProperties
+description: The properties of a private endpoint connection.
+properties:
+  groupIds:
+    type: array
+    items:
+      type: string
+    description: The list of group ids for the private endpoint connection.
+  privateLinkServiceConnectionState:
+    type: object
+    $ref: "#/types/azure-native:digitaltwins:ConnectionPropertiesPrivateLinkServiceConnectionState"
+    description: The connection state.
+type: object

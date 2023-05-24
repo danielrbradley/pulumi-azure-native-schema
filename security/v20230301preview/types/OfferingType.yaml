@@ -1,0 +1,21 @@
+$token: azure-native:security/v20230301preview:OfferingType
+description: The type of the security offering.
+type: string
+enum:
+  - value: CspmMonitorAws
+  - value: DefenderForContainersAws
+  - value: DefenderForServersAws
+  - value: DefenderForDatabasesAws
+  - value: InformationProtectionAws
+  - value: CspmMonitorGcp
+  - value: CspmMonitorGithub
+  - value: CspmMonitorAzureDevOps
+  - value: DefenderForServersGcp
+  - value: DefenderForContainersGcp
+  - value: DefenderForDatabasesGcp
+  - value: DefenderCspmAws
+  - value: DefenderCspmGcp
+  - value: DefenderForDevOpsGithub
+  - value: DefenderForDevOpsAzureDevOps
+  - value: CspmMonitorGitLab
+  - value: DefenderForDevOpsGitLab

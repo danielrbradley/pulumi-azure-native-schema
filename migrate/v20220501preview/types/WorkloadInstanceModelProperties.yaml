@@ -1,0 +1,34 @@
+$token: azure-native:migrate/v20220501preview:WorkloadInstanceModelProperties
+description: Workload instance model properties.
+properties:
+  customProperties:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:migrate/v20220501preview:ApacheTomcatWorkloadInstanceModelCustomProperties"
+      - type: object
+        $ref: "#/types/azure-native:migrate/v20220501preview:IISWorkloadInstanceModelCustomProperties"
+    discriminator:
+      propertyName: instanceType
+      mapping:
+        ApacheTomcatWorkloadInstanceModelCustomProperties: "#/types/azure-native:migrate/v20220501preview:ApacheTomcatWorkloadInstanceModelCustomProperties"
+        IISWorkloadInstanceModelCustomProperties: "#/types/azure-native:migrate/v20220501preview:IISWorkloadInstanceModelCustomProperties"
+    description: Workload instance model custom properties.
+  displayName:
+    type: string
+    description: Gets or sets the display name.
+  masterSiteName:
+    type: string
+    description: Gets or Sets the master site name.
+  migrateAgentId:
+    type: string
+    description: Gets or sets the migrate agent id associated with the workload instance.
+  name:
+    type: string
+    description: Gets or sets the workload instance name.
+  sourceName:
+    type: string
+    description: Gets or sets the source name.
+  sourcePlatform:
+    type: string
+    description: Gets or sets the source platform.
+type: object

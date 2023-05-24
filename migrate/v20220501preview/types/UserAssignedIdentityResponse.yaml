@@ -1,0 +1,7 @@
+$token: azure-native:migrate/v20220501preview:UserAssignedIdentityResponse
+properties:
+  clientId:
+    type: string
+  principalId:
+    type: string
+type: object

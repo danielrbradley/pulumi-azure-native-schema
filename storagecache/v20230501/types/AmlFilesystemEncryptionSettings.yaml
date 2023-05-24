@@ -1,0 +1,8 @@
+$token: azure-native:storagecache/v20230501:AmlFilesystemEncryptionSettings
+description: AML file system encryption settings.
+properties:
+  keyEncryptionKey:
+    type: object
+    $ref: "#/types/azure-native:storagecache/v20230501:KeyVaultKeyReference"
+    description: Specifies the location of the encryption key in Key Vault.
+type: object

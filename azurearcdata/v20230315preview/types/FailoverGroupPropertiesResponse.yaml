@@ -1,0 +1,21 @@
+$token: azure-native:azurearcdata/v20230315preview:FailoverGroupPropertiesResponse
+description: The properties of a failover group resource.
+properties:
+  partnerManagedInstanceId:
+    type: string
+    description: The resource ID of the partner SQL managed instance.
+  provisioningState:
+    type: string
+    description: The provisioning state of the failover group resource.
+  spec:
+    type: object
+    $ref: "#/types/azure-native:azurearcdata/v20230315preview:FailoverGroupSpecResponse"
+    description: The specifications of the failover group resource.
+  status:
+    $ref: pulumi.json#/Any
+    description: The status of the failover group custom resource.
+type: object
+required:
+  - partnerManagedInstanceId
+  - provisioningState
+  - spec

@@ -1,0 +1,46 @@
+$token: azure-native:migrate/v20220501preview:MigrateAgentModelPropertiesResponse
+description: MigrateAgent model properties.
+properties:
+  authenticationIdentity:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:IdentityModelResponse"
+    description: Identity model.
+  correlationId:
+    type: string
+    description: Gets or sets the MigrateAgent correlation Id.
+  customProperties:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:VMwareMigrateAgentModelCustomPropertiesResponse"
+    description: MigrateAgent model custom properties.
+  healthErrors:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:HealthErrorModelResponse"
+    description: Gets or sets the list of health errors.
+  isResponsive:
+    type: boolean
+    description: Gets or sets a value indicating whether MigrateAgent is responsive.
+  lastHeartbeat:
+    type: string
+    description: Gets or sets the time when last heartbeat was sent by the MigrateAgent.
+  machineId:
+    type: string
+    description: Gets or sets the machine Id where MigrateAgent is running.
+  machineName:
+    type: string
+    description: Gets or sets the machine name where MigrateAgent is running.
+  provisioningState:
+    type: string
+    description: Gets or sets the provisioning state of the MigrateAgent.
+  versionNumber:
+    type: string
+    description: Gets or sets the MigrateAgent version.
+type: object
+required:
+  - correlationId
+  - healthErrors
+  - isResponsive
+  - lastHeartbeat
+  - provisioningState
+  - versionNumber

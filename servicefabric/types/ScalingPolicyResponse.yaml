@@ -1,0 +1,31 @@
+$token: azure-native:servicefabric:ScalingPolicyResponse
+description: Specifies a metric to load balance a service during runtime.
+properties:
+  scalingMechanism:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:servicefabric:AddRemoveIncrementalNamedPartitionScalingMechanismResponse"
+      - type: object
+        $ref: "#/types/azure-native:servicefabric:PartitionInstanceCountScaleMechanismResponse"
+    discriminator:
+      propertyName: kind
+      mapping:
+        AddRemoveIncrementalNamedPartition: "#/types/azure-native:servicefabric:AddRemoveIncrementalNamedPartitionScalingMechanismResponse"
+        ScalePartitionInstanceCount: "#/types/azure-native:servicefabric:PartitionInstanceCountScaleMechanismResponse"
+    description: Specifies the mechanism associated with this scaling policy
+  scalingTrigger:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:servicefabric:AveragePartitionLoadScalingTriggerResponse"
+      - type: object
+        $ref: "#/types/azure-native:servicefabric:AverageServiceLoadScalingTriggerResponse"
+    discriminator:
+      propertyName: kind
+      mapping:
+        AveragePartitionLoadTrigger: "#/types/azure-native:servicefabric:AveragePartitionLoadScalingTriggerResponse"
+        AverageServiceLoadTrigger: "#/types/azure-native:servicefabric:AverageServiceLoadScalingTriggerResponse"
+    description: Specifies the trigger associated with this scaling policy.
+type: object
+required:
+  - scalingMechanism
+  - scalingTrigger

@@ -1,0 +1,11 @@
+$token: azure-native:databox:EncryptionPreferencesResponse
+description: Preferences related to the Encryption.
+properties:
+  doubleEncryption:
+    type: string
+    description: Defines secondary layer of software-based encryption enablement.
+    default: Disabled
+  hardwareEncryption:
+    type: string
+    description: Defines Hardware level encryption (Only for disk)
+type: object

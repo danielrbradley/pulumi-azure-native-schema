@@ -1,0 +1,29 @@
+$token: azure-native:devices/v20170821preview:listIotDpsResourceKeys
+description: Get the security metadata for a provisioning service.
+inputs:
+  properties:
+    provisioningServiceName:
+      type: string
+      description: The provisioning service name to get the shared access keys for.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: resource group name
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - provisioningServiceName
+    - resourceGroupName
+outputs:
+  description: List of shared access keys.
+  properties:
+    nextLink:
+      type: string
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:devices/v20170821preview:SharedAccessSignatureAuthorizationRuleAccessRightsDescriptionResponse"
+  type: object
+  required:
+    - nextLink

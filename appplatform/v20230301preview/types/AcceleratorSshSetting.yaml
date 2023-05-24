@@ -1,0 +1,21 @@
+$token: azure-native:appplatform/v20230301preview:AcceleratorSshSetting
+description: Auth setting for SSH auth.
+properties:
+  authType:
+    type: string
+    description: |-
+      The type of the auth setting.
+      Expected value is 'SSH'.
+    const: SSH
+  hostKey:
+    type: string
+    description: Public SSH Key of git repository.
+  hostKeyAlgorithm:
+    type: string
+    description: SSH Key algorithm of git repository.
+  privateKey:
+    type: string
+    description: Private SSH Key algorithm of git repository.
+type: object
+required:
+  - authType

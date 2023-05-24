@@ -1,0 +1,62 @@
+$token: azure-native:machinelearningservices/v20230401preview:DataDriftMonitoringSignalResponse
+properties:
+  baselineData:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MonitoringInputDataResponse"
+    description: "[Required] The data to calculate drift against."
+  dataSegment:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MonitoringDataSegmentResponse"
+    description: The data segment used for scoping on a subset of the data population.
+  features:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:AllFeaturesResponse"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:FeatureSubsetResponse"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:TopNFeaturesByAttributionResponse"
+    discriminator:
+      propertyName: filterType
+      mapping:
+        AllFeatures: "#/types/azure-native:machinelearningservices/v20230401preview:AllFeaturesResponse"
+        FeatureSubset: "#/types/azure-native:machinelearningservices/v20230401preview:FeatureSubsetResponse"
+        TopNByAttribution: "#/types/azure-native:machinelearningservices/v20230401preview:TopNFeaturesByAttributionResponse"
+    description: The feature filter which identifies which feature to calculate drift over.
+  lookbackPeriod:
+    type: string
+    description: The amount of time a single monitor should look back over the target data on a given run.
+  metricThresholds:
+    type: array
+    items:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:CategoricalDataDriftMetricThresholdResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:NumericalDataDriftMetricThresholdResponse"
+      discriminator:
+        propertyName: dataType
+        mapping:
+          Categorical: "#/types/azure-native:machinelearningservices/v20230401preview:CategoricalDataDriftMetricThresholdResponse"
+          Numerical: "#/types/azure-native:machinelearningservices/v20230401preview:NumericalDataDriftMetricThresholdResponse"
+    description: "[Required] A list of metrics to calculate and their associated thresholds."
+  mode:
+    type: string
+    description: The current notification mode for this signal.
+    default: Disabled
+  signalType:
+    type: string
+    description: |-
+      
+      Expected value is 'DataDrift'.
+    const: DataDrift
+  targetData:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MonitoringInputDataResponse"
+    description: "[Required] The data which drift will be calculated for."
+type: object
+required:
+  - baselineData
+  - metricThresholds
+  - signalType
+  - targetData

@@ -1,0 +1,7 @@
+$token: azure-native:chaos/v20230415preview:ResourceIdentityType
+description: String of the resource identity type.
+type: string
+enum:
+  - value: None
+  - value: SystemAssigned
+  - value: UserAssigned

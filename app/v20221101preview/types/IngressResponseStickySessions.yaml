@@ -1,0 +1,7 @@
+$token: azure-native:app/v20221101preview:IngressResponseStickySessions
+description: Sticky Sessions for Single Revision Mode
+properties:
+  affinity:
+    type: string
+    description: Sticky Session Affinity
+type: object

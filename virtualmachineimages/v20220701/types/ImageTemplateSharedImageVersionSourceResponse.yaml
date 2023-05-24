@@ -1,0 +1,20 @@
+$token: azure-native:virtualmachineimages/v20220701:ImageTemplateSharedImageVersionSourceResponse
+description: Describes an image source that is an image version in an Azure Compute Gallery or a Direct Shared Gallery.
+properties:
+  exactVersion:
+    type: string
+    description: Exact ARM resource id of the image version. This readonly field differs from the image version Id in 'imageVersionId' only if the version name specified in 'imageVersionId' field is 'latest'.
+  imageVersionId:
+    type: string
+    description: ARM resource id of the image version. When image version name is 'latest', the version is evaluated when the image build takes place.
+  type:
+    type: string
+    description: |-
+      Specifies the type of source image you want to start with.
+      Expected value is 'SharedImageVersion'.
+    const: SharedImageVersion
+type: object
+required:
+  - exactVersion
+  - imageVersionId
+  - type

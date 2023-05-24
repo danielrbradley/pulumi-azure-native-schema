@@ -1,0 +1,21 @@
+$token: azure-native:orbital:EndPointResponse
+description: Customer end point to store and retrieve data during a contact with the spacecraft.
+properties:
+  endPointName:
+    type: string
+    description: Name of an end point.
+  ipAddress:
+    type: string
+    description: IP Address (IPv4).
+  port:
+    type: string
+    description: TCP port to listen on to receive data.
+  protocol:
+    type: string
+    description: Protocol either UDP or TCP.
+type: object
+required:
+  - endPointName
+  - ipAddress
+  - port
+  - protocol

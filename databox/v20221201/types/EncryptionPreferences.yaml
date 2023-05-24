@@ -1,0 +1,15 @@
+$token: azure-native:databox/v20221201:EncryptionPreferences
+description: Preferences related to the Encryption.
+properties:
+  doubleEncryption:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:databox/v20221201:DoubleEncryption"
+    description: Defines secondary layer of software-based encryption enablement.
+    default: Disabled
+  hardwareEncryption:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:databox/v20221201:HardwareEncryption"
+    description: Defines Hardware level encryption (Only for disk)
+type: object

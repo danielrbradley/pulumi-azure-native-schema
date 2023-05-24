@@ -1,0 +1,56 @@
+$token: azure-native:migrate/v20220501preview:getWorkloadDeployment
+description: Gets the details of the workload deployment.
+inputs:
+  properties:
+    modernizeProjectName:
+      type: string
+      description: ModernizeProject name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the Azure Resource Group that project is part of.
+      willReplaceOnChanges: true
+    subscriptionId:
+      type: string
+      description: Azure Subscription Id in which project was created.
+      willReplaceOnChanges: true
+    workloadDeploymentName:
+      type: string
+      description: Workload deployment name.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - modernizeProjectName
+    - resourceGroupName
+    - workloadDeploymentName
+outputs:
+  description: Workload deployment model.
+  properties:
+    id:
+      type: string
+      description: Gets or sets the Id of the resource.
+    name:
+      type: string
+      description: Gets or sets the name of the resource.
+    properties:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:WorkloadDeploymentModelPropertiesResponse"
+      description: Workload deployment model properties.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:WorkloadDeploymentModelResponseSystemData"
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Gets or sets the resource tags.
+    type:
+      type: string
+      description: Gets or sets the type of the resource.
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - systemData
+    - type

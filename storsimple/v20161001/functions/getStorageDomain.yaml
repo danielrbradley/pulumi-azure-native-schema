@@ -1,0 +1,52 @@
+$token: azure-native:storsimple/v20161001:getStorageDomain
+description: Returns the properties of the specified storage domain name.
+inputs:
+  properties:
+    managerName:
+      type: string
+      description: The manager name
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The resource group name
+      willReplaceOnChanges: true
+    storageDomainName:
+      type: string
+      description: The storage domain name.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - managerName
+    - resourceGroupName
+    - storageDomainName
+outputs:
+  description: The storage domain.
+  properties:
+    encryptionKey:
+      type: object
+      $ref: "#/types/azure-native:storsimple/v20161001:AsymmetricEncryptedSecretResponse"
+      description: The encryption key used to encrypt the data. This is a user secret.
+    encryptionStatus:
+      type: string
+      description: The encryption status "Enabled | Disabled".
+    id:
+      type: string
+      description: The identifier.
+    name:
+      type: string
+      description: The name.
+    storageAccountCredentialIds:
+      type: array
+      items:
+        type: string
+      description: The storage account credentials.
+    type:
+      type: string
+      description: The type.
+  type: object
+  required:
+    - encryptionStatus
+    - id
+    - name
+    - storageAccountCredentialIds
+    - type

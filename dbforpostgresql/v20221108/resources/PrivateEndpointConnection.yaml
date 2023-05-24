@@ -1,0 +1,60 @@
+$token: azure-native:dbforpostgresql/v20221108:PrivateEndpointConnection
+description: The private endpoint connection resource.
+properties:
+  groupIds:
+    type: array
+    items:
+      type: string
+    description: The group ids for the private endpoint resource.
+  name:
+    type: string
+    description: The name of the resource
+  privateEndpoint:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql/v20221108:PrivateEndpointResponse"
+    description: The private endpoint resource.
+  privateLinkServiceConnectionState:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql/v20221108:PrivateLinkServiceConnectionStateResponse"
+    description: A collection of information about the state of the connection between service consumer and provider.
+  provisioningState:
+    type: string
+    description: The provisioning state of the private endpoint connection resource.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql/v20221108:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - groupIds
+  - name
+  - privateLinkServiceConnectionState
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  clusterName:
+    type: string
+    description: The name of the cluster.
+    willReplaceOnChanges: true
+  privateEndpointConnectionName:
+    type: string
+    description: The name of the private endpoint connection associated with the cluster.
+    willReplaceOnChanges: true
+  privateLinkServiceConnectionState:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql/v20221108:PrivateLinkServiceConnectionState"
+    description: A collection of information about the state of the connection between service consumer and provider.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+requiredInputs:
+  - clusterName
+  - privateLinkServiceConnectionState
+  - resourceGroupName
+aliases:
+  - type: azure-native:dbforpostgresql:PrivateEndpointConnection

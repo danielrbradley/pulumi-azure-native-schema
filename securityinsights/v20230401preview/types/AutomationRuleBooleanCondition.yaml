@@ -1,0 +1,29 @@
+$token: azure-native:securityinsights/v20230401preview:AutomationRuleBooleanCondition
+properties:
+  innerConditions:
+    type: array
+    items:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:securityinsights/v20230401preview:BooleanConditionProperties"
+        - type: object
+          $ref: "#/types/azure-native:securityinsights/v20230401preview:PropertyArrayChangedConditionProperties"
+        - type: object
+          $ref: "#/types/azure-native:securityinsights/v20230401preview:PropertyArrayConditionProperties"
+        - type: object
+          $ref: "#/types/azure-native:securityinsights/v20230401preview:PropertyChangedConditionProperties"
+        - type: object
+          $ref: "#/types/azure-native:securityinsights/v20230401preview:PropertyConditionProperties"
+      discriminator:
+        propertyName: conditionType
+        mapping:
+          Boolean: "#/types/azure-native:securityinsights/v20230401preview:BooleanConditionProperties"
+          Property: "#/types/azure-native:securityinsights/v20230401preview:PropertyConditionProperties"
+          PropertyArray: "#/types/azure-native:securityinsights/v20230401preview:PropertyArrayConditionProperties"
+          PropertyArrayChanged: "#/types/azure-native:securityinsights/v20230401preview:PropertyArrayChangedConditionProperties"
+          PropertyChanged: "#/types/azure-native:securityinsights/v20230401preview:PropertyChangedConditionProperties"
+  operator:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:securityinsights/v20230401preview:AutomationRuleBooleanConditionSupportedOperator"
+type: object

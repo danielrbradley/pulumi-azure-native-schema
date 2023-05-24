@@ -1,0 +1,195 @@
+$token: azure-native:dbforpostgresql:Server
+properties:
+  administratorLogin:
+    type: string
+    description: The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).
+  authConfig:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:AuthConfigResponse"
+    description: AuthConfig properties of a server.
+  availabilityZone:
+    type: string
+    description: availability zone information of the server.
+    default: ""
+  backup:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:BackupResponse"
+    description: Backup properties of a server.
+  dataEncryption:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:DataEncryptionResponse"
+    description: Data encryption properties of a server.
+  fullyQualifiedDomainName:
+    type: string
+    description: The fully qualified domain name of a server.
+  highAvailability:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:HighAvailabilityResponse"
+    description: High availability properties of a server.
+  identity:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:UserAssignedIdentityResponse"
+    description: Describes the identity of the application.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  maintenanceWindow:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:MaintenanceWindowResponse"
+    description: Maintenance window properties of a server.
+  minorVersion:
+    type: string
+    description: The minor version of the server.
+  name:
+    type: string
+    description: The name of the resource
+  network:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:NetworkResponse"
+    description: Network properties of a server.
+  replicaCapacity:
+    type: integer
+    description: Replicas allowed for a server.
+  replicationRole:
+    type: string
+    description: Replication role of the server
+  sku:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:SkuResponse"
+    description: The SKU (pricing tier) of the server.
+  state:
+    type: string
+    description: A state of a server that is visible to user.
+  storage:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:StorageResponse"
+    description: Storage properties of a server.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  version:
+    type: string
+    description: PostgreSQL Server version.
+type: object
+required:
+  - fullyQualifiedDomainName
+  - location
+  - minorVersion
+  - name
+  - state
+  - systemData
+  - type
+inputProperties:
+  administratorLogin:
+    type: string
+    description: The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).
+    willReplaceOnChanges: true
+  administratorLoginPassword:
+    type: string
+    description: The administrator login password (required for server creation).
+  authConfig:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:AuthConfig"
+    description: AuthConfig properties of a server.
+  availabilityZone:
+    type: string
+    description: availability zone information of the server.
+    default: ""
+    willReplaceOnChanges: true
+  backup:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:Backup"
+    description: Backup properties of a server.
+  createMode:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:dbforpostgresql:CreateMode"
+    description: The mode to create a new PostgreSQL server.
+  dataEncryption:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:DataEncryption"
+    description: Data encryption properties of a server.
+  highAvailability:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:HighAvailability"
+    description: High availability properties of a server.
+  identity:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:UserAssignedIdentity"
+    description: Describes the identity of the application.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  maintenanceWindow:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:MaintenanceWindow"
+    description: Maintenance window properties of a server.
+  network:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:Network"
+    description: Network properties of a server.
+    willReplaceOnChanges: true
+  pointInTimeUTC:
+    type: string
+    description: Restore point creation time (ISO8601 format), specifying the time to restore from. It's required when 'createMode' is 'PointInTimeRestore' or 'GeoRestore'.
+    willReplaceOnChanges: true
+  replicaCapacity:
+    type: integer
+    description: Replicas allowed for a server.
+  replicationRole:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:dbforpostgresql:ReplicationRole"
+    description: Replication role of the server
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  serverName:
+    type: string
+    description: The name of the server.
+    willReplaceOnChanges: true
+  sku:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:Sku"
+    description: The SKU (pricing tier) of the server.
+  sourceServerResourceId:
+    type: string
+    description: The source server resource ID to restore from. It's required when 'createMode' is 'PointInTimeRestore' or 'GeoRestore' or 'Replica'.
+    willReplaceOnChanges: true
+  storage:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:Storage"
+    description: Storage properties of a server.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  version:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:dbforpostgresql:ServerVersion"
+    description: PostgreSQL Server version.
+requiredInputs:
+  - resourceGroupName
+aliases:
+  - type: azure-native:dbforpostgresql/v20200214preview:Server
+  - type: azure-native:dbforpostgresql/v20200214privatepreview:Server
+  - type: azure-native:dbforpostgresql/v20210410privatepreview:Server
+  - type: azure-native:dbforpostgresql/v20210601:Server
+  - type: azure-native:dbforpostgresql/v20210601preview:Server
+  - type: azure-native:dbforpostgresql/v20210615privatepreview:Server
+  - type: azure-native:dbforpostgresql/v20220120preview:Server
+  - type: azure-native:dbforpostgresql/v20220308preview:Server
+  - type: azure-native:dbforpostgresql/v20221201:Server

@@ -1,0 +1,78 @@
+$token: azure-native:servicenetworking/v20221001preview:FrontendsInterface
+description: Frontend Subresource of Traffic Controller.
+properties:
+  ipAddressVersion:
+    type: string
+    description: Frontend IP Address Version (Optional).
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  mode:
+    type: string
+    description: Frontend Mode (Optional).
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: test doc
+  publicIPAddress:
+    type: object
+    $ref: "#/types/azure-native:servicenetworking/v20221001preview:FrontendPropertiesIPAddressResponse"
+    description: Frontend Public IP Address (Optional).
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:servicenetworking/v20221001preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - location
+  - name
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  frontendName:
+    type: string
+    description: Frontends
+    willReplaceOnChanges: true
+  ipAddressVersion:
+    $ref: "#/types/azure-native:servicenetworking/v20221001preview:FrontendIPAddressVersion"
+    description: Frontend IP Address Version (Optional).
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  mode:
+    $ref: "#/types/azure-native:servicenetworking/v20221001preview:FrontendMode"
+    description: Frontend Mode (Optional).
+  publicIPAddress:
+    type: object
+    $ref: "#/types/azure-native:servicenetworking/v20221001preview:FrontendPropertiesIPAddress"
+    description: Frontend Public IP Address (Optional).
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  trafficControllerName:
+    type: string
+    description: traffic controller name for path
+    willReplaceOnChanges: true
+requiredInputs:
+  - resourceGroupName
+  - trafficControllerName
+aliases:
+  - type: azure-native:servicenetworking:FrontendsInterface

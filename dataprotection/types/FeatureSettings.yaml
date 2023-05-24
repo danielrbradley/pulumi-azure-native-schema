@@ -1,0 +1,8 @@
+$token: azure-native:dataprotection:FeatureSettings
+description: Class containing feature settings of vault
+properties:
+  crossSubscriptionRestoreSettings:
+    type: object
+    $ref: "#/types/azure-native:dataprotection:CrossSubscriptionRestoreSettings"
+    description: CrossSubscriptionRestore Settings
+type: object

@@ -1,0 +1,23 @@
+$token: azure-native:migrate/v20220501preview:IISVirtualApplicationDetailsResponse
+description: IIS virtual application details.
+properties:
+  directories:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:DirectoryPathResponse"
+    description: Gets or sets the list of directories.
+  id:
+    type: string
+    description: Gets the ID.
+  isVirtualDirectory:
+    type: boolean
+    description: Gets a value indicating whether the application corresponds to a directory.
+  path:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:DirectoryPathResponse"
+    description: Second level entity for virtual directories.
+type: object
+required:
+  - id
+  - isVirtualDirectory

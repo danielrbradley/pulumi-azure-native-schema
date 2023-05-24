@@ -1,0 +1,10 @@
+$token: azure-native:security/v20230301preview:DefenderCspmAwsOfferingResponseDatabasesDspm
+description: The databases DSPM configuration
+properties:
+  cloudRoleArn:
+    type: string
+    description: The cloud role ARN in AWS for this feature
+  enabled:
+    type: boolean
+    description: Is databases DSPM protection enabled
+type: object

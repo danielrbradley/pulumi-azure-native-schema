@@ -1,0 +1,16 @@
+$token: azure-native:managednetworkfabric/v20230201preview:L3IsolationDomainPatchPropertiesAggregateRouteConfiguration
+description: List of Ipv4 and Ipv6 route configurations.
+properties:
+  ipv4Routes:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:L3IsolationDomainPatchPropertiesIpv4Routes"
+    description: List of Ipv4Route prefixes.
+  ipv6Routes:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:L3IsolationDomainPatchPropertiesIpv6Routes"
+    description: List of Ipv6Routes prefixes.
+type: object

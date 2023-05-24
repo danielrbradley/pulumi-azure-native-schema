@@ -1,0 +1,12 @@
+$token: azure-native:managednetworkfabric/v20230201preview:InternalNetworkPatchablePropertiesResponseIpv6NeighborAddress
+description: ipv6NeighborAddress model.
+properties:
+  address:
+    type: string
+    description: ip address of the ipv6NeighborAddress.
+  operationalState:
+    type: string
+    description: operationalState of the ipv6NeighborAddress.
+type: object
+required:
+  - operationalState

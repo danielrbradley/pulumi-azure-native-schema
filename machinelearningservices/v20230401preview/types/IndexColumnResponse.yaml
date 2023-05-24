@@ -1,0 +1,11 @@
+$token: azure-native:machinelearningservices/v20230401preview:IndexColumnResponse
+description: Dto object representing index column
+properties:
+  columnName:
+    type: string
+    description: Specifies the column name
+  dataType:
+    type: string
+    description: Specifies the data type
+    default: String
+type: object

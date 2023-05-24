@@ -1,0 +1,32 @@
+$token: azure-native:communication/v20211001preview:listCommunicationServiceKeys
+description: Get the access keys of the CommunicationService resource.
+inputs:
+  properties:
+    communicationServiceName:
+      type: string
+      description: The name of the CommunicationService resource.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - communicationServiceName
+    - resourceGroupName
+outputs:
+  description: A class representing the access keys of a CommunicationService.
+  properties:
+    primaryConnectionString:
+      type: string
+      description: CommunicationService connection string constructed via the primaryKey
+    primaryKey:
+      type: string
+      description: The primary access key.
+    secondaryConnectionString:
+      type: string
+      description: CommunicationService connection string constructed via the secondaryKey
+    secondaryKey:
+      type: string
+      description: The secondary access key.
+  type: object

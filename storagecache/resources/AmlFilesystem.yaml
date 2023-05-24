@@ -1,0 +1,143 @@
+$token: azure-native:storagecache:AmlFilesystem
+properties:
+  clientInfo:
+    type: object
+    $ref: "#/types/azure-native:storagecache:AmlFilesystemClientInfoResponse"
+    description: Client information for the AML file system.
+  encryptionSettings:
+    type: object
+    $ref: "#/types/azure-native:storagecache:AmlFilesystemEncryptionSettingsResponse"
+    description: Specifies encryption settings of the AML file system.
+  filesystemSubnet:
+    type: string
+    description: Subnet used for managing the AML file system and for client-facing operations. This subnet should have at least a /24 subnet mask within the VNET's address space.
+  health:
+    type: object
+    $ref: "#/types/azure-native:storagecache:AmlFilesystemHealthResponse"
+    description: Health of the AML file system.
+  hsm:
+    type: object
+    $ref: "#/types/azure-native:storagecache:AmlFilesystemResponseHsm"
+    description: Hydration and archive settings and status
+  identity:
+    type: object
+    $ref: "#/types/azure-native:storagecache:AmlFilesystemIdentityResponse"
+    description: The managed identity used by the AML file system, if configured.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  maintenanceWindow:
+    type: object
+    $ref: "#/types/azure-native:storagecache:AmlFilesystemResponseMaintenanceWindow"
+    description: Start time of a 30-minute weekly maintenance window.
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: ARM provisioning state.
+  sku:
+    type: object
+    $ref: "#/types/azure-native:storagecache:SkuNameResponse"
+    description: SKU for the resource.
+  storageCapacityTiB:
+    type: number
+    description: The size of the AML file system, in TiB. This might be rounded up.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:storagecache:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  throughputProvisionedMBps:
+    type: integer
+    description: Throughput provisioned in MB per sec, calculated as storageCapacityTiB * per-unit storage throughput
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  zones:
+    type: array
+    items:
+      type: string
+    description: Availability zones for resources. This field should only contain a single element in the array.
+type: object
+required:
+  - clientInfo
+  - filesystemSubnet
+  - health
+  - location
+  - maintenanceWindow
+  - name
+  - provisioningState
+  - storageCapacityTiB
+  - systemData
+  - throughputProvisionedMBps
+  - type
+inputProperties:
+  amlFilesystemName:
+    type: string
+    description: Name for the AML file system. Allows alphanumerics, underscores, and hyphens. Start and end with alphanumeric.
+    willReplaceOnChanges: true
+  encryptionSettings:
+    type: object
+    $ref: "#/types/azure-native:storagecache:AmlFilesystemEncryptionSettings"
+    description: Specifies encryption settings of the AML file system.
+  filesystemSubnet:
+    type: string
+    description: Subnet used for managing the AML file system and for client-facing operations. This subnet should have at least a /24 subnet mask within the VNET's address space.
+    willReplaceOnChanges: true
+  hsm:
+    type: object
+    $ref: "#/types/azure-native:storagecache:AmlFilesystemHsm"
+    description: Hydration and archive settings and status
+  identity:
+    type: object
+    $ref: "#/types/azure-native:storagecache:AmlFilesystemIdentity"
+    description: The managed identity used by the AML file system, if configured.
+    willReplaceOnChanges: true
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  maintenanceWindow:
+    type: object
+    $ref: "#/types/azure-native:storagecache:AmlFilesystemMaintenanceWindow"
+    description: Start time of a 30-minute weekly maintenance window.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  sku:
+    type: object
+    $ref: "#/types/azure-native:storagecache:SkuName"
+    description: SKU for the resource.
+    willReplaceOnChanges: true
+  storageCapacityTiB:
+    type: number
+    description: The size of the AML file system, in TiB. This might be rounded up.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  zones:
+    type: array
+    items:
+      type: string
+    description: Availability zones for resources. This field should only contain a single element in the array.
+    willReplaceOnChanges: true
+requiredInputs:
+  - filesystemSubnet
+  - maintenanceWindow
+  - resourceGroupName
+  - storageCapacityTiB
+aliases:
+  - type: azure-native:storagecache:amlFilesystem
+  - type: azure-native:storagecache/v20230301preview:AmlFilesystem
+  - type: azure-native:storagecache/v20230301preview:amlFilesystem
+  - type: azure-native:storagecache/v20230501:AmlFilesystem
+  - type: azure-native:storagecache/v20230501:amlFilesystem

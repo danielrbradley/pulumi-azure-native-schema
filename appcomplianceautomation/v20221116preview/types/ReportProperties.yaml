@@ -1,0 +1,25 @@
+$token: azure-native:appcomplianceautomation/v20221116preview:ReportProperties
+description: Report's properties.
+properties:
+  offerGuid:
+    type: string
+    description: Report offer Guid.
+  resources:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:appcomplianceautomation/v20221116preview:ResourceMetadata"
+    description: List of resource data.
+  timeZone:
+    type: string
+    description: "Report collection trigger time's time zone, the available list can be obtained by executing \"Get-TimeZone -ListAvailable\" in PowerShell.\r
+
+      An example of valid timezone id is \"Pacific Standard Time\"."
+  triggerTime:
+    type: string
+    description: Report collection trigger time.
+type: object
+required:
+  - resources
+  - timeZone
+  - triggerTime

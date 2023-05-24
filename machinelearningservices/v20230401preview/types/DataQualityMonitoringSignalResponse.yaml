@@ -1,0 +1,58 @@
+$token: azure-native:machinelearningservices/v20230401preview:DataQualityMonitoringSignalResponse
+properties:
+  baselineData:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MonitoringInputDataResponse"
+    description: "[Required] The data to calculate drift against."
+  features:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:AllFeaturesResponse"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:FeatureSubsetResponse"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:TopNFeaturesByAttributionResponse"
+    discriminator:
+      propertyName: filterType
+      mapping:
+        AllFeatures: "#/types/azure-native:machinelearningservices/v20230401preview:AllFeaturesResponse"
+        FeatureSubset: "#/types/azure-native:machinelearningservices/v20230401preview:FeatureSubsetResponse"
+        TopNByAttribution: "#/types/azure-native:machinelearningservices/v20230401preview:TopNFeaturesByAttributionResponse"
+    description: The features to calculate drift over.
+  lookbackPeriod:
+    type: string
+    description: The amount of time a single monitor should look back over the target data on a given run.
+  metricThresholds:
+    type: array
+    items:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:CategoricalDataQualityMetricThresholdResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:NumericalDataQualityMetricThresholdResponse"
+      discriminator:
+        propertyName: dataType
+        mapping:
+          Categorical: "#/types/azure-native:machinelearningservices/v20230401preview:CategoricalDataQualityMetricThresholdResponse"
+          Numerical: "#/types/azure-native:machinelearningservices/v20230401preview:NumericalDataQualityMetricThresholdResponse"
+    description: "[Required] A list of metrics to calculate and their associated thresholds."
+  mode:
+    type: string
+    description: The current notification mode for this signal.
+    default: Disabled
+  signalType:
+    type: string
+    description: |-
+      
+      Expected value is 'DataQuality'.
+    const: DataQuality
+  targetData:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MonitoringInputDataResponse"
+    description: "[Required] The data produced by the production service which drift will be calculated for."
+type: object
+required:
+  - baselineData
+  - metricThresholds
+  - signalType
+  - targetData

@@ -1,0 +1,10 @@
+$token: azure-native:kusto:LanguageExtensionResponse
+description: The language extension object.
+properties:
+  languageExtensionImageName:
+    type: string
+    description: The language extension image name.
+  languageExtensionName:
+    type: string
+    description: The language extension name.
+type: object

@@ -1,0 +1,7 @@
+$token: azure-native:recoveryservices:VaultSubResourceType
+description: GroupId for the PrivateEndpointConnection - AzureBackup, AzureBackup_secondary or AzureSiteRecovery
+type: string
+enum:
+  - value: AzureBackup
+  - value: AzureBackup_secondary
+  - value: AzureSiteRecovery

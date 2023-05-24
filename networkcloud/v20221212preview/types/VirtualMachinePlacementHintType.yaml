@@ -1,0 +1,6 @@
+$token: azure-native:networkcloud/v20221212preview:VirtualMachinePlacementHintType
+description: The specification of whether this hint supports affinity or anti-affinity with the referenced resources.
+type: string
+enum:
+  - value: Affinity
+  - value: AntiAffinity

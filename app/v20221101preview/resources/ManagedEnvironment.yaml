@@ -1,0 +1,155 @@
+$token: azure-native:app/v20221101preview:ManagedEnvironment
+description: An environment for hosting container apps
+properties:
+  appLogsConfiguration:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:AppLogsConfigurationResponse"
+    description: |-
+      Cluster configuration which enables the log daemon to export
+      app logs to a destination. Currently only "log-analytics" is
+      supported
+  customDomainConfiguration:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:CustomDomainConfigurationResponse"
+    description: Custom domain configuration for the environment
+  daprAIConnectionString:
+    type: string
+    description: Application Insights connection string used by Dapr to export Service to Service communication telemetry
+  daprAIInstrumentationKey:
+    type: string
+    description: Azure Monitor instrumentation key used by Dapr to export Service to Service communication telemetry
+  daprConfiguration:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:DaprConfigurationResponse"
+    description: The configuration of Dapr component.
+  defaultDomain:
+    type: string
+    description: Default Domain Name for the cluster
+  deploymentErrors:
+    type: string
+    description: Any errors that occurred during deployment or deployment validation
+  eventStreamEndpoint:
+    type: string
+    description: The endpoint of the eventstream of the Environment.
+  infrastructureResourceGroup:
+    type: string
+    description: Name of the platform-managed resource group created for the Managed Environment to host infrastructure resources. If a subnet ID is provided, this resource group will be created in the same subscription as the subnet.
+  kedaConfiguration:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:KedaConfigurationResponse"
+    description: The configuration of Keda component.
+  kind:
+    type: string
+    description: Kind of the Environment.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: Provisioning state of the Environment.
+  staticIp:
+    type: string
+    description: Static IP of the Environment
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  vnetConfiguration:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:VnetConfigurationResponse"
+    description: Vnet configuration for the environment
+  workloadProfiles:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:app/v20221101preview:WorkloadProfileResponse"
+    description: Workload profiles configured for the Managed Environment.
+  zoneRedundant:
+    type: boolean
+    description: Whether or not this Managed Environment is zone-redundant.
+type: object
+required:
+  - defaultDomain
+  - deploymentErrors
+  - eventStreamEndpoint
+  - location
+  - name
+  - provisioningState
+  - staticIp
+  - systemData
+  - type
+inputProperties:
+  appLogsConfiguration:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:AppLogsConfiguration"
+    description: |-
+      Cluster configuration which enables the log daemon to export
+      app logs to a destination. Currently only "log-analytics" is
+      supported
+  customDomainConfiguration:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:CustomDomainConfiguration"
+    description: Custom domain configuration for the environment
+  daprAIConnectionString:
+    type: string
+    description: Application Insights connection string used by Dapr to export Service to Service communication telemetry
+  daprAIInstrumentationKey:
+    type: string
+    description: Azure Monitor instrumentation key used by Dapr to export Service to Service communication telemetry
+  environmentName:
+    type: string
+    description: Name of the Environment.
+    willReplaceOnChanges: true
+  infrastructureResourceGroup:
+    type: string
+    description: Name of the platform-managed resource group created for the Managed Environment to host infrastructure resources. If a subnet ID is provided, this resource group will be created in the same subscription as the subnet.
+    willReplaceOnChanges: true
+  kind:
+    type: string
+    description: Kind of the Environment.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  vnetConfiguration:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:VnetConfiguration"
+    description: Vnet configuration for the environment
+  workloadProfiles:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:app/v20221101preview:WorkloadProfile"
+    description: Workload profiles configured for the Managed Environment.
+  zoneRedundant:
+    type: boolean
+    description: Whether or not this Managed Environment is zone-redundant.
+    willReplaceOnChanges: true
+requiredInputs:
+  - resourceGroupName
+aliases:
+  - type: azure-native:app:ManagedEnvironment
+  - type: azure-native:app/v20220101preview:ManagedEnvironment
+  - type: azure-native:app/v20220301:ManagedEnvironment
+  - type: azure-native:app/v20220601preview:ManagedEnvironment
+  - type: azure-native:app/v20221001:ManagedEnvironment

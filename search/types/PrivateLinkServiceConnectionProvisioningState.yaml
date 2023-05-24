@@ -1,0 +1,22 @@
+$token: azure-native:search:PrivateLinkServiceConnectionProvisioningState
+description: The provisioning state of the private link service connection. Can be Updating, Deleting, Failed, Succeeded, or Incomplete
+type: string
+enum:
+  - name: Updating
+    description: The private link service connection is in the process of being created along with other resources for it to be fully functional.
+    value: Updating
+  - name: Deleting
+    description: The private link service connection is in the process of being deleted.
+    value: Deleting
+  - name: Failed
+    description: The private link service connection has failed to be provisioned or deleted.
+    value: Failed
+  - name: Succeeded
+    description: The private link service connection has finished provisioning and is ready for approval.
+    value: Succeeded
+  - name: Incomplete
+    description: Provisioning request for the private link service connection resource has been accepted but the process of creation has not commenced yet.
+    value: Incomplete
+  - name: Canceled
+    description: Provisioning request for the private link service connection resource has been canceled
+    value: Canceled

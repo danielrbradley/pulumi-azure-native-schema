@@ -1,0 +1,12 @@
+$token: azure-native:alertsmanagement/v20230301:PrometheusRuleGroupActionResponse
+description: An alert action. Only relevant for alerts.
+properties:
+  actionGroupId:
+    type: string
+    description: The resource id of the action group to use.
+  actionProperties:
+    type: object
+    additionalProperties:
+      type: string
+    description: The properties of an action group object.
+type: object

@@ -1,0 +1,8 @@
+$token: azure-native:appplatform:ConfigServerSettings
+description: The settings of config server.
+properties:
+  gitProperty:
+    type: object
+    $ref: "#/types/azure-native:appplatform:ConfigServerGitProperty"
+    description: Property of git environment.
+type: object

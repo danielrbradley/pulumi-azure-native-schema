@@ -1,0 +1,6 @@
+$token: azure-native:azurestackhci/v20210901preview:DiskFileFormat
+description: The format of the actual VHD file [vhd, vhdx]
+type: string
+enum:
+  - value: vhdx
+  - value: vhd

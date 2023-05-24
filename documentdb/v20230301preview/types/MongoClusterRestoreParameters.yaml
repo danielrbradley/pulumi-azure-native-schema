@@ -1,0 +1,10 @@
+$token: azure-native:documentdb/v20230301preview:MongoClusterRestoreParameters
+description: Parameters used for restore operations
+properties:
+  pointInTimeUTC:
+    type: string
+    description: UTC point in time to restore a mongo cluster
+  sourceResourceId:
+    type: string
+    description: Resource ID to locate the source cluster to restore
+type: object

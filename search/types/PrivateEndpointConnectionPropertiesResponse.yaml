@@ -1,0 +1,18 @@
+$token: azure-native:search:PrivateEndpointConnectionPropertiesResponse
+description: Describes the properties of an existing Private Endpoint connection to the Azure Cognitive Search service.
+properties:
+  groupId:
+    type: string
+    description: The group id from the provider of resource the private link service connection is for.
+  privateEndpoint:
+    type: object
+    $ref: "#/types/azure-native:search:PrivateEndpointConnectionPropertiesResponsePrivateEndpoint"
+    description: The private endpoint resource from Microsoft.Network provider.
+  privateLinkServiceConnectionState:
+    type: object
+    $ref: "#/types/azure-native:search:PrivateEndpointConnectionPropertiesResponsePrivateLinkServiceConnectionState"
+    description: Describes the current state of an existing Private Link Service connection to the Azure Private Endpoint.
+  provisioningState:
+    type: string
+    description: The provisioning state of the private link service connection. Can be Updating, Deleting, Failed, Succeeded, or Incomplete
+type: object

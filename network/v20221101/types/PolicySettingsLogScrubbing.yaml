@@ -1,0 +1,15 @@
+$token: azure-native:network/v20221101:PolicySettingsLogScrubbing
+description: To scrub sensitive log fields
+properties:
+  scrubbingRules:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:network/v20221101:WebApplicationFirewallScrubbingRules"
+    description: The rules that are applied to the logs for scrubbing.
+  state:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:network/v20221101:WebApplicationFirewallScrubbingState"
+    description: State of the log scrubbing config. Default value is Enabled.
+type: object

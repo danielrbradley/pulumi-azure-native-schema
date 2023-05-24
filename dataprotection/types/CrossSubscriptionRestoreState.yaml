@@ -1,0 +1,7 @@
+$token: azure-native:dataprotection:CrossSubscriptionRestoreState
+description: CrossSubscriptionRestore state
+type: string
+enum:
+  - value: Disabled
+  - value: PermanentlyDisabled
+  - value: Enabled

@@ -1,0 +1,47 @@
+$token: azure-native:migrate:MoveResource
+properties:
+  name:
+    type: string
+    description: The name of the resource
+  properties:
+    type: object
+    $ref: "#/types/azure-native:migrate:MoveResourcePropertiesResponse"
+    description: Defines the move resource properties.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:migrate:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  type:
+    type: string
+    description: The type of the resource.
+type: object
+required:
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  moveCollectionName:
+    type: string
+    description: The Move Collection Name.
+    willReplaceOnChanges: true
+  moveResourceName:
+    type: string
+    description: The Move Resource Name.
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:migrate:MoveResourceProperties"
+    description: Defines the move resource properties.
+  resourceGroupName:
+    type: string
+    description: The Resource Group Name.
+    willReplaceOnChanges: true
+requiredInputs:
+  - moveCollectionName
+  - resourceGroupName
+aliases:
+  - type: azure-native:migrate/v20191001preview:MoveResource
+  - type: azure-native:migrate/v20210101:MoveResource
+  - type: azure-native:migrate/v20210801:MoveResource
+  - type: azure-native:migrate/v20220801:MoveResource

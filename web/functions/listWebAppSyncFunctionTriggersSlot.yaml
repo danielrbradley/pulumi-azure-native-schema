@@ -1,0 +1,33 @@
+$token: azure-native:web:listWebAppSyncFunctionTriggersSlot
+description: |-
+  Description for This is to allow calling via powershell and ARM template.
+  API Version: 2022-09-01.
+inputs:
+  properties:
+    name:
+      type: string
+      description: Name of the app.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the resource group to which the resource belongs.
+      willReplaceOnChanges: true
+    slot:
+      type: string
+      description: Name of the deployment slot.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - name
+    - resourceGroupName
+    - slot
+outputs:
+  description: Function secrets.
+  properties:
+    key:
+      type: string
+      description: Secret key.
+    triggerUrl:
+      type: string
+      description: Trigger URL.
+  type: object

@@ -1,0 +1,91 @@
+$token: azure-native:azurestackhci/v20230201:getUpdateRun
+description: Get the Update run for a specified update
+inputs:
+  properties:
+    clusterName:
+      type: string
+      description: The name of the cluster.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    updateName:
+      type: string
+      description: The name of the Update
+      willReplaceOnChanges: true
+    updateRunName:
+      type: string
+      description: The name of the Update Run
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - clusterName
+    - resourceGroupName
+    - updateName
+    - updateRunName
+outputs:
+  description: Details of an Update run
+  properties:
+    description:
+      type: string
+      description: More detailed description of the step.
+    duration:
+      type: string
+      description: Duration of the update run.
+    endTimeUtc:
+      type: string
+      description: When the step reached a terminal state.
+    errorMessage:
+      type: string
+      description: Error message, specified if the step is in a failed state.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    lastUpdatedTime:
+      type: string
+      description: Timestamp of the most recently completed step in the update run.
+    lastUpdatedTimeUtc:
+      type: string
+      description: Completion time of this step or the last completed sub-step.
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+      description: Provisioning state of the UpdateRuns proxy resource.
+    startTimeUtc:
+      type: string
+      description: When the step started, or empty if it has not started executing.
+    state:
+      type: string
+      description: State of the update run.
+    status:
+      type: string
+      description: "Status of the step, bubbled up from the ECE action plan for installation attempts. Values are: 'Success', 'Error', 'InProgress', and 'Unknown status'."
+    steps:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:azurestackhci/v20230201:StepResponse"
+      description: Recursive model for child steps of this step.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20230201:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    timeStarted:
+      type: string
+      description: Timestamp of the update run was started.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - provisioningState
+    - systemData
+    - type

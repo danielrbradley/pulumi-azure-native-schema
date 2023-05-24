@@ -1,0 +1,72 @@
+$token: azure-native:workloads/v20230401:getSAPSizingRecommendations
+description: Get SAP sizing recommendations by providing input SAPS for application tier and memory required for database tier
+inputs:
+  properties:
+    appLocation:
+      type: string
+      description: The geo-location where the resource is to be created.
+    databaseType:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:workloads/v20230401:SAPDatabaseType"
+      description: The database type.
+      willReplaceOnChanges: true
+    dbMemory:
+      type: number
+      description: The database memory configuration.
+    dbScaleMethod:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:workloads/v20230401:SAPDatabaseScaleMethod"
+      description: The DB scale method.
+      willReplaceOnChanges: true
+    deploymentType:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:workloads/v20230401:SAPDeploymentType"
+      description: "The deployment type. Eg: SingleServer/ThreeTier"
+      willReplaceOnChanges: true
+    environment:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:workloads/v20230401:SAPEnvironmentType"
+      description: Defines the environment type - Production/Non Production.
+      willReplaceOnChanges: true
+    highAvailabilityType:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:workloads/v20230401:SAPHighAvailabilityType"
+      description: The high availability type.
+      willReplaceOnChanges: true
+    location:
+      type: string
+      description: The name of Azure region.
+      willReplaceOnChanges: true
+    sapProduct:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:workloads/v20230401:SAPProductType"
+      description: Defines the SAP Product type.
+      willReplaceOnChanges: true
+    saps:
+      type: number
+      description: The SAP Application Performance Standard measurement.
+  type: object
+  required:
+    - appLocation
+    - databaseType
+    - dbMemory
+    - deploymentType
+    - environment
+    - location
+    - sapProduct
+    - saps
+outputs:
+  description: The SAP sizing recommendation result.
+  properties:
+    deploymentType:
+      type: string
+      description: The type of SAP deployment, single server or Three tier.
+  type: object
+  required:
+    - deploymentType

@@ -1,0 +1,6 @@
+$token: azure-native:containerservice/v20230102preview:EbpfDataplane
+description: The eBPF dataplane used for building the Kubernetes network.
+type: string
+enum:
+  - description: Use Cilium for networking in the Kubernetes cluster.
+    value: cilium

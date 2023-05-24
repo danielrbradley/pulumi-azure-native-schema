@@ -1,0 +1,6 @@
+$token: azure-native:sqlvirtualmachine/v20220801preview:LeastPrivilegeMode
+description: SQL IaaS Agent least privilege mode.
+type: string
+enum:
+  - value: Enabled
+  - value: NotSet

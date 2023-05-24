@@ -1,0 +1,7 @@
+$token: azure-native:migrate/v20220501preview:ConfigurationType
+description: Gets or sets the configuration type.
+type: string
+enum:
+  - value: IISConnectionString
+  - value: IISAuthentication
+  - value: ApacheTomcatContextResource

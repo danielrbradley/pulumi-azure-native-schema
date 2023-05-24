@@ -1,0 +1,16 @@
+$token: azure-native:hybridcompute/v20230315preview:IpAddressResponse
+description: Describes properties of the IP address.
+properties:
+  address:
+    type: string
+    description: Represents the IP Address.
+  ipAddressVersion:
+    type: string
+    description: Represents the Ip Address Version.
+  subnet:
+    type: object
+    $ref: "#/types/azure-native:hybridcompute/v20230315preview:SubnetResponse"
+    description: The subnet to which this IP address belongs.
+type: object
+required:
+  - subnet

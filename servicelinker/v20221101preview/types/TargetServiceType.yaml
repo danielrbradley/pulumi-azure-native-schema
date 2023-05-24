@@ -1,0 +1,8 @@
+$token: azure-native:servicelinker/v20221101preview:TargetServiceType
+description: The target service type.
+type: string
+enum:
+  - value: AzureResource
+  - value: ConfluentBootstrapServer
+  - value: ConfluentSchemaRegistry
+  - value: SelfHostedServer

@@ -1,0 +1,6 @@
+$token: azure-native:dbforpostgresql:ActiveDirectoryAuthEnum
+description: If Enabled, Azure Active Directory authentication is enabled.
+type: string
+enum:
+  - value: Enabled
+  - value: Disabled

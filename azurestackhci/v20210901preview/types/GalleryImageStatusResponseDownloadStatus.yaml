@@ -1,0 +1,7 @@
+$token: azure-native:azurestackhci/v20210901preview:GalleryImageStatusResponseDownloadStatus
+description: The download status of the gallery image
+properties:
+  downloadSizeInMB:
+    type: number
+    description: The downloaded sized of the image in MB
+type: object

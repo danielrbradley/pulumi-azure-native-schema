@@ -1,0 +1,19 @@
+$token: azure-native:azurestackhci/v20210901preview:IpConfigurationProperties
+description: InterfaceIPConfigurationPropertiesFormat properties of IP configuration.
+properties:
+  prefixLength:
+    type: string
+    description: prefixLength for network interface
+  privateIPAddress:
+    type: string
+    description: PrivateIPAddress - Private IP address of the IP configuration.
+  privateIPAllocationMethod:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:azurestackhci/v20210901preview:PrivateIPAllocationMethodEnum"
+    description: "PrivateIPAllocationMethod - The private IP address allocation method. Possible values include: 'Static', 'Dynamic'"
+  subnet:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:IpConfigurationSubnet"
+    description: Subnet - Name of Subnet bound to the IP configuration.
+type: object

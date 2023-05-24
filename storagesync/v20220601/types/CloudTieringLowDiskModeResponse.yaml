@@ -1,0 +1,13 @@
+$token: azure-native:storagesync/v20220601:CloudTieringLowDiskModeResponse
+description: Information regarding the low disk mode state
+properties:
+  lastUpdatedTimestamp:
+    type: string
+    description: Last updated timestamp
+  state:
+    type: string
+    description: Low disk mode state
+type: object
+required:
+  - lastUpdatedTimestamp
+  - state

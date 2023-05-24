@@ -1,0 +1,109 @@
+$token: azure-native:networkcloud/v20221212preview:Console
+properties:
+  detailedStatus:
+    type: string
+    description: The more detailed status of the console.
+  detailedStatusMessage:
+    type: string
+    description: The descriptive message about the current detailed status.
+  enabled:
+    type: string
+    description: The indicator of whether the console access is enabled.
+  expiration:
+    type: string
+    description: The date and time after which the key will be disallowed access.
+  extendedLocation:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:ExtendedLocationResponse"
+    description: The extended location of the cluster manager associated with the cluster this virtual machine is created on.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  privateLinkServiceId:
+    type: string
+    description: The resource ID of the private link service that is used to provide virtual machine console access.
+  provisioningState:
+    type: string
+    description: The provisioning state of the virtual machine console.
+  sshPublicKey:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:SshPublicKeyResponse"
+    description: The SSH public key that will be provisioned for user access. The user is expected to have the corresponding SSH private key for logging in.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  virtualMachineAccessId:
+    type: string
+    description: The unique identifier for the virtual machine that is used to access the console.
+type: object
+required:
+  - detailedStatus
+  - detailedStatusMessage
+  - enabled
+  - extendedLocation
+  - location
+  - name
+  - privateLinkServiceId
+  - provisioningState
+  - sshPublicKey
+  - systemData
+  - type
+  - virtualMachineAccessId
+inputProperties:
+  consoleName:
+    type: string
+    description: The name of the virtual machine console.
+    willReplaceOnChanges: true
+  enabled:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:networkcloud/v20221212preview:ConsoleEnabled"
+    description: The indicator of whether the console access is enabled.
+  expiration:
+    type: string
+    description: The date and time after which the key will be disallowed access.
+  extendedLocation:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:ExtendedLocation"
+    description: The extended location of the cluster manager associated with the cluster this virtual machine is created on.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  sshPublicKey:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:SshPublicKey"
+    description: The SSH public key that will be provisioned for user access. The user is expected to have the corresponding SSH private key for logging in.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  virtualMachineName:
+    type: string
+    description: The name of the virtual machine.
+    willReplaceOnChanges: true
+requiredInputs:
+  - enabled
+  - extendedLocation
+  - resourceGroupName
+  - sshPublicKey
+  - virtualMachineName
+aliases:
+  - type: azure-native:networkcloud:Console

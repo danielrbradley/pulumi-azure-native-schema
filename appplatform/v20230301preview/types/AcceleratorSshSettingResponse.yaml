@@ -1,0 +1,12 @@
+$token: azure-native:appplatform/v20230301preview:AcceleratorSshSettingResponse
+description: Auth setting for SSH auth.
+properties:
+  authType:
+    type: string
+    description: |-
+      The type of the auth setting.
+      Expected value is 'SSH'.
+    const: SSH
+type: object
+required:
+  - authType

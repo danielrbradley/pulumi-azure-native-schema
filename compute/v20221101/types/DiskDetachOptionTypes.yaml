@@ -1,0 +1,4 @@
+$token: azure-native:compute/v20221101:DiskDetachOptionTypes
+type: string
+enum:
+  - value: ForceDetach

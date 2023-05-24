@@ -1,0 +1,8 @@
+$token: azure-native:servicefabric:VmSetupAction
+description: action to be performed on the vms before bootstrapping the service fabric runtime.
+type: string
+enum:
+  - description: Enable windows containers feature.
+    value: EnableContainers
+  - description: Enables windows HyperV feature.
+    value: EnableHyperV

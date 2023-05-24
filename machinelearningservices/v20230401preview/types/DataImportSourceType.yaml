@@ -1,0 +1,6 @@
+$token: azure-native:machinelearningservices/v20230401preview:DataImportSourceType
+description: "[Required] Specifies the type of data."
+type: string
+enum:
+  - value: database
+  - value: file_system

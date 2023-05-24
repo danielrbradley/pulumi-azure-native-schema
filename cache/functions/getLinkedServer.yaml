@@ -1,0 +1,64 @@
+$token: azure-native:cache:getLinkedServer
+description: |-
+  Gets the detailed information about a linked server of a redis cache (requires Premium SKU).
+  API Version: 2022-06-01.
+inputs:
+  properties:
+    linkedServerName:
+      type: string
+      description: The name of the linked server.
+      willReplaceOnChanges: true
+    name:
+      type: string
+      description: The name of the redis cache.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - linkedServerName
+    - name
+    - resourceGroupName
+outputs:
+  description: Response to put/get linked server (with properties) for Redis cache.
+  properties:
+    geoReplicatedPrimaryHostName:
+      type: string
+      description: The unchanging DNS name which will always point to current geo-primary cache among the linked redis caches for seamless Geo Failover experience.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    linkedRedisCacheId:
+      type: string
+      description: Fully qualified resourceId of the linked redis cache.
+    linkedRedisCacheLocation:
+      type: string
+      description: Location of the linked redis cache.
+    name:
+      type: string
+      description: The name of the resource
+    primaryHostName:
+      type: string
+      description: The changing DNS name that resolves to the current geo-primary cache among the linked redis caches before or after the Geo Failover.
+    provisioningState:
+      type: string
+      description: Terminal state of the link between primary and secondary redis cache.
+    serverRole:
+      type: string
+      description: Role of the linked server.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - geoReplicatedPrimaryHostName
+    - id
+    - linkedRedisCacheId
+    - linkedRedisCacheLocation
+    - name
+    - primaryHostName
+    - provisioningState
+    - serverRole
+    - type

@@ -1,0 +1,12 @@
+$token: azure-native:insights/v20220601:MonitoringAccountDestination
+description: Monitoring account destination.
+properties:
+  accountResourceId:
+    type: string
+    description: The resource ID of the monitoring account.
+  name:
+    type: string
+    description: "A friendly name for the destination. \r
+
+      This name should be unique across all destinations (regardless of type) within the data collection rule."
+type: object

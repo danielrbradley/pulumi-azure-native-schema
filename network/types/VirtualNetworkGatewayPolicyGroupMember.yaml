@@ -1,0 +1,15 @@
+$token: azure-native:network:VirtualNetworkGatewayPolicyGroupMember
+description: Vpn Client Connection configuration PolicyGroup member
+properties:
+  attributeType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:network:VpnPolicyMemberAttributeType"
+    description: The Vpn Policy member attribute type.
+  attributeValue:
+    type: string
+    description: The value of Attribute used for this VirtualNetworkGatewayPolicyGroupMember.
+  name:
+    type: string
+    description: Name of the VirtualNetworkGatewayPolicyGroupMember.
+type: object

@@ -1,0 +1,51 @@
+$token: azure-native:apimanagement:ContentItem
+properties:
+  name:
+    type: string
+    description: The name of the resource
+  properties:
+    $ref: pulumi.json#/Any
+    description: Properties of the content item.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - name
+  - properties
+  - type
+inputProperties:
+  contentItemId:
+    type: string
+    description: Content item identifier.
+    willReplaceOnChanges: true
+  contentTypeId:
+    type: string
+    description: Content type identifier.
+    willReplaceOnChanges: true
+  properties:
+    $ref: pulumi.json#/Any
+    description: Properties of the content item.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  serviceName:
+    type: string
+    description: The name of the API Management service.
+    willReplaceOnChanges: true
+requiredInputs:
+  - contentTypeId
+  - resourceGroupName
+  - serviceName
+aliases:
+  - type: azure-native:apimanagement/v20191201:ContentItem
+  - type: azure-native:apimanagement/v20200601preview:ContentItem
+  - type: azure-native:apimanagement/v20201201:ContentItem
+  - type: azure-native:apimanagement/v20210101preview:ContentItem
+  - type: azure-native:apimanagement/v20210401preview:ContentItem
+  - type: azure-native:apimanagement/v20210801:ContentItem
+  - type: azure-native:apimanagement/v20211201preview:ContentItem
+  - type: azure-native:apimanagement/v20220401preview:ContentItem
+  - type: azure-native:apimanagement/v20220801:ContentItem
+  - type: azure-native:apimanagement/v20220901preview:ContentItem

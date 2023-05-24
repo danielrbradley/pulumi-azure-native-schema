@@ -1,0 +1,99 @@
+$token: azure-native:networkcloud:MetricsConfiguration
+properties:
+  collectionInterval:
+    type: number
+    description: The interval in minutes by which metrics will be collected.
+  detailedStatus:
+    type: string
+    description: The more detailed status of the metrics configuration.
+  detailedStatusMessage:
+    type: string
+    description: The descriptive message about the current detailed status.
+  disabledMetrics:
+    type: array
+    items:
+      type: string
+    description: The list of metrics that are available for the cluster but disabled at the moment.
+  enabledMetrics:
+    type: array
+    items:
+      type: string
+    description: The list of metric names that have been chosen to be enabled in addition to the core set of enabled metrics.
+  extendedLocation:
+    type: object
+    $ref: "#/types/azure-native:networkcloud:ExtendedLocationResponse"
+    description: The extended location of the cluster associated with the resource.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: The provisioning state of the metrics configuration.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:networkcloud:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - collectionInterval
+  - detailedStatus
+  - detailedStatusMessage
+  - disabledMetrics
+  - extendedLocation
+  - location
+  - name
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  clusterName:
+    type: string
+    description: The name of the cluster.
+    willReplaceOnChanges: true
+  collectionInterval:
+    type: number
+    description: The interval in minutes by which metrics will be collected.
+  enabledMetrics:
+    type: array
+    items:
+      type: string
+    description: The list of metric names that have been chosen to be enabled in addition to the core set of enabled metrics.
+  extendedLocation:
+    type: object
+    $ref: "#/types/azure-native:networkcloud:ExtendedLocation"
+    description: The extended location of the cluster associated with the resource.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  metricsConfigurationName:
+    type: string
+    description: The name of the metrics configuration for the cluster.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+requiredInputs:
+  - clusterName
+  - collectionInterval
+  - extendedLocation
+  - resourceGroupName
+aliases:
+  - type: azure-native:networkcloud/v20221212preview:MetricsConfiguration

@@ -1,0 +1,7 @@
+$token: azure-native:storagecache/v20230501:CacheResponseSku
+description: SKU for the cache.
+properties:
+  name:
+    type: string
+    description: SKU name for this cache.
+type: object

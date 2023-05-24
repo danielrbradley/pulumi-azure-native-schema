@@ -1,0 +1,8 @@
+$token: azure-native:datadog/v20220601:IdentityProperties
+properties:
+  type:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:datadog/v20220601:ManagedIdentityTypes"
+    description: Identity type
+type: object

@@ -1,0 +1,11 @@
+$token: azure-native:networkcloud:EndpointDependencyResponse
+properties:
+  domainName:
+    type: string
+    description: The domain name of the dependency.
+  port:
+    type: number
+    description: The port of this endpoint.
+type: object
+required:
+  - domainName

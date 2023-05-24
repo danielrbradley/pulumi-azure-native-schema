@@ -1,0 +1,60 @@
+$token: azure-native:machinelearningservices/v20221201preview:TextClassificationMultilabelResponse
+description: "Text Classification Multilabel task in AutoML NLP vertical.\r
+
+  NLP - Natural Language Processing."
+properties:
+  featurizationSettings:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20221201preview:NlpVerticalFeaturizationSettingsResponse"
+    description: Featurization inputs needed for AutoML job.
+  fixedParameters:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20221201preview:NlpFixedParametersResponse"
+    description: Model/training parameters that will remain constant throughout training.
+  limitSettings:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20221201preview:NlpVerticalLimitSettingsResponse"
+    description: Execution constraints for AutoMLJob.
+  logVerbosity:
+    type: string
+    description: Log verbosity for the job.
+    default: Info
+  primaryMetric:
+    type: string
+    description: "Primary metric for Text-Classification-Multilabel task.\r
+
+      Currently only Accuracy is supported as primary metric, hence user need not set it explicitly."
+  searchSpace:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20221201preview:NlpParameterSubspaceResponse"
+    description: Search space for sampling different combinations of models and their hyperparameters.
+  sweepSettings:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20221201preview:NlpSweepSettingsResponse"
+    description: Settings for model sweeping and hyperparameter tuning.
+  targetColumnName:
+    type: string
+    description: "Target column name: This is prediction values column.\r
+
+      Also known as label column name in context of classification tasks."
+  taskType:
+    type: string
+    description: |-
+      AutoMLJob Task type.
+      Expected value is 'TextClassificationMultilabel'.
+    const: TextClassificationMultilabel
+  trainingData:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20221201preview:MLTableJobInputResponse"
+    description: "[Required] Training data input."
+  validationData:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20221201preview:MLTableJobInputResponse"
+    description: Validation data inputs.
+type: object
+required:
+  - primaryMetric
+  - taskType
+  - trainingData

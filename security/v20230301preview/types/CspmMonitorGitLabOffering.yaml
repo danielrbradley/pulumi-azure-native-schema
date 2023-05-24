@@ -1,0 +1,12 @@
+$token: azure-native:security/v20230301preview:CspmMonitorGitLabOffering
+description: The CSPM (Cloud security posture management) monitoring for gitlab offering
+properties:
+  offeringType:
+    type: string
+    description: |-
+      The type of the security offering.
+      Expected value is 'CspmMonitorGitLab'.
+    const: CspmMonitorGitLab
+type: object
+required:
+  - offeringType

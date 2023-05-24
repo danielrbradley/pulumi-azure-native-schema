@@ -1,0 +1,26 @@
+$token: azure-native:solutions/v20190701:listApplicationAllowedUpgradePlans
+description: List allowed upgrade plans for application.
+inputs:
+  properties:
+    applicationName:
+      type: string
+      description: The name of the managed application.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - applicationName
+    - resourceGroupName
+outputs:
+  description: The array of plan.
+  properties:
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:solutions/v20190701:PlanResponse"
+      description: The array of plans.
+  type: object

@@ -1,0 +1,72 @@
+$token: azure-native:securityinsights/v20230401preview:getHuntRelation
+description: Gets a hunt relation
+inputs:
+  properties:
+    huntId:
+      type: string
+      description: The hunt id (GUID)
+      willReplaceOnChanges: true
+    huntRelationId:
+      type: string
+      description: The hunt relation id (GUID)
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    workspaceName:
+      type: string
+      description: The name of the workspace.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - huntId
+    - huntRelationId
+    - resourceGroupName
+    - workspaceName
+outputs:
+  description: Represents a Hunt Relation in Azure Security Insights.
+  properties:
+    etag:
+      type: string
+      description: Etag of the azure resource
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    labels:
+      type: array
+      items:
+        type: string
+      description: List of labels relevant to this hunt
+    name:
+      type: string
+      description: The name of the resource
+    relatedResourceId:
+      type: string
+      description: The id of the related resource
+    relatedResourceKind:
+      type: string
+      description: The resource that the relation is related to
+    relatedResourceName:
+      type: string
+      description: The name of the related resource
+    relationType:
+      type: string
+      description: The type of the hunt relation
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:securityinsights/v20230401preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - relatedResourceId
+    - relatedResourceKind
+    - relatedResourceName
+    - relationType
+    - systemData
+    - type

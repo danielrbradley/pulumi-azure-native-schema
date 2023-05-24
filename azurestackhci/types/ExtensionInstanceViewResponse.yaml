@@ -1,0 +1,17 @@
+$token: azure-native:azurestackhci:ExtensionInstanceViewResponse
+description: Describes the Extension Instance View.
+properties:
+  name:
+    type: string
+    description: The extension name.
+  status:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci:ExtensionInstanceViewResponseStatus"
+    description: Instance view status.
+  type:
+    type: string
+    description: Specifies the type of the extension; an example is "MicrosoftMonitoringAgent".
+  typeHandlerVersion:
+    type: string
+    description: Specifies the version of the script handler.
+type: object

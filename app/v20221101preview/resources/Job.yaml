@@ -1,0 +1,98 @@
+$token: azure-native:app/v20221101preview:Job
+description: Container App Job
+properties:
+  configuration:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:JobConfigurationResponse"
+    description: Container Apps Job configuration properties.
+  environmentId:
+    type: string
+    description: Resource ID of environment.
+  eventStreamEndpoint:
+    type: string
+    description: The endpoint of the eventstream of the container apps job.
+  identity:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:ManagedServiceIdentityResponse"
+    description: Managed identities needed by a container app job to interact with other Azure services to not maintain any secrets or credentials in code.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  outboundIpAddresses:
+    type: array
+    items:
+      type: string
+    description: Outbound IP Addresses of a container apps job.
+  provisioningState:
+    type: string
+    description: Provisioning state of the Container Apps Job.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  template:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:JobTemplateResponse"
+    description: Container Apps job definition.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  workloadProfileName:
+    type: string
+    description: Workload profile name to pin for container apps job execution.
+type: object
+required:
+  - eventStreamEndpoint
+  - location
+  - name
+  - outboundIpAddresses
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  configuration:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:JobConfiguration"
+    description: Container Apps Job configuration properties.
+  environmentId:
+    type: string
+    description: Resource ID of environment.
+    willReplaceOnChanges: true
+  identity:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:ManagedServiceIdentity"
+    description: Managed identities needed by a container app job to interact with other Azure services to not maintain any secrets or credentials in code.
+  jobName:
+    type: string
+    description: Name of the Container Apps Job.
+    willReplaceOnChanges: true
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  template:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:JobTemplate"
+    description: Container Apps job definition.
+  workloadProfileName:
+    type: string
+    description: Workload profile name to pin for container apps job execution.
+requiredInputs:
+  - resourceGroupName

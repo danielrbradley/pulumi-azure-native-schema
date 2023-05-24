@@ -1,0 +1,6 @@
+$token: azure-native:network:ManagedRuleEnabledState
+description: The state of the managed rule. Defaults to Disabled if not specified.
+type: string
+enum:
+  - value: Disabled
+  - value: Enabled

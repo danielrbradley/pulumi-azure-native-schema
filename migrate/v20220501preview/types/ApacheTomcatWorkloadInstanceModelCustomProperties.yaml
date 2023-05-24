@@ -1,0 +1,22 @@
+$token: azure-native:migrate/v20220501preview:ApacheTomcatWorkloadInstanceModelCustomProperties
+description: ApacheTomcat workload instance model custom properties.
+properties:
+  apacheTomcatWebApplication:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:ApacheTomcatWebApplication"
+    description: ApacheTomcat web application.
+  instanceType:
+    type: string
+    description: |-
+      Gets or sets the instance type.
+      Expected value is 'ApacheTomcatWorkloadInstanceModelCustomProperties'.
+    const: ApacheTomcatWorkloadInstanceModelCustomProperties
+  webAppArmId:
+    type: string
+    description: Gets or sets the Web application ARM id.
+  webAppSiteName:
+    type: string
+    description: Gets or sets the Web application site name.
+type: object
+required:
+  - instanceType

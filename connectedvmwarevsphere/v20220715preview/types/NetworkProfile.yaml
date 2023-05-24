@@ -1,0 +1,10 @@
+$token: azure-native:connectedvmwarevsphere/v20220715preview:NetworkProfile
+description: Specifies the network interfaces of the virtual machine.
+properties:
+  networkInterfaces:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:connectedvmwarevsphere/v20220715preview:NetworkInterface"
+    description: Gets or sets the list of network interfaces associated with the virtual machine.
+type: object

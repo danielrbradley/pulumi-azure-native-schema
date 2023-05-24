@@ -1,0 +1,46 @@
+$token: azure-native:storagemover:Project
+properties:
+  description:
+    type: string
+    description: A description for the Project.
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: The provisioning state of this resource.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:storagemover:SystemDataResponse"
+    description: Resource system metadata.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - name
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  description:
+    type: string
+    description: A description for the Project.
+  projectName:
+    type: string
+    description: The name of the Project resource.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  storageMoverName:
+    type: string
+    description: The name of the Storage Mover resource.
+    willReplaceOnChanges: true
+requiredInputs:
+  - resourceGroupName
+  - storageMoverName
+aliases:
+  - type: azure-native:storagemover/v20220701preview:Project
+  - type: azure-native:storagemover/v20230301:Project

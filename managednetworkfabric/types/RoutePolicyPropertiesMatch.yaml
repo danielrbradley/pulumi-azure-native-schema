@@ -1,0 +1,24 @@
+$token: azure-native:managednetworkfabric:RoutePolicyPropertiesMatch
+description: Route policy match properties.
+properties:
+  accessControlListIds:
+    type: array
+    items:
+      type: string
+    description: accessControlListIds. Arm Resource Ids of AccessControlLists.
+  ipCommunityListIds:
+    type: array
+    items:
+      type: string
+    description: ipCommunityListIds. Arm Resource Ids of IpCommunityLists.
+  ipExtendedCommunityListIds:
+    type: array
+    items:
+      type: string
+    description: ipExtendedCommunityListIds. Arm Resource Ids of IpCommunityLists.
+  ipPrefixListIds:
+    type: array
+    items:
+      type: string
+    description: ipPrefixListIds. Arm Resource Ids of IpPrefixLists.
+type: object

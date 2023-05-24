@@ -1,0 +1,7 @@
+$token: azure-native:elastic/v20230201preview:MarketplaceSaaSInfoResponseMarketplaceSubscription
+description: Marketplace Subscription
+properties:
+  id:
+    type: string
+    description: Marketplace Subscription Id. This is a GUID-formatted string.
+type: object

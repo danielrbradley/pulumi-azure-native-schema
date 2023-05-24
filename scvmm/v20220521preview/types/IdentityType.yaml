@@ -1,0 +1,6 @@
+$token: azure-native:scvmm/v20220521preview:IdentityType
+description: The type of managed service identity.
+type: string
+enum:
+  - value: None
+  - value: SystemAssigned

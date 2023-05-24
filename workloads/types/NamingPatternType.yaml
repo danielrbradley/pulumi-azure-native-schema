@@ -1,0 +1,5 @@
+$token: azure-native:workloads:NamingPatternType
+description: The pattern type to be used for resource naming.
+type: string
+enum:
+  - value: FullResourceName

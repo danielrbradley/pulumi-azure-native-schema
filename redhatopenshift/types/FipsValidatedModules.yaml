@@ -1,0 +1,6 @@
+$token: azure-native:redhatopenshift:FipsValidatedModules
+description: If FIPS validated crypto modules are used
+type: string
+enum:
+  - value: Disabled
+  - value: Enabled

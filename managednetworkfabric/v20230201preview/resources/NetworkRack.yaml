@@ -1,0 +1,81 @@
+$token: azure-native:managednetworkfabric/v20230201preview:NetworkRack
+description: The NetworkRack resource definition.
+properties:
+  annotation:
+    type: string
+    description: Switch configuration description.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  networkDevices:
+    type: array
+    items:
+      type: string
+    description: List of network device ARM resource ids.
+  networkFabricId:
+    type: string
+    description: Network Fabric ARM resource id.
+  networkRackSku:
+    type: string
+    description: Network Rack SKU name.
+  provisioningState:
+    type: string
+    description: Gets the provisioning state of the resource.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - location
+  - name
+  - networkDevices
+  - networkFabricId
+  - networkRackSku
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  annotation:
+    type: string
+    description: Switch configuration description.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  networkFabricId:
+    type: string
+    description: Network Fabric ARM resource id.
+  networkRackName:
+    type: string
+    description: Name of the Network Rack
+    willReplaceOnChanges: true
+  networkRackSku:
+    type: string
+    description: Network Rack SKU name.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+requiredInputs:
+  - networkFabricId
+  - networkRackSku
+  - resourceGroupName
+aliases:
+  - type: azure-native:managednetworkfabric:NetworkRack

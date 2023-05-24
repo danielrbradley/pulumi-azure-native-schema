@@ -1,0 +1,6 @@
+$token: azure-native:networkcloud:BareMetalMachineKeySetPrivilegeLevel
+description: The access level allowed for the users in this key set.
+type: string
+enum:
+  - value: Standard
+  - value: Superuser

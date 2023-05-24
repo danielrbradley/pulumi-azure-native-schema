@@ -1,0 +1,16 @@
+$token: azure-native:workloads/v20230401:SapLandscapeMonitorPropertiesResponseGrouping
+description: Gets or sets the SID groupings by landscape and Environment.
+properties:
+  landscape:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:workloads/v20230401:SapLandscapeMonitorSidMappingResponse"
+    description: Gets or sets the list of landscape to SID mappings.
+  sapApplication:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:workloads/v20230401:SapLandscapeMonitorSidMappingResponse"
+    description: Gets or sets the list of Sap Applications to SID mappings.
+type: object

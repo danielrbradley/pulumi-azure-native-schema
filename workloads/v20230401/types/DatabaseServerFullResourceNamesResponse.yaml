@@ -1,0 +1,17 @@
+$token: azure-native:workloads/v20230401:DatabaseServerFullResourceNamesResponse
+description: The full resource names object for database layer resources. The number of entries in this list should be equal to the number VMs to be created for database layer.
+properties:
+  availabilitySetName:
+    type: string
+    description: The full name for availability set. In case name is not provided, it will be defaulted to {SID}-DB-AvSet.
+  loadBalancer:
+    type: object
+    $ref: "#/types/azure-native:workloads/v20230401:LoadBalancerResourceNamesResponse"
+    description: The resource names object for load balancer and related resources.
+  virtualMachines:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:workloads/v20230401:VirtualMachineResourceNamesResponse"
+    description: The list of virtual machine naming details.
+type: object

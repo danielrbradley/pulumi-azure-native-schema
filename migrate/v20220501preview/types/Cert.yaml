@@ -1,0 +1,18 @@
+$token: azure-native:migrate/v20220501preview:Cert
+description: WebApplication certificate.
+properties:
+  certData:
+    type: string
+    description: Gets or sets the Certificate data.
+  certNeeded:
+    type: boolean
+    description: Gets or sets a value indicating whether certificate is needed or not.
+  certProvided:
+    type: boolean
+    description: Gets or sets a value indicating whether certificate is provided or not.
+  secretStore:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:migrate/v20220501preview:SecretStoreType"
+    description: Gets or sets the type of secret store for the certificate.
+type: object

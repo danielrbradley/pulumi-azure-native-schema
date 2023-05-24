@@ -1,0 +1,141 @@
+$token: azure-native:app/v20221101preview:ContainerApp
+description: Container App.
+properties:
+  configuration:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:ConfigurationResponse"
+    description: Non versioned Container App configuration properties.
+  customDomainVerificationId:
+    type: string
+    description: Id used to verify domain name ownership
+  environmentId:
+    type: string
+    description: Resource ID of environment.
+  eventStreamEndpoint:
+    type: string
+    description: The endpoint of the eventstream of the container app.
+  extendedLocation:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:ExtendedLocationResponse"
+    description: The complex type of the extended location.
+  identity:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:ManagedServiceIdentityResponse"
+    description: managed identities for the Container App to interact with other Azure services without maintaining any secrets or credentials in code.
+  latestReadyRevisionName:
+    type: string
+    description: Name of the latest ready revision of the Container App.
+  latestRevisionFqdn:
+    type: string
+    description: Fully Qualified Domain Name of the latest revision of the Container App.
+  latestRevisionName:
+    type: string
+    description: Name of the latest revision of the Container App.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  managedBy:
+    type: string
+    description: The fully qualified resource ID of the resource that manages this resource. Indicates if this resource is managed by another Azure resource. If this is present, complete mode deployment will not delete the resource if it is removed from the template since it is managed by another resource.
+  managedEnvironmentId:
+    type: string
+    description: Deprecated. Resource ID of the Container App's environment.
+  name:
+    type: string
+    description: The name of the resource
+  outboundIpAddresses:
+    type: array
+    items:
+      type: string
+    description: Outbound IP Addresses for container app.
+  provisioningState:
+    type: string
+    description: Provisioning state of the Container App.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  template:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:TemplateResponse"
+    description: Container App versioned application definition.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  workloadProfileName:
+    type: string
+    description: Workload profile name to pin for container app execution.
+type: object
+required:
+  - customDomainVerificationId
+  - eventStreamEndpoint
+  - latestReadyRevisionName
+  - latestRevisionFqdn
+  - latestRevisionName
+  - location
+  - name
+  - outboundIpAddresses
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  configuration:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:Configuration"
+    description: Non versioned Container App configuration properties.
+  containerAppName:
+    type: string
+    description: Name of the Container App.
+    willReplaceOnChanges: true
+  environmentId:
+    type: string
+    description: Resource ID of environment.
+    willReplaceOnChanges: true
+  extendedLocation:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:ExtendedLocation"
+    description: The complex type of the extended location.
+  identity:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:ManagedServiceIdentity"
+    description: managed identities for the Container App to interact with other Azure services without maintaining any secrets or credentials in code.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  managedBy:
+    type: string
+    description: The fully qualified resource ID of the resource that manages this resource. Indicates if this resource is managed by another Azure resource. If this is present, complete mode deployment will not delete the resource if it is removed from the template since it is managed by another resource.
+  managedEnvironmentId:
+    type: string
+    description: Deprecated. Resource ID of the Container App's environment.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  template:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:Template"
+    description: Container App versioned application definition.
+  workloadProfileName:
+    type: string
+    description: Workload profile name to pin for container app execution.
+requiredInputs:
+  - resourceGroupName
+aliases:
+  - type: azure-native:app:ContainerApp
+  - type: azure-native:app/v20220101preview:ContainerApp
+  - type: azure-native:app/v20220301:ContainerApp
+  - type: azure-native:app/v20220601preview:ContainerApp
+  - type: azure-native:app/v20221001:ContainerApp

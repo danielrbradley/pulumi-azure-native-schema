@@ -1,0 +1,19 @@
+$token: azure-native:elastic:ElasticTrafficFilterRuleResponse
+description: Elastic traffic filter rule object
+properties:
+  azureEndpointGuid:
+    type: string
+    description: Guid of Private Endpoint in the elastic filter rule
+  azureEndpointName:
+    type: string
+    description: Name of the Private Endpoint in the elastic filter rule
+  description:
+    type: string
+    description: Description of the elastic filter rule
+  id:
+    type: string
+    description: Id of the elastic filter rule
+  source:
+    type: string
+    description: IP of the elastic filter rule
+type: object

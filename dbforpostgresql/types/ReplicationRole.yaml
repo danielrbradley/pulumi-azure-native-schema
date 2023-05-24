@@ -1,0 +1,8 @@
+$token: azure-native:dbforpostgresql:ReplicationRole
+description: Replication role of the server
+type: string
+enum:
+  - value: None
+  - value: Primary
+  - value: AsyncReplica
+  - value: GeoAsyncReplica

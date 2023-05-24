@@ -1,0 +1,31 @@
+$token: azure-native:mixedreality:listRemoteRenderingAccountKeys
+description: |-
+  List Both of the 2 Keys of a Remote Rendering Account
+  API Version: 2021-01-01.
+inputs:
+  properties:
+    accountName:
+      type: string
+      description: Name of an Mixed Reality Account.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of an Azure resource group.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - accountName
+    - resourceGroupName
+outputs:
+  description: Developer Keys of account
+  properties:
+    primaryKey:
+      type: string
+      description: value of primary key.
+    secondaryKey:
+      type: string
+      description: value of secondary key.
+  type: object
+  required:
+    - primaryKey
+    - secondaryKey

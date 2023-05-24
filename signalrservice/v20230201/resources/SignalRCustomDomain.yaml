@@ -1,0 +1,61 @@
+$token: azure-native:signalrservice/v20230201:SignalRCustomDomain
+description: A custom domain
+properties:
+  customCertificate:
+    type: object
+    $ref: "#/types/azure-native:signalrservice/v20230201:ResourceReferenceResponse"
+    description: Reference to a resource.
+  domainName:
+    type: string
+    description: The custom domain name.
+  name:
+    type: string
+    description: The name of the resource.
+  provisioningState:
+    type: string
+    description: Provisioning state of the resource.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:signalrservice/v20230201:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  type:
+    type: string
+    description: The type of the resource - e.g. "Microsoft.SignalRService/SignalR"
+type: object
+required:
+  - customCertificate
+  - domainName
+  - name
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  customCertificate:
+    type: object
+    $ref: "#/types/azure-native:signalrservice/v20230201:ResourceReference"
+    description: Reference to a resource.
+  domainName:
+    type: string
+    description: The custom domain name.
+  name:
+    type: string
+    description: Custom domain name.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+    willReplaceOnChanges: true
+  resourceName:
+    type: string
+    description: The name of the resource.
+    willReplaceOnChanges: true
+requiredInputs:
+  - customCertificate
+  - domainName
+  - resourceGroupName
+  - resourceName
+aliases:
+  - type: azure-native:signalrservice:SignalRCustomDomain
+  - type: azure-native:signalrservice/v20220201:SignalRCustomDomain
+  - type: azure-native:signalrservice/v20220801preview:SignalRCustomDomain
+  - type: azure-native:signalrservice/v20230301preview:SignalRCustomDomain

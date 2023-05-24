@@ -1,0 +1,29 @@
+$token: azure-native:network/v20171101:getVirtualNetworkGatewayBgpPeerStatus
+description: The GetBgpPeerStatus operation retrieves the status of all BGP peers.
+inputs:
+  properties:
+    peer:
+      type: string
+      description: The IP address of the peer to retrieve the status of.
+    resourceGroupName:
+      type: string
+      description: The name of the resource group.
+      willReplaceOnChanges: true
+    virtualNetworkGatewayName:
+      type: string
+      description: The name of the virtual network gateway.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - virtualNetworkGatewayName
+outputs:
+  description: Response for list BGP peer status API service call
+  properties:
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:network/v20171101:BgpPeerStatusResponse"
+      description: List of BGP peers
+  type: object

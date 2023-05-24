@@ -1,0 +1,12 @@
+$token: azure-native:azurestackhci/v20230301:UpdateSummariesPropertiesState
+description: Overall update state of the stamp.
+type: string
+enum:
+  - value: Unknown
+  - value: AppliedSuccessfully
+  - value: UpdateAvailable
+  - value: UpdateInProgress
+  - value: UpdateFailed
+  - value: NeedsAttention
+  - value: PreparationInProgress
+  - value: PreparationFailed

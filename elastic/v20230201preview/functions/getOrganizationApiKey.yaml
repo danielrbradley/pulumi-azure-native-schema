@@ -1,0 +1,17 @@
+$token: azure-native:elastic/v20230201preview:getOrganizationApiKey
+description: Fetch User API Key from internal database, if it was generated and stored while creating the Elasticsearch Organization.
+inputs:
+  properties:
+    emailId:
+      type: string
+      description: The User email Id
+  type: object
+outputs:
+  description: The User Api Key created for the Organization associated with the User Email Id that was passed in the request
+  properties:
+    properties:
+      type: object
+      $ref: "#/types/azure-native:elastic/v20230201preview:UserApiKeyResponsePropertiesResponse"
+  type: object
+  required:
+    - properties

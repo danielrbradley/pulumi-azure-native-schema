@@ -1,0 +1,7 @@
+$token: azure-native:synapse:ResourceIdentityType
+description: The type of managed identity for the workspace
+type: string
+enum:
+  - value: None
+  - value: SystemAssigned
+  - value: SystemAssigned,UserAssigned

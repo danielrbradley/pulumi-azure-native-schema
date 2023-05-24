@@ -1,0 +1,9 @@
+$token: azure-native:confidentialledger/v20230126preview:RunningState
+description: Object representing RunningState for Ledger.
+type: string
+enum:
+  - value: Active
+  - value: Paused
+  - value: Unknown
+  - value: Pausing
+  - value: Resuming

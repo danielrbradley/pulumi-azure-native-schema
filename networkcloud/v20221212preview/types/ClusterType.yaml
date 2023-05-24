@@ -1,0 +1,6 @@
+$token: azure-native:networkcloud/v20221212preview:ClusterType
+description: The type of rack configuration for the cluster.
+type: string
+enum:
+  - value: SingleRack
+  - value: MultiRack

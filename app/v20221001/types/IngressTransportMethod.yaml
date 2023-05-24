@@ -1,0 +1,8 @@
+$token: azure-native:app/v20221001:IngressTransportMethod
+description: Ingress transport protocol
+type: string
+enum:
+  - value: auto
+  - value: http
+  - value: http2
+  - value: tcp

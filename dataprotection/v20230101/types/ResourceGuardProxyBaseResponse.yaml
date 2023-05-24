@@ -1,0 +1,15 @@
+$token: azure-native:dataprotection/v20230101:ResourceGuardProxyBaseResponse
+description: ResourceGuardProxyBase object, used in ResourceGuardProxyBaseResource
+properties:
+  description:
+    type: string
+  lastUpdatedTime:
+    type: string
+  resourceGuardOperationDetails:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:dataprotection/v20230101:ResourceGuardOperationDetailResponse"
+  resourceGuardResourceId:
+    type: string
+type: object

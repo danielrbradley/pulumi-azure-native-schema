@@ -1,0 +1,57 @@
+$token: azure-native:workloads/v20211201preview:getSAPDiskConfigurations
+description: Get the SAP Disk Configuration Layout prod/non-prod SAP System.
+inputs:
+  properties:
+    appLocation:
+      type: string
+      description: The geo-location where the SAP resources will be created.
+    databaseType:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:workloads/v20211201preview:SAPDatabaseType"
+      description: "The database type. Eg: HANA, DB2, etc"
+      willReplaceOnChanges: true
+    dbVmSku:
+      type: string
+      description: The VM SKU for database instance.
+    deploymentType:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:workloads/v20211201preview:SAPDeploymentType"
+      description: "The deployment type. Eg: SingleServer/ThreeTier"
+      willReplaceOnChanges: true
+    environment:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:workloads/v20211201preview:SAPEnvironmentType"
+      description: Defines the environment type - Production/Non Production.
+      willReplaceOnChanges: true
+    location:
+      type: string
+      description: The name of Azure region.
+      willReplaceOnChanges: true
+    sapProduct:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:workloads/v20211201preview:SAPProductType"
+      description: Defines the SAP Product type.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - appLocation
+    - databaseType
+    - dbVmSku
+    - deploymentType
+    - environment
+    - location
+    - sapProduct
+outputs:
+  description: The list of disk configuration for vmSku which are part of SAP deployment.
+  properties:
+    diskConfigurations:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:workloads/v20211201preview:SAPDiskConfigurationResponse"
+      description: Gets the list of Disk Configurations.
+  type: object

@@ -1,0 +1,19 @@
+$token: azure-native:workloads/v20230401:ApplicationServerVmDetailsResponse
+description: The Application Server VM Details.
+properties:
+  storageDetails:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:workloads/v20230401:StorageInformationResponse"
+    description: Storage details of all the Storage Accounts attached to the App Virtual Machine. For e.g. NFS on AFS Shared Storage.
+  type:
+    type: string
+    description: Defines the type of application server VM.
+  virtualMachineId:
+    type: string
+type: object
+required:
+  - storageDetails
+  - type
+  - virtualMachineId

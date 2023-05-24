@@ -1,0 +1,9 @@
+$token: azure-native:confidentialledger/v20230126preview:CertificateTagsResponse
+description: Tags for Managed CCF Certificates
+properties:
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Additional tags for Managed CCF Certificates
+type: object

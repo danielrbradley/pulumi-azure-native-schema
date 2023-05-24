@@ -1,0 +1,32 @@
+$token: azure-native:appplatform/v20230301preview:BuildPropertiesResponse
+description: Build resource properties payload
+properties:
+  agentPool:
+    type: string
+    description: The resource id of agent pool
+  builder:
+    type: string
+    description: The resource id of builder to build the source code
+  env:
+    type: object
+    additionalProperties:
+      type: string
+    description: The environment variables for this build
+  provisioningState:
+    type: string
+    description: Provisioning state of the KPack build result
+  relativePath:
+    type: string
+    description: The relative path of source code
+  resourceRequests:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:BuildResourceRequestsResponse"
+    description: The customized build resource for this build
+  triggeredBuildResult:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:TriggeredBuildResultResponse"
+    description: " The build result triggered by this build"
+type: object
+required:
+  - provisioningState
+  - triggeredBuildResult

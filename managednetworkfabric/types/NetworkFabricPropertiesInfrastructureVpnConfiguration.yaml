@@ -1,0 +1,19 @@
+$token: azure-native:managednetworkfabric:NetworkFabricPropertiesInfrastructureVpnConfiguration
+description: Configuration for infrastructure vpn.
+properties:
+  optionAProperties:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric:OptionAProperties"
+    description: option A properties
+  optionBProperties:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric:FabricOptionBProperties"
+    description: option B properties
+  peeringOption:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:managednetworkfabric:PeeringOption"
+    description: Peering option list.
+type: object
+required:
+  - optionBProperties

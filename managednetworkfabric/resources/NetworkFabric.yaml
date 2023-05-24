@@ -1,0 +1,166 @@
+$token: azure-native:managednetworkfabric:NetworkFabric
+properties:
+  annotation:
+    type: string
+    description: Switch configuration description.
+  fabricASN:
+    type: integer
+    description: ASN of CE devices for CE/PE connectivity.
+  ipv4Prefix:
+    type: string
+    description: "IPv4Prefix for Management Network. Default value : 10.1.0.0/19."
+    default: 10.1.0.0/19
+  ipv6Prefix:
+    type: string
+    description: IPv6Prefix for Management Network. Default value 3FFE:FFFF:0:CD40::/59.
+    default: 3FFE:FFFF:0:CD40::/59
+  l2IsolationDomains:
+    type: array
+    items:
+      type: string
+    description: List of L2IsolationDomain resource IDs under the Network Fabric.
+  l3IsolationDomains:
+    type: array
+    items:
+      type: string
+    description: List of L3IsolationDomain resource IDs under the Network Fabric.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  managementNetworkConfiguration:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric:NetworkFabricPropertiesResponseManagementNetworkConfiguration"
+    description: Configuration to be used to setup the management network.
+  name:
+    type: string
+    description: The name of the resource
+  networkFabricControllerId:
+    type: string
+    description: Azure resource ID for the NetworkFabricController the NetworkFabric belongs.
+  networkFabricSku:
+    type: string
+    description: "Supported Network Fabric SKU.Example: Compute / Aggregate racks. Once the user chooses a particular SKU, only supported racks can be added to the Network Fabric. The SKU determines whether it is a single / multi rack Network Fabric."
+  operationalState:
+    type: string
+    description: Gets the operational state of the resource.
+  provisioningState:
+    type: string
+    description: Gets the provisioning state of the resource.
+  rackCount:
+    type: integer
+    description: Number of racks associated to Network Fabric.Possible values are from 2-8.
+  racks:
+    type: array
+    items:
+      type: string
+    description: List of NetworkRack resource IDs under the Network Fabric. The number of racks allowed depends on the Network Fabric SKU.
+  routerId:
+    type: string
+    description: Router Id of CE to be used for MP-BGP between PE and CE
+  serverCountPerRack:
+    type: integer
+    description: Number of servers.Possible values are from 1-16.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  terminalServerConfiguration:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric:NetworkFabricPropertiesResponseTerminalServerConfiguration"
+    description: Network and credentials configuration currently applied to terminal server.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - fabricASN
+  - l2IsolationDomains
+  - l3IsolationDomains
+  - location
+  - managementNetworkConfiguration
+  - name
+  - networkFabricControllerId
+  - networkFabricSku
+  - operationalState
+  - provisioningState
+  - rackCount
+  - racks
+  - routerId
+  - serverCountPerRack
+  - systemData
+  - terminalServerConfiguration
+  - type
+inputProperties:
+  annotation:
+    type: string
+    description: Switch configuration description.
+  fabricASN:
+    type: integer
+    description: ASN of CE devices for CE/PE connectivity.
+  ipv4Prefix:
+    type: string
+    description: "IPv4Prefix for Management Network. Default value : 10.1.0.0/19."
+    default: 10.1.0.0/19
+    willReplaceOnChanges: true
+  ipv6Prefix:
+    type: string
+    description: IPv6Prefix for Management Network. Default value 3FFE:FFFF:0:CD40::/59.
+    default: 3FFE:FFFF:0:CD40::/59
+    willReplaceOnChanges: true
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  managementNetworkConfiguration:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric:NetworkFabricPropertiesManagementNetworkConfiguration"
+    description: Configuration to be used to setup the management network.
+  networkFabricControllerId:
+    type: string
+    description: Azure resource ID for the NetworkFabricController the NetworkFabric belongs.
+    willReplaceOnChanges: true
+  networkFabricName:
+    type: string
+    description: Name of the Network Fabric
+    willReplaceOnChanges: true
+  networkFabricSku:
+    type: string
+    description: "Supported Network Fabric SKU.Example: Compute / Aggregate racks. Once the user chooses a particular SKU, only supported racks can be added to the Network Fabric. The SKU determines whether it is a single / multi rack Network Fabric."
+    willReplaceOnChanges: true
+  rackCount:
+    type: integer
+    description: Number of racks associated to Network Fabric.Possible values are from 2-8.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  serverCountPerRack:
+    type: integer
+    description: Number of servers.Possible values are from 1-16.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  terminalServerConfiguration:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric:NetworkFabricPropertiesTerminalServerConfiguration"
+    description: Network and credentials configuration currently applied to terminal server.
+requiredInputs:
+  - fabricASN
+  - managementNetworkConfiguration
+  - networkFabricControllerId
+  - networkFabricSku
+  - rackCount
+  - resourceGroupName
+  - serverCountPerRack
+  - terminalServerConfiguration
+aliases:
+  - type: azure-native:managednetworkfabric/v20230201preview:NetworkFabric

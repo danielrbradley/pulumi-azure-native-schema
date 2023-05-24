@@ -1,0 +1,10 @@
+$token: azure-native:voiceservices/v20230131:E911Type
+description: How to handle 911 calls
+type: string
+enum:
+  - name: Standard
+    description: Emergency calls are not handled different from other calls
+    value: Standard
+  - name: DirectToEsrp
+    description: Emergency calls are routed directly to the ESRP
+    value: DirectToEsrp

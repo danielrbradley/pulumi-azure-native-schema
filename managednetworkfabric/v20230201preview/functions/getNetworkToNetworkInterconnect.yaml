@@ -1,0 +1,67 @@
+$token: azure-native:managednetworkfabric/v20230201preview:getNetworkToNetworkInterconnect
+description: Implements NetworkToNetworkInterconnects GET method.
+inputs:
+  properties:
+    networkFabricName:
+      type: string
+      description: Name of the NetworkFabric.
+      willReplaceOnChanges: true
+    networkToNetworkInterconnectName:
+      type: string
+      description: Name of the NetworkToNetworkInterconnect
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - networkFabricName
+    - networkToNetworkInterconnectName
+    - resourceGroupName
+outputs:
+  description: The NetworkToNetworkInterconnect resource definition.
+  properties:
+    administrativeState:
+      type: string
+      description: Gets the administrativeState of the resource. Example -Enabled/Disabled
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    isManagementType:
+      type: string
+      description: "Configuration to use NNI for Infrastructure Management. Example: True/False."
+    layer2Configuration:
+      type: object
+      $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:NetworkToNetworkInterconnectPropertiesResponseLayer2Configuration"
+      description: Common properties for Layer2Configuration.
+    layer3Configuration:
+      type: object
+      $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:Layer3ConfigurationResponse"
+      description: Common properties for Layer3Configuration.
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+      description: Gets the provisioning state of the resource.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+    useOptionB:
+      type: string
+      description: "Based on this parameter the layer2/layer3 is made as mandatory. Example: True/False"
+  type: object
+  required:
+    - administrativeState
+    - id
+    - isManagementType
+    - name
+    - provisioningState
+    - systemData
+    - type
+    - useOptionB

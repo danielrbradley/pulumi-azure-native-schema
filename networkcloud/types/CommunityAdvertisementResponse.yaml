@@ -1,0 +1,14 @@
+$token: azure-native:networkcloud:CommunityAdvertisementResponse
+properties:
+  communities:
+    type: array
+    items:
+      type: string
+    description: The list of community strings to announce with this prefix.
+  subnetPrefix:
+    type: string
+    description: The subnet in CIDR format for which properties should be advertised.
+type: object
+required:
+  - communities
+  - subnetPrefix

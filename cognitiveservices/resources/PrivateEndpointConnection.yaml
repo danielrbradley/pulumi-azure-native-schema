@@ -1,0 +1,59 @@
+$token: azure-native:cognitiveservices:PrivateEndpointConnection
+properties:
+  etag:
+    type: string
+    description: Resource Etag.
+  location:
+    type: string
+    description: The location of the private endpoint connection
+  name:
+    type: string
+    description: The name of the resource
+  properties:
+    type: object
+    $ref: "#/types/azure-native:cognitiveservices:PrivateEndpointConnectionPropertiesResponse"
+    description: Resource properties.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:cognitiveservices:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - etag
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  accountName:
+    type: string
+    description: The name of Cognitive Services account.
+    willReplaceOnChanges: true
+  location:
+    type: string
+    description: The location of the private endpoint connection
+  privateEndpointConnectionName:
+    type: string
+    description: The name of the private endpoint connection associated with the Cognitive Services Account
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:cognitiveservices:PrivateEndpointConnectionProperties"
+    description: Resource properties.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+requiredInputs:
+  - accountName
+  - resourceGroupName
+aliases:
+  - type: azure-native:cognitiveservices/v20170418:PrivateEndpointConnection
+  - type: azure-native:cognitiveservices/v20210430:PrivateEndpointConnection
+  - type: azure-native:cognitiveservices/v20211001:PrivateEndpointConnection
+  - type: azure-native:cognitiveservices/v20220301:PrivateEndpointConnection
+  - type: azure-native:cognitiveservices/v20221001:PrivateEndpointConnection
+  - type: azure-native:cognitiveservices/v20221201:PrivateEndpointConnection

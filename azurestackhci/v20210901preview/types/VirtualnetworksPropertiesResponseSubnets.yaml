@@ -1,0 +1,37 @@
+$token: azure-native:azurestackhci/v20210901preview:VirtualnetworksPropertiesResponseSubnets
+description: Subnet subnet in a virtual network resource.
+properties:
+  addressPrefix:
+    type: string
+    description: Cidr for this subnet - IPv4, IPv6
+  addressPrefixes:
+    type: array
+    items:
+      type: string
+    description: AddressPrefixes - List of address prefixes for the subnet.
+  ipAllocationMethod:
+    type: string
+    description: "IPAllocationMethod - The IP address allocation method. Possible values include: 'Static', 'Dynamic'"
+  ipConfigurationReferences:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualnetworksPropertiesResponseIpConfigurationReferences"
+    description: IPConfigurationReferences - list of IPConfigurationReferences
+  ipPools:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:IPPoolResponse"
+    description: network associated pool of IP Addresses
+  name:
+    type: string
+    description: Name - The name of the resource that is unique within a resource group. This name can be used to access the resource.
+  routeTable:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualnetworksPropertiesResponseRouteTable"
+    description: RouteTable for the subnet
+  vlan:
+    type: integer
+    description: Vlan to use for the subnet
+type: object

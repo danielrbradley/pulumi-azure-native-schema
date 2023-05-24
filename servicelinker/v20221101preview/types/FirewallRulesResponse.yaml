@@ -1,0 +1,15 @@
+$token: azure-native:servicelinker/v20221101preview:FirewallRulesResponse
+description: Target service's firewall rules. to allow connections from source service.
+properties:
+  azureServices:
+    type: string
+    description: Allow Azure services to access the target service if true.
+  callerClientIP:
+    type: string
+    description: Allow caller client IP to access the target service if true. the property is used when connecting local application to target service.
+  ipRanges:
+    type: array
+    items:
+      type: string
+    description: This value specifies the set of IP addresses or IP address ranges in CIDR form to be included as the allowed list of client IPs for a given database account.
+type: object

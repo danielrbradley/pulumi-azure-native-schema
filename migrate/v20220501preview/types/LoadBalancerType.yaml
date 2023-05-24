@@ -1,0 +1,6 @@
+$token: azure-native:migrate/v20220501preview:LoadBalancerType
+description: Gets or sets the load balancer type.
+type: string
+enum:
+  - value: Private
+  - value: Public

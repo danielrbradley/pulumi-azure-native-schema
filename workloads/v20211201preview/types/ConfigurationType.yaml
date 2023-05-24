@@ -1,0 +1,7 @@
+$token: azure-native:workloads/v20211201preview:ConfigurationType
+description: The type of file share config.
+type: string
+enum:
+  - value: Skip
+  - value: CreateAndMount
+  - value: Mount

@@ -1,0 +1,11 @@
+$token: azure-native:securityinsights/v20230401preview:AddIncidentTaskActionProperties
+properties:
+  description:
+    type: string
+    description: The description of the task.
+  title:
+    type: string
+    description: The title of the task.
+type: object
+required:
+  - title

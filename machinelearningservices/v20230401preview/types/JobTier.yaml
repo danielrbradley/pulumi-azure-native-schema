@@ -1,0 +1,8 @@
+$token: azure-native:machinelearningservices/v20230401preview:JobTier
+description: Enum to determine the job tier.
+type: string
+enum:
+  - value: Spot
+  - value: Basic
+  - value: Standard
+  - value: Premium

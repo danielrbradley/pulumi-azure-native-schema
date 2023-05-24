@@ -1,0 +1,19 @@
+$token: azure-native:managednetworkfabric:NetworkToNetworkInterconnectPropertiesResponseLayer2Configuration
+description: Common properties for Layer2Configuration.
+properties:
+  interfaces:
+    type: array
+    items:
+      type: string
+    description: List of network device interfaces resource IDs.
+  mtu:
+    type: integer
+    description: MTU of the packets between PE & CE.
+    default: 1500
+  portCount:
+    type: integer
+    description: Number of ports connected between PE/CE. Maximum value depends on FabricSKU.
+type: object
+required:
+  - interfaces
+  - mtu

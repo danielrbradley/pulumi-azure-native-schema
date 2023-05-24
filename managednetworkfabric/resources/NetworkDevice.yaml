@@ -1,0 +1,98 @@
+$token: azure-native:managednetworkfabric:NetworkDevice
+properties:
+  annotation:
+    type: string
+    description: Switch configuration description.
+  hostName:
+    type: string
+    description: The host Name of the device.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  networkDeviceRole:
+    type: string
+    description: "networkDeviceRole is the device role: Example: CE | ToR."
+  networkDeviceSku:
+    type: string
+    description: Network Device SKU name.
+  networkRackId:
+    type: string
+    description: Reference to network rack resource id.
+  provisioningState:
+    type: string
+    description: Gets the provisioning state of the resource.
+  serialNumber:
+    type: string
+    description: "serialNumber of the format Make;Model;HardwareRevisionId;SerialNumber. Example: Arista;DCS-7280DR3-24;12.05;JPE21116969"
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  version:
+    type: string
+    description: Current version of the device as defined in SKU.
+type: object
+required:
+  - location
+  - name
+  - networkDeviceRole
+  - networkDeviceSku
+  - networkRackId
+  - provisioningState
+  - serialNumber
+  - systemData
+  - type
+  - version
+inputProperties:
+  annotation:
+    type: string
+    description: Switch configuration description.
+  hostName:
+    type: string
+    description: The host Name of the device.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  networkDeviceName:
+    type: string
+    description: Name of the Network Device
+    willReplaceOnChanges: true
+  networkDeviceRole:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:managednetworkfabric:NetworkDeviceRoleTypes"
+    description: "networkDeviceRole is the device role: Example: CE | ToR."
+  networkDeviceSku:
+    type: string
+    description: Network Device SKU name.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  serialNumber:
+    type: string
+    description: "serialNumber of the format Make;Model;HardwareRevisionId;SerialNumber. Example: Arista;DCS-7280DR3-24;12.05;JPE21116969"
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+requiredInputs:
+  - networkDeviceRole
+  - networkDeviceSku
+  - resourceGroupName
+  - serialNumber
+aliases:
+  - type: azure-native:managednetworkfabric/v20230201preview:NetworkDevice

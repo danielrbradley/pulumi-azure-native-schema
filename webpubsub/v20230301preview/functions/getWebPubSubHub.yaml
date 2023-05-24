@@ -1,0 +1,48 @@
+$token: azure-native:webpubsub/v20230301preview:getWebPubSubHub
+description: Get a hub setting.
+inputs:
+  properties:
+    hubName:
+      type: string
+      description: The hub name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    resourceName:
+      type: string
+      description: The name of the resource.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - hubName
+    - resourceGroupName
+    - resourceName
+outputs:
+  description: A hub setting
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+    name:
+      type: string
+      description: The name of the resource
+    properties:
+      type: object
+      $ref: "#/types/azure-native:webpubsub/v20230301preview:WebPubSubHubPropertiesResponse"
+      description: Properties of a hub.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:webpubsub/v20230301preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - systemData
+    - type

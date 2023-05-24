@@ -1,0 +1,12 @@
+$token: azure-native:networkcloud:ClusterAvailableVersionResponse
+properties:
+  supportExpiryDate:
+    type: string
+    description: The last date the version of the platform is supported.
+  targetClusterVersion:
+    type: string
+    description: The version of the cluster to be deployed.
+type: object
+required:
+  - supportExpiryDate
+  - targetClusterVersion

@@ -1,0 +1,6 @@
+$token: azure-native:virtualmachineimages:VMBootOptimizationState
+description: Enabling this field will improve VM boot time by optimizing the final customized image output.
+type: string
+enum:
+  - value: Enabled
+  - value: Disabled

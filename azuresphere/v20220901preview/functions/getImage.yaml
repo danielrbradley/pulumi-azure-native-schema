@@ -1,0 +1,76 @@
+$token: azure-native:azuresphere/v20220901preview:getImage
+description: Get a Image
+inputs:
+  properties:
+    catalogName:
+      type: string
+      description: Name of catalog
+      willReplaceOnChanges: true
+    imageName:
+      type: string
+      description: Image name. Use .default for image creation.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - catalogName
+    - imageName
+    - resourceGroupName
+outputs:
+  description: An image resource belonging to a catalog resource.
+  properties:
+    componentId:
+      type: string
+      description: The image component id.
+    description:
+      type: string
+      description: The image description.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    image:
+      type: string
+      description: Image as a UTF-8 encoded base 64 string on image create. This field contains the image URI on image reads.
+    imageId:
+      type: string
+      description: Image ID
+    imageName:
+      type: string
+      description: Image name
+    imageType:
+      type: string
+      description: The image type.
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+      description: The status of the last operation.
+    regionalDataBoundary:
+      type: string
+      description: Regional data boundary for an image
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:azuresphere/v20220901preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+    uri:
+      type: string
+      description: Location the image
+  type: object
+  required:
+    - componentId
+    - description
+    - id
+    - imageName
+    - imageType
+    - name
+    - provisioningState
+    - systemData
+    - type
+    - uri

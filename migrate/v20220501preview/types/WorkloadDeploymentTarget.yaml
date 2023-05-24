@@ -1,0 +1,7 @@
+$token: azure-native:migrate/v20220501preview:WorkloadDeploymentTarget
+description: Gets or sets the deployment target platform.
+type: string
+enum:
+  - value: AzureKubernetesService
+  - value: AzureAppServiceContainer
+  - value: AzureAppServiceNative

@@ -1,0 +1,9 @@
+$token: azure-native:mobilenetwork:AzureStackEdgeDeviceResourceId
+description: Reference to an Azure Stack Edge device resource.
+properties:
+  id:
+    type: string
+    description: Azure Stack Edge device resource ID.
+type: object
+required:
+  - id

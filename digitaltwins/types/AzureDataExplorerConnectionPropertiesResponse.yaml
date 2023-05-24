@@ -1,0 +1,62 @@
+$token: azure-native:digitaltwins:AzureDataExplorerConnectionPropertiesResponse
+description: Properties of a time series database connection to Azure Data Explorer with data being sent via an EventHub.
+properties:
+  adxDatabaseName:
+    type: string
+    description: The name of the Azure Data Explorer database.
+  adxEndpointUri:
+    type: string
+    description: The URI of the Azure Data Explorer endpoint.
+  adxRelationshipLifecycleEventsTableName:
+    type: string
+    description: The name of the Azure Data Explorer table used for recording relationship lifecycle events. The table will not be created if this property is left unspecified.
+  adxResourceId:
+    type: string
+    description: The resource ID of the Azure Data Explorer cluster.
+  adxTableName:
+    type: string
+    description: The name of the Azure Data Explorer table used for storing updates to properties of twins and relationships. Defaults to AdtPropertyEvents.
+    default: AdtPropertyEvents
+  adxTwinLifecycleEventsTableName:
+    type: string
+    description: The name of the Azure Data Explorer table used for recording twin lifecycle events. The table will not be created if this property is left unspecified.
+  connectionType:
+    type: string
+    description: |-
+      The type of time series connection resource.
+      Expected value is 'AzureDataExplorer'.
+    const: AzureDataExplorer
+  eventHubConsumerGroup:
+    type: string
+    description: The EventHub consumer group to use when ADX reads from EventHub. Defaults to $Default.
+    default: $Default
+  eventHubEndpointUri:
+    type: string
+    description: The URL of the EventHub namespace for identity-based authentication. It must include the protocol sb://
+  eventHubEntityPath:
+    type: string
+    description: The EventHub name in the EventHub namespace for identity-based authentication.
+  eventHubNamespaceResourceId:
+    type: string
+    description: The resource ID of the EventHub namespace.
+  identity:
+    type: object
+    $ref: "#/types/azure-native:digitaltwins:ManagedIdentityReferenceResponse"
+    description: Managed identity properties for the time series database connection resource.
+  provisioningState:
+    type: string
+    description: The provisioning state.
+  recordPropertyAndItemRemovals:
+    type: string
+    description: Specifies whether or not to record twin / relationship property and item removals, including removals of indexed or keyed values (such as map entries, array elements, etc.). This feature is de-activated unless explicitly set to 'true'. Setting this property to 'true' will generate an additional column in the property events table in ADX.
+    default: "false"
+type: object
+required:
+  - adxDatabaseName
+  - adxEndpointUri
+  - adxResourceId
+  - connectionType
+  - eventHubEndpointUri
+  - eventHubEntityPath
+  - eventHubNamespaceResourceId
+  - provisioningState

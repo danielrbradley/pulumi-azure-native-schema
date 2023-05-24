@@ -1,0 +1,55 @@
+$token: azure-native:costmanagement/v20221001preview:TagInheritanceSetting
+description: Tag Inheritance Setting definition.
+properties:
+  eTag:
+    type: string
+    description: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
+  kind:
+    type: string
+    description: |-
+      Specifies the kind of settings.
+      Expected value is 'taginheritance'.
+    const: taginheritance
+  name:
+    type: string
+    description: Resource name.
+  properties:
+    type: object
+    $ref: "#/types/azure-native:costmanagement/v20221001preview:TagInheritancePropertiesResponse"
+    description: The properties of the tag inheritance setting.
+  type:
+    type: string
+    description: Resource type.
+type: object
+required:
+  - kind
+  - name
+  - properties
+  - type
+inputProperties:
+  eTag:
+    type: string
+    description: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
+  kind:
+    type: string
+    description: |-
+      Specifies the kind of settings.
+      Expected value is 'taginheritance'.
+    const: taginheritance
+  properties:
+    type: object
+    $ref: "#/types/azure-native:costmanagement/v20221001preview:TagInheritanceProperties"
+    description: The properties of the tag inheritance setting.
+  scope:
+    type: string
+    description: The scope associated with this setting. This includes 'subscriptions/{subscriptionId}' for subscription scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for billing profile scope.
+    willReplaceOnChanges: true
+  type:
+    type: string
+    description: Setting type.
+    willReplaceOnChanges: true
+requiredInputs:
+  - kind
+  - scope
+aliases:
+  - type: azure-native:costmanagement/v20221005preview:TagInheritanceSetting

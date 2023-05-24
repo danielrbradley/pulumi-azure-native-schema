@@ -1,0 +1,6 @@
+$token: azure-native:containerstorage/v20230301preview:ReclaimPolicy
+description: Reclaim Policy, Delete or Retain
+type: string
+enum:
+  - value: Delete
+  - value: Retain

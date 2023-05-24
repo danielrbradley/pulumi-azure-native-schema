@@ -1,0 +1,51 @@
+$token: azure-native:dbformysql:getDatabase
+description: |-
+  Gets information about a database.
+  API Version: 2021-05-01.
+inputs:
+  properties:
+    databaseName:
+      type: string
+      description: The name of the database.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    serverName:
+      type: string
+      description: The name of the server.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - databaseName
+    - resourceGroupName
+    - serverName
+outputs:
+  description: Represents a Database.
+  properties:
+    charset:
+      type: string
+      description: The charset of the database.
+    collation:
+      type: string
+      description: The collation of the database.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:dbformysql:SystemDataResponse"
+      description: The system metadata relating to this resource.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - systemData
+    - type

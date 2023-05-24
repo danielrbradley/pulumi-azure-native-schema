@@ -1,0 +1,90 @@
+$token: azure-native:networkcloud/v20221212preview:getL2Network
+description: Get properties of the provided layer 2 (L2) network.
+inputs:
+  properties:
+    l2NetworkName:
+      type: string
+      description: The name of the L2 network.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - l2NetworkName
+    - resourceGroupName
+outputs:
+  properties:
+    clusterId:
+      type: string
+      description: The resource ID of the Network Cloud cluster this L2 network is associated with.
+    detailedStatus:
+      type: string
+      description: The more detailed status of the L2 network.
+    detailedStatusMessage:
+      type: string
+      description: The descriptive message about the current detailed status.
+    extendedLocation:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:ExtendedLocationResponse"
+      description: The extended location of the cluster associated with the resource.
+    hybridAksClustersAssociatedIds:
+      type: array
+      items:
+        type: string
+      description: The list of Hybrid AKS cluster resource ID(s) that are associated with this L2 network.
+    hybridAksPluginType:
+      type: string
+      description: The network plugin type for Hybrid AKS.
+      default: SRIOV
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    interfaceName:
+      type: string
+      description: The default interface name for this L2 network in the virtual machine. This name can be overridden by the name supplied in the network attachment configuration of that virtual machine.
+    l2IsolationDomainId:
+      type: string
+      description: The resource ID of the Network Fabric l2IsolationDomain.
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+      description: The provisioning state of the L2 network.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+    virtualMachinesAssociatedIds:
+      type: array
+      items:
+        type: string
+      description: The list of virtual machine resource ID(s), excluding any Hybrid AKS virtual machines, that are currently using this L2 network.
+  type: object
+  required:
+    - clusterId
+    - detailedStatus
+    - detailedStatusMessage
+    - extendedLocation
+    - hybridAksClustersAssociatedIds
+    - id
+    - l2IsolationDomainId
+    - location
+    - name
+    - provisioningState
+    - systemData
+    - type
+    - virtualMachinesAssociatedIds

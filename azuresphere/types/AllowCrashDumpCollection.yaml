@@ -1,0 +1,6 @@
+$token: azure-native:azuresphere:AllowCrashDumpCollection
+description: Flag to define if the user allows for crash dump collection.
+type: string
+enum:
+  - value: Enabled
+  - value: Disabled

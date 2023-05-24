@@ -1,0 +1,23 @@
+$token: azure-native:insights/v20220601:DataFlowResponse
+description: Definition of which streams are sent to which destinations.
+properties:
+  builtInTransform:
+    type: string
+    description: The builtIn transform to transform stream data
+  destinations:
+    type: array
+    items:
+      type: string
+    description: List of destinations for this data flow.
+  outputStream:
+    type: string
+    description: The output stream of the transform. Only required if the transform changes data to a different stream.
+  streams:
+    type: array
+    items:
+      type: string
+    description: List of streams for this data flow.
+  transformKql:
+    type: string
+    description: The KQL query to transform stream data.
+type: object

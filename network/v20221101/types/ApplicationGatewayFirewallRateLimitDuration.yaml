@@ -1,0 +1,6 @@
+$token: azure-native:network/v20221101:ApplicationGatewayFirewallRateLimitDuration
+description: Duration over which Rate Limit policy will be applied. Applies only when ruleType is RateLimitRule.
+type: string
+enum:
+  - value: OneMin
+  - value: FiveMins

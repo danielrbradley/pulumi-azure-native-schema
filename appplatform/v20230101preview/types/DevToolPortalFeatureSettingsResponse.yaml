@@ -1,0 +1,12 @@
+$token: azure-native:appplatform/v20230101preview:DevToolPortalFeatureSettingsResponse
+description: Settings for Dev Tool Portal
+properties:
+  applicationAccelerator:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230101preview:DevToolPortalFeatureDetailResponse"
+    description: Detail of Accelerator plugin
+  applicationLiveView:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230101preview:DevToolPortalFeatureDetailResponse"
+    description: Detail of App Live View plugin
+type: object

@@ -1,0 +1,8 @@
+$token: azure-native:machinelearningservices/v20230401preview:RollingRateType
+type: string
+enum:
+  - value: Year
+  - value: Month
+  - value: Day
+  - value: Hour
+  - value: Minute

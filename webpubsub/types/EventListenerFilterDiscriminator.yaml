@@ -1,0 +1,4 @@
+$token: azure-native:webpubsub:EventListenerFilterDiscriminator
+type: string
+enum:
+  - value: EventName

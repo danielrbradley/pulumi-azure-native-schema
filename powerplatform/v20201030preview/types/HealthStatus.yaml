@@ -1,0 +1,7 @@
+$token: azure-native:powerplatform/v20201030preview:HealthStatus
+description: The health status of the resource.
+type: string
+enum:
+  - value: Undetermined
+  - value: Healthy
+  - value: Unhealthy

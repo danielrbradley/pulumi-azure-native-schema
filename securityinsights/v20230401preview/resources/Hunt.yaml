@@ -1,0 +1,113 @@
+$token: azure-native:securityinsights/v20230401preview:Hunt
+description: Represents a Hunt in Azure Security Insights.
+properties:
+  attackTactics:
+    type: array
+    items:
+      type: string
+    description: A list of mitre attack tactics the hunt is associated with
+  attackTechniques:
+    type: array
+    items:
+      type: string
+    description: A list of a mitre attack techniques the hunt is associated with
+  description:
+    type: string
+    description: The description of the hunt
+  displayName:
+    type: string
+    description: The display name of the hunt
+  etag:
+    type: string
+    description: Etag of the azure resource
+  hypothesisStatus:
+    type: string
+    description: The hypothesis status of the hunt.
+    default: Unknown
+  labels:
+    type: array
+    items:
+      type: string
+    description: "List of labels relevant to this hunt "
+  name:
+    type: string
+    description: The name of the resource
+  owner:
+    type: object
+    $ref: "#/types/azure-native:securityinsights/v20230401preview:HuntOwnerResponse"
+    description: Describes a user that the hunt is assigned to
+  status:
+    type: string
+    description: The status of the hunt.
+    default: New
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:securityinsights/v20230401preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - description
+  - displayName
+  - name
+  - systemData
+  - type
+inputProperties:
+  attackTactics:
+    type: array
+    items:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:securityinsights/v20230401preview:AttackTactic"
+    description: A list of mitre attack tactics the hunt is associated with
+  attackTechniques:
+    type: array
+    items:
+      type: string
+    description: A list of a mitre attack techniques the hunt is associated with
+  description:
+    type: string
+    description: The description of the hunt
+  displayName:
+    type: string
+    description: The display name of the hunt
+  huntId:
+    type: string
+    description: The hunt id (GUID)
+    willReplaceOnChanges: true
+  hypothesisStatus:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:securityinsights/v20230401preview:HypothesisStatus"
+    description: The hypothesis status of the hunt.
+    default: Unknown
+  labels:
+    type: array
+    items:
+      type: string
+    description: "List of labels relevant to this hunt "
+  owner:
+    type: object
+    $ref: "#/types/azure-native:securityinsights/v20230401preview:HuntOwner"
+    description: Describes a user that the hunt is assigned to
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  status:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:securityinsights/v20230401preview:Status"
+    description: The status of the hunt.
+    default: New
+  workspaceName:
+    type: string
+    description: The name of the workspace.
+    willReplaceOnChanges: true
+requiredInputs:
+  - description
+  - displayName
+  - resourceGroupName
+  - workspaceName

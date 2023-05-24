@@ -1,0 +1,36 @@
+$token: azure-native:migrate/v20220501preview:WebApplicationConfiguration
+description: Class for web application configurations.
+properties:
+  filePath:
+    type: string
+    description: Gets or sets the configuration file path.
+  identifier:
+    type: string
+    description: Gets or sets the identifier for the configuration.
+  isDeploymentTimeEditable:
+    type: boolean
+    description: Gets or sets a value indicating whether the configuration is edited or not by the user.
+  localFilePath:
+    type: string
+    description: Gets or sets the configuration local file path.
+  name:
+    type: string
+    description: Gets or sets the configuration name.
+  secretStoreDetails:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:SecretStoreDetails"
+  section:
+    type: string
+    description: Gets or sets the configuration section in the file.
+  targetFilePath:
+    type: string
+    description: Gets or sets the configuration target file path.
+  type:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:migrate/v20220501preview:ConfigurationType"
+    description: Gets or sets the configuration type.
+  value:
+    type: string
+    description: Gets or sets the configuration value.
+type: object

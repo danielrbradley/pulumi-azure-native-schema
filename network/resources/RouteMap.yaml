@@ -1,0 +1,76 @@
+$token: azure-native:network:RouteMap
+properties:
+  associatedInboundConnections:
+    type: array
+    items:
+      type: string
+    description: List of connections which have this RoutMap associated for inbound traffic.
+  associatedOutboundConnections:
+    type: array
+    items:
+      type: string
+    description: List of connections which have this RoutMap associated for outbound traffic.
+  etag:
+    type: string
+    description: A unique read-only string that changes whenever the resource is updated.
+  name:
+    type: string
+    description: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+  provisioningState:
+    type: string
+    description: The provisioning state of the RouteMap resource.
+  rules:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:network:RouteMapRuleResponse"
+    description: List of RouteMap rules to be applied.
+  type:
+    type: string
+    description: Resource type.
+type: object
+required:
+  - etag
+  - name
+  - provisioningState
+  - type
+inputProperties:
+  associatedInboundConnections:
+    type: array
+    items:
+      type: string
+    description: List of connections which have this RoutMap associated for inbound traffic.
+  associatedOutboundConnections:
+    type: array
+    items:
+      type: string
+    description: List of connections which have this RoutMap associated for outbound traffic.
+  id:
+    type: string
+    description: Resource ID.
+  resourceGroupName:
+    type: string
+    description: The resource group name of the RouteMap's resource group.
+    willReplaceOnChanges: true
+  routeMapName:
+    type: string
+    description: The name of the RouteMap.
+    willReplaceOnChanges: true
+  rules:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:network:RouteMapRule"
+    description: List of RouteMap rules to be applied.
+  virtualHubName:
+    type: string
+    description: The name of the VirtualHub containing the RouteMap.
+    willReplaceOnChanges: true
+requiredInputs:
+  - resourceGroupName
+  - virtualHubName
+aliases:
+  - type: azure-native:network/v20220501:RouteMap
+  - type: azure-native:network/v20220701:RouteMap
+  - type: azure-native:network/v20220901:RouteMap
+  - type: azure-native:network/v20221101:RouteMap

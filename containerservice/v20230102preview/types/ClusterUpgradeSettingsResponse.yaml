@@ -1,0 +1,8 @@
+$token: azure-native:containerservice/v20230102preview:ClusterUpgradeSettingsResponse
+description: Settings for upgrading a cluster.
+properties:
+  overrideSettings:
+    type: object
+    $ref: "#/types/azure-native:containerservice/v20230102preview:UpgradeOverrideSettingsResponse"
+    description: Settings for overrides.
+type: object

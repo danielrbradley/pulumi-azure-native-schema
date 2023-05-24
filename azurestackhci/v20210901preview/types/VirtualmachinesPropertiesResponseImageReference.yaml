@@ -1,0 +1,7 @@
+$token: azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesResponseImageReference
+description: Which Image to use for the virtual machine
+properties:
+  name:
+    type: string
+    description: Name - Name of the image
+type: object

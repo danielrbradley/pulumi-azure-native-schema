@@ -1,0 +1,7 @@
+$token: azure-native:machinelearningservices/v20230401:VolumeOptionsResponse
+description: Describes the volume options for the container
+properties:
+  nocopy:
+    type: boolean
+    description: Indicate whether volume is nocopy
+type: object

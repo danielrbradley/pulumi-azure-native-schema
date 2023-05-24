@@ -1,0 +1,17 @@
+$token: azure-native:machinelearningservices/v20230401preview:FeatureSubset
+properties:
+  features:
+    type: array
+    items:
+      type: string
+    description: "[Required] The list of features to include."
+  filterType:
+    type: string
+    description: |-
+      
+      Expected value is 'FeatureSubset'.
+    const: FeatureSubset
+type: object
+required:
+  - features
+  - filterType

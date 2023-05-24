@@ -1,0 +1,36 @@
+$token: azure-native:app:InitContainerResponse
+description: Container App init container definition
+properties:
+  args:
+    type: array
+    items:
+      type: string
+    description: Container start command arguments.
+  command:
+    type: array
+    items:
+      type: string
+    description: Container start command.
+  env:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:app:EnvironmentVarResponse"
+    description: Container environment variables.
+  image:
+    type: string
+    description: Container image tag.
+  name:
+    type: string
+    description: Custom container name.
+  resources:
+    type: object
+    $ref: "#/types/azure-native:app:ContainerResourcesResponse"
+    description: Container resource requirements.
+  volumeMounts:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:app:VolumeMountResponse"
+    description: Container volume mounts.
+type: object

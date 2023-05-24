@@ -1,0 +1,6 @@
+$token: azure-native:migrate/v20220501preview:ResourceIdentityTypes
+type: string
+enum:
+  - value: None
+  - value: SystemAssigned
+  - value: UserAssigned

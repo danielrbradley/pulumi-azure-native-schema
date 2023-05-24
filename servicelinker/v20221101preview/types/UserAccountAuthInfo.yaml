@@ -1,0 +1,28 @@
+$token: azure-native:servicelinker/v20221101preview:UserAccountAuthInfo
+description: The authentication info when authType is user account
+properties:
+  authType:
+    type: string
+    description: |-
+      The authentication type.
+      Expected value is 'userAccount'.
+    const: userAccount
+  deleteOrUpdateBehavior:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:servicelinker/v20221101preview:DeleteOrUpdateBehavior"
+    description: Indicates whether to clean up previous operation when Linker is updating or deleting
+  principalId:
+    type: string
+    description: Principal Id for user account.
+  roles:
+    type: array
+    items:
+      type: string
+    description: "Optional, this value specifies the Azure roles to be assigned. Automatically "
+  userName:
+    type: string
+    description: Username created in the database which is mapped to a user in AAD.
+type: object
+required:
+  - authType

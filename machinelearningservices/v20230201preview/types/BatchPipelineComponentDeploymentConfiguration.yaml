@@ -1,0 +1,29 @@
+$token: azure-native:machinelearningservices/v20230201preview:BatchPipelineComponentDeploymentConfiguration
+description: Properties for a Batch Pipeline Component Deployment.
+properties:
+  componentId:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230201preview:IdAssetReference"
+    description: The ARM id of the component to be run.
+  deploymentConfigurationType:
+    type: string
+    description: |-
+      The enumerated property types for batch deployments.
+      Expected value is 'PipelineComponent'.
+    const: PipelineComponent
+  description:
+    type: string
+    description: The description which will be applied to the job.
+  settings:
+    type: object
+    additionalProperties:
+      type: string
+    description: Run-time settings for the pipeline job.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: The tags which will be applied to the job.
+type: object
+required:
+  - deploymentConfigurationType

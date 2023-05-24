@@ -1,0 +1,48 @@
+$token: azure-native:appplatform/v20230301preview:getDevToolPortal
+description: Get the Application Live  and its properties.
+inputs:
+  properties:
+    devToolPortalName:
+      type: string
+      description: The name of Dev Tool Portal.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+      willReplaceOnChanges: true
+    serviceName:
+      type: string
+      description: The name of the Service resource.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - devToolPortalName
+    - resourceGroupName
+    - serviceName
+outputs:
+  description: Dev Tool Portal resource
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource Id for the resource.
+    name:
+      type: string
+      description: The name of the resource.
+    properties:
+      type: object
+      $ref: "#/types/azure-native:appplatform/v20230301preview:DevToolPortalPropertiesResponse"
+      description: Dev Tool Portal properties payload
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:appplatform/v20230301preview:SystemDataResponse"
+      description: Metadata pertaining to creation and last modification of the resource.
+    type:
+      type: string
+      description: The type of the resource.
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - systemData
+    - type

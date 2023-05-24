@@ -1,0 +1,14 @@
+$token: azure-native:sqlvirtualmachine/v20230101preview:AssessmentSettings
+description: Configure SQL best practices Assessment for databases in your SQL virtual machine.
+properties:
+  enable:
+    type: boolean
+    description: Enable or disable SQL best practices Assessment feature on SQL virtual machine.
+  runImmediately:
+    type: boolean
+    description: Run SQL best practices Assessment immediately on SQL virtual machine.
+  schedule:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:Schedule"
+    description: Schedule for SQL best practices Assessment.
+type: object

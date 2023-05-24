@@ -1,0 +1,16 @@
+$token: azure-native:machinelearningservices/v20230401preview:MonitoringSignalType
+description: "[Required] Specifies the type of signal to monitor."
+type: string
+enum:
+  - description: Tracks model input data distribution change, comparing against training data or past production data.
+    value: DataDrift
+  - description: Tracks prediction result data distribution change, comparing against validation/test label data or past production data.
+    value: PredictionDrift
+  - description: Tracks model input data integrity.
+    value: DataQuality
+  - description: Tracks feature importance change in production, comparing against feature importance at training time.
+    value: FeatureAttributionDrift
+  - description: Tracks a custom signal provided by users.
+    value: Custom
+  - description: Tracks model performance based on ground truth data.
+    value: ModelPerformance

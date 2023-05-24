@@ -1,0 +1,7 @@
+$token: azure-native:dbformysql:SkuTier
+description: The tier of the particular SKU, e.g. GeneralPurpose.
+type: string
+enum:
+  - value: Burstable
+  - value: GeneralPurpose
+  - value: MemoryOptimized

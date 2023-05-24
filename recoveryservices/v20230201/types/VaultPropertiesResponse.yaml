@@ -1,0 +1,63 @@
+$token: azure-native:recoveryservices/v20230201:VaultPropertiesResponse
+description: Properties of the vault.
+properties:
+  backupStorageVersion:
+    type: string
+    description: Backup storage version
+  encryption:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices/v20230201:VaultPropertiesResponseEncryption"
+    description: Customer Managed Key details of the resource.
+  monitoringSettings:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices/v20230201:MonitoringSettingsResponse"
+    description: Monitoring Settings of the vault
+  moveDetails:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices/v20230201:VaultPropertiesResponseMoveDetails"
+    description: The details of the latest move operation performed on the Azure Resource
+  moveState:
+    type: string
+    description: The State of the Resource after the move operation
+  privateEndpointConnections:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:recoveryservices/v20230201:PrivateEndpointConnectionVaultPropertiesResponse"
+    description: List of private endpoint connection.
+  privateEndpointStateForBackup:
+    type: string
+    description: Private endpoint state for backup.
+  privateEndpointStateForSiteRecovery:
+    type: string
+    description: Private endpoint state for site recovery.
+  provisioningState:
+    type: string
+    description: Provisioning State.
+  publicNetworkAccess:
+    type: string
+    description: property to enable or disable resource provider inbound network traffic from public clients
+  redundancySettings:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices/v20230201:VaultPropertiesResponseRedundancySettings"
+    description: The redundancy Settings of a Vault
+  restoreSettings:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices/v20230201:RestoreSettingsResponse"
+    description: Restore Settings of the vault
+  securitySettings:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices/v20230201:SecuritySettingsResponse"
+    description: Security Settings of the vault
+  upgradeDetails:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices/v20230201:UpgradeDetailsResponse"
+    description: Details for upgrading vault.
+type: object
+required:
+  - backupStorageVersion
+  - moveState
+  - privateEndpointConnections
+  - privateEndpointStateForBackup
+  - privateEndpointStateForSiteRecovery
+  - provisioningState

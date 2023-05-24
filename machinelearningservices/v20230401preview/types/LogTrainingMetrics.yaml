@@ -1,0 +1,8 @@
+$token: azure-native:machinelearningservices/v20230401preview:LogTrainingMetrics
+description: Enable computing and logging training metrics.
+type: string
+enum:
+  - description: Enable compute and log training metrics.
+    value: Enable
+  - description: Disable compute and log training metrics.
+    value: Disable

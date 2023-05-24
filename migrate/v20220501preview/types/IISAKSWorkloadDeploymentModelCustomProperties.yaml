@@ -1,0 +1,16 @@
+$token: azure-native:migrate/v20220501preview:IISAKSWorkloadDeploymentModelCustomProperties
+description: IIS workload instance model custom properties.
+properties:
+  iisAksWorkloadDeploymentProperties:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:IISAKSWorkloadDeployment"
+    description: IIS AKS workload deployment.
+  instanceType:
+    type: string
+    description: |-
+      Gets or sets the instance type.
+      Expected value is 'IISAKSWorkloadDeploymentModelCustomProperties'.
+    const: IISAKSWorkloadDeploymentModelCustomProperties
+type: object
+required:
+  - instanceType

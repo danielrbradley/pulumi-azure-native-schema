@@ -1,0 +1,6 @@
+$token: azure-native:machinelearningservices/v20230401:ComputePowerAction
+description: "[Required] The compute power action."
+type: string
+enum:
+  - value: Start
+  - value: Stop

@@ -1,0 +1,12 @@
+$token: azure-native:netapp/v20220901:VolumeRelocationPropertiesResponse
+description: Volume relocation properties
+properties:
+  readyToBeFinalized:
+    type: boolean
+    description: Has relocation finished and is ready to be cleaned up
+  relocationRequested:
+    type: boolean
+    description: Has relocation been requested for this volume
+type: object
+required:
+  - readyToBeFinalized

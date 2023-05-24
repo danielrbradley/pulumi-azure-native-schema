@@ -1,0 +1,9 @@
+$token: azure-native:network:RouteMapActionType
+description: Type of action to be taken. Supported types are 'Remove', 'Add', 'Replace', and 'Drop.'
+type: string
+enum:
+  - value: Unknown
+  - value: Remove
+  - value: Add
+  - value: Replace
+  - value: Drop

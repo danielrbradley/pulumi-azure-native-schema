@@ -1,0 +1,28 @@
+$token: azure-native:labservices:getLabAccountRegionalAvailability
+description: |-
+  Get regional availability information for each size category configured under a lab account
+  API Version: 2018-10-15.
+inputs:
+  properties:
+    labAccountName:
+      type: string
+      description: The name of the lab Account.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - labAccountName
+    - resourceGroupName
+outputs:
+  description: The response model from the GetRegionalAvailability action
+  properties:
+    regionalAvailability:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:labservices:RegionalAvailabilityResponse"
+      description: Availability information for different size categories per region
+  type: object

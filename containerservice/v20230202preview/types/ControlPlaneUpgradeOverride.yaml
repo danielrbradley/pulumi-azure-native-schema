@@ -1,0 +1,6 @@
+$token: azure-native:containerservice/v20230202preview:ControlPlaneUpgradeOverride
+description: The list of control plane upgrade override settings.
+type: string
+enum:
+  - description: Upgrade the cluster control plane version without checking for recent Kubernetes deprecations usage.
+    value: IgnoreKubernetesDeprecations

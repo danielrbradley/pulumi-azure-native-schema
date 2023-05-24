@@ -1,0 +1,10 @@
+$token: azure-native:apimanagement/v20220901preview:BackendCircuitBreaker
+description: The configuration of the backend circuit breaker
+properties:
+  rules:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:apimanagement/v20220901preview:CircuitBreakerRule"
+    description: The rules for tripping the backend.
+type: object

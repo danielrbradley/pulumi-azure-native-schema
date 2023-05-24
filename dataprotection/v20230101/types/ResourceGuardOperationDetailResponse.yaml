@@ -1,0 +1,8 @@
+$token: azure-native:dataprotection/v20230101:ResourceGuardOperationDetailResponse
+description: VaultCritical Operation protected by a resource guard
+properties:
+  defaultResourceRequest:
+    type: string
+  vaultCriticalOperation:
+    type: string
+type: object

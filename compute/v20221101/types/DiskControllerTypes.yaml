@@ -1,0 +1,5 @@
+$token: azure-native:compute/v20221101:DiskControllerTypes
+type: string
+enum:
+  - value: SCSI
+  - value: NVMe

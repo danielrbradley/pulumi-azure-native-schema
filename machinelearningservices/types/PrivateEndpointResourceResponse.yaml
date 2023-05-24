@@ -1,0 +1,12 @@
+$token: azure-native:machinelearningservices:PrivateEndpointResourceResponse
+description: The PE network resource that is linked to this PE connection.
+properties:
+  id:
+    type: string
+    description: The ARM identifier for Private Endpoint
+  subnetArmId:
+    type: string
+    description: The subnetId that the private endpoint is connected to.
+type: object
+required:
+  - id

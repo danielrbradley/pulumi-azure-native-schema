@@ -1,0 +1,88 @@
+$token: azure-native:azurestackhci/v20230301:getExtension
+description: Get particular Arc Extension of HCI Cluster.
+inputs:
+  properties:
+    arcSettingName:
+      type: string
+      description: The name of the proxy resource holding details of HCI ArcSetting information.
+      willReplaceOnChanges: true
+    clusterName:
+      type: string
+      description: The name of the cluster.
+      willReplaceOnChanges: true
+    extensionName:
+      type: string
+      description: The name of the machine extension.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - arcSettingName
+    - clusterName
+    - extensionName
+    - resourceGroupName
+outputs:
+  description: Details of a particular extension in HCI Cluster.
+  properties:
+    aggregateState:
+      type: string
+      description: Aggregate state of Arc Extensions across the nodes in this HCI cluster.
+    autoUpgradeMinorVersion:
+      type: boolean
+      description: Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true.
+    enableAutomaticUpgrade:
+      type: boolean
+      description: Indicates whether the extension should be automatically upgraded by the platform if there is a newer version available.
+    forceUpdateTag:
+      type: string
+      description: How the extension handler should be forced to update even if the extension configuration has not changed.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    managedBy:
+      type: string
+      description: Indicates if the extension is managed by azure or the user.
+    name:
+      type: string
+      description: The name of the resource
+    perNodeExtensionDetails:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:azurestackhci/v20230301:PerNodeExtensionStateResponse"
+      description: State of Arc Extension in each of the nodes.
+    protectedSettings:
+      $ref: pulumi.json#/Any
+      description: Protected settings (may contain secrets).
+    provisioningState:
+      type: string
+      description: Provisioning state of the Extension proxy resource.
+    publisher:
+      type: string
+      description: The name of the extension handler publisher.
+    settings:
+      $ref: pulumi.json#/Any
+      description: Json formatted public settings for the extension.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20230301:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+    typeHandlerVersion:
+      type: string
+      description: Specifies the version of the script handler. Latest version would be used if not specified.
+  type: object
+  required:
+    - aggregateState
+    - id
+    - managedBy
+    - name
+    - perNodeExtensionDetails
+    - provisioningState
+    - systemData
+    - type

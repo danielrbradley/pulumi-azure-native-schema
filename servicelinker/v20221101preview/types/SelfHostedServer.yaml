@@ -1,0 +1,15 @@
+$token: azure-native:servicelinker/v20221101preview:SelfHostedServer
+description: The service properties when target service type is SelfHostedServer
+properties:
+  endpoint:
+    type: string
+    description: The endpoint of service.
+  type:
+    type: string
+    description: |-
+      The target service type.
+      Expected value is 'SelfHostedServer'.
+    const: SelfHostedServer
+type: object
+required:
+  - type

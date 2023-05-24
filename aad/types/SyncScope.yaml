@@ -1,0 +1,6 @@
+$token: azure-native:aad:SyncScope
+description: All or CloudOnly, All users in AAD are synced to AAD DS domain or only users actively syncing in the cloud
+type: string
+enum:
+  - value: All
+  - value: CloudOnly

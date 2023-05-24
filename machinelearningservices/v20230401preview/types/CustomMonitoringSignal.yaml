@@ -1,0 +1,37 @@
+$token: azure-native:machinelearningservices/v20230401preview:CustomMonitoringSignal
+properties:
+  componentId:
+    type: string
+    description: "[Required] ARM resource ID of the component resource used to calculate the custom metrics."
+  inputAssets:
+    type: object
+    additionalProperties:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MonitoringInputData"
+    description: Monitoring assets to take as input. Key is the component input port name, value is the data asset.
+  lookbackPeriod:
+    type: string
+    description: The amount of time a single monitor should look back over the target data on a given run.
+  metricThresholds:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20230401preview:CustomMetricThreshold"
+    description: "[Required] A list of metrics to calculate and their associated thresholds."
+  mode:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MonitoringNotificationMode"
+    description: The current notification mode for this signal.
+    default: Disabled
+  signalType:
+    type: string
+    description: |-
+      
+      Expected value is 'Custom'.
+    const: Custom
+type: object
+required:
+  - componentId
+  - metricThresholds
+  - signalType

@@ -1,0 +1,71 @@
+$token: azure-native:avs:Addon
+properties:
+  name:
+    type: string
+    description: Resource name.
+  properties:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:avs:AddonArcPropertiesResponse"
+      - type: object
+        $ref: "#/types/azure-native:avs:AddonHcxPropertiesResponse"
+      - type: object
+        $ref: "#/types/azure-native:avs:AddonSrmPropertiesResponse"
+      - type: object
+        $ref: "#/types/azure-native:avs:AddonVrPropertiesResponse"
+    discriminator:
+      propertyName: addonType
+      mapping:
+        Arc: "#/types/azure-native:avs:AddonArcPropertiesResponse"
+        HCX: "#/types/azure-native:avs:AddonHcxPropertiesResponse"
+        SRM: "#/types/azure-native:avs:AddonSrmPropertiesResponse"
+        VR: "#/types/azure-native:avs:AddonVrPropertiesResponse"
+    description: The properties of an addon resource
+  type:
+    type: string
+    description: Resource type.
+type: object
+required:
+  - name
+  - properties
+  - type
+inputProperties:
+  addonName:
+    type: string
+    description: Name of the addon for the private cloud
+    willReplaceOnChanges: true
+  privateCloudName:
+    type: string
+    description: The name of the private cloud.
+    willReplaceOnChanges: true
+  properties:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:avs:AddonArcProperties"
+      - type: object
+        $ref: "#/types/azure-native:avs:AddonHcxProperties"
+      - type: object
+        $ref: "#/types/azure-native:avs:AddonSrmProperties"
+      - type: object
+        $ref: "#/types/azure-native:avs:AddonVrProperties"
+    discriminator:
+      propertyName: addonType
+      mapping:
+        Arc: "#/types/azure-native:avs:AddonArcProperties"
+        HCX: "#/types/azure-native:avs:AddonHcxProperties"
+        SRM: "#/types/azure-native:avs:AddonSrmProperties"
+        VR: "#/types/azure-native:avs:AddonVrProperties"
+    description: The properties of an addon resource
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+requiredInputs:
+  - privateCloudName
+  - resourceGroupName
+aliases:
+  - type: azure-native:avs/v20200717preview:Addon
+  - type: azure-native:avs/v20210101preview:Addon
+  - type: azure-native:avs/v20210601:Addon
+  - type: azure-native:avs/v20211201:Addon
+  - type: azure-native:avs/v20220501:Addon

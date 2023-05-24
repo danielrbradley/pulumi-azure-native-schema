@@ -1,0 +1,11 @@
+$token: azure-native:azurearcdata/v20230115preview:EditionType
+description: SQL Server edition.
+type: string
+enum:
+  - value: Evaluation
+  - value: Enterprise
+  - value: Standard
+  - value: Web
+  - value: Developer
+  - value: Express
+  - value: Business Intelligence

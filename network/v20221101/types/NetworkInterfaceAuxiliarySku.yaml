@@ -1,0 +1,9 @@
+$token: azure-native:network/v20221101:NetworkInterfaceAuxiliarySku
+description: Auxiliary sku of Network Interface resource.
+type: string
+enum:
+  - value: None
+  - value: A1
+  - value: A2
+  - value: A4
+  - value: A8

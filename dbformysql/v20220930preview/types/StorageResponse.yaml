@@ -1,0 +1,27 @@
+$token: azure-native:dbformysql/v20220930preview:StorageResponse
+description: Storage Profile properties of a server
+properties:
+  autoGrow:
+    type: string
+    description: Enable Storage Auto Grow or not.
+    default: Disabled
+  autoIoScaling:
+    type: string
+    description: Enable IO Auto Scaling or not.
+    default: Disabled
+  iops:
+    type: integer
+    description: Storage IOPS for a server.
+  logOnDisk:
+    type: string
+    description: Enable Log On Disk or not.
+    default: Disabled
+  storageSizeGB:
+    type: integer
+    description: Max storage size allowed for a server.
+  storageSku:
+    type: string
+    description: The sku name of the server storage.
+type: object
+required:
+  - storageSku

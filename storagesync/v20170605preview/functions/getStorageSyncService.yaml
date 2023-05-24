@@ -1,0 +1,47 @@
+$token: azure-native:storagesync/v20170605preview:getStorageSyncService
+description: Get a given StorageSyncService.
+inputs:
+  properties:
+    resourceGroupName:
+      type: string
+      description: The name of the resource group within the user's subscription. The name is case insensitive.
+      willReplaceOnChanges: true
+    storageSyncServiceName:
+      type: string
+      description: Name of Storage Sync Service resource.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - storageSyncServiceName
+outputs:
+  description: Storage Sync Service object.
+  properties:
+    id:
+      type: string
+      description: The id of the resource.
+    location:
+      type: string
+      description: The location of the resource.
+    name:
+      type: string
+      description: The name of the resource.
+    storageSyncServiceStatus:
+      type: integer
+      description: Storage Sync service status.
+    storageSyncServiceUid:
+      type: string
+      description: Storage Sync service Uid
+    tags:
+      $ref: pulumi.json#/Any
+      description: The tags of the resource.
+    type:
+      type: string
+      description: The type of the resource
+  type: object
+  required:
+    - id
+    - name
+    - storageSyncServiceStatus
+    - storageSyncServiceUid
+    - type

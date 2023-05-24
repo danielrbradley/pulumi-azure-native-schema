@@ -1,0 +1,8 @@
+$token: azure-native:containerservice/v20230202preview:IstioServiceMesh
+description: Istio service mesh configuration.
+properties:
+  components:
+    type: object
+    $ref: "#/types/azure-native:containerservice/v20230202preview:IstioComponents"
+    description: Istio components configuration.
+type: object

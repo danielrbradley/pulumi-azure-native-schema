@@ -1,0 +1,8 @@
+$token: azure-native:containerservice/v20230302preview:IpvsScheduler
+description: IPVS scheduler, for more information please see http://www.linuxvirtualserver.org/docs/scheduling.html.
+type: string
+enum:
+  - description: Round Robin
+    value: RoundRobin
+  - description: Least Connection
+    value: LeastConnection

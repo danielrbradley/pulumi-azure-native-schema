@@ -1,0 +1,27 @@
+$token: azure-native:automation:listKeyByAutomationAccount
+description: |-
+  Retrieve the automation keys for an account.
+  API Version: 2022-08-08.
+inputs:
+  properties:
+    automationAccountName:
+      type: string
+      description: The name of the automation account.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of an Azure Resource group.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - automationAccountName
+    - resourceGroupName
+outputs:
+  properties:
+    keys:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:automation:KeyResponse"
+      description: Lists the automation keys.
+  type: object

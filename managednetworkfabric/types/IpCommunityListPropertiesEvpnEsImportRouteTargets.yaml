@@ -1,0 +1,12 @@
+$token: azure-native:managednetworkfabric:IpCommunityListPropertiesEvpnEsImportRouteTargets
+description: Ip Community List evpnEsImportRouteTarget model.
+properties:
+  annotation:
+    type: string
+    description: Switch configuration description.
+  evpnEsImportRouteTarget:
+    type: string
+    description: "evpnEsImportRouteTarget of the Ip Community List. Example: 100:400"
+type: object
+required:
+  - evpnEsImportRouteTarget

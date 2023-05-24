@@ -1,0 +1,13 @@
+$token: azure-native:healthcareapis/v20230228:ServiceCosmosDbConfigurationInfoResponse
+description: The settings for the Cosmos DB database backing the service.
+properties:
+  crossTenantCmkApplicationId:
+    type: string
+    description: The multi-tenant application id used to enable CMK access for services in a data sovereign region.
+  keyVaultKeyUri:
+    type: string
+    description: The URI of the customer-managed key for the backing database.
+  offerThroughput:
+    type: integer
+    description: The provisioned throughput for the backing database.
+type: object

@@ -1,0 +1,10 @@
+$token: azure-native:securityinsights/v20230301preview:MicrosoftPurviewInformationProtectionConnectorDataTypes
+description: The available data types for Microsoft Purview Information Protection data connector.
+properties:
+  logs:
+    type: object
+    $ref: "#/types/azure-native:securityinsights/v20230301preview:MicrosoftPurviewInformationProtectionConnectorDataTypesLogs"
+    description: Logs data type.
+type: object
+required:
+  - logs

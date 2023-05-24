@@ -1,0 +1,56 @@
+$token: azure-native:recoveryservices/v20180710:getReplicationStorageClassificationMapping
+description: Gets the details of the specified storage classification mapping.
+inputs:
+  properties:
+    fabricName:
+      type: string
+      description: Fabric name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group where the recovery services vault is present.
+      willReplaceOnChanges: true
+    resourceName:
+      type: string
+      description: The name of the recovery services vault.
+      willReplaceOnChanges: true
+    storageClassificationMappingName:
+      type: string
+      description: Storage classification mapping name.
+      willReplaceOnChanges: true
+    storageClassificationName:
+      type: string
+      description: Storage classification name.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - fabricName
+    - resourceGroupName
+    - resourceName
+    - storageClassificationMappingName
+    - storageClassificationName
+outputs:
+  description: Storage mapping object.
+  properties:
+    id:
+      type: string
+      description: Resource Id
+    location:
+      type: string
+      description: Resource Location
+    name:
+      type: string
+      description: Resource Name
+    properties:
+      type: object
+      $ref: "#/types/azure-native:recoveryservices/v20180710:StorageClassificationMappingPropertiesResponse"
+      description: Properties of the storage mapping object.
+    type:
+      type: string
+      description: Resource Type
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - type

@@ -1,0 +1,26 @@
+$token: azure-native:machinelearningservices/v20220601preview:listWorkspaceNotebookKeys
+description: List keys of a notebook.
+inputs:
+  properties:
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    workspaceName:
+      type: string
+      description: Name of Azure Machine Learning workspace.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - workspaceName
+outputs:
+  properties:
+    primaryAccessKey:
+      type: string
+    secondaryAccessKey:
+      type: string
+  type: object
+  required:
+    - primaryAccessKey
+    - secondaryAccessKey

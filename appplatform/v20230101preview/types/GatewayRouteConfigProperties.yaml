@@ -1,0 +1,36 @@
+$token: azure-native:appplatform/v20230101preview:GatewayRouteConfigProperties
+description: API route config of the Spring Cloud Gateway
+properties:
+  appResourceId:
+    type: string
+    description: The resource Id of the Azure Spring Apps app, required unless route defines `uri`.
+  filters:
+    type: array
+    items:
+      type: string
+    description: To modify the request before sending it to the target endpoint, or the received response in app level.
+  openApi:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230101preview:GatewayRouteConfigOpenApiProperties"
+    description: OpenAPI properties of Spring Cloud Gateway route config.
+  predicates:
+    type: array
+    items:
+      type: string
+    description: A number of conditions to evaluate a route for each request in app level. Each predicate may be evaluated against request headers and parameter values. All of the predicates associated with a route must evaluate to true for the route to be matched to the request.
+  protocol:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:appplatform/v20230101preview:GatewayRouteConfigProtocol"
+    description: Protocol of routed Azure Spring Apps applications.
+    default: HTTP
+  routes:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:appplatform/v20230101preview:GatewayApiRoute"
+    description: Array of API routes, each route contains properties such as `title`, `uri`, `ssoEnabled`, `predicates`, `filters`.
+  ssoEnabled:
+    type: boolean
+    description: Enable Single Sign-On in app level.
+type: object

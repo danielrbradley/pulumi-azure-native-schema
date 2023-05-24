@@ -1,0 +1,7 @@
+$token: azure-native:security:DefenderForServersGcpOfferingArcAutoProvisioning
+description: The ARC autoprovisioning configuration
+properties:
+  enabled:
+    type: boolean
+    description: Is arc auto provisioning enabled
+type: object

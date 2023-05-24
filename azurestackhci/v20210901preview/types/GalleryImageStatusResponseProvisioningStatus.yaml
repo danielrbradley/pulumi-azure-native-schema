@@ -1,0 +1,10 @@
+$token: azure-native:azurestackhci/v20210901preview:GalleryImageStatusResponseProvisioningStatus
+description: The provisioning status of the gallery image
+properties:
+  operationId:
+    type: string
+    description: The ID of the operation performed on the gallery image
+  status:
+    type: string
+    description: The status of the operation performed on the gallery image [Succeeded, Failed, InProgress]
+type: object

@@ -1,0 +1,12 @@
+$token: azure-native:security/v20230301preview:GitlabScopeEnvironmentData
+description: The GitLab scope connector's environment data
+properties:
+  environmentType:
+    type: string
+    description: |-
+      The type of the environment data.
+      Expected value is 'GitlabScope'.
+    const: GitlabScope
+type: object
+required:
+  - environmentType

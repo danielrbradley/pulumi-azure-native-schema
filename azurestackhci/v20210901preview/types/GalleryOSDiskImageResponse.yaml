@@ -1,0 +1,9 @@
+$token: azure-native:azurestackhci/v20210901preview:GalleryOSDiskImageResponse
+description: This is the OS disk image.
+properties:
+  sizeInMB:
+    type: number
+    description: This property indicates the size of the VHD to be created.
+type: object
+required:
+  - sizeInMB

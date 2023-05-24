@@ -1,0 +1,44 @@
+$token: azure-native:web/v20220901:listWebAppWorkflowsConnections
+description: Workflow properties definition.
+inputs:
+  properties:
+    name:
+      type: string
+      description: Site name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the resource group to which the resource belongs.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - name
+    - resourceGroupName
+outputs:
+  description: Workflow properties definition.
+  properties:
+    id:
+      type: string
+      description: The resource id.
+    kind:
+      type: string
+      description: The resource kind.
+    location:
+      type: string
+      description: The resource location.
+    name:
+      type: string
+      description: Gets the resource name.
+    properties:
+      type: object
+      $ref: "#/types/azure-native:web/v20220901:WorkflowEnvelopeResponseProperties"
+      description: Additional workflow properties.
+    type:
+      type: string
+      description: Gets the resource type.
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - type

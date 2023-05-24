@@ -1,0 +1,14 @@
+$token: azure-native:servicelinker/v20221101preview:VNetSolution
+description: The VNet solution for linker
+properties:
+  deleteOrUpdateBehavior:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:servicelinker/v20221101preview:DeleteOrUpdateBehavior"
+    description: Indicates whether to clean up previous operation when Linker is updating or deleting
+  type:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:servicelinker/v20221101preview:VNetSolutionType"
+    description: Type of VNet solution.
+type: object

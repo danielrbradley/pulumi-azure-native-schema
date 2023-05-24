@@ -1,0 +1,32 @@
+$token: azure-native:storsimple:getManagerDevicePublicEncryptionKey
+description: |-
+  Returns the public encryption key of the device.
+  API Version: 2017-06-01.
+inputs:
+  properties:
+    deviceName:
+      type: string
+      description: The device name
+      willReplaceOnChanges: true
+    managerName:
+      type: string
+      description: The manager name
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The resource group name
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - deviceName
+    - managerName
+    - resourceGroupName
+outputs:
+  description: The public key.
+  properties:
+    key:
+      type: string
+      description: The key.
+  type: object
+  required:
+    - key

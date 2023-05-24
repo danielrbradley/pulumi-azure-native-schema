@@ -1,0 +1,5 @@
+$token: azure-native:networkcloud:OsDiskCreateOption
+description: The strategy for creating the OS disk.
+type: string
+enum:
+  - value: Ephemeral

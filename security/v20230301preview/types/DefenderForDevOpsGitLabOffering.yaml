@@ -1,0 +1,12 @@
+$token: azure-native:security/v20230301preview:DefenderForDevOpsGitLabOffering
+description: The Defender for DevOps for Gitlab offering
+properties:
+  offeringType:
+    type: string
+    description: |-
+      The type of the security offering.
+      Expected value is 'DefenderForDevOpsGitLab'.
+    const: DefenderForDevOpsGitLab
+type: object
+required:
+  - offeringType

@@ -1,0 +1,75 @@
+$token: azure-native:kusto:getAttachedDatabaseConfiguration
+description: |-
+  Returns an attached database configuration.
+  API Version: 2022-12-29.
+inputs:
+  properties:
+    attachedDatabaseConfigurationName:
+      type: string
+      description: The name of the attached database configuration.
+      willReplaceOnChanges: true
+    clusterName:
+      type: string
+      description: The name of the Kusto cluster.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group containing the Kusto cluster.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - attachedDatabaseConfigurationName
+    - clusterName
+    - resourceGroupName
+outputs:
+  description: Class representing an attached database configuration.
+  properties:
+    attachedDatabaseNames:
+      type: array
+      items:
+        type: string
+      description: The list of databases from the clusterResourceId which are currently attached to the cluster.
+    clusterResourceId:
+      type: string
+      description: The resource id of the cluster where the databases you would like to attach reside.
+    databaseName:
+      type: string
+      description: The name of the database which you would like to attach, use * if you want to follow all current and future databases.
+    databaseNameOverride:
+      type: string
+      description: Overrides the original database name. Relevant only when attaching to a specific database.
+    databaseNamePrefix:
+      type: string
+      description: Adds a prefix to the attached databases name. When following an entire cluster, that prefix would be added to all of the databases original names from leader cluster.
+    defaultPrincipalsModificationKind:
+      type: string
+      description: The default principals modification kind
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    location:
+      type: string
+      description: Resource location.
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+      description: The provisioned state of the resource.
+    tableLevelSharingProperties:
+      type: object
+      $ref: "#/types/azure-native:kusto:TableLevelSharingPropertiesResponse"
+      description: Table level sharing specifications
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - attachedDatabaseNames
+    - clusterResourceId
+    - databaseName
+    - defaultPrincipalsModificationKind
+    - id
+    - name
+    - provisioningState
+    - type

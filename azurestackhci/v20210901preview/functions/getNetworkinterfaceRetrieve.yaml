@@ -1,0 +1,74 @@
+$token: azure-native:azurestackhci/v20210901preview:getNetworkinterfaceRetrieve
+description: Gets network interfaces by resource name
+inputs:
+  properties:
+    networkinterfacesName:
+      type: string
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - networkinterfacesName
+    - resourceGroupName
+outputs:
+  description: The network interface resource definition.
+  properties:
+    dnsSettings:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:InterfaceDNSSettingsResponse"
+      description: DNS Settings for the interface
+    extendedLocation:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:ExtendedLocationResponse"
+      description: The extendedLocation of the resource.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    ipConfigurations:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:azurestackhci/v20210901preview:IpConfigurationResponse"
+      description: IPConfigurations - A list of IPConfigurations of the network interface.
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    macAddress:
+      type: string
+      description: MacAddress - The MAC address of the network interface.
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+    resourceName:
+      type: string
+      description: name of the object to be used in moc
+    status:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:NetworkInterfaceStatusResponse"
+      description: NetworkInterfaceStatus defines the observed state of network interfaces
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:SystemDataResponse"
+      description: Metadata pertaining to creation and last modification of the resource.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - location
+    - name
+    - provisioningState
+    - status
+    - systemData
+    - type

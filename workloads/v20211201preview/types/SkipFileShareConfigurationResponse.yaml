@@ -1,0 +1,12 @@
+$token: azure-native:workloads/v20211201preview:SkipFileShareConfigurationResponse
+description: Gets or sets the file share configuration for scenarios where transport directory fileshare is not created or required.
+properties:
+  configurationType:
+    type: string
+    description: |-
+      The type of file share config.
+      Expected value is 'Skip'.
+    const: Skip
+type: object
+required:
+  - configurationType

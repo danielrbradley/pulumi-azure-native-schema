@@ -1,0 +1,17 @@
+$token: azure-native:syntex:DocumentProcessorPropertiesResponse
+description: Document processor properties
+properties:
+  provisioningState:
+    type: string
+    description: The managed resource provisioning state.
+  spoTenantId:
+    type: string
+    description: The ID (GUID) of an SharePoint Online (SPO) tenant associated with this document processor resource
+  spoTenantUrl:
+    type: string
+    description: The URL of an SharePoint Online (SPO) tenant associated with this document processor resource
+type: object
+required:
+  - provisioningState
+  - spoTenantId
+  - spoTenantUrl

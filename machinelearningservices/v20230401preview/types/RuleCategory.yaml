@@ -1,0 +1,7 @@
+$token: azure-native:machinelearningservices/v20230401preview:RuleCategory
+description: Category of a managed network Outbound Rule of a machine learning workspace.
+type: string
+enum:
+  - value: Required
+  - value: Recommended
+  - value: UserDefined

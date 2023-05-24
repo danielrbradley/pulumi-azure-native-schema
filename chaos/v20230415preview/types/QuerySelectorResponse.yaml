@@ -1,0 +1,30 @@
+$token: azure-native:chaos/v20230415preview:QuerySelectorResponse
+description: Model that represents a query selector.
+properties:
+  filter:
+    type: object
+    $ref: "#/types/azure-native:chaos/v20230415preview:SimpleFilterResponse"
+    description: Model that represents available filter types that can be applied to a targets list.
+  id:
+    type: string
+    description: String of the selector ID.
+  queryString:
+    type: string
+    description: Azure Resource Graph (ARG) Query Language query for target resources.
+  subscriptionIds:
+    type: array
+    items:
+      type: string
+    description: Subscription id list to scope resource query.
+  type:
+    type: string
+    description: |-
+      Enum of the selector type.
+      Expected value is 'Query'.
+    const: Query
+type: object
+required:
+  - id
+  - queryString
+  - subscriptionIds
+  - type

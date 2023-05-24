@@ -1,0 +1,7 @@
+$token: azure-native:machinelearningservices/v20221201preview:ScheduleProvisioningState
+description: The current deployment state of schedule.
+type: string
+enum:
+  - value: Completed
+  - value: Provisioning
+  - value: Failed

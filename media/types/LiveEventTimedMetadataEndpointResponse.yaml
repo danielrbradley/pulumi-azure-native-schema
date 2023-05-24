@@ -1,0 +1,7 @@
+$token: azure-native:media:LiveEventTimedMetadataEndpointResponse
+description: The live event metadata insertion endpoint.
+properties:
+  url:
+    type: string
+    description: The metadata endpoint URL.
+type: object

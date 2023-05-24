@@ -1,0 +1,5 @@
+$token: azure-native:recoveryservices:AlertsState
+type: string
+enum:
+  - value: Enabled
+  - value: Disabled

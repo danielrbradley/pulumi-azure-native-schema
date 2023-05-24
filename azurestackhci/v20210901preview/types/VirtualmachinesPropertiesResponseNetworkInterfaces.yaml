@@ -1,0 +1,6 @@
+$token: azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesResponseNetworkInterfaces
+properties:
+  id:
+    type: string
+    description: ID - Resource Id of the network interface
+type: object

@@ -1,0 +1,28 @@
+$token: azure-native:documentdb/v20230301preview:listMongoClusterConnectionStrings
+description: List mongo cluster connection strings. This includes the default connection string using SCRAM-SHA-256, as well as other connection strings supported by the cluster.
+inputs:
+  properties:
+    mongoClusterName:
+      type: string
+      description: The name of the mongo cluster.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - mongoClusterName
+    - resourceGroupName
+outputs:
+  description: The connection strings for the given mongo cluster.
+  properties:
+    connectionStrings:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:documentdb/v20230301preview:ConnectionStringResponse"
+      description: An array that contains the connection strings for a mongo cluster.
+  type: object
+  required:
+    - connectionStrings

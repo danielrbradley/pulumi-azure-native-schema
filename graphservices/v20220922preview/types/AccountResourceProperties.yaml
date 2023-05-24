@@ -1,0 +1,9 @@
+$token: azure-native:graphservices/v20220922preview:AccountResourceProperties
+description: Property bag from billing account
+properties:
+  appId:
+    type: string
+    description: Customer owned application ID
+type: object
+required:
+  - appId

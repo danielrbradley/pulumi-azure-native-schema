@@ -1,0 +1,36 @@
+$token: azure-native:storsimple/v20170601:listDeviceFailoverTars
+description: Given a list of volume containers to be failed over from a source device, this method returns the eligibility result, as a failover target, for all devices under that resource.
+inputs:
+  properties:
+    managerName:
+      type: string
+      description: The manager name
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The resource group name
+      willReplaceOnChanges: true
+    sourceDeviceName:
+      type: string
+      description: The source device name on which failover is performed.
+      willReplaceOnChanges: true
+    volumeContainers:
+      type: array
+      items:
+        type: string
+      description: The list of path IDs of the volume containers that needs to be failed-over, for which we want to fetch the eligible targets.
+  type: object
+  required:
+    - managerName
+    - resourceGroupName
+    - sourceDeviceName
+outputs:
+  description: The list of all devices in a resource and their eligibility status as a failover target device.
+  properties:
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:storsimple/v20170601:FailoverTargetResponse"
+      description: The list of all the failover targets.
+  type: object

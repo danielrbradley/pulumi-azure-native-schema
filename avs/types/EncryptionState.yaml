@@ -1,0 +1,6 @@
+$token: azure-native:avs:EncryptionState
+description: Status of customer managed encryption key
+type: string
+enum:
+  - value: Enabled
+  - value: Disabled

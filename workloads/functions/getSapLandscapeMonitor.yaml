@@ -1,0 +1,54 @@
+$token: azure-native:workloads:getSapLandscapeMonitor
+description: |-
+  Gets configuration values for Single Pane Of Glass for SAP monitor for the specified subscription, resource group, and resource name.
+  API Version: 2023-04-01.
+inputs:
+  properties:
+    monitorName:
+      type: string
+      description: Name of the SAP monitor resource.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - monitorName
+    - resourceGroupName
+outputs:
+  description: configuration associated with SAP Landscape Monitor Dashboard.
+  properties:
+    grouping:
+      type: object
+      $ref: "#/types/azure-native:workloads:SapLandscapeMonitorPropertiesResponseGrouping"
+      description: Gets or sets the SID groupings by landscape and Environment.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+      description: State of provisioning of the SAP monitor.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:workloads:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    topMetricsThresholds:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:workloads:SapLandscapeMonitorMetricThresholdsResponse"
+      description: Gets or sets the list Top Metric Thresholds for SAP Landscape Monitor Dashboard
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - provisioningState
+    - systemData
+    - type

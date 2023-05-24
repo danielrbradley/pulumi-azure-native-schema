@@ -1,0 +1,13 @@
+$token: azure-native:workloads/v20230401:ApplicationServerFullResourceNamesResponse
+description: The full resource names object for application layer resources. The number of entries in this list should be equal to the number VMs to be created for application layer.
+properties:
+  availabilitySetName:
+    type: string
+    description: The full name for availability set. In case name is not provided, it will be defaulted to {SID}-App-AvSet.
+  virtualMachines:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:workloads/v20230401:VirtualMachineResourceNamesResponse"
+    description: The list of virtual machine naming details.
+type: object

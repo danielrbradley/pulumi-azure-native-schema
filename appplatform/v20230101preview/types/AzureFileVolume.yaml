@@ -1,0 +1,31 @@
+$token: azure-native:appplatform/v20230101preview:AzureFileVolume
+description: The properties of the Azure File volume. Azure File shares are mounted as volumes.
+properties:
+  enableSubPath:
+    type: boolean
+    description: If set to true, it will create and mount a dedicated directory for every individual app instance.
+    default: false
+  mountOptions:
+    type: array
+    items:
+      type: string
+    description: These are the mount options for a persistent disk.
+  mountPath:
+    type: string
+    description: The mount path of the persistent disk.
+  readOnly:
+    type: boolean
+    description: Indicates whether the persistent disk is a readOnly one.
+  shareName:
+    type: string
+    description: The share name of the Azure File share.
+  type:
+    type: string
+    description: |-
+      The type of the underlying resource to mount as a persistent disk.
+      Expected value is 'AzureFileVolume'.
+    const: AzureFileVolume
+type: object
+required:
+  - mountPath
+  - type

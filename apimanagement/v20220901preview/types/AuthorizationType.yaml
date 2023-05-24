@@ -1,0 +1,7 @@
+$token: azure-native:apimanagement/v20220901preview:AuthorizationType
+description: Authorization type options
+type: string
+enum:
+  - name: OAuth2
+    description: OAuth2 authorization type
+    value: OAuth2

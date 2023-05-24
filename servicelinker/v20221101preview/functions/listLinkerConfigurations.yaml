@@ -1,0 +1,26 @@
+$token: azure-native:servicelinker/v20221101preview:listLinkerConfigurations
+description: list source configurations for a Linker.
+inputs:
+  properties:
+    linkerName:
+      type: string
+      description: The name Linker resource.
+      willReplaceOnChanges: true
+    resourceUri:
+      type: string
+      description: The fully qualified Azure Resource manager identifier of the resource to be connected.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - linkerName
+    - resourceUri
+outputs:
+  description: Configurations for source resource, include appSettings, connectionString and serviceBindings
+  properties:
+    configurations:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:SourceConfigurationResponse"
+      description: The configuration properties for source resource.
+  type: object

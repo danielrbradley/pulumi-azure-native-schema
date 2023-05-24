@@ -1,0 +1,17 @@
+$token: azure-native:containerstorage:ElasticSanPoolProperties
+description: Elastic San Pool Properties
+properties:
+  resourceGroup:
+    type: string
+    description: Resource group of an existing SAN.
+  sanName:
+    type: string
+    description: Name of an existing SAN.
+  volumeGroup:
+    type: string
+    description: Volume group of an existing SAN.
+type: object
+required:
+  - resourceGroup
+  - sanName
+  - volumeGroup

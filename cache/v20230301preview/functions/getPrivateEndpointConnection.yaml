@@ -1,0 +1,56 @@
+$token: azure-native:cache/v20230301preview:getPrivateEndpointConnection
+description: Gets the specified private endpoint connection associated with the RedisEnterprise cluster.
+inputs:
+  properties:
+    clusterName:
+      type: string
+      description: The name of the RedisEnterprise cluster.
+      willReplaceOnChanges: true
+    privateEndpointConnectionName:
+      type: string
+      description: The name of the private endpoint connection associated with the Azure resource
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - clusterName
+    - privateEndpointConnectionName
+    - resourceGroupName
+outputs:
+  description: The Private Endpoint Connection resource.
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    privateEndpoint:
+      type: object
+      $ref: "#/types/azure-native:cache/v20230301preview:PrivateEndpointResponse"
+      description: The resource of private end point.
+    privateLinkServiceConnectionState:
+      type: object
+      $ref: "#/types/azure-native:cache/v20230301preview:PrivateLinkServiceConnectionStateResponse"
+      description: A collection of information about the state of the connection between service consumer and provider.
+    provisioningState:
+      type: string
+      description: The provisioning state of the private endpoint connection resource.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:cache/v20230301preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - privateLinkServiceConnectionState
+    - provisioningState
+    - systemData
+    - type

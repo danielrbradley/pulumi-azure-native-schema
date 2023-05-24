@@ -1,0 +1,13 @@
+$token: azure-native:appplatform/v20230301preview:ApplicationLiveViewInstanceResponse
+description: Collection of instances belong to the Application Live View
+properties:
+  name:
+    type: string
+    description: Name of the Application Live View instance.
+  status:
+    type: string
+    description: Status of the Application Live View instance. It can be Pending, Running, Succeeded, Failed, Unknown.
+type: object
+required:
+  - name
+  - status

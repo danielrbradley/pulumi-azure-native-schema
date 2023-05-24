@@ -1,0 +1,22 @@
+$token: azure-native:workloads:DiscoveryConfigurationResponse
+description: Discovery Details.
+properties:
+  appLocation:
+    type: string
+    description: The geo-location where the SAP system exists.
+  centralServerVmId:
+    type: string
+    description: The virtual machine ID of the Central Server.
+  configurationType:
+    type: string
+    description: |-
+      The configuration Type.
+      Expected value is 'Discovery'.
+    const: Discovery
+  managedRgStorageAccountName:
+    type: string
+    description: The custom storage account name for the storage account created by the service in the managed resource group created as part of VIS deployment.<br><br>Refer to the storage account naming rules [here](https://learn.microsoft.com/azure/azure-resource-manager/management/resource-name-rules#microsoftstorage).<br><br>If not provided, the service will create the storage account with a random name.
+type: object
+required:
+  - appLocation
+  - configurationType

@@ -1,0 +1,46 @@
+$token: azure-native:azuresphere/v20220901preview:listCatalogDeviceGroups
+description: List the device groups for the catalog.
+inputs:
+  properties:
+    catalogName:
+      type: string
+      description: Name of catalog
+      willReplaceOnChanges: true
+    deviceGroupName:
+      type: string
+      description: Device Group name.
+    filter:
+      type: string
+      description: Filter the result list using the given expression
+    maxpagesize:
+      type: integer
+      description: The maximum number of result items per page.
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    skip:
+      type: integer
+      description: The number of result items to skip.
+    top:
+      type: integer
+      description: The number of result items to return.
+  type: object
+  required:
+    - catalogName
+    - resourceGroupName
+outputs:
+  description: The response of a DeviceGroup list operation.
+  properties:
+    nextLink:
+      type: string
+      description: The link to the next page of items
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:azuresphere/v20220901preview:DeviceGroupResponse"
+      description: The DeviceGroup items on this page
+  type: object
+  required:
+    - value

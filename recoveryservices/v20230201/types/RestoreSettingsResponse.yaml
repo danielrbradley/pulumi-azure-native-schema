@@ -1,0 +1,8 @@
+$token: azure-native:recoveryservices/v20230201:RestoreSettingsResponse
+description: Restore Settings  of the vault
+properties:
+  crossSubscriptionRestoreSettings:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices/v20230201:CrossSubscriptionRestoreSettingsResponse"
+    description: Settings for CrossSubscriptionRestore
+type: object

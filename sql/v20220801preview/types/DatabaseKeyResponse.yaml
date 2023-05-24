@@ -1,0 +1,21 @@
+$token: azure-native:sql/v20220801preview:DatabaseKeyResponse
+description: Database level key used for encryption at rest.
+properties:
+  creationDate:
+    type: string
+    description: The database key creation date.
+  subregion:
+    type: string
+    description: Subregion of the server key.
+  thumbprint:
+    type: string
+    description: Thumbprint of the database key.
+  type:
+    type: string
+    description: The database key type. Only supported value is 'AzureKeyVault'.
+type: object
+required:
+  - creationDate
+  - subregion
+  - thumbprint
+  - type

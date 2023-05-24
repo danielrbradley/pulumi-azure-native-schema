@@ -1,0 +1,11 @@
+$token: azure-native:apimanagement/v20220801:AuthorizationProviderOAuth2Settings
+description: OAuth2 settings details
+properties:
+  grantTypes:
+    type: object
+    $ref: "#/types/azure-native:apimanagement/v20220801:AuthorizationProviderOAuth2GrantTypes"
+    description: OAuth2 settings
+  redirectUrl:
+    type: string
+    description: Redirect URL to be set in the OAuth application.
+type: object

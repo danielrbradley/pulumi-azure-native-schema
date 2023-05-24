@@ -1,0 +1,16 @@
+$token: azure-native:agfoodplatform:IdentityResponse
+description: Identity for the resource.
+properties:
+  principalId:
+    type: string
+    description: The principal ID of resource identity. The value must be an UUID.
+  tenantId:
+    type: string
+    description: The tenant ID of resource. The value must be an UUID.
+  type:
+    type: string
+    description: The identity type.
+type: object
+required:
+  - principalId
+  - tenantId

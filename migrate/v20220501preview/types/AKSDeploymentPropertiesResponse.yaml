@@ -1,0 +1,16 @@
+$token: azure-native:migrate/v20220501preview:AKSDeploymentPropertiesResponse
+description: Class for AKSDeployment Properties.
+properties:
+  aksClusterName:
+    type: string
+    description: Gets or sets the AKS cluster name.
+  resourceGroup:
+    type: string
+    description: Gets or sets the resource group of the resource.
+  subscriptionId:
+    type: string
+    description: Gets or sets the subscription id of the resource.
+  tenantId:
+    type: string
+    description: Gets or sets the tenant id.
+type: object

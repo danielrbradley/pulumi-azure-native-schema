@@ -1,0 +1,28 @@
+$token: azure-native:sqlvirtualmachine/v20220801preview:ServerConfigurationsManagementSettings
+description: Set the connectivity, storage and workload settings.
+properties:
+  additionalFeaturesServerConfigurations:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20220801preview:AdditionalFeaturesServerConfigurations"
+    description: Additional SQL feature settings.
+  azureAdAuthenticationSettings:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20220801preview:AADAuthenticationSettings"
+    description: Azure AD authentication Settings.
+  sqlConnectivityUpdateSettings:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20220801preview:SqlConnectivityUpdateSettings"
+    description: SQL connectivity type settings.
+  sqlInstanceSettings:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20220801preview:SQLInstanceSettings"
+    description: SQL Instance settings.
+  sqlStorageUpdateSettings:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20220801preview:SqlStorageUpdateSettings"
+    description: SQL storage update settings.
+  sqlWorkloadTypeUpdateSettings:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20220801preview:SqlWorkloadTypeUpdateSettings"
+    description: SQL workload type settings.
+type: object

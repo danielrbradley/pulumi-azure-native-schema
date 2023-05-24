@@ -1,0 +1,12 @@
+$token: azure-native:app/v20221101preview:ManagedCertificateProperties
+description: Certificate resource specific properties
+properties:
+  domainControlValidation:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:app/v20221101preview:ManagedCertificateDomainControlValidation"
+    description: Selected type of domain control validation for managed certificates.
+  subjectName:
+    type: string
+    description: Subject name of the certificate.
+type: object

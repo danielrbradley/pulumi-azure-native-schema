@@ -1,0 +1,21 @@
+$token: azure-native:containerservice/v20230202preview:RelativeMonthlySchedule
+description: "For schedules like: 'recur every month on the first Monday' or 'recur every 3 months on last Friday'."
+properties:
+  dayOfWeek:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:containerservice/v20230202preview:WeekDay"
+    description: Specifies on which day of the week the maintenance occurs.
+  intervalMonths:
+    type: integer
+    description: Specifies the number of months between each set of occurrences.
+  weekIndex:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:containerservice/v20230202preview:Type"
+    description: Specifies on which instance of the allowed days specified in daysOfWeek the maintenance occurs.
+type: object
+required:
+  - dayOfWeek
+  - intervalMonths
+  - weekIndex

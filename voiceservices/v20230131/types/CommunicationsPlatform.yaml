@@ -1,0 +1,6 @@
+$token: azure-native:voiceservices/v20230131:CommunicationsPlatform
+description: Available platform types.
+type: string
+enum:
+  - value: OperatorConnect
+  - value: TeamsPhoneMobile

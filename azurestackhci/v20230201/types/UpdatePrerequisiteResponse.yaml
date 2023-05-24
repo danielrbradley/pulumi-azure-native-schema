@@ -1,0 +1,13 @@
+$token: azure-native:azurestackhci/v20230201:UpdatePrerequisiteResponse
+description: If update State is HasPrerequisite, this property contains an array of objects describing prerequisite updates before installing this update. Otherwise, it is empty.
+properties:
+  packageName:
+    type: string
+    description: Friendly name of the prerequisite.
+  updateType:
+    type: string
+    description: Updatable component type.
+  version:
+    type: string
+    description: Version of the prerequisite.
+type: object

@@ -1,0 +1,17 @@
+$token: azure-native:workloads:CentralServerFullResourceNamesResponse
+description: The full resource names object for central server layer resources.
+properties:
+  availabilitySetName:
+    type: string
+    description: The full name for availability set. In case name is not provided, it will be defaulted to {SID}-ASCS-AvSet.
+  loadBalancer:
+    type: object
+    $ref: "#/types/azure-native:workloads:LoadBalancerResourceNamesResponse"
+    description: The resource names object for load balancer and related resources.
+  virtualMachines:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:workloads:VirtualMachineResourceNamesResponse"
+    description: "The list of names for all ASCS virtual machines to be deployed. The number of entries in this list should be equal to the number VMs to be created for ASCS layer. At maximum, there can be two virtual machines at this layer: ASCS and ERS."
+type: object

@@ -1,0 +1,12 @@
+$token: azure-native:netapp/v20220501:EncryptionIdentityResponse
+description: Identity used to authenticate with key vault.
+properties:
+  principalId:
+    type: string
+    description: The principal ID (object ID) of the identity used to authenticate with key vault. Read-only.
+  userAssignedIdentity:
+    type: string
+    description: The ARM resource identifier of the user assigned identity used to authenticate with key vault. Applicable if identity.type has 'UserAssigned'. It should match key of identity.userAssignedIdentities.
+type: object
+required:
+  - principalId

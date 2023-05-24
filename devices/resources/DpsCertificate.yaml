@@ -1,0 +1,57 @@
+$token: azure-native:devices:DpsCertificate
+properties:
+  etag:
+    type: string
+    description: The entity tag.
+  name:
+    type: string
+    description: The name of the certificate.
+  properties:
+    type: object
+    $ref: "#/types/azure-native:devices:CertificatePropertiesResponse"
+    description: properties of a certificate
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:devices:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  type:
+    type: string
+    description: The resource type.
+type: object
+required:
+  - etag
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  certificateName:
+    type: string
+    description: The name of the certificate create or update.
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:devices:CertificateProperties"
+    description: properties of a certificate
+  provisioningServiceName:
+    type: string
+    description: The name of the provisioning service.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: Resource group identifier.
+    willReplaceOnChanges: true
+requiredInputs:
+  - provisioningServiceName
+  - resourceGroupName
+aliases:
+  - type: azure-native:devices/v20170821preview:DpsCertificate
+  - type: azure-native:devices/v20171115:DpsCertificate
+  - type: azure-native:devices/v20180122:DpsCertificate
+  - type: azure-native:devices/v20200101:DpsCertificate
+  - type: azure-native:devices/v20200301:DpsCertificate
+  - type: azure-native:devices/v20200901preview:DpsCertificate
+  - type: azure-native:devices/v20211015:DpsCertificate
+  - type: azure-native:devices/v20220205:DpsCertificate
+  - type: azure-native:devices/v20221212:DpsCertificate
+  - type: azure-native:devices/v20230301preview:DpsCertificate

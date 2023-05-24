@@ -1,0 +1,16 @@
+$token: azure-native:storagecache/v20230301preview:BlobNfsTarget
+description: Properties pertaining to the BlobNfsTarget.
+properties:
+  target:
+    type: string
+    description: Resource ID of the storage container.
+  usageModel:
+    type: string
+    description: Identifies the StorageCache usage model to be used for this storage target.
+  verificationTimer:
+    type: integer
+    description: Amount of time (in seconds) the cache waits before it checks the back-end storage for file updates.
+  writeBackTimer:
+    type: integer
+    description: Amount of time (in seconds) the cache waits after the last file change before it copies the changed file to back-end storage.
+type: object

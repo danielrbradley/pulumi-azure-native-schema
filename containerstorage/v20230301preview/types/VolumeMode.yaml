@@ -1,0 +1,6 @@
+$token: azure-native:containerstorage/v20230301preview:VolumeMode
+description: Indicates how the volumes created from the snapshot should be attached
+type: string
+enum:
+  - value: Filesystem
+  - value: Raw

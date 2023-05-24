@@ -1,0 +1,62 @@
+$token: azure-native:confidentialledger/v20230126preview:Ledger
+description: Confidential Ledger. Contains the properties of Confidential Ledger Resource.
+properties:
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  properties:
+    type: object
+    $ref: "#/types/azure-native:confidentialledger/v20230126preview:LedgerPropertiesResponse"
+    description: Properties of Confidential Ledger Resource.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:confidentialledger/v20230126preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - location
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  ledgerName:
+    type: string
+    description: Name of the Confidential Ledger
+    willReplaceOnChanges: true
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:confidentialledger/v20230126preview:LedgerProperties"
+    description: Properties of Confidential Ledger Resource.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+requiredInputs:
+  - resourceGroupName
+aliases:
+  - type: azure-native:confidentialledger:Ledger
+  - type: azure-native:confidentialledger/v20201201preview:Ledger
+  - type: azure-native:confidentialledger/v20210513preview:Ledger
+  - type: azure-native:confidentialledger/v20220513:Ledger
+  - type: azure-native:confidentialledger/v20220908preview:Ledger

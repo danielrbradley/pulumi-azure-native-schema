@@ -1,0 +1,7 @@
+$token: azure-native:network:ManagedRuleSetActionType
+description: Defines the rule set action.
+type: string
+enum:
+  - value: Block
+  - value: Log
+  - value: Redirect

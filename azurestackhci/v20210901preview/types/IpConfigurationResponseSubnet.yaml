@@ -1,0 +1,7 @@
+$token: azure-native:azurestackhci/v20210901preview:IpConfigurationResponseSubnet
+description: Subnet - Name of Subnet bound to the IP configuration.
+properties:
+  id:
+    type: string
+    description: ID - The ARM resource id in the form of /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/...
+type: object

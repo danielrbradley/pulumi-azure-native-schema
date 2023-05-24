@@ -1,0 +1,48 @@
+$token: azure-native:appplatform/v20200701:ConfigServer
+description: Config Server resource
+properties:
+  name:
+    type: string
+    description: The name of the resource.
+  properties:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20200701:ConfigServerPropertiesResponse"
+    description: Properties of the Config Server resource
+  type:
+    type: string
+    description: The type of the resource.
+type: object
+required:
+  - name
+  - properties
+  - type
+inputProperties:
+  properties:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20200701:ConfigServerProperties"
+    description: Properties of the Config Server resource
+  resourceGroupName:
+    type: string
+    description: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+    willReplaceOnChanges: true
+  serviceName:
+    type: string
+    description: The name of the Service resource.
+    willReplaceOnChanges: true
+requiredInputs:
+  - resourceGroupName
+  - serviceName
+aliases:
+  - type: azure-native:appplatform:ConfigServer
+  - type: azure-native:appplatform/v20201101preview:ConfigServer
+  - type: azure-native:appplatform/v20210601preview:ConfigServer
+  - type: azure-native:appplatform/v20210901preview:ConfigServer
+  - type: azure-native:appplatform/v20220101preview:ConfigServer
+  - type: azure-native:appplatform/v20220301preview:ConfigServer
+  - type: azure-native:appplatform/v20220401:ConfigServer
+  - type: azure-native:appplatform/v20220501preview:ConfigServer
+  - type: azure-native:appplatform/v20220901preview:ConfigServer
+  - type: azure-native:appplatform/v20221101preview:ConfigServer
+  - type: azure-native:appplatform/v20221201:ConfigServer
+  - type: azure-native:appplatform/v20230101preview:ConfigServer
+  - type: azure-native:appplatform/v20230301preview:ConfigServer

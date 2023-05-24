@@ -1,0 +1,75 @@
+$token: azure-native:hybridconnectivity/v20230315:getServiceConfiguration
+description: Gets the details about the service to the resource.
+inputs:
+  properties:
+    endpointName:
+      type: string
+      description: The endpoint name.
+      willReplaceOnChanges: true
+    resourceUri:
+      type: string
+      description: The fully qualified Azure Resource manager identifier of the resource to be connected.
+      willReplaceOnChanges: true
+    serviceConfigurationName:
+      type: string
+      description: The service name.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - endpointName
+    - resourceUri
+    - serviceConfigurationName
+outputs:
+  description: The service configuration details associated with the target resource.
+  properties:
+    createdAt:
+      type: string
+      description: The timestamp of resource creation (UTC).
+    createdBy:
+      type: string
+      description: The identity that created the resource.
+    createdByType:
+      type: string
+      description: The type of identity that created the resource.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+    lastModifiedAt:
+      type: string
+      description: The timestamp of resource last modification (UTC)
+    lastModifiedBy:
+      type: string
+      description: The identity that last modified the resource.
+    lastModifiedByType:
+      type: string
+      description: The type of identity that last modified the resource.
+    name:
+      type: string
+      description: The name of the resource
+    port:
+      type: number
+      description: The port on which service is enabled.
+    provisioningState:
+      type: string
+      description: The resource provisioning state.
+    resourceId:
+      type: string
+      description: The resource Id of the connectivity endpoint (optional).
+    serviceName:
+      type: string
+      description: Name of the service.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:hybridconnectivity/v20230315:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - provisioningState
+    - serviceName
+    - systemData
+    - type

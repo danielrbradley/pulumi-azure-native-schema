@@ -1,0 +1,30 @@
+$token: azure-native:chaos/v20230415preview:ExperimentPropertiesResponse
+description: Model that represents the Experiment properties model.
+properties:
+  selectors:
+    type: array
+    items:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:chaos/v20230415preview:ListSelectorResponse"
+        - type: object
+          $ref: "#/types/azure-native:chaos/v20230415preview:QuerySelectorResponse"
+      discriminator:
+        propertyName: type
+        mapping:
+          List: "#/types/azure-native:chaos/v20230415preview:ListSelectorResponse"
+          Query: "#/types/azure-native:chaos/v20230415preview:QuerySelectorResponse"
+    description: List of selectors.
+  startOnCreation:
+    type: boolean
+    description: A boolean value that indicates if experiment should be started on creation or not.
+  steps:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:chaos/v20230415preview:StepResponse"
+    description: List of steps.
+type: object
+required:
+  - selectors
+  - steps

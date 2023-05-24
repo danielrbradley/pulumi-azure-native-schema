@@ -1,0 +1,38 @@
+$token: azure-native:managednetworkfabric:AccessControlListPropertiesConditions
+description: Access Control List condition model.
+properties:
+  action:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:managednetworkfabric:ConditionActionType"
+    description: "action. Example: allow | deny."
+  annotation:
+    type: string
+    description: Switch configuration description.
+  destinationAddress:
+    type: string
+    description: "destinationAddress. Example: any | 1.1.1.0/24 | 1.1.10.10"
+  destinationPort:
+    type: string
+    description: "destinationPort. Example: any | 1253"
+  protocol:
+    type: integer
+    description: "TCP/IP protocol as defined in the list of IP protocol numbers. Example: 255 (any) | 0 | 1."
+  sequenceNumber:
+    type: integer
+    description: sequenceNumber of the Access Control List.
+  sourceAddress:
+    type: string
+    description: "sourceAddress. Example: any | 1.1.1.0/24 | 1.1.10.10"
+  sourcePort:
+    type: string
+    description: "sourcePort. Example: any | 1253"
+type: object
+required:
+  - action
+  - destinationAddress
+  - destinationPort
+  - protocol
+  - sequenceNumber
+  - sourceAddress
+  - sourcePort

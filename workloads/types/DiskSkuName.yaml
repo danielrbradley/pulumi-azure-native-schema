@@ -1,0 +1,11 @@
+$token: azure-native:workloads:DiskSkuName
+description: Defines the disk sku name.
+type: string
+enum:
+  - value: Standard_LRS
+  - value: Premium_LRS
+  - value: StandardSSD_LRS
+  - value: UltraSSD_LRS
+  - value: Premium_ZRS
+  - value: StandardSSD_ZRS
+  - value: PremiumV2_LRS

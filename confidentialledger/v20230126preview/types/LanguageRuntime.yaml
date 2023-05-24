@@ -1,0 +1,6 @@
+$token: azure-native:confidentialledger/v20230126preview:LanguageRuntime
+description: Unique name for the Managed CCF.
+type: string
+enum:
+  - value: CPP
+  - value: JS

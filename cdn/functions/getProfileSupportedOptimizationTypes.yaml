@@ -1,0 +1,29 @@
+$token: azure-native:cdn:getProfileSupportedOptimizationTypes
+description: |-
+  Gets the supported optimization types for the current profile. A user can create an endpoint with an optimization type from the listed values.
+  API Version: 2021-06-01.
+inputs:
+  properties:
+    profileName:
+      type: string
+      description: Name of the Azure Front Door Standard or Azure Front Door Premium or CDN profile which is unique within the resource group.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the Resource group within the Azure subscription.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - profileName
+    - resourceGroupName
+outputs:
+  description: The result of the GetSupportedOptimizationTypes API
+  properties:
+    supportedOptimizationTypes:
+      type: array
+      items:
+        type: string
+      description: Supported optimization types for a profile.
+  type: object
+  required:
+    - supportedOptimizationTypes

@@ -1,0 +1,7 @@
+$token: azure-native:peering/v20221001:PeeringSku
+description: The SKU that defines the tier and kind of the peering.
+properties:
+  name:
+    type: string
+    description: The name of the peering SKU.
+type: object

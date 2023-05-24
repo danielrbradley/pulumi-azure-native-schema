@@ -1,0 +1,6 @@
+$token: azure-native:cdn:SkuResponse
+properties:
+  name:
+    type: string
+    description: Name of the pricing tier.
+type: object

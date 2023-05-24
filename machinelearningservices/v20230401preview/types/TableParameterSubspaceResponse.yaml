@@ -1,0 +1,63 @@
+$token: azure-native:machinelearningservices/v20230401preview:TableParameterSubspaceResponse
+properties:
+  booster:
+    type: string
+    description: Specify the boosting type, e.g gbdt for XGBoost.
+  boostingType:
+    type: string
+    description: Specify the boosting type, e.g gbdt for LightGBM.
+  growPolicy:
+    type: string
+    description: Specify the grow policy, which controls the way new nodes are added to the tree.
+  learningRate:
+    type: string
+    description: The learning rate for the training procedure.
+  maxBin:
+    type: string
+    description: Specify the Maximum number of discrete bins to bucket continuous features .
+  maxDepth:
+    type: string
+    description: Specify the max depth to limit the tree depth explicitly.
+  maxLeaves:
+    type: string
+    description: Specify the max leaves to limit the tree leaves explicitly.
+  minDataInLeaf:
+    type: string
+    description: The minimum number of data per leaf.
+  minSplitGain:
+    type: string
+    description: Minimum loss reduction required to make a further partition on a leaf node of the tree.
+  modelName:
+    type: string
+    description: The name of the model to train.
+  nEstimators:
+    type: string
+    description: Specify the number of trees (or rounds) in an model.
+  numLeaves:
+    type: string
+    description: Specify the number of leaves.
+  preprocessorName:
+    type: string
+    description: The name of the preprocessor to use.
+  regAlpha:
+    type: string
+    description: L1 regularization term on weights.
+  regLambda:
+    type: string
+    description: L2 regularization term on weights.
+  subsample:
+    type: string
+    description: Subsample ratio of the training instance.
+  subsampleFreq:
+    type: string
+    description: Frequency of subsample
+  treeMethod:
+    type: string
+    description: Specify the tree method.
+  withMean:
+    type: string
+    description: If true, center before scaling the data with StandardScalar.
+  withStd:
+    type: string
+    description: If true, scaling the data with Unit Variance with StandardScalar.
+type: object

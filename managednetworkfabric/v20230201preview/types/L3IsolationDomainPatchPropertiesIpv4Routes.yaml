@@ -1,0 +1,7 @@
+$token: azure-native:managednetworkfabric/v20230201preview:L3IsolationDomainPatchPropertiesIpv4Routes
+description: aggregateIpv4Route model.
+properties:
+  prefix:
+    type: string
+    description: IPv4 Prefix of the aggregate Ipv4Route.
+type: object

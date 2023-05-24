@@ -1,0 +1,5 @@
+$token: azure-native:machinelearningservices:WorkspaceConnectionPersonalAccessToken
+properties:
+  pat:
+    type: string
+type: object

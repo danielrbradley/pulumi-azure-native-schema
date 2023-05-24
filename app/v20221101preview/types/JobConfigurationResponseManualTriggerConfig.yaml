@@ -1,0 +1,10 @@
+$token: azure-native:app/v20221101preview:JobConfigurationResponseManualTriggerConfig
+description: Manual trigger configuration for a single execution job. Properties replicaCompletionCount and parallelism would be set to 1 by default
+properties:
+  parallelism:
+    type: integer
+    description: Number of parallel replicas of a job that can run at a given time.
+  replicaCompletionCount:
+    type: integer
+    description: Minimum number of successful replica completions before overall job completion.
+type: object

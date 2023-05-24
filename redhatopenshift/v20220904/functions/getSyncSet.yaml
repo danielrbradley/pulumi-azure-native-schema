@@ -1,0 +1,46 @@
+$token: azure-native:redhatopenshift/v20220904:getSyncSet
+description: The operation returns properties of a SyncSet.
+inputs:
+  properties:
+    childResourceName:
+      type: string
+      description: The name of the SyncSet resource.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    resourceName:
+      type: string
+      description: The name of the OpenShift cluster resource.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - childResourceName
+    - resourceGroupName
+    - resourceName
+outputs:
+  description: SyncSet represents a SyncSet for an Azure Red Hat OpenShift Cluster.
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    resources:
+      type: string
+      description: Resources represents the SyncSets configuration.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:redhatopenshift/v20220904:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - systemData
+    - type

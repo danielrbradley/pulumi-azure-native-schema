@@ -1,0 +1,23 @@
+$token: azure-native:containerservice/v20230201:PrivateLinkResource
+description: A private link resource
+properties:
+  groupId:
+    type: string
+    description: The group ID of the resource.
+  id:
+    type: string
+    description: The ID of the private link resource.
+  name:
+    type: string
+    description: The name of the private link resource.
+    willReplaceOnChanges: true
+  requiredMembers:
+    type: array
+    items:
+      type: string
+    description: The RequiredMembers of the resource
+  type:
+    type: string
+    description: The resource type.
+    willReplaceOnChanges: true
+type: object

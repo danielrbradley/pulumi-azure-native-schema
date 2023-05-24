@@ -1,0 +1,6 @@
+$token: azure-native:network/v20221101:ScrubbingRuleEntryState
+description: Defines the state of log scrubbing rule. Default value is Enabled.
+type: string
+enum:
+  - value: Enabled
+  - value: Disabled

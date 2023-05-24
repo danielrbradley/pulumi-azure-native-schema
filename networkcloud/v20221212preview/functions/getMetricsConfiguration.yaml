@@ -1,0 +1,83 @@
+$token: azure-native:networkcloud/v20221212preview:getMetricsConfiguration
+description: Get metrics configuration of the provided cluster.
+inputs:
+  properties:
+    clusterName:
+      type: string
+      description: The name of the cluster.
+      willReplaceOnChanges: true
+    metricsConfigurationName:
+      type: string
+      description: The name of the metrics configuration for the cluster.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - clusterName
+    - metricsConfigurationName
+    - resourceGroupName
+outputs:
+  properties:
+    collectionInterval:
+      type: number
+      description: The interval in minutes by which metrics will be collected.
+    detailedStatus:
+      type: string
+      description: The more detailed status of the metrics configuration.
+    detailedStatusMessage:
+      type: string
+      description: The descriptive message about the current detailed status.
+    disabledMetrics:
+      type: array
+      items:
+        type: string
+      description: The list of metrics that are available for the cluster but disabled at the moment.
+    enabledMetrics:
+      type: array
+      items:
+        type: string
+      description: The list of metric names that have been chosen to be enabled in addition to the core set of enabled metrics.
+    extendedLocation:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:ExtendedLocationResponse"
+      description: The extended location of the cluster associated with the resource.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+      description: The provisioning state of the metrics configuration.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - collectionInterval
+    - detailedStatus
+    - detailedStatusMessage
+    - disabledMetrics
+    - extendedLocation
+    - id
+    - location
+    - name
+    - provisioningState
+    - systemData
+    - type

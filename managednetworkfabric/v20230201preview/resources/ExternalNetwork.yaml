@@ -1,0 +1,98 @@
+$token: azure-native:managednetworkfabric/v20230201preview:ExternalNetwork
+description: Defines the ExternalNetwork item.
+properties:
+  administrativeState:
+    type: string
+    description: "AdministrativeState of the externalNetwork. Example: Enabled | Disabled."
+  annotation:
+    type: string
+    description: Switch configuration description.
+  disabledOnResources:
+    type: array
+    items:
+      type: string
+    description: List of resources the externalNetwork is disabled on. Can be either entire NetworkFabric or NetworkRack.
+  exportRoutePolicyId:
+    type: string
+    description: ARM resource ID of exportRoutePolicy.
+  importRoutePolicyId:
+    type: string
+    description: ARM resource ID of importRoutePolicy.
+  name:
+    type: string
+    description: The name of the resource
+  networkToNetworkInterconnectId:
+    type: string
+    description: Gets the networkToNetworkInterconnectId of the resource.
+  optionAProperties:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:ExternalNetworkPropertiesResponseOptionAProperties"
+    description: option A properties object
+  optionBProperties:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:OptionBPropertiesResponse"
+    description: option B properties object
+  peeringOption:
+    type: string
+    description: Peering option list.
+  provisioningState:
+    type: string
+    description: Gets the provisioning state of the resource.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - administrativeState
+  - disabledOnResources
+  - name
+  - networkToNetworkInterconnectId
+  - peeringOption
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  annotation:
+    type: string
+    description: Switch configuration description.
+  exportRoutePolicyId:
+    type: string
+    description: ARM resource ID of exportRoutePolicy.
+  externalNetworkName:
+    type: string
+    description: Name of the ExternalNetwork
+    willReplaceOnChanges: true
+  importRoutePolicyId:
+    type: string
+    description: ARM resource ID of importRoutePolicy.
+  l3IsolationDomainName:
+    type: string
+    description: Name of the L3IsolationDomain
+    willReplaceOnChanges: true
+  optionAProperties:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:ExternalNetworkPropertiesOptionAProperties"
+    description: option A properties object
+  optionBProperties:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:OptionBProperties"
+    description: option B properties object
+  peeringOption:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:PeeringOption"
+    description: Peering option list.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+requiredInputs:
+  - l3IsolationDomainName
+  - peeringOption
+  - resourceGroupName
+aliases:
+  - type: azure-native:managednetworkfabric:ExternalNetwork

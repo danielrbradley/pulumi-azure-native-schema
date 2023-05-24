@@ -1,0 +1,37 @@
+$token: azure-native:databoxedge/v20230101preview:getMarketplaceImageSasTokenSASToken
+inputs:
+  properties:
+    deviceName:
+      type: string
+      willReplaceOnChanges: true
+    offerName:
+      type: string
+      willReplaceOnChanges: true
+    publisherName:
+      type: string
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The resource group name.
+      willReplaceOnChanges: true
+    skuName:
+      type: string
+      willReplaceOnChanges: true
+    versionName:
+      type: string
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - deviceName
+    - offerName
+    - publisherName
+    - resourceGroupName
+    - skuName
+    - versionName
+outputs:
+  properties:
+    sasUri:
+      type: string
+    status:
+      type: string
+  type: object

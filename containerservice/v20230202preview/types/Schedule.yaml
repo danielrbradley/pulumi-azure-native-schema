@@ -1,0 +1,20 @@
+$token: azure-native:containerservice/v20230202preview:Schedule
+description: One and only one of the schedule types should be specified. Choose either 'daily', 'weekly', 'absoluteMonthly' or 'relativeMonthly' for your maintenance schedule.
+properties:
+  absoluteMonthly:
+    type: object
+    $ref: "#/types/azure-native:containerservice/v20230202preview:AbsoluteMonthlySchedule"
+    description: "For schedules like: 'recur every month on the 15th' or 'recur every 3 months on the 20th'."
+  daily:
+    type: object
+    $ref: "#/types/azure-native:containerservice/v20230202preview:DailySchedule"
+    description: "For schedules like: 'recur every day' or 'recur every 3 days'."
+  relativeMonthly:
+    type: object
+    $ref: "#/types/azure-native:containerservice/v20230202preview:RelativeMonthlySchedule"
+    description: "For schedules like: 'recur every month on the first Monday' or 'recur every 3 months on last Friday'."
+  weekly:
+    type: object
+    $ref: "#/types/azure-native:containerservice/v20230202preview:WeeklySchedule"
+    description: "For schedules like: 'recur every Monday' or 'recur every 3 weeks on Wednesday'."
+type: object

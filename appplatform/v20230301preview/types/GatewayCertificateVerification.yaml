@@ -1,0 +1,8 @@
+$token: azure-native:appplatform/v20230301preview:GatewayCertificateVerification
+description: Whether to enable certificate verification or not
+type: string
+enum:
+  - description: Enable certificate verification in Spring Cloud Gateway.
+    value: Enabled
+  - description: Disable certificate verification in Spring Cloud Gateway.
+    value: Disabled

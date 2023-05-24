@@ -1,0 +1,9 @@
+$token: azure-native:servicenetworking:FrontendPropertiesIPAddressResponse
+description: Frontend IP Address.
+properties:
+  id:
+    type: string
+    description: IP Address.
+type: object
+required:
+  - id

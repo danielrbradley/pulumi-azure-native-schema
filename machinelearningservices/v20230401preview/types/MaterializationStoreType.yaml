@@ -1,0 +1,8 @@
+$token: azure-native:machinelearningservices/v20230401preview:MaterializationStoreType
+description: Specifies the stores to which materialization should happen
+type: string
+enum:
+  - value: None
+  - value: Online
+  - value: Offline
+  - value: OnlineAndOffline

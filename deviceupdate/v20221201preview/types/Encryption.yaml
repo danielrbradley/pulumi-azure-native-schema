@@ -1,0 +1,10 @@
+$token: azure-native:deviceupdate/v20221201preview:Encryption
+description: The CMK encryption settings on the Device Update account.
+properties:
+  keyVaultKeyUri:
+    type: string
+    description: The URI of the key vault
+  userAssignedIdentity:
+    type: string
+    description: The full resourceId of the user assigned identity to be used for key vault access. Identity has to be also assigned to the Account
+type: object

@@ -1,0 +1,16 @@
+$token: azure-native:appplatform/v20230301preview:BuildResourceRequests
+description: Resource request payload of Build Resource.
+properties:
+  cpu:
+    type: string
+    description: "Optional Cpu allocated to the build resource. 1 core can be represented by 1 or 1000m. \r
+
+      The default value is 1, this should not exceed build service agent pool cpu size."
+    default: "1"
+  memory:
+    type: string
+    description: "Optional Memory allocated to the build resource. 1 GB can be represented by 1Gi or 1024Mi. \r
+
+      The default value is 2Gi, this should not exceed build service agent pool memory size."
+    default: 2Gi
+type: object

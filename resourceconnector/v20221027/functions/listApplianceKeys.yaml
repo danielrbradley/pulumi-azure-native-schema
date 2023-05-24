@@ -1,0 +1,42 @@
+$token: azure-native:resourceconnector/v20221027:listApplianceKeys
+description: Returns the cluster customer credentials for the dedicated appliance.
+inputs:
+  properties:
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    resourceName:
+      type: string
+      description: Appliances name.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - resourceName
+outputs:
+  description: The List Cluster Keys Results appliance.
+  properties:
+    artifactProfiles:
+      type: object
+      additionalProperties:
+        type: object
+        $ref: "#/types/azure-native:resourceconnector/v20221027:ArtifactProfileResponse"
+      description: Map of artifacts that contains a list of ArtifactProfile used to upload artifacts such as logs.
+    kubeconfigs:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:resourceconnector/v20221027:ApplianceCredentialKubeconfigResponse"
+      description: The list of appliance kubeconfigs.
+    sshKeys:
+      type: object
+      additionalProperties:
+        type: object
+        $ref: "#/types/azure-native:resourceconnector/v20221027:SSHKeyResponse"
+      description: Map of Customer User Public, Private SSH Keys and Certificate when available.
+  type: object
+  required:
+    - artifactProfiles
+    - kubeconfigs
+    - sshKeys

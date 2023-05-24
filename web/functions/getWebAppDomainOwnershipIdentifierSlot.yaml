@@ -1,0 +1,51 @@
+$token: azure-native:web:getWebAppDomainOwnershipIdentifierSlot
+description: |-
+  Description for Get domain ownership identifier for web app.
+  API Version: 2022-09-01.
+inputs:
+  properties:
+    domainOwnershipIdentifierName:
+      type: string
+      description: Name of domain ownership identifier.
+      willReplaceOnChanges: true
+    name:
+      type: string
+      description: Name of the app.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the resource group to which the resource belongs.
+      willReplaceOnChanges: true
+    slot:
+      type: string
+      description: Name of the deployment slot. If a slot is not specified, the API will delete the binding for the production slot.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - domainOwnershipIdentifierName
+    - name
+    - resourceGroupName
+    - slot
+outputs:
+  description: A domain specific resource identifier.
+  properties:
+    id:
+      type: string
+      description: Resource Id.
+    kind:
+      type: string
+      description: Kind of resource.
+    name:
+      type: string
+      description: Resource Name.
+    type:
+      type: string
+      description: Resource type.
+    value:
+      type: string
+      description: String representation of the identity.
+  type: object
+  required:
+    - id
+    - name
+    - type

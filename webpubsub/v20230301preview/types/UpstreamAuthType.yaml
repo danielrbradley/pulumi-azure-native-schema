@@ -1,0 +1,6 @@
+$token: azure-native:webpubsub/v20230301preview:UpstreamAuthType
+description: Upstream auth type enum.
+type: string
+enum:
+  - value: None
+  - value: ManagedIdentity

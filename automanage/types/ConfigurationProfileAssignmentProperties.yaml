@@ -1,0 +1,7 @@
+$token: azure-native:automanage:ConfigurationProfileAssignmentProperties
+description: Automanage configuration profile assignment properties.
+properties:
+  configurationProfile:
+    type: string
+    description: The Automanage configurationProfile ARM Resource URI.
+type: object

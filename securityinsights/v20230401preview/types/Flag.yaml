@@ -1,0 +1,6 @@
+$token: azure-native:securityinsights/v20230401preview:Flag
+description: Flag indicates if this package is in preview.
+type: string
+enum:
+  - value: "true"
+  - value: "false"

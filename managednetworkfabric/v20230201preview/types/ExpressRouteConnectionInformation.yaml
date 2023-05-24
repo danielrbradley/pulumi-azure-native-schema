@@ -1,0 +1,13 @@
+$token: azure-native:managednetworkfabric/v20230201preview:ExpressRouteConnectionInformation
+description: The ExpressRoute circuit ID and the Auth Key are required for you to successfully deploy NFC service.
+properties:
+  expressRouteAuthorizationKey:
+    type: string
+    description: Authorization key for the circuit, must be of type Microsoft.Network/expressRouteCircuits/authorizations. The Auth Key is a mandatory attribute.
+  expressRouteCircuitId:
+    type: string
+    description: The express route circuit Azure resource ID, must be of type Microsoft.Network/expressRouteCircuits/circuitName. The ExpressRoute Circuit is a mandatory attribute.
+type: object
+required:
+  - expressRouteAuthorizationKey
+  - expressRouteCircuitId

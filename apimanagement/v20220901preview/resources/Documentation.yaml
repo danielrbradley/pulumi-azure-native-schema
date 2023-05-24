@@ -1,0 +1,44 @@
+$token: azure-native:apimanagement/v20220901preview:Documentation
+description: Markdown documentation details.
+properties:
+  content:
+    type: string
+    description: Markdown documentation content.
+  name:
+    type: string
+    description: The name of the resource
+  title:
+    type: string
+    description: documentation title.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - name
+  - type
+inputProperties:
+  content:
+    type: string
+    description: Markdown documentation content.
+  documentationId:
+    type: string
+    description: Documentation identifier. Must be unique in the current API Management service instance.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  serviceName:
+    type: string
+    description: The name of the API Management service.
+    willReplaceOnChanges: true
+  title:
+    type: string
+    description: documentation title.
+requiredInputs:
+  - resourceGroupName
+  - serviceName
+aliases:
+  - type: azure-native:apimanagement:Documentation
+  - type: azure-native:apimanagement/v20220801:Documentation

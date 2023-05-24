@@ -1,0 +1,71 @@
+$token: azure-native:hybridcloud:getCloudConnection
+description: |-
+  Gets the specified cloud connection in a specified resource group.
+  API Version: 2023-01-01-preview.
+inputs:
+  properties:
+    cloudConnectionName:
+      type: string
+      description: The name of the cloud connection resource
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - cloudConnectionName
+    - resourceGroupName
+outputs:
+  description: Resource which represents the managed network connection between Azure Gateways and remote cloud gateways.
+  properties:
+    cloudConnector:
+      type: object
+      $ref: "#/types/azure-native:hybridcloud:ResourceReferenceResponse"
+      description: The cloud connector which discovered the remote resource.
+    etag:
+      type: string
+      description: A unique read-only string that changes whenever the resource is updated.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+      description: The provisioning state of the cloud collection resource.
+    remoteResourceId:
+      type: string
+      description: Identifier for the remote cloud resource
+    sharedKey:
+      type: string
+      description: Shared key of the cloud connection.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:hybridcloud:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+    virtualHub:
+      type: object
+      $ref: "#/types/azure-native:hybridcloud:ResourceReferenceResponse"
+      description: The virtualHub to which the cloud connection belongs.
+  type: object
+  required:
+    - etag
+    - id
+    - location
+    - name
+    - provisioningState
+    - systemData
+    - type

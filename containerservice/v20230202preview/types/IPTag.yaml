@@ -1,0 +1,10 @@
+$token: azure-native:containerservice/v20230202preview:IPTag
+description: Contains the IPTag associated with the object.
+properties:
+  ipTagType:
+    type: string
+    description: "The IP tag type. Example: RoutingPreference."
+  tag:
+    type: string
+    description: "The value of the IP tag associated with the public IP. Example: Internet."
+type: object

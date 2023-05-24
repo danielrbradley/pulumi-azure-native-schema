@@ -1,0 +1,52 @@
+$token: azure-native:databoxedge:getMonitoringConfig
+description: |-
+  The metric setting details for the role
+  API Version: 2022-03-01.
+inputs:
+  properties:
+    deviceName:
+      type: string
+      description: The device name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The resource group name.
+      willReplaceOnChanges: true
+    roleName:
+      type: string
+      description: The role name.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - deviceName
+    - resourceGroupName
+    - roleName
+outputs:
+  description: The metric setting details for the role
+  properties:
+    id:
+      type: string
+      description: The path ID that uniquely identifies the object.
+    metricConfigurations:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:databoxedge:MetricConfigurationResponse"
+      description: The metrics configuration details
+    name:
+      type: string
+      description: The object name.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:databoxedge:SystemDataResponse"
+      description: Metadata pertaining to creation and last modification of MonitoringConfiguration
+    type:
+      type: string
+      description: The hierarchical type of the object.
+  type: object
+  required:
+    - id
+    - metricConfigurations
+    - name
+    - systemData
+    - type

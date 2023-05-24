@@ -1,0 +1,8 @@
+$token: azure-native:cache/v20230301preview:ClusterPropertiesEncryption
+description: Encryption-at-rest configuration for the cluster.
+properties:
+  customerManagedKeyEncryption:
+    type: object
+    $ref: "#/types/azure-native:cache/v20230301preview:ClusterPropertiesCustomerManagedKeyEncryption"
+    description: All Customer-managed key encryption properties for the resource. Set this to an empty object to use Microsoft-managed key encryption.
+type: object

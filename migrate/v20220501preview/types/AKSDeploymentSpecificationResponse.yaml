@@ -1,0 +1,13 @@
+$token: azure-native:migrate/v20220501preview:AKSDeploymentSpecificationResponse
+description: AKS Deployment Specification.
+properties:
+  kubernetesObjectsYaml:
+    type: string
+    description: Gets or sets the Merged Deployment and service Yaml.
+  loadBalancerType:
+    type: string
+    description: Gets or sets the load balancer type.
+  replicaCount:
+    type: string
+    description: Gets or sets the replica count to be created in AKS.
+type: object

@@ -1,0 +1,6 @@
+$token: azure-native:network:ConfigurationType
+description: Configuration Deployment Type.
+type: string
+enum:
+  - value: SecurityAdmin
+  - value: Connectivity

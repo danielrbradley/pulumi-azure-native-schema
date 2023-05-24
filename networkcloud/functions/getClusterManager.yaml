@@ -1,0 +1,91 @@
+$token: azure-native:networkcloud:getClusterManager
+description: |-
+  Get the properties of the provided cluster manager.
+  API Version: 2022-12-12-preview.
+inputs:
+  properties:
+    clusterManagerName:
+      type: string
+      description: The name of the cluster manager.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - clusterManagerName
+    - resourceGroupName
+outputs:
+  properties:
+    analyticsWorkspaceId:
+      type: string
+      description: The resource ID of the Log Analytics workspace that is used for the logs collection.
+    availabilityZones:
+      type: array
+      items:
+        type: string
+      description: Field deprecated, this value will no longer influence the cluster manager allocation process and will be removed in a future version. The Azure availability zones within the region that will be used to support the cluster manager resource.
+    clusterVersions:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:networkcloud:ClusterAvailableVersionResponse"
+      description: The list of the cluster versions the manager supports. It is used as input in clusterVersion property of a cluster resource.
+    detailedStatus:
+      type: string
+      description: The detailed status that provides additional information about the cluster manager.
+    detailedStatusMessage:
+      type: string
+      description: The descriptive message about the current detailed status.
+    fabricControllerId:
+      type: string
+      description: The resource ID of the fabric controller that has one to one mapping with the cluster manager.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    managedResourceGroupConfiguration:
+      type: object
+      $ref: "#/types/azure-native:networkcloud:ManagedResourceGroupConfigurationResponse"
+      description: The configuration of the managed resource group associated with the resource.
+    managerExtendedLocation:
+      type: object
+      $ref: "#/types/azure-native:networkcloud:ExtendedLocationResponse"
+      description: The extended location (custom location) that represents the cluster manager's control plane location. This extended location is used when creating cluster and rack manifest resources.
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+      description: The provisioning state of the cluster manager.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:networkcloud:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+    vmSize:
+      type: string
+      description: Field deprecated, this value will no longer influence the cluster manager allocation process and will be removed in a future version. The size of the Azure virtual machines to use for hosting the cluster manager resource.
+  type: object
+  required:
+    - clusterVersions
+    - detailedStatus
+    - detailedStatusMessage
+    - fabricControllerId
+    - id
+    - location
+    - managerExtendedLocation
+    - name
+    - provisioningState
+    - systemData
+    - type

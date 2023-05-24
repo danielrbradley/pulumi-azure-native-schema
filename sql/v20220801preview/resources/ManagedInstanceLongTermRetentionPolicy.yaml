@@ -1,0 +1,60 @@
+$token: azure-native:sql/v20220801preview:ManagedInstanceLongTermRetentionPolicy
+description: A long term retention policy.
+properties:
+  monthlyRetention:
+    type: string
+    description: The monthly retention policy for an LTR backup in an ISO 8601 format.
+  name:
+    type: string
+    description: Resource name.
+  type:
+    type: string
+    description: Resource type.
+  weekOfYear:
+    type: integer
+    description: The week of year to take the yearly backup in an ISO 8601 format.
+  weeklyRetention:
+    type: string
+    description: The weekly retention policy for an LTR backup in an ISO 8601 format.
+  yearlyRetention:
+    type: string
+    description: The yearly retention policy for an LTR backup in an ISO 8601 format.
+type: object
+required:
+  - name
+  - type
+inputProperties:
+  databaseName:
+    type: string
+    description: The name of the database.
+    willReplaceOnChanges: true
+  managedInstanceName:
+    type: string
+    description: The name of the managed instance.
+    willReplaceOnChanges: true
+  monthlyRetention:
+    type: string
+    description: The monthly retention policy for an LTR backup in an ISO 8601 format.
+  policyName:
+    type: string
+    description: The policy name. Should always be Default.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+    willReplaceOnChanges: true
+  weekOfYear:
+    type: integer
+    description: The week of year to take the yearly backup in an ISO 8601 format.
+  weeklyRetention:
+    type: string
+    description: The weekly retention policy for an LTR backup in an ISO 8601 format.
+  yearlyRetention:
+    type: string
+    description: The yearly retention policy for an LTR backup in an ISO 8601 format.
+requiredInputs:
+  - databaseName
+  - managedInstanceName
+  - resourceGroupName
+aliases:
+  - type: azure-native:sql/v20220501preview:ManagedInstanceLongTermRetentionPolicy

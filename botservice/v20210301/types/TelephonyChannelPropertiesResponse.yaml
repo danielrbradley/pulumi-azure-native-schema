@@ -1,0 +1,31 @@
+$token: azure-native:botservice/v20210301:TelephonyChannelPropertiesResponse
+description: The parameters to provide for the Direct Line channel.
+properties:
+  apiConfigurations:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:botservice/v20210301:TelephonyChannelResourceApiConfigurationResponse"
+    description: The list of Telephony api configuration
+  cognitiveServiceRegion:
+    type: string
+    description: The extensionKey2
+  cognitiveServiceSubscriptionKey:
+    type: string
+    description: The extensionKey1
+  defaultLocale:
+    type: string
+    description: The default locale of the channel
+  isEnabled:
+    type: boolean
+    description: Whether the channel is enabled
+  phoneNumbers:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:botservice/v20210301:TelephonyPhoneNumbersResponse"
+    description: The list of Telephony phone numbers
+  premiumSKU:
+    type: string
+    description: The premium SKU applied to the channel
+type: object

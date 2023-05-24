@@ -1,0 +1,10 @@
+$token: azure-native:appplatform/v20200701:Error
+description: The error code compose of code and message.
+properties:
+  code:
+    type: string
+    description: The code of error.
+  message:
+    type: string
+    description: The message of error.
+type: object

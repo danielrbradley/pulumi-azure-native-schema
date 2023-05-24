@@ -1,0 +1,6 @@
+$token: azure-native:cdn:SocketAddrOperator
+description: Describes operator to be matched
+type: string
+enum:
+  - value: Any
+  - value: IPMatch

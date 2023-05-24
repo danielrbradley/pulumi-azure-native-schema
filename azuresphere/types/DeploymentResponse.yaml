@@ -1,0 +1,39 @@
+$token: azure-native:azuresphere:DeploymentResponse
+description: An deployment resource belonging to a device group resource.
+properties:
+  deployedImages:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:azuresphere:ImageResponse"
+    description: Images deployed
+  deploymentDateUtc:
+    type: string
+    description: Deployment date UTC
+  deploymentId:
+    type: string
+    description: Deployment ID
+  id:
+    type: string
+    description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: The status of the last operation.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:azuresphere:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - deploymentDateUtc
+  - id
+  - name
+  - provisioningState
+  - systemData
+  - type

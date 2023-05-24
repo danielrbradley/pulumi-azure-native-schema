@@ -1,0 +1,6 @@
+$token: azure-native:networkcloud:VirtualMachineBootMethod
+description: Selects the boot method for the virtual machine.
+type: string
+enum:
+  - value: UEFI
+  - value: BIOS

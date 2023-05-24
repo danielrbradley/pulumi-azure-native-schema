@@ -1,0 +1,10 @@
+$token: azure-native:security/v20230301preview:DefenderForServersGcpOfferingConfiguration
+description: Configuration for servers Arc auto provisioning
+properties:
+  privateLinkScope:
+    type: string
+    description: Optional Arc private link scope resource id to link the Arc agent
+  proxy:
+    type: string
+    description: Optional HTTP proxy endpoint to use for the Arc agent
+type: object

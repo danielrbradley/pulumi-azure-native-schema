@@ -1,0 +1,8 @@
+$token: azure-native:workloads/v20211201preview:StorageInformationResponse
+description: "Storage details of all the Storage accounts attached to the VM. For e.g. NFS on AFS Shared Storage. "
+properties:
+  id:
+    type: string
+type: object
+required:
+  - id

@@ -1,0 +1,13 @@
+$token: azure-native:appplatform/v20230301preview:DevToolPortalFeatureDetailResponse
+description: Detail settings for Dev Tool Portal feature
+properties:
+  route:
+    type: string
+    description: Route path to visit the plugin
+  state:
+    type: string
+    description: State of the plugin
+    default: Enabled
+type: object
+required:
+  - route

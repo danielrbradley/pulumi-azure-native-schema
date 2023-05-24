@@ -1,0 +1,8 @@
+$token: azure-native:azurestackhci/v20210901preview:InterfaceDNSSettingsResponse
+properties:
+  dnsServers:
+    type: array
+    items:
+      type: string
+    description: List of DNS server IP Addresses for the interface
+type: object

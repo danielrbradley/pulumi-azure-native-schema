@@ -1,0 +1,24 @@
+$token: azure-native:virtualmachineimages:ImageTemplateVhdDistributorResponse
+description: Distribute via VHD in a storage account.
+properties:
+  artifactTags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Tags that will be applied to the artifact once it has been created/updated by the distributor.
+  runOutputName:
+    type: string
+    description: The name to be used for the associated RunOutput.
+  type:
+    type: string
+    description: |-
+      Type of distribution.
+      Expected value is 'VHD'.
+    const: VHD
+  uri:
+    type: string
+    description: Optional Azure Storage URI for the distributed VHD blob. Omit to use the default (empty string) in which case VHD would be published to the storage account in the staging resource group.
+type: object
+required:
+  - runOutputName
+  - type

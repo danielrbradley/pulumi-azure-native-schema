@@ -1,0 +1,74 @@
+$token: azure-native:managednetworkfabric/v20230201preview:getNetworkInterface
+description: Get the Network Interface resource details.
+inputs:
+  properties:
+    networkDeviceName:
+      type: string
+      description: Name of the NetworkDevice
+      willReplaceOnChanges: true
+    networkInterfaceName:
+      type: string
+      description: Name of the NetworkInterfaceName
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - networkDeviceName
+    - networkInterfaceName
+    - resourceGroupName
+outputs:
+  description: Defines the NetworkInterface resource.
+  properties:
+    administrativeState:
+      type: string
+      description: "administrativeState of the network interface. Example: Enabled | Disabled."
+    annotation:
+      type: string
+      description: Switch configuration description.
+    connectedTo:
+      type: string
+      description: The arm resource id of the interface or compute server its connected to.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    interfaceType:
+      type: string
+      description: "The Interface Type. Example: Management/Data"
+    ipv4Address:
+      type: string
+      description: ipv4Address.
+    ipv6Address:
+      type: string
+      description: ipv6Address.
+    name:
+      type: string
+      description: The name of the resource
+    physicalIdentifier:
+      type: string
+      description: physicalIdentifier of the network interface.
+    provisioningState:
+      type: string
+      description: Gets the provisioning state of the resource.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - administrativeState
+    - connectedTo
+    - id
+    - interfaceType
+    - ipv4Address
+    - ipv6Address
+    - name
+    - physicalIdentifier
+    - provisioningState
+    - systemData
+    - type

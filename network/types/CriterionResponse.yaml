@@ -1,0 +1,22 @@
+$token: azure-native:network:CriterionResponse
+description: A matching criteria which matches routes based on route prefix, community, and AS path.
+properties:
+  asPath:
+    type: array
+    items:
+      type: string
+    description: List of AS paths which this criteria matches.
+  community:
+    type: array
+    items:
+      type: string
+    description: List of BGP communities which this criteria matches.
+  matchCondition:
+    type: string
+    description: Match condition to apply RouteMap rules.
+  routePrefix:
+    type: array
+    items:
+      type: string
+    description: List of route prefixes which this criteria matches.
+type: object

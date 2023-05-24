@@ -1,0 +1,6 @@
+$token: azure-native:managednetworkfabric/v20230201preview:AddressFamily
+description: "IP address family. Example: ipv4 | ipv6."
+type: string
+enum:
+  - value: ipv4
+  - value: ipv6

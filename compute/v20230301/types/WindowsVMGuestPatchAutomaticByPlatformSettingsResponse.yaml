@@ -1,0 +1,10 @@
+$token: azure-native:compute/v20230301:WindowsVMGuestPatchAutomaticByPlatformSettingsResponse
+description: Specifies additional settings to be applied when patch mode AutomaticByPlatform is selected in Windows patch settings.
+properties:
+  bypassPlatformSafetyChecksOnUserSchedule:
+    type: boolean
+    description: Enables customer to schedule patching without accidental upgrades
+  rebootSetting:
+    type: string
+    description: Specifies the reboot setting for all AutomaticByPlatform patch installation operations.
+type: object

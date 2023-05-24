@@ -1,0 +1,93 @@
+$token: azure-native:servicefabric:Service
+properties:
+  location:
+    type: string
+    description: Resource location depends on the parent resource.
+  name:
+    type: string
+    description: Azure resource name.
+  properties:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:servicefabric:StatefulServicePropertiesResponse"
+      - type: object
+        $ref: "#/types/azure-native:servicefabric:StatelessServicePropertiesResponse"
+    discriminator:
+      propertyName: serviceKind
+      mapping:
+        Stateful: "#/types/azure-native:servicefabric:StatefulServicePropertiesResponse"
+        Stateless: "#/types/azure-native:servicefabric:StatelessServicePropertiesResponse"
+    description: The service resource properties.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:servicefabric:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Azure resource tags.
+  type:
+    type: string
+    description: Azure resource type.
+type: object
+required:
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  applicationName:
+    type: string
+    description: The name of the application resource.
+    willReplaceOnChanges: true
+  clusterName:
+    type: string
+    description: The name of the cluster resource.
+    willReplaceOnChanges: true
+  location:
+    type: string
+    description: Resource location depends on the parent resource.
+    willReplaceOnChanges: true
+  properties:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:servicefabric:StatefulServiceProperties"
+      - type: object
+        $ref: "#/types/azure-native:servicefabric:StatelessServiceProperties"
+    discriminator:
+      propertyName: serviceKind
+      mapping:
+        Stateful: "#/types/azure-native:servicefabric:StatefulServiceProperties"
+        Stateless: "#/types/azure-native:servicefabric:StatelessServiceProperties"
+    description: The service resource properties.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group.
+    willReplaceOnChanges: true
+  serviceName:
+    type: string
+    description: The name of the service resource in the format of {applicationName}~{serviceName}.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Azure resource tags.
+    willReplaceOnChanges: true
+requiredInputs:
+  - applicationName
+  - clusterName
+  - resourceGroupName
+aliases:
+  - type: azure-native:servicefabric/v20210101preview:Service
+  - type: azure-native:servicefabric/v20210501:Service
+  - type: azure-native:servicefabric/v20210701preview:Service
+  - type: azure-native:servicefabric/v20210901privatepreview:Service
+  - type: azure-native:servicefabric/v20211101preview:Service
+  - type: azure-native:servicefabric/v20220101:Service
+  - type: azure-native:servicefabric/v20220201preview:Service
+  - type: azure-native:servicefabric/v20220601preview:Service
+  - type: azure-native:servicefabric/v20220801preview:Service
+  - type: azure-native:servicefabric/v20221001preview:Service
+  - type: azure-native:servicefabric/v20230201preview:Service

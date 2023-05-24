@@ -1,0 +1,39 @@
+$token: azure-native:eventgrid/v20211015preview:getPartnerTopicEventSubscriptionDeliveryAttributes
+description: Get all delivery attributes for an event subscription of a partner topic.
+inputs:
+  properties:
+    eventSubscriptionName:
+      type: string
+      description: Name of the event subscription to be created. Event subscription names must be between 3 and 100 characters in length and use alphanumeric letters only.
+      willReplaceOnChanges: true
+    partnerTopicName:
+      type: string
+      description: Name of the partner topic.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group within the user's subscription.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - eventSubscriptionName
+    - partnerTopicName
+    - resourceGroupName
+outputs:
+  description: Result of the Get delivery attributes operation.
+  properties:
+    value:
+      type: array
+      items:
+        oneOf:
+          - type: object
+            $ref: "#/types/azure-native:eventgrid/v20211015preview:DynamicDeliveryAttributeMappingResponse"
+          - type: object
+            $ref: "#/types/azure-native:eventgrid/v20211015preview:StaticDeliveryAttributeMappingResponse"
+        discriminator:
+          propertyName: type
+          mapping:
+            Dynamic: "#/types/azure-native:eventgrid/v20211015preview:DynamicDeliveryAttributeMappingResponse"
+            Static: "#/types/azure-native:eventgrid/v20211015preview:StaticDeliveryAttributeMappingResponse"
+      description: A collection of DeliveryAttributeMapping
+  type: object

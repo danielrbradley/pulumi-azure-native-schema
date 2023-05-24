@@ -1,0 +1,7 @@
+$token: azure-native:machinelearningservices/v20230401:DockerResponse
+description: Docker container configuration
+properties:
+  privileged:
+    type: boolean
+    description: Indicate whether container shall run in privileged or non-privileged mode.
+type: object

@@ -1,0 +1,10 @@
+$token: azure-native:dataprotection:SoftDeleteSettingsResponse
+description: Soft delete related settings
+properties:
+  retentionDurationInDays:
+    type: number
+    description: Soft delete retention duration
+  state:
+    type: string
+    description: State of soft delete
+type: object

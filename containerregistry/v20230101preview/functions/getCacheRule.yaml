@@ -1,0 +1,62 @@
+$token: azure-native:containerregistry/v20230101preview:getCacheRule
+description: Gets the properties of the specified cache rule resource.
+inputs:
+  properties:
+    cacheRuleName:
+      type: string
+      description: The name of the cache rule.
+      willReplaceOnChanges: true
+    registryName:
+      type: string
+      description: The name of the container registry.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - cacheRuleName
+    - registryName
+    - resourceGroupName
+outputs:
+  description: An object that represents a cache rule for a container registry.
+  properties:
+    creationDate:
+      type: string
+      description: The creation date of the cache rule.
+    credentialSetResourceId:
+      type: string
+      description: The ARM resource ID of the credential store which is associated with the cache rule.
+    id:
+      type: string
+      description: The resource ID.
+    name:
+      type: string
+      description: The name of the resource.
+    provisioningState:
+      type: string
+      description: Provisioning state of the resource.
+    sourceRepository:
+      type: string
+      description: Source repository pulled from upstream.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:containerregistry/v20230101preview:SystemDataResponse"
+      description: Metadata pertaining to creation and last modification of the resource.
+    targetRepository:
+      type: string
+      description: "Target repository specified in docker pull command.\r
+
+        Eg: docker pull myregistry.azurecr.io/{targetRepository}:{tag}"
+    type:
+      type: string
+      description: The type of the resource.
+  type: object
+  required:
+    - creationDate
+    - id
+    - name
+    - provisioningState
+    - systemData
+    - type

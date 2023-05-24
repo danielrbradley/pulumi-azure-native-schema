@@ -1,0 +1,13 @@
+$token: azure-native:azurestackhci/v20210901preview:NetworkTypeEnum
+description: Type of the network
+type: string
+enum:
+  - value: NAT
+  - value: Transparent
+  - value: L2Bridge
+  - value: L2Tunnel
+  - value: ICS
+  - value: Private
+  - value: Overlay
+  - value: Internal
+  - value: Mirrored

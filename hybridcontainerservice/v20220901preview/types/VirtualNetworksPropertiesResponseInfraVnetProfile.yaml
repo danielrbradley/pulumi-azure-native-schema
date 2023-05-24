@@ -1,0 +1,15 @@
+$token: azure-native:hybridcontainerservice/v20220901preview:VirtualNetworksPropertiesResponseInfraVnetProfile
+properties:
+  hci:
+    type: object
+    $ref: "#/types/azure-native:hybridcontainerservice/v20220901preview:VirtualNetworksPropertiesResponseHci"
+    description: Infra network profile for HCI platform
+  networkCloud:
+    type: object
+    $ref: "#/types/azure-native:hybridcontainerservice/v20220901preview:VirtualNetworksPropertiesResponseNetworkCloud"
+    description: Infra network profile for the NetworkCloud platform
+  vmware:
+    type: object
+    $ref: "#/types/azure-native:hybridcontainerservice/v20220901preview:VirtualNetworksPropertiesResponseVmware"
+    description: Infra network profile for VMware platform
+type: object

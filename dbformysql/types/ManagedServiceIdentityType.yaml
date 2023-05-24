@@ -1,0 +1,5 @@
+$token: azure-native:dbformysql:ManagedServiceIdentityType
+description: Type of managed service identity.
+type: string
+enum:
+  - value: UserAssigned

@@ -1,0 +1,6 @@
+$token: azure-native:network/v20221101:WebApplicationFirewallScrubbingState
+description: State of the log scrubbing config. Default value is Enabled.
+type: string
+enum:
+  - value: Disabled
+  - value: Enabled

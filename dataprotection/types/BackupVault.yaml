@@ -1,0 +1,24 @@
+$token: azure-native:dataprotection:BackupVault
+description: Backup Vault
+properties:
+  featureSettings:
+    type: object
+    $ref: "#/types/azure-native:dataprotection:FeatureSettings"
+    description: Feature Settings
+  monitoringSettings:
+    type: object
+    $ref: "#/types/azure-native:dataprotection:MonitoringSettings"
+    description: Monitoring Settings
+  securitySettings:
+    type: object
+    $ref: "#/types/azure-native:dataprotection:SecuritySettings"
+    description: Security Settings
+  storageSettings:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:dataprotection:StorageSetting"
+    description: Storage Settings
+type: object
+required:
+  - storageSettings

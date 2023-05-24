@@ -1,0 +1,53 @@
+$token: azure-native:machinelearningservices/v20230401preview:getRegistryComponentVersion
+description: Azure Resource Manager resource envelope.
+inputs:
+  properties:
+    componentName:
+      type: string
+      description: Container name.
+      willReplaceOnChanges: true
+    registryName:
+      type: string
+      description: Name of Azure Machine Learning registry. This is case-insensitive
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    version:
+      type: string
+      description: Version identifier.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - componentName
+    - registryName
+    - resourceGroupName
+    - version
+outputs:
+  description: Azure Resource Manager resource envelope.
+  properties:
+    componentVersionProperties:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20230401preview:ComponentVersionResponse"
+      description: "[Required] Additional attributes of the entity."
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20230401preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - componentVersionProperties
+    - id
+    - name
+    - systemData
+    - type

@@ -1,0 +1,55 @@
+$token: azure-native:machinelearningservices/v20210301preview:CodeContainer
+description: Azure Resource Manager resource envelope.
+properties:
+  name:
+    type: string
+    description: The name of the resource
+  properties:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20210301preview:CodeContainerResponse"
+    description: "[Required] Additional attributes of the entity."
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20210301preview:SystemDataResponse"
+    description: System data associated with resource provider
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  name:
+    type: string
+    description: Container name.
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20210301preview:CodeContainer"
+    description: "[Required] Additional attributes of the entity."
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  workspaceName:
+    type: string
+    description: Name of Azure Machine Learning workspace.
+    willReplaceOnChanges: true
+requiredInputs:
+  - properties
+  - resourceGroupName
+  - workspaceName
+aliases:
+  - type: azure-native:machinelearningservices:CodeContainer
+  - type: azure-native:machinelearningservices/v20220201preview:CodeContainer
+  - type: azure-native:machinelearningservices/v20220501:CodeContainer
+  - type: azure-native:machinelearningservices/v20220601preview:CodeContainer
+  - type: azure-native:machinelearningservices/v20221001:CodeContainer
+  - type: azure-native:machinelearningservices/v20221001preview:CodeContainer
+  - type: azure-native:machinelearningservices/v20221201preview:CodeContainer
+  - type: azure-native:machinelearningservices/v20230201preview:CodeContainer
+  - type: azure-native:machinelearningservices/v20230401:CodeContainer
+  - type: azure-native:machinelearningservices/v20230401preview:CodeContainer

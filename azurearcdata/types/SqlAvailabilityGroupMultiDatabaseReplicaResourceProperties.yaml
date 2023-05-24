@@ -1,0 +1,13 @@
+$token: azure-native:azurearcdata:SqlAvailabilityGroupMultiDatabaseReplicaResourceProperties
+description: The properties of Arc Sql availability group multiple database replica resource
+properties:
+  groupDatabaseId:
+    type: string
+    description: ID GUID of the database for availability group.
+  value:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:azurearcdata:SqlAvailabilityGroupDatabaseReplicaResourceProperties"
+    description: Array of  Arc Sql Availability Group Database Replicas.
+type: object

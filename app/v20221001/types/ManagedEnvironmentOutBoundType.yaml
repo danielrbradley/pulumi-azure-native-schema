@@ -1,0 +1,6 @@
+$token: azure-native:app/v20221001:ManagedEnvironmentOutBoundType
+description: Outbound type for the cluster
+type: string
+enum:
+  - value: LoadBalancer
+  - value: UserDefinedRouting

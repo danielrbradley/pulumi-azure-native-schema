@@ -1,0 +1,28 @@
+$token: azure-native:security/v20230301preview:DefenderFoDatabasesAwsOfferingResponse
+description: The Defender for Databases AWS offering
+properties:
+  arcAutoProvisioning:
+    type: object
+    $ref: "#/types/azure-native:security/v20230301preview:DefenderFoDatabasesAwsOfferingResponseArcAutoProvisioning"
+    description: The ARC autoprovisioning configuration
+  databasesDspm:
+    type: object
+    $ref: "#/types/azure-native:security/v20230301preview:DefenderFoDatabasesAwsOfferingResponseDatabasesDspm"
+    description: The databases data security posture management (DSPM) configuration
+  description:
+    type: string
+    description: The offering description.
+  offeringType:
+    type: string
+    description: |-
+      The type of the security offering.
+      Expected value is 'DefenderForDatabasesAws'.
+    const: DefenderForDatabasesAws
+  rds:
+    type: object
+    $ref: "#/types/azure-native:security/v20230301preview:DefenderFoDatabasesAwsOfferingResponseRds"
+    description: The RDS configuration
+type: object
+required:
+  - description
+  - offeringType

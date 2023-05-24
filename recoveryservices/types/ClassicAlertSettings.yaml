@@ -1,0 +1,8 @@
+$token: azure-native:recoveryservices:ClassicAlertSettings
+description: Settings for classic alerts
+properties:
+  alertsForCriticalOperations:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:recoveryservices:AlertsState"
+type: object

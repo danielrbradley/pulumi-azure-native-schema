@@ -1,0 +1,12 @@
+$token: azure-native:app/v20221001:ManagedEnvironmentOutboundSettings
+description: Configuration used to control the Environment Egress outbound traffic
+properties:
+  outBoundType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:app/v20221001:ManagedEnvironmentOutBoundType"
+    description: Outbound type for the cluster
+  virtualNetworkApplianceIp:
+    type: string
+    description: Virtual Appliance IP used as the Egress controller for the Environment
+type: object

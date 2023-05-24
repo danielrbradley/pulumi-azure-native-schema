@@ -1,0 +1,40 @@
+$token: azure-native:migrate/v20191001:getHyperVCollector
+description: Get a Hyper-V collector.
+inputs:
+  properties:
+    hyperVCollectorName:
+      type: string
+      description: Unique name of a Hyper-V collector within a project.
+      willReplaceOnChanges: true
+    projectName:
+      type: string
+      description: Name of the Azure Migrate project.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the Azure Resource Group that project is part of.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - hyperVCollectorName
+    - projectName
+    - resourceGroupName
+outputs:
+  properties:
+    eTag:
+      type: string
+    id:
+      type: string
+    name:
+      type: string
+    properties:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20191001:CollectorPropertiesResponse"
+    type:
+      type: string
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - type

@@ -1,0 +1,18 @@
+$token: azure-native:servicelinker/v20221101preview:BasicErrorDryrunPrerequisiteResultResponse
+description: The represent of basic error
+properties:
+  code:
+    type: string
+    description: The error code.
+  message:
+    type: string
+    description: The error message.
+  type:
+    type: string
+    description: |-
+      The type of dryrun result.
+      Expected value is 'basicError'.
+    const: basicError
+type: object
+required:
+  - type

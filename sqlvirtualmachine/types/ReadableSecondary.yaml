@@ -1,0 +1,7 @@
+$token: azure-native:sqlvirtualmachine:ReadableSecondary
+description: Replica readable secondary mode in availability group.
+type: string
+enum:
+  - value: No
+  - value: All
+  - value: Read_Only

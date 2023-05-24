@@ -1,0 +1,59 @@
+$token: azure-native:machinelearningservices/v20230401preview:getManagedNetworkSettingsRule
+description: Gets an outbound rule from the managed network of a machine learning workspace.
+inputs:
+  properties:
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    ruleName:
+      type: string
+      description: Name of the workspace managed network outbound rule
+      willReplaceOnChanges: true
+    workspaceName:
+      type: string
+      description: Name of Azure Machine Learning workspace.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - ruleName
+    - workspaceName
+outputs:
+  description: Outbound Rule Basic Resource for the managed network of a machine learning workspace.
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    properties:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:FqdnOutboundRuleResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:PrivateEndpointOutboundRuleResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:ServiceTagOutboundRuleResponse"
+      discriminator:
+        propertyName: type
+        mapping:
+          FQDN: "#/types/azure-native:machinelearningservices/v20230401preview:FqdnOutboundRuleResponse"
+          PrivateEndpoint: "#/types/azure-native:machinelearningservices/v20230401preview:PrivateEndpointOutboundRuleResponse"
+          ServiceTag: "#/types/azure-native:machinelearningservices/v20230401preview:ServiceTagOutboundRuleResponse"
+      description: Outbound Rule for the managed network of a machine learning workspace.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20230401preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - systemData
+    - type

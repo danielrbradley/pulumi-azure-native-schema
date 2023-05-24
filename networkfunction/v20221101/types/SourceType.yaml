@@ -1,0 +1,5 @@
+$token: azure-native:networkfunction/v20221101:SourceType
+description: Ingestion source type.
+type: string
+enum:
+  - value: Resource

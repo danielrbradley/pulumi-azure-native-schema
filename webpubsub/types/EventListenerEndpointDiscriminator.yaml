@@ -1,0 +1,4 @@
+$token: azure-native:webpubsub:EventListenerEndpointDiscriminator
+type: string
+enum:
+  - value: EventHub

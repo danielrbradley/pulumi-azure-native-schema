@@ -1,0 +1,6 @@
+$token: azure-native:kusto:LanguageExtensionName
+description: The language extension name.
+type: string
+enum:
+  - value: PYTHON
+  - value: R

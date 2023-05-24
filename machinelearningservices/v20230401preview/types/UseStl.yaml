@@ -1,0 +1,8 @@
+$token: azure-native:machinelearningservices/v20230401preview:UseStl
+description: Configure STL Decomposition of the time-series target column.
+type: string
+enum:
+  - description: No stl decomposition.
+    value: None
+  - value: Season
+  - value: SeasonTrend

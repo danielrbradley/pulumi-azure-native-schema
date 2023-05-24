@@ -1,0 +1,81 @@
+$token: azure-native:insights/v20230301preview:getTenantActionGroup
+description: Get a tenant action group.
+inputs:
+  properties:
+    managementGroupId:
+      type: string
+      description: The management group id.
+      willReplaceOnChanges: true
+    tenantActionGroupName:
+      type: string
+      description: The name of the action group.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - managementGroupId
+    - tenantActionGroupName
+outputs:
+  description: A tenant action group resource.
+  properties:
+    azureAppPushReceivers:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:insights/v20230301preview:AzureAppPushReceiverResponse"
+      description: The list of AzureAppPush receivers that are part of this tenant action group.
+    emailReceivers:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:insights/v20230301preview:EmailReceiverResponse"
+      description: The list of email receivers that are part of this tenant action group.
+    enabled:
+      type: boolean
+      description: Indicates whether this tenant action group is enabled. If a tenant action group is not enabled, then none of its receivers will receive communications.
+      default: true
+    groupShortName:
+      type: string
+      description: The short name of the action group. This will be used in SMS messages.
+    id:
+      type: string
+      description: Azure resource Id
+    location:
+      type: string
+      description: Resource location
+    name:
+      type: string
+      description: Azure resource name
+    smsReceivers:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:insights/v20230301preview:SmsReceiverResponse"
+      description: The list of SMS receivers that are part of this tenant action group.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags
+    type:
+      type: string
+      description: Azure resource type
+    voiceReceivers:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:insights/v20230301preview:VoiceReceiverResponse"
+      description: The list of voice receivers that are part of this tenant action group.
+    webhookReceivers:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:insights/v20230301preview:WebhookReceiverResponse"
+      description: The list of webhook receivers that are part of this tenant action group.
+  type: object
+  required:
+    - enabled
+    - groupShortName
+    - id
+    - location
+    - name
+    - type

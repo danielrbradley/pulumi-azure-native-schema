@@ -1,0 +1,6 @@
+$token: azure-native:networkcloud/v20221212preview:VirtualMachineVirtioInterfaceType
+description: Field Deprecated, use virtualizationModel instead. The type of the virtio interface.
+type: string
+enum:
+  - value: Modern
+  - value: Transitional

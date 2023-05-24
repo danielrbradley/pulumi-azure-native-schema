@@ -1,0 +1,20 @@
+$token: azure-native:storage:AzureFilesIdentityBasedAuthentication
+description: Settings for Azure Files identity based authentication.
+properties:
+  activeDirectoryProperties:
+    type: object
+    $ref: "#/types/azure-native:storage:ActiveDirectoryProperties"
+    description: Required if directoryServiceOptions are AD, optional if they are AADKERB.
+  defaultSharePermission:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:storage:DefaultSharePermission"
+    description: Default share permission for users using Kerberos authentication if RBAC role is not assigned.
+  directoryServiceOptions:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:storage:DirectoryServiceOptions"
+    description: Indicates the directory service used. Note that this enum may be extended in the future.
+type: object
+required:
+  - directoryServiceOptions

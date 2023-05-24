@@ -1,0 +1,6 @@
+$token: azure-native:keyvault:Action
+properties:
+  type:
+    $ref: "#/types/azure-native:keyvault:KeyRotationPolicyActionType"
+    description: The type of action.
+type: object

@@ -1,0 +1,5 @@
+$token: azure-native:documentdb/v20230301preview:NodeKind
+description: The node type deployed in the node group.
+type: string
+enum:
+  - value: Shard

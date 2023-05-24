@@ -1,0 +1,23 @@
+$token: azure-native:workloads/v20211201preview:PrometheusOSProviderInstanceProperties
+description: Gets or sets the PrometheusOS provider properties.
+properties:
+  prometheusUrl:
+    type: string
+    description: URL of the Node Exporter endpoint
+  providerType:
+    type: string
+    description: |-
+      The provider type. For example, the value can be SapHana.
+      Expected value is 'PrometheusOS'.
+    const: PrometheusOS
+  sslCertificateUri:
+    type: string
+    description: Gets or sets the blob URI to SSL certificate for the prometheus node exporter.
+  sslPreference:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:workloads/v20211201preview:SslPreference"
+    description: Gets or sets certificate preference if secure communication is enabled.
+type: object
+required:
+  - providerType

@@ -1,0 +1,12 @@
+$token: azure-native:compute:OSDiskImageSecurityProfile
+description: Contains security profile for an OS disk image.
+properties:
+  confidentialVMEncryptionType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:compute:ConfidentialVMEncryptionType"
+    description: confidential VM encryption types
+  secureVMDiskEncryptionSetId:
+    type: string
+    description: secure VM disk encryption set id
+type: object

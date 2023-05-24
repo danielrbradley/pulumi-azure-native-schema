@@ -1,0 +1,7 @@
+$token: azure-native:machinelearningservices/v20230401:TmpfsOptions
+description: Describes the tmpfs options for the container
+properties:
+  size:
+    type: integer
+    description: Mention the Tmpfs size
+type: object

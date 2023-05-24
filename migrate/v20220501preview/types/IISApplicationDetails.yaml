@@ -1,0 +1,26 @@
+$token: azure-native:migrate/v20220501preview:IISApplicationDetails
+description: IISApplication details.
+properties:
+  applicationPoolName:
+    type: string
+    description: Gets or sets the application pool name.
+  directories:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:DirectoryPath"
+    description: Gets or sets the list of directories.
+  enable32BitApiOnWin64:
+    type: boolean
+    description: Gets or sets a value indicating whether 32 bit applications are allowed to run on 64 bit.
+  managedPipelineMode:
+    type: string
+    description: Gets or sets the managed pipeline mode.
+  path:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:DirectoryPath"
+    description: Second level entity for virtual directories.
+  runtimeVersion:
+    type: string
+    description: Gets or sets the runtime version.
+type: object

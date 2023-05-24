@@ -1,0 +1,6 @@
+$token: azure-native:compute/v20170330:StorageAccountTypes
+description: The sku name.
+type: string
+enum:
+  - value: Standard_LRS
+  - value: Premium_LRS

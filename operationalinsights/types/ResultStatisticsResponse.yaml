@@ -1,0 +1,17 @@
+$token: azure-native:operationalinsights:ResultStatisticsResponse
+description: Search job execution statistics.
+properties:
+  ingestedRecords:
+    type: integer
+    description: The number of rows that were returned by the search job.
+  progress:
+    type: number
+    description: Search job completion percentage.
+  scannedGb:
+    type: number
+    description: "Search job: Amount of scanned data."
+type: object
+required:
+  - ingestedRecords
+  - progress
+  - scannedGb

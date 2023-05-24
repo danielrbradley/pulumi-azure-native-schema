@@ -1,0 +1,10 @@
+$token: azure-native:managednetworkfabric/v20230201preview:RoutePolicyPropertiesAction
+description: Route policy action properties.
+properties:
+  action:
+    type: string
+    description: "action. Example: accept | deny."
+  set:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:RoutePolicyPropertiesSet"
+type: object

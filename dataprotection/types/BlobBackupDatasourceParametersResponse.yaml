@@ -1,0 +1,18 @@
+$token: azure-native:dataprotection:BlobBackupDatasourceParametersResponse
+description: Parameters to be used during configuration of backup of blobs
+properties:
+  containersList:
+    type: array
+    items:
+      type: string
+    description: List of containers to be backed up during configuration of backup of blobs
+  objectType:
+    type: string
+    description: |-
+      Type of the specific object - used for deserializing
+      Expected value is 'BlobBackupDatasourceParameters'.
+    const: BlobBackupDatasourceParameters
+type: object
+required:
+  - containersList
+  - objectType

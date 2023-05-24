@@ -1,0 +1,9 @@
+$token: azure-native:managednetworkfabric/v20230201preview:NetworkDeviceRoleTypes
+description: "networkDeviceRole is the device role: Example: CE | ToR."
+type: string
+enum:
+  - value: CE
+  - value: ToR
+  - value: NPB
+  - value: TS
+  - value: Management

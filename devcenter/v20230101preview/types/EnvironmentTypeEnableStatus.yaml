@@ -1,0 +1,6 @@
+$token: azure-native:devcenter/v20230101preview:EnvironmentTypeEnableStatus
+description: Defines whether this Environment Type can be used in this Project.
+type: string
+enum:
+  - value: Enabled
+  - value: Disabled

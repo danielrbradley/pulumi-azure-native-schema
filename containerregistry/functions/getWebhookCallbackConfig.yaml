@@ -1,0 +1,37 @@
+$token: azure-native:containerregistry:getWebhookCallbackConfig
+description: |-
+  Gets the configuration of service URI and custom headers for the webhook.
+  API Version: 2022-12-01.
+inputs:
+  properties:
+    registryName:
+      type: string
+      description: The name of the container registry.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    webhookName:
+      type: string
+      description: The name of the webhook.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - registryName
+    - resourceGroupName
+    - webhookName
+outputs:
+  description: The configuration of service URI and custom headers for the webhook.
+  properties:
+    customHeaders:
+      type: object
+      additionalProperties:
+        type: string
+      description: Custom headers that will be added to the webhook notifications.
+    serviceUri:
+      type: string
+      description: The service URI for the webhook to post notifications.
+  type: object
+  required:
+    - serviceUri

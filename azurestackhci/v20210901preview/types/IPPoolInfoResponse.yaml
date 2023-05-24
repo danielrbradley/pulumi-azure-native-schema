@@ -1,0 +1,12 @@
+$token: azure-native:azurestackhci/v20210901preview:IPPoolInfoResponse
+properties:
+  available:
+    type: string
+    description: no. of ip addresses available in the ip pool
+  used:
+    type: string
+    description: no. of ip addresses allocated from the ip pool
+type: object
+required:
+  - available
+  - used

@@ -1,0 +1,7 @@
+$token: azure-native:datamigration:MongoDbShardKeyOrder
+description: The field ordering
+type: string
+enum:
+  - value: Forward
+  - value: Reverse
+  - value: Hashed

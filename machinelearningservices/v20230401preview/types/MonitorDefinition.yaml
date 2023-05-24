@@ -1,0 +1,50 @@
+$token: azure-native:machinelearningservices/v20230401preview:MonitorDefinition
+properties:
+  alertNotificationSetting:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:AzMonMonitoringAlertNotificationSettings"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:EmailMonitoringAlertNotificationSettings"
+    discriminator:
+      propertyName: alertNotificationType
+      mapping:
+        AzureMonitor: "#/types/azure-native:machinelearningservices/v20230401preview:AzMonMonitoringAlertNotificationSettings"
+        Email: "#/types/azure-native:machinelearningservices/v20230401preview:EmailMonitoringAlertNotificationSettings"
+    description: The monitor's notification settings.
+  computeId:
+    type: string
+    description: "[Required] The ARM resource ID of the compute resource to run the monitoring job on."
+  monitoringTarget:
+    type: string
+    description: The ARM resource ID of either the model or deployment targeted by this monitor.
+  signals:
+    type: object
+    additionalProperties:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:CustomMonitoringSignal"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:DataDriftMonitoringSignal"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:DataQualityMonitoringSignal"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:FeatureAttributionDriftMonitoringSignal"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:ModelPerformanceSignalBase"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:PredictionDriftMonitoringSignal"
+      discriminator:
+        propertyName: signalType
+        mapping:
+          Custom: "#/types/azure-native:machinelearningservices/v20230401preview:CustomMonitoringSignal"
+          DataDrift: "#/types/azure-native:machinelearningservices/v20230401preview:DataDriftMonitoringSignal"
+          DataQuality: "#/types/azure-native:machinelearningservices/v20230401preview:DataQualityMonitoringSignal"
+          FeatureAttributionDrift: "#/types/azure-native:machinelearningservices/v20230401preview:FeatureAttributionDriftMonitoringSignal"
+          ModelPerformance: "#/types/azure-native:machinelearningservices/v20230401preview:ModelPerformanceSignalBase"
+          PredictionDrift: "#/types/azure-native:machinelearningservices/v20230401preview:PredictionDriftMonitoringSignal"
+    description: "[Required] The signals to monitor."
+type: object
+required:
+  - computeId
+  - signals

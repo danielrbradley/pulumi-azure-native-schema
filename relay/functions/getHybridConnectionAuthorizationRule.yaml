@@ -1,0 +1,60 @@
+$token: azure-native:relay:getHybridConnectionAuthorizationRule
+description: |-
+  Hybrid connection authorization rule for a hybrid connection by name.
+  API Version: 2021-11-01.
+inputs:
+  properties:
+    authorizationRuleName:
+      type: string
+      description: The authorization rule name.
+      willReplaceOnChanges: true
+    hybridConnectionName:
+      type: string
+      description: The hybrid connection name.
+      willReplaceOnChanges: true
+    namespaceName:
+      type: string
+      description: The namespace name
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the Resource group within the Azure subscription.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - authorizationRuleName
+    - hybridConnectionName
+    - namespaceName
+    - resourceGroupName
+outputs:
+  description: Single item in a List or Get AuthorizationRule operation
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    name:
+      type: string
+      description: The name of the resource
+    rights:
+      type: array
+      items:
+        type: string
+      description: The rights associated with the rule.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:relay:SystemDataResponse"
+      description: The system meta data relating to this resource.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.EventHub/Namespaces" or "Microsoft.EventHub/Namespaces/EventHubs"
+  type: object
+  required:
+    - id
+    - location
+    - name
+    - rights
+    - systemData
+    - type

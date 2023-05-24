@@ -1,0 +1,13 @@
+$token: azure-native:keyvault/v20230201:ManagedHSMSecurityDomainPropertiesResponse
+description: The security domain properties of the managed hsm.
+properties:
+  activationStatus:
+    type: string
+    description: Activation Status
+  activationStatusMessage:
+    type: string
+    description: Activation Status Message.
+type: object
+required:
+  - activationStatus
+  - activationStatusMessage

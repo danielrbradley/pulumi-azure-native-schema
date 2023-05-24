@@ -1,0 +1,30 @@
+$token: azure-native:devhub/v20221011preview:GenerationLanguage
+description: The programming language used.
+type: string
+enum:
+  - description: clojure language
+    value: clojure
+  - description: csharp language
+    value: csharp
+  - description: erlang language
+    value: erlang
+  - description: go language
+    value: go
+  - description: gomodule language
+    value: gomodule
+  - description: gradle language
+    value: gradle
+  - description: java language
+    value: java
+  - description: javascript language
+    value: javascript
+  - description: php language
+    value: php
+  - description: python language
+    value: python
+  - description: ruby language
+    value: ruby
+  - description: rust language
+    value: rust
+  - description: swift language
+    value: swift

@@ -1,0 +1,6 @@
+$token: azure-native:migrate/v20220501preview:TargetStorageProjectionType
+description: Gets or sets the target projection type.
+type: string
+enum:
+  - value: ContainerFileSystem
+  - value: PersistentVolume

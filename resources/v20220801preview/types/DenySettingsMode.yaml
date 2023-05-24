@@ -1,0 +1,10 @@
+$token: azure-native:resources/v20220801preview:DenySettingsMode
+description: denySettings Mode.
+type: string
+enum:
+  - description: Authorized users are able to read and modify the resources, but cannot delete.
+    value: denyDelete
+  - description: Authorized users can only read from a resource, but cannot modify or delete it.
+    value: denyWriteAndDelete
+  - description: No denyAssignments have been applied.
+    value: none

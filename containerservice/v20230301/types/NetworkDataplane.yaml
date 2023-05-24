@@ -1,0 +1,8 @@
+$token: azure-native:containerservice/v20230301:NetworkDataplane
+description: Network dataplane used in the Kubernetes cluster.
+type: string
+enum:
+  - description: Use Azure network dataplane.
+    value: azure
+  - description: Use Cilium network dataplane. See [Azure CNI Powered by Cilium](https://learn.microsoft.com/azure/aks/azure-cni-powered-by-cilium) for more information.
+    value: cilium

@@ -1,0 +1,31 @@
+$token: azure-native:devices/v20211015:listIotDpsResourceKeys
+description: List the primary and secondary keys for a provisioning service.
+inputs:
+  properties:
+    provisioningServiceName:
+      type: string
+      description: The provisioning service name to get the shared access keys for.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: resource group name
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - provisioningServiceName
+    - resourceGroupName
+outputs:
+  description: List of shared access keys.
+  properties:
+    nextLink:
+      type: string
+      description: The next link.
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:devices/v20211015:SharedAccessSignatureAuthorizationRuleAccessRightsDescriptionResponse"
+      description: The list of shared access policies.
+  type: object
+  required:
+    - nextLink

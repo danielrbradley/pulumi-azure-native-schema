@@ -1,0 +1,13 @@
+$token: azure-native:monitor/v20230403:AzureMonitorWorkspaceResponseMetrics
+description: Information about metrics for the Azure Monitor workspace
+properties:
+  internalId:
+    type: string
+    description: An internal identifier for the metrics container. Only to be used by the system
+  prometheusQueryEndpoint:
+    type: string
+    description: The Prometheus query endpoint for the workspace
+type: object
+required:
+  - internalId
+  - prometheusQueryEndpoint

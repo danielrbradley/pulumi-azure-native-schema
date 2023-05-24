@@ -1,0 +1,7 @@
+$token: azure-native:containerservice/v20230202preview:Level
+description: The guardrails level to be used. By default, Guardrails is enabled for all namespaces except those that AKS excludes via systemExcludedNamespaces
+type: string
+enum:
+  - value: Off
+  - value: Warning
+  - value: Enforcement

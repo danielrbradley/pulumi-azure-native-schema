@@ -1,0 +1,8 @@
+$token: azure-native:securityinsights/v20230401preview:Mode
+description: The current mode of the workspace manager configuration
+type: string
+enum:
+  - description: The workspace manager configuration is enabled
+    value: Enabled
+  - description: The workspace manager configuration is disabled
+    value: Disabled

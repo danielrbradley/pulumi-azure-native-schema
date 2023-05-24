@@ -1,0 +1,32 @@
+$token: azure-native:databox:DataBoxDiskCopyProgressResponse
+description: DataBox Disk Copy Progress
+properties:
+  actions:
+    type: array
+    items:
+      type: string
+    description: Available actions on the job.
+  bytesCopied:
+    type: number
+    description: Bytes copied during the copy of disk.
+  error:
+    type: object
+    $ref: "#/types/azure-native:databox:CloudErrorResponse"
+    description: Error, if any, in the stage
+  percentComplete:
+    type: integer
+    description: Indicates the percentage completed for the copy of the disk.
+  serialNumber:
+    type: string
+    description: The serial number of the disk
+  status:
+    type: string
+    description: The Status of the copy
+type: object
+required:
+  - actions
+  - bytesCopied
+  - error
+  - percentComplete
+  - serialNumber
+  - status

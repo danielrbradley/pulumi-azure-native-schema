@@ -1,0 +1,19 @@
+$token: azure-native:managednetworkfabric/v20230201preview:NetworkFabricPropertiesWorkloadVpnConfiguration
+description: Configuration for workload vpn.
+properties:
+  optionAProperties:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:OptionAProperties"
+    description: option A properties object
+  optionBProperties:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:FabricOptionBProperties"
+    description: option B properties object
+  peeringOption:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:PeeringOption"
+    description: Peering option list.
+type: object
+required:
+  - optionBProperties

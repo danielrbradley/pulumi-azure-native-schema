@@ -1,0 +1,23 @@
+$token: azure-native:appplatform/v20230301preview:CustomizedAcceleratorPropertiesResponse
+description: Customized accelerator properties payload
+properties:
+  acceleratorTags:
+    type: array
+    items:
+      type: string
+  description:
+    type: string
+  displayName:
+    type: string
+  gitRepository:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:AcceleratorGitRepositoryResponse"
+  iconUrl:
+    type: string
+  provisioningState:
+    type: string
+    description: State of the customized accelerator.
+type: object
+required:
+  - gitRepository
+  - provisioningState

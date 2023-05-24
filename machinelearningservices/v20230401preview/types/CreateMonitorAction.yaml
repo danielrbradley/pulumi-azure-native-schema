@@ -1,0 +1,16 @@
+$token: azure-native:machinelearningservices/v20230401preview:CreateMonitorAction
+properties:
+  actionType:
+    type: string
+    description: |-
+      
+      Expected value is 'CreateMonitor'.
+    const: CreateMonitor
+  monitorDefinition:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MonitorDefinition"
+    description: "[Required] Defines the monitor."
+type: object
+required:
+  - actionType
+  - monitorDefinition

@@ -1,0 +1,14 @@
+$token: azure-native:networkcloud:StorageProfile
+properties:
+  osDisk:
+    type: object
+    $ref: "#/types/azure-native:networkcloud:OsDisk"
+    description: The disk to use with this virtual machine.
+  volumeAttachments:
+    type: array
+    items:
+      type: string
+    description: The resource IDs of volumes that are requested to be attached to the virtual machine.
+type: object
+required:
+  - osDisk

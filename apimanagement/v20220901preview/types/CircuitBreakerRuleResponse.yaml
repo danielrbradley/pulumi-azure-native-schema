@@ -1,0 +1,14 @@
+$token: azure-native:apimanagement/v20220901preview:CircuitBreakerRuleResponse
+description: Rule configuration to trip the backend.
+properties:
+  failureCondition:
+    type: object
+    $ref: "#/types/azure-native:apimanagement/v20220901preview:CircuitBreakerFailureConditionResponse"
+    description: The conditions for tripping the circuit breaker.
+  name:
+    type: string
+    description: The rule name.
+  tripDuration:
+    type: string
+    description: The duration for which the circuit will be tripped.
+type: object

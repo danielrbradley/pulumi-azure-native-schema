@@ -1,0 +1,28 @@
+$token: azure-native:webpubsub:EventNameFilterResponse
+description: Filter events by their name.
+properties:
+  systemEvents:
+    type: array
+    items:
+      type: string
+    description: 'Gets or sets a list of system events. Supported events: "connected" and "disconnected". Blocking event "connect" is not supported because it requires a response.'
+  type:
+    type: string
+    description: |-
+      
+      Expected value is 'EventName'.
+    const: EventName
+  userEventPattern:
+    type: string
+    description: "Gets or sets a matching pattern for event names.\r
+
+      There are 3 kinds of patterns supported:\r
+
+      \    1. \"*\", it matches any event name\r
+
+      \    2. Combine multiple events with \",\", for example \"event1,event2\", it matches events \"event1\" and \"event2\"\r
+
+      \    3. A single event name, for example, \"event1\", it matches \"event1\""
+type: object
+required:
+  - type

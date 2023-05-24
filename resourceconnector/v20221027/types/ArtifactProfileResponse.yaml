@@ -1,0 +1,9 @@
+$token: azure-native:resourceconnector/v20221027:ArtifactProfileResponse
+description: Appliance ArtifactProfile definition.
+properties:
+  endpoint:
+    type: string
+    description: Endpoint is the URL to upload artifacts to.
+type: object
+required:
+  - endpoint

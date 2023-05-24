@@ -1,0 +1,48 @@
+$token: azure-native:recoveryservices:getReplicationRecoveryPlan
+description: |-
+  Gets the details of the recovery plan.
+  API Version: 2023-02-01.
+inputs:
+  properties:
+    recoveryPlanName:
+      type: string
+      description: Name of the recovery plan.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group where the recovery services vault is present.
+      willReplaceOnChanges: true
+    resourceName:
+      type: string
+      description: The name of the recovery services vault.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - recoveryPlanName
+    - resourceGroupName
+    - resourceName
+outputs:
+  description: Recovery plan details.
+  properties:
+    id:
+      type: string
+      description: Resource Id
+    location:
+      type: string
+      description: Resource Location
+    name:
+      type: string
+      description: Resource Name
+    properties:
+      type: object
+      $ref: "#/types/azure-native:recoveryservices:RecoveryPlanPropertiesResponse"
+      description: The custom details.
+    type:
+      type: string
+      description: Resource Type
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - type

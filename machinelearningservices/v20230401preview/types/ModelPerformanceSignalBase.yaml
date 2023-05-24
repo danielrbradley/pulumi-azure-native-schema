@@ -1,0 +1,47 @@
+$token: azure-native:machinelearningservices/v20230401preview:ModelPerformanceSignalBase
+properties:
+  baselineData:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MonitoringInputData"
+    description: "[Required] The data to calculate drift against."
+  dataSegment:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MonitoringDataSegment"
+    description: The data segment.
+  lookbackPeriod:
+    type: string
+    description: The amount of time a single monitor should look back over the target data on a given run.
+  metricThreshold:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:ClassificationModelPerformanceMetricThreshold"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:RegressionModelPerformanceMetricThreshold"
+    discriminator:
+      propertyName: modelType
+      mapping:
+        Classification: "#/types/azure-native:machinelearningservices/v20230401preview:ClassificationModelPerformanceMetricThreshold"
+        Regression: "#/types/azure-native:machinelearningservices/v20230401preview:RegressionModelPerformanceMetricThreshold"
+    description: "[Required] A list of metrics to calculate and their associated thresholds."
+  mode:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MonitoringNotificationMode"
+    description: The current notification mode for this signal.
+    default: Disabled
+  signalType:
+    type: string
+    description: |-
+      
+      Expected value is 'ModelPerformance'.
+    const: ModelPerformance
+  targetData:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MonitoringInputData"
+    description: "[Required] The data produced by the production service which drift will be calculated for."
+type: object
+required:
+  - baselineData
+  - metricThreshold
+  - signalType
+  - targetData

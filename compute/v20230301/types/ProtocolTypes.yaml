@@ -1,0 +1,6 @@
+$token: azure-native:compute/v20230301:ProtocolTypes
+description: "Specifies the protocol of WinRM listener. Possible values are: **http,** **https.**"
+type: string
+enum:
+  - value: Http
+  - value: Https

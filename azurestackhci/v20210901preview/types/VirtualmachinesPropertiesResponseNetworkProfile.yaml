@@ -1,0 +1,10 @@
+$token: azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesResponseNetworkProfile
+description: NetworkProfile - describes the network configuration the virtual machine
+properties:
+  networkInterfaces:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesResponseNetworkInterfaces"
+    description: NetworkInterfaces - list of network interfaces to be attached to the virtual machine
+type: object

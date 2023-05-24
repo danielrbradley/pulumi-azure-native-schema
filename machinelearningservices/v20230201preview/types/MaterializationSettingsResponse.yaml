@@ -1,0 +1,24 @@
+$token: azure-native:machinelearningservices/v20230201preview:MaterializationSettingsResponse
+properties:
+  notification:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230201preview:NotificationSettingResponse"
+    description: Specifies the notification details
+  resource:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230201preview:MaterializationComputeResourceResponse"
+    description: Specifies the compute resource settings
+  schedule:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230201preview:RecurrenceTriggerResponse"
+    description: Specifies the schedule details
+  sparkConfiguration:
+    type: object
+    additionalProperties:
+      type: string
+    description: Specifies the spark compute settings
+  storeType:
+    type: string
+    description: Specifies the stores to which materialization should happen
+    default: None
+type: object

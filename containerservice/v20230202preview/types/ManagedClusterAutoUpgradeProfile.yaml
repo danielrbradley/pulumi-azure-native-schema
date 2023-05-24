@@ -1,0 +1,14 @@
+$token: azure-native:containerservice/v20230202preview:ManagedClusterAutoUpgradeProfile
+description: Auto upgrade profile for a managed cluster.
+properties:
+  nodeOSUpgradeChannel:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:containerservice/v20230202preview:NodeOSUpgradeChannel"
+    description: The default is Unmanaged, but may change to either NodeImage or SecurityPatch at GA.
+  upgradeChannel:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:containerservice/v20230202preview:UpgradeChannel"
+    description: For more information see [setting the AKS cluster auto-upgrade channel](https://docs.microsoft.com/azure/aks/upgrade-cluster#set-auto-upgrade-channel).
+type: object

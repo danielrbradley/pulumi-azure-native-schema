@@ -1,0 +1,192 @@
+$token: azure-native:machinelearningservices/v20230401preview:SparkJobResponse
+description: Spark job definition.
+properties:
+  archives:
+    type: array
+    items:
+      type: string
+    description: Archive files used in the job.
+  args:
+    type: string
+    description: Arguments for the job.
+  codeId:
+    type: string
+    description: "[Required] ARM resource ID of the code asset."
+  componentId:
+    type: string
+    description: ARM resource ID of the component resource.
+  computeId:
+    type: string
+    description: ARM resource ID of the compute resource.
+  conf:
+    type: object
+    additionalProperties:
+      type: string
+    description: Spark configured properties.
+  description:
+    type: string
+    description: The asset description text.
+  displayName:
+    type: string
+    description: Display name of job.
+  entry:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:SparkJobPythonEntryResponse"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:SparkJobScalaEntryResponse"
+    discriminator:
+      propertyName: sparkJobEntryType
+      mapping:
+        SparkJobPythonEntry: "#/types/azure-native:machinelearningservices/v20230401preview:SparkJobPythonEntryResponse"
+        SparkJobScalaEntry: "#/types/azure-native:machinelearningservices/v20230401preview:SparkJobScalaEntryResponse"
+    description: "[Required] The entry to execute on startup of the job."
+  environmentId:
+    type: string
+    description: The ARM resource ID of the Environment specification for the job.
+  experimentName:
+    type: string
+    description: The name of the experiment the job belongs to. If not set, the job is placed in the "Default" experiment.
+    default: Default
+  files:
+    type: array
+    items:
+      type: string
+    description: Files used in the job.
+  identity:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:AmlTokenResponse"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:ManagedIdentityResponse"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:UserIdentityResponse"
+    discriminator:
+      propertyName: identityType
+      mapping:
+        AMLToken: "#/types/azure-native:machinelearningservices/v20230401preview:AmlTokenResponse"
+        Managed: "#/types/azure-native:machinelearningservices/v20230401preview:ManagedIdentityResponse"
+        UserIdentity: "#/types/azure-native:machinelearningservices/v20230401preview:UserIdentityResponse"
+    description: "Identity configuration. If set, this should be one of AmlToken, ManagedIdentity, UserIdentity or null.\r
+
+      Defaults to AmlToken if null."
+  inputs:
+    type: object
+    additionalProperties:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:CustomModelJobInputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:LiteralJobInputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MLFlowModelJobInputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MLTableJobInputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:TritonModelJobInputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:UriFileJobInputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:UriFolderJobInputResponse"
+      discriminator:
+        propertyName: jobInputType
+        mapping:
+          custom_model: "#/types/azure-native:machinelearningservices/v20230401preview:CustomModelJobInputResponse"
+          literal: "#/types/azure-native:machinelearningservices/v20230401preview:LiteralJobInputResponse"
+          mlflow_model: "#/types/azure-native:machinelearningservices/v20230401preview:MLFlowModelJobInputResponse"
+          mltable: "#/types/azure-native:machinelearningservices/v20230401preview:MLTableJobInputResponse"
+          triton_model: "#/types/azure-native:machinelearningservices/v20230401preview:TritonModelJobInputResponse"
+          uri_file: "#/types/azure-native:machinelearningservices/v20230401preview:UriFileJobInputResponse"
+          uri_folder: "#/types/azure-native:machinelearningservices/v20230401preview:UriFolderJobInputResponse"
+    description: Mapping of input data bindings used in the job.
+  isArchived:
+    type: boolean
+    description: Is the asset archived?
+    default: false
+  jars:
+    type: array
+    items:
+      type: string
+    description: Jar files used in the job.
+  jobType:
+    type: string
+    description: |-
+      Enum to determine the type of job.
+      Expected value is 'Spark'.
+    const: Spark
+  notificationSetting:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:NotificationSettingResponse"
+    description: Notification setting for the job
+  outputs:
+    type: object
+    additionalProperties:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:CustomModelJobOutputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MLFlowModelJobOutputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MLTableJobOutputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:TritonModelJobOutputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:UriFileJobOutputResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:UriFolderJobOutputResponse"
+      discriminator:
+        propertyName: jobOutputType
+        mapping:
+          custom_model: "#/types/azure-native:machinelearningservices/v20230401preview:CustomModelJobOutputResponse"
+          mlflow_model: "#/types/azure-native:machinelearningservices/v20230401preview:MLFlowModelJobOutputResponse"
+          mltable: "#/types/azure-native:machinelearningservices/v20230401preview:MLTableJobOutputResponse"
+          triton_model: "#/types/azure-native:machinelearningservices/v20230401preview:TritonModelJobOutputResponse"
+          uri_file: "#/types/azure-native:machinelearningservices/v20230401preview:UriFileJobOutputResponse"
+          uri_folder: "#/types/azure-native:machinelearningservices/v20230401preview:UriFolderJobOutputResponse"
+    description: Mapping of output data bindings used in the job.
+  properties:
+    type: object
+    additionalProperties:
+      type: string
+    description: The asset property dictionary.
+  pyFiles:
+    type: array
+    items:
+      type: string
+    description: Python files used in the job.
+  queueSettings:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:QueueSettingsResponse"
+    description: Queue settings for the job
+  resources:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:SparkResourceConfigurationResponse"
+    description: Compute Resource configuration for the job.
+  secretsConfiguration:
+    type: object
+    additionalProperties:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20230401preview:SecretConfigurationResponse"
+    description: Configuration for secrets to be made available during runtime.
+  services:
+    type: object
+    additionalProperties:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20230401preview:JobServiceResponse"
+    description: "List of JobEndpoints.\r
+
+      For local jobs, a job endpoint will have an endpoint value of FileStreamObject."
+  status:
+    type: string
+    description: Status of the job.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Tag dictionary. Tags can be added, removed, and updated.
+type: object
+required:
+  - codeId
+  - entry
+  - jobType
+  - status

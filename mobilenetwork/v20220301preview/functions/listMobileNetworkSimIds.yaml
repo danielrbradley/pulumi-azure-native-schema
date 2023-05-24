@@ -1,0 +1,31 @@
+$token: azure-native:mobilenetwork/v20220301preview:listMobileNetworkSimIds
+description: List sim ids under a mobile network.
+inputs:
+  properties:
+    mobileNetworkName:
+      type: string
+      description: The name of the mobile network.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - mobileNetworkName
+    - resourceGroupName
+outputs:
+  description: Response for list sim ids API service call.
+  properties:
+    nextLink:
+      type: string
+      description: The URL to get the next set of results.
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:mobilenetwork/v20220301preview:SubResourceResponse"
+      description: A list of sim profile ids in a resource group.
+  type: object
+  required:
+    - nextLink

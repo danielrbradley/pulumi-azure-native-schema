@@ -1,0 +1,53 @@
+$token: azure-native:migrate/v20220501preview:InnerHealthErrorModelResponse
+description: Inner health error model.
+properties:
+  category:
+    type: string
+    description: Gets or sets the error category.
+  causes:
+    type: string
+    description: Gets or sets possible causes of the error.
+  code:
+    type: string
+    description: Gets or sets the error code.
+  creationTime:
+    type: string
+    description: Gets or sets the error creation time.
+  healthCategory:
+    type: string
+    description: Gets or sets the health category.
+  id:
+    type: string
+    description: Gets the ID.
+  isCustomerResolvable:
+    type: boolean
+    description: Gets or sets a value indicating whether the error is customer resolvable.
+  message:
+    type: string
+    description: Gets or sets the error message.
+  recommendation:
+    type: string
+    description: Gets or sets recommended action to resolve the error.
+  severity:
+    type: string
+    description: Gets or sets the error severity.
+  source:
+    type: string
+    description: Gets or sets the error source.
+  summary:
+    type: string
+    description: Gets or sets the error summary.
+type: object
+required:
+  - category
+  - causes
+  - code
+  - creationTime
+  - healthCategory
+  - id
+  - isCustomerResolvable
+  - message
+  - recommendation
+  - severity
+  - source
+  - summary

@@ -1,0 +1,19 @@
+$token: azure-native:azurestackhci/v20210901preview:VirtualnetworksPropertiesRouteTable
+description: RouteTable for the subnet
+properties:
+  id:
+    type: string
+    description: Etag - Gets a unique read-only string that changes whenever the resource is updated.
+  name:
+    type: string
+    description: Name - READ-ONLY; Resource name.
+  routes:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualnetworksPropertiesRoutes"
+    description: Routes - Collection of routes contained within a route table.
+  type:
+    type: string
+    description: Type - READ-ONLY; Resource type.
+type: object

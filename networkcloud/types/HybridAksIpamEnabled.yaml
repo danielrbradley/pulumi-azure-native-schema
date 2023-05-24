@@ -1,0 +1,6 @@
+$token: azure-native:networkcloud:HybridAksIpamEnabled
+description: The indicator of whether or not to disable IPAM allocation on the network attachment definition injected into the Hybrid AKS Cluster.
+type: string
+enum:
+  - value: "True"
+  - value: "False"

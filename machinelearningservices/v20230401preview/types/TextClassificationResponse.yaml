@@ -1,0 +1,58 @@
+$token: azure-native:machinelearningservices/v20230401preview:TextClassificationResponse
+description: "Text Classification task in AutoML NLP vertical.\r
+
+  NLP - Natural Language Processing."
+properties:
+  featurizationSettings:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:NlpVerticalFeaturizationSettingsResponse"
+    description: Featurization inputs needed for AutoML job.
+  fixedParameters:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:NlpFixedParametersResponse"
+    description: Model/training parameters that will remain constant throughout training.
+  limitSettings:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:NlpVerticalLimitSettingsResponse"
+    description: Execution constraints for AutoMLJob.
+  logVerbosity:
+    type: string
+    description: Log verbosity for the job.
+    default: Info
+  primaryMetric:
+    type: string
+    description: Primary metric for Text-Classification task.
+    default: Accuracy
+  searchSpace:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20230401preview:NlpParameterSubspaceResponse"
+    description: Search space for sampling different combinations of models and their hyperparameters.
+  sweepSettings:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:NlpSweepSettingsResponse"
+    description: Settings for model sweeping and hyperparameter tuning.
+  targetColumnName:
+    type: string
+    description: "Target column name: This is prediction values column.\r
+
+      Also known as label column name in context of classification tasks."
+  taskType:
+    type: string
+    description: |-
+      AutoMLJob Task type.
+      Expected value is 'TextClassification'.
+    const: TextClassification
+  trainingData:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MLTableJobInputResponse"
+    description: "[Required] Training data input."
+  validationData:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MLTableJobInputResponse"
+    description: Validation data inputs.
+type: object
+required:
+  - taskType
+  - trainingData

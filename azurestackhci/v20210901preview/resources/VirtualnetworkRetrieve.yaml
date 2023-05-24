@@ -1,0 +1,92 @@
+$token: azure-native:azurestackhci/v20210901preview:VirtualnetworkRetrieve
+description: The virtual network resource definition.
+properties:
+  extendedLocation:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:ExtendedLocationResponse"
+    description: The extendedLocation of the resource.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  networkType:
+    type: string
+    description: Type of the network
+  provisioningState:
+    type: string
+  resourceName:
+    type: string
+    description: name of the object to be used in moc
+  status:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualNetworkStatusResponse"
+    description: VirtualNetworkStatus defines the observed state of virtual networks
+  subnets:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualnetworksPropertiesResponseSubnets"
+    description: Subnet - list of subnets under the virtual network
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - location
+  - name
+  - provisioningState
+  - status
+  - systemData
+  - type
+inputProperties:
+  extendedLocation:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:ExtendedLocation"
+    description: The extendedLocation of the resource.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  networkType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:azurestackhci/v20210901preview:NetworkTypeEnum"
+    description: Type of the network
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  resourceName:
+    type: string
+    description: name of the object to be used in moc
+  subnets:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualnetworksPropertiesSubnets"
+    description: Subnet - list of subnets under the virtual network
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  virtualnetworksName:
+    type: string
+    willReplaceOnChanges: true
+requiredInputs:
+  - resourceGroupName
+aliases:
+  - type: azure-native:azurestackhci/v20210901preview:virtualnetworkRetrieve
+  - type: azure-native:azurestackhci/v20210701preview:VirtualnetworkRetrieve
+  - type: azure-native:azurestackhci/v20210701preview:virtualnetworkRetrieve

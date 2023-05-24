@@ -1,0 +1,68 @@
+$token: azure-native:network:getExpressRouteGateway
+description: |-
+  Fetches the details of a ExpressRoute gateway in a resource group.
+  API Version: 2022-09-01.
+inputs:
+  properties:
+    expressRouteGatewayName:
+      type: string
+      description: The name of the ExpressRoute gateway.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - expressRouteGatewayName
+    - resourceGroupName
+outputs:
+  description: ExpressRoute gateway resource.
+  properties:
+    allowNonVirtualWanTraffic:
+      type: boolean
+      description: Configures this gateway to accept traffic from non Virtual WAN networks.
+    autoScaleConfiguration:
+      type: object
+      $ref: "#/types/azure-native:network:ExpressRouteGatewayPropertiesResponseAutoScaleConfiguration"
+      description: Configuration for auto scaling.
+    etag:
+      type: string
+      description: A unique read-only string that changes whenever the resource is updated.
+    expressRouteConnections:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:network:ExpressRouteConnectionResponse"
+      description: List of ExpressRoute connections to the ExpressRoute gateway.
+    id:
+      type: string
+      description: Resource ID.
+    location:
+      type: string
+      description: Resource location.
+    name:
+      type: string
+      description: Resource name.
+    provisioningState:
+      type: string
+      description: The provisioning state of the express route gateway resource.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: Resource type.
+    virtualHub:
+      type: object
+      $ref: "#/types/azure-native:network:VirtualHubIdResponse"
+      description: The Virtual Hub where the ExpressRoute gateway is or will be deployed.
+  type: object
+  required:
+    - etag
+    - name
+    - provisioningState
+    - type
+    - virtualHub

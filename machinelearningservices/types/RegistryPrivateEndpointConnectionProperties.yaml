@@ -1,0 +1,20 @@
+$token: azure-native:machinelearningservices:RegistryPrivateEndpointConnectionProperties
+description: Properties of the Private Endpoint Connection
+properties:
+  groupIds:
+    type: array
+    items:
+      type: string
+    description: The group ids
+  privateEndpoint:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices:PrivateEndpointResource"
+    description: The PE network resource that is linked to this PE connection.
+  provisioningState:
+    type: string
+    description: One of null, "Succeeded", "Provisioning", "Failed". While not approved, it's null.
+  registryPrivateLinkServiceConnectionState:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices:RegistryPrivateLinkServiceConnectionState"
+    description: The connection state.
+type: object

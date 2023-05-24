@@ -1,0 +1,16 @@
+$token: azure-native:migrate/v20220501preview:ApacheTomcatAKSWorkloadDeploymentModelCustomProperties
+description: ApacheTomcat workload instance model custom properties.
+properties:
+  apacheTomcatAksWorkloadDeploymentProperties:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:ApacheTomcatAKSWorkloadDeployment"
+    description: ApacheTomcat web application.
+  instanceType:
+    type: string
+    description: |-
+      Gets or sets the instance type.
+      Expected value is 'ApacheTomcatAKSWorkloadDeploymentModelCustomProperties'.
+    const: ApacheTomcatAKSWorkloadDeploymentModelCustomProperties
+type: object
+required:
+  - instanceType

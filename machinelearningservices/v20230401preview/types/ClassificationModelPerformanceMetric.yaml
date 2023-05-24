@@ -1,0 +1,12 @@
+$token: azure-native:machinelearningservices/v20230401preview:ClassificationModelPerformanceMetric
+description: "[Required] The classification model performance to calculate."
+type: string
+enum:
+  - description: Calculates the accuracy of the model predictions.
+    value: Accuracy
+  - description: Calculates the precision of the model predictions.
+    value: Precision
+  - description: Calculates the recall of the model predictions.
+    value: Recall
+  - description: Calculates the F1 score of the model predictions.
+    value: F1Score

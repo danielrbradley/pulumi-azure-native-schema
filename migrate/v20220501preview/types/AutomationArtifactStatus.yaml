@@ -1,0 +1,6 @@
+$token: azure-native:migrate/v20220501preview:AutomationArtifactStatus
+description: Gets or sets the status of automation artifacts.
+type: string
+enum:
+  - value: NotGenerated
+  - value: Generated

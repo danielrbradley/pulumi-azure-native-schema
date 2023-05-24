@@ -1,0 +1,68 @@
+$token: azure-native:netapp:Subvolume
+properties:
+  name:
+    type: string
+    description: The name of the resource
+  parentPath:
+    type: string
+    description: parent path to the subvolume
+  path:
+    type: string
+    description: Path to the subvolume
+  provisioningState:
+    type: string
+    description: Azure lifecycle management
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:netapp:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - name
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  accountName:
+    type: string
+    description: The name of the NetApp account
+    willReplaceOnChanges: true
+  parentPath:
+    type: string
+    description: parent path to the subvolume
+  path:
+    type: string
+    description: Path to the subvolume
+  poolName:
+    type: string
+    description: The name of the capacity pool
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  size:
+    type: number
+    description: Truncate subvolume to the provided size in bytes
+  subvolumeName:
+    type: string
+    description: The name of the subvolume.
+    willReplaceOnChanges: true
+  volumeName:
+    type: string
+    description: The name of the volume
+    willReplaceOnChanges: true
+requiredInputs:
+  - accountName
+  - poolName
+  - resourceGroupName
+  - volumeName
+aliases:
+  - type: azure-native:netapp/v20211001:Subvolume
+  - type: azure-native:netapp/v20220101:Subvolume
+  - type: azure-native:netapp/v20220301:Subvolume
+  - type: azure-native:netapp/v20220501:Subvolume
+  - type: azure-native:netapp/v20220901:Subvolume

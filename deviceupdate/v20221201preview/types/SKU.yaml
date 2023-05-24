@@ -1,0 +1,6 @@
+$token: azure-native:deviceupdate/v20221201preview:SKU
+description: Device Update Sku
+type: string
+enum:
+  - value: Free
+  - value: Standard

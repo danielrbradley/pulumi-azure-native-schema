@@ -1,0 +1,8 @@
+$token: azure-native:machinelearningservices/v20230401preview:ProtectionLevel
+description: Protection level of the Intellectual Property.
+type: string
+enum:
+  - description: All means Intellectual Property is fully protected.
+    value: All
+  - description: None means it is not an Intellectual Property.
+    value: None

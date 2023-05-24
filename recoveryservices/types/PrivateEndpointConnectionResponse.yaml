@@ -1,0 +1,20 @@
+$token: azure-native:recoveryservices:PrivateEndpointConnectionResponse
+description: Private Endpoint Connection Response Properties
+properties:
+  groupIds:
+    type: array
+    items:
+      type: string
+    description: Group Ids for the Private Endpoint
+  privateEndpoint:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices:PrivateEndpointResponse"
+    description: Gets or sets private endpoint associated with the private endpoint connection
+  privateLinkServiceConnectionState:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices:PrivateLinkServiceConnectionStateResponse"
+    description: Gets or sets private link service connection state
+  provisioningState:
+    type: string
+    description: Gets or sets provisioning state of the private endpoint connection
+type: object

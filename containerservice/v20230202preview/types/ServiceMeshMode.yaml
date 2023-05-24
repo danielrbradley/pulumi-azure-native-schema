@@ -1,0 +1,8 @@
+$token: azure-native:containerservice/v20230202preview:ServiceMeshMode
+description: Mode of the service mesh.
+type: string
+enum:
+  - description: Istio deployed as an AKS addon.
+    value: Istio
+  - description: Mesh is disabled.
+    value: Disabled

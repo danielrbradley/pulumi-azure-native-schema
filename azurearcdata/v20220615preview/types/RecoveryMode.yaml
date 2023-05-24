@@ -1,0 +1,7 @@
+$token: azure-native:azurearcdata/v20220615preview:RecoveryMode
+description: Status of the database.
+type: string
+enum:
+  - value: Full
+  - value: Bulk-logged
+  - value: Simple

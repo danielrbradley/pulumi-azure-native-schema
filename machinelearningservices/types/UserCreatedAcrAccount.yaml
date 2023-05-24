@@ -1,0 +1,7 @@
+$token: azure-native:machinelearningservices:UserCreatedAcrAccount
+properties:
+  armResourceId:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices:ArmResourceId"
+    description: ARM ResourceId of a resource
+type: object

@@ -1,0 +1,12 @@
+$token: azure-native:machinelearningservices:StorageAccountDetailsResponse
+description: Details of storage account to be used for the Registry
+properties:
+  systemCreatedStorageAccount:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices:SystemCreatedStorageAccountResponse"
+    description: Details of system created storage account to be used for the registry
+  userCreatedStorageAccount:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices:UserCreatedStorageAccountResponse"
+    description: Details of user created storage account to be used for the registry
+type: object

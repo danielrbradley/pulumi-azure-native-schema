@@ -1,0 +1,20 @@
+$token: azure-native:networkcloud/v20221212preview:OsDisk
+properties:
+  createOption:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:networkcloud/v20221212preview:OsDiskCreateOption"
+    description: The strategy for creating the OS disk.
+    default: Ephemeral
+  deleteOption:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:networkcloud/v20221212preview:OsDiskDeleteOption"
+    description: The strategy for deleting the OS disk.
+    default: Delete
+  diskSizeGB:
+    type: number
+    description: The size of the disk in gigabytes. Required if the createOption is Ephemeral.
+type: object
+required:
+  - diskSizeGB

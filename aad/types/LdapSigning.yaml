@@ -1,0 +1,6 @@
+$token: azure-native:aad:LdapSigning
+description: A flag to determine whether or not LdapSigning is enabled or disabled.
+type: string
+enum:
+  - value: Enabled
+  - value: Disabled

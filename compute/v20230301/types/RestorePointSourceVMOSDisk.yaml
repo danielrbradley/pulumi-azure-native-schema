@@ -1,0 +1,12 @@
+$token: azure-native:compute/v20230301:RestorePointSourceVMOSDisk
+description: Describes an Operating System disk.
+properties:
+  diskRestorePoint:
+    type: object
+    $ref: "#/types/azure-native:compute/v20230301:DiskRestorePointAttributes"
+    description: Contains Disk Restore Point properties.
+  managedDisk:
+    type: object
+    $ref: "#/types/azure-native:compute/v20230301:ManagedDiskParameters"
+    description: Gets the managed disk details
+type: object

@@ -1,0 +1,44 @@
+$token: azure-native:storsimple/v20161001:ChapSetting
+description: Challenge-Handshake Authentication Protocol (CHAP) setting
+properties:
+  name:
+    type: string
+    description: The name.
+  password:
+    type: object
+    $ref: "#/types/azure-native:storsimple/v20161001:AsymmetricEncryptedSecretResponse"
+    description: The chap password.
+  type:
+    type: string
+    description: The type.
+type: object
+required:
+  - name
+  - password
+  - type
+inputProperties:
+  chapUserName:
+    type: string
+    description: The chap user name.
+    willReplaceOnChanges: true
+  deviceName:
+    type: string
+    description: The device name.
+    willReplaceOnChanges: true
+  managerName:
+    type: string
+    description: The manager name
+    willReplaceOnChanges: true
+  password:
+    type: object
+    $ref: "#/types/azure-native:storsimple/v20161001:AsymmetricEncryptedSecret"
+    description: The chap password.
+  resourceGroupName:
+    type: string
+    description: The resource group name
+    willReplaceOnChanges: true
+requiredInputs:
+  - deviceName
+  - managerName
+  - password
+  - resourceGroupName

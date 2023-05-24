@@ -1,0 +1,40 @@
+$token: azure-native:azurearcdata/v20230315preview:AvailabilityGroupConfigureResponse
+description: The specifications of the availability group replica configuration
+properties:
+  availabilityModeDesc:
+    type: string
+    description: Availability Synchronization mode description of availability group replica.
+  backupPriority:
+    type: integer
+    description: Represents the user-specified priority for performing backups on this replica relative to the other replicas in the same availability group.
+  createDate:
+    type: string
+    description: Date that the replica was created.
+  endpointUrl:
+    type: string
+    description: Mirroring endpoint URL of availability group replica
+  failoverModeDesc:
+    type: string
+    description: failover mode description of the availability group replica.
+  modifyDate:
+    type: string
+    description: Date that the replica was modified.
+  primaryRoleAllowConnectionsDesc:
+    type: string
+    description: Allowed the connections for primary role of the availability group replica.
+  readOnlyRoutingUrl:
+    type: string
+    description: Connectivity endpoint (URL) of the read only availability replica.
+  readWriteRoutingUrl:
+    type: string
+    description: Connectivity endpoint (URL) of the read write availability replica.
+  secondaryRoleAllowConnectionsDesc:
+    type: string
+    description: Allowed the connections for secondary role of availability group replica.
+  seedingModeDesc:
+    type: string
+    description: Describes seeding mode.
+  sessionTimeout:
+    type: integer
+    description: The time-out period of availability group session replica, in seconds.
+type: object

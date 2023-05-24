@@ -1,0 +1,24 @@
+$token: azure-native:servicelinker/v20221101preview:DaprPropertiesResponse
+description: Indicates some additional properties for dapr client type
+properties:
+  componentType:
+    type: string
+    description: The dapr component type
+  metadata:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:servicelinker/v20221101preview:DaprMetadataResponse"
+    description: Additional dapr metadata
+  scopes:
+    type: array
+    items:
+      type: string
+    description: The dapr component scopes
+  secretStoreComponent:
+    type: string
+    description: The name of a secret store dapr to retrieve secret
+  version:
+    type: string
+    description: The dapr component version
+type: object

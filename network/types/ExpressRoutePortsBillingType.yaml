@@ -1,0 +1,6 @@
+$token: azure-native:network:ExpressRoutePortsBillingType
+description: The billing type of the ExpressRoutePort resource.
+type: string
+enum:
+  - value: MeteredData
+  - value: UnlimitedData

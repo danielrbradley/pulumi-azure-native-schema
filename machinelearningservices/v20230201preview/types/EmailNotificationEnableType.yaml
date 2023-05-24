@@ -1,0 +1,7 @@
+$token: azure-native:machinelearningservices/v20230201preview:EmailNotificationEnableType
+description: Enum to determine the email notification type.
+type: string
+enum:
+  - value: JobCompleted
+  - value: JobFailed
+  - value: JobCancelled

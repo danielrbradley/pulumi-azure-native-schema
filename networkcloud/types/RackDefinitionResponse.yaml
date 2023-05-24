@@ -1,0 +1,34 @@
+$token: azure-native:networkcloud:RackDefinitionResponse
+properties:
+  availabilityZone:
+    type: string
+    description: The zone name used for this rack when created.
+  bareMetalMachineConfigurationData:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:networkcloud:BareMetalMachineConfigurationDataResponse"
+    description: The unordered list of bare metal machine configuration.
+  networkRackId:
+    type: string
+    description: The resource ID of the network rack that matches this rack definition.
+  rackLocation:
+    type: string
+    description: The free-form description of the rack's location.
+  rackSerialNumber:
+    type: string
+    description: The unique identifier for the rack within Network Cloud cluster. An alternate unique alphanumeric value other than a serial number may be provided if desired.
+  rackSkuId:
+    type: string
+    description: The resource ID of the sku for the rack being added.
+  storageApplianceConfigurationData:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:networkcloud:StorageApplianceConfigurationDataResponse"
+    description: The list of storage appliance configuration data for this rack.
+type: object
+required:
+  - networkRackId
+  - rackSerialNumber
+  - rackSkuId

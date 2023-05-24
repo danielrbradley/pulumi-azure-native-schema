@@ -1,0 +1,7 @@
+$token: azure-native:datafactory/v20180601:PipelineExternalComputeScalePropertiesResponse
+description: PipelineExternalComputeScale properties for managed integration runtime.
+properties:
+  timeToLive:
+    type: integer
+    description: Time to live (in minutes) setting of integration runtime which will execute pipeline and external activity.
+type: object

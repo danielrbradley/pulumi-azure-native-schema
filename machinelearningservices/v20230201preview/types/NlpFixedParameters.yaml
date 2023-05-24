@@ -1,0 +1,34 @@
+$token: azure-native:machinelearningservices/v20230201preview:NlpFixedParameters
+description: Fixed training parameters that won't be swept over during AutoML NLP training.
+properties:
+  gradientAccumulationSteps:
+    type: integer
+    description: Number of steps to accumulate gradients over before running a backward pass.
+  learningRate:
+    type: number
+    description: The learning rate for the training procedure.
+  learningRateScheduler:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:machinelearningservices/v20230201preview:NlpLearningRateScheduler"
+    description: The type of learning rate schedule to use during the training procedure.
+    default: None
+  modelName:
+    type: string
+    description: The name of the model to train.
+  numberOfEpochs:
+    type: integer
+    description: Number of training epochs.
+  trainingBatchSize:
+    type: integer
+    description: The batch size for the training procedure.
+  validationBatchSize:
+    type: integer
+    description: The batch size to be used during evaluation.
+  warmupRatio:
+    type: number
+    description: The warmup ratio, used alongside LrSchedulerType.
+  weightDecay:
+    type: number
+    description: The weight decay for the training procedure.
+type: object

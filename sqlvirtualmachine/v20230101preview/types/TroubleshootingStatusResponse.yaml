@@ -1,0 +1,31 @@
+$token: azure-native:sqlvirtualmachine/v20230101preview:TroubleshootingStatusResponse
+description: Status of last troubleshooting operation on this SQL VM
+properties:
+  endTimeUtc:
+    type: string
+    description: End time in UTC timezone.
+  lastTriggerTimeUtc:
+    type: string
+    description: Last troubleshooting trigger time in UTC timezone
+  properties:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:TroubleshootingAdditionalPropertiesResponse"
+    description: Troubleshooting properties
+  rootCause:
+    type: string
+    description: Root cause of the issue
+  startTimeUtc:
+    type: string
+    description: Start time in UTC timezone.
+  troubleshootingScenario:
+    type: string
+    description: SQL VM troubleshooting scenario.
+    default: UnhealthyReplica
+type: object
+required:
+  - endTimeUtc
+  - lastTriggerTimeUtc
+  - properties
+  - rootCause
+  - startTimeUtc
+  - troubleshootingScenario

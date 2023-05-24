@@ -1,0 +1,62 @@
+$token: azure-native:migrate/v20220501preview:ApacheTomcatWebApplicationResponse
+description: ApacheTomcat web application.
+properties:
+  applicationId:
+    type: string
+    description: Gets or sets the web application id.
+  applicationName:
+    type: string
+    description: Gets or sets the web application name.
+  applicationScratchPath:
+    type: string
+    description: Gets or sets application scratch path.
+  bindings:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:BindingResponse"
+    description: Gets or sets the bindings for the application.
+  configurations:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:WebApplicationConfigurationResponse"
+    description: Gets or sets application configuration.
+  directories:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:WebApplicationDirectoryResponse"
+    description: Gets or sets application directories.
+  discoveredFrameworks:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:WebApplicationFrameworkResponse"
+    description: Gets or sets the discovered frameworks of application.
+  displayName:
+    type: string
+    description: Gets or sets the display name.
+  limits:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:ResourceRequirementsResponse"
+    description: Resource Requirements.
+  path:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:DirectoryPathResponse"
+    description: Second level entity for virtual directories.
+  primaryFramework:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:WebApplicationFrameworkResponse"
+    description: Framework specific data for a web application.
+  requests:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:ResourceRequirementsResponse"
+    description: Resource Requirements.
+  webServerId:
+    type: string
+    description: Gets or sets the web server id.
+  webServerName:
+    type: string
+    description: Gets or sets the web server name.
+type: object

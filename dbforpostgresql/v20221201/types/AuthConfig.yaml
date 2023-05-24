@@ -1,0 +1,19 @@
+$token: azure-native:dbforpostgresql/v20221201:AuthConfig
+description: Authentication configuration properties of a server
+properties:
+  activeDirectoryAuth:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:dbforpostgresql/v20221201:ActiveDirectoryAuthEnum"
+    description: If Enabled, Azure Active Directory authentication is enabled.
+  passwordAuth:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:dbforpostgresql/v20221201:PasswordAuthEnum"
+    description: If Enabled, Password authentication is enabled.
+    default: Enabled
+  tenantId:
+    type: string
+    description: Tenant id of the server.
+    default: ""
+type: object

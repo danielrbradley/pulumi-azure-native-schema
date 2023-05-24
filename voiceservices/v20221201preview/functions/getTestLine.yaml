@@ -1,0 +1,64 @@
+$token: azure-native:voiceservices/v20221201preview:getTestLine
+description: Get a TestLine
+inputs:
+  properties:
+    communicationsGatewayName:
+      type: string
+      description: Unique identifier for this deployment
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    testLineName:
+      type: string
+      description: Unique identifier for this test line
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - communicationsGatewayName
+    - resourceGroupName
+    - testLineName
+outputs:
+  description: A TestLine resource
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    name:
+      type: string
+      description: The name of the resource
+    phoneNumber:
+      type: string
+      description: The phone number
+    provisioningState:
+      type: string
+      description: Resource provisioning state.
+    purpose:
+      type: string
+      description: Purpose of this test line, e.g. automated or manual testing
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:voiceservices/v20221201preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - location
+    - name
+    - phoneNumber
+    - provisioningState
+    - purpose
+    - systemData
+    - type

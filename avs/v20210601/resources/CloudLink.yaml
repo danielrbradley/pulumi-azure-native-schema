@@ -1,0 +1,43 @@
+$token: azure-native:avs/v20210601:CloudLink
+description: A cloud link resource
+properties:
+  linkedCloud:
+    type: string
+    description: Identifier of the other private cloud participating in the link.
+  name:
+    type: string
+    description: Resource name.
+  status:
+    type: string
+    description: The state of the cloud link.
+  type:
+    type: string
+    description: Resource type.
+type: object
+required:
+  - name
+  - status
+  - type
+inputProperties:
+  cloudLinkName:
+    type: string
+    description: Name of the cloud link resource
+    willReplaceOnChanges: true
+  linkedCloud:
+    type: string
+    description: Identifier of the other private cloud participating in the link.
+  privateCloudName:
+    type: string
+    description: The name of the private cloud.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+requiredInputs:
+  - privateCloudName
+  - resourceGroupName
+aliases:
+  - type: azure-native:avs:CloudLink
+  - type: azure-native:avs/v20211201:CloudLink
+  - type: azure-native:avs/v20220501:CloudLink

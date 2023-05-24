@@ -1,0 +1,22 @@
+$token: azure-native:azurestackhci/v20230201:State
+description: State of the update as it relates to this stamp.
+type: string
+enum:
+  - value: HasPrerequisite
+  - value: Obsolete
+  - value: Ready
+  - value: NotApplicableBecauseAnotherUpdateIsInProgress
+  - value: Preparing
+  - value: Installing
+  - value: Installed
+  - value: PreparationFailed
+  - value: InstallationFailed
+  - value: Invalid
+  - value: Recalled
+  - value: Downloading
+  - value: DownloadFailed
+  - value: HealthChecking
+  - value: HealthCheckFailed
+  - value: ReadyToInstall
+  - value: ScanInProgress
+  - value: ScanFailed

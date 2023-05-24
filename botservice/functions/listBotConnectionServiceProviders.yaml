@@ -1,0 +1,21 @@
+$token: azure-native:botservice:listBotConnectionServiceProviders
+description: |-
+  Lists the available Service Providers for creating Connection Settings
+  API Version: 2022-09-15.
+inputs:
+  type: object
+outputs:
+  description: The list of bot service providers response.
+  properties:
+    nextLink:
+      type: string
+      description: The link used to get the next page of bot service providers.
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:botservice:ServiceProviderResponse"
+      description: Gets the list of bot service providers and their properties.
+  type: object
+  required:
+    - value

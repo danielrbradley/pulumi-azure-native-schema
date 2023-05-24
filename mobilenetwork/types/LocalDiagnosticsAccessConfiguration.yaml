@@ -1,0 +1,15 @@
+$token: azure-native:mobilenetwork:LocalDiagnosticsAccessConfiguration
+description: The kubernetes ingress configuration to control access to packet core diagnostics over local APIs.
+properties:
+  authenticationType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:mobilenetwork:AuthenticationType"
+    description: How to authenticate users who access local diagnostics APIs.
+  httpsServerCertificate:
+    type: object
+    $ref: "#/types/azure-native:mobilenetwork:HttpsServerCertificate"
+    description: The HTTPS server TLS certificate used to secure local access to diagnostics.
+type: object
+required:
+  - authenticationType

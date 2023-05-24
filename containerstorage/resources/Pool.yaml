@@ -1,0 +1,118 @@
+$token: azure-native:containerstorage:Pool
+properties:
+  assignments:
+    type: array
+    items:
+      type: string
+    description: List of resources that should have access to the pool. Typically ARM references to AKS clusters or ACI Container Groups. For local and standard this must be a single reference. For portable there can be many.
+  diskPoolProperties:
+    type: object
+    $ref: "#/types/azure-native:containerstorage:DiskPoolPropertiesResponse"
+    description: Disk Pool Properties
+  elasticSanPoolProperties:
+    type: object
+    $ref: "#/types/azure-native:containerstorage:ElasticSanPoolPropertiesResponse"
+    description: Elastic San Pool Properties
+  ephemeralPoolProperties:
+    type: object
+    $ref: "#/types/azure-native:containerstorage:EphemeralPoolPropertiesResponse"
+    description: Ephemeral Pool Properties
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  poolCapacityGiB:
+    type: number
+    description: Initial capacity of the pool in GiB.
+  poolType:
+    type: number
+    description: "Type of the Pool: ephemeral, disk, managed, or elasticsan."
+  provisioningState:
+    type: string
+    description: The status of the last operation.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:containerstorage:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  zones:
+    type: array
+    items:
+      type: string
+    description: List of availability zones that resources can be created in.
+type: object
+required:
+  - assignments
+  - elasticSanPoolProperties
+  - location
+  - name
+  - poolCapacityGiB
+  - poolType
+  - provisioningState
+  - systemData
+  - type
+  - zones
+inputProperties:
+  assignments:
+    type: array
+    items:
+      type: string
+    description: List of resources that should have access to the pool. Typically ARM references to AKS clusters or ACI Container Groups. For local and standard this must be a single reference. For portable there can be many.
+  diskPoolProperties:
+    type: object
+    $ref: "#/types/azure-native:containerstorage:DiskPoolProperties"
+    description: Disk Pool Properties
+  elasticSanPoolProperties:
+    type: object
+    $ref: "#/types/azure-native:containerstorage:ElasticSanPoolProperties"
+    description: Elastic San Pool Properties
+  ephemeralPoolProperties:
+    type: object
+    $ref: "#/types/azure-native:containerstorage:EphemeralPoolProperties"
+    description: Ephemeral Pool Properties
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  poolCapacityGiB:
+    type: number
+    description: Initial capacity of the pool in GiB.
+  poolName:
+    type: string
+    description: Pool Object
+    willReplaceOnChanges: true
+  poolType:
+    type: number
+    description: "Type of the Pool: ephemeral, disk, managed, or elasticsan."
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  zones:
+    type: array
+    items:
+      type: string
+    description: List of availability zones that resources can be created in.
+requiredInputs:
+  - assignments
+  - elasticSanPoolProperties
+  - poolCapacityGiB
+  - poolType
+  - resourceGroupName
+  - zones
+aliases:
+  - type: azure-native:containerstorage/v20230301preview:Pool

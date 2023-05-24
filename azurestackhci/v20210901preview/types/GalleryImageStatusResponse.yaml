@@ -1,0 +1,21 @@
+$token: azure-native:azurestackhci/v20210901preview:GalleryImageStatusResponse
+description: GalleryImageStatus defines the observed state of galleryimages
+properties:
+  downloadStatus:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:GalleryImageStatusResponseDownloadStatus"
+    description: The download status of the gallery image
+  errorCode:
+    type: string
+    description: Gallery image provisioning error code
+  errorMessage:
+    type: string
+    description: Descriptive error message
+  progressPercentage:
+    type: number
+    description: The progress of the operation in percentage
+  provisioningStatus:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:GalleryImageStatusResponseProvisioningStatus"
+    description: The provisioning status of the gallery image
+type: object

@@ -1,0 +1,5 @@
+$token: azure-native:migrate/v20220501preview:OperatingSystemType
+type: string
+enum:
+  - value: Windows
+  - value: Linux

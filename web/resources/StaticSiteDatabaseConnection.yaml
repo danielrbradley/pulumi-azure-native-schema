@@ -1,0 +1,71 @@
+$token: azure-native:web:StaticSiteDatabaseConnection
+properties:
+  configurationFiles:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:web:StaticSiteDatabaseConnectionConfigurationFileOverviewResponse"
+    description: A list of configuration files associated with this database connection.
+  connectionIdentity:
+    type: string
+    description: If present, the identity is used in conjunction with connection string to connect to the database. Use of the system-assigned managed identity is indicated with the string 'SystemAssigned', while use of a user-assigned managed identity is indicated with the resource id of the managed identity resource.
+  connectionString:
+    type: string
+    description: The connection string to use to connect to the database.
+  kind:
+    type: string
+    description: Kind of resource.
+  name:
+    type: string
+    description: Resource Name.
+  region:
+    type: string
+    description: The region of the database resource.
+  resourceId:
+    type: string
+    description: The resource id of the database.
+  type:
+    type: string
+    description: Resource type.
+type: object
+required:
+  - configurationFiles
+  - name
+  - region
+  - resourceId
+  - type
+inputProperties:
+  connectionIdentity:
+    type: string
+    description: If present, the identity is used in conjunction with connection string to connect to the database. Use of the system-assigned managed identity is indicated with the string 'SystemAssigned', while use of a user-assigned managed identity is indicated with the resource id of the managed identity resource.
+  connectionString:
+    type: string
+    description: The connection string to use to connect to the database.
+  databaseConnectionName:
+    type: string
+    description: Name of the database connection.
+    willReplaceOnChanges: true
+  kind:
+    type: string
+    description: Kind of resource.
+  name:
+    type: string
+    description: Name of the static site
+    willReplaceOnChanges: true
+  region:
+    type: string
+    description: The region of the database resource.
+  resourceGroupName:
+    type: string
+    description: Name of the resource group to which the resource belongs.
+    willReplaceOnChanges: true
+  resourceId:
+    type: string
+    description: The resource id of the database.
+requiredInputs:
+  - name
+  - region
+  - resourceGroupName
+  - resourceId
+aliases:
+  - type: azure-native:web/v20220901:StaticSiteDatabaseConnection

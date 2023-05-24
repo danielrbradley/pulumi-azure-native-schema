@@ -1,0 +1,9 @@
+$token: azure-native:orbital:ContactsPropertiesContactProfile
+description: The reference to the contact profile resource.
+properties:
+  id:
+    type: string
+    description: Resource ID.
+type: object
+required:
+  - id

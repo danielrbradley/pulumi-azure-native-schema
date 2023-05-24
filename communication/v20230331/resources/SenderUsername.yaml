@@ -1,0 +1,64 @@
+$token: azure-native:communication/v20230331:SenderUsername
+description: A class representing a SenderUsername resource.
+properties:
+  dataLocation:
+    type: string
+    description: The location where the SenderUsername resource data is stored at rest.
+  displayName:
+    type: string
+    description: The display name for the senderUsername.
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: Provisioning state of the resource. Unknown is the default state for Communication Services.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:communication/v20230331:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  username:
+    type: string
+    description: A sender senderUsername to be used when sending emails.
+type: object
+required:
+  - dataLocation
+  - name
+  - provisioningState
+  - systemData
+  - type
+  - username
+inputProperties:
+  displayName:
+    type: string
+    description: The display name for the senderUsername.
+  domainName:
+    type: string
+    description: The name of the Domains resource.
+    willReplaceOnChanges: true
+  emailServiceName:
+    type: string
+    description: The name of the EmailService resource.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  senderUsername:
+    type: string
+    description: The valid sender Username.
+    willReplaceOnChanges: true
+  username:
+    type: string
+    description: A sender senderUsername to be used when sending emails.
+requiredInputs:
+  - domainName
+  - emailServiceName
+  - resourceGroupName
+  - username
+aliases:
+  - type: azure-native:communication:SenderUsername
+  - type: azure-native:communication/v20230301preview:SenderUsername

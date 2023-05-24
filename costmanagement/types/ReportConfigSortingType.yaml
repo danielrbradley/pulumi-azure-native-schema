@@ -1,0 +1,6 @@
+$token: azure-native:costmanagement:ReportConfigSortingType
+description: Direction of sort.
+type: string
+enum:
+  - value: Ascending
+  - value: Descending

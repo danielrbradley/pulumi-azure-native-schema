@@ -1,0 +1,6 @@
+$token: azure-native:networkcloud:ConsoleEnabled
+description: The indicator of whether the console access is enabled.
+type: string
+enum:
+  - value: "True"
+  - value: "False"

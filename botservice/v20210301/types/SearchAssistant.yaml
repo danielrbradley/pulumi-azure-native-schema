@@ -1,0 +1,19 @@
+$token: azure-native:botservice/v20210301:SearchAssistant
+description: SearchAssistant definition
+properties:
+  channelName:
+    type: string
+    description: |-
+      The channel name
+      Expected value is 'SearchAssistant'.
+    const: SearchAssistant
+  etag:
+    type: string
+    description: Entity Tag of the resource
+  location:
+    type: string
+    description: Specifies the location of the resource.
+    default: global
+type: object
+required:
+  - channelName

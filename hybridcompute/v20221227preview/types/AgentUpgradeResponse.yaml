@@ -1,0 +1,26 @@
+$token: azure-native:hybridcompute/v20221227preview:AgentUpgradeResponse
+description: The info w.r.t Agent Upgrade.
+properties:
+  correlationId:
+    type: string
+    description: The correlation ID passed in from RSM per upgrade.
+  desiredVersion:
+    type: string
+    description: Specifies the version info w.r.t AgentUpgrade for the machine.
+  enableAutomaticUpgrade:
+    type: boolean
+    description: Specifies if RSM should try to upgrade this machine
+  lastAttemptMessage:
+    type: string
+    description: Failure message of last upgrade attempt if any.
+  lastAttemptStatus:
+    type: string
+    description: Specifies the status of Agent Upgrade.
+  lastAttemptTimestamp:
+    type: string
+    description: Timestamp of last upgrade attempt
+type: object
+required:
+  - lastAttemptMessage
+  - lastAttemptStatus
+  - lastAttemptTimestamp

@@ -1,0 +1,183 @@
+$token: azure-native:hybridcompute/v20230315preview:getMachine
+description: Retrieves information about the model view or the instance view of a hybrid machine.
+inputs:
+  properties:
+    expand:
+      type: string
+      description: The expand expression to apply on the operation.
+    machineName:
+      type: string
+      description: The name of the hybrid machine.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - machineName
+    - resourceGroupName
+outputs:
+  description: Describes a hybrid machine.
+  properties:
+    adFqdn:
+      type: string
+      description: Specifies the AD fully qualified display name.
+    agentConfiguration:
+      type: object
+      $ref: "#/types/azure-native:hybridcompute/v20230315preview:AgentConfigurationResponse"
+      description: Configurable properties that the user can set locally via the azcmagent config command, or remotely via ARM.
+    agentUpgrade:
+      type: object
+      $ref: "#/types/azure-native:hybridcompute/v20230315preview:AgentUpgradeResponse"
+      description: The info of the machine w.r.t Agent Upgrade
+    agentVersion:
+      type: string
+      description: The hybrid machine agent full version.
+    clientPublicKey:
+      type: string
+      description: Public Key that the client provides to be used during initial resource onboarding
+    cloudMetadata:
+      type: object
+      $ref: "#/types/azure-native:hybridcompute/v20230315preview:CloudMetadataResponse"
+      description: The metadata of the cloud environment (Azure/GCP/AWS/OCI...).
+    detectedProperties:
+      type: object
+      additionalProperties:
+        type: string
+      description: Detected properties from the machine.
+    displayName:
+      type: string
+      description: Specifies the hybrid machine display name.
+    dnsFqdn:
+      type: string
+      description: Specifies the DNS fully qualified display name.
+    domainName:
+      type: string
+      description: Specifies the Windows domain name.
+    errorDetails:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:hybridcompute/v20230315preview:ErrorDetailResponse"
+      description: Details about the error state.
+    extensions:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:hybridcompute/v20230315preview:MachineExtensionInstanceViewResponse"
+      description: Machine Extensions information (deprecated field)
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    identity:
+      type: object
+      $ref: "#/types/azure-native:hybridcompute/v20230315preview:IdentityResponse"
+      description: Identity for the resource.
+    kind:
+      type: string
+      description: Indicates which kind of VM fabric the instance is an instance of, such as HCI or SCVMM etc.
+    lastStatusChange:
+      type: string
+      description: The time of the last status change.
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    locationData:
+      type: object
+      $ref: "#/types/azure-native:hybridcompute/v20230315preview:LocationDataResponse"
+      description: Metadata pertaining to the geographic location of the resource.
+    machineFqdn:
+      type: string
+      description: Specifies the hybrid machine FQDN.
+    mssqlDiscovered:
+      type: string
+      description: Specifies whether any MS SQL instance is discovered on the machine.
+    name:
+      type: string
+      description: The name of the resource
+    networkProfile:
+      type: object
+      $ref: "#/types/azure-native:hybridcompute/v20230315preview:NetworkProfileResponse"
+      description: Information about the network the machine is on.
+    osName:
+      type: string
+      description: The Operating System running on the hybrid machine.
+    osProfile:
+      type: object
+      $ref: "#/types/azure-native:hybridcompute/v20230315preview:OSProfileResponse"
+      description: Specifies the operating system settings for the hybrid machine.
+    osSku:
+      type: string
+      description: Specifies the Operating System product SKU.
+    osType:
+      type: string
+      description: The type of Operating System (windows/linux).
+    osVersion:
+      type: string
+      description: The version of Operating System running on the hybrid machine.
+    parentClusterResourceId:
+      type: string
+      description: The resource id of the parent cluster (Azure HCI) this machine is assigned to, if any.
+    privateLinkScopeResourceId:
+      type: string
+      description: The resource id of the private link scope this machine is assigned to, if any.
+    provisioningState:
+      type: string
+      description: The provisioning state, which only appears in the response.
+    resources:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:hybridcompute/v20230315preview:MachineExtensionResponse"
+      description: The list of extensions affiliated to the machine
+    serviceStatuses:
+      type: object
+      $ref: "#/types/azure-native:hybridcompute/v20230315preview:ServiceStatusesResponse"
+      description: Statuses of dependent services that are reported back to ARM.
+    status:
+      type: string
+      description: The status of the hybrid machine agent.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:hybridcompute/v20230315preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+    vmId:
+      type: string
+      description: Specifies the hybrid machine unique ID.
+    vmUuid:
+      type: string
+      description: Specifies the Arc Machine's unique SMBIOS ID
+  type: object
+  required:
+    - adFqdn
+    - agentConfiguration
+    - agentVersion
+    - detectedProperties
+    - displayName
+    - dnsFqdn
+    - domainName
+    - errorDetails
+    - id
+    - lastStatusChange
+    - location
+    - machineFqdn
+    - name
+    - networkProfile
+    - osName
+    - osSku
+    - osVersion
+    - provisioningState
+    - resources
+    - status
+    - systemData
+    - type
+    - vmUuid

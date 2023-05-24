@@ -1,0 +1,37 @@
+$token: azure-native:machinelearningservices/v20221201preview:listComputeNodes
+description: Get the details (e.g IP address, port etc) of all the compute nodes in the compute.
+inputs:
+  properties:
+    computeName:
+      type: string
+      description: Name of the Azure Machine Learning compute.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    workspaceName:
+      type: string
+      description: Name of Azure Machine Learning workspace.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - computeName
+    - resourceGroupName
+    - workspaceName
+outputs:
+  description: Result of AmlCompute Nodes
+  properties:
+    nextLink:
+      type: string
+      description: The continuation token.
+    nodes:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20221201preview:AmlComputeNodeInformationResponse"
+      description: The collection of returned AmlCompute nodes details.
+  type: object
+  required:
+    - nextLink
+    - nodes

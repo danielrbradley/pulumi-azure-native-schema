@@ -1,0 +1,7 @@
+$token: azure-native:dataprotection/v20230101:ImmutabilitySettingsResponse
+description: Immutability Settings at vault level
+properties:
+  state:
+    type: string
+    description: Immutability state
+type: object

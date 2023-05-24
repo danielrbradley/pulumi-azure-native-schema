@@ -1,0 +1,6 @@
+$token: azure-native:migrate/v20220501preview:WorkloadDeploymentType
+description: Gets or sets the instance type.
+type: string
+enum:
+  - value: IISAKSWorkloadDeployment
+  - value: ApacheTomcatAKSWorkloadDeployment

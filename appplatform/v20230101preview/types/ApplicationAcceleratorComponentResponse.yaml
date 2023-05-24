@@ -1,0 +1,16 @@
+$token: azure-native:appplatform/v20230101preview:ApplicationAcceleratorComponentResponse
+properties:
+  instances:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:appplatform/v20230101preview:ApplicationAcceleratorInstanceResponse"
+  name:
+    type: string
+  resourceRequests:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230101preview:ApplicationAcceleratorResourceRequestsResponse"
+type: object
+required:
+  - instances
+  - name

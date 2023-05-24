@@ -1,0 +1,71 @@
+$token: azure-native:containerstorage/v20230301preview:getVolume
+description: Get a Volume
+inputs:
+  properties:
+    poolName:
+      type: string
+      description: Pool Object
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    volumeName:
+      type: string
+      description: Volume Resource
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - poolName
+    - resourceGroupName
+    - volumeName
+outputs:
+  description: Concrete proxy resource types can be created by aliasing this type using a specific property type.
+  properties:
+    capacityGiB:
+      type: number
+      description: Requested capacity in GiB
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    labels:
+      type: object
+      additionalProperties:
+        type: string
+      description: String KV pairs indicating labels
+    mountOptions:
+      type: array
+      items:
+        type: string
+      description: List of string mount options
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+      description: The status of the last operation.
+    reclaimPolicy:
+      type: string
+      description: Reclaim Policy, Delete or Retain
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:containerstorage/v20230301preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+    volumeMode:
+      type: string
+      description: Indicates how the volume should be attached
+  type: object
+  required:
+    - capacityGiB
+    - id
+    - labels
+    - mountOptions
+    - name
+    - provisioningState
+    - reclaimPolicy
+    - systemData
+    - type
+    - volumeMode

@@ -1,0 +1,73 @@
+$token: azure-native:costmanagement/v20221005preview:MarkupRule
+description: Markup rule
+properties:
+  customerDetails:
+    type: object
+    $ref: "#/types/azure-native:costmanagement/v20221005preview:CustomerMetadataResponse"
+    description: Customer information for the markup rule.
+  description:
+    type: string
+    description: The description of the markup rule.
+  eTag:
+    type: string
+    description: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
+  endDate:
+    type: string
+    description: Ending date of the markup rule.
+  name:
+    type: string
+    description: Resource name.
+  percentage:
+    type: number
+    description: The markup percentage of the rule.
+  startDate:
+    type: string
+    description: Starting date of the markup rule.
+  type:
+    type: string
+    description: Resource type.
+type: object
+required:
+  - customerDetails
+  - name
+  - percentage
+  - startDate
+  - type
+inputProperties:
+  billingAccountId:
+    type: string
+    description: BillingAccount ID
+    willReplaceOnChanges: true
+  billingProfileId:
+    type: string
+    description: BillingProfile ID
+    willReplaceOnChanges: true
+  customerDetails:
+    type: object
+    $ref: "#/types/azure-native:costmanagement/v20221005preview:CustomerMetadata"
+    description: Customer information for the markup rule.
+  description:
+    type: string
+    description: The description of the markup rule.
+  eTag:
+    type: string
+    description: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
+  endDate:
+    type: string
+    description: Ending date of the markup rule.
+  name:
+    type: string
+    description: Markup rule name.
+    willReplaceOnChanges: true
+  percentage:
+    type: number
+    description: The markup percentage of the rule.
+  startDate:
+    type: string
+    description: Starting date of the markup rule.
+requiredInputs:
+  - billingAccountId
+  - billingProfileId
+  - customerDetails
+  - percentage
+  - startDate

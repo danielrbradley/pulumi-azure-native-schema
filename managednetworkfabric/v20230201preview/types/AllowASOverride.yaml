@@ -1,0 +1,6 @@
+$token: azure-native:managednetworkfabric/v20230201preview:AllowASOverride
+description: Enable Or Disable state.
+type: string
+enum:
+  - value: Enable
+  - value: Disable

@@ -1,0 +1,14 @@
+$token: azure-native:chaos/v20230401preview:ResourceIdentity
+description: The identity of a resource.
+properties:
+  type:
+    $ref: "#/types/azure-native:chaos/v20230401preview:ResourceIdentityType"
+    description: String of the resource identity type.
+  userAssignedIdentities:
+    type: array
+    items:
+      type: string
+    description: "The list of user identities associated with the experiment. The user identity dictionary key references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'."
+type: object
+required:
+  - type

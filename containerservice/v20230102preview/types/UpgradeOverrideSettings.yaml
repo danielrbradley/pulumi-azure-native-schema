@@ -1,0 +1,14 @@
+$token: azure-native:containerservice/v20230102preview:UpgradeOverrideSettings
+description: Settings for overrides when upgrading a cluster.
+properties:
+  controlPlaneOverrides:
+    type: array
+    items:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:containerservice/v20230102preview:ControlPlaneUpgradeOverride"
+    description: List of upgrade overrides when upgrading a cluster's control plane.
+  until:
+    type: string
+    description: Until when the overrides are effective. Note that this only matches the start time of an upgrade, and the effectiveness won't change once an upgrade starts even if the `until` expires as upgrade proceeds. This field is not set by default. It must be set for the overrides to take effect.
+type: object

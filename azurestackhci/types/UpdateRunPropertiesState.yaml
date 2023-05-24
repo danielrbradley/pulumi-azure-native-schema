@@ -1,0 +1,8 @@
+$token: azure-native:azurestackhci:UpdateRunPropertiesState
+description: State of the update run.
+type: string
+enum:
+  - value: Unknown
+  - value: Succeeded
+  - value: InProgress
+  - value: Failed

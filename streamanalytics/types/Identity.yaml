@@ -1,0 +1,7 @@
+$token: azure-native:streamanalytics:Identity
+description: Describes how identity is verified
+properties:
+  type:
+    type: string
+    description: The identity type
+type: object

@@ -1,0 +1,12 @@
+$token: azure-native:networkcloud:ExtendedLocationResponse
+properties:
+  name:
+    type: string
+    description: The resource ID of the extended location on which the resource will be created.
+  type:
+    type: string
+    description: The extended location type, for example, CustomLocation.
+type: object
+required:
+  - name
+  - type

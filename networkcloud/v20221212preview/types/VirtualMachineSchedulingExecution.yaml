@@ -1,0 +1,6 @@
+$token: azure-native:networkcloud/v20221212preview:VirtualMachineSchedulingExecution
+description: The indicator of whether the hint is a hard or soft requirement during scheduling.
+type: string
+enum:
+  - value: Hard
+  - value: Soft

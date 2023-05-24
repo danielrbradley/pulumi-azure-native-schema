@@ -1,0 +1,17 @@
+$token: azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesWindowsConfiguration
+description: "Windows Configuration for the virtual machine "
+properties:
+  enableAutomaticUpdates:
+    type: boolean
+    description: Whether to EnableAutomaticUpdates on the machine
+  provisionVMAgent:
+    type: boolean
+    description: Used to indicate whether Arc for Servers agent onboarding should be triggered during the virtual machine creation process.
+  ssh:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesSshSsh"
+    description: SSH Configuration
+  timeZone:
+    type: string
+    description: TimeZone for the virtual machine
+type: object

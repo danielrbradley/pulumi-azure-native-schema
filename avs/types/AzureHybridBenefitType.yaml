@@ -1,0 +1,6 @@
+$token: azure-native:avs:AzureHybridBenefitType
+description: placement policy azure hybrid benefit opt-in type
+type: string
+enum:
+  - value: SqlHost
+  - value: None

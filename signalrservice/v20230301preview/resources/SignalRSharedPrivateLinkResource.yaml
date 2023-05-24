@@ -1,0 +1,73 @@
+$token: azure-native:signalrservice/v20230301preview:SignalRSharedPrivateLinkResource
+description: Describes a Shared Private Link Resource
+properties:
+  groupId:
+    type: string
+    description: The group id from the provider of resource the shared private link resource is for
+  name:
+    type: string
+    description: The name of the resource
+  privateLinkResourceId:
+    type: string
+    description: The resource id of the resource the shared private link resource is for
+  provisioningState:
+    type: string
+    description: Provisioning state of the resource.
+  requestMessage:
+    type: string
+    description: The request message for requesting approval of the shared private link resource
+  status:
+    type: string
+    description: Status of the shared private link resource
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:signalrservice/v20230301preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - groupId
+  - name
+  - privateLinkResourceId
+  - provisioningState
+  - status
+  - systemData
+  - type
+inputProperties:
+  groupId:
+    type: string
+    description: The group id from the provider of resource the shared private link resource is for
+  privateLinkResourceId:
+    type: string
+    description: The resource id of the resource the shared private link resource is for
+  requestMessage:
+    type: string
+    description: The request message for requesting approval of the shared private link resource
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  resourceName:
+    type: string
+    description: The name of the resource.
+    willReplaceOnChanges: true
+  sharedPrivateLinkResourceName:
+    type: string
+    description: The name of the shared private link resource
+    willReplaceOnChanges: true
+requiredInputs:
+  - groupId
+  - privateLinkResourceId
+  - resourceGroupName
+  - resourceName
+aliases:
+  - type: azure-native:signalrservice:SignalRSharedPrivateLinkResource
+  - type: azure-native:signalrservice/v20210401preview:SignalRSharedPrivateLinkResource
+  - type: azure-native:signalrservice/v20210601preview:SignalRSharedPrivateLinkResource
+  - type: azure-native:signalrservice/v20210901preview:SignalRSharedPrivateLinkResource
+  - type: azure-native:signalrservice/v20211001:SignalRSharedPrivateLinkResource
+  - type: azure-native:signalrservice/v20220201:SignalRSharedPrivateLinkResource
+  - type: azure-native:signalrservice/v20220801preview:SignalRSharedPrivateLinkResource
+  - type: azure-native:signalrservice/v20230201:SignalRSharedPrivateLinkResource

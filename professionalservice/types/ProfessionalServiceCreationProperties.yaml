@@ -1,0 +1,28 @@
+$token: azure-native:professionalservice:ProfessionalServiceCreationProperties
+description: properties for creation professionalService
+properties:
+  autoRenew:
+    type: boolean
+    description: Whether the ProfessionalService subscription will auto renew upon term end.
+  billingPeriod:
+    type: string
+    description: The billing period eg P1M,P1Y for monthly,yearly respectively
+  offerId:
+    type: string
+    description: The offer id.
+  publisherId:
+    type: string
+    description: The publisher id.
+  quoteId:
+    type: string
+    description: The quote id which the ProfessionalService will be purchase with.
+  skuId:
+    type: string
+    description: The plan id.
+  storeFront:
+    type: string
+    description: The store front which initiates the purchase.
+  termUnit:
+    type: string
+    description: The unit term eg P1M,P1Y,P2Y,P3Y meaning month,1year,2year,3year respectively
+type: object

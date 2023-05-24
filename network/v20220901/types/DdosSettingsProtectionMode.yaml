@@ -1,0 +1,7 @@
+$token: azure-native:network/v20220901:DdosSettingsProtectionMode
+description: The DDoS protection mode of the public IP
+type: string
+enum:
+  - value: VirtualNetworkInherited
+  - value: Enabled
+  - value: Disabled

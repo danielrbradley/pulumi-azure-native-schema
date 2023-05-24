@@ -1,0 +1,7 @@
+$token: azure-native:securityinsights/v20230401preview:AssignmentItem
+description: An entity describing a content item.
+properties:
+  resourceId:
+    type: string
+    description: The resource id of the content item
+type: object

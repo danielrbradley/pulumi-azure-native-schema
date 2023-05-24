@@ -1,0 +1,47 @@
+$token: azure-native:azuresphere:Product
+properties:
+  description:
+    type: string
+    description: Description of the product
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: The status of the last operation.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:azuresphere:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - description
+  - name
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  catalogName:
+    type: string
+    description: Name of catalog
+    willReplaceOnChanges: true
+  description:
+    type: string
+    description: Description of the product
+  productName:
+    type: string
+    description: Name of product.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+requiredInputs:
+  - catalogName
+  - description
+  - resourceGroupName
+aliases:
+  - type: azure-native:azuresphere/v20220901preview:Product

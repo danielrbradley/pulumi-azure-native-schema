@@ -1,0 +1,5 @@
+$token: azure-native:hybridcloud/v20230101preview:CloudType
+description: The cloud connector type.
+type: string
+enum:
+  - value: AWS

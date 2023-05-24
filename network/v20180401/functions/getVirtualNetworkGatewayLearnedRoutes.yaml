@@ -1,0 +1,26 @@
+$token: azure-native:network/v20180401:getVirtualNetworkGatewayLearnedRoutes
+description: This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from BGP peers.
+inputs:
+  properties:
+    resourceGroupName:
+      type: string
+      description: The name of the resource group.
+      willReplaceOnChanges: true
+    virtualNetworkGatewayName:
+      type: string
+      description: The name of the virtual network gateway.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - virtualNetworkGatewayName
+outputs:
+  description: List of virtual network gateway routes
+  properties:
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:network/v20180401:GatewayRouteResponse"
+      description: List of gateway routes
+  type: object

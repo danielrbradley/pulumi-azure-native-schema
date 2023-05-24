@@ -1,0 +1,27 @@
+$token: azure-native:machinelearningservices/v20230401preview:DataCollectorResponse
+properties:
+  collections:
+    type: object
+    additionalProperties:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20230401preview:CollectionResponse"
+    description: "[Required] The collection configuration. Each collection has it own configuration to collect model data and the name of collection can be arbitrary string.\r
+
+      Model data collector can be used for either payload logging or custom logging or both of them. Collection request and response are reserved for payload logging, others are for custom logging."
+  requestLogging:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:RequestLoggingResponse"
+    description: The request logging configuration for mdc, it includes advanced logging settings for all collections. It's optional.
+  rollingRate:
+    type: string
+    description: "When model data is collected to blob storage, we need to roll the data to different path to avoid logging all of them in a single blob file.\r
+
+      If the rolling rate is hour, all data will be collected in the blob path /yyyy/MM/dd/HH/.\r
+
+      If it's day, all data will be collected in blob path /yyyy/MM/dd/.\r
+
+      The other benefit of rolling path is that model monitoring ui is able to select a time range of data very quickly."
+    default: Hour
+type: object
+required:
+  - collections

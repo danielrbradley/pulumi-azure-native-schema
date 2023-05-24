@@ -1,0 +1,7 @@
+$token: azure-native:azurestackhci:AvailabilityType
+description: Indicates the way the update content can be downloaded.
+type: string
+enum:
+  - value: Local
+  - value: Online
+  - value: Notify

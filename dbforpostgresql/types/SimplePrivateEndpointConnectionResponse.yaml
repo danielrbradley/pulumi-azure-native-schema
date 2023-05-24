@@ -1,0 +1,35 @@
+$token: azure-native:dbforpostgresql:SimplePrivateEndpointConnectionResponse
+description: A private endpoint connection.
+properties:
+  groupIds:
+    type: array
+    items:
+      type: string
+    description: Group ids of the private endpoint connection.
+  id:
+    type: string
+    description: Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+  name:
+    type: string
+    description: The name of the resource
+  privateEndpoint:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:PrivateEndpointPropertyResponse"
+    description: Private endpoint which the connection belongs to.
+  privateLinkServiceConnectionState:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:PrivateLinkServiceConnectionStateResponse"
+    description: A collection of information about the state of the connection between service consumer and provider.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - id
+  - name
+  - systemData
+  - type

@@ -1,0 +1,10 @@
+$token: azure-native:dataprotection:SoftDeleteState
+description: State of soft delete
+type: string
+enum:
+  - description: Soft Delete is turned off for the BackupVault
+    value: Off
+  - description: Soft Delete is enabled for the BackupVault but can be turned off
+    value: On
+  - description: Soft Delete is permanently enabled for the BackupVault and the setting cannot be changed
+    value: AlwaysOn

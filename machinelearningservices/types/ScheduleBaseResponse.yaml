@@ -1,0 +1,12 @@
+$token: azure-native:machinelearningservices:ScheduleBaseResponse
+properties:
+  id:
+    type: string
+    description: A system assigned id for the schedule.
+  provisioningStatus:
+    type: string
+    description: The current deployment state of schedule.
+  status:
+    type: string
+    description: Is the schedule enabled or disabled?
+type: object

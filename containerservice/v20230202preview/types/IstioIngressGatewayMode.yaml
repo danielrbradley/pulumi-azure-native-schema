@@ -1,0 +1,8 @@
+$token: azure-native:containerservice/v20230202preview:IstioIngressGatewayMode
+description: Mode of an ingress gateway.
+type: string
+enum:
+  - description: The ingress gateway is assigned a public IP address and is publicly accessible.
+    value: External
+  - description: The ingress gateway is assigned an internal IP address and cannot is accessed publicly.
+    value: Internal

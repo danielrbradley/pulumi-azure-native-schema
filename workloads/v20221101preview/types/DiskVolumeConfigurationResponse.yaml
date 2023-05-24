@@ -1,0 +1,14 @@
+$token: azure-native:workloads/v20221101preview:DiskVolumeConfigurationResponse
+description: The disk configuration required for the selected volume.
+properties:
+  count:
+    type: number
+    description: The total number of disks required for the concerned volume.
+  sizeGB:
+    type: number
+    description: The disk size in GB.
+  sku:
+    type: object
+    $ref: "#/types/azure-native:workloads/v20221101preview:DiskSkuResponse"
+    description: The disk SKU details.
+type: object

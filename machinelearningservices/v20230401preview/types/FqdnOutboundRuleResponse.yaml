@@ -1,0 +1,20 @@
+$token: azure-native:machinelearningservices/v20230401preview:FqdnOutboundRuleResponse
+description: FQDN Outbound Rule for the managed network of a machine learning workspace.
+properties:
+  category:
+    type: string
+    description: Category of a managed network Outbound Rule of a machine learning workspace.
+  destination:
+    type: string
+  status:
+    type: string
+    description: Status of a managed network Outbound Rule of a machine learning workspace.
+  type:
+    type: string
+    description: |-
+      Type of a managed network Outbound Rule of a machine learning workspace.
+      Expected value is 'FQDN'.
+    const: FQDN
+type: object
+required:
+  - type

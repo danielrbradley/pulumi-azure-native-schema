@@ -1,0 +1,46 @@
+$token: azure-native:cognitiveservices/v20221201:CommitmentPlanAssociation
+description: The commitment plan association.
+properties:
+  accountId:
+    type: string
+    description: The Azure resource id of the account.
+  etag:
+    type: string
+    description: Resource Etag.
+  name:
+    type: string
+    description: The name of the resource
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:cognitiveservices/v20221201:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - etag
+  - name
+  - systemData
+  - type
+inputProperties:
+  accountId:
+    type: string
+    description: The Azure resource id of the account.
+  commitmentPlanAssociationName:
+    type: string
+    description: The name of the commitment plan association with the Cognitive Services Account
+    willReplaceOnChanges: true
+  commitmentPlanName:
+    type: string
+    description: The name of the commitmentPlan associated with the Cognitive Services Account
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+requiredInputs:
+  - commitmentPlanName
+  - resourceGroupName
+aliases:
+  - type: azure-native:cognitiveservices:CommitmentPlanAssociation

@@ -1,0 +1,20 @@
+$token: azure-native:network:RoutingConfigurationNfv
+description: NFV version of Routing Configuration indicating the associated and propagated route tables for this connection.
+properties:
+  associatedRouteTable:
+    type: object
+    $ref: "#/types/azure-native:network:RoutingConfigurationNfvSubResource"
+    description: The resource id RouteTable associated with this RoutingConfiguration.
+  inboundRouteMap:
+    type: object
+    $ref: "#/types/azure-native:network:RoutingConfigurationNfvSubResource"
+    description: The resource id of the RouteMap associated with this RoutingConfiguration for inbound learned routes.
+  outboundRouteMap:
+    type: object
+    $ref: "#/types/azure-native:network:RoutingConfigurationNfvSubResource"
+    description: The resource id of the RouteMap associated with this RoutingConfiguration for outbound advertised routes.
+  propagatedRouteTables:
+    type: object
+    $ref: "#/types/azure-native:network:PropagatedRouteTableNfv"
+    description: The list of RouteTables to advertise the routes to.
+type: object

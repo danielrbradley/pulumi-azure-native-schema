@@ -1,0 +1,14 @@
+$token: azure-native:storagecache:KeyVaultKeyReference
+description: Describes a reference to key vault key.
+properties:
+  keyUrl:
+    type: string
+    description: The URL referencing a key encryption key in key vault.
+  sourceVault:
+    type: object
+    $ref: "#/types/azure-native:storagecache:KeyVaultKeyReferenceSourceVault"
+    description: Describes a resource Id to source key vault.
+type: object
+required:
+  - keyUrl
+  - sourceVault

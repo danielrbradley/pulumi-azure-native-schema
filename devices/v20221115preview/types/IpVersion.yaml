@@ -1,0 +1,7 @@
+$token: azure-native:devices/v20221115preview:IpVersion
+description: This property specifies the IP Version the hub is currently utilizing.
+type: string
+enum:
+  - value: ipv4
+  - value: ipv6
+  - value: ipv4ipv6

@@ -1,0 +1,75 @@
+$token: azure-native:netapp:getAccount
+description: |-
+  Get the NetApp account
+  API Version: 2022-09-01.
+inputs:
+  properties:
+    accountName:
+      type: string
+      description: The name of the NetApp account
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - accountName
+    - resourceGroupName
+outputs:
+  description: NetApp account resource
+  properties:
+    activeDirectories:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:netapp:ActiveDirectoryResponse"
+      description: Active Directories
+    disableShowmount:
+      type: boolean
+      description: Shows the status of disableShowmount for all volumes under the subscription, null equals false
+    encryption:
+      type: object
+      $ref: "#/types/azure-native:netapp:AccountEncryptionResponse"
+      description: Encryption settings
+    etag:
+      type: string
+      description: A unique read-only string that changes whenever the resource is updated.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    identity:
+      type: object
+      $ref: "#/types/azure-native:netapp:ManagedServiceIdentityResponse"
+      description: The identity used for the resource.
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+      description: Azure lifecycle management
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:netapp:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - disableShowmount
+    - etag
+    - id
+    - location
+    - name
+    - provisioningState
+    - systemData
+    - type

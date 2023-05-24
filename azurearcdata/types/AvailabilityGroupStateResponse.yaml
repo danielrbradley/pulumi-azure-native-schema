@@ -1,0 +1,25 @@
+$token: azure-native:azurearcdata:AvailabilityGroupStateResponse
+description: The specifications of the availability group state
+properties:
+  availabilityGroupReplicaRole:
+    type: string
+    description: Role description of the availability group replica.
+  connectedStateDesc:
+    type: string
+    description: Connected state description of the availability group replica.
+  lastConnectErrorDescription:
+    type: string
+    description: Last connect error description of the availability group replica.
+  lastConnectErrorTimestamp:
+    type: string
+    description: Last connect error time stamp of the availability group replica.
+  operationalStateDesc:
+    type: string
+    description: Operation state description of the availability group replica
+  recoveryHealthDesc:
+    type: string
+    description: Recovery health description of the availability group replica.
+  synchronizationHealthDesc:
+    type: string
+    description: Synchronization health description of the availability group replica.
+type: object

@@ -1,0 +1,39 @@
+$token: azure-native:redhatopenshift:SyncIdentityProvider
+properties:
+  name:
+    type: string
+    description: The name of the resource
+  resources:
+    type: string
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:redhatopenshift:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - name
+  - systemData
+  - type
+inputProperties:
+  childResourceName:
+    type: string
+    description: The name of the SyncIdentityProvider resource.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  resourceName:
+    type: string
+    description: The name of the OpenShift cluster resource.
+    willReplaceOnChanges: true
+  resources:
+    type: string
+requiredInputs:
+  - resourceGroupName
+  - resourceName
+aliases:
+  - type: azure-native:redhatopenshift/v20220904:SyncIdentityProvider

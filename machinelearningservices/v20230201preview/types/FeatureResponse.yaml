@@ -1,0 +1,19 @@
+$token: azure-native:machinelearningservices/v20230201preview:FeatureResponse
+description: Dto object representing feature
+properties:
+  dataType:
+    type: string
+    description: Specifies type
+    default: String
+  description:
+    type: string
+    description: Specifies description
+  featureName:
+    type: string
+    description: Specifies name
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Specifies tags
+type: object

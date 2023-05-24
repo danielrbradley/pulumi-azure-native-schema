@@ -1,0 +1,6 @@
+$token: azure-native:managednetworkfabric/v20230201preview:RedistributeConnectedSubnets
+description: 'Advertise Connected Subnets. Ex: "True" | "False".'
+type: string
+enum:
+  - value: "True"
+  - value: "False"

@@ -1,0 +1,12 @@
+$token: azure-native:authorization:SelectorKind
+description: The selector kind.
+type: string
+enum:
+  - description: The selector kind to filter policies by the resource location.
+    value: resourceLocation
+  - description: The selector kind to filter policies by the resource type.
+    value: resourceType
+  - description: The selector kind to filter policies by the resource without location.
+    value: resourceWithoutLocation
+  - description: The selector kind to filter policies by the policy definition reference ID.
+    value: policyDefinitionReferenceId

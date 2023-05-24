@@ -1,0 +1,134 @@
+$token: azure-native:devhub/v20221011preview:getWorkflow
+description: Resource representation of a workflow
+inputs:
+  properties:
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    workflowName:
+      type: string
+      description: The name of the workflow resource.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - workflowName
+outputs:
+  description: Resource representation of a workflow
+  properties:
+    acr:
+      type: object
+      $ref: "#/types/azure-native:devhub/v20221011preview:ACRResponse"
+      description: Information on the azure container registry
+    aksResourceId:
+      type: string
+      description: The Azure Kubernetes Cluster Resource the application will be deployed to.
+    appName:
+      type: string
+      description: The name of the app.
+    authStatus:
+      type: string
+      description: Determines the authorization status of requests.
+    branchName:
+      type: string
+      description: Repository Branch Name
+    builderVersion:
+      type: string
+      description: The version of the language image used for building the code in the generated dockerfile.
+    deploymentProperties:
+      type: object
+      $ref: "#/types/azure-native:devhub/v20221011preview:DeploymentPropertiesResponse"
+    dockerBuildContext:
+      type: string
+      description: Path to Dockerfile Build Context within the repository.
+    dockerfile:
+      type: string
+      description: Path to the Dockerfile within the repository.
+    dockerfileGenerationMode:
+      type: string
+      description: The mode of generation to be used for generating Dockerfiles.
+    dockerfileOutputDirectory:
+      type: string
+      description: The directory to output the generated Dockerfile to.
+    generationLanguage:
+      type: string
+      description: The programming language used.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    imageName:
+      type: string
+      description: The name of the image to be generated.
+    imageTag:
+      type: string
+      description: The tag to apply to the generated image.
+    languageVersion:
+      type: string
+      description: The version of the language image used for execution in the generated dockerfile.
+    lastWorkflowRun:
+      type: object
+      $ref: "#/types/azure-native:devhub/v20221011preview:WorkflowRunResponse"
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    manifestGenerationMode:
+      type: string
+      description: The mode of generation to be used for generating Manifest.
+    manifestOutputDirectory:
+      type: string
+      description: The directory to output the generated manifests to.
+    manifestType:
+      type: string
+      description: Determines the type of manifests to be generated.
+    name:
+      type: string
+      description: The name of the resource
+    namespace:
+      type: string
+      description: Kubernetes namespace the application is deployed to.
+    oidcCredentials:
+      type: object
+      $ref: "#/types/azure-native:devhub/v20221011preview:GitHubWorkflowProfileResponseOidcCredentials"
+      description: The fields needed for OIDC with GitHub.
+    port:
+      type: string
+      description: The port the application is exposed on.
+    prStatus:
+      type: string
+      description: The status of the Pull Request submitted against the users repository.
+    prURL:
+      type: string
+      description: The URL to the Pull Request submitted against the users repository.
+    pullNumber:
+      type: integer
+      description: The number associated with the submitted pull request.
+    repositoryName:
+      type: string
+      description: Repository Name
+    repositoryOwner:
+      type: string
+      description: Repository Owner
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:devhub/v20221011preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - authStatus
+    - id
+    - location
+    - name
+    - prStatus
+    - prURL
+    - pullNumber
+    - systemData
+    - type

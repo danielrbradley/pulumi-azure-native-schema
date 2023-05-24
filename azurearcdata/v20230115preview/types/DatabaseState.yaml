@@ -1,0 +1,13 @@
+$token: azure-native:azurearcdata/v20230115preview:DatabaseState
+description: State of the database.
+type: string
+enum:
+  - value: Online
+  - value: Restoring
+  - value: Recovering
+  - value: RecoveryPending
+  - value: Suspect
+  - value: Emergency
+  - value: Offline
+  - value: Copying
+  - value: OfflineSecondary

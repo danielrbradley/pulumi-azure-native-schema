@@ -1,0 +1,64 @@
+$token: azure-native:insights/v20220601:DataCollectionRuleDataSources
+description: "The specification of data sources. \r
+
+  This property is optional and can be omitted if the rule is meant to be used via direct calls to the provisioned endpoint."
+properties:
+  dataImports:
+    type: object
+    $ref: "#/types/azure-native:insights/v20220601:DataSourcesSpecDataImports"
+    description: Specifications of pull based data sources
+  extensions:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:insights/v20220601:ExtensionDataSource"
+    description: The list of Azure VM extension data source configurations.
+  iisLogs:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:insights/v20220601:IisLogsDataSource"
+    description: The list of IIS logs source configurations.
+  logFiles:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:insights/v20220601:LogFilesDataSource"
+    description: The list of Log files source configurations.
+  performanceCounters:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:insights/v20220601:PerfCounterDataSource"
+    description: The list of performance counter data source configurations.
+  platformTelemetry:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:insights/v20220601:PlatformTelemetryDataSource"
+    description: The list of platform telemetry configurations
+  prometheusForwarder:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:insights/v20220601:PrometheusForwarderDataSource"
+    description: The list of Prometheus forwarder data source configurations.
+  syslog:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:insights/v20220601:SyslogDataSource"
+    description: The list of Syslog data source configurations.
+  windowsEventLogs:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:insights/v20220601:WindowsEventLogDataSource"
+    description: The list of Windows Event Log data source configurations.
+  windowsFirewallLogs:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:insights/v20220601:WindowsFirewallLogsDataSource"
+    description: The list of Windows Firewall logs source configurations.
+type: object

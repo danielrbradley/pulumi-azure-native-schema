@@ -1,0 +1,43 @@
+$token: azure-native:machinelearningservices/v20230201preview:TableVerticalLimitSettingsResponse
+description: Job execution constraints.
+properties:
+  enableEarlyTermination:
+    type: boolean
+    description: Enable early termination, determines whether or not if AutoMLJob will terminate early if there is no score improvement in last 20 iterations.
+    default: true
+  exitScore:
+    type: number
+    description: Exit score for the AutoML job.
+  maxConcurrentTrials:
+    type: integer
+    description: Maximum Concurrent iterations.
+    default: 1
+  maxCoresPerTrial:
+    type: integer
+    description: Max cores per iteration.
+    default: -1
+  maxNodes:
+    type: integer
+    description: Maximum nodes to use for the experiment.
+    default: 1
+  maxTrials:
+    type: integer
+    description: Number of iterations.
+    default: 1000
+  sweepConcurrentTrials:
+    type: integer
+    description: Number of concurrent sweeping runs that user wants to trigger.
+    default: 0
+  sweepTrials:
+    type: integer
+    description: Number of sweeping runs that user wants to trigger.
+    default: 0
+  timeout:
+    type: string
+    description: AutoML job timeout.
+    default: PT6H
+  trialTimeout:
+    type: string
+    description: Iteration timeout.
+    default: PT30M
+type: object

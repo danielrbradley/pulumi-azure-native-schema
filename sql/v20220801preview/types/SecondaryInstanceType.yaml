@@ -1,0 +1,6 @@
+$token: azure-native:sql/v20220801preview:SecondaryInstanceType
+description: Type of the geo-secondary instance. Set 'Standby' if the instance is used as a DR option only.
+type: string
+enum:
+  - value: Geo
+  - value: Standby

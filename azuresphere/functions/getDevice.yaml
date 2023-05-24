@@ -1,0 +1,82 @@
+$token: azure-native:azuresphere:getDevice
+description: |-
+  Get a Device. Use '.unassigned' or '.default' for the device group and product names when a device does not belong to a device group and product.
+  API Version: 2022-09-01-preview.
+inputs:
+  properties:
+    catalogName:
+      type: string
+      description: Name of catalog
+      willReplaceOnChanges: true
+    deviceGroupName:
+      type: string
+      description: Name of device group.
+      willReplaceOnChanges: true
+    deviceName:
+      type: string
+      description: Device name
+      willReplaceOnChanges: true
+    productName:
+      type: string
+      description: Name of product.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - catalogName
+    - deviceGroupName
+    - deviceName
+    - productName
+    - resourceGroupName
+outputs:
+  description: An device resource belonging to a device group resource.
+  properties:
+    chipSku:
+      type: string
+      description: SKU of the chip
+    deviceId:
+      type: string
+      description: Device ID
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    lastAvailableOsVersion:
+      type: string
+      description: OS version available for installation when update requested
+    lastInstalledOsVersion:
+      type: string
+      description: OS version running on device when update requested
+    lastOsUpdateUtc:
+      type: string
+      description: Time when update requested and new OS version available
+    lastUpdateRequestUtc:
+      type: string
+      description: Time when update was last requested
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+      description: The status of the last operation.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:azuresphere:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - chipSku
+    - id
+    - lastAvailableOsVersion
+    - lastInstalledOsVersion
+    - lastOsUpdateUtc
+    - lastUpdateRequestUtc
+    - name
+    - provisioningState
+    - systemData
+    - type

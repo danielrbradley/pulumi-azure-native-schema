@@ -1,0 +1,7 @@
+$token: azure-native:hybridcompute/v20230315preview:SubnetResponse
+description: Describes the subnet.
+properties:
+  addressPrefix:
+    type: string
+    description: Represents address prefix.
+type: object

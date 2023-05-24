@@ -1,0 +1,23 @@
+$token: azure-native:azurestack/v20220601:getRegistrationActivationKey
+description: Returns Azure Stack Activation Key.
+inputs:
+  properties:
+    registrationName:
+      type: string
+      description: Name of the Azure Stack registration.
+      willReplaceOnChanges: true
+    resourceGroup:
+      type: string
+      description: Name of the resource group.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - registrationName
+    - resourceGroup
+outputs:
+  description: The resource containing the Azure Stack activation key.
+  properties:
+    activationKey:
+      type: string
+      description: Azure Stack activation key.
+  type: object

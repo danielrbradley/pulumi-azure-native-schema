@@ -1,0 +1,17 @@
+$token: azure-native:relay:PrivateEndpointConnection
+description: Properties of the PrivateEndpointConnection.
+properties:
+  privateEndpoint:
+    type: object
+    $ref: "#/types/azure-native:relay:PrivateEndpoint"
+    description: The Private Endpoint resource for this Connection.
+  privateLinkServiceConnectionState:
+    type: object
+    $ref: "#/types/azure-native:relay:ConnectionState"
+    description: Details about the state of the connection.
+  provisioningState:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:relay:EndPointProvisioningState"
+    description: Provisioning state of the Private Endpoint Connection.
+type: object

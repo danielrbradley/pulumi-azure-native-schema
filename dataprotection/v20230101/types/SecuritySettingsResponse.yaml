@@ -1,0 +1,12 @@
+$token: azure-native:dataprotection/v20230101:SecuritySettingsResponse
+description: Class containing security settings of vault
+properties:
+  immutabilitySettings:
+    type: object
+    $ref: "#/types/azure-native:dataprotection/v20230101:ImmutabilitySettingsResponse"
+    description: Immutability Settings at vault level
+  softDeleteSettings:
+    type: object
+    $ref: "#/types/azure-native:dataprotection/v20230101:SoftDeleteSettingsResponse"
+    description: Soft delete related settings
+type: object

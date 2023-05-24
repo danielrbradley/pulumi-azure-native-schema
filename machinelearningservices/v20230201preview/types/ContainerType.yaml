@@ -1,0 +1,10 @@
+$token: azure-native:machinelearningservices/v20230201preview:ContainerType
+description: The type of container to retrieve logs from.
+type: string
+enum:
+  - description: The container used to download models and score script.
+    value: StorageInitializer
+  - description: The container used to serve user's request.
+    value: InferenceServer
+  - description: The container used to collect payload and custom logging when mdc is enabled.
+    value: ModelDataCollector

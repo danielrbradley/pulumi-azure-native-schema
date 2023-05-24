@@ -1,0 +1,25 @@
+$token: azure-native:managednetworkfabric:NetworkFabricPropertiesResponseInfrastructureVpnConfiguration
+description: Configuration for infrastructure vpn.
+properties:
+  administrativeState:
+    type: string
+    description: "Indicates configuration state. Example: Enabled | Disabled."
+  networkToNetworkInterconnectId:
+    type: string
+    description: Gets the networkToNetworkInterconnectId of the resource.
+  optionAProperties:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric:OptionAPropertiesResponse"
+    description: option A properties
+  optionBProperties:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric:FabricOptionBPropertiesResponse"
+    description: option B properties
+  peeringOption:
+    type: string
+    description: Peering option list.
+type: object
+required:
+  - administrativeState
+  - networkToNetworkInterconnectId
+  - optionBProperties

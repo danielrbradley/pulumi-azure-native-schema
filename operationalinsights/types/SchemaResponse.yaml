@@ -1,0 +1,57 @@
+$token: azure-native:operationalinsights:SchemaResponse
+description: Table's schema.
+properties:
+  categories:
+    type: array
+    items:
+      type: string
+    description: Table category.
+  columns:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:operationalinsights:ColumnResponse"
+    description: A list of table custom columns.
+  description:
+    type: string
+    description: Table description.
+  displayName:
+    type: string
+    description: Table display name.
+  labels:
+    type: array
+    items:
+      type: string
+    description: Table labels.
+  name:
+    type: string
+    description: Table name.
+  solutions:
+    type: array
+    items:
+      type: string
+    description: List of solutions the table is affiliated with
+  source:
+    type: string
+    description: Table's creator.
+  standardColumns:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:operationalinsights:ColumnResponse"
+    description: A list of table standard columns.
+  tableSubType:
+    type: string
+    description: The subtype describes what APIs can be used to interact with the table, and what features are available against it.
+  tableType:
+    type: string
+    description: Table's creator.
+type: object
+required:
+  - categories
+  - labels
+  - solutions
+  - source
+  - standardColumns
+  - tableSubType
+  - tableType

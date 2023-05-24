@@ -1,0 +1,9 @@
+$token: azure-native:mobilenetwork/v20221101:AttachedDataNetworkResourceId
+description: Reference to an attached data network resource.
+properties:
+  id:
+    type: string
+    description: Attached data network resource ID.
+type: object
+required:
+  - id

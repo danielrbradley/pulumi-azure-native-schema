@@ -1,0 +1,29 @@
+$token: azure-native:resourcehealth/v20221001preview:listSecurityAdvisoryImpactedResourceByTenantIdAndEventId
+description: Lists impacted resources in the tenant by an event (Security Advisory).
+inputs:
+  properties:
+    eventTrackingId:
+      type: string
+      description: Event Id which uniquely identifies ServiceHealth event.
+      willReplaceOnChanges: true
+    filter:
+      type: string
+      description: The filter to apply on the operation. For more information please see https://docs.microsoft.com/en-us/rest/api/apimanagement/apis?redirectedfrom=MSDN
+  type: object
+  required:
+    - eventTrackingId
+outputs:
+  description: The List of eventImpactedResources operation response.
+  properties:
+    nextLink:
+      type: string
+      description: The URI to fetch the next page of events. Call ListNext() with this URI to fetch the next page of impacted resource.
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:resourcehealth/v20221001preview:EventImpactedResourceResponse"
+      description: The list of eventImpactedResources.
+  type: object
+  required:
+    - value

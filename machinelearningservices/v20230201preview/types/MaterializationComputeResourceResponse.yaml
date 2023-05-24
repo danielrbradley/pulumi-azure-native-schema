@@ -1,0 +1,7 @@
+$token: azure-native:machinelearningservices/v20230201preview:MaterializationComputeResourceResponse
+description: Dto object representing compute resource
+properties:
+  instanceType:
+    type: string
+    description: Specifies the instance type
+type: object

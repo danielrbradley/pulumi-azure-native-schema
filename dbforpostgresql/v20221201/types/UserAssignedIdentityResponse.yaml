@@ -1,0 +1,15 @@
+$token: azure-native:dbforpostgresql/v20221201:UserAssignedIdentityResponse
+description: Information describing the identities associated with this application.
+properties:
+  type:
+    type: string
+    description: the types of identities associated with this resource; currently restricted to 'SystemAssigned and UserAssigned'
+  userAssignedIdentities:
+    type: object
+    additionalProperties:
+      type: object
+      $ref: "#/types/azure-native:dbforpostgresql/v20221201:UserIdentityResponse"
+    description: represents user assigned identities map.
+type: object
+required:
+  - type

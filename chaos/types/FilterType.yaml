@@ -1,0 +1,5 @@
+$token: azure-native:chaos:FilterType
+description: Enum that discriminates between filter types. Currently only `Simple` type is supported.
+type: string
+enum:
+  - value: Simple

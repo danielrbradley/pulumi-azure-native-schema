@@ -1,0 +1,18 @@
+$token: azure-native:securityinsights/v20230401preview:AutomationRuleAddIncidentTaskActionResponse
+description: Describes an automation rule action to add a task to an incident
+properties:
+  actionConfiguration:
+    type: object
+    $ref: "#/types/azure-native:securityinsights/v20230401preview:AddIncidentTaskActionPropertiesResponse"
+  actionType:
+    type: string
+    description: |-
+      The type of the automation rule action.
+      Expected value is 'AddIncidentTask'.
+    const: AddIncidentTask
+  order:
+    type: integer
+type: object
+required:
+  - actionType
+  - order

@@ -1,0 +1,81 @@
+$token: azure-native:securityinsights/v20230401preview:getHunt
+description: Gets a hunt, without relations and comments.
+inputs:
+  properties:
+    huntId:
+      type: string
+      description: The hunt id (GUID)
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    workspaceName:
+      type: string
+      description: The name of the workspace.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - huntId
+    - resourceGroupName
+    - workspaceName
+outputs:
+  description: Represents a Hunt in Azure Security Insights.
+  properties:
+    attackTactics:
+      type: array
+      items:
+        type: string
+      description: A list of mitre attack tactics the hunt is associated with
+    attackTechniques:
+      type: array
+      items:
+        type: string
+      description: A list of a mitre attack techniques the hunt is associated with
+    description:
+      type: string
+      description: The description of the hunt
+    displayName:
+      type: string
+      description: The display name of the hunt
+    etag:
+      type: string
+      description: Etag of the azure resource
+    hypothesisStatus:
+      type: string
+      description: The hypothesis status of the hunt.
+      default: Unknown
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    labels:
+      type: array
+      items:
+        type: string
+      description: "List of labels relevant to this hunt "
+    name:
+      type: string
+      description: The name of the resource
+    owner:
+      type: object
+      $ref: "#/types/azure-native:securityinsights/v20230401preview:HuntOwnerResponse"
+      description: Describes a user that the hunt is assigned to
+    status:
+      type: string
+      description: The status of the hunt.
+      default: New
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:securityinsights/v20230401preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - description
+    - displayName
+    - id
+    - name
+    - systemData
+    - type

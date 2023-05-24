@@ -1,0 +1,63 @@
+$token: azure-native:healthcareapis/v20220515:Workspace
+description: Workspace resource.
+properties:
+  etag:
+    type: string
+    description: An etag associated with the resource, used for optimistic concurrency when editing it.
+  location:
+    type: string
+    description: The resource location.
+  name:
+    type: string
+    description: The resource name.
+  properties:
+    type: object
+    $ref: "#/types/azure-native:healthcareapis/v20220515:WorkspaceResponseProperties"
+    description: Workspaces resource specific properties.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:healthcareapis/v20220515:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The resource type.
+type: object
+required:
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  location:
+    type: string
+    description: The resource location.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group that contains the service instance.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  workspaceName:
+    type: string
+    description: The name of workspace resource.
+    willReplaceOnChanges: true
+requiredInputs:
+  - resourceGroupName
+aliases:
+  - type: azure-native:healthcareapis:Workspace
+  - type: azure-native:healthcareapis/v20210601preview:Workspace
+  - type: azure-native:healthcareapis/v20211101:Workspace
+  - type: azure-native:healthcareapis/v20220131preview:Workspace
+  - type: azure-native:healthcareapis/v20220601:Workspace
+  - type: azure-native:healthcareapis/v20221001preview:Workspace
+  - type: azure-native:healthcareapis/v20221201:Workspace
+  - type: azure-native:healthcareapis/v20230228:Workspace

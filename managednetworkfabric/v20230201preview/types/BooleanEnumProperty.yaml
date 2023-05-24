@@ -1,0 +1,6 @@
+$token: azure-native:managednetworkfabric/v20230201preview:BooleanEnumProperty
+description: "Based on this parameter the layer2/layer3 is made as mandatory. Example: True/False"
+type: string
+enum:
+  - value: "True"
+  - value: "False"

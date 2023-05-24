@@ -1,0 +1,8 @@
+$token: azure-native:databox:HardwareEncryption
+description: Defines Hardware level encryption (Only for disk)
+type: string
+enum:
+  - description: Hardware-based encryption is enabled.
+    value: Enabled
+  - description: Hardware-based encryption is enabled.
+    value: Disabled

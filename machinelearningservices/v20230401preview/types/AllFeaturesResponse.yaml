@@ -1,0 +1,11 @@
+$token: azure-native:machinelearningservices/v20230401preview:AllFeaturesResponse
+properties:
+  filterType:
+    type: string
+    description: |-
+      
+      Expected value is 'AllFeatures'.
+    const: AllFeatures
+type: object
+required:
+  - filterType

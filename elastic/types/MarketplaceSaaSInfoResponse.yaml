@@ -1,0 +1,14 @@
+$token: azure-native:elastic:MarketplaceSaaSInfoResponse
+description: Marketplace SAAS Info of the resource.
+properties:
+  marketplaceName:
+    type: string
+    description: "Marketplace Subscription Details: SAAS Name"
+  marketplaceResourceId:
+    type: string
+    description: "Marketplace Subscription Details: Resource URI"
+  marketplaceSubscription:
+    type: object
+    $ref: "#/types/azure-native:elastic:MarketplaceSaaSInfoResponseMarketplaceSubscription"
+    description: Marketplace Subscription
+type: object

@@ -1,0 +1,8 @@
+$token: azure-native:migrate:Status
+description: Private link connection state.
+type: string
+enum:
+  - value: Approved
+  - value: Pending
+  - value: Rejected
+  - value: Disconnected

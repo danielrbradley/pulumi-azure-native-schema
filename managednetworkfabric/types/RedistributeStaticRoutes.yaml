@@ -1,0 +1,6 @@
+$token: azure-native:managednetworkfabric:RedistributeStaticRoutes
+description: 'Advertise Static Routes. Ex: "True" | "False".'
+type: string
+enum:
+  - value: "True"
+  - value: "False"

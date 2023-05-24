@@ -1,0 +1,70 @@
+$token: azure-native:hybridcloud:CloudConnector
+properties:
+  accountId:
+    type: string
+    description: Account identifier of the remote cloud.
+  cloudType:
+    type: string
+    description: The cloud connector type.
+  etag:
+    type: string
+    description: A unique read-only string that changes whenever the resource is updated.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: The provisioning state of the cloud connector resource.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:hybridcloud:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - etag
+  - location
+  - name
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  accountId:
+    type: string
+    description: Account identifier of the remote cloud.
+  cloudConnectorName:
+    type: string
+    description: The name of the cloud connector resource
+    willReplaceOnChanges: true
+  cloudType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:hybridcloud:CloudType"
+    description: The cloud connector type.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+requiredInputs:
+  - resourceGroupName
+aliases:
+  - type: azure-native:hybridcloud/v20230101preview:CloudConnector

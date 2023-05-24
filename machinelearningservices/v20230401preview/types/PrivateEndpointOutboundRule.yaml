@@ -1,0 +1,26 @@
+$token: azure-native:machinelearningservices/v20230401preview:PrivateEndpointOutboundRule
+description: Private Endpoint Outbound Rule for the managed network of a machine learning workspace.
+properties:
+  category:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:machinelearningservices/v20230401preview:RuleCategory"
+    description: Category of a managed network Outbound Rule of a machine learning workspace.
+  destination:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:PrivateEndpointDestination"
+    description: Private Endpoint destination for a Private Endpoint Outbound Rule for the managed network of a machine learning workspace.
+  status:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:machinelearningservices/v20230401preview:RuleStatus"
+    description: Status of a managed network Outbound Rule of a machine learning workspace.
+  type:
+    type: string
+    description: |-
+      Type of a managed network Outbound Rule of a machine learning workspace.
+      Expected value is 'PrivateEndpoint'.
+    const: PrivateEndpoint
+type: object
+required:
+  - type

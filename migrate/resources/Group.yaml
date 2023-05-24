@@ -1,0 +1,46 @@
+$token: azure-native:migrate:Group
+properties:
+  eTag:
+    type: string
+    description: For optimistic concurrency control.
+  name:
+    type: string
+    description: Name of the group.
+  properties:
+    type: object
+    $ref: "#/types/azure-native:migrate:GroupPropertiesResponse"
+    description: Properties of the group.
+  type:
+    type: string
+    description: Type of the object = [Microsoft.Migrate/assessmentProjects/groups].
+type: object
+required:
+  - name
+  - properties
+  - type
+inputProperties:
+  eTag:
+    type: string
+    description: For optimistic concurrency control.
+  groupName:
+    type: string
+    description: Unique name of a group within a project.
+    willReplaceOnChanges: true
+  projectName:
+    type: string
+    description: Name of the Azure Migrate project.
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:migrate:GroupProperties"
+    description: Properties of the group.
+  resourceGroupName:
+    type: string
+    description: Name of the Azure Resource Group that project is part of.
+    willReplaceOnChanges: true
+requiredInputs:
+  - projectName
+  - properties
+  - resourceGroupName
+aliases:
+  - type: azure-native:migrate/v20191001:Group

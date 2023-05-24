@@ -1,0 +1,11 @@
+$token: azure-native:mobilenetwork/v20221101:InstallationResponse
+description: The installation state of the packet core.
+properties:
+  operation:
+    type: object
+    $ref: "#/types/azure-native:mobilenetwork/v20221101:AsyncOperationIdResponse"
+    description: A reference to an in-progress installation operation
+  state:
+    type: string
+    description: Installation state
+type: object

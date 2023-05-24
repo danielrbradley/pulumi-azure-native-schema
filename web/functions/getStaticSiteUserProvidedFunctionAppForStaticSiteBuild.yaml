@@ -1,0 +1,58 @@
+$token: azure-native:web:getStaticSiteUserProvidedFunctionAppForStaticSiteBuild
+description: |-
+  Description for Gets the details of the user provided function app registered with a static site build
+  API Version: 2022-09-01.
+inputs:
+  properties:
+    environmentName:
+      type: string
+      description: The stage site identifier.
+      willReplaceOnChanges: true
+    functionAppName:
+      type: string
+      description: Name of the function app registered with the static site build.
+      willReplaceOnChanges: true
+    name:
+      type: string
+      description: Name of the static site.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the resource group to which the resource belongs.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - environmentName
+    - functionAppName
+    - name
+    - resourceGroupName
+outputs:
+  description: Static Site User Provided Function App ARM resource.
+  properties:
+    createdOn:
+      type: string
+      description: The date and time on which the function app was registered with the static site.
+    functionAppRegion:
+      type: string
+      description: The region of the function app registered with the static site
+    functionAppResourceId:
+      type: string
+      description: The resource id of the function app registered with the static site
+    id:
+      type: string
+      description: Resource Id.
+    kind:
+      type: string
+      description: Kind of resource.
+    name:
+      type: string
+      description: Resource Name.
+    type:
+      type: string
+      description: Resource type.
+  type: object
+  required:
+    - createdOn
+    - id
+    - name
+    - type

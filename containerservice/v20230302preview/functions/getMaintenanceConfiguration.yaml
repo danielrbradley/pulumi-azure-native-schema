@@ -1,0 +1,59 @@
+$token: azure-native:containerservice/v20230302preview:getMaintenanceConfiguration
+description: See [planned maintenance](https://docs.microsoft.com/azure/aks/planned-maintenance) for more information about planned maintenance.
+inputs:
+  properties:
+    configName:
+      type: string
+      description: The name of the maintenance configuration.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    resourceName:
+      type: string
+      description: The name of the managed cluster resource.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - configName
+    - resourceGroupName
+    - resourceName
+outputs:
+  description: See [planned maintenance](https://docs.microsoft.com/azure/aks/planned-maintenance) for more information about planned maintenance.
+  properties:
+    id:
+      type: string
+      description: Resource ID.
+    maintenanceWindow:
+      type: object
+      $ref: "#/types/azure-native:containerservice/v20230302preview:MaintenanceWindowResponse"
+      description: Maintenance window for the maintenance configuration.
+    name:
+      type: string
+      description: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+    notAllowedTime:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:containerservice/v20230302preview:TimeSpanResponse"
+      description: Time slots on which upgrade is not allowed.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:containerservice/v20230302preview:SystemDataResponse"
+      description: The system metadata relating to this resource.
+    timeInWeek:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:containerservice/v20230302preview:TimeInWeekResponse"
+      description: If two array entries specify the same day of the week, the applied configuration is the union of times in both entries.
+    type:
+      type: string
+      description: Resource type
+  type: object
+  required:
+    - id
+    - name
+    - systemData
+    - type

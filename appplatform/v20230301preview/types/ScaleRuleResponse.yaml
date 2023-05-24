@@ -1,0 +1,23 @@
+$token: azure-native:appplatform/v20230301preview:ScaleRuleResponse
+description: Azure Spring Apps App Instance scaling rule.
+properties:
+  azureQueue:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:QueueScaleRuleResponse"
+    description: Azure Queue based scaling.
+  custom:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:CustomScaleRuleResponse"
+    description: Custom scale rule.
+  http:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:HttpScaleRuleResponse"
+    description: HTTP requests based scaling.
+  name:
+    type: string
+    description: Scale Rule Name
+  tcp:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:TcpScaleRuleResponse"
+    description: Tcp requests based scaling.
+type: object

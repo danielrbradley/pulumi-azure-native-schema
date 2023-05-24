@@ -1,0 +1,30 @@
+$token: azure-native:machinelearningservices:JobScheduleActionResponse
+properties:
+  actionType:
+    type: string
+    description: |-
+      
+      Expected value is 'CreateJob'.
+    const: CreateJob
+  jobBaseProperties:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices:AutoMLJobResponse"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices:CommandJobResponse"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices:PipelineJobResponse"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices:SweepJobResponse"
+    discriminator:
+      propertyName: jobType
+      mapping:
+        AutoML: "#/types/azure-native:machinelearningservices:AutoMLJobResponse"
+        Command: "#/types/azure-native:machinelearningservices:CommandJobResponse"
+        Pipeline: "#/types/azure-native:machinelearningservices:PipelineJobResponse"
+        Sweep: "#/types/azure-native:machinelearningservices:SweepJobResponse"
+    description: "[Required] Defines Schedule action definition details."
+type: object
+required:
+  - actionType
+  - jobBaseProperties

@@ -1,0 +1,7 @@
+$token: azure-native:kubernetesconfiguration:Identity
+description: Identity for the resource.
+properties:
+  type:
+    $ref: "#/types/azure-native:kubernetesconfiguration:ResourceIdentityType"
+    description: The identity type.
+type: object

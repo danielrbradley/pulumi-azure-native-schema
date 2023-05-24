@@ -1,0 +1,16 @@
+$token: azure-native:security/v20220801preview:DefenderCspmAwsOffering
+description: The CSPM P1 for Aws offering
+properties:
+  offeringType:
+    type: string
+    description: |-
+      The type of the security offering.
+      Expected value is 'DefenderCspmAws'.
+    const: DefenderCspmAws
+  vmScanners:
+    type: object
+    $ref: "#/types/azure-native:security/v20220801preview:DefenderCspmAwsOfferingVmScanners"
+    description: The Microsoft Defender for Server VM scanning configuration
+type: object
+required:
+  - offeringType

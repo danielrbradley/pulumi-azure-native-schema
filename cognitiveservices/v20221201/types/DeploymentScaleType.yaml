@@ -1,0 +1,6 @@
+$token: azure-native:cognitiveservices/v20221201:DeploymentScaleType
+description: Deployment scale type.
+type: string
+enum:
+  - value: Standard
+  - value: Manual

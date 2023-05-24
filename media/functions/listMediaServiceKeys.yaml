@@ -1,0 +1,37 @@
+$token: azure-native:media:listMediaServiceKeys
+description: |-
+  Lists the keys for a Media Service.
+  API Version: 2015-10-01.
+inputs:
+  properties:
+    mediaServiceName:
+      type: string
+      description: Name of the Media Service.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the resource group within the Azure subscription.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - mediaServiceName
+    - resourceGroupName
+outputs:
+  description: The response body for a ListKeys API.
+  properties:
+    primaryAuthEndpoint:
+      type: string
+      description: The primary authorization endpoint.
+    primaryKey:
+      type: string
+      description: The primary key for the Media Service resource.
+    scope:
+      type: string
+      description: The authorization scope.
+    secondaryAuthEndpoint:
+      type: string
+      description: The secondary authorization endpoint.
+    secondaryKey:
+      type: string
+      description: The secondary key for the Media Service resource.
+  type: object

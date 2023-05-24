@@ -1,0 +1,6 @@
+$token: azure-native:machinelearningservices:DataLakeAnalyticsSchemaResponseProperties
+properties:
+  dataLakeStoreAccountName:
+    type: string
+    description: DataLake Store Account Name
+type: object

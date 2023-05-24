@@ -1,0 +1,10 @@
+$token: azure-native:security/v20230301preview:DefenderCspmAwsOfferingDataSensitivityDiscovery
+description: The Microsoft Defender Data Sensitivity discovery configuration
+properties:
+  cloudRoleArn:
+    type: string
+    description: The cloud role ARN in AWS for this feature
+  enabled:
+    type: boolean
+    description: Is Microsoft Defender Data Sensitivity discovery enabled
+type: object

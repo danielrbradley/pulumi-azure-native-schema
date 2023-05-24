@@ -1,0 +1,12 @@
+$token: azure-native:databox/v20221201:ReverseShippingDetails
+description: Reverse Shipping Address and contact details for a job.
+properties:
+  contactDetails:
+    type: object
+    $ref: "#/types/azure-native:databox/v20221201:ContactInfo"
+    description: Contact Info.
+  shippingAddress:
+    type: object
+    $ref: "#/types/azure-native:databox/v20221201:ShippingAddress"
+    description: Shipping address where customer wishes to receive the device.
+type: object

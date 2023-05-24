@@ -1,0 +1,34 @@
+$token: azure-native:botservice/v20220915:TelephonyPhoneNumbers
+description: A telephone number for the Telephony channel
+properties:
+  acsEndpoint:
+    type: string
+    description: The endpoint of ACS.
+  acsResourceId:
+    type: string
+    description: The resource id of ACS.
+  acsSecret:
+    type: string
+    description: The secret of ACS.
+  cognitiveServiceRegion:
+    type: string
+    description: The service region of cognitive service.
+  cognitiveServiceResourceId:
+    type: string
+    description: The resource id of cognitive service.
+  cognitiveServiceSubscriptionKey:
+    type: string
+    description: The subscription key of cognitive service.
+  defaultLocale:
+    type: string
+    description: The default locale of the phone number.
+  id:
+    type: string
+    description: The element id.
+  offerType:
+    type: string
+    description: Optional Property that will determine the offering type of the phone.
+  phoneNumber:
+    type: string
+    description: The phone number.
+type: object

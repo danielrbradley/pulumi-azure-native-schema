@@ -1,0 +1,8 @@
+$token: azure-native:containerservice/v20230102preview:ManagedClusterSKUName
+description: The name of a managed cluster SKU.
+type: string
+enum:
+  - description: Basic option for the AKS control plane.
+    value: Basic
+  - description: Not yet available in this version.
+    value: Base

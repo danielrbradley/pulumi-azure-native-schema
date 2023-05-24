@@ -1,0 +1,57 @@
+$token: azure-native:appplatform/v20230101preview:getCustomizedAccelerator
+description: Get the customized accelerator.
+inputs:
+  properties:
+    applicationAcceleratorName:
+      type: string
+      description: The name of the application accelerator.
+      willReplaceOnChanges: true
+    customizedAcceleratorName:
+      type: string
+      description: The name of the customized accelerator.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+      willReplaceOnChanges: true
+    serviceName:
+      type: string
+      description: The name of the Service resource.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - applicationAcceleratorName
+    - customizedAcceleratorName
+    - resourceGroupName
+    - serviceName
+outputs:
+  description: Customized accelerator resource
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource Id for the resource.
+    name:
+      type: string
+      description: The name of the resource.
+    properties:
+      type: object
+      $ref: "#/types/azure-native:appplatform/v20230101preview:CustomizedAcceleratorPropertiesResponse"
+      description: Customized accelerator properties payload
+    sku:
+      type: object
+      $ref: "#/types/azure-native:appplatform/v20230101preview:SkuResponse"
+      description: Sku of the customized accelerator resource
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:appplatform/v20230101preview:SystemDataResponse"
+      description: Metadata pertaining to creation and last modification of the resource.
+    type:
+      type: string
+      description: The type of the resource.
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - systemData
+    - type

@@ -1,0 +1,15 @@
+$token: azure-native:appplatform/v20230301preview:TcpScaleRuleResponse
+description: Azure Spring Apps App Instance Tcp scaling rule.
+properties:
+  auth:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:appplatform/v20230301preview:ScaleRuleAuthResponse"
+    description: Authentication secrets for the tcp scale rule.
+  metadata:
+    type: object
+    additionalProperties:
+      type: string
+    description: Metadata properties to describe tcp scale rule.
+type: object

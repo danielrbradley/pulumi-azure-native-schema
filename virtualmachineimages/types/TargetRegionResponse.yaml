@@ -1,0 +1,16 @@
+$token: azure-native:virtualmachineimages:TargetRegionResponse
+description: Describes the target region information.
+properties:
+  name:
+    type: string
+    description: The name of the region.
+  replicaCount:
+    type: integer
+    description: The number of replicas of the Image Version to be created in this region. Omit to use the default (1).
+    default: 1
+  storageAccountType:
+    type: string
+    description: Specifies the storage account type to be used to store the image in this region. Omit to use the default (Standard_LRS).
+type: object
+required:
+  - name

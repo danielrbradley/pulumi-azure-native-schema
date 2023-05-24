@@ -1,0 +1,10 @@
+$token: azure-native:managednetworkfabric:NetworkFabricControllerPropertiesResponseManagedResourceGroupConfiguration
+description: Managed Resource Group configuration properties.
+properties:
+  location:
+    type: string
+    description: Managed resource group location.
+  name:
+    type: string
+    description: The NFC service will be hosted in a Managed resource group.
+type: object

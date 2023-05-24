@@ -1,0 +1,16 @@
+$token: azure-native:authorization/v20220601:OverrideResponse
+description: The policy property value override.
+properties:
+  kind:
+    type: string
+    description: The override kind.
+  selectors:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:authorization/v20220601:SelectorResponse"
+    description: The list of the selector expressions.
+  value:
+    type: string
+    description: The value to override the policy property.
+type: object

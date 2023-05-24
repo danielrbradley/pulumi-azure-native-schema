@@ -1,0 +1,68 @@
+$token: azure-native:servicelinker/v20221101preview:getLinkerDryrun
+description: get a dryrun job
+inputs:
+  properties:
+    dryrunName:
+      type: string
+      description: The name of dryrun.
+      willReplaceOnChanges: true
+    resourceUri:
+      type: string
+      description: The fully qualified Azure Resource manager identifier of the resource to be connected.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - dryrunName
+    - resourceUri
+outputs:
+  description: a dryrun job resource
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    operationPreviews:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:DryrunOperationPreviewResponse"
+      description: the preview of the operations for creation
+    parameters:
+      type: object
+      $ref: "#/types/azure-native:servicelinker/v20221101preview:CreateOrUpdateDryrunParametersResponse"
+      description: The parameters of the dryrun
+    prerequisiteResults:
+      type: array
+      items:
+        oneOf:
+          - type: object
+            $ref: "#/types/azure-native:servicelinker/v20221101preview:BasicErrorDryrunPrerequisiteResultResponse"
+          - type: object
+            $ref: "#/types/azure-native:servicelinker/v20221101preview:PermissionsMissingDryrunPrerequisiteResultResponse"
+        discriminator:
+          propertyName: type
+          mapping:
+            basicError: "#/types/azure-native:servicelinker/v20221101preview:BasicErrorDryrunPrerequisiteResultResponse"
+            permissionsMissing: "#/types/azure-native:servicelinker/v20221101preview:PermissionsMissingDryrunPrerequisiteResultResponse"
+      description: the result of the dryrun
+    provisioningState:
+      type: string
+      description: "The provisioning state. "
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:servicelinker/v20221101preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - operationPreviews
+    - prerequisiteResults
+    - provisioningState
+    - systemData
+    - type

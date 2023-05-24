@@ -1,0 +1,5 @@
+$token: azure-native:labservices:ResourceIdentityType
+description: The identity type.
+type: string
+enum:
+  - value: SystemAssigned

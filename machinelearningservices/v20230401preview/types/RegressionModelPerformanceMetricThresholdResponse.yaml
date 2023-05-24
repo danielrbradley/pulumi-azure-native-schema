@@ -1,0 +1,19 @@
+$token: azure-native:machinelearningservices/v20230401preview:RegressionModelPerformanceMetricThresholdResponse
+properties:
+  metric:
+    type: string
+    description: "[Required] The regression model performance metric to calculate."
+  modelType:
+    type: string
+    description: |-
+      
+      Expected value is 'Regression'.
+    const: Regression
+  threshold:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MonitoringThresholdResponse"
+    description: The threshold value. If null, a default value will be set depending on the selected metric.
+type: object
+required:
+  - metric
+  - modelType

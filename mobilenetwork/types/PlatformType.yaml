@@ -1,0 +1,8 @@
+$token: azure-native:mobilenetwork:PlatformType
+description: The platform type where packet core is deployed.
+type: string
+enum:
+  - description: If this option is chosen, you must set one of "azureStackEdgeDevice", "connectedCluster" or "customLocation". If multiple are set, they must be consistent with each other.
+    value: AKS-HCI
+  - description: If this option is chosen, you must set one of "azureStackHciCluster", "connectedCluster" or "customLocation". If multiple are set, they must be consistent with each other.
+    value: 3P-AZURE-STACK-HCI

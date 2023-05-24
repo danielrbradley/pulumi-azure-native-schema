@@ -1,0 +1,48 @@
+$token: azure-native:machinelearningservices/v20230201preview:getFeaturesetVersionFeature
+description: Dto object representing feature
+inputs:
+  properties:
+    featureName:
+      type: string
+      description: Specifies name of the feature.
+    name:
+      type: string
+      description: Feature set name. This is case-sensitive.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    version:
+      type: string
+      description: Feature set version identifier. This is case-sensitive.
+      willReplaceOnChanges: true
+    workspaceName:
+      type: string
+      description: Name of Azure Machine Learning workspace.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - name
+    - resourceGroupName
+    - version
+    - workspaceName
+outputs:
+  description: Dto object representing feature
+  properties:
+    dataType:
+      type: string
+      description: Specifies type
+      default: String
+    description:
+      type: string
+      description: Specifies description
+    featureName:
+      type: string
+      description: Specifies name
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Specifies tags
+  type: object

@@ -1,0 +1,62 @@
+$token: azure-native:azurestackhci/v20210901preview:getGuestAgent
+description: Implements GuestAgent GET method.
+inputs:
+  properties:
+    name:
+      type: string
+      description: Name of the GuestAgent.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    virtualMachineName:
+      type: string
+      description: Name of the vm.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - name
+    - resourceGroupName
+    - virtualMachineName
+outputs:
+  description: Defines the GuestAgent.
+  properties:
+    credentials:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:GuestCredentialResponse"
+      description: Username / Password Credentials to provision guest agent.
+    httpProxyConfig:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:HttpProxyConfigurationResponse"
+      description: HTTP Proxy configuration for the VM.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    provisioningAction:
+      type: string
+      description: The guest agent provisioning action.
+    provisioningState:
+      type: string
+      description: The provisioning state.
+    status:
+      type: string
+      description: The guest agent status.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:SystemDataResponse"
+      description: The system data.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - provisioningState
+    - status
+    - systemData
+    - type

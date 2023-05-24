@@ -1,0 +1,51 @@
+$token: azure-native:appconfiguration/v20230301:getPrivateEndpointConnection
+description: Gets the specified private endpoint connection associated with the configuration store.
+inputs:
+  properties:
+    configStoreName:
+      type: string
+      description: The name of the configuration store.
+      willReplaceOnChanges: true
+    privateEndpointConnectionName:
+      type: string
+      description: Private endpoint connection name
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group to which the container registry belongs.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - configStoreName
+    - privateEndpointConnectionName
+    - resourceGroupName
+outputs:
+  description: A private endpoint connection
+  properties:
+    id:
+      type: string
+      description: The resource ID.
+    name:
+      type: string
+      description: The name of the resource.
+    privateEndpoint:
+      type: object
+      $ref: "#/types/azure-native:appconfiguration/v20230301:PrivateEndpointResponse"
+      description: The resource of private endpoint.
+    privateLinkServiceConnectionState:
+      type: object
+      $ref: "#/types/azure-native:appconfiguration/v20230301:PrivateLinkServiceConnectionStateResponse"
+      description: A collection of information about the state of the connection between service consumer and provider.
+    provisioningState:
+      type: string
+      description: The provisioning status of the private endpoint connection.
+    type:
+      type: string
+      description: The type of the resource.
+  type: object
+  required:
+    - id
+    - name
+    - privateLinkServiceConnectionState
+    - provisioningState
+    - type

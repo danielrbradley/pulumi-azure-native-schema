@@ -1,0 +1,32 @@
+$token: azure-native:machinelearningservices:listComputeKeys
+description: |-
+  Gets secrets related to Machine Learning compute (storage keys, service credentials, etc).
+  API Version: 2022-10-01.
+inputs:
+  properties:
+    computeName:
+      type: string
+      description: Name of the Azure Machine Learning compute.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    workspaceName:
+      type: string
+      description: Name of Azure Machine Learning workspace.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - computeName
+    - resourceGroupName
+    - workspaceName
+outputs:
+  description: Secrets related to a Machine Learning compute. Might differ for every type of compute.
+  properties:
+    computeType:
+      type: string
+      description: The type of compute
+  type: object
+  required:
+    - computeType

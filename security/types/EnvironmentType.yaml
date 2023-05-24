@@ -1,0 +1,8 @@
+$token: azure-native:security:EnvironmentType
+description: The type of the environment data.
+type: string
+enum:
+  - value: AwsAccount
+  - value: GcpProject
+  - value: GithubScope
+  - value: AzureDevOpsScope

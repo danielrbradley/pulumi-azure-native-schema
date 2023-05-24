@@ -1,0 +1,5 @@
+$token: azure-native:networkcloud/v20221212preview:OsDiskDeleteOption
+description: The strategy for deleting the OS disk.
+type: string
+enum:
+  - value: Delete

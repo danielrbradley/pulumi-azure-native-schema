@@ -1,0 +1,11 @@
+$token: azure-native:containerservice/v20230202preview:ManagedClusterWorkloadAutoScalerProfileResponse
+description: Workload Auto-scaler profile for the managed cluster.
+properties:
+  keda:
+    type: object
+    $ref: "#/types/azure-native:containerservice/v20230202preview:ManagedClusterWorkloadAutoScalerProfileKedaResponse"
+    description: KEDA (Kubernetes Event-driven Autoscaling) settings for the workload auto-scaler profile.
+  verticalPodAutoscaler:
+    type: object
+    $ref: "#/types/azure-native:containerservice/v20230202preview:ManagedClusterWorkloadAutoScalerProfileVerticalPodAutoscalerResponse"
+type: object

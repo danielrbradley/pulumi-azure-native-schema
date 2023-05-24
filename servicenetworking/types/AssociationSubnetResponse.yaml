@@ -1,0 +1,9 @@
+$token: azure-native:servicenetworking:AssociationSubnetResponse
+description: Association Subnet.
+properties:
+  id:
+    type: string
+    description: Association ID.
+type: object
+required:
+  - id

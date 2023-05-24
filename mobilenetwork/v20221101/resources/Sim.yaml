@@ -1,0 +1,106 @@
+$token: azure-native:mobilenetwork/v20221101:Sim
+description: SIM resource.
+properties:
+  deviceType:
+    type: string
+    description: An optional free-form text field that can be used to record the device type this SIM is associated with, for example 'Video camera'. The Azure portal allows SIMs to be grouped and filtered based on this value.
+  integratedCircuitCardIdentifier:
+    type: string
+    description: The integrated circuit card ID (ICCID) for the SIM.
+  internationalMobileSubscriberIdentity:
+    type: string
+    description: The international mobile subscriber identity (IMSI) for the SIM.
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: The provisioning state of the SIM resource.
+  simPolicy:
+    type: object
+    $ref: "#/types/azure-native:mobilenetwork/v20221101:SimPolicyResourceIdResponse"
+    description: The SIM policy used by this SIM. The SIM policy must be in the same location as the SIM.
+  simState:
+    type: string
+    description: The state of the SIM resource.
+  siteProvisioningState:
+    type: object
+    additionalProperties:
+      type: string
+    description: A dictionary of sites to the provisioning state of this SIM on that site.
+  staticIpConfiguration:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:mobilenetwork/v20221101:SimStaticIpPropertiesResponse"
+    description: A list of static IP addresses assigned to this SIM. Each address is assigned at a defined network scope, made up of {attached data network, slice}.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:mobilenetwork/v20221101:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  vendorKeyFingerprint:
+    type: string
+    description: The public key fingerprint of the SIM vendor who provided this SIM, if any.
+  vendorName:
+    type: string
+    description: The name of the SIM vendor who provided this SIM, if any.
+type: object
+required:
+  - internationalMobileSubscriberIdentity
+  - name
+  - provisioningState
+  - simState
+  - siteProvisioningState
+  - systemData
+  - type
+  - vendorKeyFingerprint
+  - vendorName
+inputProperties:
+  authenticationKey:
+    type: string
+    description: The Ki value for the SIM.
+  deviceType:
+    type: string
+    description: An optional free-form text field that can be used to record the device type this SIM is associated with, for example 'Video camera'. The Azure portal allows SIMs to be grouped and filtered based on this value.
+  integratedCircuitCardIdentifier:
+    type: string
+    description: The integrated circuit card ID (ICCID) for the SIM.
+  internationalMobileSubscriberIdentity:
+    type: string
+    description: The international mobile subscriber identity (IMSI) for the SIM.
+    willReplaceOnChanges: true
+  operatorKeyCode:
+    type: string
+    description: The Opc value for the SIM.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  simGroupName:
+    type: string
+    description: The name of the SIM Group.
+    willReplaceOnChanges: true
+  simName:
+    type: string
+    description: The name of the SIM.
+    willReplaceOnChanges: true
+  simPolicy:
+    type: object
+    $ref: "#/types/azure-native:mobilenetwork/v20221101:SimPolicyResourceId"
+    description: The SIM policy used by this SIM. The SIM policy must be in the same location as the SIM.
+  staticIpConfiguration:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:mobilenetwork/v20221101:SimStaticIpProperties"
+    description: A list of static IP addresses assigned to this SIM. Each address is assigned at a defined network scope, made up of {attached data network, slice}.
+requiredInputs:
+  - internationalMobileSubscriberIdentity
+  - resourceGroupName
+  - simGroupName
+aliases:
+  - type: azure-native:mobilenetwork:Sim
+  - type: azure-native:mobilenetwork/v20220401preview:Sim

@@ -1,0 +1,6 @@
+$token: azure-native:appplatform:BackendProtocol
+description: How ingress should communicate with this app backend service.
+type: string
+enum:
+  - value: GRPC
+  - value: Default

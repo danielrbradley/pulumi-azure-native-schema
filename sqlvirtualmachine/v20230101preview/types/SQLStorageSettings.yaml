@@ -1,0 +1,15 @@
+$token: azure-native:sqlvirtualmachine/v20230101preview:SQLStorageSettings
+description: Set disk storage settings for SQL Server.
+properties:
+  defaultFilePath:
+    type: string
+    description: SQL Server default file path
+  luns:
+    type: array
+    items:
+      type: integer
+    description: Logical Unit Numbers for the disks.
+  useStoragePool:
+    type: boolean
+    description: Use storage pool to build a drive if true or not provided
+type: object

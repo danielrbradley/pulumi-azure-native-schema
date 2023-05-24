@@ -1,0 +1,18 @@
+$token: azure-native:containerstorage/v20230301preview:DiskPoolProperties
+description: Disk Pool Properties
+properties:
+  csiParams:
+    type: object
+    additionalProperties:
+      type: string
+    description: List of KV pairs to set in StorageClass to configure CSI driver.
+  disks:
+    type: array
+    items:
+      type: string
+    description: Only required if individual disk selection is desired. Path to disk, e.g. <nodename>:/dev/sda or WWN. Supports specifying multiple disks (same syntax as tags).
+  maxVolumeCapacityGiB:
+    type: number
+    description: Maximum capacity of the volumes in GiB the user intends to create. Default 512.
+    default: 512
+type: object

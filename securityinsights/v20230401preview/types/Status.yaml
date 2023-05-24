@@ -1,0 +1,7 @@
+$token: azure-native:securityinsights/v20230401preview:Status
+description: The status of the hunt.
+type: string
+enum:
+  - value: New
+  - value: Active
+  - value: Closed

@@ -1,0 +1,6 @@
+$token: azure-native:authorization/v20220601:OverrideKind
+description: The override kind.
+type: string
+enum:
+  - description: It will override the policy effect type.
+    value: policyEffect

@@ -1,0 +1,66 @@
+$token: azure-native:machinelearningservices/v20230201preview:TableFixedParameters
+description: Fixed training parameters that won't be swept over during AutoML Table training.
+properties:
+  booster:
+    type: string
+    description: Specify the boosting type, e.g gbdt for XGBoost.
+  boostingType:
+    type: string
+    description: Specify the boosting type, e.g gbdt for LightGBM.
+  growPolicy:
+    type: string
+    description: Specify the grow policy, which controls the way new nodes are added to the tree.
+  learningRate:
+    type: number
+    description: The learning rate for the training procedure.
+  maxBin:
+    type: integer
+    description: Specify the Maximum number of discrete bins to bucket continuous features .
+  maxDepth:
+    type: integer
+    description: Specify the max depth to limit the tree depth explicitly.
+  maxLeaves:
+    type: integer
+    description: Specify the max leaves to limit the tree leaves explicitly.
+  minDataInLeaf:
+    type: integer
+    description: The minimum number of data per leaf.
+  minSplitGain:
+    type: number
+    description: Minimum loss reduction required to make a further partition on a leaf node of the tree.
+  modelName:
+    type: string
+    description: The name of the model to train.
+  nEstimators:
+    type: integer
+    description: Specify the number of trees (or rounds) in an model.
+  numLeaves:
+    type: integer
+    description: Specify the number of leaves.
+  preprocessorName:
+    type: string
+    description: The name of the preprocessor to use.
+  regAlpha:
+    type: number
+    description: L1 regularization term on weights.
+  regLambda:
+    type: number
+    description: L2 regularization term on weights.
+  subsample:
+    type: number
+    description: Subsample ratio of the training instance.
+  subsampleFreq:
+    type: number
+    description: Frequency of subsample.
+  treeMethod:
+    type: string
+    description: Specify the tree method.
+  withMean:
+    type: boolean
+    description: If true, center before scaling the data with StandardScalar.
+    default: false
+  withStd:
+    type: boolean
+    description: If true, scaling the data with Unit Variance with StandardScalar.
+    default: false
+type: object

@@ -1,0 +1,6 @@
+$token: azure-native:avs:AffinityStrength
+description: vm-host placement policy affinity strength (should/must)
+type: string
+enum:
+  - value: Should
+  - value: Must

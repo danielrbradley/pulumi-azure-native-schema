@@ -1,0 +1,13 @@
+$token: azure-native:resourcehealth/v20221001preview:KeyValueItemResponse
+description: Key value tuple.
+properties:
+  key:
+    type: string
+    description: Key of tuple.
+  value:
+    type: string
+    description: Value of tuple.
+type: object
+required:
+  - key
+  - value

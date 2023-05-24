@@ -1,0 +1,7 @@
+$token: azure-native:machinelearningservices/v20230401preview:WorkspaceConnectionAccessKey
+properties:
+  accessKeyId:
+    type: string
+  secretAccessKey:
+    type: string
+type: object

@@ -1,0 +1,7 @@
+$token: azure-native:media:KeyDeliveryResponse
+properties:
+  accessControl:
+    type: object
+    $ref: "#/types/azure-native:media:AccessControlResponse"
+    description: The access control properties for Key Delivery.
+type: object

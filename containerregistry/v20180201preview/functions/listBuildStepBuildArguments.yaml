@@ -1,0 +1,39 @@
+$token: azure-native:containerregistry/v20180201preview:listBuildStepBuildArguments
+description: List the build arguments for a step including the secret arguments.
+inputs:
+  properties:
+    buildTaskName:
+      type: string
+      description: The name of the container registry build task.
+      willReplaceOnChanges: true
+    registryName:
+      type: string
+      description: The name of the container registry.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group to which the container registry belongs.
+      willReplaceOnChanges: true
+    stepName:
+      type: string
+      description: The name of a build step for a container registry build task.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - buildTaskName
+    - registryName
+    - resourceGroupName
+    - stepName
+outputs:
+  description: The list of build arguments for a build step.
+  properties:
+    nextLink:
+      type: string
+      description: The URI that can be used to request the next set of paged results.
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:containerregistry/v20180201preview:BuildArgumentResponse"
+      description: The collection value.
+  type: object

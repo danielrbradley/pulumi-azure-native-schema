@@ -1,0 +1,66 @@
+$token: azure-native:netapp:VolumeGroup
+properties:
+  groupMetaData:
+    type: object
+    $ref: "#/types/azure-native:netapp:VolumeGroupMetaDataResponse"
+    description: Volume group details
+  location:
+    type: string
+    description: Resource location
+  name:
+    type: string
+    description: Resource name
+  provisioningState:
+    type: string
+    description: Azure lifecycle management
+  type:
+    type: string
+    description: Resource type
+  volumes:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:netapp:VolumeGroupVolumePropertiesResponse"
+    description: List of volumes from group
+type: object
+required:
+  - name
+  - provisioningState
+  - type
+inputProperties:
+  accountName:
+    type: string
+    description: The name of the NetApp account
+    willReplaceOnChanges: true
+  groupMetaData:
+    type: object
+    $ref: "#/types/azure-native:netapp:VolumeGroupMetaData"
+    description: Volume group details
+  location:
+    type: string
+    description: Resource location
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  volumeGroupName:
+    type: string
+    description: The name of the volumeGroup
+    willReplaceOnChanges: true
+  volumes:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:netapp:VolumeGroupVolumeProperties"
+    description: List of volumes from group
+requiredInputs:
+  - accountName
+  - resourceGroupName
+aliases:
+  - type: azure-native:netapp/v20210801:VolumeGroup
+  - type: azure-native:netapp/v20211001:VolumeGroup
+  - type: azure-native:netapp/v20220101:VolumeGroup
+  - type: azure-native:netapp/v20220301:VolumeGroup
+  - type: azure-native:netapp/v20220501:VolumeGroup
+  - type: azure-native:netapp/v20220901:VolumeGroup

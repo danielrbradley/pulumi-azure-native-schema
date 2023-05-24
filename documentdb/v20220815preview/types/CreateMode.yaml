@@ -1,0 +1,6 @@
+$token: azure-native:documentdb/v20220815preview:CreateMode
+description: Enum to indicate the mode of resource creation.
+type: string
+enum:
+  - value: Default
+  - value: Restore

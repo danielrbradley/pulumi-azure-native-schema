@@ -1,0 +1,16 @@
+$token: azure-native:relay:Sku
+description: SKU of the namespace.
+properties:
+  name:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:relay:SkuName"
+    description: Name of this SKU.
+  tier:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:relay:SkuTier"
+    description: The tier of this SKU.
+type: object
+required:
+  - name

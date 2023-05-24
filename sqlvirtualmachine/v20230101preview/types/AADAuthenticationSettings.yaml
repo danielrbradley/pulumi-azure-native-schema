@@ -1,0 +1,7 @@
+$token: azure-native:sqlvirtualmachine/v20230101preview:AADAuthenticationSettings
+description: Enable AAD authentication for SQL VM.
+properties:
+  clientId:
+    type: string
+    description: The client Id of the Managed Identity to query Microsoft Graph API. An empty string must be used for the system assigned Managed Identity
+type: object

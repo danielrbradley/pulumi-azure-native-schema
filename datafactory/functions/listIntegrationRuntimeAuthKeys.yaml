@@ -1,0 +1,33 @@
+$token: azure-native:datafactory:listIntegrationRuntimeAuthKeys
+description: |-
+  Retrieves the authentication keys for an integration runtime.
+  API Version: 2018-06-01.
+inputs:
+  properties:
+    factoryName:
+      type: string
+      description: The factory name.
+      willReplaceOnChanges: true
+    integrationRuntimeName:
+      type: string
+      description: The integration runtime name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The resource group name.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - factoryName
+    - integrationRuntimeName
+    - resourceGroupName
+outputs:
+  description: The integration runtime authentication keys.
+  properties:
+    authKey1:
+      type: string
+      description: The primary integration runtime authentication key.
+    authKey2:
+      type: string
+      description: The secondary integration runtime authentication key.
+  type: object

@@ -1,0 +1,26 @@
+$token: azure-native:kusto/v20221229:listClusterLanguageExtensions
+description: Returns a list of language extensions that can run within KQL queries.
+inputs:
+  properties:
+    clusterName:
+      type: string
+      description: The name of the Kusto cluster.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group containing the Kusto cluster.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - clusterName
+    - resourceGroupName
+outputs:
+  description: The list of language extension objects.
+  properties:
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:kusto/v20221229:LanguageExtensionResponse"
+      description: The list of language extensions.
+  type: object

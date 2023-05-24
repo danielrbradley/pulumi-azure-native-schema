@@ -1,0 +1,70 @@
+$token: azure-native:azuresphere/v20220901preview:getDeployment
+description: Get a Deployment. '.default' and '.unassigned' are system defined values and cannot be used for product or device group name.
+inputs:
+  properties:
+    catalogName:
+      type: string
+      description: Name of catalog
+      willReplaceOnChanges: true
+    deploymentName:
+      type: string
+      description: Deployment name. Use .default for deployment creation and to get the current deployment for the associated device group.
+      willReplaceOnChanges: true
+    deviceGroupName:
+      type: string
+      description: Name of device group.
+      willReplaceOnChanges: true
+    productName:
+      type: string
+      description: Name of product.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - catalogName
+    - deploymentName
+    - deviceGroupName
+    - productName
+    - resourceGroupName
+outputs:
+  description: An deployment resource belonging to a device group resource.
+  properties:
+    deployedImages:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:azuresphere/v20220901preview:ImageResponse"
+      description: Images deployed
+    deploymentDateUtc:
+      type: string
+      description: Deployment date UTC
+    deploymentId:
+      type: string
+      description: Deployment ID
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+      description: The status of the last operation.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:azuresphere/v20220901preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - deploymentDateUtc
+    - id
+    - name
+    - provisioningState
+    - systemData
+    - type

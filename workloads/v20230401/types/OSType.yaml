@@ -1,0 +1,6 @@
+$token: azure-native:workloads/v20230401:OSType
+description: The OS Type
+type: string
+enum:
+  - value: Linux
+  - value: Windows

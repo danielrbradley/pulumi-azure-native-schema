@@ -1,0 +1,163 @@
+$token: azure-native:dbforpostgresql/v20220501preview:Migration
+description: Represents a migration resource.
+properties:
+  cancel:
+    type: boolean
+    description: To trigger cancel for entire migration we need to send this flag as true
+  currentStatus:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql/v20220501preview:MigrationStatusResponse"
+    description: Migration status.
+  dBsToCancelMigrationOn:
+    type: array
+    items:
+      type: string
+    description: When you want to trigger cancel for specific databases send triggerCutover flag as true and database names in this array
+  dBsToMigrate:
+    type: array
+    items:
+      type: string
+  dBsToTiggerCutoverOn:
+    type: array
+    items:
+      type: string
+    description: When you want to trigger cutover for specific databases send triggerCutover flag as true and database names in this array
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  migrationDetailsLevel:
+    type: string
+    description: Migration details level.
+  migrationId:
+    type: string
+  migrationMode:
+    type: string
+    description: There are two types of migration modes Online and Offline
+  migrationWindowStartTimeInUtc:
+    type: string
+  name:
+    type: string
+    description: The name of the resource
+  overwriteDBsInTarget:
+    type: boolean
+  setupLogicalReplicationOnSourceDBIfNeeded:
+    type: boolean
+  sourceDBServerFullyQualifiedDomainName:
+    type: string
+  sourceDBServerMetadata:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql/v20220501preview:DBServerMetadataResponse"
+    description: Database server metadata.
+  sourceDBServerResourceId:
+    type: string
+  startDataMigration:
+    type: boolean
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql/v20220501preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  targetDBServerFullyQualifiedDomainName:
+    type: string
+  targetDBServerMetadata:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql/v20220501preview:DBServerMetadataResponse"
+    description: Database server metadata.
+  targetDBServerResourceId:
+    type: string
+  triggerCutover:
+    type: boolean
+    description: To trigger cutover for entire migration we need to send this flag as true
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - currentStatus
+  - location
+  - migrationDetailsLevel
+  - migrationId
+  - name
+  - sourceDBServerMetadata
+  - systemData
+  - targetDBServerMetadata
+  - targetDBServerResourceId
+  - type
+inputProperties:
+  cancel:
+    type: boolean
+    description: To trigger cancel for entire migration we need to send this flag as true
+  dBsToCancelMigrationOn:
+    type: array
+    items:
+      type: string
+    description: When you want to trigger cancel for specific databases send triggerCutover flag as true and database names in this array
+  dBsToMigrate:
+    type: array
+    items:
+      type: string
+  dBsToTiggerCutoverOn:
+    type: array
+    items:
+      type: string
+    description: When you want to trigger cutover for specific databases send triggerCutover flag as true and database names in this array
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  migrationMode:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:dbforpostgresql/v20220501preview:MigrationMode"
+    description: There are two types of migration modes Online and Offline
+  migrationName:
+    type: string
+    description: The name of the migration.
+    willReplaceOnChanges: true
+  migrationWindowStartTimeInUtc:
+    type: string
+  overwriteDBsInTarget:
+    type: boolean
+  resourceGroupName:
+    type: string
+    description: The resource group name of the target database server.
+    willReplaceOnChanges: true
+  secretParameters:
+    type: object
+    $ref: "#/types/azure-native:dbforpostgresql/v20220501preview:MigrationSecretParameters"
+    description: Migration secret parameters.
+  setupLogicalReplicationOnSourceDBIfNeeded:
+    type: boolean
+  sourceDBServerFullyQualifiedDomainName:
+    type: string
+  sourceDBServerResourceId:
+    type: string
+  startDataMigration:
+    type: boolean
+  subscriptionId:
+    type: string
+    description: The subscription ID of the target database server.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  targetDBServerFullyQualifiedDomainName:
+    type: string
+  targetDBServerName:
+    type: string
+    description: The name of the target database server.
+    willReplaceOnChanges: true
+  triggerCutover:
+    type: boolean
+    description: To trigger cutover for entire migration we need to send this flag as true
+requiredInputs:
+  - resourceGroupName
+  - targetDBServerName
+aliases:
+  - type: azure-native:dbforpostgresql/v20210615privatepreview:Migration

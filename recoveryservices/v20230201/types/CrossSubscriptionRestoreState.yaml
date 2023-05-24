@@ -1,0 +1,6 @@
+$token: azure-native:recoveryservices/v20230201:CrossSubscriptionRestoreState
+type: string
+enum:
+  - value: Enabled
+  - value: Disabled
+  - value: PermanentlyDisabled

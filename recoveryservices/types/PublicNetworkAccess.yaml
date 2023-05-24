@@ -1,0 +1,6 @@
+$token: azure-native:recoveryservices:PublicNetworkAccess
+description: property to enable or disable resource provider inbound network traffic from public clients
+type: string
+enum:
+  - value: Enabled
+  - value: Disabled

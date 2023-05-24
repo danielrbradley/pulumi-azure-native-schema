@@ -1,0 +1,50 @@
+$token: azure-native:azurearcdata:getFailoverGroup
+description: |-
+  Retrieves a failover group resource
+  API Version: 2023-03-15-preview.
+inputs:
+  properties:
+    failoverGroupName:
+      type: string
+      description: The name of the Failover Group
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the Azure resource group
+      willReplaceOnChanges: true
+    sqlManagedInstanceName:
+      type: string
+      description: Name of SQL Managed Instance
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - failoverGroupName
+    - resourceGroupName
+    - sqlManagedInstanceName
+outputs:
+  description: A failover group resource.
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    properties:
+      type: object
+      $ref: "#/types/azure-native:azurearcdata:FailoverGroupPropertiesResponse"
+      description: "null"
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:azurearcdata:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - systemData
+    - type

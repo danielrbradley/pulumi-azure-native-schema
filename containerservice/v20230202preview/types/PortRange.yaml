@@ -1,0 +1,15 @@
+$token: azure-native:containerservice/v20230202preview:PortRange
+description: The port range.
+properties:
+  portEnd:
+    type: integer
+    description: The maximum port that is included in the range. It should be ranged from 1 to 65535, and be greater than or equal to portStart.
+  portStart:
+    type: integer
+    description: The minimum port that is included in the range. It should be ranged from 1 to 65535, and be less than or equal to portEnd.
+  protocol:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:containerservice/v20230202preview:Protocol"
+    description: The network protocol of the port.
+type: object

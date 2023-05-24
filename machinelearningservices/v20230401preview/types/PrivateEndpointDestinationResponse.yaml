@@ -1,0 +1,13 @@
+$token: azure-native:machinelearningservices/v20230401preview:PrivateEndpointDestinationResponse
+description: Private Endpoint destination for a Private Endpoint Outbound Rule for the managed network of a machine learning workspace.
+properties:
+  serviceResourceId:
+    type: string
+  sparkEnabled:
+    type: boolean
+  sparkStatus:
+    type: string
+    description: Status of a managed network Outbound Rule of a machine learning workspace.
+  subresourceTarget:
+    type: string
+type: object

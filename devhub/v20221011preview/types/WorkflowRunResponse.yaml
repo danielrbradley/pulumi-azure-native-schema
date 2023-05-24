@@ -1,0 +1,19 @@
+$token: azure-native:devhub/v20221011preview:WorkflowRunResponse
+properties:
+  lastRunAt:
+    type: string
+    description: The timestamp of the last workflow run.
+  succeeded:
+    type: boolean
+    description: Describes if the workflow run succeeded.
+  workflowRunStatus:
+    type: string
+    description: Describes the status of the workflow run
+  workflowRunURL:
+    type: string
+    description: URL to the run of the workflow.
+type: object
+required:
+  - lastRunAt
+  - succeeded
+  - workflowRunURL

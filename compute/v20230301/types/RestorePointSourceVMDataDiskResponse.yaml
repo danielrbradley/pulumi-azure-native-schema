@@ -1,0 +1,33 @@
+$token: azure-native:compute/v20230301:RestorePointSourceVMDataDiskResponse
+description: Describes a data disk.
+properties:
+  caching:
+    type: string
+    description: Gets the caching type.
+  diskRestorePoint:
+    type: object
+    $ref: "#/types/azure-native:compute/v20230301:DiskRestorePointAttributesResponse"
+    description: Contains Disk Restore Point properties.
+  diskSizeGB:
+    type: integer
+    description: Gets the initial disk size in GB for blank data disks, and the new desired size for existing OS and Data disks.
+  lun:
+    type: integer
+    description: Gets the logical unit number.
+  managedDisk:
+    type: object
+    $ref: "#/types/azure-native:compute/v20230301:ManagedDiskParametersResponse"
+    description: Contains the managed disk details.
+  name:
+    type: string
+    description: Gets the disk name.
+  writeAcceleratorEnabled:
+    type: boolean
+    description: Shows true if the disk is write-accelerator enabled.
+type: object
+required:
+  - caching
+  - diskSizeGB
+  - lun
+  - name
+  - writeAcceleratorEnabled

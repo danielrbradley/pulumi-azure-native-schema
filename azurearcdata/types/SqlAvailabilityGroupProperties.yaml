@@ -1,0 +1,43 @@
+$token: azure-native:azurearcdata:SqlAvailabilityGroupProperties
+description: Properties of SqlAvailabilityGroup.
+properties:
+  availabilityGroupId:
+    type: string
+    description: Id GUID of the availability group.
+  availabilityGroupName:
+    type: string
+    description: The name of the availability group.
+  basicFeatures:
+    type: boolean
+    description: SQL Server basic availability group.
+  clusterTypeDesc:
+    type: string
+    description: SQL Server availability group cluster type description
+  collectionTimestamp:
+    type: string
+    description: Timestamp for when the data was collected from the client machine.
+  dbFailover:
+    type: boolean
+    description: SQL Server availability group failover for database health conditions.
+  dtcSupport:
+    type: boolean
+    description: SQL Server availability group DTC support enabled.
+  instanceName:
+    type: string
+    description: The name of the instance name which availability group primary is on.
+  isContained:
+    type: boolean
+    description: SQL Server availability group contained system databases.
+  isDistributed:
+    type: boolean
+    description: SQL Server distributed availability group.
+  requiredSynchronizedSecondariesCommit:
+    type: integer
+    description: Availability group required the number of synchronized secondary to commit.
+  version:
+    type: integer
+    description: SQL Server availability group current version.
+type: object
+required:
+  - availabilityGroupId
+  - availabilityGroupName

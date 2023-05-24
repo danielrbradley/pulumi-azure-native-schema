@@ -1,0 +1,30 @@
+$token: azure-native:network/v20200501:getVirtualNetworkGatewayAdvertisedRoutes
+description: This operation retrieves a list of routes the virtual network gateway is advertising to the specified peer.
+inputs:
+  properties:
+    peer:
+      type: string
+      description: The IP address of the peer.
+    resourceGroupName:
+      type: string
+      description: The name of the resource group.
+      willReplaceOnChanges: true
+    virtualNetworkGatewayName:
+      type: string
+      description: The name of the virtual network gateway.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - peer
+    - resourceGroupName
+    - virtualNetworkGatewayName
+outputs:
+  description: List of virtual network gateway routes.
+  properties:
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:network/v20200501:GatewayRouteResponse"
+      description: List of gateway routes.
+  type: object

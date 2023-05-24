@@ -1,0 +1,17 @@
+$token: azure-native:appplatform/v20230301preview:ApplicationLiveViewResourceRequestsResponse
+description: The resource quantity for required CPU and Memory of Application Live View component
+properties:
+  cpu:
+    type: string
+    description: Cpu quantity allocated to each Application Live View component instance. 1 core can be represented by 1 or 1000m.
+  instanceCount:
+    type: integer
+    description: Desired instance count of Application Live View component instance.
+  memory:
+    type: string
+    description: Memory quantity allocated to each Application Live View component instance. 1 GB can be represented by 1Gi or 1024Mi.
+type: object
+required:
+  - cpu
+  - instanceCount
+  - memory

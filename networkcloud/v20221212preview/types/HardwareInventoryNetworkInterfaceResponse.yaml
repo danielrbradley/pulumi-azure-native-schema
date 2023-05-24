@@ -1,0 +1,20 @@
+$token: azure-native:networkcloud/v20221212preview:HardwareInventoryNetworkInterfaceResponse
+properties:
+  linkStatus:
+    type: string
+    description: The current status of the link.
+  macAddress:
+    type: string
+    description: The MAC address associated with this interface.
+  name:
+    type: string
+    description: The name of the interface.
+  networkInterfaceId:
+    type: string
+    description: The resource ID of the network interface for the port on the switch that this machine's interface is connected to.
+type: object
+required:
+  - linkStatus
+  - macAddress
+  - name
+  - networkInterfaceId

@@ -1,0 +1,12 @@
+$token: azure-native:securitydevops/v20220901preview:AzureDevOpsConnectorProperties
+properties:
+  authorization:
+    type: object
+    $ref: "#/types/azure-native:securitydevops/v20220901preview:AuthorizationInfo"
+  orgs:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:securitydevops/v20220901preview:AzureDevOpsOrgMetadata"
+    description: Gets or sets org onboarding information.
+type: object

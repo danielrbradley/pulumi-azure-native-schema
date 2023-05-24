@@ -1,0 +1,19 @@
+$token: azure-native:authorization/v20220601:Selector
+description: The selector expression.
+properties:
+  in:
+    type: array
+    items:
+      type: string
+    description: The list of values to filter in.
+  kind:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:authorization/v20220601:SelectorKind"
+    description: The selector kind.
+  notIn:
+    type: array
+    items:
+      type: string
+    description: The list of values to filter out.
+type: object

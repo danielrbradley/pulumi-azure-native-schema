@@ -1,0 +1,7 @@
+$token: azure-native:machinelearningservices/v20230401preview:WorkspaceConnectionManagedIdentityResponse
+properties:
+  clientId:
+    type: string
+  resourceId:
+    type: string
+type: object

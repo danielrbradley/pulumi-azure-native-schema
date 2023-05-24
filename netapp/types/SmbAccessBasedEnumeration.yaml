@@ -1,0 +1,8 @@
+$token: azure-native:netapp:SmbAccessBasedEnumeration
+description: Enables access based enumeration share property for SMB Shares. Only applicable for SMB/DualProtocol volume
+type: string
+enum:
+  - description: smbAccessBasedEnumeration share setting is disabled
+    value: Disabled
+  - description: smbAccessBasedEnumeration share setting is enabled
+    value: Enabled

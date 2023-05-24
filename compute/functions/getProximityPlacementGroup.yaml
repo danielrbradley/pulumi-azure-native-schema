@@ -1,0 +1,84 @@
+$token: azure-native:compute:getProximityPlacementGroup
+description: |-
+  Retrieves information about a proximity placement group .
+  API Version: 2022-11-01.
+inputs:
+  properties:
+    includeColocationStatus:
+      type: string
+      description: includeColocationStatus=true enables fetching the colocation status of all the resources in the proximity placement group.
+    proximityPlacementGroupName:
+      type: string
+      description: The name of the proximity placement group.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - proximityPlacementGroupName
+    - resourceGroupName
+outputs:
+  description: Specifies information about the proximity placement group.
+  properties:
+    availabilitySets:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:compute:SubResourceWithColocationStatusResponse"
+      description: A list of references to all availability sets in the proximity placement group.
+    colocationStatus:
+      type: object
+      $ref: "#/types/azure-native:compute:InstanceViewStatusResponse"
+      description: Describes colocation status of the Proximity Placement Group.
+    id:
+      type: string
+      description: Resource Id
+    intent:
+      type: object
+      $ref: "#/types/azure-native:compute:ProximityPlacementGroupPropertiesResponseIntent"
+      description: Specifies the user intent of the proximity placement group.
+    location:
+      type: string
+      description: Resource location
+    name:
+      type: string
+      description: Resource name
+    proximityPlacementGroupType:
+      type: string
+      description: "Specifies the type of the proximity placement group. <br><br> Possible values are: <br><br> **Standard** : Co-locate resources within an Azure region or Availability Zone. <br><br> **Ultra** : For future use."
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags
+    type:
+      type: string
+      description: Resource type
+    virtualMachineScaleSets:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:compute:SubResourceWithColocationStatusResponse"
+      description: A list of references to all virtual machine scale sets in the proximity placement group.
+    virtualMachines:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:compute:SubResourceWithColocationStatusResponse"
+      description: A list of references to all virtual machines in the proximity placement group.
+    zones:
+      type: array
+      items:
+        type: string
+      description: Specifies the Availability Zone where virtual machine, virtual machine scale set or availability set associated with the  proximity placement group can be created.
+  type: object
+  required:
+    - availabilitySets
+    - id
+    - location
+    - name
+    - type
+    - virtualMachineScaleSets
+    - virtualMachines

@@ -1,0 +1,73 @@
+$token: azure-native:security/v20220101preview:GovernanceAssignment
+description: Governance assignment over a given scope
+properties:
+  additionalData:
+    type: object
+    $ref: "#/types/azure-native:security/v20220101preview:GovernanceAssignmentAdditionalDataResponse"
+    description: The additional data for the governance assignment - e.g. links to ticket (optional), see example
+  governanceEmailNotification:
+    type: object
+    $ref: "#/types/azure-native:security/v20220101preview:GovernanceEmailNotificationResponse"
+    description: The email notifications settings for the governance rule, states whether to disable notifications for mangers and owners
+  isGracePeriod:
+    type: boolean
+    description: Defines whether there is a grace period on the governance assignment
+  name:
+    type: string
+    description: Resource name
+  owner:
+    type: string
+    description: The Owner for the governance assignment - e.g. user@contoso.com - see example
+  remediationDueDate:
+    type: string
+    description: The remediation due-date - after this date Secure Score will be affected (in case of  active grace-period)
+  remediationEta:
+    type: object
+    $ref: "#/types/azure-native:security/v20220101preview:RemediationEtaResponse"
+    description: The ETA (estimated time of arrival) for remediation (optional), see example
+  type:
+    type: string
+    description: Resource type
+type: object
+required:
+  - name
+  - remediationDueDate
+  - type
+inputProperties:
+  additionalData:
+    type: object
+    $ref: "#/types/azure-native:security/v20220101preview:GovernanceAssignmentAdditionalData"
+    description: The additional data for the governance assignment - e.g. links to ticket (optional), see example
+  assessmentName:
+    type: string
+    description: The Assessment Key - A unique key for the assessment type
+    willReplaceOnChanges: true
+  assignmentKey:
+    type: string
+    description: The governance assignment key - the assessment key of the required governance assignment
+    willReplaceOnChanges: true
+  governanceEmailNotification:
+    type: object
+    $ref: "#/types/azure-native:security/v20220101preview:GovernanceEmailNotification"
+    description: The email notifications settings for the governance rule, states whether to disable notifications for mangers and owners
+  isGracePeriod:
+    type: boolean
+    description: Defines whether there is a grace period on the governance assignment
+  owner:
+    type: string
+    description: The Owner for the governance assignment - e.g. user@contoso.com - see example
+  remediationDueDate:
+    type: string
+    description: The remediation due-date - after this date Secure Score will be affected (in case of  active grace-period)
+  remediationEta:
+    type: object
+    $ref: "#/types/azure-native:security/v20220101preview:RemediationEta"
+    description: The ETA (estimated time of arrival) for remediation (optional), see example
+  scope:
+    type: string
+    description: "The scope of the Governance assignments. Valid scopes are: subscription (format: 'subscriptions/{subscriptionId}'), or security connector (format: 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Security/securityConnectors/{securityConnectorName})'"
+    willReplaceOnChanges: true
+requiredInputs:
+  - assessmentName
+  - remediationDueDate
+  - scope

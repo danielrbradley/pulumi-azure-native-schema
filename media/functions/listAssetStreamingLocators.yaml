@@ -1,0 +1,35 @@
+$token: azure-native:media:listAssetStreamingLocators
+description: |-
+  Lists Streaming Locators which are associated with this asset.
+  API Version: 2022-08-01.
+inputs:
+  properties:
+    accountName:
+      type: string
+      description: The Media Services account name.
+      willReplaceOnChanges: true
+    assetName:
+      type: string
+      description: The Asset name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group within the Azure subscription.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - accountName
+    - assetName
+    - resourceGroupName
+outputs:
+  description: The Streaming Locators associated with this Asset.
+  properties:
+    streamingLocators:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:media:AssetStreamingLocatorResponse"
+      description: The list of Streaming Locators.
+  type: object
+  required:
+    - streamingLocators

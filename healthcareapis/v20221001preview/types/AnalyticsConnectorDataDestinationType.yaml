@@ -1,0 +1,5 @@
+$token: azure-native:healthcareapis/v20221001preview:AnalyticsConnectorDataDestinationType
+description: Type of data destination.
+type: string
+enum:
+  - value: datalake

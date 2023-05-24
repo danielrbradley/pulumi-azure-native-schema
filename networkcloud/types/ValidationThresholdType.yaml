@@ -1,0 +1,6 @@
+$token: azure-native:networkcloud:ValidationThresholdType
+description: Selection of how the threshold should be evaluated.
+type: string
+enum:
+  - value: CountSuccess
+  - value: PercentSuccess

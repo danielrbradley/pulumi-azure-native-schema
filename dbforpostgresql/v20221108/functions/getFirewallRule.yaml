@@ -1,0 +1,55 @@
+$token: azure-native:dbforpostgresql/v20221108:getFirewallRule
+description: Gets information about a cluster firewall rule.
+inputs:
+  properties:
+    clusterName:
+      type: string
+      description: The name of the cluster.
+      willReplaceOnChanges: true
+    firewallRuleName:
+      type: string
+      description: The name of the cluster firewall rule.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - clusterName
+    - firewallRuleName
+    - resourceGroupName
+outputs:
+  description: Represents a cluster firewall rule.
+  properties:
+    endIpAddress:
+      type: string
+      description: The end IP address of the cluster firewall rule. Must be IPv4 format.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+      description: Provisioning state of the firewall rule.
+    startIpAddress:
+      type: string
+      description: The start IP address of the cluster firewall rule. Must be IPv4 format.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:dbforpostgresql/v20221108:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - endIpAddress
+    - id
+    - name
+    - provisioningState
+    - startIpAddress
+    - systemData
+    - type

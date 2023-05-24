@@ -1,0 +1,44 @@
+$token: azure-native:scheduler:getJob
+description: |-
+  Gets a job.
+  API Version: 2016-03-01.
+inputs:
+  properties:
+    jobCollectionName:
+      type: string
+      description: The job collection name.
+      willReplaceOnChanges: true
+    jobName:
+      type: string
+      description: The job name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The resource group name.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - jobCollectionName
+    - jobName
+    - resourceGroupName
+outputs:
+  properties:
+    id:
+      type: string
+      description: Gets the job resource identifier.
+    name:
+      type: string
+      description: Gets the job resource name.
+    properties:
+      type: object
+      $ref: "#/types/azure-native:scheduler:JobPropertiesResponse"
+      description: Gets or sets the job properties.
+    type:
+      type: string
+      description: Gets the job resource type.
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - type

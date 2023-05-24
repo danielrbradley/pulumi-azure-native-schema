@@ -1,0 +1,17 @@
+$token: azure-native:machinelearningservices/v20230401preview:MonitoringInputDataResponse
+properties:
+  asset:
+    $ref: pulumi.json#/Any
+    description: The data asset input to be leveraged by the monitoring job..
+  dataContext:
+    type: string
+    description: "[Required] The context of the data source."
+  preprocessingComponentId:
+    type: string
+    description: The ARM resource ID of the component resource used to preprocess the data.
+  targetColumnName:
+    type: string
+    description: The target column in the given data asset to leverage.
+type: object
+required:
+  - dataContext

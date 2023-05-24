@@ -1,0 +1,71 @@
+$token: azure-native:appplatform/v20230301preview:App
+description: App resource payload
+properties:
+  identity:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:ManagedIdentityPropertiesResponse"
+    description: The Managed Identity type of the app resource
+  location:
+    type: string
+    description: The GEO location of the application, always the same with its parent resource
+  name:
+    type: string
+    description: The name of the resource.
+  properties:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:AppResourcePropertiesResponse"
+    description: Properties of the App resource
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  type:
+    type: string
+    description: The type of the resource.
+type: object
+required:
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  appName:
+    type: string
+    description: The name of the App resource.
+    willReplaceOnChanges: true
+  identity:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:ManagedIdentityProperties"
+    description: The Managed Identity type of the app resource
+  location:
+    type: string
+    description: The GEO location of the application, always the same with its parent resource
+  properties:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:AppResourceProperties"
+    description: Properties of the App resource
+  resourceGroupName:
+    type: string
+    description: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+    willReplaceOnChanges: true
+  serviceName:
+    type: string
+    description: The name of the Service resource.
+    willReplaceOnChanges: true
+requiredInputs:
+  - resourceGroupName
+  - serviceName
+aliases:
+  - type: azure-native:appplatform:App
+  - type: azure-native:appplatform/v20200701:App
+  - type: azure-native:appplatform/v20201101preview:App
+  - type: azure-native:appplatform/v20210601preview:App
+  - type: azure-native:appplatform/v20210901preview:App
+  - type: azure-native:appplatform/v20220101preview:App
+  - type: azure-native:appplatform/v20220301preview:App
+  - type: azure-native:appplatform/v20220401:App
+  - type: azure-native:appplatform/v20220501preview:App
+  - type: azure-native:appplatform/v20220901preview:App
+  - type: azure-native:appplatform/v20221101preview:App
+  - type: azure-native:appplatform/v20221201:App
+  - type: azure-native:appplatform/v20230101preview:App

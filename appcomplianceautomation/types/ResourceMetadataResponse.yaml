@@ -1,0 +1,23 @@
+$token: azure-native:appcomplianceautomation:ResourceMetadataResponse
+description: Single resource Id's metadata.
+properties:
+  resourceId:
+    type: string
+    description: Resource Id - e.g. "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg1/providers/Microsoft.Compute/virtualMachines/vm1".
+  resourceKind:
+    type: string
+    description: Resource kind.
+  resourceName:
+    type: string
+    description: Resource name.
+  resourceType:
+    type: string
+    description: Resource type.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource's tag type.
+type: object
+required:
+  - resourceId

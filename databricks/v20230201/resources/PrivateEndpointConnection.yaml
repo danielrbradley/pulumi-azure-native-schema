@@ -1,0 +1,43 @@
+$token: azure-native:databricks/v20230201:PrivateEndpointConnection
+description: The private endpoint connection of a workspace
+properties:
+  name:
+    type: string
+    description: The resource name.
+  properties:
+    type: object
+    $ref: "#/types/azure-native:databricks/v20230201:PrivateEndpointConnectionPropertiesResponse"
+    description: The private endpoint connection properties.
+  type:
+    type: string
+    description: The resource type.
+type: object
+required:
+  - name
+  - properties
+  - type
+inputProperties:
+  privateEndpointConnectionName:
+    type: string
+    description: The name of the private endpoint connection
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:databricks/v20230201:PrivateEndpointConnectionProperties"
+    description: The private endpoint connection properties.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  workspaceName:
+    type: string
+    description: The name of the workspace.
+    willReplaceOnChanges: true
+requiredInputs:
+  - properties
+  - resourceGroupName
+  - workspaceName
+aliases:
+  - type: azure-native:databricks:PrivateEndpointConnection
+  - type: azure-native:databricks/v20210401preview:PrivateEndpointConnection
+  - type: azure-native:databricks/v20220401preview:PrivateEndpointConnection

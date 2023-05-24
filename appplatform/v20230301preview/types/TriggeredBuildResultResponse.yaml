@@ -1,0 +1,7 @@
+$token: azure-native:appplatform/v20230301preview:TriggeredBuildResultResponse
+description: The build result triggered by a build
+properties:
+  id:
+    type: string
+    description: The unique build id of this build result
+type: object

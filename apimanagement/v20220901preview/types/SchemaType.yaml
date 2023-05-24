@@ -1,0 +1,10 @@
+$token: azure-native:apimanagement/v20220901preview:SchemaType
+description: Schema Type. Immutable.
+type: string
+enum:
+  - name: Xml
+    description: XML schema type.
+    value: xml
+  - name: Json
+    description: Json schema type.
+    value: json

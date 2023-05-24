@@ -1,0 +1,5 @@
+$token: azure-native:healthcareapis/v20221001preview:AnalyticsConnectorMappingType
+description: Type of data mapping.
+type: string
+enum:
+  - value: fhirToParquet

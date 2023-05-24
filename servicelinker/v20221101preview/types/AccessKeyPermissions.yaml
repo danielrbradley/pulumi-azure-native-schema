@@ -1,0 +1,8 @@
+$token: azure-native:servicelinker/v20221101preview:AccessKeyPermissions
+type: string
+enum:
+  - value: Read
+  - value: Write
+  - value: Listen
+  - value: Send
+  - value: Manage

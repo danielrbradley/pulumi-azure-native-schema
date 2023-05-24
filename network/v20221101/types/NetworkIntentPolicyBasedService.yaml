@@ -1,0 +1,7 @@
+$token: azure-native:network/v20221101:NetworkIntentPolicyBasedService
+description: Network intent policy based services.
+type: string
+enum:
+  - value: None
+  - value: All
+  - value: AllowRulesOnly

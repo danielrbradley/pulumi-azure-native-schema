@@ -1,0 +1,8 @@
+$token: azure-native:azurestackhci/v20210901preview:GalleryImageVersionStorageProfileResponse
+description: This is the storage profile of a Gallery Image Version.
+properties:
+  osDiskImage:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:GalleryOSDiskImageResponse"
+    description: This is the OS disk image.
+type: object

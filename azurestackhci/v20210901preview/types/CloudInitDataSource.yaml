@@ -1,0 +1,6 @@
+$token: azure-native:azurestackhci/v20210901preview:CloudInitDataSource
+description: Datasource for the gallery image when provisioning with cloud-init [Azure, NoCloud]
+type: string
+enum:
+  - value: NoCloud
+  - value: Azure

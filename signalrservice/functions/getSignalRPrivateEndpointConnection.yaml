@@ -1,0 +1,63 @@
+$token: azure-native:signalrservice:getSignalRPrivateEndpointConnection
+description: |-
+  Get the specified private endpoint connection
+  API Version: 2023-02-01.
+inputs:
+  properties:
+    privateEndpointConnectionName:
+      type: string
+      description: The name of the private endpoint connection
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+      willReplaceOnChanges: true
+    resourceName:
+      type: string
+      description: The name of the resource.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - privateEndpointConnectionName
+    - resourceGroupName
+    - resourceName
+outputs:
+  description: A private endpoint connection to an azure resource
+  properties:
+    groupIds:
+      type: array
+      items:
+        type: string
+      description: Group IDs
+    id:
+      type: string
+      description: Fully qualified resource Id for the resource.
+    name:
+      type: string
+      description: The name of the resource.
+    privateEndpoint:
+      type: object
+      $ref: "#/types/azure-native:signalrservice:PrivateEndpointResponse"
+      description: Private endpoint
+    privateLinkServiceConnectionState:
+      type: object
+      $ref: "#/types/azure-native:signalrservice:PrivateLinkServiceConnectionStateResponse"
+      description: Connection state of the private endpoint connection
+    provisioningState:
+      type: string
+      description: Provisioning state of the resource.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:signalrservice:SystemDataResponse"
+      description: Metadata pertaining to creation and last modification of the resource.
+    type:
+      type: string
+      description: The type of the resource - e.g. "Microsoft.SignalRService/SignalR"
+  type: object
+  required:
+    - groupIds
+    - id
+    - name
+    - provisioningState
+    - systemData
+    - type

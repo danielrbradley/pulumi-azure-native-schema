@@ -1,0 +1,19 @@
+$token: azure-native:appplatform/v20230101preview:AcceleratorBasicAuthSetting
+description: Auth setting for basic auth.
+properties:
+  authType:
+    type: string
+    description: |-
+      The type of the auth setting.
+      Expected value is 'BasicAuth'.
+    const: BasicAuth
+  password:
+    type: string
+    description: Password of git repository basic auth.
+  username:
+    type: string
+    description: Username of git repository basic auth.
+type: object
+required:
+  - authType
+  - username

@@ -1,0 +1,34 @@
+$token: azure-native:servicelinker/v20221101preview:ServicePrincipalCertificateAuthInfo
+description: The authentication info when authType is servicePrincipal certificate
+properties:
+  authType:
+    type: string
+    description: |-
+      The authentication type.
+      Expected value is 'servicePrincipalCertificate'.
+    const: servicePrincipalCertificate
+  certificate:
+    type: string
+    description: ServicePrincipal certificate for servicePrincipal auth.
+  clientId:
+    type: string
+    description: Application clientId for servicePrincipal auth.
+  deleteOrUpdateBehavior:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:servicelinker/v20221101preview:DeleteOrUpdateBehavior"
+    description: Indicates whether to clean up previous operation when Linker is updating or deleting
+  principalId:
+    type: string
+    description: Principal Id for servicePrincipal auth.
+  roles:
+    type: array
+    items:
+      type: string
+    description: "Optional, this value specifies the Azure roles to be assigned. Automatically "
+type: object
+required:
+  - authType
+  - certificate
+  - clientId
+  - principalId

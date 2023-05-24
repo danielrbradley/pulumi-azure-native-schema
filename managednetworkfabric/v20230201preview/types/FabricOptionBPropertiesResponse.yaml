@@ -1,0 +1,17 @@
+$token: azure-native:managednetworkfabric/v20230201preview:FabricOptionBPropertiesResponse
+description: Option B configuration to be used for management vpn.
+properties:
+  exportRouteTargets:
+    type: array
+    items:
+      type: string
+    description: Route Targets to be applied for outgoing routes from CE.
+  importRouteTargets:
+    type: array
+    items:
+      type: string
+    description: Route Targets to be applied for incoming routes into CE.
+type: object
+required:
+  - exportRouteTargets
+  - importRouteTargets

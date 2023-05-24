@@ -1,0 +1,111 @@
+$token: azure-native:netapp:Backup
+properties:
+  backupId:
+    type: string
+    description: UUID v4 used to identify the Backup
+  backupType:
+    type: string
+    description: Type of backup Manual or Scheduled
+  creationDate:
+    type: string
+    description: The creation date of the backup
+  failureReason:
+    type: string
+    description: Failure reason
+  label:
+    type: string
+    description: Label for backup
+  location:
+    type: string
+    description: Resource location
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: Azure lifecycle management
+  size:
+    type: number
+    description: Size of backup
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:netapp:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  useExistingSnapshot:
+    type: boolean
+    description: Manual backup an already existing snapshot. This will always be false for scheduled backups and true/false for manual backups
+    default: false
+  volumeName:
+    type: string
+    description: Volume name
+type: object
+required:
+  - backupId
+  - backupType
+  - creationDate
+  - failureReason
+  - location
+  - name
+  - provisioningState
+  - size
+  - systemData
+  - type
+  - volumeName
+inputProperties:
+  accountName:
+    type: string
+    description: The name of the NetApp account
+    willReplaceOnChanges: true
+  backupName:
+    type: string
+    description: The name of the backup
+    willReplaceOnChanges: true
+  label:
+    type: string
+    description: Label for backup
+  location:
+    type: string
+    description: Resource location
+    willReplaceOnChanges: true
+  poolName:
+    type: string
+    description: The name of the capacity pool
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  useExistingSnapshot:
+    type: boolean
+    description: Manual backup an already existing snapshot. This will always be false for scheduled backups and true/false for manual backups
+    default: false
+  volumeName:
+    type: string
+    description: The name of the volume
+    willReplaceOnChanges: true
+requiredInputs:
+  - accountName
+  - poolName
+  - resourceGroupName
+  - volumeName
+aliases:
+  - type: azure-native:netapp/v20200501:Backup
+  - type: azure-native:netapp/v20200601:Backup
+  - type: azure-native:netapp/v20200701:Backup
+  - type: azure-native:netapp/v20200801:Backup
+  - type: azure-native:netapp/v20200901:Backup
+  - type: azure-native:netapp/v20201101:Backup
+  - type: azure-native:netapp/v20201201:Backup
+  - type: azure-native:netapp/v20210201:Backup
+  - type: azure-native:netapp/v20210401:Backup
+  - type: azure-native:netapp/v20210401preview:Backup
+  - type: azure-native:netapp/v20210601:Backup
+  - type: azure-native:netapp/v20210801:Backup
+  - type: azure-native:netapp/v20211001:Backup
+  - type: azure-native:netapp/v20220101:Backup
+  - type: azure-native:netapp/v20220301:Backup
+  - type: azure-native:netapp/v20220501:Backup
+  - type: azure-native:netapp/v20220901:Backup

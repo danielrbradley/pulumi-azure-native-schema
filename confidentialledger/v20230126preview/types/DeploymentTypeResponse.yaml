@@ -1,0 +1,10 @@
+$token: azure-native:confidentialledger/v20230126preview:DeploymentTypeResponse
+description: Object representing DeploymentType for Managed CCF.
+properties:
+  appSourceUri:
+    type: string
+    description: Source Uri containing ManagedCCF code
+  languageRuntime:
+    type: string
+    description: Unique name for the Managed CCF.
+type: object

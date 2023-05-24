@@ -1,0 +1,6 @@
+$token: azure-native:resources/v20220801preview:DeploymentStacksDeleteDetachEnum
+description: Specifies the action that should be taken on the resource when the deployment stack is deleted. Delete will attempt to delete the resource from Azure. Detach will leave the resource in it's current state.
+type: string
+enum:
+  - value: delete
+  - value: detach

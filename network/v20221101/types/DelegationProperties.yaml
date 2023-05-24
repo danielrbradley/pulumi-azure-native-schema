@@ -1,0 +1,7 @@
+$token: azure-native:network/v20221101:DelegationProperties
+description: Properties of the delegation.
+properties:
+  serviceName:
+    type: string
+    description: The service name to which the NVA is delegated.
+type: object

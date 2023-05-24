@@ -1,0 +1,5 @@
+$token: azure-native:healthcareapis/v20221001preview:AnalyticsConnectorDataSourceType
+description: Type of data source.
+type: string
+enum:
+  - value: fhirservice

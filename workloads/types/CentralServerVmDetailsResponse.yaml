@@ -1,0 +1,19 @@
+$token: azure-native:workloads:CentralServerVmDetailsResponse
+description: The SAP Central Services Instance VM details.
+properties:
+  storageDetails:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:workloads:StorageInformationResponse"
+    description: Storage details of all the Storage Accounts attached to the ASCS Virtual Machine. For e.g. NFS on AFS Shared Storage.
+  type:
+    type: string
+    description: Defines the type of central server VM.
+  virtualMachineId:
+    type: string
+type: object
+required:
+  - storageDetails
+  - type
+  - virtualMachineId

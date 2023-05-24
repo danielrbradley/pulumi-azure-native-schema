@@ -1,0 +1,7 @@
+$token: azure-native:app/v20221101preview:ManagedCertificateDomainControlValidation
+description: Selected type of domain control validation for managed certificates.
+type: string
+enum:
+  - value: CNAME
+  - value: HTTP
+  - value: TXT

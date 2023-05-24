@@ -1,0 +1,7 @@
+$token: azure-native:appplatform/v20220101preview:BuildServiceAgentPoolSizeProperties
+description: Build service agent pool size properties
+properties:
+  name:
+    type: string
+    description: The name of build service agent pool size
+type: object

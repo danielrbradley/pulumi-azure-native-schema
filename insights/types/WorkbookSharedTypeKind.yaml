@@ -1,0 +1,5 @@
+$token: azure-native:insights:WorkbookSharedTypeKind
+description: The kind of workbook. Only valid value is shared.
+type: string
+enum:
+  - value: shared

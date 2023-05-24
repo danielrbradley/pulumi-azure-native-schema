@@ -1,0 +1,30 @@
+$token: azure-native:machinelearningservices/v20230401preview:RayResponse
+description: Ray distribution configuration.
+properties:
+  address:
+    type: string
+    description: The address of Ray head node.
+  dashboardPort:
+    type: integer
+    description: The port to bind the dashboard server to.
+  distributionType:
+    type: string
+    description: |-
+      Enum to determine the job distribution type.
+      Expected value is 'Ray'.
+    const: Ray
+  headNodeAdditionalArgs:
+    type: string
+    description: Additional arguments passed to ray start in head node.
+  includeDashboard:
+    type: boolean
+    description: Provide this argument to start the Ray dashboard GUI.
+  port:
+    type: integer
+    description: The port of the head ray process.
+  workerNodeAdditionalArgs:
+    type: string
+    description: Additional arguments passed to ray start in worker node.
+type: object
+required:
+  - distributionType

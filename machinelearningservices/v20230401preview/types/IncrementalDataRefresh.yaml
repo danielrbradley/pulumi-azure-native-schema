@@ -1,0 +1,6 @@
+$token: azure-native:machinelearningservices/v20230401preview:IncrementalDataRefresh
+description: Indicates whether to enable incremental data refresh.
+type: string
+enum:
+  - value: Enabled
+  - value: Disabled

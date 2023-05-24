@@ -1,0 +1,10 @@
+$token: azure-native:securityinsights/v20230401preview:MSTIDataConnectorDataTypes
+description: The available data types for Microsoft Threat Intelligence Platforms data connector.
+properties:
+  microsoftEmergingThreatFeed:
+    type: object
+    $ref: "#/types/azure-native:securityinsights/v20230401preview:MSTIDataConnectorDataTypesMicrosoftEmergingThreatFeed"
+    description: Data type for Microsoft Threat Intelligence Platforms data connector.
+type: object
+required:
+  - microsoftEmergingThreatFeed

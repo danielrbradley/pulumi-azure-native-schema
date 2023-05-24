@@ -1,0 +1,166 @@
+$token: azure-native:networkcloud/v20221212preview:getBareMetalMachine
+description: Get properties of the provided bare metal machine.
+inputs:
+  properties:
+    bareMetalMachineName:
+      type: string
+      description: The name of the bare metal machine.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - bareMetalMachineName
+    - resourceGroupName
+outputs:
+  properties:
+    bmcConnectionString:
+      type: string
+      description: The connection string for the baseboard management controller including IP address and protocol.
+    bmcCredentials:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:AdministrativeCredentialsResponse"
+      description: The credentials of the baseboard management controller on this bare metal machine.
+    bmcMacAddress:
+      type: string
+      description: The MAC address of the BMC device.
+    bootMacAddress:
+      type: string
+      description: The MAC address of a NIC connected to the PXE network.
+    clusterId:
+      type: string
+      description: The resource ID of the cluster this bare metal machine is associated with.
+    cordonStatus:
+      type: string
+      description: The cordon status of the bare metal machine.
+    detailedStatus:
+      type: string
+      description: The more detailed status of the bare metal machine.
+    detailedStatusMessage:
+      type: string
+      description: The descriptive message about the current detailed status.
+    extendedLocation:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:ExtendedLocationResponse"
+      description: The extended location of the cluster associated with the resource.
+    hardwareInventory:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:HardwareInventoryResponse"
+      description: The hardware inventory, including information acquired from the model/sku information and from the ironic inspector.
+    hardwareValidationStatus:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:HardwareValidationStatusResponse"
+      description: The details of the latest hardware validation performed for this bare metal machine.
+    hybridAksClustersAssociatedIds:
+      type: array
+      items:
+        type: string
+      description: The list of the resource IDs for the HybridAksClusters that have nodes hosted on this bare metal machine.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    kubernetesNodeName:
+      type: string
+      description: The name of this machine represented by the host object in the Cluster's Kubernetes control plane.
+    kubernetesVersion:
+      type: string
+      description: The version of Kubernetes running on this machine.
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    machineDetails:
+      type: string
+      description: The custom details provided by the customer.
+    machineName:
+      type: string
+      description: The OS-level hostname assigned to this machine.
+    machineSkuId:
+      type: string
+      description: The unique internal identifier of the bare metal machine SKU.
+    name:
+      type: string
+      description: The name of the resource
+    oamIpv4Address:
+      type: string
+      description: The IPv4 address that is assigned to the bare metal machine during the cluster deployment.
+    oamIpv6Address:
+      type: string
+      description: The IPv6 address that is assigned to the bare metal machine during the cluster deployment.
+    osImage:
+      type: string
+      description: The image that is currently provisioned to the OS disk.
+    powerState:
+      type: string
+      description: The power state derived from the baseboard management controller.
+    provisioningState:
+      type: string
+      description: The provisioning state of the bare metal machine.
+    rackId:
+      type: string
+      description: The resource ID of the rack where this bare metal machine resides.
+    rackSlot:
+      type: number
+      description: The rack slot in which this bare metal machine is located, ordered from the bottom up i.e. the lowest slot is 1.
+    readyState:
+      type: string
+      description: The indicator of whether the bare metal machine is ready to receive workloads.
+    serialNumber:
+      type: string
+      description: The serial number of the bare metal machine.
+    serviceTag:
+      type: string
+      description: The discovered value of the machine's service tag.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+    virtualMachinesAssociatedIds:
+      type: array
+      items:
+        type: string
+      description: The list of the resource IDs for the VirtualMachines that are hosted on this bare metal machine.
+  type: object
+  required:
+    - bmcConnectionString
+    - bmcCredentials
+    - bmcMacAddress
+    - bootMacAddress
+    - clusterId
+    - cordonStatus
+    - detailedStatus
+    - detailedStatusMessage
+    - extendedLocation
+    - hardwareInventory
+    - hardwareValidationStatus
+    - hybridAksClustersAssociatedIds
+    - id
+    - kubernetesNodeName
+    - kubernetesVersion
+    - location
+    - machineDetails
+    - machineName
+    - machineSkuId
+    - name
+    - oamIpv4Address
+    - oamIpv6Address
+    - osImage
+    - powerState
+    - provisioningState
+    - rackId
+    - rackSlot
+    - readyState
+    - serialNumber
+    - serviceTag
+    - systemData
+    - type
+    - virtualMachinesAssociatedIds

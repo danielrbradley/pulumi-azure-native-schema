@@ -1,0 +1,33 @@
+$token: azure-native:datafactory:HttpReadSettingsResponse
+description: Http read settings.
+properties:
+  additionalColumns:
+    $ref: pulumi.json#/Any
+    description: "Specifies the additional columns to be added to source data. Type: array of objects(AdditionalColumns) (or Expression with resultType array of objects)."
+  additionalHeaders:
+    $ref: pulumi.json#/Any
+    description: "The additional HTTP headers in the request to the RESTful API. Type: string (or Expression with resultType string)."
+  disableMetricsCollection:
+    $ref: pulumi.json#/Any
+    description: "If true, disable data store metrics collection. Default is false. Type: boolean (or Expression with resultType boolean)."
+  maxConcurrentConnections:
+    $ref: pulumi.json#/Any
+    description: "The maximum concurrent connection count for the source data store. Type: integer (or Expression with resultType integer)."
+  requestBody:
+    $ref: pulumi.json#/Any
+    description: "The HTTP request body to the RESTful API if requestMethod is POST. Type: string (or Expression with resultType string)."
+  requestMethod:
+    $ref: pulumi.json#/Any
+    description: "The HTTP method used to call the RESTful API. The default is GET. Type: string (or Expression with resultType string)."
+  requestTimeout:
+    $ref: pulumi.json#/Any
+    description: "Specifies the timeout for a HTTP client to get HTTP response from HTTP server. Type: string (or Expression with resultType string)."
+  type:
+    type: string
+    description: |-
+      The read setting type.
+      Expected value is 'HttpReadSettings'.
+    const: HttpReadSettings
+type: object
+required:
+  - type

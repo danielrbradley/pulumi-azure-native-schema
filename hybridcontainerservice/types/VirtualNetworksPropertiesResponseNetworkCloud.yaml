@@ -1,0 +1,7 @@
+$token: azure-native:hybridcontainerservice:VirtualNetworksPropertiesResponseNetworkCloud
+description: Infra network profile for the NetworkCloud platform
+properties:
+  networkId:
+    type: string
+    description: The ARM ID of Network Cloud Network Resource to Associate with this VirtualNetwork
+type: object

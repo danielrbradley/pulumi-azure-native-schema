@@ -1,0 +1,47 @@
+$token: azure-native:workloads/v20230401:ThreeTierConfigurationResponse
+description: Gets or sets the three tier SAP configuration. For prerequisites for creating the infrastructure, please see [here](https://go.microsoft.com/fwlink/?linkid=2212611&clcid=0x409)
+properties:
+  appResourceGroup:
+    type: string
+    description: The application resource group where SAP system resources will be deployed.
+  applicationServer:
+    type: object
+    $ref: "#/types/azure-native:workloads/v20230401:ApplicationServerConfigurationResponse"
+    description: The application server configuration.
+  centralServer:
+    type: object
+    $ref: "#/types/azure-native:workloads/v20230401:CentralServerConfigurationResponse"
+    description: The central server configuration.
+  customResourceNames:
+    type: object
+    $ref: "#/types/azure-native:workloads/v20230401:ThreeTierFullResourceNamesResponse"
+    description: The set of custom names to be used for underlying azure resources that are part of the SAP system.
+  databaseServer:
+    type: object
+    $ref: "#/types/azure-native:workloads/v20230401:DatabaseConfigurationResponse"
+    description: The database configuration.
+  deploymentType:
+    type: string
+    description: |-
+      The type of SAP deployment, single server or Three tier.
+      Expected value is 'ThreeTier'.
+    const: ThreeTier
+  highAvailabilityConfig:
+    type: object
+    $ref: "#/types/azure-native:workloads/v20230401:HighAvailabilityConfigurationResponse"
+    description: The high availability configuration.
+  networkConfiguration:
+    type: object
+    $ref: "#/types/azure-native:workloads/v20230401:NetworkConfigurationResponse"
+    description: Network configuration common to all servers
+  storageConfiguration:
+    type: object
+    $ref: "#/types/azure-native:workloads/v20230401:StorageConfigurationResponse"
+    description: The storage configuration.
+type: object
+required:
+  - appResourceGroup
+  - applicationServer
+  - centralServer
+  - databaseServer
+  - deploymentType

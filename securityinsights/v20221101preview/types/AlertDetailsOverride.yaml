@@ -1,0 +1,22 @@
+$token: azure-native:securityinsights/v20221101preview:AlertDetailsOverride
+description: Settings for how to dynamically override alert static details
+properties:
+  alertDescriptionFormat:
+    type: string
+    description: the format containing columns name(s) to override the alert description
+  alertDisplayNameFormat:
+    type: string
+    description: the format containing columns name(s) to override the alert name
+  alertDynamicProperties:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:securityinsights/v20221101preview:AlertPropertyMapping"
+    description: List of additional dynamic properties to override
+  alertSeverityColumnName:
+    type: string
+    description: the column name to take the alert severity from
+  alertTacticsColumnName:
+    type: string
+    description: the column name to take the alert tactics from
+type: object

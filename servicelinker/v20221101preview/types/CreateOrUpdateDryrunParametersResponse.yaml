@@ -1,0 +1,83 @@
+$token: azure-native:servicelinker/v20221101preview:CreateOrUpdateDryrunParametersResponse
+description: The dryrun parameters for creation or update a linker
+properties:
+  actionName:
+    type: string
+    description: |-
+      The name of action for you dryrun job.
+      Expected value is 'createOrUpdate'.
+    const: createOrUpdate
+  authInfo:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:AccessKeyInfoBaseResponse"
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:SecretAuthInfoResponse"
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:ServicePrincipalCertificateAuthInfoResponse"
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:ServicePrincipalSecretAuthInfoResponse"
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:SystemAssignedIdentityAuthInfoResponse"
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:UserAccountAuthInfoResponse"
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:UserAssignedIdentityAuthInfoResponse"
+    discriminator:
+      propertyName: authType
+      mapping:
+        accessKey: "#/types/azure-native:servicelinker/v20221101preview:AccessKeyInfoBaseResponse"
+        secret: "#/types/azure-native:servicelinker/v20221101preview:SecretAuthInfoResponse"
+        servicePrincipalCertificate: "#/types/azure-native:servicelinker/v20221101preview:ServicePrincipalCertificateAuthInfoResponse"
+        servicePrincipalSecret: "#/types/azure-native:servicelinker/v20221101preview:ServicePrincipalSecretAuthInfoResponse"
+        systemAssignedIdentity: "#/types/azure-native:servicelinker/v20221101preview:SystemAssignedIdentityAuthInfoResponse"
+        userAccount: "#/types/azure-native:servicelinker/v20221101preview:UserAccountAuthInfoResponse"
+        userAssignedIdentity: "#/types/azure-native:servicelinker/v20221101preview:UserAssignedIdentityAuthInfoResponse"
+    description: The authentication type.
+  clientType:
+    type: string
+    description: The application client type
+  configurationInfo:
+    type: object
+    $ref: "#/types/azure-native:servicelinker/v20221101preview:ConfigurationInfoResponse"
+    description: The connection information consumed by applications, including secrets, connection strings.
+  provisioningState:
+    type: string
+    description: "The provisioning state. "
+  publicNetworkSolution:
+    type: object
+    $ref: "#/types/azure-native:servicelinker/v20221101preview:PublicNetworkSolutionResponse"
+    description: The network solution.
+  scope:
+    type: string
+    description: connection scope in source service.
+  secretStore:
+    type: object
+    $ref: "#/types/azure-native:servicelinker/v20221101preview:SecretStoreResponse"
+    description: An option to store secret value in secure place
+  targetService:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:AzureResourceResponse"
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:ConfluentBootstrapServerResponse"
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:ConfluentSchemaRegistryResponse"
+      - type: object
+        $ref: "#/types/azure-native:servicelinker/v20221101preview:SelfHostedServerResponse"
+    discriminator:
+      propertyName: type
+      mapping:
+        AzureResource: "#/types/azure-native:servicelinker/v20221101preview:AzureResourceResponse"
+        ConfluentBootstrapServer: "#/types/azure-native:servicelinker/v20221101preview:ConfluentBootstrapServerResponse"
+        ConfluentSchemaRegistry: "#/types/azure-native:servicelinker/v20221101preview:ConfluentSchemaRegistryResponse"
+        SelfHostedServer: "#/types/azure-native:servicelinker/v20221101preview:SelfHostedServerResponse"
+    description: The target service properties
+  vNetSolution:
+    type: object
+    $ref: "#/types/azure-native:servicelinker/v20221101preview:VNetSolutionResponse"
+    description: The VNet solution.
+type: object
+required:
+  - actionName
+  - provisioningState

@@ -1,0 +1,59 @@
+$token: azure-native:apimanagement/v20220801:getGraphQLApiResolverPolicy
+description: Get the policy configuration at the GraphQL API Resolver level.
+inputs:
+  properties:
+    apiId:
+      type: string
+      description: API revision identifier. Must be unique in the current API Management service instance. Non-current revision has ;rev=n as a suffix where n is the revision number.
+      willReplaceOnChanges: true
+    format:
+      type: string
+      description: Policy Export Format.
+    policyId:
+      type: string
+      description: The identifier of the Policy.
+      willReplaceOnChanges: true
+    resolverId:
+      type: string
+      description: Resolver identifier within a GraphQL API. Must be unique in the current API Management service instance.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    serviceName:
+      type: string
+      description: The name of the API Management service.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - apiId
+    - policyId
+    - resolverId
+    - resourceGroupName
+    - serviceName
+outputs:
+  description: Policy Contract details.
+  properties:
+    format:
+      type: string
+      description: Format of the policyContent.
+      default: xml
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+    value:
+      type: string
+      description: Contents of the Policy as defined by the format.
+  type: object
+  required:
+    - id
+    - name
+    - type
+    - value

@@ -1,0 +1,22 @@
+$token: azure-native:botservice/v20220915:TelephonyChannelResourceApiConfiguration
+description: A resource Api configuration for the Telephony channel
+properties:
+  cognitiveServiceRegion:
+    type: string
+    description: The cognitive service region.
+  cognitiveServiceResourceId:
+    type: string
+    description: The cognitive service resourceId.
+  cognitiveServiceSubscriptionKey:
+    type: string
+    description: The cognitive service subscription key.
+  defaultLocale:
+    type: string
+    description: The default locale.
+  id:
+    type: string
+    description: The id of config.
+  providerName:
+    type: string
+    description: The provider name.
+type: object

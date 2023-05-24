@@ -1,0 +1,16 @@
+$token: azure-native:appplatform/v20230301preview:DevToolPortalProperties
+description: Dev Tool Portal properties payload
+properties:
+  features:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:DevToolPortalFeatureSettings"
+    description: Settings for Dev Tool Portal
+  public:
+    type: boolean
+    description: Indicates whether the resource exposes public endpoint
+    default: false
+  ssoProperties:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:DevToolPortalSsoProperties"
+    description: Single sign-on related configuration
+type: object

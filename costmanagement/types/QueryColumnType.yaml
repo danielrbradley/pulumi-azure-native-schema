@@ -1,0 +1,8 @@
+$token: azure-native:costmanagement:QueryColumnType
+description: Has type of the column to group.
+type: string
+enum:
+  - description: The tag associated with the cost data.
+    value: TagKey
+  - description: The dimension of cost data.
+    value: Dimension

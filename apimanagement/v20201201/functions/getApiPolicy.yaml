@@ -1,0 +1,54 @@
+$token: azure-native:apimanagement/v20201201:getApiPolicy
+description: Get the policy configuration at the API level.
+inputs:
+  properties:
+    apiId:
+      type: string
+      description: API revision identifier. Must be unique in the current API Management service instance. Non-current revision has ;rev=n as a suffix where n is the revision number.
+      willReplaceOnChanges: true
+    format:
+      type: string
+      description: Policy Export Format.
+    policyId:
+      type: string
+      description: The identifier of the Policy.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group.
+      willReplaceOnChanges: true
+    serviceName:
+      type: string
+      description: The name of the API Management service.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - apiId
+    - policyId
+    - resourceGroupName
+    - serviceName
+outputs:
+  description: Policy Contract details.
+  properties:
+    format:
+      type: string
+      description: Format of the policyContent.
+      default: xml
+    id:
+      type: string
+      description: Resource ID.
+    name:
+      type: string
+      description: Resource name.
+    type:
+      type: string
+      description: Resource type for API Management resource.
+    value:
+      type: string
+      description: Contents of the Policy as defined by the format.
+  type: object
+  required:
+    - id
+    - name
+    - type
+    - value

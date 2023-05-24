@@ -1,0 +1,15 @@
+$token: azure-native:app/v20221101preview:JobConfigurationScheduleTriggerConfig
+description: Cron formatted repeating trigger schedule ("* * * * *") for cronjobs. Properties completions and parallelism would be set to 1 by default
+properties:
+  cronExpression:
+    type: string
+    description: Cron formatted repeating schedule ("* * * * *") of a Cron Job.
+  parallelism:
+    type: integer
+    description: Number of parallel replicas of a job that can run at a given time.
+  replicaCompletionCount:
+    type: integer
+    description: Minimum number of successful replica completions before overall job completion.
+type: object
+required:
+  - cronExpression

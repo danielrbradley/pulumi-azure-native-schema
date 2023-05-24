@@ -1,0 +1,16 @@
+$token: azure-native:securityinsights/v20230201preview:Permissions
+description: Permissions required for the connector
+properties:
+  customs:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:securityinsights/v20230201preview:PermissionsCustoms"
+    description: Customs permissions required for the connector
+  resourceProvider:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:securityinsights/v20230201preview:PermissionsResourceProvider"
+    description: Resource provider permissions required for the connector
+type: object

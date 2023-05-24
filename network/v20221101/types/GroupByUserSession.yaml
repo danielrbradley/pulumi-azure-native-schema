@@ -1,0 +1,12 @@
+$token: azure-native:network/v20221101:GroupByUserSession
+description: Define user session identifier group by clauses.
+properties:
+  groupByVariables:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:network/v20221101:GroupByVariable"
+    description: List of group by clause variables.
+type: object
+required:
+  - groupByVariables

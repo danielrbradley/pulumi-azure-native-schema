@@ -1,0 +1,12 @@
+$token: azure-native:managednetworkfabric/v20230201preview:L3IsolationDomainPatchPropertiesResponseConnectedSubnetRoutePolicy
+description: Connected Subnet RoutePolicy
+properties:
+  administrativeState:
+    type: string
+    description: "Enabled/Disabled connected subnet route policy. Ex: Enabled | Disabled."
+  exportRoutePolicyId:
+    type: string
+    description: exportRoutePolicyId value.
+type: object
+required:
+  - administrativeState

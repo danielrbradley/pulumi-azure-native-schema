@@ -1,0 +1,71 @@
+$token: azure-native:migrate:MoveCollection
+properties:
+  etag:
+    type: string
+    description: The etag of the resource.
+  identity:
+    type: object
+    $ref: "#/types/azure-native:migrate:IdentityResponse"
+    description: Defines the MSI properties of the Move Collection.
+  location:
+    type: string
+    description: The geo-location where the resource lives.
+  name:
+    type: string
+    description: The name of the resource
+  properties:
+    type: object
+    $ref: "#/types/azure-native:migrate:MoveCollectionPropertiesResponse"
+    description: Defines the move collection properties.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:migrate:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource.
+type: object
+required:
+  - etag
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  identity:
+    type: object
+    $ref: "#/types/azure-native:migrate:Identity"
+    description: Defines the MSI properties of the Move Collection.
+  location:
+    type: string
+    description: The geo-location where the resource lives.
+    willReplaceOnChanges: true
+  moveCollectionName:
+    type: string
+    description: The Move Collection Name.
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:migrate:MoveCollectionProperties"
+    description: Defines the move collection properties.
+  resourceGroupName:
+    type: string
+    description: The Resource Group Name.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+requiredInputs:
+  - resourceGroupName
+aliases:
+  - type: azure-native:migrate/v20191001preview:MoveCollection
+  - type: azure-native:migrate/v20210101:MoveCollection
+  - type: azure-native:migrate/v20210801:MoveCollection
+  - type: azure-native:migrate/v20220801:MoveCollection

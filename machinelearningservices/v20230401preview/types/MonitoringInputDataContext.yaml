@@ -1,0 +1,16 @@
+$token: azure-native:machinelearningservices/v20230401preview:MonitoringInputDataContext
+description: "[Required] The context of the data source."
+type: string
+enum:
+  - description: A dataset containing the feature input to the model.
+    value: ModelInputs
+  - description: A dataset containing the inferred results of the model.
+    value: ModelOutputs
+  - description: A dataset containing the data used for training the model.
+    value: Training
+  - description: A dataset leveraged to test the model.
+    value: Test
+  - description: A dataset leveraged for model validation.
+    value: Validation
+  - description: A dataset containing the ground truth data.
+    value: GroundTruth

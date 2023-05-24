@@ -1,0 +1,8 @@
+$token: azure-native:networkcloud/v20221212preview:SshPublicKeyResponse
+properties:
+  keyData:
+    type: string
+    description: The public ssh key of the user.
+type: object
+required:
+  - keyData

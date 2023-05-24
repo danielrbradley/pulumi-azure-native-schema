@@ -1,0 +1,6 @@
+$token: azure-native:machinelearningservices/v20221201preview:MLFlowAutologgerState
+description: "[Required] Indicates whether mlflow autologger is enabled."
+type: string
+enum:
+  - value: Enabled
+  - value: Disabled

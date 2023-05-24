@@ -1,0 +1,7 @@
+$token: azure-native:connectedvmwarevsphere:GuestAgentProfile
+description: Specifies the guest agent settings for the virtual machine.
+properties:
+  clientPublicKey:
+    type: string
+    description: Gets or sets the Public Key provided by the client for enabling guest management.
+type: object

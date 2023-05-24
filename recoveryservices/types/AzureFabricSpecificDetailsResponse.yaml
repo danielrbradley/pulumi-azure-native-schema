@@ -1,0 +1,38 @@
+$token: azure-native:recoveryservices:AzureFabricSpecificDetailsResponse
+description: Azure Fabric Specific Details.
+properties:
+  containerIds:
+    type: array
+    items:
+      type: string
+    description: The container Ids for the Azure fabric.
+  extendedLocations:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:recoveryservices:A2AExtendedLocationDetailsResponse"
+    description: The ExtendedLocations.
+  instanceType:
+    type: string
+    description: |-
+      Gets the class type. Overridden in derived classes.
+      Expected value is 'Azure'.
+    const: Azure
+  location:
+    type: string
+    description: The Location for the Azure fabric.
+  locationDetails:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:recoveryservices:A2AFabricSpecificLocationDetailsResponse"
+    description: The location details.
+  zones:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:recoveryservices:A2AZoneDetailsResponse"
+    description: The zones.
+type: object
+required:
+  - instanceType

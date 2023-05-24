@@ -1,0 +1,8 @@
+$token: azure-native:containerservice/v20230202preview:BackendPoolType
+description: The type of the managed inbound Load Balancer BackendPool.
+type: string
+enum:
+  - description: The type of the managed inbound Load Balancer BackendPool. https://cloud-provider-azure.sigs.k8s.io/topics/loadbalancer/#configure-load-balancer-backend.
+    value: NodeIPConfiguration
+  - description: The type of the managed inbound Load Balancer BackendPool. https://cloud-provider-azure.sigs.k8s.io/topics/loadbalancer/#configure-load-balancer-backend.
+    value: NodeIP

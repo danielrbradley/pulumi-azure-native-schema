@@ -1,0 +1,7 @@
+$token: azure-native:securityinsights/v20230401preview:IncidentTaskStatus
+type: string
+enum:
+  - description: A new task
+    value: New
+  - description: A completed task
+    value: Completed

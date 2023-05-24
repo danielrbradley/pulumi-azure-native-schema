@@ -1,0 +1,53 @@
+$token: azure-native:recoveryservices:getReplicationRecoveryServicesProvider
+description: |-
+  Gets the details of registered recovery services provider.
+  API Version: 2023-02-01.
+inputs:
+  properties:
+    fabricName:
+      type: string
+      description: Fabric name.
+      willReplaceOnChanges: true
+    providerName:
+      type: string
+      description: Recovery services provider name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group where the recovery services vault is present.
+      willReplaceOnChanges: true
+    resourceName:
+      type: string
+      description: The name of the recovery services vault.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - fabricName
+    - providerName
+    - resourceGroupName
+    - resourceName
+outputs:
+  description: Provider details.
+  properties:
+    id:
+      type: string
+      description: Resource Id
+    location:
+      type: string
+      description: Resource Location
+    name:
+      type: string
+      description: Resource Name
+    properties:
+      type: object
+      $ref: "#/types/azure-native:recoveryservices:RecoveryServicesProviderPropertiesResponse"
+      description: Provider properties.
+    type:
+      type: string
+      description: Resource Type
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - type

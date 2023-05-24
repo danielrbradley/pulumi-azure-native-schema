@@ -1,0 +1,10 @@
+$token: azure-native:azurestackhci/v20210901preview:NetworkInterfaceStatusResponseProvisioningStatus
+description: The provisioning status of the network interface
+properties:
+  operationId:
+    type: string
+    description: The ID of the operation performed on the network interface
+  status:
+    type: string
+    description: The status of the operation performed on the network interface [Succeeded, Failed, InProgress]
+type: object

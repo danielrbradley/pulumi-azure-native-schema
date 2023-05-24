@@ -1,0 +1,11 @@
+$token: azure-native:azurearcdata:ArcSqlServerLicenseType
+description: SQL Server license type.
+type: string
+enum:
+  - value: Undefined
+  - value: Free
+  - value: HADR
+  - value: ServerCAL
+  - value: LicenseOnly
+  - value: PAYG
+  - value: Paid

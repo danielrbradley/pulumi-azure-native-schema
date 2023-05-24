@@ -1,0 +1,30 @@
+$token: azure-native:machinelearningservices/v20230201preview:SystemCreatedStorageAccount
+properties:
+  allowBlobPublicAccess:
+    type: boolean
+  armResourceId:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230201preview:ArmResourceId"
+    description: ARM ResourceId of a resource
+  storageAccountHnsEnabled:
+    type: boolean
+  storageAccountType:
+    type: string
+    description: "Allowed values:\r
+
+      \"Standard_LRS\",\r
+
+      \"Standard_GRS\",\r
+
+      \"Standard_RAGRS\",\r
+
+      \"Standard_ZRS\",\r
+
+      \"Standard_GZRS\",\r
+
+      \"Standard_RAGZRS\",\r
+
+      \"Premium_LRS\",\r
+
+      \"Premium_ZRS\""
+type: object

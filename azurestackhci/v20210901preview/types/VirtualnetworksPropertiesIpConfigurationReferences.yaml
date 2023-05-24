@@ -1,0 +1,7 @@
+$token: azure-native:azurestackhci/v20210901preview:VirtualnetworksPropertiesIpConfigurationReferences
+description: IPConfigurationReference - Describes a IPConfiguration under the virtual network
+properties:
+  id:
+    type: string
+    description: IPConfigurationID
+type: object

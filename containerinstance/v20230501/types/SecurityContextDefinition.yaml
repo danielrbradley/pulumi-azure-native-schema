@@ -1,0 +1,23 @@
+$token: azure-native:containerinstance/v20230501:SecurityContextDefinition
+description: The security context for the container.
+properties:
+  allowPrivilegeEscalation:
+    type: boolean
+    description: A boolean value indicating whether the init process can elevate its privileges
+  capabilities:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230501:SecurityContextCapabilitiesDefinition"
+    description: The capabilities to add or drop from a container.
+  privileged:
+    type: boolean
+    description: The flag to determine if the container permissions is elevated to Privileged.
+  runAsGroup:
+    type: integer
+    description: Sets the User GID for the container.
+  runAsUser:
+    type: integer
+    description: Sets the User UID for the container.
+  seccompProfile:
+    type: string
+    description: a base64 encoded string containing the contents of the JSON in the seccomp profile
+type: object

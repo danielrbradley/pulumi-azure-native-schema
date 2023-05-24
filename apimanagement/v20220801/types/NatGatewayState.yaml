@@ -1,0 +1,8 @@
+$token: azure-native:apimanagement/v20220801:NatGatewayState
+description: Property can be used to enable NAT Gateway for this API Management service.
+type: string
+enum:
+  - description: Nat Gateway is enabled for the service.
+    value: Enabled
+  - description: Nat Gateway is disabled for the service.
+    value: Disabled

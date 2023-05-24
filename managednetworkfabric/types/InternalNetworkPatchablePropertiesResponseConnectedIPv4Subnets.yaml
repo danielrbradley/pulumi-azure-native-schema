@@ -1,0 +1,10 @@
+$token: azure-native:managednetworkfabric:InternalNetworkPatchablePropertiesResponseConnectedIPv4Subnets
+description: connectedIPv4Subnet model.
+properties:
+  annotation:
+    type: string
+    description: Switch configuration description.
+  prefix:
+    type: string
+    description: Ipv4 Prefix of the connectedIPv4Subnet.
+type: object

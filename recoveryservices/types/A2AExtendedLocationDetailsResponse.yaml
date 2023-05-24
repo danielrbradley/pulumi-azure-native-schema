@@ -1,0 +1,12 @@
+$token: azure-native:recoveryservices:A2AExtendedLocationDetailsResponse
+description: ExtendedLocation details data.
+properties:
+  primaryExtendedLocation:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices:ExtendedLocationResponse"
+    description: The primary ExtendedLocation.
+  recoveryExtendedLocation:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices:ExtendedLocationResponse"
+    description: The recovery ExtendedLocation.
+type: object

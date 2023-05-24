@@ -1,0 +1,10 @@
+$token: azure-native:security/v20220801preview:DefenderFoDatabasesAwsOfferingRds
+description: The RDS configuration
+properties:
+  cloudRoleArn:
+    type: string
+    description: The cloud role ARN in AWS for this feature
+  enabled:
+    type: boolean
+    description: Is RDS protection enabled
+type: object

@@ -1,0 +1,8 @@
+$token: azure-native:azurearcdata/v20230315preview:InstanceFailoverGroupRole
+description: The role of the SQL managed instance in this failover group.
+type: string
+enum:
+  - value: primary
+  - value: secondary
+  - value: force-primary-allow-data-loss
+  - value: force-secondary

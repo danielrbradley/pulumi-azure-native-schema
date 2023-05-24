@@ -1,0 +1,36 @@
+$token: azure-native:azurearcdata:SqlAvailabilityGroupDatabaseReplicaResourcePropertiesResponse
+description: The properties of Arc Sql availability group database replica resource
+properties:
+  databaseStateDesc:
+    type: string
+    description: Description of the database state of the availability replica.
+  isCommitParticipant:
+    type: boolean
+    description: Whether this replica is transaction committer.
+  isLocal:
+    type: boolean
+    description: Whether the availability database is local.
+  isPrimaryReplica:
+    type: boolean
+    description: Returns 1 if the replica is primary, or 0 if it is a secondary replica.
+  isSuspended:
+    type: boolean
+    description: Whether this data movement is suspended.
+  provisioningState:
+    type: string
+    description: The provisioning state of the Arc-enabled SQL Server availability group resource.
+  replicaName:
+    type: string
+    description: the database replica name.
+  suspendReasonDesc:
+    type: string
+    description: Description of the database suspended state reason.
+  synchronizationHealthDesc:
+    type: string
+    description: Description of the health of database.
+  synchronizationStateDesc:
+    type: string
+    description: Description of the data-movement state.
+type: object
+required:
+  - provisioningState

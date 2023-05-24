@@ -1,0 +1,22 @@
+$token: azure-native:storagecache/v20230501:AmlFilesystemIdentityResponse
+description: Managed Identity properties.
+properties:
+  principalId:
+    type: string
+    description: The principal ID for the user-assigned identity of the resource.
+  tenantId:
+    type: string
+    description: The tenant ID associated with the resource.
+  type:
+    type: string
+    description: The type of identity used for the resource.
+  userAssignedIdentities:
+    type: object
+    additionalProperties:
+      type: object
+      $ref: "#/types/azure-native:storagecache/v20230501:UserAssignedIdentitiesResponseUserAssignedIdentities"
+    description: A dictionary where each key is a user assigned identity resource ID, and each key's value is an empty dictionary.
+type: object
+required:
+  - principalId
+  - tenantId

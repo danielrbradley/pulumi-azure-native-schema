@@ -1,0 +1,77 @@
+$token: azure-native:agfoodplatform/v20210901preview:Extension
+description: Extension resource.
+properties:
+  additionalApiProperties:
+    type: object
+    additionalProperties:
+      type: object
+      $ref: "#/types/azure-native:agfoodplatform/v20210901preview:ApiPropertiesResponse"
+    description: Additional api properties.
+  eTag:
+    type: string
+    description: The ETag value to implement optimistic concurrency.
+  extensionApiDocsLink:
+    type: string
+    description: Extension api docs link.
+  extensionAuthLink:
+    type: string
+    description: Extension auth link.
+  extensionCategory:
+    type: string
+    description: Extension category. e.g. weather/sensor/satellite.
+  extensionId:
+    type: string
+    description: Extension Id.
+  installedExtensionVersion:
+    type: string
+    description: Installed extension version.
+  name:
+    type: string
+    description: The name of the resource
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:agfoodplatform/v20210901preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - additionalApiProperties
+  - eTag
+  - extensionApiDocsLink
+  - extensionAuthLink
+  - extensionCategory
+  - extensionId
+  - installedExtensionVersion
+  - name
+  - systemData
+  - type
+inputProperties:
+  additionalApiProperties:
+    type: object
+    additionalProperties:
+      type: object
+      $ref: "#/types/azure-native:agfoodplatform/v20210901preview:ApiProperties"
+    description: Additional Api Properties.
+  extensionId:
+    type: string
+    description: Id of extension resource.
+    willReplaceOnChanges: true
+  extensionVersion:
+    type: string
+    description: Extension Version.
+  farmBeatsResourceName:
+    type: string
+    description: FarmBeats resource name.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+requiredInputs:
+  - farmBeatsResourceName
+  - resourceGroupName
+aliases:
+  - type: azure-native:agfoodplatform:Extension
+  - type: azure-native:agfoodplatform/v20200512preview:Extension

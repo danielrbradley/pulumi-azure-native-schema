@@ -1,0 +1,8 @@
+$token: azure-native:containerservice/v20230202preview:RestrictionLevel
+description: The restriction level applied to the cluster's node resource group
+type: string
+enum:
+  - description: All RBAC permissions are allowed on the managed node resource group
+    value: Unrestricted
+  - description: Only */read RBAC permissions allowed on the managed node resource group
+    value: ReadOnly

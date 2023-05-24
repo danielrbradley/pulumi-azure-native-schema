@@ -1,0 +1,36 @@
+$token: azure-native:datafactory:getTriggerEventSubscriptionStatus
+description: |-
+  Get a trigger's event subscription status.
+  API Version: 2018-06-01.
+inputs:
+  properties:
+    factoryName:
+      type: string
+      description: The factory name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The resource group name.
+      willReplaceOnChanges: true
+    triggerName:
+      type: string
+      description: The trigger name.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - factoryName
+    - resourceGroupName
+    - triggerName
+outputs:
+  description: Defines the response of a trigger subscription operation.
+  properties:
+    status:
+      type: string
+      description: Event Subscription Status.
+    triggerName:
+      type: string
+      description: Trigger name.
+  type: object
+  required:
+    - status
+    - triggerName

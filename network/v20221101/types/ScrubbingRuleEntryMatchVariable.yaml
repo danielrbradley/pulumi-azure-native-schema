@@ -1,0 +1,10 @@
+$token: azure-native:network/v20221101:ScrubbingRuleEntryMatchVariable
+description: The variable to be scrubbed from the logs.
+type: string
+enum:
+  - value: RequestHeaderNames
+  - value: RequestCookieNames
+  - value: RequestArgNames
+  - value: RequestPostArgNames
+  - value: RequestJSONArgNames
+  - value: RequestIPAddress

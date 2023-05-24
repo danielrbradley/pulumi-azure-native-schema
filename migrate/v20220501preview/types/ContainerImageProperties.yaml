@@ -1,0 +1,23 @@
+$token: azure-native:migrate/v20220501preview:ContainerImageProperties
+description: Class for container image properties.
+properties:
+  dockerfile:
+    type: string
+    description: Gets or sets the dockerfile for the container image.
+  imageName:
+    type: string
+    description: Gets or sets the container image name.
+  imageTag:
+    type: string
+    description: Gets or sets the container image tag.
+  registryProperties:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:ACRProperties"
+    description: Class for ACR Properties.
+  runId:
+    type: string
+    description: Gets or sets the RunId.
+  runStatus:
+    type: string
+    description: Gets or sets the RunStatus.
+type: object

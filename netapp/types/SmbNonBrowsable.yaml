@@ -1,0 +1,8 @@
+$token: azure-native:netapp:SmbNonBrowsable
+description: Enables non browsable property for SMB Shares. Only applicable for SMB/DualProtocol volume
+type: string
+enum:
+  - description: smbNonBrowsable share setting is disabled
+    value: Disabled
+  - description: smbNonBrowsable share setting is enabled
+    value: Enabled

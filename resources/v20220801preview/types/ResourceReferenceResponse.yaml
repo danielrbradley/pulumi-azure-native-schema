@@ -1,0 +1,9 @@
+$token: azure-native:resources/v20220801preview:ResourceReferenceResponse
+description: The resource Id model.
+properties:
+  id:
+    type: string
+    description: The resourceId of a resource managed by the deployment stack.
+type: object
+required:
+  - id

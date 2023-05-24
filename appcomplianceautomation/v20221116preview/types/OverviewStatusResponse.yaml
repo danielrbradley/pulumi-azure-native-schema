@@ -1,0 +1,13 @@
+$token: azure-native:appcomplianceautomation/v20221116preview:OverviewStatusResponse
+description: The overview of the compliance result for one report.
+properties:
+  failedCount:
+    type: integer
+    description: The count of all failed full automation control.
+  manualCount:
+    type: integer
+    description: The count of all manual control.
+  passedCount:
+    type: integer
+    description: The count of all passed full automation control.
+type: object

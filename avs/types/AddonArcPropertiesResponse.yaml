@@ -1,0 +1,19 @@
+$token: azure-native:avs:AddonArcPropertiesResponse
+description: The properties of an Arc addon
+properties:
+  addonType:
+    type: string
+    description: |-
+      The type of private cloud addon
+      Expected value is 'Arc'.
+    const: Arc
+  provisioningState:
+    type: string
+    description: The state of the addon provisioning
+  vCenter:
+    type: string
+    description: The VMware vCenter resource ID
+type: object
+required:
+  - addonType
+  - provisioningState

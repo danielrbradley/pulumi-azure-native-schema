@@ -1,0 +1,12 @@
+$token: azure-native:compute/v20230301:LinuxVMGuestPatchAutomaticByPlatformSettings
+description: Specifies additional settings to be applied when patch mode AutomaticByPlatform is selected in Linux patch settings.
+properties:
+  bypassPlatformSafetyChecksOnUserSchedule:
+    type: boolean
+    description: Enables customer to schedule patching without accidental upgrades
+  rebootSetting:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:compute/v20230301:LinuxVMGuestPatchAutomaticByPlatformRebootSetting"
+    description: Specifies the reboot setting for all AutomaticByPlatform patch installation operations.
+type: object

@@ -1,0 +1,12 @@
+$token: azure-native:eventhub/v20221001preview:Identity
+description: Properties to configure Identity for Bring your Own Keys
+properties:
+  type:
+    $ref: "#/types/azure-native:eventhub/v20221001preview:ManagedServiceIdentityType"
+    description: Type of managed service identity.
+  userAssignedIdentities:
+    type: array
+    items:
+      type: string
+    description: Properties for User Assigned Identities
+type: object

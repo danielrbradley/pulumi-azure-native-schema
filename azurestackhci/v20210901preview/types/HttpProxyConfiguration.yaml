@@ -1,0 +1,7 @@
+$token: azure-native:azurestackhci/v20210901preview:HttpProxyConfiguration
+description: HTTP Proxy configuration for the VM.
+properties:
+  httpsProxy:
+    type: string
+    description: The httpsProxy url.
+type: object

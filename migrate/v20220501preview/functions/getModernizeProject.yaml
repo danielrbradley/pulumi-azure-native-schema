@@ -1,0 +1,57 @@
+$token: azure-native:migrate/v20220501preview:getModernizeProject
+description: Gets the details of the modernize project.
+inputs:
+  properties:
+    modernizeProjectName:
+      type: string
+      description: Modernize project name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the Azure Resource Group that project is part of.
+      willReplaceOnChanges: true
+    subscriptionId:
+      type: string
+      description: Azure Subscription Id in which project was created.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - modernizeProjectName
+    - resourceGroupName
+outputs:
+  description: ModernizeProject model.
+  properties:
+    id:
+      type: string
+      description: Gets or sets the Id of the resource.
+    identity:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:ResourceIdentityResponse"
+    location:
+      type: string
+      description: Gets or sets the location of the modernizeProject.
+    name:
+      type: string
+      description: Gets or sets the name of the resource.
+    properties:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:ModernizeProjectModelPropertiesResponse"
+      description: ModernizeProject properties.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:ModernizeProjectModelResponseSystemData"
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Gets or sets the resource tags.
+    type:
+      type: string
+      description: Gets or sets the type of the resource.
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - systemData
+    - type

@@ -1,0 +1,48 @@
+$token: azure-native:apimanagement/v20220801:getAuthorizationProvider
+description: Gets the details of the authorization provider specified by its identifier.
+inputs:
+  properties:
+    authorizationProviderId:
+      type: string
+      description: Identifier of the authorization provider.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    serviceName:
+      type: string
+      description: The name of the API Management service.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - authorizationProviderId
+    - resourceGroupName
+    - serviceName
+outputs:
+  description: Authorization Provider contract.
+  properties:
+    displayName:
+      type: string
+      description: Authorization Provider name. Must be 1 to 300 characters long.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    identityProvider:
+      type: string
+      description: Identity provider name. Must be 1 to 300 characters long.
+    name:
+      type: string
+      description: The name of the resource
+    oauth2:
+      type: object
+      $ref: "#/types/azure-native:apimanagement/v20220801:AuthorizationProviderOAuth2SettingsResponse"
+      description: OAuth2 settings
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - type

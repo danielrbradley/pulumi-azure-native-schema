@@ -1,0 +1,16 @@
+$token: azure-native:networkcloud:KeySetUserStatusResponse
+properties:
+  azureUserName:
+    type: string
+    description: The Azure Active Directory user name (email name).
+  status:
+    type: string
+    description: The indicator of whether the user is currently deployed for access.
+  statusMessage:
+    type: string
+    description: The additional information describing the current status of this user, if any available.
+type: object
+required:
+  - azureUserName
+  - status
+  - statusMessage

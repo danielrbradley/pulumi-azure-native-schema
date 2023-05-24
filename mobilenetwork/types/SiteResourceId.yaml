@@ -1,0 +1,9 @@
+$token: azure-native:mobilenetwork:SiteResourceId
+description: Reference to a site resource.
+properties:
+  id:
+    type: string
+    description: Site resource ID.
+type: object
+required:
+  - id

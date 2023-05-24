@@ -1,0 +1,11 @@
+$token: azure-native:network/v20221101:GroupByVariable
+description: Define user session group by clause variables.
+properties:
+  variableName:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:network/v20221101:ApplicationGatewayFirewallUserSessionVariable"
+    description: User Session clause variable.
+type: object
+required:
+  - variableName

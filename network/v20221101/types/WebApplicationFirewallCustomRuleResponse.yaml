@@ -1,0 +1,46 @@
+$token: azure-native:network/v20221101:WebApplicationFirewallCustomRuleResponse
+description: Defines contents of a web application rule.
+properties:
+  action:
+    type: string
+    description: Type of Actions.
+  etag:
+    type: string
+    description: A unique read-only string that changes whenever the resource is updated.
+  groupByUserSession:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:network/v20221101:GroupByUserSessionResponse"
+    description: List of user session identifier group by clauses.
+  matchConditions:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:network/v20221101:MatchConditionResponse"
+    description: List of match conditions.
+  name:
+    type: string
+    description: The name of the resource that is unique within a policy. This name can be used to access the resource.
+  priority:
+    type: integer
+    description: Priority of the rule. Rules with a lower value will be evaluated before rules with a higher value.
+  rateLimitDuration:
+    type: string
+    description: Duration over which Rate Limit policy will be applied. Applies only when ruleType is RateLimitRule.
+  rateLimitThreshold:
+    type: integer
+    description: Rate Limit threshold to apply in case ruleType is RateLimitRule. Must be greater than or equal to 1
+  ruleType:
+    type: string
+    description: The rule type.
+  state:
+    type: string
+    description: Describes if the custom rule is in enabled or disabled state. Defaults to Enabled if not specified.
+type: object
+required:
+  - action
+  - etag
+  - matchConditions
+  - priority
+  - ruleType

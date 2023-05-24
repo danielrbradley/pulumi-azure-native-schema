@@ -1,0 +1,74 @@
+$token: azure-native:databoxedge:User
+properties:
+  encryptedPassword:
+    type: object
+    $ref: "#/types/azure-native:databoxedge:AsymmetricEncryptedSecretResponse"
+    description: The password details.
+  name:
+    type: string
+    description: The object name.
+  shareAccessRights:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:databoxedge:ShareAccessRightResponse"
+    description: List of shares that the user has rights on. This field should not be specified during user creation.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:databoxedge:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of User
+  type:
+    type: string
+    description: The hierarchical type of the object.
+  userType:
+    type: string
+    description: Type of the user.
+type: object
+required:
+  - name
+  - shareAccessRights
+  - systemData
+  - type
+  - userType
+inputProperties:
+  deviceName:
+    type: string
+    description: The device name.
+    willReplaceOnChanges: true
+  encryptedPassword:
+    type: object
+    $ref: "#/types/azure-native:databoxedge:AsymmetricEncryptedSecret"
+    description: The password details.
+  name:
+    type: string
+    description: The user name.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The resource group name.
+    willReplaceOnChanges: true
+  userType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:databoxedge:UserType"
+    description: Type of the user.
+requiredInputs:
+  - deviceName
+  - resourceGroupName
+  - userType
+aliases:
+  - type: azure-native:databoxedge/v20190301:User
+  - type: azure-native:databoxedge/v20190701:User
+  - type: azure-native:databoxedge/v20190801:User
+  - type: azure-native:databoxedge/v20200501preview:User
+  - type: azure-native:databoxedge/v20200901:User
+  - type: azure-native:databoxedge/v20200901preview:User
+  - type: azure-native:databoxedge/v20201201:User
+  - type: azure-native:databoxedge/v20210201:User
+  - type: azure-native:databoxedge/v20210201preview:User
+  - type: azure-native:databoxedge/v20210601:User
+  - type: azure-native:databoxedge/v20210601preview:User
+  - type: azure-native:databoxedge/v20220301:User
+  - type: azure-native:databoxedge/v20220401preview:User
+  - type: azure-native:databoxedge/v20221201preview:User
+  - type: azure-native:databoxedge/v20230101preview:User

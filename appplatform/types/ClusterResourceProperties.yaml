@@ -1,0 +1,15 @@
+$token: azure-native:appplatform:ClusterResourceProperties
+description: Service properties payload
+properties:
+  networkProfile:
+    type: object
+    $ref: "#/types/azure-native:appplatform:NetworkProfile"
+    description: Network profile of the Service
+  vnetAddons:
+    type: object
+    $ref: "#/types/azure-native:appplatform:ServiceVNetAddons"
+    description: Additional Service settings in vnet injection instance
+  zoneRedundant:
+    type: boolean
+    default: false
+type: object

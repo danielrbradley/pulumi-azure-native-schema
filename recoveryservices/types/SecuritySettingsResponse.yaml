@@ -1,0 +1,8 @@
+$token: azure-native:recoveryservices:SecuritySettingsResponse
+description: Security Settings of the vault
+properties:
+  immutabilitySettings:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices:ImmutabilitySettingsResponse"
+    description: Immutability Settings of a vault
+type: object

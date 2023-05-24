@@ -1,0 +1,6 @@
+$token: azure-native:elastic:UserApiKeyResponsePropertiesResponse
+properties:
+  apiKey:
+    type: string
+    description: The User Api Key Generated based on GenerateApiKey flag. This is applicable for non-Portal clients only.
+type: object

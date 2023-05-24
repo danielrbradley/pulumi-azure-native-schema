@@ -1,0 +1,48 @@
+$token: azure-native:appplatform/v20230301preview:BuildServiceBuild
+description: Build resource payload
+properties:
+  name:
+    type: string
+    description: The name of the resource.
+  properties:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:BuildPropertiesResponse"
+    description: Properties of the build resource
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  type:
+    type: string
+    description: The type of the resource.
+type: object
+required:
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  buildName:
+    type: string
+    description: The name of the build resource.
+    willReplaceOnChanges: true
+  buildServiceName:
+    type: string
+    description: The name of the build service resource.
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:BuildProperties"
+    description: Properties of the build resource
+  resourceGroupName:
+    type: string
+    description: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+    willReplaceOnChanges: true
+  serviceName:
+    type: string
+    description: The name of the Service resource.
+    willReplaceOnChanges: true
+requiredInputs:
+  - buildServiceName
+  - resourceGroupName
+  - serviceName

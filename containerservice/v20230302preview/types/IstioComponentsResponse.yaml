@@ -1,0 +1,10 @@
+$token: azure-native:containerservice/v20230302preview:IstioComponentsResponse
+description: Istio components configuration.
+properties:
+  ingressGateways:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:containerservice/v20230302preview:IstioIngressGatewayResponse"
+    description: Istio ingress gateways.
+type: object

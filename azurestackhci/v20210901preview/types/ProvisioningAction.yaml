@@ -1,0 +1,7 @@
+$token: azure-native:azurestackhci/v20210901preview:ProvisioningAction
+description: The guest agent provisioning action.
+type: string
+enum:
+  - value: install
+  - value: uninstall
+  - value: repair

@@ -1,0 +1,13 @@
+$token: azure-native:orbital:ContactProfileThirdPartyConfigurationResponse
+description: Contact Profile third-party partner configuration.
+properties:
+  missionConfiguration:
+    type: string
+    description: Name of string referencing the configuration describing contact set-up for a particular mission. Expected values are those which have been created in collaboration with the partner network.
+  providerName:
+    type: string
+    description: Name of the third-party provider.
+type: object
+required:
+  - missionConfiguration
+  - providerName

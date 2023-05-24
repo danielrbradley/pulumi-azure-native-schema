@@ -1,0 +1,49 @@
+$token: azure-native:datafactory:ManagedPrivateEndpoint
+properties:
+  etag:
+    type: string
+    description: Etag identifies change in the resource.
+  name:
+    type: string
+    description: The resource name.
+  properties:
+    type: object
+    $ref: "#/types/azure-native:datafactory:ManagedPrivateEndpointResponse"
+    description: Managed private endpoint properties.
+  type:
+    type: string
+    description: The resource type.
+type: object
+required:
+  - etag
+  - name
+  - properties
+  - type
+inputProperties:
+  factoryName:
+    type: string
+    description: The factory name.
+    willReplaceOnChanges: true
+  managedPrivateEndpointName:
+    type: string
+    description: Managed private endpoint name
+    willReplaceOnChanges: true
+  managedVirtualNetworkName:
+    type: string
+    description: Managed virtual network name
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:datafactory:ManagedPrivateEndpoint"
+    description: Managed private endpoint properties.
+  resourceGroupName:
+    type: string
+    description: The resource group name.
+    willReplaceOnChanges: true
+requiredInputs:
+  - factoryName
+  - managedVirtualNetworkName
+  - properties
+  - resourceGroupName
+aliases:
+  - type: azure-native:datafactory/v20180601:ManagedPrivateEndpoint

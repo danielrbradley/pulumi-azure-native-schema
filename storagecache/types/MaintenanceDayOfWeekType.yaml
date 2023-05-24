@@ -1,0 +1,11 @@
+$token: azure-native:storagecache:MaintenanceDayOfWeekType
+description: Day of the week on which the maintenance window will occur.
+type: string
+enum:
+  - value: Monday
+  - value: Tuesday
+  - value: Wednesday
+  - value: Thursday
+  - value: Friday
+  - value: Saturday
+  - value: Sunday

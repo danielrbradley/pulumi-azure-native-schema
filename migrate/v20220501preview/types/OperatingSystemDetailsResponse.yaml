@@ -1,0 +1,11 @@
+$token: azure-native:migrate/v20220501preview:OperatingSystemDetailsResponse
+properties:
+  os:
+    type: string
+  osArchitecture:
+    type: string
+  osName:
+    type: string
+  osVersion:
+    type: string
+type: object

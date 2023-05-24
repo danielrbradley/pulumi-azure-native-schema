@@ -1,0 +1,39 @@
+$token: azure-native:app/v20221101preview:JobConfiguration
+description: Non versioned Container Apps Job configuration properties
+properties:
+  manualTriggerConfig:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:JobConfigurationManualTriggerConfig"
+    description: Manual trigger configuration for a single execution job. Properties replicaCompletionCount and parallelism would be set to 1 by default
+  registries:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:app/v20221101preview:RegistryCredentials"
+    description: Collection of private container registry credentials used by a Container apps job
+  replicaRetryLimit:
+    type: integer
+    description: Maximum number of retries before failing the job.
+  replicaTimeout:
+    type: integer
+    description: Maximum number of seconds a replica is allowed to run.
+  scheduleTriggerConfig:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:JobConfigurationScheduleTriggerConfig"
+    description: Cron formatted repeating trigger schedule ("* * * * *") for cronjobs. Properties completions and parallelism would be set to 1 by default
+  secrets:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:app/v20221101preview:Secret"
+    description: Collection of secrets used by a Container Apps Job
+  triggerType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:app/v20221101preview:TriggerType"
+    description: Trigger type of the job
+    default: Manual
+type: object
+required:
+  - replicaTimeout
+  - triggerType

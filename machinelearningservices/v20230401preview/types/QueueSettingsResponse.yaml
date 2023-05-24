@@ -1,0 +1,10 @@
+$token: azure-native:machinelearningservices/v20230401preview:QueueSettingsResponse
+properties:
+  jobTier:
+    type: string
+    description: Enum to determine the job tier.
+    default: Standard
+  priority:
+    type: integer
+    description: Controls the priority of the job on a compute.
+type: object

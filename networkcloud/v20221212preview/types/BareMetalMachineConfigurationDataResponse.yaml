@@ -1,0 +1,37 @@
+$token: azure-native:networkcloud/v20221212preview:BareMetalMachineConfigurationDataResponse
+properties:
+  bmcConnectionString:
+    type: string
+    description: The connection string for the baseboard management controller including IP address and protocol.
+  bmcCredentials:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:AdministrativeCredentialsResponse"
+    description: The credentials of the baseboard management controller on this bare metal machine.
+  bmcMacAddress:
+    type: string
+    description: The MAC address of the BMC for this machine.
+  bootMacAddress:
+    type: string
+    description: The MAC address associated with the PXE NIC card.
+  machineDetails:
+    type: string
+    description: The free-form additional information about the machine, e.g. an asset tag.
+  machineName:
+    type: string
+    description: |-
+      The user-provided name for the bare metal machine created from this specification.
+      If not provided, the machine name will be generated programmatically.
+  rackSlot:
+    type: number
+    description: The slot the physical machine is in the rack based on the BOM configuration.
+  serialNumber:
+    type: string
+    description: The serial number of the machine. Hardware suppliers may use an alternate value. For example, service tag.
+type: object
+required:
+  - bmcConnectionString
+  - bmcCredentials
+  - bmcMacAddress
+  - bootMacAddress
+  - rackSlot
+  - serialNumber

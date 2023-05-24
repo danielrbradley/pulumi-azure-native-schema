@@ -1,0 +1,6 @@
+$token: azure-native:servicefabric/v20230201preview:SecurityType
+description: Specifies the security type of the nodeType. Only TrustedLaunch is currently supported
+type: string
+enum:
+  - description: Trusted Launch is a security type that secures generation 2 virtual machines.
+    value: TrustedLaunch

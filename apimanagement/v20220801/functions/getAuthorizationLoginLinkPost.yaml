@@ -1,0 +1,36 @@
+$token: azure-native:apimanagement/v20220801:getAuthorizationLoginLinkPost
+description: Gets authorization login links.
+inputs:
+  properties:
+    authorizationId:
+      type: string
+      description: Identifier of the authorization.
+      willReplaceOnChanges: true
+    authorizationProviderId:
+      type: string
+      description: Identifier of the authorization provider.
+      willReplaceOnChanges: true
+    postLoginRedirectUrl:
+      type: string
+      description: The redirect URL after login has completed.
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    serviceName:
+      type: string
+      description: The name of the API Management service.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - authorizationId
+    - authorizationProviderId
+    - resourceGroupName
+    - serviceName
+outputs:
+  description: Authorization login response contract.
+  properties:
+    loginLink:
+      type: string
+      description: The login link
+  type: object

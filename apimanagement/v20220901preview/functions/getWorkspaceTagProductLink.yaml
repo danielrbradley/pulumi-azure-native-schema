@@ -1,0 +1,52 @@
+$token: azure-native:apimanagement/v20220901preview:getWorkspaceTagProductLink
+description: Gets the product link for the tag.
+inputs:
+  properties:
+    productLinkId:
+      type: string
+      description: Tag-product link identifier. Must be unique in the current API Management service instance.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    serviceName:
+      type: string
+      description: The name of the API Management service.
+      willReplaceOnChanges: true
+    tagId:
+      type: string
+      description: Tag identifier. Must be unique in the current API Management service instance.
+      willReplaceOnChanges: true
+    workspaceId:
+      type: string
+      description: Workspace identifier. Must be unique in the current API Management service instance.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - productLinkId
+    - resourceGroupName
+    - serviceName
+    - tagId
+    - workspaceId
+outputs:
+  description: Tag-product link details.
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    productId:
+      type: string
+      description: Full resource Id of a product.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - productId
+    - type

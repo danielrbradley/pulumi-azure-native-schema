@@ -1,0 +1,61 @@
+$token: azure-native:digitaltwins:getDigitalTwinsEndpoint
+description: |-
+  Get DigitalTwinsInstances Endpoint.
+  API Version: 2023-01-31.
+inputs:
+  properties:
+    endpointName:
+      type: string
+      description: Name of Endpoint Resource.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group that contains the DigitalTwinsInstance.
+      willReplaceOnChanges: true
+    resourceName:
+      type: string
+      description: The name of the DigitalTwinsInstance.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - endpointName
+    - resourceGroupName
+    - resourceName
+outputs:
+  description: DigitalTwinsInstance endpoint resource.
+  properties:
+    id:
+      type: string
+      description: The resource identifier.
+    name:
+      type: string
+      description: Extension resource name.
+    properties:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:digitaltwins:EventGridResponse"
+        - type: object
+          $ref: "#/types/azure-native:digitaltwins:EventHubResponse"
+        - type: object
+          $ref: "#/types/azure-native:digitaltwins:ServiceBusResponse"
+      discriminator:
+        propertyName: endpointType
+        mapping:
+          EventGrid: "#/types/azure-native:digitaltwins:EventGridResponse"
+          EventHub: "#/types/azure-native:digitaltwins:EventHubResponse"
+          ServiceBus: "#/types/azure-native:digitaltwins:ServiceBusResponse"
+      description: DigitalTwinsInstance endpoint resource properties.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:digitaltwins:SystemDataResponse"
+      description: Metadata pertaining to creation and last modification of the resource.
+    type:
+      type: string
+      description: The resource type.
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - systemData
+    - type

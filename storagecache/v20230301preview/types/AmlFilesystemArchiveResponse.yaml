@@ -1,0 +1,14 @@
+$token: azure-native:storagecache/v20230301preview:AmlFilesystemArchiveResponse
+description: Information about the AML file system archive
+properties:
+  filesystemPath:
+    type: string
+    description: Lustre file system path to archive relative to the file system root.  Specify '/' to archive all modified data.
+  status:
+    type: object
+    $ref: "#/types/azure-native:storagecache/v20230301preview:AmlFilesystemArchiveResponseStatus"
+    description: The status of the archive
+type: object
+required:
+  - filesystemPath
+  - status

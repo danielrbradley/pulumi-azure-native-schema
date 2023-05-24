@@ -1,0 +1,17 @@
+$token: azure-native:azurestackhci/v20210901preview:VirtualMachineStatusResponse
+description: VirtualMachineStatus defines the observed state of virtualmachines
+properties:
+  errorCode:
+    type: string
+    description: VirtualMachine provisioning error code
+  errorMessage:
+    type: string
+    description: Descriptive error message
+  powerState:
+    type: string
+    description: The power state of the virtual machine
+  provisioningStatus:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualMachineStatusResponseProvisioningStatus"
+    description: The provisioning status of the virtual machine
+type: object

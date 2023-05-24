@@ -1,0 +1,6 @@
+$token: azure-native:network:ApplicationGatewayClientRevocationOptions
+description: Verify client certificate revocation status.
+type: string
+enum:
+  - value: None
+  - value: OCSP

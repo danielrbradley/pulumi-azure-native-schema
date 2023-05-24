@@ -1,0 +1,20 @@
+$token: azure-native:healthcareapis/v20221001preview:AnalyticsConnectorFhirServiceDataSourceResponse
+description: The FHIR service data source for Analytics Connector.
+properties:
+  kind:
+    type: string
+    description: The kind of FHIR Service.
+  type:
+    type: string
+    description: |-
+      Type of data source.
+      Expected value is 'fhirservice'.
+    const: fhirservice
+  url:
+    type: string
+    description: The URL of FHIR service.
+type: object
+required:
+  - kind
+  - type
+  - url

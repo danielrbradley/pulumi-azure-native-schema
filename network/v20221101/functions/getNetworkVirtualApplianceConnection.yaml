@@ -1,0 +1,54 @@
+$token: azure-native:network/v20221101:getNetworkVirtualApplianceConnection
+description: Retrieves the details of specified NVA connection.
+inputs:
+  properties:
+    connectionName:
+      type: string
+      description: The name of the NVA connection.
+      willReplaceOnChanges: true
+    networkVirtualApplianceName:
+      type: string
+      description: The name of the Network Virtual Appliance.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - connectionName
+    - networkVirtualApplianceName
+    - resourceGroupName
+outputs:
+  description: NetworkVirtualApplianceConnection resource.
+  properties:
+    asn:
+      type: number
+      description: Network Virtual Appliance ASN.
+    bgpPeerAddress:
+      type: array
+      items:
+        type: string
+      description: List of bgpPeerAddresses for the NVA instances
+    enableInternetSecurity:
+      type: boolean
+      description: Enable internet security.
+    id:
+      type: string
+      description: Resource ID.
+    name:
+      type: string
+      description: The name of the resource.
+    provisioningState:
+      type: string
+      description: The provisioning state of the NetworkVirtualApplianceConnection resource.
+    routingConfiguration:
+      type: object
+      $ref: "#/types/azure-native:network/v20221101:RoutingConfigurationNfvResponse"
+      description: The Routing Configuration indicating the associated and propagated route tables on this connection.
+    tunnelIdentifier:
+      type: number
+      description: Unique identifier for the connection.
+  type: object
+  required:
+    - provisioningState

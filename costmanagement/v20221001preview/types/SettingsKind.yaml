@@ -1,0 +1,5 @@
+$token: azure-native:costmanagement/v20221001preview:SettingsKind
+description: Specifies the kind of settings.
+type: string
+enum:
+  - value: taginheritance

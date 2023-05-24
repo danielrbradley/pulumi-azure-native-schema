@@ -1,0 +1,6 @@
+$token: azure-native:azurearcdata:FailoverGroupPartnerSyncMode
+description: The partner sync mode of the SQL managed instance.
+type: string
+enum:
+  - value: async
+  - value: sync

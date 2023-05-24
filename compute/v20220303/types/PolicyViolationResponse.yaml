@@ -1,0 +1,10 @@
+$token: azure-native:compute/v20220303:PolicyViolationResponse
+description: A policy violation reported against a gallery artifact.
+properties:
+  category:
+    type: string
+    description: Describes the nature of the policy violation.
+  details:
+    type: string
+    description: Describes specific details about why this policy violation was reported.
+type: object

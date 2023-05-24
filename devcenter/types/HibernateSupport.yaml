@@ -1,0 +1,6 @@
+$token: azure-native:devcenter:HibernateSupport
+description: Indicates whether Dev Boxes created with this definition are capable of hibernation. Not all images are capable of supporting hibernation. To find out more see https://aka.ms/devbox/hibernate
+type: string
+enum:
+  - value: Disabled
+  - value: Enabled

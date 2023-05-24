@@ -1,0 +1,7 @@
+$token: azure-native:webpubsub/v20230301preview:ManagedIdentityType
+description: "Represents the identity type: systemAssigned, userAssigned, None"
+type: string
+enum:
+  - value: None
+  - value: SystemAssigned
+  - value: UserAssigned

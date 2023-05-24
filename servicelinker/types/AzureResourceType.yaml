@@ -1,0 +1,5 @@
+$token: azure-native:servicelinker:AzureResourceType
+description: The azure resource type.
+type: string
+enum:
+  - value: KeyVault

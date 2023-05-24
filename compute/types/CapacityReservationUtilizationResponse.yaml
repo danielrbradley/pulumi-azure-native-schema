@@ -1,0 +1,16 @@
+$token: azure-native:compute:CapacityReservationUtilizationResponse
+description: Represents the capacity reservation utilization in terms of resources allocated.
+properties:
+  currentCapacity:
+    type: integer
+    description: "The value provides the current capacity of the VM size which was reserved successfully and for which the customer is getting billed.<br><br>Minimum api-version: 2022-08-01."
+  virtualMachinesAllocated:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:compute:SubResourceReadOnlyResponse"
+    description: A list of all virtual machines resource ids allocated against the capacity reservation.
+type: object
+required:
+  - currentCapacity
+  - virtualMachinesAllocated

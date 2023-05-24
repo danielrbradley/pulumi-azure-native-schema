@@ -1,0 +1,7 @@
+$token: azure-native:machinelearningservices/v20230201preview:FeaturesetSpecification
+description: Dto object representing specification
+properties:
+  path:
+    type: string
+    description: Specifies the spec path
+type: object

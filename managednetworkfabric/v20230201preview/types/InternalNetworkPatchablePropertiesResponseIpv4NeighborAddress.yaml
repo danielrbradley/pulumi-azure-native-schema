@@ -1,0 +1,12 @@
+$token: azure-native:managednetworkfabric/v20230201preview:InternalNetworkPatchablePropertiesResponseIpv4NeighborAddress
+description: ipv4NeighborAddress model.
+properties:
+  address:
+    type: string
+    description: IP Address of the IPv4NeighborAddress.
+  operationalState:
+    type: string
+    description: operationalState of the IPv4NeighborAddress.
+type: object
+required:
+  - operationalState

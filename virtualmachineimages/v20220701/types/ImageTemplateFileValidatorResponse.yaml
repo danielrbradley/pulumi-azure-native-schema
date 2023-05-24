@@ -1,0 +1,25 @@
+$token: azure-native:virtualmachineimages/v20220701:ImageTemplateFileValidatorResponse
+description: Uploads files required for validation to VMs (Linux, Windows). Corresponds to Packer file provisioner
+properties:
+  destination:
+    type: string
+    description: The absolute path to a file (with nested directory structures already created) where the file (from sourceUri) will be uploaded to in the VM
+  name:
+    type: string
+    description: Friendly Name to provide context on what this validation step does
+  sha256Checksum:
+    type: string
+    description: SHA256 checksum of the file provided in the sourceUri field above
+    default: ""
+  sourceUri:
+    type: string
+    description: The URI of the file to be uploaded to the VM for validation. It can be a github link, Azure Storage URI (authorized or SAS), etc
+  type:
+    type: string
+    description: |-
+      The type of validation you want to use on the Image. For example, "Shell" can be shell validation
+      Expected value is 'File'.
+    const: File
+type: object
+required:
+  - type

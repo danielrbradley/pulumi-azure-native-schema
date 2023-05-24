@@ -1,0 +1,10 @@
+$token: azure-native:appplatform/v20230101preview:DevToolPortalFeatureDetail
+description: Detail settings for Dev Tool Portal feature
+properties:
+  state:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:appplatform/v20230101preview:DevToolPortalFeatureState"
+    description: State of the plugin
+    default: Enabled
+type: object

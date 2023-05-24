@@ -1,0 +1,18 @@
+$token: azure-native:machinelearningservices/v20230401:Cron
+description: The workflow trigger cron for ComputeStartStop schedule type.
+properties:
+  expression:
+    type: string
+    description: "[Required] Specifies cron expression of schedule.\r
+
+      The expression should follow NCronTab format."
+  startTime:
+    type: string
+    description: The start time in yyyy-MM-ddTHH:mm:ss format.
+  timeZone:
+    type: string
+    description: "Specifies time zone in which the schedule runs.\r
+
+      TimeZone should follow Windows time zone format. Refer: https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/default-time-zones?view=windows-11"
+    default: UTC
+type: object

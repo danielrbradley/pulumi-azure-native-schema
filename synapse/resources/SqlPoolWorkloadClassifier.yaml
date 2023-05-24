@@ -1,0 +1,84 @@
+$token: azure-native:synapse:SqlPoolWorkloadClassifier
+properties:
+  context:
+    type: string
+    description: The workload classifier context.
+  endTime:
+    type: string
+    description: The workload classifier end time for classification.
+  importance:
+    type: string
+    description: The workload classifier importance.
+  label:
+    type: string
+    description: The workload classifier label.
+  memberName:
+    type: string
+    description: The workload classifier member name.
+  name:
+    type: string
+    description: The name of the resource
+  startTime:
+    type: string
+    description: The workload classifier start time for classification.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - memberName
+  - name
+  - type
+inputProperties:
+  context:
+    type: string
+    description: The workload classifier context.
+  endTime:
+    type: string
+    description: The workload classifier end time for classification.
+  importance:
+    type: string
+    description: The workload classifier importance.
+  label:
+    type: string
+    description: The workload classifier label.
+  memberName:
+    type: string
+    description: The workload classifier member name.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  sqlPoolName:
+    type: string
+    description: SQL pool name
+    willReplaceOnChanges: true
+  startTime:
+    type: string
+    description: The workload classifier start time for classification.
+  workloadClassifierName:
+    type: string
+    description: The name of the workload classifier.
+    willReplaceOnChanges: true
+  workloadGroupName:
+    type: string
+    description: The name of the workload group.
+    willReplaceOnChanges: true
+  workspaceName:
+    type: string
+    description: The name of the workspace.
+    willReplaceOnChanges: true
+requiredInputs:
+  - memberName
+  - resourceGroupName
+  - sqlPoolName
+  - workloadGroupName
+  - workspaceName
+aliases:
+  - type: azure-native:synapse/v20190601preview:SqlPoolWorkloadClassifier
+  - type: azure-native:synapse/v20201201:SqlPoolWorkloadClassifier
+  - type: azure-native:synapse/v20210301:SqlPoolWorkloadClassifier
+  - type: azure-native:synapse/v20210401preview:SqlPoolWorkloadClassifier
+  - type: azure-native:synapse/v20210501:SqlPoolWorkloadClassifier
+  - type: azure-native:synapse/v20210601:SqlPoolWorkloadClassifier
+  - type: azure-native:synapse/v20210601preview:SqlPoolWorkloadClassifier

@@ -1,0 +1,67 @@
+$token: azure-native:webpubsub/v20230301preview:WebPubSubCustomCertificate
+description: A custom certificate.
+properties:
+  keyVaultBaseUri:
+    type: string
+    description: Base uri of the KeyVault that stores certificate.
+  keyVaultSecretName:
+    type: string
+    description: Certificate secret name.
+  keyVaultSecretVersion:
+    type: string
+    description: Certificate secret version.
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: Provisioning state of the resource.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:webpubsub/v20230301preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - keyVaultBaseUri
+  - keyVaultSecretName
+  - name
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  certificateName:
+    type: string
+    description: Custom certificate name
+    willReplaceOnChanges: true
+  keyVaultBaseUri:
+    type: string
+    description: Base uri of the KeyVault that stores certificate.
+    willReplaceOnChanges: true
+  keyVaultSecretName:
+    type: string
+    description: Certificate secret name.
+    willReplaceOnChanges: true
+  keyVaultSecretVersion:
+    type: string
+    description: Certificate secret version.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  resourceName:
+    type: string
+    description: The name of the resource.
+    willReplaceOnChanges: true
+requiredInputs:
+  - keyVaultBaseUri
+  - keyVaultSecretName
+  - resourceGroupName
+  - resourceName
+aliases:
+  - type: azure-native:webpubsub:WebPubSubCustomCertificate
+  - type: azure-native:webpubsub/v20220801preview:WebPubSubCustomCertificate
+  - type: azure-native:webpubsub/v20230201:WebPubSubCustomCertificate

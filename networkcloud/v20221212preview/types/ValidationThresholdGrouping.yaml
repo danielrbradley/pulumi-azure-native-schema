@@ -1,0 +1,6 @@
+$token: azure-native:networkcloud/v20221212preview:ValidationThresholdGrouping
+description: Selection of how the type evaluation is applied to the cluster calculation.
+type: string
+enum:
+  - value: PerCluster
+  - value: PerRack

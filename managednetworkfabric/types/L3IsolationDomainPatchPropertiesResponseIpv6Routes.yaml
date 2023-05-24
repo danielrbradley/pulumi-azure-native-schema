@@ -1,0 +1,7 @@
+$token: azure-native:managednetworkfabric:L3IsolationDomainPatchPropertiesResponseIpv6Routes
+description: aggregateIpv6Route model.
+properties:
+  prefix:
+    type: string
+    description: IPv6 Prefix of the aggregate IPv6 Route.
+type: object

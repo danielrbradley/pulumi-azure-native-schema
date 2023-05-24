@@ -1,0 +1,8 @@
+$token: azure-native:migrate/v20220501preview:ModernizeProjectModelProperties
+description: ModernizeProject properties.
+properties:
+  migrationConfiguration:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:MigrationConfiguration"
+    description: MigrationConfiguration properties.
+type: object

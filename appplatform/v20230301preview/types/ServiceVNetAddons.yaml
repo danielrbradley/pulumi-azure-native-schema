@@ -1,0 +1,12 @@
+$token: azure-native:appplatform/v20230301preview:ServiceVNetAddons
+description: Additional Service settings in vnet injection instance
+properties:
+  dataPlanePublicEndpoint:
+    type: boolean
+    description: Indicates whether the data plane components(log stream, app connect, remote debugging) in vnet injection instance could be accessed from internet.
+    default: false
+  logStreamPublicEndpoint:
+    type: boolean
+    description: Indicates whether the log stream in vnet injection instance could be accessed from internet.
+    default: false
+type: object

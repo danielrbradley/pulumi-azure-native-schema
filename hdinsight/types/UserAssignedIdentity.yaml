@@ -1,0 +1,7 @@
+$token: azure-native:hdinsight:UserAssignedIdentity
+description: The User Assigned Identity
+properties:
+  tenantId:
+    type: string
+    description: The tenant id of user assigned identity.
+type: object

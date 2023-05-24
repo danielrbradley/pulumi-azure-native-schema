@@ -1,0 +1,53 @@
+$token: azure-native:easm/v20230401preview:LabelByWorkspace
+description: Label details
+properties:
+  color:
+    type: string
+    description: Label color.
+  displayName:
+    type: string
+    description: Label display name.
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: Resource provisioning state.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:easm/v20230401preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - name
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  color:
+    type: string
+    description: Label color.
+  displayName:
+    type: string
+    description: Label display name.
+  labelName:
+    type: string
+    description: The name of the Label.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  workspaceName:
+    type: string
+    description: The name of the Workspace.
+    willReplaceOnChanges: true
+requiredInputs:
+  - resourceGroupName
+  - workspaceName
+aliases:
+  - type: azure-native:easm:LabelByWorkspace
+  - type: azure-native:easm/v20220401preview:LabelByWorkspace

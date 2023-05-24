@@ -1,0 +1,56 @@
+$token: azure-native:migrate/v20220501preview:WorkloadInstance
+description: Workload instance model.
+properties:
+  name:
+    type: string
+    description: Gets or sets the name of the resource.
+  properties:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:WorkloadInstanceModelPropertiesResponse"
+    description: Workload instance model properties.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:WorkloadInstanceModelResponseSystemData"
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Gets or sets the resource tags.
+  type:
+    type: string
+    description: Gets or sets the type of the resource.
+type: object
+required:
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  modernizeProjectName:
+    type: string
+    description: ModernizeProject name.
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:WorkloadInstanceModelProperties"
+    description: Workload instance model properties.
+  resourceGroupName:
+    type: string
+    description: Name of the Azure Resource Group that project is part of.
+    willReplaceOnChanges: true
+  subscriptionId:
+    type: string
+    description: Azure Subscription Id in which project was created.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Gets or sets the resource tags.
+  workloadInstanceName:
+    type: string
+    description: Workload instance name.
+    willReplaceOnChanges: true
+requiredInputs:
+  - modernizeProjectName
+  - resourceGroupName

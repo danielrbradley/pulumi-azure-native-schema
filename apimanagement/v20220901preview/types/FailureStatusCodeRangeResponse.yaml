@@ -1,0 +1,10 @@
+$token: azure-native:apimanagement/v20220901preview:FailureStatusCodeRangeResponse
+description: The failure http status code range
+properties:
+  max:
+    type: integer
+    description: The maximum http status code.
+  min:
+    type: integer
+    description: The minimum http status code.
+type: object

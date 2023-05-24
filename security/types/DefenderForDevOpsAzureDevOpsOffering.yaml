@@ -1,0 +1,12 @@
+$token: azure-native:security:DefenderForDevOpsAzureDevOpsOffering
+description: The Defender for DevOps for Azure DevOps offering
+properties:
+  offeringType:
+    type: string
+    description: |-
+      The type of the security offering.
+      Expected value is 'DefenderForDevOpsAzureDevOps'.
+    const: DefenderForDevOpsAzureDevOps
+type: object
+required:
+  - offeringType

@@ -1,0 +1,10 @@
+$token: azure-native:machinelearningservices/v20230401preview:ServiceTagDestinationResponse
+description: Service Tag destination for a Service Tag Outbound Rule for the managed network of a machine learning workspace.
+properties:
+  portRanges:
+    type: string
+  protocol:
+    type: string
+  serviceTag:
+    type: string
+type: object

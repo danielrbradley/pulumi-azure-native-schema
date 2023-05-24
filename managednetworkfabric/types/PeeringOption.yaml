@@ -1,0 +1,6 @@
+$token: azure-native:managednetworkfabric:PeeringOption
+description: Peering option list.
+type: string
+enum:
+  - value: OptionA
+  - value: OptionB

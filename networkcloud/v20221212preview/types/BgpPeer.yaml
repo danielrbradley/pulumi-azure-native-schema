@@ -1,0 +1,15 @@
+$token: azure-native:networkcloud/v20221212preview:BgpPeer
+properties:
+  asNumber:
+    type: number
+    description: The ASN (Autonomous System Number) of the BGP peer.
+  password:
+    type: string
+    description: The password for this peering neighbor. It defaults to no password if not specified.
+  peerIp:
+    type: string
+    description: The IPv4 or IPv6 address to peer with the associated CNI Network. The IP version type will drive a peering with the same version type from the Default CNI Network. For example, IPv4 to IPv4 or IPv6 to IPv6.
+type: object
+required:
+  - asNumber
+  - peerIp

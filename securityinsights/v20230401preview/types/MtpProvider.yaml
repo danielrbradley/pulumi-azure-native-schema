@@ -1,0 +1,6 @@
+$token: azure-native:securityinsights/v20230401preview:MtpProvider
+description: The available data providers.
+type: string
+enum:
+  - value: microsoftDefenderForCloudApps
+  - value: microsoftDefenderForIdentity

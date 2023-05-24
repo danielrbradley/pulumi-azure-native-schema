@@ -1,0 +1,15 @@
+$token: azure-native:managednetworkfabric:InternalNetworkPatchablePropertiesIpv6Routes
+description: staticIPv6Route model.
+properties:
+  nextHop:
+    type: array
+    items:
+      type: string
+    description: List of next hop IPv6 addresses.
+  prefix:
+    type: string
+    description: IPv6 prefix of the staticIPv6Route.
+type: object
+required:
+  - nextHop
+  - prefix

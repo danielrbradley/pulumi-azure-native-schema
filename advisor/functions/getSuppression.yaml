@@ -1,0 +1,55 @@
+$token: azure-native:advisor:getSuppression
+description: |-
+  Obtains the details of a suppression.
+  API Version: 2022-10-01.
+inputs:
+  properties:
+    name:
+      type: string
+      description: The name of the suppression.
+      willReplaceOnChanges: true
+    recommendationId:
+      type: string
+      description: The recommendation ID.
+      willReplaceOnChanges: true
+    resourceUri:
+      type: string
+      description: The fully qualified Azure Resource Manager identifier of the resource to which the recommendation applies.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - name
+    - recommendationId
+    - resourceUri
+outputs:
+  description: The details of the snoozed or dismissed rule; for example, the duration, name, and GUID associated with the rule.
+  properties:
+    expirationTimeStamp:
+      type: string
+      description: Gets or sets the expiration time stamp.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+    name:
+      type: string
+      description: The name of the resource
+    suppressionId:
+      type: string
+      description: The GUID of the suppression.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:advisor:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    ttl:
+      type: string
+      description: The duration for which the suppression is valid.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - expirationTimeStamp
+    - id
+    - name
+    - systemData
+    - type

@@ -1,0 +1,64 @@
+$token: azure-native:web:getWebAppPrivateEndpointConnectionSlot
+description: |-
+  Description for Gets a private endpoint connection
+  API Version: 2022-09-01.
+inputs:
+  properties:
+    name:
+      type: string
+      description: Name of the site.
+      willReplaceOnChanges: true
+    privateEndpointConnectionName:
+      type: string
+      description: Name of the private endpoint connection.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the resource group to which the resource belongs.
+      willReplaceOnChanges: true
+    slot:
+      type: string
+      description: Name of the site deployment slot.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - name
+    - privateEndpointConnectionName
+    - resourceGroupName
+    - slot
+outputs:
+  description: Remote Private Endpoint Connection ARM resource.
+  properties:
+    id:
+      type: string
+      description: Resource Id.
+    ipAddresses:
+      type: array
+      items:
+        type: string
+      description: Private IPAddresses mapped to the remote private endpoint
+    kind:
+      type: string
+      description: Kind of resource.
+    name:
+      type: string
+      description: Resource Name.
+    privateEndpoint:
+      type: object
+      $ref: "#/types/azure-native:web:ArmIdWrapperResponse"
+      description: PrivateEndpoint of a remote private endpoint connection
+    privateLinkServiceConnectionState:
+      type: object
+      $ref: "#/types/azure-native:web:PrivateLinkConnectionStateResponse"
+      description: The state of a private link connection
+    provisioningState:
+      type: string
+    type:
+      type: string
+      description: Resource type.
+  type: object
+  required:
+    - id
+    - name
+    - provisioningState
+    - type

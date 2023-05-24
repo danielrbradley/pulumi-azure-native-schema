@@ -1,0 +1,19 @@
+$token: azure-native:app/v20221101preview:VolumeResponse
+description: Volume definitions for the Container App.
+properties:
+  name:
+    type: string
+    description: Volume name.
+  secrets:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:app/v20221101preview:SecretVolumeItemResponse"
+    description: List of secrets to be added in volume. If no secrets are provided, all secrets in collection will be added to volume.
+  storageName:
+    type: string
+    description: Name of storage resource. No need to provide for EmptyDir and Secret.
+  storageType:
+    type: string
+    description: Storage type for the volume. If not provided, use EmptyDir.
+type: object

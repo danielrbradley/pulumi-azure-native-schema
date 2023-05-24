@@ -1,0 +1,130 @@
+$token: azure-native:networkcloud/v20221212preview:TrunkedNetwork
+properties:
+  clusterId:
+    type: string
+    description: The resource ID of the Network Cloud cluster this trunked network is associated with.
+  detailedStatus:
+    type: string
+    description: The more detailed status of the trunked network.
+  detailedStatusMessage:
+    type: string
+    description: The descriptive message about the current detailed status.
+  extendedLocation:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:ExtendedLocationResponse"
+    description: The extended location of the cluster associated with the resource.
+  hybridAksClustersAssociatedIds:
+    type: array
+    items:
+      type: string
+    description: The list of Hybrid AKS cluster resource IDs that are associated with this trunked network.
+  hybridAksPluginType:
+    type: string
+    description: The network plugin type for Hybrid AKS.
+    default: SRIOV
+  interfaceName:
+    type: string
+    description: The default interface name for this trunked network in the virtual machine. This name can be overridden by the name supplied in the network attachment configuration of that virtual machine.
+  isolationDomainIds:
+    type: array
+    items:
+      type: string
+    description: The list of resource IDs representing the Network Fabric isolation domains. It can be any combination of l2IsolationDomain and l3IsolationDomain resources.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: The provisioning state of the trunked network.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  virtualMachinesAssociatedIds:
+    type: array
+    items:
+      type: string
+    description: The list of virtual machine resource IDs, excluding any Hybrid AKS virtual machines, that are currently using this trunked network.
+  vlans:
+    type: array
+    items:
+      type: number
+    description: The list of vlans that are selected from the isolation domains for trunking.
+type: object
+required:
+  - clusterId
+  - detailedStatus
+  - detailedStatusMessage
+  - extendedLocation
+  - hybridAksClustersAssociatedIds
+  - isolationDomainIds
+  - location
+  - name
+  - provisioningState
+  - systemData
+  - type
+  - virtualMachinesAssociatedIds
+  - vlans
+inputProperties:
+  extendedLocation:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:ExtendedLocation"
+    description: The extended location of the cluster associated with the resource.
+  hybridAksPluginType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:networkcloud/v20221212preview:HybridAksPluginType"
+    description: The network plugin type for Hybrid AKS.
+    default: SRIOV
+    willReplaceOnChanges: true
+  interfaceName:
+    type: string
+    description: The default interface name for this trunked network in the virtual machine. This name can be overridden by the name supplied in the network attachment configuration of that virtual machine.
+    willReplaceOnChanges: true
+  isolationDomainIds:
+    type: array
+    items:
+      type: string
+    description: The list of resource IDs representing the Network Fabric isolation domains. It can be any combination of l2IsolationDomain and l3IsolationDomain resources.
+    willReplaceOnChanges: true
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  trunkedNetworkName:
+    type: string
+    description: The name of the trunked network.
+    willReplaceOnChanges: true
+  vlans:
+    type: array
+    items:
+      type: number
+    description: The list of vlans that are selected from the isolation domains for trunking.
+    willReplaceOnChanges: true
+requiredInputs:
+  - extendedLocation
+  - isolationDomainIds
+  - resourceGroupName
+  - vlans
+aliases:
+  - type: azure-native:networkcloud:TrunkedNetwork

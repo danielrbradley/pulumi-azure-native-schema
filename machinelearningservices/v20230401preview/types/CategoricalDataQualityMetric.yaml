@@ -1,0 +1,10 @@
+$token: azure-native:machinelearningservices/v20230401preview:CategoricalDataQualityMetric
+description: "[Required] The categorical data quality metric to calculate."
+type: string
+enum:
+  - description: Calculates the rate of null values.
+    value: NullValueRate
+  - description: Calculates the rate of data type errors.
+    value: DataTypeErrorRate
+  - description: Calculates the rate values are out of bounds.
+    value: OutOfBoundsRate

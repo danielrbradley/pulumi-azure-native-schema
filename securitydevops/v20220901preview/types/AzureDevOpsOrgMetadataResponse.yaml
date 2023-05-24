@@ -1,0 +1,14 @@
+$token: azure-native:securitydevops/v20220901preview:AzureDevOpsOrgMetadataResponse
+description: Org onboarding info.
+properties:
+  autoDiscovery:
+    type: string
+  name:
+    type: string
+    description: Gets or sets name of the AzureDevOps Org.
+  projects:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:securitydevops/v20220901preview:AzureDevOpsProjectMetadataResponse"
+type: object

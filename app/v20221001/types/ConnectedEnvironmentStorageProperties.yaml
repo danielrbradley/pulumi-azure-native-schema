@@ -1,0 +1,8 @@
+$token: azure-native:app/v20221001:ConnectedEnvironmentStorageProperties
+description: Storage properties
+properties:
+  azureFile:
+    type: object
+    $ref: "#/types/azure-native:app/v20221001:AzureFileProperties"
+    description: Azure file properties
+type: object

@@ -1,0 +1,39 @@
+$token: azure-native:security/v20221120preview:APICollection
+description: An API collection as represented by Defender for APIs.
+properties:
+  additionalData:
+    type: object
+    additionalProperties:
+      type: string
+    description: Additional data regarding the API collection.
+  displayName:
+    type: string
+    description: The display name of the Azure API Management API.
+  name:
+    type: string
+    description: Resource name
+  type:
+    type: string
+    description: Resource type
+type: object
+required:
+  - name
+  - type
+inputProperties:
+  apiCollectionId:
+    type: string
+    description: A string representing the apiCollections resource within the Microsoft.Security provider namespace. This string matches the Azure API Management API name.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  serviceName:
+    type: string
+    description: The name of the API Management service.
+    willReplaceOnChanges: true
+requiredInputs:
+  - resourceGroupName
+  - serviceName
+aliases:
+  - type: azure-native:security:APICollection

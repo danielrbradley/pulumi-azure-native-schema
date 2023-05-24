@@ -1,0 +1,10 @@
+$token: azure-native:scvmm/v20220521preview:NetworkProfile
+description: Defines the resource properties.
+properties:
+  networkInterfaces:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:scvmm/v20220521preview:NetworkInterfaces"
+    description: Gets or sets the list of network interfaces associated with the virtual machine.
+type: object

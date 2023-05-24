@@ -1,0 +1,79 @@
+$token: azure-native:devcenter/v20230101preview:Project
+description: Represents a project resource.
+properties:
+  description:
+    type: string
+    description: Description of the project.
+  devCenterId:
+    type: string
+    description: Resource Id of an associated DevCenter
+  devCenterUri:
+    type: string
+    description: The URI of the resource.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  maxDevBoxesPerUser:
+    type: integer
+    description: When specified, limits the maximum number of Dev Boxes a single user can create across all pools in the project. This will have no effect on existing Dev Boxes when reduced.
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: The provisioning state of the resource.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:devcenter/v20230101preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - devCenterUri
+  - location
+  - name
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  description:
+    type: string
+    description: Description of the project.
+  devCenterId:
+    type: string
+    description: Resource Id of an associated DevCenter
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  maxDevBoxesPerUser:
+    type: integer
+    description: When specified, limits the maximum number of Dev Boxes a single user can create across all pools in the project. This will have no effect on existing Dev Boxes when reduced.
+  projectName:
+    type: string
+    description: The name of the project.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+requiredInputs:
+  - resourceGroupName
+aliases:
+  - type: azure-native:devcenter:Project
+  - type: azure-native:devcenter/v20220801preview:Project
+  - type: azure-native:devcenter/v20220901preview:Project
+  - type: azure-native:devcenter/v20221012preview:Project
+  - type: azure-native:devcenter/v20221111preview:Project

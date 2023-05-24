@@ -1,0 +1,6 @@
+$token: azure-native:keyvault:PublicNetworkAccess
+description: Control permission to the managed HSM from public networks.
+type: string
+enum:
+  - value: Enabled
+  - value: Disabled

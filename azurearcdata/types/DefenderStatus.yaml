@@ -1,0 +1,7 @@
+$token: azure-native:azurearcdata:DefenderStatus
+description: Status of Azure Defender.
+type: string
+enum:
+  - value: Protected
+  - value: Unprotected
+  - value: Unknown

@@ -1,0 +1,6 @@
+$token: azure-native:servicelinker/v20221101preview:AllowType
+description: Allow caller client IP to access the target service if true. the property is used when connecting local application to target service.
+type: string
+enum:
+  - value: "true"
+  - value: "false"

@@ -1,0 +1,133 @@
+$token: azure-native:security/v20220801preview:getSecurityConnector
+description: Retrieves details of a specific security connector
+inputs:
+  properties:
+    resourceGroupName:
+      type: string
+      description: The name of the resource group within the user's subscription. The name is case insensitive.
+      willReplaceOnChanges: true
+    securityConnectorName:
+      type: string
+      description: The security connector name.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - securityConnectorName
+outputs:
+  description: The security connector resource.
+  properties:
+    environmentData:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:security/v20220801preview:AwsEnvironmentDataResponse"
+        - type: object
+          $ref: "#/types/azure-native:security/v20220801preview:AzureDevOpsScopeEnvironmentDataResponse"
+        - type: object
+          $ref: "#/types/azure-native:security/v20220801preview:GcpProjectEnvironmentDataResponse"
+        - type: object
+          $ref: "#/types/azure-native:security/v20220801preview:GithubScopeEnvironmentDataResponse"
+      discriminator:
+        propertyName: environmentType
+        mapping:
+          AwsAccount: "#/types/azure-native:security/v20220801preview:AwsEnvironmentDataResponse"
+          AzureDevOpsScope: "#/types/azure-native:security/v20220801preview:AzureDevOpsScopeEnvironmentDataResponse"
+          GcpProject: "#/types/azure-native:security/v20220801preview:GcpProjectEnvironmentDataResponse"
+          GithubScope: "#/types/azure-native:security/v20220801preview:GithubScopeEnvironmentDataResponse"
+      description: The security connector environment data.
+    environmentName:
+      type: string
+      description: The multi cloud resource's cloud name.
+    etag:
+      type: string
+      description: Entity tag is used for comparing two or more entities from the same requested resource.
+    hierarchyIdentifier:
+      type: string
+      description: The multi cloud resource identifier (account id in case of AWS connector, project number in case of GCP connector).
+    hierarchyIdentifierTrialEndDate:
+      type: string
+      description: The date on which the trial period will end, if applicable. Trial period exists for 30 days after upgrading to payed offerings.
+    id:
+      type: string
+      description: Resource Id
+    kind:
+      type: string
+      description: Kind of the resource
+    location:
+      type: string
+      description: Location where the resource is stored
+    name:
+      type: string
+      description: Resource name
+    offerings:
+      type: array
+      items:
+        oneOf:
+          - type: object
+            $ref: "#/types/azure-native:security/v20220801preview:CspmMonitorAwsOfferingResponse"
+          - type: object
+            $ref: "#/types/azure-native:security/v20220801preview:CspmMonitorAzureDevOpsOfferingResponse"
+          - type: object
+            $ref: "#/types/azure-native:security/v20220801preview:CspmMonitorGcpOfferingResponse"
+          - type: object
+            $ref: "#/types/azure-native:security/v20220801preview:CspmMonitorGithubOfferingResponse"
+          - type: object
+            $ref: "#/types/azure-native:security/v20220801preview:DefenderCspmAwsOfferingResponse"
+          - type: object
+            $ref: "#/types/azure-native:security/v20220801preview:DefenderCspmGcpOfferingResponse"
+          - type: object
+            $ref: "#/types/azure-native:security/v20220801preview:DefenderFoDatabasesAwsOfferingResponse"
+          - type: object
+            $ref: "#/types/azure-native:security/v20220801preview:DefenderForContainersAwsOfferingResponse"
+          - type: object
+            $ref: "#/types/azure-native:security/v20220801preview:DefenderForContainersGcpOfferingResponse"
+          - type: object
+            $ref: "#/types/azure-native:security/v20220801preview:DefenderForDatabasesGcpOfferingResponse"
+          - type: object
+            $ref: "#/types/azure-native:security/v20220801preview:DefenderForDevOpsAzureDevOpsOfferingResponse"
+          - type: object
+            $ref: "#/types/azure-native:security/v20220801preview:DefenderForDevOpsGithubOfferingResponse"
+          - type: object
+            $ref: "#/types/azure-native:security/v20220801preview:DefenderForServersAwsOfferingResponse"
+          - type: object
+            $ref: "#/types/azure-native:security/v20220801preview:DefenderForServersGcpOfferingResponse"
+          - type: object
+            $ref: "#/types/azure-native:security/v20220801preview:InformationProtectionAwsOfferingResponse"
+        discriminator:
+          propertyName: offeringType
+          mapping:
+            CspmMonitorAws: "#/types/azure-native:security/v20220801preview:CspmMonitorAwsOfferingResponse"
+            CspmMonitorAzureDevOps: "#/types/azure-native:security/v20220801preview:CspmMonitorAzureDevOpsOfferingResponse"
+            CspmMonitorGcp: "#/types/azure-native:security/v20220801preview:CspmMonitorGcpOfferingResponse"
+            CspmMonitorGithub: "#/types/azure-native:security/v20220801preview:CspmMonitorGithubOfferingResponse"
+            DefenderCspmAws: "#/types/azure-native:security/v20220801preview:DefenderCspmAwsOfferingResponse"
+            DefenderCspmGcp: "#/types/azure-native:security/v20220801preview:DefenderCspmGcpOfferingResponse"
+            DefenderForContainersAws: "#/types/azure-native:security/v20220801preview:DefenderForContainersAwsOfferingResponse"
+            DefenderForContainersGcp: "#/types/azure-native:security/v20220801preview:DefenderForContainersGcpOfferingResponse"
+            DefenderForDatabasesAws: "#/types/azure-native:security/v20220801preview:DefenderFoDatabasesAwsOfferingResponse"
+            DefenderForDatabasesGcp: "#/types/azure-native:security/v20220801preview:DefenderForDatabasesGcpOfferingResponse"
+            DefenderForDevOpsAzureDevOps: "#/types/azure-native:security/v20220801preview:DefenderForDevOpsAzureDevOpsOfferingResponse"
+            DefenderForDevOpsGithub: "#/types/azure-native:security/v20220801preview:DefenderForDevOpsGithubOfferingResponse"
+            DefenderForServersAws: "#/types/azure-native:security/v20220801preview:DefenderForServersAwsOfferingResponse"
+            DefenderForServersGcp: "#/types/azure-native:security/v20220801preview:DefenderForServersGcpOfferingResponse"
+            InformationProtectionAws: "#/types/azure-native:security/v20220801preview:InformationProtectionAwsOfferingResponse"
+      description: A collection of offerings for the security connector.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:security/v20220801preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: A list of key value pairs that describe the resource.
+    type:
+      type: string
+      description: Resource type
+  type: object
+  required:
+    - hierarchyIdentifierTrialEndDate
+    - id
+    - name
+    - systemData
+    - type

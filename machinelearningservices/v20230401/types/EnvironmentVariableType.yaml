@@ -1,0 +1,5 @@
+$token: azure-native:machinelearningservices/v20230401:EnvironmentVariableType
+description: "Type of the Environment Variable. Possible values are: local - For local variable"
+type: string
+enum:
+  - value: local

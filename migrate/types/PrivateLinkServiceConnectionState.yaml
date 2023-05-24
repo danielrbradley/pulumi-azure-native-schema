@@ -1,0 +1,15 @@
+$token: azure-native:migrate:PrivateLinkServiceConnectionState
+description: Private endpoint connection state.
+properties:
+  actionsRequired:
+    type: string
+    description: Action required.
+  description:
+    type: string
+    description: Description of the object.
+  status:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:migrate:Status"
+    description: Private link connection state.
+type: object

@@ -1,0 +1,10 @@
+$token: azure-native:apimanagement/v20220901preview:TranslateRequiredQueryParametersConduct
+description: "Strategy of translating required query parameters to template ones. By default has value 'template'. Possible values: 'template', 'query'"
+type: string
+enum:
+  - name: Template
+    description: Translates required query parameters to template ones. Is a default value
+    value: template
+  - name: Query
+    description: Leaves required query parameters as they are (no translation done).
+    value: query

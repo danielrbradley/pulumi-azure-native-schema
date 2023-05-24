@@ -1,0 +1,7 @@
+$token: azure-native:containerservice/v20230102preview:ManagedClusterNodeResourceGroupProfileResponse
+description: Node resource group lockdown profile for a managed cluster.
+properties:
+  restrictionLevel:
+    type: string
+    description: The restriction level applied to the cluster's node resource group
+type: object

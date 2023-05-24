@@ -1,0 +1,7 @@
+$token: azure-native:machinelearningservices/v20230401:Protocol
+description: Protocol over which communication will happen over this endpoint
+type: string
+enum:
+  - value: tcp
+  - value: udp
+  - value: http

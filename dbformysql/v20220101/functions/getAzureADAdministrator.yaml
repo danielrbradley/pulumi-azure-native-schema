@@ -1,0 +1,58 @@
+$token: azure-native:dbformysql/v20220101:getAzureADAdministrator
+description: Gets information about an azure ad administrator.
+inputs:
+  properties:
+    administratorName:
+      type: string
+      description: The name of the Azure AD Administrator.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    serverName:
+      type: string
+      description: The name of the server.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - administratorName
+    - resourceGroupName
+    - serverName
+outputs:
+  description: Represents a Administrator.
+  properties:
+    administratorType:
+      type: string
+      description: Type of the sever administrator.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    identityResourceId:
+      type: string
+      description: The resource id of the identity used for AAD Authentication.
+    login:
+      type: string
+      description: Login name of the server administrator.
+    name:
+      type: string
+      description: The name of the resource
+    sid:
+      type: string
+      description: SID (object ID) of the server administrator.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:dbformysql/v20220101:SystemDataResponse"
+      description: The system metadata relating to this resource.
+    tenantId:
+      type: string
+      description: Tenant ID of the administrator.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - systemData
+    - type

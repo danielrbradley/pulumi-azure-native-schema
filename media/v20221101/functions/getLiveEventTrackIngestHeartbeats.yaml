@@ -1,0 +1,31 @@
+$token: azure-native:media/v20221101:getLiveEventTrackIngestHeartbeats
+description: Get track ingest heartbeat events telemetry of a live event.
+inputs:
+  properties:
+    accountName:
+      type: string
+      description: The Media Services account name.
+      willReplaceOnChanges: true
+    liveEventName:
+      type: string
+      description: The name of the live event, maximum length is 32.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group within the Azure subscription.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - accountName
+    - liveEventName
+    - resourceGroupName
+outputs:
+  description: Get live event track ingest heart beats result.
+  properties:
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:media/v20221101:LiveEventTrackEventResponse"
+      description: The result of the get live event track events.
+  type: object

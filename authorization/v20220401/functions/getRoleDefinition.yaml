@@ -1,0 +1,69 @@
+$token: azure-native:authorization/v20220401:getRoleDefinition
+description: Get role definition by name (GUID).
+inputs:
+  properties:
+    roleDefinitionId:
+      type: string
+      description: The ID of the role definition.
+      willReplaceOnChanges: true
+    scope:
+      type: string
+      description: The scope of the role definition.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - roleDefinitionId
+    - scope
+outputs:
+  description: Role definition.
+  properties:
+    assignableScopes:
+      type: array
+      items:
+        type: string
+      description: Role definition assignable scopes.
+    createdBy:
+      type: string
+      description: Id of the user who created the assignment
+    createdOn:
+      type: string
+      description: Time it was created
+    description:
+      type: string
+      description: The role definition description.
+    id:
+      type: string
+      description: The role definition ID.
+    name:
+      type: string
+      description: The role definition name.
+    permissions:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:authorization/v20220401:PermissionResponse"
+      description: Role definition permissions.
+    roleName:
+      type: string
+      description: The role name.
+    roleType:
+      type: string
+      description: The role type.
+    type:
+      type: string
+      description: The role definition type.
+    updatedBy:
+      type: string
+      description: Id of the user who updated the assignment
+    updatedOn:
+      type: string
+      description: Time it was updated
+  type: object
+  required:
+    - createdBy
+    - createdOn
+    - id
+    - name
+    - type
+    - updatedBy
+    - updatedOn

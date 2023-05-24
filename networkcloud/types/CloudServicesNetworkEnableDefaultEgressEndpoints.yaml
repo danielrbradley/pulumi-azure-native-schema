@@ -1,0 +1,6 @@
+$token: azure-native:networkcloud:CloudServicesNetworkEnableDefaultEgressEndpoints
+description: The indicator of whether the platform default endpoints are allowed for the egress traffic.
+type: string
+enum:
+  - value: "True"
+  - value: "False"

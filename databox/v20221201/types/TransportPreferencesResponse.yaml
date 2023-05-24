@@ -1,0 +1,13 @@
+$token: azure-native:databox/v20221201:TransportPreferencesResponse
+description: Preferences related to the shipment logistics of the sku
+properties:
+  isUpdated:
+    type: boolean
+    description: Read only property which indicates whether transport preferences has been updated or not after device is prepared.
+  preferredShipmentType:
+    type: string
+    description: Indicates Shipment Logistics type that the customer preferred.
+type: object
+required:
+  - isUpdated
+  - preferredShipmentType

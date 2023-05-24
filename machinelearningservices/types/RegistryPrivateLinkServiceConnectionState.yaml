@@ -1,0 +1,15 @@
+$token: azure-native:machinelearningservices:RegistryPrivateLinkServiceConnectionState
+description: The connection state.
+properties:
+  actionsRequired:
+    type: string
+    description: Some RP chose "None". Other RPs use this for region expansion.
+  description:
+    type: string
+    description: User-defined message that, per NRP doc, may be used for approval-related message.
+  status:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:machinelearningservices:EndpointServiceConnectionStatus"
+    description: Connection status of the service consumer with the service provider
+type: object

@@ -1,0 +1,57 @@
+$token: azure-native:appplatform:BuildServiceAgentPool
+properties:
+  name:
+    type: string
+    description: The name of the resource.
+  properties:
+    type: object
+    $ref: "#/types/azure-native:appplatform:BuildServiceAgentPoolPropertiesResponse"
+    description: build service agent pool properties
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:appplatform:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  type:
+    type: string
+    description: The type of the resource.
+type: object
+required:
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  agentPoolName:
+    type: string
+    description: The name of the build service agent pool resource.
+    willReplaceOnChanges: true
+  buildServiceName:
+    type: string
+    description: The name of the build service resource.
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:appplatform:BuildServiceAgentPoolProperties"
+    description: build service agent pool properties
+  resourceGroupName:
+    type: string
+    description: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+    willReplaceOnChanges: true
+  serviceName:
+    type: string
+    description: The name of the Service resource.
+    willReplaceOnChanges: true
+requiredInputs:
+  - buildServiceName
+  - resourceGroupName
+  - serviceName
+aliases:
+  - type: azure-native:appplatform/v20220101preview:BuildServiceAgentPool
+  - type: azure-native:appplatform/v20220301preview:BuildServiceAgentPool
+  - type: azure-native:appplatform/v20220401:BuildServiceAgentPool
+  - type: azure-native:appplatform/v20220501preview:BuildServiceAgentPool
+  - type: azure-native:appplatform/v20220901preview:BuildServiceAgentPool
+  - type: azure-native:appplatform/v20221101preview:BuildServiceAgentPool
+  - type: azure-native:appplatform/v20221201:BuildServiceAgentPool
+  - type: azure-native:appplatform/v20230101preview:BuildServiceAgentPool
+  - type: azure-native:appplatform/v20230301preview:BuildServiceAgentPool

@@ -1,0 +1,7 @@
+$token: azure-native:search:DataPlaneAadOrApiKeyAuthOption
+description: Indicates that either the API key or an access token from Azure Active Directory can be used for authentication.
+properties:
+  aadAuthFailureMode:
+    $ref: "#/types/azure-native:search:AadAuthFailureMode"
+    description: Describes what response the data plane API of a Search service would send for requests that failed authentication.
+type: object

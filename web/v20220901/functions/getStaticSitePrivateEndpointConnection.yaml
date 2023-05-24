@@ -1,0 +1,57 @@
+$token: azure-native:web/v20220901:getStaticSitePrivateEndpointConnection
+description: Description for Gets a private endpoint connection
+inputs:
+  properties:
+    name:
+      type: string
+      description: Name of the static site.
+      willReplaceOnChanges: true
+    privateEndpointConnectionName:
+      type: string
+      description: Name of the private endpoint connection.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the resource group to which the resource belongs.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - name
+    - privateEndpointConnectionName
+    - resourceGroupName
+outputs:
+  description: Remote Private Endpoint Connection ARM resource.
+  properties:
+    id:
+      type: string
+      description: Resource Id.
+    ipAddresses:
+      type: array
+      items:
+        type: string
+      description: Private IPAddresses mapped to the remote private endpoint
+    kind:
+      type: string
+      description: Kind of resource.
+    name:
+      type: string
+      description: Resource Name.
+    privateEndpoint:
+      type: object
+      $ref: "#/types/azure-native:web/v20220901:ArmIdWrapperResponse"
+      description: PrivateEndpoint of a remote private endpoint connection
+    privateLinkServiceConnectionState:
+      type: object
+      $ref: "#/types/azure-native:web/v20220901:PrivateLinkConnectionStateResponse"
+      description: The state of a private link connection
+    provisioningState:
+      type: string
+    type:
+      type: string
+      description: Resource type.
+  type: object
+  required:
+    - id
+    - name
+    - provisioningState
+    - type

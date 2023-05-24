@@ -1,0 +1,28 @@
+$token: azure-native:containerregistry/v20230101preview:PoliciesResponse
+description: The policies for a container registry.
+properties:
+  azureADAuthenticationAsArmPolicy:
+    type: object
+    $ref: "#/types/azure-native:containerregistry/v20230101preview:AzureADAuthenticationAsArmPolicyResponse"
+    description: The policy for using ARM audience token for a container registry.
+  exportPolicy:
+    type: object
+    $ref: "#/types/azure-native:containerregistry/v20230101preview:ExportPolicyResponse"
+    description: The export policy for a container registry.
+  quarantinePolicy:
+    type: object
+    $ref: "#/types/azure-native:containerregistry/v20230101preview:QuarantinePolicyResponse"
+    description: The quarantine policy for a container registry.
+  retentionPolicy:
+    type: object
+    $ref: "#/types/azure-native:containerregistry/v20230101preview:RetentionPolicyResponse"
+    description: The retention policy for a container registry.
+  softDeletePolicy:
+    type: object
+    $ref: "#/types/azure-native:containerregistry/v20230101preview:SoftDeletePolicyResponse"
+    description: The soft delete policy for a container registry.
+  trustPolicy:
+    type: object
+    $ref: "#/types/azure-native:containerregistry/v20230101preview:TrustPolicyResponse"
+    description: The content trust policy for a container registry.
+type: object

@@ -1,0 +1,20 @@
+$token: azure-native:containerinstance/v20230501:EncryptionPropertiesResponse
+description: The container group encryption properties.
+properties:
+  identity:
+    type: string
+    description: The keyvault managed identity.
+  keyName:
+    type: string
+    description: The encryption key name.
+  keyVersion:
+    type: string
+    description: The encryption key version.
+  vaultBaseUrl:
+    type: string
+    description: The keyvault base url.
+type: object
+required:
+  - keyName
+  - keyVersion
+  - vaultBaseUrl

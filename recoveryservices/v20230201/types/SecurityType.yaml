@@ -1,0 +1,7 @@
+$token: azure-native:recoveryservices/v20230201:SecurityType
+description: The target VM security type.
+type: string
+enum:
+  - value: None
+  - value: TrustedLaunch
+  - value: ConfidentialVM

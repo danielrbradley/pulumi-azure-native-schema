@@ -1,0 +1,6 @@
+$token: azure-native:azurestackhci/v20210901preview:IPPoolTypeEnum
+description: ip pool type
+type: string
+enum:
+  - value: vm
+  - value: vippool

@@ -1,0 +1,6 @@
+$token: azure-native:orbital:Direction
+description: Direction (Uplink or Downlink).
+type: string
+enum:
+  - value: Uplink
+  - value: Downlink

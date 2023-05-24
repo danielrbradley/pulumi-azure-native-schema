@@ -1,0 +1,7 @@
+$token: azure-native:compute/v20230301:DedicatedHostLicenseTypes
+description: "Specifies the software license type that will be applied to the VMs deployed on the dedicated host. Possible values are: **None,** **Windows_Server_Hybrid,** **Windows_Server_Perpetual.** The default value is: **None.**"
+type: string
+enum:
+  - value: None
+  - value: Windows_Server_Hybrid
+  - value: Windows_Server_Perpetual

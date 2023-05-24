@@ -1,0 +1,22 @@
+$token: azure-native:securityinsights/v20230201:AlertProperty
+description: The V3 alert property
+type: string
+enum:
+  - description: Alert's link
+    value: AlertLink
+  - description: Confidence level property
+    value: ConfidenceLevel
+  - description: Confidence score
+    value: ConfidenceScore
+  - description: Extended links to the alert
+    value: ExtendedLinks
+  - description: Product name alert property
+    value: ProductName
+  - description: Provider name alert property
+    value: ProviderName
+  - description: Product component name alert property
+    value: ProductComponentName
+  - description: Remediation steps alert property
+    value: RemediationSteps
+  - description: Techniques alert property
+    value: Techniques

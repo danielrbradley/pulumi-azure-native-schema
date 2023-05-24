@@ -1,0 +1,10 @@
+$token: azure-native:cache/v20230301preview:ClusterPropertiesResponseKeyEncryptionKeyIdentity
+description: All identity configuration for Customer-managed key settings defining which identity should be used to auth to Key Vault.
+properties:
+  identityType:
+    type: string
+    description: Only userAssignedIdentity is supported in this API version; other types may be supported in the future
+  userAssignedIdentityResourceId:
+    type: string
+    description: "User assigned identity to use for accessing key encryption key Url. Ex: /subscriptions/<sub uuid>/resourceGroups/<resource group>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/myId."
+type: object

@@ -1,0 +1,15 @@
+$token: azure-native:migrate/v20220501preview:WebApplicationFrameworkResponse
+description: Framework specific data for a web application.
+properties:
+  id:
+    type: string
+    description: Gets the ID.
+  name:
+    type: string
+    description: Gets or sets Name of the framework.
+  version:
+    type: string
+    description: Gets or sets Version of the framework.
+type: object
+required:
+  - id

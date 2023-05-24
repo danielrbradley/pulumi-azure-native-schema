@@ -1,0 +1,10 @@
+$token: azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesResponseSsh
+description: SSH - contains settings related to ssh configuration
+properties:
+  publicKeys:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesResponsePublicKeys"
+    description: PublicKeys - The list of SSH public keys used to authenticate with linux based VMs.
+type: object

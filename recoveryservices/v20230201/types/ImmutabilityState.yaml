@@ -1,0 +1,6 @@
+$token: azure-native:recoveryservices/v20230201:ImmutabilityState
+type: string
+enum:
+  - value: Disabled
+  - value: Unlocked
+  - value: Locked

@@ -1,0 +1,16 @@
+$token: azure-native:containerservice/v20230202preview:ManagedClusterIngressProfileWebAppRoutingResponse
+description: Web App Routing settings for the ingress profile.
+properties:
+  dnsZoneResourceId:
+    type: string
+    description: Resource ID of the DNS Zone to be associated with the web app. Used only when Web App Routing is enabled.
+  enabled:
+    type: boolean
+    description: Whether to enable Web App Routing.
+  identity:
+    type: object
+    $ref: "#/types/azure-native:containerservice/v20230202preview:UserAssignedIdentityResponse"
+    description: Managed identity of the Web Application Routing add-on. This is the identity that should be granted permissions, for example, to manage the associated Azure DNS resource and get certificates from Azure Key Vault. See [this overview of the add-on](https://learn.microsoft.com/en-us/azure/aks/web-app-routing?tabs=with-osm) for more instructions.
+type: object
+required:
+  - identity

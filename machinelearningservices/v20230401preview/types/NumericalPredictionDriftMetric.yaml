@@ -1,0 +1,12 @@
+$token: azure-native:machinelearningservices/v20230401preview:NumericalPredictionDriftMetric
+description: "[Required] The numerical prediction drift metric to calculate."
+type: string
+enum:
+  - description: The Jensen Shannon Distance (JSD) metric.
+    value: JensenShannonDistance
+  - description: The Population Stability Index (PSI) metric.
+    value: PopulationStabilityIndex
+  - description: The Normalized Wasserstein Distance metric.
+    value: NormalizedWassersteinDistance
+  - description: The Two Sample Kolmogorov-Smirnov Test (two-sample K–S) metric.
+    value: TwoSampleKolmogorovSmirnovTest

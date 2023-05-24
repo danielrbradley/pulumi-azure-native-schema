@@ -1,0 +1,7 @@
+$token: azure-native:healthcareapis/v20230228:ImplementationGuidesConfigurationResponse
+description: The settings for Implementation Guides - defining capabilities for national standards, vendor consortiums, clinical societies, etc.
+properties:
+  usCoreMissingData:
+    type: boolean
+    description: If US Core Missing Data requirement is enabled.
+type: object

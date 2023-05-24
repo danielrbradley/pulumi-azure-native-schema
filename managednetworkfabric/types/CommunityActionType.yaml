@@ -1,0 +1,6 @@
+$token: azure-native:managednetworkfabric:CommunityActionType
+description: "action. Example: allow | deny."
+type: string
+enum:
+  - value: allow
+  - value: deny

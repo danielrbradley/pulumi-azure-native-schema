@@ -1,0 +1,72 @@
+$token: azure-native:maintenance/v20210401preview:getConfigurationAssignmentParent
+description: Get configuration for resource.
+inputs:
+  properties:
+    configurationAssignmentName:
+      type: string
+      description: Configuration assignment name
+      willReplaceOnChanges: true
+    providerName:
+      type: string
+      description: Resource provider name
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Resource group name
+      willReplaceOnChanges: true
+    resourceName:
+      type: string
+      description: Resource identifier
+      willReplaceOnChanges: true
+    resourceParentName:
+      type: string
+      description: Resource parent identifier
+      willReplaceOnChanges: true
+    resourceParentType:
+      type: string
+      description: Resource parent type
+      willReplaceOnChanges: true
+    resourceType:
+      type: string
+      description: Resource type
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - configurationAssignmentName
+    - providerName
+    - resourceGroupName
+    - resourceName
+    - resourceParentName
+    - resourceParentType
+    - resourceType
+outputs:
+  description: Configuration Assignment
+  properties:
+    id:
+      type: string
+      description: Fully qualified identifier of the resource
+    location:
+      type: string
+      description: Location of the resource
+    maintenanceConfigurationId:
+      type: string
+      description: The maintenance configuration Id
+    name:
+      type: string
+      description: Name of the resource
+    resourceId:
+      type: string
+      description: The unique resourceId
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:maintenance/v20210401preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: Type of the resource
+  type: object
+  required:
+    - id
+    - name
+    - systemData
+    - type

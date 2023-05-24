@@ -1,0 +1,51 @@
+$token: azure-native:appplatform:DeploymentResourcePropertiesResponse
+description: Deployment resource properties payload
+properties:
+  active:
+    type: boolean
+    description: Indicates whether the Deployment is active
+  deploymentSettings:
+    type: object
+    $ref: "#/types/azure-native:appplatform:DeploymentSettingsResponse"
+    description: Deployment settings of the Deployment
+  instances:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:appplatform:DeploymentInstanceResponse"
+    description: Collection of instances belong to the Deployment
+  provisioningState:
+    type: string
+    description: Provisioning state of the Deployment
+  source:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:appplatform:BuildResultUserSourceInfoResponse"
+      - type: object
+        $ref: "#/types/azure-native:appplatform:CustomContainerUserSourceInfoResponse"
+      - type: object
+        $ref: "#/types/azure-native:appplatform:JarUploadedUserSourceInfoResponse"
+      - type: object
+        $ref: "#/types/azure-native:appplatform:NetCoreZipUploadedUserSourceInfoResponse"
+      - type: object
+        $ref: "#/types/azure-native:appplatform:SourceUploadedUserSourceInfoResponse"
+      - type: object
+        $ref: "#/types/azure-native:appplatform:UploadedUserSourceInfoResponse"
+    discriminator:
+      propertyName: type
+      mapping:
+        BuildResult: "#/types/azure-native:appplatform:BuildResultUserSourceInfoResponse"
+        Container: "#/types/azure-native:appplatform:CustomContainerUserSourceInfoResponse"
+        Jar: "#/types/azure-native:appplatform:JarUploadedUserSourceInfoResponse"
+        NetCoreZip: "#/types/azure-native:appplatform:NetCoreZipUploadedUserSourceInfoResponse"
+        Source: "#/types/azure-native:appplatform:SourceUploadedUserSourceInfoResponse"
+        UploadedUserSourceInfo: "#/types/azure-native:appplatform:UploadedUserSourceInfoResponse"
+    description: Uploaded source information of the deployment.
+  status:
+    type: string
+    description: Status of the Deployment
+type: object
+required:
+  - instances
+  - provisioningState
+  - status

@@ -1,0 +1,201 @@
+$token: azure-native:securityinsights/v20230401preview:ContentPackage
+description: Represents a Package in Azure Security Insights.
+properties:
+  author:
+    type: object
+    $ref: "#/types/azure-native:securityinsights/v20230401preview:MetadataAuthorResponse"
+    description: The author of the package
+  categories:
+    type: object
+    $ref: "#/types/azure-native:securityinsights/v20230401preview:MetadataCategoriesResponse"
+    description: The categories of the package
+  contentId:
+    type: string
+    description: The package id
+  contentKind:
+    type: string
+    description: The package kind
+  contentSchemaVersion:
+    type: string
+    description: The version of the content schema.
+  dependencies:
+    type: object
+    $ref: "#/types/azure-native:securityinsights/v20230401preview:MetadataDependenciesResponse"
+    description: The support tier of the package
+  description:
+    type: string
+    description: The description of the package
+  displayName:
+    type: string
+    description: The display name of the package
+  etag:
+    type: string
+    description: Etag of the azure resource
+  firstPublishDate:
+    type: string
+    description: first publish date package item
+  icon:
+    type: string
+    description: the icon identifier. this id can later be fetched from the content metadata
+  isFeatured:
+    type: string
+    description: Flag indicates if this package is among the featured list.
+  isNew:
+    type: string
+    description: Flag indicates if this is a newly published package.
+  isPreview:
+    type: string
+    description: Flag indicates if this package is in preview.
+  lastPublishDate:
+    type: string
+    description: last publish date for the package item
+  name:
+    type: string
+    description: The name of the resource
+  providers:
+    type: array
+    items:
+      type: string
+    description: Providers for the package item
+  publisherDisplayName:
+    type: string
+    description: The publisher display name of the package
+  source:
+    type: object
+    $ref: "#/types/azure-native:securityinsights/v20230401preview:MetadataSourceResponse"
+    description: The source of the package
+  support:
+    type: object
+    $ref: "#/types/azure-native:securityinsights/v20230401preview:MetadataSupportResponse"
+    description: The support tier of the package
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:securityinsights/v20230401preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  threatAnalysisTactics:
+    type: array
+    items:
+      type: string
+    description: the tactics the resource covers
+  threatAnalysisTechniques:
+    type: array
+    items:
+      type: string
+    description: the techniques the resource covers, these have to be aligned with the tactics being used
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  version:
+    type: string
+    description: the latest version number of the package
+type: object
+required:
+  - contentId
+  - contentKind
+  - displayName
+  - name
+  - systemData
+  - type
+  - version
+inputProperties:
+  author:
+    type: object
+    $ref: "#/types/azure-native:securityinsights/v20230401preview:MetadataAuthor"
+    description: The author of the package
+  categories:
+    type: object
+    $ref: "#/types/azure-native:securityinsights/v20230401preview:MetadataCategories"
+    description: The categories of the package
+  contentId:
+    type: string
+    description: The package id
+  contentKind:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:securityinsights/v20230401preview:PackageKind"
+    description: The package kind
+  contentSchemaVersion:
+    type: string
+    description: The version of the content schema.
+  dependencies:
+    type: object
+    $ref: "#/types/azure-native:securityinsights/v20230401preview:MetadataDependencies"
+    description: The support tier of the package
+  description:
+    type: string
+    description: The description of the package
+  displayName:
+    type: string
+    description: The display name of the package
+  firstPublishDate:
+    type: string
+    description: first publish date package item
+  icon:
+    type: string
+    description: the icon identifier. this id can later be fetched from the content metadata
+  isFeatured:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:securityinsights/v20230401preview:Flag"
+    description: Flag indicates if this package is among the featured list.
+  isNew:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:securityinsights/v20230401preview:Flag"
+    description: Flag indicates if this is a newly published package.
+  isPreview:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:securityinsights/v20230401preview:Flag"
+    description: Flag indicates if this package is in preview.
+  lastPublishDate:
+    type: string
+    description: last publish date for the package item
+  packageId:
+    type: string
+    description: package Id
+    willReplaceOnChanges: true
+  providers:
+    type: array
+    items:
+      type: string
+    description: Providers for the package item
+  publisherDisplayName:
+    type: string
+    description: The publisher display name of the package
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  source:
+    type: object
+    $ref: "#/types/azure-native:securityinsights/v20230401preview:MetadataSource"
+    description: The source of the package
+  support:
+    type: object
+    $ref: "#/types/azure-native:securityinsights/v20230401preview:MetadataSupport"
+    description: The support tier of the package
+  threatAnalysisTactics:
+    type: array
+    items:
+      type: string
+    description: the tactics the resource covers
+  threatAnalysisTechniques:
+    type: array
+    items:
+      type: string
+    description: the techniques the resource covers, these have to be aligned with the tactics being used
+  version:
+    type: string
+    description: the latest version number of the package
+  workspaceName:
+    type: string
+    description: The name of the workspace.
+    willReplaceOnChanges: true
+requiredInputs:
+  - contentId
+  - contentKind
+  - displayName
+  - resourceGroupName
+  - version
+  - workspaceName

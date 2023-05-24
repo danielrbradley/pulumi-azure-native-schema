@@ -1,0 +1,11 @@
+$token: azure-native:insights:LogFileSettingsText
+description: Text settings
+properties:
+  recordStartTimestampFormat:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:insights:KnownLogFileTextSettingsRecordStartTimestampFormat"
+    description: One of the supported timestamp formats
+type: object
+required:
+  - recordStartTimestampFormat

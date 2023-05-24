@@ -1,0 +1,39 @@
+$token: azure-native:network:NetworkSecurityGroup
+description: NetworkSecurityGroup resource.
+properties:
+  defaultSecurityRules:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:network:SecurityRule"
+    description: The default security rules of network security group.
+  etag:
+    type: string
+    description: A unique read-only string that changes whenever the resource is updated.
+  flushConnection:
+    type: boolean
+    description: When enabled, flows created from Network Security Group connections will be re-evaluated when rules are updates. Initial enablement will trigger re-evaluation.
+  id:
+    type: string
+    description: Resource ID.
+  location:
+    type: string
+    description: Resource location.
+  provisioningState:
+    type: string
+    description: "The provisioning state of the public IP resource. Possible values are: 'Updating', 'Deleting', and 'Failed'."
+  resourceGuid:
+    type: string
+    description: The resource GUID property of the network security group resource.
+  securityRules:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:network:SecurityRule"
+    description: A collection of security rules of the network security group.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+type: object

@@ -1,0 +1,9 @@
+$token: azure-native:containerservice/v20230302preview:DailyScheduleResponse
+description: "For schedules like: 'recur every day' or 'recur every 3 days'."
+properties:
+  intervalDays:
+    type: integer
+    description: Specifies the number of days between each set of occurrences.
+type: object
+required:
+  - intervalDays

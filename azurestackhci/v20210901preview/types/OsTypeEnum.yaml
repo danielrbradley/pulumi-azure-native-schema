@@ -1,0 +1,6 @@
+$token: azure-native:azurestackhci/v20210901preview:OsTypeEnum
+description: OsType - string specifying whether the OS is Linux or Windows
+type: string
+enum:
+  - value: Linux
+  - value: Windows

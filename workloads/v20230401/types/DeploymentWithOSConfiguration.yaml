@@ -1,0 +1,46 @@
+$token: azure-native:workloads/v20230401:DeploymentWithOSConfiguration
+description: Deployment along with OS Configuration.
+properties:
+  appLocation:
+    type: string
+    description: The geo-location where the SAP system is to be created.
+  configurationType:
+    type: string
+    description: |-
+      The configuration Type.
+      Expected value is 'DeploymentWithOSConfig'.
+    const: DeploymentWithOSConfig
+  infrastructureConfiguration:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:workloads/v20230401:SingleServerConfiguration"
+      - type: object
+        $ref: "#/types/azure-native:workloads/v20230401:ThreeTierConfiguration"
+    discriminator:
+      propertyName: deploymentType
+      mapping:
+        SingleServer: "#/types/azure-native:workloads/v20230401:SingleServerConfiguration"
+        ThreeTier: "#/types/azure-native:workloads/v20230401:ThreeTierConfiguration"
+    description: The infrastructure configuration.
+  osSapConfiguration:
+    type: object
+    $ref: "#/types/azure-native:workloads/v20230401:OsSapConfiguration"
+    description: The OS and SAP configuration.
+  softwareConfiguration:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:workloads/v20230401:ExternalInstallationSoftwareConfiguration"
+      - type: object
+        $ref: "#/types/azure-native:workloads/v20230401:SAPInstallWithoutOSConfigSoftwareConfiguration"
+      - type: object
+        $ref: "#/types/azure-native:workloads/v20230401:ServiceInitiatedSoftwareConfiguration"
+    discriminator:
+      propertyName: softwareInstallationType
+      mapping:
+        External: "#/types/azure-native:workloads/v20230401:ExternalInstallationSoftwareConfiguration"
+        SAPInstallWithoutOSConfig: "#/types/azure-native:workloads/v20230401:SAPInstallWithoutOSConfigSoftwareConfiguration"
+        ServiceInitiated: "#/types/azure-native:workloads/v20230401:ServiceInitiatedSoftwareConfiguration"
+    description: The software configuration.
+type: object
+required:
+  - configurationType

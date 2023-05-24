@@ -1,0 +1,6 @@
+$token: azure-native:sqlvirtualmachine:Role
+description: Replica Role in availability group.
+type: string
+enum:
+  - value: Primary
+  - value: Secondary

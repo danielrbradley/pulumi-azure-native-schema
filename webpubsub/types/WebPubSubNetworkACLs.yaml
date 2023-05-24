@@ -1,0 +1,19 @@
+$token: azure-native:webpubsub:WebPubSubNetworkACLs
+description: Network ACLs for the resource
+properties:
+  defaultAction:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:webpubsub:ACLAction"
+    description: Azure Networking ACL Action.
+  privateEndpoints:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:webpubsub:PrivateEndpointACL"
+    description: ACLs for requests from private endpoints
+  publicNetwork:
+    type: object
+    $ref: "#/types/azure-native:webpubsub:NetworkACL"
+    description: Network ACL
+type: object

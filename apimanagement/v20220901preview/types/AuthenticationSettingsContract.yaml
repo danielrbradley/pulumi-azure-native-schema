@@ -1,0 +1,24 @@
+$token: azure-native:apimanagement/v20220901preview:AuthenticationSettingsContract
+description: API Authentication Settings.
+properties:
+  oAuth2:
+    type: object
+    $ref: "#/types/azure-native:apimanagement/v20220901preview:OAuth2AuthenticationSettingsContract"
+    description: OAuth2 Authentication settings
+  oAuth2AuthenticationSettings:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:apimanagement/v20220901preview:OAuth2AuthenticationSettingsContract"
+    description: Collection of OAuth2 authentication settings included into this API.
+  openid:
+    type: object
+    $ref: "#/types/azure-native:apimanagement/v20220901preview:OpenIdAuthenticationSettingsContract"
+    description: OpenID Connect Authentication Settings
+  openidAuthenticationSettings:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:apimanagement/v20220901preview:OpenIdAuthenticationSettingsContract"
+    description: Collection of Open ID Connect authentication settings included into this API.
+type: object

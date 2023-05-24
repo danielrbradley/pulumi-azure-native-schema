@@ -1,0 +1,14 @@
+$token: azure-native:managednetworkfabric:OptionBProperties
+description: Option B configuration.
+properties:
+  exportRouteTargets:
+    type: array
+    items:
+      type: string
+    description: Route Targets to be applied for outgoing routes from CE.
+  importRouteTargets:
+    type: array
+    items:
+      type: string
+    description: Route Targets to be applied for incoming routes into CE.
+type: object

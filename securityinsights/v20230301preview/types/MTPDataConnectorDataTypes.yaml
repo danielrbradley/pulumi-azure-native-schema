@@ -1,0 +1,14 @@
+$token: azure-native:securityinsights/v20230301preview:MTPDataConnectorDataTypes
+description: The available data types for Microsoft Threat Protection Platforms data connector.
+properties:
+  alerts:
+    type: object
+    $ref: "#/types/azure-native:securityinsights/v20230301preview:MTPDataConnectorDataTypesAlerts"
+    description: Alerts data type for Microsoft Threat Protection Platforms data connector.
+  incidents:
+    type: object
+    $ref: "#/types/azure-native:securityinsights/v20230301preview:MTPDataConnectorDataTypesIncidents"
+    description: Incidents data type for Microsoft Threat Protection Platforms data connector.
+type: object
+required:
+  - incidents

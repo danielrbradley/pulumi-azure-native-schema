@@ -1,0 +1,55 @@
+$token: azure-native:professionalservice/v20230701preview:ProfessionalServiceSubscriptionLevel
+description: ProfessionalService REST API resource definition.
+properties:
+  name:
+    type: string
+    description: The name of the resource
+  properties:
+    type: object
+    $ref: "#/types/azure-native:professionalservice/v20230701preview:ProfessionalServiceResourceResponseProperties"
+    description: professionalService properties
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: the resource tags.
+  type:
+    type: string
+    description: Resource type.
+type: object
+required:
+  - name
+  - properties
+  - type
+inputProperties:
+  location:
+    type: string
+    description: Resource location. Only value allowed for ProfessionalService is 'global'
+  name:
+    type: string
+    description: The resource name
+  properties:
+    type: object
+    $ref: "#/types/azure-native:professionalservice/v20230701preview:ProfessionalServiceCreationProperties"
+    description: Properties of the ProfessionalService resource that are relevant for creation.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group.
+    willReplaceOnChanges: true
+  resourceName:
+    type: string
+    description: The name of the resource.
+    willReplaceOnChanges: true
+  subscriptionId:
+    type: string
+    description: The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: the resource tags.
+requiredInputs:
+  - resourceGroupName
+aliases:
+  - type: azure-native:professionalservice:ProfessionalServiceSubscriptionLevel

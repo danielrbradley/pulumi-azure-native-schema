@@ -1,0 +1,5 @@
+$token: azure-native:servicenetworking/v20221001preview:AssociationType
+description: Association Type
+type: string
+enum:
+  - value: subnets

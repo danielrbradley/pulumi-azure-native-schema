@@ -1,0 +1,26 @@
+$token: azure-native:machinelearning/v20191001:listWorkspaceKeys
+description: List the authorization keys associated with this workspace.
+inputs:
+  properties:
+    resourceGroupName:
+      type: string
+      description: The name of the resource group to which the machine learning workspace belongs.
+      willReplaceOnChanges: true
+    workspaceName:
+      type: string
+      description: The name of the machine learning workspace.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - workspaceName
+outputs:
+  description: Workspace authorization keys for a workspace.
+  properties:
+    primaryToken:
+      type: string
+      description: Primary authorization key for this workspace.
+    secondaryToken:
+      type: string
+      description: Secondary authorization key for this workspace.
+  type: object

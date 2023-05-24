@@ -1,0 +1,16 @@
+$token: azure-native:workloads/v20230401:SingleServerFullResourceNames
+description: The resource name object where the specified values will be full resource names of the corresponding resources in a single server SAP system.
+properties:
+  namingPatternType:
+    type: string
+    description: |-
+      The pattern type to be used for resource naming.
+      Expected value is 'FullResourceName'.
+    const: FullResourceName
+  virtualMachine:
+    type: object
+    $ref: "#/types/azure-native:workloads/v20230401:VirtualMachineResourceNames"
+    description: The resource names object for virtual machine and related resources.
+type: object
+required:
+  - namingPatternType

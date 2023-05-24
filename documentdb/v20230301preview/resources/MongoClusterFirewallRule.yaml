@@ -1,0 +1,54 @@
+$token: azure-native:documentdb/v20230301preview:MongoClusterFirewallRule
+description: Represents a mongo cluster firewall rule.
+properties:
+  endIpAddress:
+    type: string
+    description: The end IP address of the mongo cluster firewall rule. Must be IPv4 format.
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: The provisioning state of the firewall rule.
+  startIpAddress:
+    type: string
+    description: The start IP address of the mongo cluster firewall rule. Must be IPv4 format.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:documentdb/v20230301preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - endIpAddress
+  - name
+  - provisioningState
+  - startIpAddress
+  - systemData
+  - type
+inputProperties:
+  endIpAddress:
+    type: string
+    description: The end IP address of the mongo cluster firewall rule. Must be IPv4 format.
+  firewallRuleName:
+    type: string
+    description: The name of the mongo cluster firewall rule.
+    willReplaceOnChanges: true
+  mongoClusterName:
+    type: string
+    description: The name of the mongo cluster.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  startIpAddress:
+    type: string
+    description: The start IP address of the mongo cluster firewall rule. Must be IPv4 format.
+requiredInputs:
+  - endIpAddress
+  - mongoClusterName
+  - resourceGroupName
+  - startIpAddress

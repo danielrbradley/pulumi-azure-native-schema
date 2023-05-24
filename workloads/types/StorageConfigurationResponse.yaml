@@ -1,0 +1,19 @@
+$token: azure-native:workloads:StorageConfigurationResponse
+description: Gets or sets the storage configuration.
+properties:
+  transportFileShareConfiguration:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:workloads:CreateAndMountFileShareConfigurationResponse"
+      - type: object
+        $ref: "#/types/azure-native:workloads:MountFileShareConfigurationResponse"
+      - type: object
+        $ref: "#/types/azure-native:workloads:SkipFileShareConfigurationResponse"
+    discriminator:
+      propertyName: configurationType
+      mapping:
+        CreateAndMount: "#/types/azure-native:workloads:CreateAndMountFileShareConfigurationResponse"
+        Mount: "#/types/azure-native:workloads:MountFileShareConfigurationResponse"
+        Skip: "#/types/azure-native:workloads:SkipFileShareConfigurationResponse"
+    description: The properties of the transport directory attached to the VIS. The default for transportFileShareConfiguration is the createAndMount flow if storage configuration is missing.
+type: object

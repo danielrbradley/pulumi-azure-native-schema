@@ -1,0 +1,16 @@
+$token: azure-native:workloads:UserAssignedServiceIdentity
+description: A pre-created user assigned identity with appropriate roles assigned. To learn more on identity and roles required, visit the ACSS how-to-guide.
+properties:
+  type:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:workloads:ManagedServiceIdentityType"
+    description: Type of manage identity
+  userAssignedIdentities:
+    type: array
+    items:
+      type: string
+    description: User assigned identities dictionary
+type: object
+required:
+  - type

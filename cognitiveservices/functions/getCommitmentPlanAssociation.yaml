@@ -1,0 +1,52 @@
+$token: azure-native:cognitiveservices:getCommitmentPlanAssociation
+description: |-
+  Gets the association of the Cognitive Services commitment plan.
+  API Version: 2022-12-01.
+inputs:
+  properties:
+    commitmentPlanAssociationName:
+      type: string
+      description: The name of the commitment plan association with the Cognitive Services Account
+      willReplaceOnChanges: true
+    commitmentPlanName:
+      type: string
+      description: The name of the commitmentPlan associated with the Cognitive Services Account
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - commitmentPlanAssociationName
+    - commitmentPlanName
+    - resourceGroupName
+outputs:
+  description: The commitment plan association.
+  properties:
+    accountId:
+      type: string
+      description: The Azure resource id of the account.
+    etag:
+      type: string
+      description: Resource Etag.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:cognitiveservices:SystemDataResponse"
+      description: Metadata pertaining to creation and last modification of the resource.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - etag
+    - id
+    - name
+    - systemData
+    - type

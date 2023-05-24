@@ -1,0 +1,27 @@
+$token: azure-native:chaos/v20230415preview:ListSelectorResponse
+description: Model that represents a list selector.
+properties:
+  filter:
+    type: object
+    $ref: "#/types/azure-native:chaos/v20230415preview:SimpleFilterResponse"
+    description: Model that represents available filter types that can be applied to a targets list.
+  id:
+    type: string
+    description: String of the selector ID.
+  targets:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:chaos/v20230415preview:TargetReferenceResponse"
+    description: List of Target references.
+  type:
+    type: string
+    description: |-
+      Enum of the selector type.
+      Expected value is 'List'.
+    const: List
+type: object
+required:
+  - id
+  - targets
+  - type

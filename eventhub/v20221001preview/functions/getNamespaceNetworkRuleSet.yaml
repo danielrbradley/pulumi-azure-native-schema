@@ -1,0 +1,64 @@
+$token: azure-native:eventhub/v20221001preview:getNamespaceNetworkRuleSet
+description: Gets NetworkRuleSet for a Namespace.
+inputs:
+  properties:
+    namespaceName:
+      type: string
+      description: The Namespace name
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the resource group within the azure subscription.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - namespaceName
+    - resourceGroupName
+outputs:
+  description: Description of topic resource.
+  properties:
+    defaultAction:
+      type: string
+      description: Default Action for Network Rule Set
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    ipRules:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:eventhub/v20221001preview:NWRuleSetIpRulesResponse"
+      description: List of IpRules
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    name:
+      type: string
+      description: The name of the resource
+    publicNetworkAccess:
+      type: string
+      description: "This determines if traffic is allowed over public network. By default it is enabled. If value is SecuredByPerimeter then Inbound and Outbound communication is controlled by the network security perimeter and profile's access rules. "
+      default: Enabled
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:eventhub/v20221001preview:SystemDataResponse"
+      description: The system meta data relating to this resource.
+    trustedServiceAccessEnabled:
+      type: boolean
+      description: Value that indicates whether Trusted Service Access is Enabled or not.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.EventHub/Namespaces" or "Microsoft.EventHub/Namespaces/EventHubs"
+    virtualNetworkRules:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:eventhub/v20221001preview:NWRuleSetVirtualNetworkRulesResponse"
+      description: List VirtualNetwork Rules
+  type: object
+  required:
+    - id
+    - location
+    - name
+    - systemData
+    - type

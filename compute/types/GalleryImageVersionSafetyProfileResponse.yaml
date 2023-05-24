@@ -1,0 +1,19 @@
+$token: azure-native:compute:GalleryImageVersionSafetyProfileResponse
+description: This is the safety profile of the Gallery Image Version.
+properties:
+  allowDeletionOfReplicatedLocations:
+    type: boolean
+    description: Indicates whether or not removing this Gallery Image Version from replicated regions is allowed.
+  policyViolations:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:compute:PolicyViolationResponse"
+    description: A list of Policy Violations that have been reported for this Gallery Image Version.
+  reportedForPolicyViolation:
+    type: boolean
+    description: Indicates whether this image has been reported as violating Microsoft's policies.
+type: object
+required:
+  - policyViolations
+  - reportedForPolicyViolation

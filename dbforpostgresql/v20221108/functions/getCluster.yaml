@@ -1,0 +1,138 @@
+$token: azure-native:dbforpostgresql/v20221108:getCluster
+description: Gets information about a cluster such as compute and storage configuration and cluster lifecycle metadata such as cluster creation date and time.
+inputs:
+  properties:
+    clusterName:
+      type: string
+      description: The name of the cluster.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - clusterName
+    - resourceGroupName
+outputs:
+  description: Represents a cluster.
+  properties:
+    administratorLogin:
+      type: string
+      description: The administrator's login name of the servers in the cluster.
+    citusVersion:
+      type: string
+      description: The Citus extension version on all cluster servers.
+    coordinatorEnablePublicIpAccess:
+      type: boolean
+      description: If public access is enabled on coordinator.
+    coordinatorServerEdition:
+      type: string
+      description: "The edition of a coordinator server (default: GeneralPurpose). Required for creation."
+    coordinatorStorageQuotaInMb:
+      type: number
+      description: The storage of a server in MB. Required for creation. See https://learn.microsoft.com/azure/cosmos-db/postgresql/resources-compute for more information.
+    coordinatorVCores:
+      type: number
+      description: "The vCores count of a server (max: 96). Required for creation. See https://learn.microsoft.com/azure/cosmos-db/postgresql/resources-compute for more information."
+    earliestRestoreTime:
+      type: string
+      description: The earliest restore point time (ISO8601 format) for the cluster.
+    enableHa:
+      type: boolean
+      description: If high availability (HA) is enabled or not for the cluster.
+    enableShardsOnCoordinator:
+      type: boolean
+      description: If shards on coordinator is enabled or not for the cluster.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    maintenanceWindow:
+      type: object
+      $ref: "#/types/azure-native:dbforpostgresql/v20221108:MaintenanceWindowResponse"
+      description: Maintenance window of a cluster.
+    name:
+      type: string
+      description: The name of the resource
+    nodeCount:
+      type: number
+      description: Worker node count of the cluster. When node count is 0, it represents a single node configuration with the ability to create distributed tables on that node. 2 or more worker nodes represent multi-node configuration. Node count value cannot be 1. Required for creation.
+    nodeEnablePublicIpAccess:
+      type: boolean
+      description: If public access is enabled on worker nodes.
+    nodeServerEdition:
+      type: string
+      description: "The edition of a node server (default: MemoryOptimized)."
+    nodeStorageQuotaInMb:
+      type: number
+      description: The storage in MB on each worker node. See https://learn.microsoft.com/azure/cosmos-db/postgresql/resources-compute for more information.
+    nodeVCores:
+      type: number
+      description: "The compute in vCores on each worker node (max: 104). See https://learn.microsoft.com/azure/cosmos-db/postgresql/resources-compute for more information."
+    pointInTimeUTC:
+      type: string
+      description: Date and time in UTC (ISO8601 format) for cluster restore.
+    postgresqlVersion:
+      type: string
+      description: The major PostgreSQL version on all cluster servers.
+    preferredPrimaryZone:
+      type: string
+      description: Preferred primary availability zone (AZ) for all cluster servers.
+    privateEndpointConnections:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:dbforpostgresql/v20221108:SimplePrivateEndpointConnectionResponse"
+      description: The private endpoint connections for a cluster.
+    provisioningState:
+      type: string
+      description: Provisioning state of the cluster
+    readReplicas:
+      type: array
+      items:
+        type: string
+      description: The array of read replica clusters.
+    serverNames:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:dbforpostgresql/v20221108:ServerNameItemResponse"
+      description: The list of server names in the cluster
+    sourceLocation:
+      type: string
+      description: The Azure region of source cluster for read replica clusters.
+    sourceResourceId:
+      type: string
+      description: The resource id of source cluster for read replica clusters.
+    state:
+      type: string
+      description: A state of a cluster/server that is visible to user.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:dbforpostgresql/v20221108:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - administratorLogin
+    - earliestRestoreTime
+    - id
+    - location
+    - name
+    - privateEndpointConnections
+    - provisioningState
+    - readReplicas
+    - serverNames
+    - state
+    - systemData
+    - type

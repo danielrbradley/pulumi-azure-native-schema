@@ -1,0 +1,51 @@
+$token: azure-native:web/v20201201:getWebAppPublicCertificate
+description: Get the named public certificate for an app (or deployment slot, if specified).
+inputs:
+  properties:
+    name:
+      type: string
+      description: Name of the app.
+      willReplaceOnChanges: true
+    publicCertificateName:
+      type: string
+      description: Public certificate name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the resource group to which the resource belongs.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - name
+    - publicCertificateName
+    - resourceGroupName
+outputs:
+  description: Public certificate object
+  properties:
+    blob:
+      type: string
+      description: Public Certificate byte array
+    id:
+      type: string
+      description: Resource Id.
+    kind:
+      type: string
+      description: Kind of resource.
+    name:
+      type: string
+      description: Resource Name.
+    publicCertificateLocation:
+      type: string
+      description: Public Certificate Location
+    thumbprint:
+      type: string
+      description: Certificate Thumbprint
+    type:
+      type: string
+      description: Resource type.
+  type: object
+  required:
+    - id
+    - name
+    - thumbprint
+    - type

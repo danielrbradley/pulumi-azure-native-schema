@@ -1,0 +1,21 @@
+$token: azure-native:migrate/v20220501preview:ModernizeProjectModelPropertiesResponse
+description: ModernizeProject properties.
+properties:
+  migrationConfiguration:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:MigrationConfigurationResponse"
+    description: MigrationConfiguration properties.
+  provisioningState:
+    type: string
+    description: Gets or sets the provisioning state of the ModernizeProject.
+  serviceEndpoint:
+    type: string
+    description: Gets or sets the service endpoint.
+  serviceResourceId:
+    type: string
+    description: Gets or sets the service resource Id.
+type: object
+required:
+  - provisioningState
+  - serviceEndpoint
+  - serviceResourceId

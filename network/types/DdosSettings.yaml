@@ -1,0 +1,13 @@
+$token: azure-native:network:DdosSettings
+description: Contains the DDoS protection settings of the public IP.
+properties:
+  ddosProtectionPlan:
+    type: object
+    $ref: "#/types/azure-native:network:SubResource"
+    description: The DDoS protection plan associated with the public IP. Can only be set if ProtectionMode is Enabled
+  protectionMode:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:network:DdosSettingsProtectionMode"
+    description: The DDoS protection mode of the public IP
+type: object

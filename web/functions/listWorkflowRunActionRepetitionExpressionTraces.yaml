@@ -1,0 +1,52 @@
+$token: azure-native:web:listWorkflowRunActionRepetitionExpressionTraces
+description: |-
+  Lists a workflow run expression trace.
+  API Version: 2022-09-01.
+inputs:
+  properties:
+    actionName:
+      type: string
+      description: The workflow action name.
+      willReplaceOnChanges: true
+    name:
+      type: string
+      description: Site name.
+      willReplaceOnChanges: true
+    repetitionName:
+      type: string
+      description: The workflow repetition.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the resource group to which the resource belongs.
+      willReplaceOnChanges: true
+    runName:
+      type: string
+      description: The workflow run name.
+      willReplaceOnChanges: true
+    workflowName:
+      type: string
+      description: The workflow name.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - actionName
+    - name
+    - repetitionName
+    - resourceGroupName
+    - runName
+    - workflowName
+outputs:
+  description: The expression traces.
+  properties:
+    inputs:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:web:ExpressionRootResponse"
+    nextLink:
+      type: string
+      description: The link used to get the next page of recommendations.
+    value:
+      $ref: pulumi.json#/Any
+  type: object

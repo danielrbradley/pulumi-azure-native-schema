@@ -1,0 +1,8 @@
+$token: azure-native:app/v20221001:SkuName
+description: Name of the Sku.
+type: string
+enum:
+  - description: Consumption SKU of Managed Environment.
+    value: Consumption
+  - description: Premium SKU of Managed Environment.
+    value: Premium

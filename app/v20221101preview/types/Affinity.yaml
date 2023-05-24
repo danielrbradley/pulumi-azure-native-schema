@@ -1,0 +1,6 @@
+$token: azure-native:app/v20221101preview:Affinity
+description: Sticky Session Affinity
+type: string
+enum:
+  - value: sticky
+  - value: none

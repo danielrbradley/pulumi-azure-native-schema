@@ -1,0 +1,58 @@
+$token: azure-native:web/v20180201:listWebAppSitePushSettingsSlot
+description: Gets the Push settings associated with web app.
+inputs:
+  properties:
+    name:
+      type: string
+      description: Name of web app.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the resource group to which the resource belongs.
+      willReplaceOnChanges: true
+    slot:
+      type: string
+      description: Name of web app slot. If not specified then will default to production slot.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - name
+    - resourceGroupName
+    - slot
+outputs:
+  description: Push settings for the App.
+  properties:
+    dynamicTagsJson:
+      type: string
+      description: Gets or sets a JSON string containing a list of dynamic tags that will be evaluated from user claims in the push registration endpoint.
+    id:
+      type: string
+      description: Resource Id.
+    isPushEnabled:
+      type: boolean
+      description: Gets or sets a flag indicating whether the Push endpoint is enabled.
+    kind:
+      type: string
+      description: Kind of resource.
+    name:
+      type: string
+      description: Resource Name.
+    tagWhitelistJson:
+      type: string
+      description: Gets or sets a JSON string containing a list of tags that are in the allowed list for use by the push registration endpoint.
+    tagsRequiringAuth:
+      type: string
+      description: |-
+        Gets or sets a JSON string containing a list of tags that require user authentication to be used in the push registration endpoint.
+        Tags can consist of alphanumeric characters and the following:
+        '_', '@', '#', '.', ':', '-'. 
+        Validation should be performed at the PushRequestHandler.
+    type:
+      type: string
+      description: Resource type.
+  type: object
+  required:
+    - id
+    - isPushEnabled
+    - name
+    - type

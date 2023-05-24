@@ -1,0 +1,9 @@
+$token: azure-native:insights:LocationSpecResponse
+properties:
+  location:
+    type: string
+    description: Name of location.
+  provisioningStatus:
+    type: string
+    description: The resource provisioning state in this location.
+type: object

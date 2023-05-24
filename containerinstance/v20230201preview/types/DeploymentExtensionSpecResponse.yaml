@@ -1,0 +1,23 @@
+$token: azure-native:containerinstance/v20230201preview:DeploymentExtensionSpecResponse
+description: Extension sidecars to be added to the deployment.
+properties:
+  extensionType:
+    type: string
+    description: Type of extension to be added.
+  name:
+    type: string
+    description: Name of the extension.
+  protectedSettings:
+    $ref: pulumi.json#/Any
+    description: Protected settings for the extension.
+  settings:
+    $ref: pulumi.json#/Any
+    description: Settings for the extension.
+  version:
+    type: string
+    description: Version of the extension being used.
+type: object
+required:
+  - extensionType
+  - name
+  - version

@@ -1,0 +1,6 @@
+$token: azure-native:machinelearningservices/v20221201preview:TextAnnotationType
+description: Annotation type of text labeling job.
+type: string
+enum:
+  - value: Classification
+  - value: NamedEntityRecognition

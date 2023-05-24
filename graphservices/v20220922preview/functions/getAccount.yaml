@@ -1,0 +1,51 @@
+$token: azure-native:graphservices/v20220922preview:getAccount
+description: Returns account resource for a given name.
+inputs:
+  properties:
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    resourceName:
+      type: string
+      description: The name of the resource.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - resourceName
+outputs:
+  description: Account details
+  properties:
+    id:
+      type: string
+      description: Azure resource ID.
+    location:
+      type: string
+      description: Location of the resource.
+    name:
+      type: string
+      description: Azure resource name.
+    properties:
+      type: object
+      $ref: "#/types/azure-native:graphservices/v20220922preview:AccountResourceResponseProperties"
+      description: Property bag from billing account
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:graphservices/v20220922preview:AccountResourceResponseSystemData"
+      description: Metadata pertaining to creation and last modification of the resource.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: resource tags.
+    type:
+      type: string
+      description: Azure resource type.
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - systemData
+    - type

@@ -1,0 +1,47 @@
+$token: azure-native:professionalservice/v20230701preview:getProfessionalServiceSubscriptionLevel
+description: Gets information about the specified Subscription Level ProfessionalService.
+inputs:
+  properties:
+    resourceGroupName:
+      type: string
+      description: The name of the resource group.
+      willReplaceOnChanges: true
+    resourceName:
+      type: string
+      description: The name of the resource.
+      willReplaceOnChanges: true
+    subscriptionId:
+      type: string
+      description: The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - resourceName
+outputs:
+  description: ProfessionalService REST API resource definition.
+  properties:
+    id:
+      type: string
+      description: The resource uri
+    name:
+      type: string
+      description: The name of the resource
+    properties:
+      type: object
+      $ref: "#/types/azure-native:professionalservice/v20230701preview:ProfessionalServiceResourceResponseProperties"
+      description: professionalService properties
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: the resource tags.
+    type:
+      type: string
+      description: Resource type.
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - type

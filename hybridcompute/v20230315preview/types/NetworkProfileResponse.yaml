@@ -1,0 +1,10 @@
+$token: azure-native:hybridcompute/v20230315preview:NetworkProfileResponse
+description: Describes the network information on this machine.
+properties:
+  networkInterfaces:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:hybridcompute/v20230315preview:NetworkInterfaceResponse"
+    description: The list of network interfaces.
+type: object

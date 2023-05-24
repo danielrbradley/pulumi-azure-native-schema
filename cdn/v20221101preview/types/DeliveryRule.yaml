@@ -1,0 +1,113 @@
+$token: azure-native:cdn/v20221101preview:DeliveryRule
+description: A rule that specifies a set of actions and conditions
+properties:
+  actions:
+    type: array
+    items:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleCacheExpirationAction"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleCacheKeyQueryStringAction"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleRequestHeaderAction"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleResponseHeaderAction"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleRouteConfigurationOverrideAction"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:OriginGroupOverrideAction"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:UrlRedirectAction"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:UrlRewriteAction"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:UrlSigningAction"
+      discriminator:
+        propertyName: name
+        mapping:
+          CacheExpiration: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleCacheExpirationAction"
+          CacheKeyQueryString: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleCacheKeyQueryStringAction"
+          ModifyRequestHeader: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleRequestHeaderAction"
+          ModifyResponseHeader: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleResponseHeaderAction"
+          OriginGroupOverride: "#/types/azure-native:cdn/v20221101preview:OriginGroupOverrideAction"
+          RouteConfigurationOverride: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleRouteConfigurationOverrideAction"
+          UrlRedirect: "#/types/azure-native:cdn/v20221101preview:UrlRedirectAction"
+          UrlRewrite: "#/types/azure-native:cdn/v20221101preview:UrlRewriteAction"
+          UrlSigning: "#/types/azure-native:cdn/v20221101preview:UrlSigningAction"
+    description: A list of actions that are executed when all the conditions of a rule are satisfied.
+  conditions:
+    type: array
+    items:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleClientPortCondition"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleCookiesCondition"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleHostNameCondition"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleHttpVersionCondition"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleIsDeviceCondition"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRulePostArgsCondition"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleQueryStringCondition"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleRemoteAddressCondition"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleRequestBodyCondition"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleRequestHeaderCondition"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleRequestMethodCondition"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleRequestSchemeCondition"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleRequestUriCondition"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleServerPortCondition"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleSocketAddrCondition"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleSslProtocolCondition"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleUrlFileExtensionCondition"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleUrlFileNameCondition"
+        - type: object
+          $ref: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleUrlPathCondition"
+      discriminator:
+        propertyName: name
+        mapping:
+          ClientPort: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleClientPortCondition"
+          Cookies: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleCookiesCondition"
+          HostName: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleHostNameCondition"
+          HttpVersion: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleHttpVersionCondition"
+          IsDevice: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleIsDeviceCondition"
+          PostArgs: "#/types/azure-native:cdn/v20221101preview:DeliveryRulePostArgsCondition"
+          QueryString: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleQueryStringCondition"
+          RemoteAddress: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleRemoteAddressCondition"
+          RequestBody: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleRequestBodyCondition"
+          RequestHeader: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleRequestHeaderCondition"
+          RequestMethod: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleRequestMethodCondition"
+          RequestScheme: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleRequestSchemeCondition"
+          RequestUri: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleRequestUriCondition"
+          ServerPort: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleServerPortCondition"
+          SocketAddr: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleSocketAddrCondition"
+          SslProtocol: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleSslProtocolCondition"
+          UrlFileExtension: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleUrlFileExtensionCondition"
+          UrlFileName: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleUrlFileNameCondition"
+          UrlPath: "#/types/azure-native:cdn/v20221101preview:DeliveryRuleUrlPathCondition"
+    description: A list of conditions that must be matched for the actions to be executed
+  name:
+    type: string
+    description: Name of the rule
+  order:
+    type: integer
+    description: The order in which the rules are applied for the endpoint. Possible values {0,1,2,3,………}. A rule with a lesser order will be applied before a rule with a greater order. Rule with order 0 is a special rule. It does not require any condition and actions listed in it will always be applied.
+type: object
+required:
+  - actions
+  - order

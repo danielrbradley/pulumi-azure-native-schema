@@ -1,0 +1,33 @@
+$token: azure-native:avs:listClusterZones
+description: |-
+  List of all zones and associated hosts for a cluster
+  API Version: 2022-05-01.
+inputs:
+  properties:
+    clusterName:
+      type: string
+      description: Name of the cluster in the private cloud
+      willReplaceOnChanges: true
+    privateCloudName:
+      type: string
+      description: Name of the private cloud
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - clusterName
+    - privateCloudName
+    - resourceGroupName
+outputs:
+  description: List of all zones and associated hosts for a cluster
+  properties:
+    zones:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:avs:ClusterZoneResponse"
+      description: Zone and associated hosts info
+  type: object

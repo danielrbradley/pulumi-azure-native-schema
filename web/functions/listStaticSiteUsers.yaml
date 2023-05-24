@@ -1,0 +1,39 @@
+$token: azure-native:web:listStaticSiteUsers
+description: |-
+  Description for Gets the list of users of a static site.
+  API Version: 2022-09-01.
+inputs:
+  properties:
+    authprovider:
+      type: string
+      description: The auth provider for the users.
+      willReplaceOnChanges: true
+    name:
+      type: string
+      description: Name of the static site.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the resource group to which the resource belongs.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - authprovider
+    - name
+    - resourceGroupName
+outputs:
+  description: Collection of static site custom users.
+  properties:
+    nextLink:
+      type: string
+      description: Link to next page of resources.
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:web:StaticSiteUserARMResourceResponse"
+      description: Collection of resources.
+  type: object
+  required:
+    - nextLink
+    - value

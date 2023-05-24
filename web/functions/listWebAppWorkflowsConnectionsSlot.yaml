@@ -1,0 +1,51 @@
+$token: azure-native:web:listWebAppWorkflowsConnectionsSlot
+description: |-
+  Workflow properties definition.
+  API Version: 2022-09-01.
+inputs:
+  properties:
+    name:
+      type: string
+      description: Site name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the resource group to which the resource belongs.
+      willReplaceOnChanges: true
+    slot:
+      type: string
+      description: Name of the deployment slot.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - name
+    - resourceGroupName
+    - slot
+outputs:
+  description: Workflow properties definition.
+  properties:
+    id:
+      type: string
+      description: The resource id.
+    kind:
+      type: string
+      description: The resource kind.
+    location:
+      type: string
+      description: The resource location.
+    name:
+      type: string
+      description: Gets the resource name.
+    properties:
+      type: object
+      $ref: "#/types/azure-native:web:WorkflowEnvelopeResponseProperties"
+      description: Additional workflow properties.
+    type:
+      type: string
+      description: Gets the resource type.
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - type

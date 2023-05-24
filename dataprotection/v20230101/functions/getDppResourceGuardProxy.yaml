@@ -1,0 +1,48 @@
+$token: azure-native:dataprotection/v20230101:getDppResourceGuardProxy
+description: ResourceGuardProxyBaseResource object, used for response and request bodies for ResourceGuardProxy APIs
+inputs:
+  properties:
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    resourceGuardProxyName:
+      type: string
+      description: name of the resource guard proxy
+      willReplaceOnChanges: true
+    vaultName:
+      type: string
+      description: The name of the backup vault.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - resourceGuardProxyName
+    - vaultName
+outputs:
+  description: ResourceGuardProxyBaseResource object, used for response and request bodies for ResourceGuardProxy APIs
+  properties:
+    id:
+      type: string
+      description: Resource Id represents the complete path to the resource.
+    name:
+      type: string
+      description: Resource name associated with the resource.
+    properties:
+      type: object
+      $ref: "#/types/azure-native:dataprotection/v20230101:ResourceGuardProxyBaseResponse"
+      description: ResourceGuardProxyBaseResource properties
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:dataprotection/v20230101:SystemDataResponse"
+      description: Metadata pertaining to creation and last modification of the resource.
+    type:
+      type: string
+      description: Resource type represents the complete path of the form Namespace/ResourceType/ResourceType/...
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - systemData
+    - type

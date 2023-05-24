@@ -1,0 +1,45 @@
+$token: azure-native:machinelearningservices/v20230401preview:FeaturesetVersion
+description: Dto object representing feature set version
+properties:
+  autoDeleteSetting:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:AutoDeleteSetting"
+    description: Specifies the lifecycle setting of managed data asset.
+  description:
+    type: string
+    description: The asset description text.
+  entities:
+    type: array
+    items:
+      type: string
+    description: Specifies list of entities
+  isAnonymous:
+    type: boolean
+    description: If the name version are system generated (anonymous registration). For types where Stage is defined, when Stage is provided it will be used to populate IsAnonymous
+    default: false
+  isArchived:
+    type: boolean
+    description: Is the asset archived? For types where Stage is defined, when Stage is provided it will be used to populate IsArchived
+    default: false
+  materializationSettings:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MaterializationSettings"
+    description: Specifies the materialization settings
+  properties:
+    type: object
+    additionalProperties:
+      type: string
+    description: The asset property dictionary.
+  specification:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:FeaturesetSpecification"
+    description: Specifies the feature spec details
+  stage:
+    type: string
+    description: Specifies the asset stage
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Tag dictionary. Tags can be added, removed, and updated.
+type: object

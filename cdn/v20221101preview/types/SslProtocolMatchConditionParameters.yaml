@@ -1,0 +1,32 @@
+$token: azure-native:cdn/v20221101preview:SslProtocolMatchConditionParameters
+description: Defines the parameters for SslProtocol match conditions
+properties:
+  matchValues:
+    type: array
+    items:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:cdn/v20221101preview:SslProtocol"
+    description: The match value for the condition of the delivery rule
+  negateCondition:
+    type: boolean
+    description: Describes if this is negate condition or not
+    default: false
+  operator:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:cdn/v20221101preview:SslProtocolOperator"
+    description: Describes operator to be matched
+  transforms:
+    type: array
+    items:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:cdn/v20221101preview:Transform"
+    description: List of transforms
+  typeName:
+    type: string
+type: object
+required:
+  - operator
+  - typeName

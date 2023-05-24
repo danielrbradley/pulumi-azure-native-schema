@@ -1,0 +1,16 @@
+$token: azure-native:appplatform/v20220101preview:BuildServiceAgentPoolSizePropertiesResponse
+description: Build service agent pool size properties
+properties:
+  cpu:
+    type: string
+    description: The cpu property of build service agent pool size
+  memory:
+    type: string
+    description: The memory property of build service agent pool size
+  name:
+    type: string
+    description: The name of build service agent pool size
+type: object
+required:
+  - cpu
+  - memory

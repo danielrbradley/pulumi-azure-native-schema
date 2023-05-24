@@ -1,0 +1,6 @@
+$token: azure-native:networkcloud/v20221212preview:VirtualMachineDeviceModelType
+description: The type of the device model to use.
+type: string
+enum:
+  - value: T1
+  - value: T2

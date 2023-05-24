@@ -1,0 +1,44 @@
+$token: azure-native:migrate/v20220501preview:GmsaAuthenticationPropertiesResponse
+description: Class for GMSA authentication details to configure Active Directory connectivity.
+properties:
+  adDomainControllerDns:
+    type: string
+    description: Gets or sets the list of dns server that can resolve the Active Directory Domain Name/Address.
+  adDomainFqdn:
+    type: string
+    description: Gets or sets the FQDN of the Active Directory Domain. For e.g. 'contoso.local', 'fareast.corp.microsoft.com' etc.
+  akvProperties:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:KeyVaultSecretStorePropertiesResponse"
+  configurationState:
+    type: string
+    description: Gets or sets the current state of GMSA configuration.
+  domainAdminPassword:
+    type: string
+    description: Gets or sets the password of the user specified by RestApi.Controllers.V2022_05_01_preview.Models.WorkloadDeployment.Gmsa.GmsaAuthenticationProperties.DomainAdminUsername.
+  domainAdminUsername:
+    type: string
+    description: Gets or sets the name of the user having admin rights on the Active Directory Domain Controller.
+  domainControllerAddress:
+    type: string
+    description: Gets or sets the address of the Active Directory Domain Controller running Domain Services.
+  gmsaAccountName:
+    type: string
+    description: Gets or sets the name to be used for GMSA.
+  gmsaCredSpecName:
+    type: string
+    description: Gets Cred Spec Name to be used.
+  gmsaSecretName:
+    type: string
+    description: Gets name of the secret where GMSA secret is stored in the KeyVault.
+  gmsaUserPassword:
+    type: string
+    description: Gets or sets the password of the user specified by RestApi.Controllers.V2022_05_01_preview.Models.WorkloadDeployment.Gmsa.GmsaAuthenticationProperties.GmsaUsername.
+  gmsaUsername:
+    type: string
+    description: Gets or sets username of the user having authorization to access GMSA on Active Directory.
+type: object
+required:
+  - configurationState
+  - gmsaCredSpecName
+  - gmsaSecretName

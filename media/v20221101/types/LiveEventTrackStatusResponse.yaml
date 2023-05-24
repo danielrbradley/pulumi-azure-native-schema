@@ -1,0 +1,22 @@
+$token: azure-native:media/v20221101:LiveEventTrackStatusResponse
+description: The live event track status.
+properties:
+  expectedBitrate:
+    type: number
+    description: Expected bitrate for this track.
+  incomingBitrate:
+    type: number
+    description: Average incoming bitrate for last 20 seconds when live event is running.
+  ingestDrift:
+    type: string
+    description: Current ingest drift value in seconds for last 1 minute.
+  requestReceived:
+    type: number
+    description: Total number of timed metadata request received.
+  requestSucceeded:
+    type: number
+    description: Total number of successful timed metadata request received.
+  trackId:
+    type: string
+    description: Track Id.
+type: object

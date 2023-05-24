@@ -1,0 +1,177 @@
+$token: azure-native:azurestackhci/v20230301:Cluster
+description: Cluster details.
+properties:
+  aadApplicationObjectId:
+    type: string
+    description: Object id of cluster AAD identity.
+  aadClientId:
+    type: string
+    description: App id of cluster AAD identity.
+  aadServicePrincipalObjectId:
+    type: string
+    description: Id of cluster identity service principal.
+  aadTenantId:
+    type: string
+    description: Tenant id of cluster AAD identity.
+  billingModel:
+    type: string
+    description: Type of billing applied to the resource.
+  cloudId:
+    type: string
+    description: Unique, immutable resource id.
+  cloudManagementEndpoint:
+    type: string
+    description: Endpoint configured for management from the Azure portal.
+  desiredProperties:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20230301:ClusterDesiredPropertiesResponse"
+    description: Desired properties of the cluster.
+  lastBillingTimestamp:
+    type: string
+    description: Most recent billing meter timestamp.
+  lastSyncTimestamp:
+    type: string
+    description: Most recent cluster sync timestamp.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  principalId:
+    type: string
+    description: The service principal ID of the system assigned identity. This property will only be provided for a system assigned identity.
+  provisioningState:
+    type: string
+    description: Provisioning state.
+  registrationTimestamp:
+    type: string
+    description: First cluster sync timestamp.
+  reportedProperties:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20230301:ClusterReportedPropertiesResponse"
+    description: Properties reported by cluster agent.
+  resourceProviderObjectId:
+    type: string
+    description: Object id of RP Service Principal
+  serviceEndpoint:
+    type: string
+    description: Region specific DataPath Endpoint of the cluster.
+  softwareAssuranceProperties:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20230301:SoftwareAssurancePropertiesResponse"
+    description: Software Assurance properties of the cluster.
+  status:
+    type: string
+    description: Status of the cluster agent.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20230301:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  tenantId:
+    type: string
+    description: The tenant ID of the system assigned identity. This property will only be provided for a system assigned identity.
+  trialDaysRemaining:
+    type: number
+    description: Number of days remaining in the trial period.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  userAssignedIdentities:
+    type: object
+    additionalProperties:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20230301:UserAssignedIdentityResponse"
+    description: "The set of user assigned identities associated with the resource. The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}. The dictionary values can be empty objects ({}) in requests."
+type: object
+required:
+  - billingModel
+  - cloudId
+  - lastBillingTimestamp
+  - lastSyncTimestamp
+  - location
+  - name
+  - principalId
+  - provisioningState
+  - registrationTimestamp
+  - reportedProperties
+  - resourceProviderObjectId
+  - serviceEndpoint
+  - status
+  - systemData
+  - tenantId
+  - trialDaysRemaining
+  - type
+inputProperties:
+  aadApplicationObjectId:
+    type: string
+    description: Object id of cluster AAD identity.
+  aadClientId:
+    type: string
+    description: App id of cluster AAD identity.
+  aadServicePrincipalObjectId:
+    type: string
+    description: Id of cluster identity service principal.
+  aadTenantId:
+    type: string
+    description: Tenant id of cluster AAD identity.
+  cloudManagementEndpoint:
+    type: string
+    description: Endpoint configured for management from the Azure portal.
+  clusterName:
+    type: string
+    description: The name of the cluster.
+    willReplaceOnChanges: true
+  desiredProperties:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20230301:ClusterDesiredProperties"
+    description: Desired properties of the cluster.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  softwareAssuranceProperties:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20230301:SoftwareAssuranceProperties"
+    description: Software Assurance properties of the cluster.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:azurestackhci/v20230301:ManagedServiceIdentityType"
+    description: Type of managed service identity (where both SystemAssigned and UserAssigned types are allowed).
+  userAssignedIdentities:
+    type: array
+    items:
+      type: string
+    description: "The set of user assigned identities associated with the resource. The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}. The dictionary values can be empty objects ({}) in requests."
+requiredInputs:
+  - resourceGroupName
+  - type
+aliases:
+  - type: azure-native:azurestackhci:Cluster
+  - type: azure-native:azurestackhci/v20200301preview:Cluster
+  - type: azure-native:azurestackhci/v20201001:Cluster
+  - type: azure-native:azurestackhci/v20210101preview:Cluster
+  - type: azure-native:azurestackhci/v20210901:Cluster
+  - type: azure-native:azurestackhci/v20210901preview:Cluster
+  - type: azure-native:azurestackhci/v20220101:Cluster
+  - type: azure-native:azurestackhci/v20220301:Cluster
+  - type: azure-native:azurestackhci/v20220501:Cluster
+  - type: azure-native:azurestackhci/v20220901:Cluster
+  - type: azure-native:azurestackhci/v20221001:Cluster
+  - type: azure-native:azurestackhci/v20221201:Cluster
+  - type: azure-native:azurestackhci/v20230201:Cluster

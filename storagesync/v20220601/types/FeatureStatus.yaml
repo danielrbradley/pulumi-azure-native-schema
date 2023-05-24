@@ -1,0 +1,6 @@
+$token: azure-native:storagesync/v20220601:FeatureStatus
+description: Offline data transfer
+type: string
+enum:
+  - value: on
+  - value: off

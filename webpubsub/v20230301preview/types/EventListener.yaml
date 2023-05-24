@@ -1,0 +1,15 @@
+$token: azure-native:webpubsub/v20230301preview:EventListener
+description: A setting defines which kinds of events should be sent to which endpoint.
+properties:
+  endpoint:
+    type: object
+    $ref: "#/types/azure-native:webpubsub/v20230301preview:EventHubEndpoint"
+    description: An endpoint specifying where Web PubSub should send events to.
+  filter:
+    type: object
+    $ref: "#/types/azure-native:webpubsub/v20230301preview:EventNameFilter"
+    description: A base class for event filter which determines whether an event should be sent to an event listener.
+type: object
+required:
+  - endpoint
+  - filter

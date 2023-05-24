@@ -1,0 +1,10 @@
+$token: azure-native:workloads/v20230401:DiskConfiguration
+description: The Disk Configuration Details.
+properties:
+  diskVolumeConfigurations:
+    type: object
+    additionalProperties:
+      type: object
+      $ref: "#/types/azure-native:workloads/v20230401:DiskVolumeConfiguration"
+    description: "The disk configuration for the db volume. For HANA, Required volumes are: ['hana/data', 'hana/log', hana/shared', 'usr/sap', 'os'], Optional volume : ['backup']."
+type: object

@@ -1,0 +1,46 @@
+$token: azure-native:appplatform/v20230101preview:DevToolPortal
+description: Dev Tool Portal resource
+properties:
+  name:
+    type: string
+    description: The name of the resource.
+  properties:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230101preview:DevToolPortalPropertiesResponse"
+    description: Dev Tool Portal properties payload
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230101preview:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  type:
+    type: string
+    description: The type of the resource.
+type: object
+required:
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  devToolPortalName:
+    type: string
+    description: The name of Dev Tool Portal.
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230101preview:DevToolPortalProperties"
+    description: Dev Tool Portal properties payload
+  resourceGroupName:
+    type: string
+    description: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+    willReplaceOnChanges: true
+  serviceName:
+    type: string
+    description: The name of the Service resource.
+    willReplaceOnChanges: true
+requiredInputs:
+  - resourceGroupName
+  - serviceName
+aliases:
+  - type: azure-native:appplatform/v20221101preview:DevToolPortal
+  - type: azure-native:appplatform/v20230301preview:DevToolPortal

@@ -1,0 +1,48 @@
+$token: azure-native:hybridcompute/v20221227:getPrivateEndpointConnection
+description: Gets a private endpoint connection.
+inputs:
+  properties:
+    privateEndpointConnectionName:
+      type: string
+      description: The name of the private endpoint connection.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    scopeName:
+      type: string
+      description: The name of the Azure Arc PrivateLinkScope resource.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - privateEndpointConnectionName
+    - resourceGroupName
+    - scopeName
+outputs:
+  description: A private endpoint connection
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    properties:
+      type: object
+      $ref: "#/types/azure-native:hybridcompute/v20221227:PrivateEndpointConnectionPropertiesResponse"
+      description: Resource properties.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:hybridcompute/v20221227:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - systemData
+    - type

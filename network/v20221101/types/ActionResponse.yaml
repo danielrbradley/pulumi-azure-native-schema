@@ -1,0 +1,13 @@
+$token: azure-native:network/v20221101:ActionResponse
+description: Action to be taken on a route matching a RouteMap criterion.
+properties:
+  parameters:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:network/v20221101:ParameterResponse"
+    description: List of parameters relevant to the action.For instance if type is drop then parameters has list of prefixes to be dropped.If type is add, parameters would have list of ASN numbers to be added
+  type:
+    type: string
+    description: Type of action to be taken. Supported types are 'Remove', 'Add', 'Replace', and 'Drop.'
+type: object

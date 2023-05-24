@@ -1,0 +1,11 @@
+$token: azure-native:securityinsights/v20230401preview:AutomationRulePropertyArrayChangedValuesCondition
+properties:
+  arrayType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:securityinsights/v20230401preview:AutomationRulePropertyArrayChangedConditionSupportedArrayType"
+  changeType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:securityinsights/v20230401preview:AutomationRulePropertyArrayChangedConditionSupportedChangeType"
+type: object

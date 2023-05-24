@@ -1,0 +1,66 @@
+$token: azure-native:devtestlab/v20150521preview:getArtifactSourceResource
+description: Get artifact source.
+inputs:
+  properties:
+    labName:
+      type: string
+      description: The name of the lab.
+      willReplaceOnChanges: true
+    name:
+      type: string
+      description: The name of the artifact source.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - labName
+    - name
+    - resourceGroupName
+outputs:
+  description: Properties of an artifact source.
+  properties:
+    branchRef:
+      type: string
+      description: The branch reference of the artifact source.
+    displayName:
+      type: string
+      description: The display name of the artifact source.
+    folderPath:
+      type: string
+      description: The folder path of the artifact source.
+    id:
+      type: string
+      description: The identifier of the resource.
+    location:
+      type: string
+      description: The location of the resource.
+    name:
+      type: string
+      description: The name of the resource.
+    provisioningState:
+      type: string
+      description: The provisioning status of the resource.
+    securityToken:
+      type: string
+      description: The security token of the artifact source.
+    sourceType:
+      type: string
+      description: The type of the artifact source.
+    status:
+      type: string
+      description: The status of the artifact source.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: The tags of the resource.
+    type:
+      type: string
+      description: The type of the resource.
+    uri:
+      type: string
+      description: The URI of the artifact source.
+  type: object

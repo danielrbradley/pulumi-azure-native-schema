@@ -1,0 +1,10 @@
+$token: azure-native:azurestackhci/v20210901preview:VirtualHardDiskStatusResponseProvisioningStatus
+description: The provisioning status of the virtual hard disk
+properties:
+  operationId:
+    type: string
+    description: The ID of the operation performed on the virtual hard disk
+  status:
+    type: string
+    description: The status of the operation performed on the virtual hard disk [Succeeded, Failed, InProgress]
+type: object

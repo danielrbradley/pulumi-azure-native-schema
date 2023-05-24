@@ -1,0 +1,60 @@
+$token: azure-native:securityinsights/v20230401preview:getWorkspaceManagerGroup
+description: Gets a workspace manager group
+inputs:
+  properties:
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    workspaceManagerGroupName:
+      type: string
+      description: The name of the workspace manager group
+      willReplaceOnChanges: true
+    workspaceName:
+      type: string
+      description: The name of the workspace.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - workspaceManagerGroupName
+    - workspaceName
+outputs:
+  description: The workspace manager group
+  properties:
+    description:
+      type: string
+      description: The description of the workspace manager group
+    displayName:
+      type: string
+      description: The display name of the workspace manager group
+    etag:
+      type: string
+      description: Resource Etag.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    memberResourceNames:
+      type: array
+      items:
+        type: string
+      description: The names of the workspace manager members participating in this group.
+    name:
+      type: string
+      description: The name of the resource
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:securityinsights/v20230401preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - displayName
+    - etag
+    - id
+    - memberResourceNames
+    - name
+    - systemData
+    - type

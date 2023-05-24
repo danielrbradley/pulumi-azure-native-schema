@@ -1,0 +1,8 @@
+$token: azure-native:app:LogLevel
+description: Sets the log level for the Dapr sidecar. Allowed values are debug, info, warn, error. Default is info.
+type: string
+enum:
+  - value: info
+  - value: debug
+  - value: warn
+  - value: error

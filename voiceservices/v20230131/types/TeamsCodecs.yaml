@@ -1,0 +1,10 @@
+$token: azure-native:voiceservices/v20230131:TeamsCodecs
+description: The voice codecs expected for communication with Teams.
+type: string
+enum:
+  - value: PCMA
+  - value: PCMU
+  - value: G722
+  - value: G722_2
+  - value: SILK_8
+  - value: SILK_16

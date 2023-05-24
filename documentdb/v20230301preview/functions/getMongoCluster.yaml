@@ -1,0 +1,75 @@
+$token: azure-native:documentdb/v20230301preview:getMongoCluster
+description: Gets information about a mongo cluster.
+inputs:
+  properties:
+    mongoClusterName:
+      type: string
+      description: The name of the mongo cluster.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - mongoClusterName
+    - resourceGroupName
+outputs:
+  description: Represents a mongo cluster resource.
+  properties:
+    administratorLogin:
+      type: string
+      description: The administrator's login for the mongo cluster.
+    clusterStatus:
+      type: string
+      description: A status of the mongo cluster.
+    connectionString:
+      type: string
+      description: The default mongo connection string for the cluster.
+    earliestRestoreTime:
+      type: string
+      description: Earliest restore timestamp in UTC ISO8601 format.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    name:
+      type: string
+      description: The name of the resource
+    nodeGroupSpecs:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:documentdb/v20230301preview:NodeGroupSpecResponse"
+      description: The list of node group specs in the cluster.
+    provisioningState:
+      type: string
+      description: A provisioning state of the mongo cluster.
+    serverVersion:
+      type: string
+      description: The Mongo DB server version. Defaults to the latest available version if not specified.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:documentdb/v20230301preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - clusterStatus
+    - connectionString
+    - earliestRestoreTime
+    - id
+    - location
+    - name
+    - provisioningState
+    - systemData
+    - type

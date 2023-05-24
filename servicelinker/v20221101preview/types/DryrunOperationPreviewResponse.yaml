@@ -1,0 +1,19 @@
+$token: azure-native:servicelinker/v20221101preview:DryrunOperationPreviewResponse
+description: The preview of the operations for creation
+properties:
+  action:
+    type: string
+    description: The action defined by RBAC, refer https://docs.microsoft.com/azure/role-based-access-control/role-definitions#actions-format
+  description:
+    type: string
+    description: The description of the operation
+  name:
+    type: string
+    description: The operation name
+  operationType:
+    type: string
+    description: The operation type
+  scope:
+    type: string
+    description: The scope of the operation, refer https://docs.microsoft.com/azure/role-based-access-control/scope-overview
+type: object

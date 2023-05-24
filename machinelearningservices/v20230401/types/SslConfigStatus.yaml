@@ -1,0 +1,7 @@
+$token: azure-native:machinelearningservices/v20230401:SslConfigStatus
+description: Enable or disable ssl for scoring
+type: string
+enum:
+  - value: Disabled
+  - value: Enabled
+  - value: Auto

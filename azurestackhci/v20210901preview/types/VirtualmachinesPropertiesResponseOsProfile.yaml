@@ -1,0 +1,21 @@
+$token: azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesResponseOsProfile
+description: OsProfile - describes the configuration of the operating system and sets login data
+properties:
+  adminUsername:
+    type: string
+    description: AdminUsername - admin username
+  computerName:
+    type: string
+    description: ComputerName - name of the compute
+  linuxConfiguration:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesResponseLinuxConfiguration"
+    description: LinuxConfiguration - linux specific configuration values for the virtual machine
+  osType:
+    type: string
+    description: OsType - string specifying whether the OS is Linux or Windows
+  windowsConfiguration:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesResponseWindowsConfiguration"
+    description: "Windows Configuration for the virtual machine "
+type: object

@@ -1,0 +1,19 @@
+$token: azure-native:healthcareapis/v20221001preview:AnalyticsConnectorDataLakeDataDestination
+description: The Data Lake data destination for Analytics Connector.
+properties:
+  dataLakeName:
+    type: string
+    description: The name for the Data Lake.
+  name:
+    type: string
+    description: Name of data destination.
+  type:
+    type: string
+    description: |-
+      Type of data destination.
+      Expected value is 'datalake'.
+    const: datalake
+type: object
+required:
+  - dataLakeName
+  - type

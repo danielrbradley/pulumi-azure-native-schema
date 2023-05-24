@@ -1,0 +1,15 @@
+$token: azure-native:documentdb/v20230315:CassandraError
+properties:
+  additionalErrorInfo:
+    type: string
+    description: Additional information about the error.
+  code:
+    type: string
+    description: The code of error that occurred.
+  message:
+    type: string
+    description: The message of the error.
+  target:
+    type: string
+    description: The target resource of the error.
+type: object

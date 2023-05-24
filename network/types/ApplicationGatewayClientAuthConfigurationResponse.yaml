@@ -1,0 +1,10 @@
+$token: azure-native:network:ApplicationGatewayClientAuthConfigurationResponse
+description: Application gateway client authentication configuration.
+properties:
+  verifyClientCertIssuerDN:
+    type: boolean
+    description: Verify client certificate issuer name on the application gateway.
+  verifyClientRevocation:
+    type: string
+    description: Verify client certificate revocation status.
+type: object

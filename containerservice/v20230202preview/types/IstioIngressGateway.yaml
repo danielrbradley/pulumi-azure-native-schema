@@ -1,0 +1,15 @@
+$token: azure-native:containerservice/v20230202preview:IstioIngressGateway
+description: Istio ingress gateway configuration. For now, we support up to one external ingress gateway named `aks-istio-ingressgateway-external` and one internal ingress gateway named `aks-istio-ingressgateway-internal`.
+properties:
+  enabled:
+    type: boolean
+    description: Whether to enable the ingress gateway.
+  mode:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:containerservice/v20230202preview:IstioIngressGatewayMode"
+    description: Mode of an ingress gateway.
+type: object
+required:
+  - enabled
+  - mode

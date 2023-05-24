@@ -1,0 +1,7 @@
+$token: azure-native:storagecache/v20230301preview:KeyVaultKeyReferenceResponseSourceVault
+description: Describes a resource Id to source key vault.
+properties:
+  id:
+    type: string
+    description: Resource Id.
+type: object

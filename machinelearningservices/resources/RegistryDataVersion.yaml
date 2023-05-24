@@ -1,0 +1,74 @@
+$token: azure-native:machinelearningservices:RegistryDataVersion
+properties:
+  dataVersionBaseProperties:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices:MLTableDataResponse"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices:UriFileDataVersionResponse"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices:UriFolderDataVersionResponse"
+    discriminator:
+      propertyName: dataType
+      mapping:
+        mltable: "#/types/azure-native:machinelearningservices:MLTableDataResponse"
+        uri_file: "#/types/azure-native:machinelearningservices:UriFileDataVersionResponse"
+        uri_folder: "#/types/azure-native:machinelearningservices:UriFolderDataVersionResponse"
+    description: "[Required] Additional attributes of the entity."
+  name:
+    type: string
+    description: The name of the resource
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - dataVersionBaseProperties
+  - name
+  - systemData
+  - type
+inputProperties:
+  dataVersionBaseProperties:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices:MLTableData"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices:UriFileDataVersion"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices:UriFolderDataVersion"
+    discriminator:
+      propertyName: dataType
+      mapping:
+        mltable: "#/types/azure-native:machinelearningservices:MLTableData"
+        uri_file: "#/types/azure-native:machinelearningservices:UriFileDataVersion"
+        uri_folder: "#/types/azure-native:machinelearningservices:UriFolderDataVersion"
+    description: "[Required] Additional attributes of the entity."
+  name:
+    type: string
+    description: Container name.
+    willReplaceOnChanges: true
+  registryName:
+    type: string
+    description: Name of Azure Machine Learning registry. This is case-insensitive
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  version:
+    type: string
+    description: Version identifier.
+    willReplaceOnChanges: true
+requiredInputs:
+  - dataVersionBaseProperties
+  - name
+  - registryName
+  - resourceGroupName
+aliases:
+  - type: azure-native:machinelearningservices/v20230201preview:RegistryDataVersion
+  - type: azure-native:machinelearningservices/v20230401:RegistryDataVersion
+  - type: azure-native:machinelearningservices/v20230401preview:RegistryDataVersion

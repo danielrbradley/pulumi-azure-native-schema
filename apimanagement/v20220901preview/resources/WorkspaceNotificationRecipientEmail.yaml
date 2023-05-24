@@ -1,0 +1,42 @@
+$token: azure-native:apimanagement/v20220901preview:WorkspaceNotificationRecipientEmail
+description: Recipient Email details.
+properties:
+  email:
+    type: string
+    description: User Email subscribed to notification.
+  name:
+    type: string
+    description: The name of the resource
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - name
+  - type
+inputProperties:
+  email:
+    type: string
+    description: Email identifier.
+    willReplaceOnChanges: true
+  notificationName:
+    type: string
+    description: Notification Name Identifier.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  serviceName:
+    type: string
+    description: The name of the API Management service.
+    willReplaceOnChanges: true
+  workspaceId:
+    type: string
+    description: Workspace identifier. Must be unique in the current API Management service instance.
+    willReplaceOnChanges: true
+requiredInputs:
+  - notificationName
+  - resourceGroupName
+  - serviceName
+  - workspaceId

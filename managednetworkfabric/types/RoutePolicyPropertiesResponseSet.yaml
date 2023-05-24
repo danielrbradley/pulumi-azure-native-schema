@@ -1,0 +1,7 @@
+$token: azure-native:managednetworkfabric:RoutePolicyPropertiesResponseSet
+properties:
+  set:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric:RoutePolicyPropertiesResponseSetSet"
+    description: Route policy set manipulations.
+type: object

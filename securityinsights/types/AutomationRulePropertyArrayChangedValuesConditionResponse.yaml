@@ -1,0 +1,7 @@
+$token: azure-native:securityinsights:AutomationRulePropertyArrayChangedValuesConditionResponse
+properties:
+  arrayType:
+    type: string
+  changeType:
+    type: string
+type: object

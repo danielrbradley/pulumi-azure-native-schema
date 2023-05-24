@@ -1,0 +1,37 @@
+$token: azure-native:keyvault/v20210601preview:ManagedHsmProperties
+description: Properties of the managed HSM Pool
+properties:
+  createMode:
+    $ref: "#/types/azure-native:keyvault/v20210601preview:CreateMode"
+    description: The create mode to indicate whether the resource is being created or is being recovered from a deleted resource.
+  enablePurgeProtection:
+    type: boolean
+    description: Property specifying whether protection against purge is enabled for this managed HSM pool. Setting this property to true activates protection against purge for this managed HSM pool and its content - only the Managed HSM service may initiate a hard, irrecoverable deletion. Enabling this functionality is irreversible.
+    default: true
+  enableSoftDelete:
+    type: boolean
+    description: Property to specify whether the 'soft delete' functionality is enabled for this managed HSM pool. Soft delete is enabled by default for all managed HSMs and is immutable.
+    default: true
+  initialAdminObjectIds:
+    type: array
+    items:
+      type: string
+    description: Array of initial administrators object ids for this managed hsm pool.
+  networkAcls:
+    type: object
+    $ref: "#/types/azure-native:keyvault/v20210601preview:MHSMNetworkRuleSet"
+    description: Rules governing the accessibility of the key vault from specific network locations.
+  publicNetworkAccess:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:keyvault/v20210601preview:PublicNetworkAccess"
+    description: Control permission to the managed HSM from public networks.
+    default: Enabled
+  softDeleteRetentionInDays:
+    type: integer
+    description: Soft deleted data retention days. When you delete an HSM or a key, it will remain recoverable for the configured retention period or for a default period of 90 days. It accepts values between 7 and 90.
+    default: 90
+  tenantId:
+    type: string
+    description: The Azure Active Directory tenant ID that should be used for authenticating requests to the managed HSM pool.
+type: object

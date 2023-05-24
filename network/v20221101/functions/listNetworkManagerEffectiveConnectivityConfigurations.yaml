@@ -1,0 +1,35 @@
+$token: azure-native:network/v20221101:listNetworkManagerEffectiveConnectivityConfigurations
+description: List all effective connectivity configurations applied on a virtual network.
+inputs:
+  properties:
+    resourceGroupName:
+      type: string
+      description: The name of the resource group.
+      willReplaceOnChanges: true
+    skipToken:
+      type: string
+      description: When present, the value can be passed to a subsequent query call (together with the same query and scopes used in the current request) to retrieve the next page of data.
+    top:
+      type: integer
+      description: An optional query parameter which specifies the maximum number of records to be returned by the server.
+    virtualNetworkName:
+      type: string
+      description: The name of the virtual network.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - virtualNetworkName
+outputs:
+  description: Result of the request to list networkManagerEffectiveConnectivityConfiguration. It contains a list of groups and a skiptoken to get the next set of results.
+  properties:
+    skipToken:
+      type: string
+      description: When present, the value can be passed to a subsequent query call (together with the same query and scopes used in the current request) to retrieve the next page of data.
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:network/v20221101:EffectiveConnectivityConfigurationResponse"
+      description: Gets a page of NetworkManagerEffectiveConnectivityConfiguration
+  type: object

@@ -1,0 +1,77 @@
+$token: azure-native:labservices:Schedule
+properties:
+  name:
+    type: string
+    description: The name of the resource
+  notes:
+    type: string
+    description: Notes for this schedule.
+  provisioningState:
+    type: string
+    description: Current provisioning state of the schedule.
+  recurrencePattern:
+    type: object
+    $ref: "#/types/azure-native:labservices:RecurrencePatternResponse"
+    description: The recurrence pattern of the scheduled actions.
+  startAt:
+    type: string
+    description: When lab user virtual machines will be started. Timestamp offsets will be ignored and timeZoneId is used instead.
+  stopAt:
+    type: string
+    description: When lab user virtual machines will be stopped. Timestamp offsets will be ignored and timeZoneId is used instead.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:labservices:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the schedule.
+  timeZoneId:
+    type: string
+    description: The IANA timezone id for the schedule.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - name
+  - provisioningState
+  - stopAt
+  - systemData
+  - timeZoneId
+  - type
+inputProperties:
+  labName:
+    type: string
+    description: The name of the lab that uniquely identifies it within containing lab plan. Used in resource URIs.
+    willReplaceOnChanges: true
+  notes:
+    type: string
+    description: Notes for this schedule.
+  recurrencePattern:
+    type: object
+    $ref: "#/types/azure-native:labservices:RecurrencePattern"
+    description: The recurrence pattern of the scheduled actions.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  scheduleName:
+    type: string
+    description: The name of the schedule that uniquely identifies it within containing lab. Used in resource URIs.
+    willReplaceOnChanges: true
+  startAt:
+    type: string
+    description: When lab user virtual machines will be started. Timestamp offsets will be ignored and timeZoneId is used instead.
+  stopAt:
+    type: string
+    description: When lab user virtual machines will be stopped. Timestamp offsets will be ignored and timeZoneId is used instead.
+  timeZoneId:
+    type: string
+    description: The IANA timezone id for the schedule.
+requiredInputs:
+  - labName
+  - resourceGroupName
+  - stopAt
+  - timeZoneId
+aliases:
+  - type: azure-native:labservices/v20211001preview:Schedule
+  - type: azure-native:labservices/v20211115preview:Schedule
+  - type: azure-native:labservices/v20220801:Schedule

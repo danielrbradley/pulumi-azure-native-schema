@@ -1,0 +1,14 @@
+$token: azure-native:containerservice/v20230302preview:Type
+description: Specifies on which instance of the allowed days specified in daysOfWeek the maintenance occurs.
+type: string
+enum:
+  - description: First.
+    value: First
+  - description: Second.
+    value: Second
+  - description: Third.
+    value: Third
+  - description: Fourth.
+    value: Fourth
+  - description: Last.
+    value: Last

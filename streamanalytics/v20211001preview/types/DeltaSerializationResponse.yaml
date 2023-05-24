@@ -1,0 +1,21 @@
+$token: azure-native:streamanalytics/v20211001preview:DeltaSerializationResponse
+description: Describes how data from an input is serialized or how data is serialized when written to an output in Delta Lake format.
+properties:
+  deltaTablePath:
+    type: string
+    description: Specifies the path of the Delta Lake table that the output will be written to.
+  partitionColumns:
+    type: array
+    items:
+      type: string
+    description: Specifies the names of the columns for which the Delta Lake table will be partitioned. We are only supporting 1 partition column, but keeping it as an array for extensibility.
+  type:
+    type: string
+    description: |-
+      Indicates the type of serialization that the input or output uses. Required on PUT (CreateOrReplace) requests.
+      Expected value is 'Delta'.
+    const: Delta
+type: object
+required:
+  - deltaTablePath
+  - type

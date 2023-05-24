@@ -1,0 +1,13 @@
+$token: azure-native:insights/v20220601:DataCollectionEndpointResponseFailoverConfiguration
+description: Failover configuration on this endpoint. This property is READ-ONLY.
+properties:
+  activeLocation:
+    type: string
+    description: Active location where data flow will occur.
+  locations:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:insights/v20220601:LocationSpecResponse"
+    description: Locations that are configured for failover.
+type: object

@@ -1,0 +1,28 @@
+$token: azure-native:dbformysql/v20180601privatepreview:ServerPropertiesForReplica
+description: The properties to create a new replica.
+properties:
+  createMode:
+    type: string
+    description: |-
+      The mode to create a new server.
+      Expected value is 'Replica'.
+    const: Replica
+  sourceServerId:
+    type: string
+    description: The master server id to create replica from.
+  sslEnforcement:
+    $ref: "#/types/azure-native:dbformysql/v20180601privatepreview:SslEnforcementEnum"
+    description: Enable ssl enforcement or not when connect to server.
+  storageProfile:
+    type: object
+    $ref: "#/types/azure-native:dbformysql/v20180601privatepreview:StorageProfile"
+    description: Storage profile of a server.
+  version:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:dbformysql/v20180601privatepreview:ServerVersion"
+    description: Server version.
+type: object
+required:
+  - createMode
+  - sourceServerId

@@ -1,0 +1,13 @@
+$token: azure-native:monitor:AzureMonitorWorkspaceResponseDefaultIngestionSettings
+description: The Data Collection Rule and Endpoint used for ingestion by default.
+properties:
+  dataCollectionEndpointResourceId:
+    type: string
+    description: The Azure resource Id of the default data collection endpoint for this workspace.
+  dataCollectionRuleResourceId:
+    type: string
+    description: The Azure resource Id of the default data collection rule for this workspace.
+type: object
+required:
+  - dataCollectionEndpointResourceId
+  - dataCollectionRuleResourceId

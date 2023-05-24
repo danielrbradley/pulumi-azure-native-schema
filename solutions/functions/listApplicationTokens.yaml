@@ -1,0 +1,36 @@
+$token: azure-native:solutions:listApplicationTokens
+description: |-
+  List tokens for application.
+  API Version: 2021-07-01.
+inputs:
+  properties:
+    applicationName:
+      type: string
+      description: The name of the managed application.
+      willReplaceOnChanges: true
+    authorizationAudience:
+      type: string
+      description: The authorization audience.
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    userAssignedIdentities:
+      type: array
+      items:
+        type: string
+      description: The user assigned identities.
+  type: object
+  required:
+    - applicationName
+    - resourceGroupName
+outputs:
+  description: The array of managed identity tokens.
+  properties:
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:solutions:ManagedIdentityTokenResponse"
+      description: The array of managed identity tokens.
+  type: object

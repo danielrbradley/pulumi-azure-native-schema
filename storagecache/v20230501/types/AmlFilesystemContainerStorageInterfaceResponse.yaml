@@ -1,0 +1,17 @@
+$token: azure-native:storagecache/v20230501:AmlFilesystemContainerStorageInterfaceResponse
+description: AML file system container storage interface information
+properties:
+  persistentVolume:
+    type: string
+    description: Recommended AKS Persistent Volume for the CSI driver, in Base64 encoded YAML
+  persistentVolumeClaim:
+    type: string
+    description: Recommended AKS Persistent Volume Claim for the CSI driver, in Base64 encoded YAML
+  storageClass:
+    type: string
+    description: Recommended AKS Storage Class for the CSI driver, in Base64 encoded YAML
+type: object
+required:
+  - persistentVolume
+  - persistentVolumeClaim
+  - storageClass

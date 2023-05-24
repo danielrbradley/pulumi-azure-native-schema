@@ -1,0 +1,7 @@
+$token: azure-native:kusto:LanguageExtensionImageName
+description: The language extension image name.
+type: string
+enum:
+  - value: R
+  - value: Python3_6_5
+  - value: Python3_10_8

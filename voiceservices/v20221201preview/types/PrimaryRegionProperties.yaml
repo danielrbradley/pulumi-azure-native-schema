@@ -1,0 +1,16 @@
+$token: azure-native:voiceservices/v20221201preview:PrimaryRegionProperties
+description: The configuration used in this region as primary, and other regions as backup.
+properties:
+  esrpAddresses:
+    type: array
+    items:
+      type: string
+    description: IP address to use to contact the ESRP from this region
+  operatorAddresses:
+    type: array
+    items:
+      type: string
+    description: IP address to use to contact the operator network from this region
+type: object
+required:
+  - operatorAddresses

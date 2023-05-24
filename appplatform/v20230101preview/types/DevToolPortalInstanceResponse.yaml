@@ -1,0 +1,13 @@
+$token: azure-native:appplatform/v20230101preview:DevToolPortalInstanceResponse
+description: Collection of instances belong to the Dev Tool Portal.
+properties:
+  name:
+    type: string
+    description: Name of the Dev Tool Portal instance.
+  status:
+    type: string
+    description: Status of the Dev Tool Portal instance. It can be Pending, Running, Succeeded, Failed, Unknown.
+type: object
+required:
+  - name
+  - status

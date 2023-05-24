@@ -1,0 +1,10 @@
+$token: azure-native:dbforpostgresql:UserIdentity
+description: Describes a single user-assigned identity associated with the application.
+properties:
+  clientId:
+    type: string
+    description: the client identifier of the Service Principal which this identity represents.
+  principalId:
+    type: string
+    description: the object identifier of the Service Principal which this identity represents.
+type: object

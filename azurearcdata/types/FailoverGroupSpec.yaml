@@ -1,0 +1,33 @@
+$token: azure-native:azurearcdata:FailoverGroupSpec
+description: The specifications of the failover group resource.
+properties:
+  partnerMI:
+    type: string
+    description: The name of the partner SQL managed instance.
+  partnerMirroringCert:
+    type: string
+    description: The mirroring endpoint public certificate for the partner SQL managed instance. Only PEM format is supported.
+  partnerMirroringURL:
+    type: string
+    description: The mirroring endpoint URL of the partner SQL managed instance.
+  partnerSyncMode:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:azurearcdata:FailoverGroupPartnerSyncMode"
+    description: The partner sync mode of the SQL managed instance.
+    default: async
+  role:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:azurearcdata:InstanceFailoverGroupRole"
+    description: The role of the SQL managed instance in this failover group.
+    default: primary
+  sharedName:
+    type: string
+    description: The shared name of the failover group for this SQL managed instance. Both SQL managed instance and its partner have to use the same shared name.
+  sourceMI:
+    type: string
+    description: The name of the SQL managed instance with this failover group role.
+type: object
+required:
+  - role

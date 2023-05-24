@@ -1,0 +1,22 @@
+$token: azure-native:storagecache:getRequiredAmlFSSubnetsSize
+description: |-
+  Get the number of available IP addresses needed for the AML file system information provided.
+  API Version: 2023-05-01.
+inputs:
+  properties:
+    sku:
+      type: object
+      $ref: "#/types/azure-native:storagecache:SkuName"
+      description: SKU for the resource.
+      willReplaceOnChanges: true
+    storageCapacityTiB:
+      type: number
+      description: The size of the AML file system, in TiB.
+  type: object
+outputs:
+  description: Information about the number of available IP addresses that are required for the AML file system.
+  properties:
+    filesystemSubnetSize:
+      type: integer
+      description: The number of available IP addresses that are required for the AML file system.
+  type: object

@@ -1,0 +1,17 @@
+$token: azure-native:netapp:KeyVaultProperties
+description: Properties of key vault.
+properties:
+  keyName:
+    type: string
+    description: The name of KeyVault key.
+  keyVaultResourceId:
+    type: string
+    description: The resource ID of KeyVault.
+  keyVaultUri:
+    type: string
+    description: The Uri of KeyVault.
+type: object
+required:
+  - keyName
+  - keyVaultResourceId
+  - keyVaultUri

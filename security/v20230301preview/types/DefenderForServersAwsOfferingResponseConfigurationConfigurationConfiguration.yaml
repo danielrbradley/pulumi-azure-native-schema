@@ -1,0 +1,15 @@
+$token: azure-native:security/v20230301preview:DefenderForServersAwsOfferingResponseConfigurationConfigurationConfiguration
+description: configuration for Microsoft Defender for Server VM scanning
+properties:
+  cloudRoleArn:
+    type: string
+    description: The cloud role ARN in AWS for this feature
+  exclusionTags:
+    type: object
+    additionalProperties:
+      type: string
+    description: VM tags that indicates that VM should not be scanned
+  scanningMode:
+    type: string
+    description: The scanning mode for the VM scan.
+type: object

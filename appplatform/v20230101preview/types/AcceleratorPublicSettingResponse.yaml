@@ -1,0 +1,12 @@
+$token: azure-native:appplatform/v20230101preview:AcceleratorPublicSettingResponse
+description: Auth setting for public url.
+properties:
+  authType:
+    type: string
+    description: |-
+      The type of the auth setting.
+      Expected value is 'Public'.
+    const: Public
+type: object
+required:
+  - authType

@@ -1,0 +1,64 @@
+$token: azure-native:appcomplianceautomation/v20221116preview:ReportPropertiesResponse
+description: Report's properties.
+properties:
+  complianceStatus:
+    type: object
+    $ref: "#/types/azure-native:appcomplianceautomation/v20221116preview:ReportComplianceStatusResponse"
+    description: Report compliance status.
+  id:
+    type: string
+    description: Report id in database.
+  lastTriggerTime:
+    type: string
+    description: Report last collection trigger time.
+  nextTriggerTime:
+    type: string
+    description: Report next collection trigger time.
+  offerGuid:
+    type: string
+    description: Report offer Guid.
+  provisioningState:
+    type: string
+    description: Azure lifecycle management
+  reportName:
+    type: string
+    description: Report name.
+  resources:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:appcomplianceautomation/v20221116preview:ResourceMetadataResponse"
+    description: List of resource data.
+  status:
+    type: string
+    description: Report status.
+  subscriptions:
+    type: array
+    items:
+      type: string
+    description: List of subscription Ids.
+  tenantId:
+    type: string
+    description: Report's tenant id.
+  timeZone:
+    type: string
+    description: "Report collection trigger time's time zone, the available list can be obtained by executing \"Get-TimeZone -ListAvailable\" in PowerShell.\r
+
+      An example of valid timezone id is \"Pacific Standard Time\"."
+  triggerTime:
+    type: string
+    description: Report collection trigger time.
+type: object
+required:
+  - complianceStatus
+  - id
+  - lastTriggerTime
+  - nextTriggerTime
+  - provisioningState
+  - reportName
+  - resources
+  - status
+  - subscriptions
+  - tenantId
+  - timeZone
+  - triggerTime

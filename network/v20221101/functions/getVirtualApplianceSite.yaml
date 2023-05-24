@@ -1,0 +1,51 @@
+$token: azure-native:network/v20221101:getVirtualApplianceSite
+description: Gets the specified Virtual Appliance Site.
+inputs:
+  properties:
+    networkVirtualApplianceName:
+      type: string
+      description: The name of the Network Virtual Appliance.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group.
+      willReplaceOnChanges: true
+    siteName:
+      type: string
+      description: The name of the site.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - networkVirtualApplianceName
+    - resourceGroupName
+    - siteName
+outputs:
+  description: Virtual Appliance Site resource.
+  properties:
+    addressPrefix:
+      type: string
+      description: Address Prefix.
+    etag:
+      type: string
+      description: A unique read-only string that changes whenever the resource is updated.
+    id:
+      type: string
+      description: Resource ID.
+    name:
+      type: string
+      description: Name of the virtual appliance site.
+    o365Policy:
+      type: object
+      $ref: "#/types/azure-native:network/v20221101:Office365PolicyPropertiesResponse"
+      description: Office 365 Policy.
+    provisioningState:
+      type: string
+      description: The provisioning state of the resource.
+    type:
+      type: string
+      description: Site type.
+  type: object
+  required:
+    - etag
+    - provisioningState
+    - type

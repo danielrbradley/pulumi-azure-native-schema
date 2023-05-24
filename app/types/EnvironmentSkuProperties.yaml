@@ -1,0 +1,11 @@
+$token: azure-native:app:EnvironmentSkuProperties
+description: Managed Environment resource SKU properties.
+properties:
+  name:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:app:SkuName"
+    description: Name of the Sku.
+type: object
+required:
+  - name

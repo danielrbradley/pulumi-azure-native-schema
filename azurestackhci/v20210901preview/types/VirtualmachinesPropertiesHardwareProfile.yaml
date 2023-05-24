@@ -1,0 +1,15 @@
+$token: azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesHardwareProfile
+description: HardwareProfile - Specifies the hardware settings for the virtual machine.
+properties:
+  dynamicMemoryConfig:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesDynamicMemoryConfig"
+  memoryGB:
+    type: integer
+    description: RAM in gb for the virtual machine
+  processors:
+    type: integer
+    description: number of processors for the virtual machine
+  vmSize:
+    type: string
+type: object

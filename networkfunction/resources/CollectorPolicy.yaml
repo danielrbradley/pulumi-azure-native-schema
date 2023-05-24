@@ -1,0 +1,83 @@
+$token: azure-native:networkfunction:CollectorPolicy
+properties:
+  emissionPolicies:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:networkfunction:EmissionPoliciesPropertiesFormatResponse"
+    description: Emission policies.
+  etag:
+    type: string
+    description: A unique read-only string that changes whenever the resource is updated.
+  ingestionPolicy:
+    type: object
+    $ref: "#/types/azure-native:networkfunction:IngestionPolicyPropertiesFormatResponse"
+    description: Ingestion policies.
+  location:
+    type: string
+    description: Resource location.
+  name:
+    type: string
+    description: Resource name.
+  provisioningState:
+    type: string
+    description: The provisioning state.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:networkfunction:TrackedResourceResponseSystemData"
+    description: Metadata pertaining to creation and last modification of the resource.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: Resource type.
+type: object
+required:
+  - etag
+  - location
+  - name
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  azureTrafficCollectorName:
+    type: string
+    description: Azure Traffic Collector name
+    willReplaceOnChanges: true
+  collectorPolicyName:
+    type: string
+    description: Collector Policy Name
+    willReplaceOnChanges: true
+  emissionPolicies:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:networkfunction:EmissionPoliciesPropertiesFormat"
+    description: Emission policies.
+  ingestionPolicy:
+    type: object
+    $ref: "#/types/azure-native:networkfunction:IngestionPolicyPropertiesFormat"
+    description: Ingestion policies.
+  location:
+    type: string
+    description: Resource location.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+requiredInputs:
+  - azureTrafficCollectorName
+  - resourceGroupName
+aliases:
+  - type: azure-native:networkfunction/v20210901preview:CollectorPolicy
+  - type: azure-native:networkfunction/v20220501:CollectorPolicy
+  - type: azure-native:networkfunction/v20220801:CollectorPolicy
+  - type: azure-native:networkfunction/v20221101:CollectorPolicy

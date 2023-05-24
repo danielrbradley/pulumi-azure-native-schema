@@ -1,0 +1,11 @@
+$token: azure-native:machinelearningservices/v20230401preview:MonitoringDataSegment
+properties:
+  feature:
+    type: string
+    description: The feature to segment the data on.
+  values:
+    type: array
+    items:
+      type: string
+    description: Filters for only the specified values of the given segmented feature.
+type: object

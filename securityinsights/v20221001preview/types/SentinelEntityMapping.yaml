@@ -1,0 +1,7 @@
+$token: azure-native:securityinsights/v20221001preview:SentinelEntityMapping
+description: A single sentinel entity mapping
+properties:
+  columnName:
+    type: string
+    description: the column name to be mapped to the SentinelEntities
+type: object

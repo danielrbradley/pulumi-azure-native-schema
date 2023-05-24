@@ -1,0 +1,25 @@
+$token: azure-native:recoveryservices:VaultProperties
+description: Properties of the vault.
+properties:
+  encryption:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices:VaultPropertiesEncryption"
+    description: Customer Managed Key details of the resource.
+  monitoringSettings:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices:MonitoringSettings"
+    description: Monitoring Settings of the vault
+  publicNetworkAccess:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:recoveryservices:PublicNetworkAccess"
+    description: property to enable or disable resource provider inbound network traffic from public clients
+  restoreSettings:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices:RestoreSettings"
+    description: Restore Settings of the vault
+  securitySettings:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices:SecuritySettings"
+    description: Security Settings of the vault
+type: object

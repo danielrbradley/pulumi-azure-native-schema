@@ -1,0 +1,13 @@
+$token: azure-native:mobilenetwork:CertificateProvisioningResponse
+description: Certificate provisioning state
+properties:
+  reason:
+    type: string
+    description: Reason for certificate provisioning failure.
+  state:
+    type: string
+    description: The certificate's provisioning state
+type: object
+required:
+  - reason
+  - state

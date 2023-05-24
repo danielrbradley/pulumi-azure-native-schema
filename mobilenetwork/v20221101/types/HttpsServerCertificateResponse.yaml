@@ -1,0 +1,14 @@
+$token: azure-native:mobilenetwork/v20221101:HttpsServerCertificateResponse
+description: HTTPS server certificate configuration.
+properties:
+  certificateUrl:
+    type: string
+    description: "The certificate URL, unversioned. For example: https://contosovault.vault.azure.net/certificates/ingress."
+  provisioning:
+    type: object
+    $ref: "#/types/azure-native:mobilenetwork/v20221101:CertificateProvisioningResponse"
+    description: The provisioning state of the certificate.
+type: object
+required:
+  - certificateUrl
+  - provisioning

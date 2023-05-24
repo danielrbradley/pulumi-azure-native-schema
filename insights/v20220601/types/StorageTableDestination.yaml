@@ -1,0 +1,14 @@
+$token: azure-native:insights/v20220601:StorageTableDestination
+properties:
+  name:
+    type: string
+    description: "A friendly name for the destination. \r
+
+      This name should be unique across all destinations (regardless of type) within the data collection rule."
+  storageAccountResourceId:
+    type: string
+    description: The resource ID of the storage account.
+  tableName:
+    type: string
+    description: The name of the Storage Table.
+type: object

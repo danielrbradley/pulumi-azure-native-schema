@@ -1,0 +1,21 @@
+$token: azure-native:migrate/v20220501preview:AzureFileShareHydrationProfile
+description: "Azure file share profile for hydration of application folders not mounted on\r
+
+  the container file system."
+properties:
+  azureFileShareDirPath:
+    type: string
+    description: Gets or sets the cloud directory path of the directory on azure file share.
+  azureFileShareName:
+    type: string
+    description: Gets or sets the name of the azure file share.
+  azureFileShareResourceGroup:
+    type: string
+    description: Gets or sets the name of the azure file share resource group.
+  azureFileShareStorageAccount:
+    type: string
+    description: Gets or sets the name of the azure file share storage account.
+  azureFileShareSubscriptionId:
+    type: string
+    description: Gets or sets the subscription id of the azure file share.
+type: object

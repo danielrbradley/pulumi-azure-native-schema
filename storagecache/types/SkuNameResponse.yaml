@@ -1,0 +1,7 @@
+$token: azure-native:storagecache:SkuNameResponse
+description: SKU for the resource.
+properties:
+  name:
+    type: string
+    description: SKU name for this resource.
+type: object

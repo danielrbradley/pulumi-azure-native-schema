@@ -1,0 +1,6 @@
+$token: azure-native:alertsmanagement:ActionType
+description: Action that should be applied.
+type: string
+enum:
+  - value: AddActionGroups
+  - value: RemoveAllActionGroups

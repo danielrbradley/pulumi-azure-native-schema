@@ -1,0 +1,29 @@
+$token: azure-native:migrate/v20220501preview:BindingResponse
+description: Binding for a web application.
+properties:
+  cert:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:CertResponse"
+    description: WebApplication certificate.
+  hostName:
+    type: string
+    description: Gets or sets the binding host name.
+  id:
+    type: string
+    description: Gets the ID.
+  ipAddress:
+    type: string
+    description: Gets or sets the IP Address.
+  port:
+    type: string
+    description: Gets or sets the application port.
+  portMapping:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:PortMappingResponse"
+    description: WebApplication port mapping.
+  protocol:
+    type: string
+    description: Gets or sets the protocol.
+type: object
+required:
+  - id

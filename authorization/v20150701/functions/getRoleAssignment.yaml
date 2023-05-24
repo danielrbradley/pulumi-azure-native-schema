@@ -1,0 +1,38 @@
+$token: azure-native:authorization/v20150701:getRoleAssignment
+description: Get the specified role assignment.
+inputs:
+  properties:
+    roleAssignmentName:
+      type: string
+      description: The name of the role assignment to get.
+      willReplaceOnChanges: true
+    scope:
+      type: string
+      description: The scope of the role assignment.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - roleAssignmentName
+    - scope
+outputs:
+  description: Role Assignments
+  properties:
+    id:
+      type: string
+      description: The role assignment ID.
+    name:
+      type: string
+      description: The role assignment name.
+    properties:
+      type: object
+      $ref: "#/types/azure-native:authorization/v20150701:RoleAssignmentPropertiesWithScopeResponse"
+      description: Role assignment properties.
+    type:
+      type: string
+      description: The role assignment type.
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - type

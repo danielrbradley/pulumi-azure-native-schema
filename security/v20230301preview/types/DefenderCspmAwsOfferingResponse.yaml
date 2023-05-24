@@ -1,0 +1,28 @@
+$token: azure-native:security/v20230301preview:DefenderCspmAwsOfferingResponse
+description: The CSPM P1 for AWS offering
+properties:
+  dataSensitivityDiscovery:
+    type: object
+    $ref: "#/types/azure-native:security/v20230301preview:DefenderCspmAwsOfferingResponseDataSensitivityDiscovery"
+    description: The Microsoft Defender Data Sensitivity discovery configuration
+  databasesDspm:
+    type: object
+    $ref: "#/types/azure-native:security/v20230301preview:DefenderCspmAwsOfferingResponseDatabasesDspm"
+    description: The databases DSPM configuration
+  description:
+    type: string
+    description: The offering description.
+  offeringType:
+    type: string
+    description: |-
+      The type of the security offering.
+      Expected value is 'DefenderCspmAws'.
+    const: DefenderCspmAws
+  vmScanners:
+    type: object
+    $ref: "#/types/azure-native:security/v20230301preview:DefenderCspmAwsOfferingResponseVmScanners"
+    description: The Microsoft Defender for Server VM scanning configuration
+type: object
+required:
+  - description
+  - offeringType

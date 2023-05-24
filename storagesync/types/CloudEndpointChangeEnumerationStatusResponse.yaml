@@ -1,0 +1,19 @@
+$token: azure-native:storagesync:CloudEndpointChangeEnumerationStatusResponse
+description: Cloud endpoint change enumeration status object
+properties:
+  activity:
+    type: object
+    $ref: "#/types/azure-native:storagesync:CloudEndpointChangeEnumerationActivityResponse"
+    description: Change enumeration activity
+  lastEnumerationStatus:
+    type: object
+    $ref: "#/types/azure-native:storagesync:CloudEndpointLastChangeEnumerationStatusResponse"
+    description: Status of last completed change enumeration
+  lastUpdatedTimestamp:
+    type: string
+    description: Last updated timestamp
+type: object
+required:
+  - activity
+  - lastEnumerationStatus
+  - lastUpdatedTimestamp

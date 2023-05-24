@@ -1,0 +1,48 @@
+$token: azure-native:apimanagement/v20220901preview:listWorkspacePolicyFragmentReferences
+description: Lists policy resources that reference the policy fragment.
+inputs:
+  properties:
+    id:
+      type: string
+      description: A resource identifier.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    serviceName:
+      type: string
+      description: The name of the API Management service.
+      willReplaceOnChanges: true
+    skip:
+      type: integer
+      description: Number of records to skip.
+    top:
+      type: integer
+      description: Number of records to return.
+    workspaceId:
+      type: string
+      description: Workspace identifier. Must be unique in the current API Management service instance.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - id
+    - resourceGroupName
+    - serviceName
+    - workspaceId
+outputs:
+  description: A collection of resources.
+  properties:
+    count:
+      type: number
+      description: Total record count number.
+    nextLink:
+      type: string
+      description: Next page link if any.
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:apimanagement/v20220901preview:ResourceCollectionResponseValue"
+      description: A collection of resources.
+  type: object

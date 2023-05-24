@@ -1,0 +1,31 @@
+$token: azure-native:devices/v20160203:listIotHubResourceKeys
+description: "Get the security metadata for an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security."
+inputs:
+  properties:
+    resourceGroupName:
+      type: string
+      description: The name of the resource group that contains the IoT hub.
+      willReplaceOnChanges: true
+    resourceName:
+      type: string
+      description: The name of the IoT hub.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - resourceName
+outputs:
+  description: The list of shared access policies with a next link.
+  properties:
+    nextLink:
+      type: string
+      description: The next link.
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:devices/v20160203:SharedAccessSignatureAuthorizationRuleResponse"
+      description: The list of shared access policies.
+  type: object
+  required:
+    - nextLink

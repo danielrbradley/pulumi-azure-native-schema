@@ -1,0 +1,54 @@
+$token: azure-native:professionalservice:ProfessionalServiceResourceResponseProperties
+description: professionalService properties
+properties:
+  autoRenew:
+    type: boolean
+    description: Whether the ProfessionalService subscription will auto renew upon term end.
+  billingPeriod:
+    type: string
+    description: The billing period eg P1M,P1Y for monthly,yearly respectively
+  created:
+    type: string
+    description: The created date of this resource.
+  isFreeTrial:
+    type: boolean
+    description: Whether the current term is a Free Trial term
+  lastModified:
+    type: string
+    description: The last modifier date if this resource.
+  offerId:
+    type: string
+    description: The offer id.
+  paymentChannelMetadata:
+    type: object
+    additionalProperties:
+      type: string
+    description: The metadata about the ProfessionalService subscription such as the AzureSubscriptionId and ResourceUri.
+  paymentChannelType:
+    type: string
+    description: The Payment channel for the ProfessionalServiceSubscription.
+  publisherId:
+    type: string
+    description: The publisher id.
+  quoteId:
+    type: string
+    description: The quote id which the ProfessionalService will be purchase with.
+  skuId:
+    type: string
+    description: The plan id.
+  status:
+    type: string
+    description: The ProfessionalService Subscription Status.
+  storeFront:
+    type: string
+    description: The store front which initiates the purchase.
+  term:
+    type: object
+    $ref: "#/types/azure-native:professionalservice:ProfessionalServicePropertiesResponseTerm"
+    description: The current Term object.
+  termUnit:
+    type: string
+    description: The unit term eg P1M,P1Y,P2Y,P3Y meaning month,1year,2year,3year respectively
+type: object
+required:
+  - created

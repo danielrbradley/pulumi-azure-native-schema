@@ -1,0 +1,15 @@
+$token: azure-native:resources/v20220801preview:DeploymentStackPropertiesResponseActionOnUnmanage
+description: Defines the behavior of resources that are not managed immediately after the stack is updated.
+properties:
+  managementGroups:
+    type: string
+    description: Specifies the action that should be taken on the resource when the deployment stack is deleted. Delete will attempt to delete the resource from Azure. Detach will leave the resource in it's current state.
+  resourceGroups:
+    type: string
+    description: Specifies the action that should be taken on the resource when the deployment stack is deleted. Delete will attempt to delete the resource from Azure. Detach will leave the resource in it's current state.
+  resources:
+    type: string
+    description: Specifies the action that should be taken on the resource when the deployment stack is deleted. Delete will attempt to delete the resource from Azure. Detach will leave the resource in it's current state.
+type: object
+required:
+  - resources

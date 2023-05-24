@@ -1,0 +1,12 @@
+$token: azure-native:machinelearningservices/v20230401:AcrDetailsResponse
+description: Details of ACR account to be used for the Registry
+properties:
+  systemCreatedAcrAccount:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401:SystemCreatedAcrAccountResponse"
+    description: Details of system created ACR account to be used for the Registry
+  userCreatedAcrAccount:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401:UserCreatedAcrAccountResponse"
+    description: Details of user created ACR account to be used for the Registry
+type: object

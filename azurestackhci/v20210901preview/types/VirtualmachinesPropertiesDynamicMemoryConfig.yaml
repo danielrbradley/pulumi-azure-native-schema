@@ -1,0 +1,9 @@
+$token: azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesDynamicMemoryConfig
+properties:
+  maximumMemoryGB:
+    type: number
+  minimumMemoryGB:
+    type: number
+  targetMemoryBuffer:
+    type: integer
+type: object

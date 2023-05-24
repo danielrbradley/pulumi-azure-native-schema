@@ -1,0 +1,13 @@
+$token: azure-native:securityinsights/v20230301preview:MtpFilteredProviders
+description: Represents the connector's Filtered providers
+properties:
+  alerts:
+    type: array
+    items:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:securityinsights/v20230301preview:MtpProvider"
+    description: Alerts filtered providers. When filters are not applied, all alerts will stream through the MTP pipeline, still in private preview for all products EXCEPT MDA and MDI, which are in GA state.
+type: object
+required:
+  - alerts

@@ -1,0 +1,16 @@
+$token: azure-native:mobilenetwork:PinholeTimeouts
+description: Expiry times of inactive NAPT pinholes, in seconds. All timers must be at least 1 second.
+properties:
+  icmp:
+    type: integer
+    description: Pinhole timeout for ICMP pinholes in seconds. Default for ICMP Echo is 30 seconds.
+    default: 30
+  tcp:
+    type: integer
+    description: Pinhole timeout for TCP pinholes in seconds. Default for TCP is 3 minutes.
+    default: 180
+  udp:
+    type: integer
+    description: Pinhole timeout for UDP pinholes in seconds. Default for UDP is 30 seconds.
+    default: 30
+type: object

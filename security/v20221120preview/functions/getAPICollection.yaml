@@ -1,0 +1,46 @@
+$token: azure-native:security/v20221120preview:getAPICollection
+description: Gets an Azure API Management API if it has been onboarded to Defender for APIs. If an Azure API Management API is onboarded to Defender for APIs, the system will monitor the operations within the Azure API Management API for intrusive behaviors and provide alerts for attacks that have been detected.
+inputs:
+  properties:
+    apiCollectionId:
+      type: string
+      description: A string representing the apiCollections resource within the Microsoft.Security provider namespace. This string matches the Azure API Management API name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    serviceName:
+      type: string
+      description: The name of the API Management service.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - apiCollectionId
+    - resourceGroupName
+    - serviceName
+outputs:
+  description: An API collection as represented by Defender for APIs.
+  properties:
+    additionalData:
+      type: object
+      additionalProperties:
+        type: string
+      description: Additional data regarding the API collection.
+    displayName:
+      type: string
+      description: The display name of the Azure API Management API.
+    id:
+      type: string
+      description: Resource Id
+    name:
+      type: string
+      description: Resource name
+    type:
+      type: string
+      description: Resource type
+  type: object
+  required:
+    - id
+    - name
+    - type

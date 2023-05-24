@@ -1,0 +1,9 @@
+$token: azure-native:network:RouteMapMatchCondition
+description: Match condition to apply RouteMap rules.
+type: string
+enum:
+  - value: Unknown
+  - value: Contains
+  - value: Equals
+  - value: NotContains
+  - value: NotEquals

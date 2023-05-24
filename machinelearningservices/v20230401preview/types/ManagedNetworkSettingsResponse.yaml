@@ -1,0 +1,31 @@
+$token: azure-native:machinelearningservices/v20230401preview:ManagedNetworkSettingsResponse
+description: Managed Network settings for a machine learning workspace.
+properties:
+  isolationMode:
+    type: string
+    description: Isolation mode for the managed network of a machine learning workspace.
+  networkId:
+    type: string
+  outboundRules:
+    type: object
+    additionalProperties:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:FqdnOutboundRuleResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:PrivateEndpointOutboundRuleResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:ServiceTagOutboundRuleResponse"
+      discriminator:
+        propertyName: type
+        mapping:
+          FQDN: "#/types/azure-native:machinelearningservices/v20230401preview:FqdnOutboundRuleResponse"
+          PrivateEndpoint: "#/types/azure-native:machinelearningservices/v20230401preview:PrivateEndpointOutboundRuleResponse"
+          ServiceTag: "#/types/azure-native:machinelearningservices/v20230401preview:ServiceTagOutboundRuleResponse"
+  status:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:ManagedNetworkProvisionStatusResponse"
+    description: Status of the Provisioning for the managed network of a machine learning workspace.
+type: object
+required:
+  - networkId

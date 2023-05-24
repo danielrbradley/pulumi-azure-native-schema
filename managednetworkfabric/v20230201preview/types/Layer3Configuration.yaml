@@ -1,0 +1,32 @@
+$token: azure-native:managednetworkfabric/v20230201preview:Layer3Configuration
+description: layer3Configuration
+properties:
+  exportRoutePolicyId:
+    type: string
+    description: exportRoutePolicyId
+  importRoutePolicyId:
+    type: string
+    description: importRoutePolicyId
+  peerASN:
+    type: integer
+    description: "ASN of PE devices for CE/PE connectivity.Example : 28"
+  primaryIpv4Prefix:
+    type: string
+    description: IPv4 Address Prefix of CE-PE interconnect links. Default value is 172.31.0.0/31. The values can be specified at the time of creation or can be updated afterwards. Any update to the values post-provisioning may disrupt traffic. The 1st and 3rd IPs are to be configured on CE1 and CE2 for Option B interfaces. The 2nd and 4th IPs are to be configured on PE1 and PE2 for Option B interfaces.
+    default: 172.31.0.0/31
+  primaryIpv6Prefix:
+    type: string
+    description: IPv6 Address Prefix of CE-PE interconnect links. Default value is 3FFE:FFFF:0:CD30::a0/126. The values can be specified at the time of creation or can be updated afterwards. Any update to the values post-provisioning may disrupt traffic. The 1st and 3rd IPs are to be configured on CE1 and CE2 for Option B interfaces. The 2nd and 4th IPs are to be configured on PE1 and PE2 for Option B interfaces.
+    default: 3FFE:FFFF:0:CD30::a0/126
+  secondaryIpv4Prefix:
+    type: string
+    description: Secondary IPv4 Address Prefix of CE-PE interconnect links. Default value is 172.31.0.20/31. The values can be specified at the time of creation or can be updated afterwards. Any update to the values post-provisioning may disrupt traffic. The 1st and 3rd IPs are to be configured on CE1 and CE2 for Option B interfaces. The 2nd and 4th IPs are to be configured on PE1 and PE2 for Option B interfaces.
+    default: 172.31.0.20/31
+  secondaryIpv6Prefix:
+    type: string
+    description: Secondary IPv6 Address Prefix of CE-PE interconnect links. Default value is 3FFE:FFFF:0:CD30::a4/126. The values can be specified at the time of creation or can be updated afterwards. Any update to the values post-provisioning may disrupt traffic. The 1st and 3rd IPs are to be configured on CE1 and CE2 for Option B interfaces. The 2nd and 4th IPs are to be configured on PE1 and PE2 for Option B interfaces.
+    default: 3FFE:FFFF:0:CD30::a4/126
+  vlanId:
+    type: integer
+    description: "VLAN for CE/PE Layer 3 connectivity.Example : 501"
+type: object

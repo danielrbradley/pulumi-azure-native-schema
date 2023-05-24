@@ -1,0 +1,58 @@
+$token: azure-native:recoveryservices:getReplicationNetworkMapping
+description: |-
+  Gets the details of an ASR network mapping.
+  API Version: 2023-02-01.
+inputs:
+  properties:
+    fabricName:
+      type: string
+      description: Primary fabric name.
+      willReplaceOnChanges: true
+    networkMappingName:
+      type: string
+      description: Network mapping name.
+      willReplaceOnChanges: true
+    networkName:
+      type: string
+      description: Primary network name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group where the recovery services vault is present.
+      willReplaceOnChanges: true
+    resourceName:
+      type: string
+      description: The name of the recovery services vault.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - fabricName
+    - networkMappingName
+    - networkName
+    - resourceGroupName
+    - resourceName
+outputs:
+  description: Network Mapping model. Ideally it should have been possible to inherit this class from prev version in InheritedModels as long as there is no difference in structure or method signature. Since there were no base Models for certain fields and methods viz NetworkMappingProperties and Load with required return type, the class has been introduced in its entirety with references to base models to facilitate extensions in subsequent versions.
+  properties:
+    id:
+      type: string
+      description: Resource Id
+    location:
+      type: string
+      description: Resource Location
+    name:
+      type: string
+      description: Resource Name
+    properties:
+      type: object
+      $ref: "#/types/azure-native:recoveryservices:NetworkMappingPropertiesResponse"
+      description: The Network Mapping Properties.
+    type:
+      type: string
+      description: Resource Type
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - type

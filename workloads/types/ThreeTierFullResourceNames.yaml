@@ -1,0 +1,28 @@
+$token: azure-native:workloads:ThreeTierFullResourceNames
+description: The resource name object where the specified values will be full resource names of the corresponding resources in a three tier SAP system.
+properties:
+  applicationServer:
+    type: object
+    $ref: "#/types/azure-native:workloads:ApplicationServerFullResourceNames"
+    description: The full resource names object for application layer resources. The number of entries in this list should be equal to the number VMs to be created for application layer.
+  centralServer:
+    type: object
+    $ref: "#/types/azure-native:workloads:CentralServerFullResourceNames"
+    description: The full resource names object for central server layer resources.
+  databaseServer:
+    type: object
+    $ref: "#/types/azure-native:workloads:DatabaseServerFullResourceNames"
+    description: The full resource names object for database layer resources. The number of entries in this list should be equal to the number VMs to be created for database layer.
+  namingPatternType:
+    type: string
+    description: |-
+      The pattern type to be used for resource naming.
+      Expected value is 'FullResourceName'.
+    const: FullResourceName
+  sharedStorage:
+    type: object
+    $ref: "#/types/azure-native:workloads:SharedStorageResourceNames"
+    description: The resource names object for shared storage.
+type: object
+required:
+  - namingPatternType

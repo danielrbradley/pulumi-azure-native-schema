@@ -1,0 +1,7 @@
+$token: azure-native:servicelinker:TargetServiceType
+description: The target service type.
+type: string
+enum:
+  - value: AzureResource
+  - value: ConfluentBootstrapServer
+  - value: ConfluentSchemaRegistry

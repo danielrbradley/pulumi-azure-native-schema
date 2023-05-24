@@ -1,0 +1,13 @@
+$token: azure-native:cognitiveservices/v20221201:RegionSettingResponse
+description: The call rate limit Cognitive Services account.
+properties:
+  customsubdomain:
+    type: string
+    description: Maps the region to the regional custom subdomain.
+  name:
+    type: string
+    description: Name of the region.
+  value:
+    type: number
+    description: A value for priority or weighted routing methods.
+type: object

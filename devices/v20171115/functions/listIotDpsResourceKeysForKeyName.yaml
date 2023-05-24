@@ -1,0 +1,40 @@
+$token: azure-native:devices/v20171115:listIotDpsResourceKeysForKeyName
+description: List primary and secondary keys for a specific key name
+inputs:
+  properties:
+    keyName:
+      type: string
+      description: Logical key name to get key-values for.
+      willReplaceOnChanges: true
+    provisioningServiceName:
+      type: string
+      description: Name of the provisioning service.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group that contains the provisioning service.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - keyName
+    - provisioningServiceName
+    - resourceGroupName
+outputs:
+  description: Description of the shared access key.
+  properties:
+    keyName:
+      type: string
+      description: Name of the key.
+    primaryKey:
+      type: string
+      description: Primary SAS key value.
+    rights:
+      type: string
+      description: Rights that this key has.
+    secondaryKey:
+      type: string
+      description: Secondary SAS key value.
+  type: object
+  required:
+    - keyName
+    - rights

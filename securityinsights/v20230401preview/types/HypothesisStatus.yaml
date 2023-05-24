@@ -1,0 +1,7 @@
+$token: azure-native:securityinsights/v20230401preview:HypothesisStatus
+description: The hypothesis status of the hunt.
+type: string
+enum:
+  - value: Unknown
+  - value: Invalidated
+  - value: Validated

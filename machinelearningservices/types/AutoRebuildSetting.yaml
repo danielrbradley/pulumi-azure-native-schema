@@ -1,0 +1,6 @@
+$token: azure-native:machinelearningservices:AutoRebuildSetting
+description: Defines if image needs to be rebuilt based on base image changes.
+type: string
+enum:
+  - value: Disabled
+  - value: OnBaseImageUpdate

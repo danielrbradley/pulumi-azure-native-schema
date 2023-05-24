@@ -1,0 +1,31 @@
+$token: azure-native:machinelearningservices/v20221201preview:ComputeStartStopSchedule
+description: Compute start stop schedule properties
+properties:
+  action:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:machinelearningservices/v20221201preview:ComputePowerAction"
+    description: "[Required] The compute power action."
+  cron:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20221201preview:CronTrigger"
+    description: Required if triggerType is Cron.
+  recurrence:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20221201preview:RecurrenceTrigger"
+    description: Required if triggerType is Recurrence.
+  schedule:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20221201preview:ScheduleBase"
+    description: "[Deprecated] Not used any more."
+  status:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:machinelearningservices/v20221201preview:ScheduleStatus"
+    description: Is the schedule enabled or disabled?
+  triggerType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:machinelearningservices/v20221201preview:TriggerType"
+    description: "[Required] The schedule trigger type."
+type: object

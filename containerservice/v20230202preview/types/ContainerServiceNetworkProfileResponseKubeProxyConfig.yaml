@@ -1,0 +1,14 @@
+$token: azure-native:containerservice/v20230202preview:ContainerServiceNetworkProfileResponseKubeProxyConfig
+description: Holds configuration customizations for kube-proxy. Any values not defined will use the kube-proxy defaulting behavior. See https://v<version>.docs.kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/ where <version> is represented by a <major version>-<minor version> string. Kubernetes version 1.23 would be '1-23'.
+properties:
+  enabled:
+    type: boolean
+    description: Whether to enable on kube-proxy on the cluster (if no 'kubeProxyConfig' exists, kube-proxy is enabled in AKS by default without these customizations).
+  ipvsConfig:
+    type: object
+    $ref: "#/types/azure-native:containerservice/v20230202preview:ContainerServiceNetworkProfileResponseIpvsConfig"
+    description: Holds configuration customizations for IPVS. May only be specified if 'mode' is set to 'IPVS'.
+  mode:
+    type: string
+    description: Specify which proxy mode to use ('IPTABLES' or 'IPVS')
+type: object

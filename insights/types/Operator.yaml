@@ -1,0 +1,9 @@
+$token: azure-native:insights:Operator
+description: the criteria operator.
+type: string
+enum:
+  - value: Equals
+  - value: GreaterThan
+  - value: GreaterThanOrEqual
+  - value: LessThan
+  - value: LessThanOrEqual

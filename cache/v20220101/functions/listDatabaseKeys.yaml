@@ -1,0 +1,34 @@
+$token: azure-native:cache/v20220101:listDatabaseKeys
+description: Retrieves the access keys for the RedisEnterprise database.
+inputs:
+  properties:
+    clusterName:
+      type: string
+      description: The name of the RedisEnterprise cluster.
+      willReplaceOnChanges: true
+    databaseName:
+      type: string
+      description: The name of the database.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - clusterName
+    - databaseName
+    - resourceGroupName
+outputs:
+  description: The secret access keys used for authenticating connections to redis
+  properties:
+    primaryKey:
+      type: string
+      description: The current primary key that clients can use to authenticate
+    secondaryKey:
+      type: string
+      description: The current secondary key that clients can use to authenticate
+  type: object
+  required:
+    - primaryKey
+    - secondaryKey

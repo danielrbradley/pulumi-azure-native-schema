@@ -1,0 +1,26 @@
+$token: azure-native:confidentialledger/v20230126preview:LedgerProperties
+description: Additional Confidential Ledger properties.
+properties:
+  aadBasedSecurityPrincipals:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:confidentialledger/v20230126preview:AADBasedSecurityPrincipal"
+    description: Array of all AAD based Security Principals.
+  certBasedSecurityPrincipals:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:confidentialledger/v20230126preview:CertBasedSecurityPrincipal"
+    description: Array of all cert based Security Principals.
+  ledgerType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:confidentialledger/v20230126preview:LedgerType"
+    description: Type of Confidential Ledger
+  runningState:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:confidentialledger/v20230126preview:RunningState"
+    description: Object representing RunningState for Ledger.
+type: object

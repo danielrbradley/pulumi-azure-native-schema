@@ -1,0 +1,55 @@
+$token: azure-native:virtualmachineimages/v20220701:ImageTemplateSharedImageDistributorResponse
+description: Distribute via Azure Compute Gallery.
+properties:
+  artifactTags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Tags that will be applied to the artifact once it has been created/updated by the distributor.
+  excludeFromLatest:
+    type: boolean
+    description: Flag that indicates whether created image version should be excluded from latest. Omit to use the default (false).
+    default: false
+  galleryImageId:
+    type: string
+    description: Resource Id of the Azure Compute Gallery image
+  replicationRegions:
+    type: array
+    items:
+      type: string
+    description: "[Deprecated] A list of regions that the image will be replicated to. This list can be specified only if targetRegions is not specified. This field is deprecated - use targetRegions instead."
+  runOutputName:
+    type: string
+    description: The name to be used for the associated RunOutput.
+  storageAccountType:
+    type: string
+    description: "[Deprecated] Storage account type to be used to store the shared image. Omit to use the default (Standard_LRS). This field can be specified only if replicationRegions is specified. This field is deprecated - use targetRegions instead."
+  targetRegions:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:virtualmachineimages/v20220701:TargetRegionResponse"
+    description: The target regions where the distributed Image Version is going to be replicated to. This object supersedes replicationRegions and can be specified only if replicationRegions is not specified.
+  type:
+    type: string
+    description: |-
+      Type of distribution.
+      Expected value is 'SharedImage'.
+    const: SharedImage
+  versioning:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:virtualmachineimages/v20220701:DistributeVersionerLatestResponse"
+      - type: object
+        $ref: "#/types/azure-native:virtualmachineimages/v20220701:DistributeVersionerSourceResponse"
+    discriminator:
+      propertyName: scheme
+      mapping:
+        Latest: "#/types/azure-native:virtualmachineimages/v20220701:DistributeVersionerLatestResponse"
+        Source: "#/types/azure-native:virtualmachineimages/v20220701:DistributeVersionerSourceResponse"
+    description: Describes how to generate new x.y.z version number for distribution.
+type: object
+required:
+  - galleryImageId
+  - runOutputName
+  - type

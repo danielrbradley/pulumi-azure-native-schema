@@ -1,0 +1,42 @@
+$token: azure-native:appplatform/v20230101preview:ApplicationLiveView
+description: Application Live View resource
+properties:
+  name:
+    type: string
+    description: The name of the resource.
+  properties:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230101preview:ApplicationLiveViewPropertiesResponse"
+    description: Application Live View properties payload
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230101preview:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  type:
+    type: string
+    description: The type of the resource.
+type: object
+required:
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  applicationLiveViewName:
+    type: string
+    description: The name of Application Live View.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+    willReplaceOnChanges: true
+  serviceName:
+    type: string
+    description: The name of the Service resource.
+    willReplaceOnChanges: true
+requiredInputs:
+  - resourceGroupName
+  - serviceName
+aliases:
+  - type: azure-native:appplatform/v20221101preview:ApplicationLiveView
+  - type: azure-native:appplatform/v20230301preview:ApplicationLiveView

@@ -1,0 +1,19 @@
+$token: azure-native:documentdb/v20230301preview:NodeGroupSpecResponse
+description: Specification for a node group.
+properties:
+  diskSizeGB:
+    type: number
+    description: "The disk storage size for the node group in GB. Example values: 128, 256, 512, 1024."
+  enableHa:
+    type: boolean
+    description: Whether high availability is enabled on the node group.
+  kind:
+    type: string
+    description: The node type deployed in the node group.
+  nodeCount:
+    type: integer
+    description: The number of nodes in the node group.
+  sku:
+    type: string
+    description: "The resource sku for the node group. This defines the size of CPU and memory that is provisioned for each node. Example values: 'M30', 'M40'."
+type: object

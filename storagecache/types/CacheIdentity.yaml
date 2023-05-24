@@ -1,0 +1,12 @@
+$token: azure-native:storagecache:CacheIdentity
+description: Cache identity properties.
+properties:
+  type:
+    $ref: "#/types/azure-native:storagecache:CacheIdentityType"
+    description: The type of identity used for the cache
+  userAssignedIdentities:
+    type: array
+    items:
+      type: string
+    description: A dictionary where each key is a user assigned identity resource ID, and each key's value is an empty dictionary.
+type: object

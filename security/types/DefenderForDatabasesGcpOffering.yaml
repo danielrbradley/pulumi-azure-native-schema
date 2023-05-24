@@ -1,0 +1,20 @@
+$token: azure-native:security:DefenderForDatabasesGcpOffering
+description: The Defender for Databases GCP offering configurations
+properties:
+  arcAutoProvisioning:
+    type: object
+    $ref: "#/types/azure-native:security:DefenderForDatabasesGcpOfferingArcAutoProvisioning"
+    description: The ARC autoprovisioning configuration
+  defenderForDatabasesArcAutoProvisioning:
+    type: object
+    $ref: "#/types/azure-native:security:DefenderForDatabasesGcpOfferingDefenderForDatabasesArcAutoProvisioning"
+    description: The native cloud connection configuration
+  offeringType:
+    type: string
+    description: |-
+      The type of the security offering.
+      Expected value is 'DefenderForDatabasesGcp'.
+    const: DefenderForDatabasesGcp
+type: object
+required:
+  - offeringType

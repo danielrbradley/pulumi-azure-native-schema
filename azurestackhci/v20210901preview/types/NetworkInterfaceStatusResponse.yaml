@@ -1,0 +1,14 @@
+$token: azure-native:azurestackhci/v20210901preview:NetworkInterfaceStatusResponse
+description: NetworkInterfaceStatus defines the observed state of network interfaces
+properties:
+  errorCode:
+    type: string
+    description: NetworkInterface provisioning error code
+  errorMessage:
+    type: string
+    description: Descriptive error message
+  provisioningStatus:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:NetworkInterfaceStatusResponseProvisioningStatus"
+    description: The provisioning status of the network interface
+type: object

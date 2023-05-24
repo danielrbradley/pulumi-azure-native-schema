@@ -1,0 +1,6 @@
+$token: azure-native:networkcloud:VirtualMachineIsolateEmulatorThread
+description: Field Deprecated, the value will be ignored if provided. The indicator of whether one of the specified CPU cores is isolated to run the emulator thread for this virtual machine.
+type: string
+enum:
+  - value: "True"
+  - value: "False"

@@ -1,0 +1,12 @@
+$token: azure-native:machinelearningservices/v20230401preview:AllNodes
+description: All nodes means the service will be running on all of the nodes of the job
+properties:
+  nodesValueType:
+    type: string
+    description: |-
+      The enumerated types for the nodes value
+      Expected value is 'All'.
+    const: All
+type: object
+required:
+  - nodesValueType

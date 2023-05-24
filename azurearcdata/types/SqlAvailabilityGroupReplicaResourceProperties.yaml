@@ -1,0 +1,18 @@
+$token: azure-native:azurearcdata:SqlAvailabilityGroupReplicaResourceProperties
+description: The properties of Arc Sql availability group replica resource
+properties:
+  configure:
+    type: object
+    $ref: "#/types/azure-native:azurearcdata:AvailabilityGroupConfigure"
+    description: "null"
+  replicaId:
+    type: string
+    description: ID GUID of the availability group.
+  replicaName:
+    type: string
+    description: the replica name.
+  state:
+    type: object
+    $ref: "#/types/azure-native:azurearcdata:AvailabilityGroupState"
+    description: "null"
+type: object

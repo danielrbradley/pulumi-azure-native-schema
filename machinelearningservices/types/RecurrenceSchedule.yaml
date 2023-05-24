@@ -1,0 +1,28 @@
+$token: azure-native:machinelearningservices:RecurrenceSchedule
+properties:
+  hours:
+    type: array
+    items:
+      type: integer
+    description: "[Required] List of hours for the schedule."
+  minutes:
+    type: array
+    items:
+      type: integer
+    description: "[Required] List of minutes for the schedule."
+  monthDays:
+    type: array
+    items:
+      type: integer
+    description: List of month days for the schedule
+  weekDays:
+    type: array
+    items:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:machinelearningservices:WeekDay"
+    description: List of days for the schedule.
+type: object
+required:
+  - hours
+  - minutes

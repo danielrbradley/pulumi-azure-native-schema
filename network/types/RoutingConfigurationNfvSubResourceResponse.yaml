@@ -1,0 +1,7 @@
+$token: azure-native:network:RoutingConfigurationNfvSubResourceResponse
+description: Reference to RouteTableV3 associated with the connection.
+properties:
+  resourceUri:
+    type: string
+    description: Resource ID.
+type: object

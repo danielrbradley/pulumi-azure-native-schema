@@ -1,0 +1,28 @@
+$token: azure-native:migrate/v20220501preview:WebApplicationDirectoryResponse
+description: WebApplication directory structure.
+properties:
+  id:
+    type: string
+    description: Gets the unique id corresponding to the application directory.
+  isEditable:
+    type: boolean
+    description: "Gets or sets a value indicating whether the directory object is editable.\r
+
+      True when the directory is added as an optional directory, false when discovery is done\r
+
+      manually."
+  sourcePaths:
+    type: array
+    items:
+      type: string
+    description: Gets or sets the paths of the directory on the source machine.
+  sourceSize:
+    type: string
+    description: Gets or sets the size of the directory on the source machine.
+  storageProfile:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:TargetStorageProfileResponse"
+    description: Storage profile for the directory on the target container.
+type: object
+required:
+  - id

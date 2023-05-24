@@ -1,0 +1,8 @@
+$token: azure-native:containerservice/v20230202preview:ManagedClusterPodIdentityProvisioningErrorResponse
+description: An error response from the pod identity provisioning.
+properties:
+  error:
+    type: object
+    $ref: "#/types/azure-native:containerservice/v20230202preview:ManagedClusterPodIdentityProvisioningErrorBodyResponse"
+    description: Details about the error.
+type: object

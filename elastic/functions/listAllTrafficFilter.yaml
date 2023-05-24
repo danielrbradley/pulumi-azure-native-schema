@@ -1,0 +1,28 @@
+$token: azure-native:elastic:listAllTrafficFilter
+description: |-
+  List of elastic traffic filters in the account
+  API Version: 2023-02-01-preview.
+inputs:
+  properties:
+    monitorName:
+      type: string
+      description: Monitor resource name
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group to which the Elastic resource belongs.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - monitorName
+    - resourceGroupName
+outputs:
+  description: List of elastic traffic filters in the account
+  properties:
+    rulesets:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:elastic:ElasticTrafficFilterResponse"
+      description: List of elastic traffic filters in the account
+  type: object

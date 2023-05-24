@@ -1,0 +1,51 @@
+$token: azure-native:cache:getPatchSchedule
+description: |-
+  Gets the patching schedule of a redis cache.
+  API Version: 2022-06-01.
+inputs:
+  properties:
+    default:
+      type: string
+      description: Default string modeled as parameter for auto generation to work correctly.
+      willReplaceOnChanges: true
+    name:
+      type: string
+      description: The name of the redis cache.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - default
+    - name
+    - resourceGroupName
+outputs:
+  description: Response to put/get patch schedules for Redis cache.
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    name:
+      type: string
+      description: The name of the resource
+    scheduleEntries:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:cache:ScheduleEntryResponse"
+      description: List of patch schedules for a Redis cache.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - location
+    - name
+    - scheduleEntries
+    - type

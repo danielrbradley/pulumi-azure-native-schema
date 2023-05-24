@@ -1,0 +1,7 @@
+$token: azure-native:network/v20220901:NextStep
+description: Next step after rule is evaluated. Current supported behaviors are 'Continue'(to next rule) and 'Terminate'.
+type: string
+enum:
+  - value: Unknown
+  - value: Continue
+  - value: Terminate

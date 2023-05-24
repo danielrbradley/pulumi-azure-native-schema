@@ -1,0 +1,32 @@
+$token: azure-native:mobilenetwork:PlatformConfigurationResponse
+description: The platform where the packet core is deployed.
+properties:
+  azureStackEdgeDevice:
+    type: object
+    $ref: "#/types/azure-native:mobilenetwork:AzureStackEdgeDeviceResourceIdResponse"
+    description: The Azure Stack Edge device where the packet core is deployed. If the device is part of a fault tolerant pair, either device in the pair can be specified.
+  azureStackEdgeDevices:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:mobilenetwork:AzureStackEdgeDeviceResourceIdResponse"
+    description: The Azure Stack Edge devices where the packet core is deployed. If the packet core is deployed across multiple devices, all devices will appear in this list.
+  azureStackHciCluster:
+    type: object
+    $ref: "#/types/azure-native:mobilenetwork:AzureStackHCIClusterResourceIdResponse"
+    description: The Azure Stack HCI cluster where the packet core is deployed.
+  connectedCluster:
+    type: object
+    $ref: "#/types/azure-native:mobilenetwork:ConnectedClusterResourceIdResponse"
+    description: Azure Arc connected cluster where the packet core is deployed.
+  customLocation:
+    type: object
+    $ref: "#/types/azure-native:mobilenetwork:CustomLocationResourceIdResponse"
+    description: Azure Arc custom location where the packet core is deployed.
+  type:
+    type: string
+    description: The platform type where packet core is deployed.
+type: object
+required:
+  - azureStackEdgeDevices
+  - type

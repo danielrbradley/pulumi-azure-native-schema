@@ -1,0 +1,18 @@
+$token: azure-native:operationalinsights/v20221001:RestoredLogsResponse
+description: Restore parameters.
+properties:
+  azureAsyncOperationId:
+    type: string
+    description: Search results table async operation id.
+  endRestoreTime:
+    type: string
+    description: The timestamp to end the restore by (UTC).
+  sourceTable:
+    type: string
+    description: The table to restore data from.
+  startRestoreTime:
+    type: string
+    description: The timestamp to start the restore from (UTC).
+type: object
+required:
+  - azureAsyncOperationId

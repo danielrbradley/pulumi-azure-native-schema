@@ -1,0 +1,36 @@
+$token: azure-native:machinelearningservices/v20221201preview:JobScheduleAction
+properties:
+  actionType:
+    type: string
+    description: |-
+      
+      Expected value is 'CreateJob'.
+    const: CreateJob
+  jobBaseProperties:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20221201preview:AutoMLJob"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20221201preview:CommandJob"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20221201preview:LabelingJob"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20221201preview:PipelineJob"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20221201preview:SparkJob"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20221201preview:SweepJob"
+    discriminator:
+      propertyName: jobType
+      mapping:
+        AutoML: "#/types/azure-native:machinelearningservices/v20221201preview:AutoMLJob"
+        Command: "#/types/azure-native:machinelearningservices/v20221201preview:CommandJob"
+        Labeling: "#/types/azure-native:machinelearningservices/v20221201preview:LabelingJob"
+        Pipeline: "#/types/azure-native:machinelearningservices/v20221201preview:PipelineJob"
+        Spark: "#/types/azure-native:machinelearningservices/v20221201preview:SparkJob"
+        Sweep: "#/types/azure-native:machinelearningservices/v20221201preview:SweepJob"
+    description: "[Required] Defines Schedule action definition details."
+type: object
+required:
+  - actionType
+  - jobBaseProperties

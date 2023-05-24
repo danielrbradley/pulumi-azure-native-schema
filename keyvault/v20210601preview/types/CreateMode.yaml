@@ -1,0 +1,8 @@
+$token: azure-native:keyvault/v20210601preview:CreateMode
+description: The create mode to indicate whether the resource is being created or is being recovered from a deleted resource.
+type: string
+enum:
+  - description: Recover the managed HSM pool from a soft-deleted resource.
+    value: recover
+  - description: Create a new managed HSM pool. This is the default option.
+    value: default

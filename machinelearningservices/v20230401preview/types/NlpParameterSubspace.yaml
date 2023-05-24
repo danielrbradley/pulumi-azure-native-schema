@@ -1,0 +1,31 @@
+$token: azure-native:machinelearningservices/v20230401preview:NlpParameterSubspace
+description: Stringified search spaces for each parameter. See below examples.
+properties:
+  gradientAccumulationSteps:
+    type: string
+    description: Number of steps to accumulate gradients over before running a backward pass.
+  learningRate:
+    type: string
+    description: The learning rate for the training procedure.
+  learningRateScheduler:
+    type: string
+    description: The type of learning rate schedule to use during the training procedure.
+  modelName:
+    type: string
+    description: The name of the model to train.
+  numberOfEpochs:
+    type: string
+    description: Number of training epochs.
+  trainingBatchSize:
+    type: string
+    description: The batch size for the training procedure.
+  validationBatchSize:
+    type: string
+    description: The batch size to be used during evaluation.
+  warmupRatio:
+    type: string
+    description: The warmup ratio, used alongside LrSchedulerType.
+  weightDecay:
+    type: string
+    description: The weight decay for the training procedure.
+type: object

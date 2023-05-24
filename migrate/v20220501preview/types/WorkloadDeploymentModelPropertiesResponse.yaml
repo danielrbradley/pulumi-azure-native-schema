@@ -1,0 +1,84 @@
+$token: azure-native:migrate/v20220501preview:WorkloadDeploymentModelPropertiesResponse
+description: Workload deployment model properties.
+properties:
+  allowedOperations:
+    type: array
+    items:
+      type: string
+    description: Gets or sets the allowed scenarios on the workload deployment.
+  correlationId:
+    type: string
+    description: Gets or sets the workload deployment correlation Id.
+  currentJob:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:WorkloadDeploymentModelPropertiesResponseCurrentJob"
+  customProperties:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:migrate/v20220501preview:ApacheTomcatAKSWorkloadDeploymentModelCustomPropertiesResponse"
+      - type: object
+        $ref: "#/types/azure-native:migrate/v20220501preview:IISAKSWorkloadDeploymentModelCustomPropertiesResponse"
+    discriminator:
+      propertyName: instanceType
+      mapping:
+        ApacheTomcatAKSWorkloadDeploymentModelCustomProperties: "#/types/azure-native:migrate/v20220501preview:ApacheTomcatAKSWorkloadDeploymentModelCustomPropertiesResponse"
+        IISAKSWorkloadDeploymentModelCustomProperties: "#/types/azure-native:migrate/v20220501preview:IISAKSWorkloadDeploymentModelCustomPropertiesResponse"
+    description: Workload deployment model custom properties.
+  displayName:
+    type: string
+    description: Gets or sets the display name.
+  healthErrors:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:HealthErrorModelResponse"
+    description: Gets or sets the list of health errors.
+  lastSuccessfulMigrateTime:
+    type: string
+    description: Gets or sets the Last successful unplanned migrate time.
+  lastSuccessfulTestMigrateTime:
+    type: string
+    description: Gets or sets the Last successful test migrate time.
+  migrationStatus:
+    type: string
+    description: Gets or sets the migrate state.
+  migrationStatusDescription:
+    type: string
+    description: Gets or sets the migrate state description.
+  provisioningState:
+    type: string
+    description: Gets or sets the provisioning state of the workload deployment.
+  status:
+    type: string
+    description: Gets or sets the workload deployment status.
+  statusDescription:
+    type: string
+    description: Gets or sets the workload deployment status description.
+  targetPlatform:
+    type: string
+    description: Gets or sets the deployment target platform.
+  testMigrationStatus:
+    type: string
+    description: Gets or sets the test migrate state.
+  testMigrationStatusDescription:
+    type: string
+    description: Gets or sets the Test migrate state description.
+  workloadInstanceProperties:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:WorkloadInstanceModelPropertiesResponse"
+    description: Workload instance model properties.
+type: object
+required:
+  - allowedOperations
+  - correlationId
+  - currentJob
+  - healthErrors
+  - lastSuccessfulMigrateTime
+  - lastSuccessfulTestMigrateTime
+  - migrationStatus
+  - migrationStatusDescription
+  - provisioningState
+  - status
+  - statusDescription
+  - testMigrationStatus
+  - testMigrationStatusDescription

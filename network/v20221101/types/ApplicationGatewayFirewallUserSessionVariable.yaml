@@ -1,0 +1,7 @@
+$token: azure-native:network/v20221101:ApplicationGatewayFirewallUserSessionVariable
+description: User Session clause variable.
+type: string
+enum:
+  - value: ClientAddr
+  - value: GeoLocation
+  - value: None

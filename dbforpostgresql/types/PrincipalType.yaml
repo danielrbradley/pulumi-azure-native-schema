@@ -1,0 +1,8 @@
+$token: azure-native:dbforpostgresql:PrincipalType
+description: The principal type used to represent the type of Active Directory Administrator.
+type: string
+enum:
+  - value: Unknown
+  - value: User
+  - value: Group
+  - value: ServicePrincipal

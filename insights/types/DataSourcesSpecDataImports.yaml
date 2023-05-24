@@ -1,0 +1,8 @@
+$token: azure-native:insights:DataSourcesSpecDataImports
+description: Specifications of pull based data sources
+properties:
+  eventHub:
+    type: object
+    $ref: "#/types/azure-native:insights:DataImportSourcesEventHub"
+    description: Definition of Event Hub configuration.
+type: object

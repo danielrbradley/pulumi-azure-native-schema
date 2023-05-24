@@ -1,0 +1,15 @@
+$token: azure-native:appplatform/v20230301preview:GatewayPropertiesClientAuth
+description: Client-Certification Authentication.
+properties:
+  certificateVerification:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:appplatform/v20230301preview:GatewayCertificateVerification"
+    description: Whether to enable certificate verification or not
+    default: Disabled
+  certificates:
+    type: array
+    items:
+      type: string
+    description: Collection of certificate resource Ids in Azure Spring Apps.
+type: object

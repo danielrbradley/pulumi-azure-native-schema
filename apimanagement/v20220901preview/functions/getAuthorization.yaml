@@ -1,0 +1,61 @@
+$token: azure-native:apimanagement/v20220901preview:getAuthorization
+description: Gets the details of the authorization specified by its identifier.
+inputs:
+  properties:
+    authorizationId:
+      type: string
+      description: Identifier of the authorization.
+      willReplaceOnChanges: true
+    authorizationProviderId:
+      type: string
+      description: Identifier of the authorization provider.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    serviceName:
+      type: string
+      description: The name of the API Management service.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - authorizationId
+    - authorizationProviderId
+    - resourceGroupName
+    - serviceName
+outputs:
+  description: Authorization contract.
+  properties:
+    authorizationType:
+      type: string
+      description: Authorization type options
+    error:
+      type: object
+      $ref: "#/types/azure-native:apimanagement/v20220901preview:AuthorizationErrorResponse"
+      description: Authorization error details.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    oAuth2GrantType:
+      type: string
+      description: OAuth2 grant type options
+    parameters:
+      type: object
+      additionalProperties:
+        type: string
+      description: Authorization parameters
+    status:
+      type: string
+      description: Status of the Authorization
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - type

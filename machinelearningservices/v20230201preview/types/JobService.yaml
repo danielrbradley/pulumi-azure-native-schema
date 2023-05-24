@@ -1,0 +1,24 @@
+$token: azure-native:machinelearningservices/v20230201preview:JobService
+description: Job endpoint definition
+properties:
+  endpoint:
+    type: string
+    description: Url for endpoint.
+  jobServiceType:
+    type: string
+    description: Endpoint type.
+  nodes:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230201preview:AllNodes"
+    description: "Nodes that user would like to start the service on.\r
+
+      If Nodes is not set or set to null, the service will only be started on leader node."
+  port:
+    type: integer
+    description: Port for endpoint set by user.
+  properties:
+    type: object
+    additionalProperties:
+      type: string
+    description: Additional properties to set on the endpoint.
+type: object

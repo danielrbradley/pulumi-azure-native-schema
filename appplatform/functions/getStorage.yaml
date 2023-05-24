@@ -1,0 +1,50 @@
+$token: azure-native:appplatform:getStorage
+description: |-
+  Get the storage resource.
+  API Version: 2022-12-01.
+inputs:
+  properties:
+    resourceGroupName:
+      type: string
+      description: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+      willReplaceOnChanges: true
+    serviceName:
+      type: string
+      description: The name of the Service resource.
+      willReplaceOnChanges: true
+    storageName:
+      type: string
+      description: The name of the storage resource.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - serviceName
+    - storageName
+outputs:
+  description: Storage resource payload.
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource Id for the resource.
+    name:
+      type: string
+      description: The name of the resource.
+    properties:
+      type: object
+      $ref: "#/types/azure-native:appplatform:StorageAccountResponse"
+      description: Properties of the storage resource payload.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:appplatform:SystemDataResponse"
+      description: Metadata pertaining to creation and last modification of the resource.
+    type:
+      type: string
+      description: The type of the resource.
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - systemData
+    - type

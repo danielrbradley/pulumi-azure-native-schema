@@ -1,0 +1,7 @@
+$token: azure-native:containerservice/v20230201:ManagedClusterSecurityProfileWorkloadIdentityResponse
+description: Workload identity settings for the security profile.
+properties:
+  enabled:
+    type: boolean
+    description: Whether to enable workload identity.
+type: object

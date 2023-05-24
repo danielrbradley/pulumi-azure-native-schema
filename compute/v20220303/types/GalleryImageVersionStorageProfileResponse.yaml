@@ -1,0 +1,18 @@
+$token: azure-native:compute/v20220303:GalleryImageVersionStorageProfileResponse
+description: This is the storage profile of a Gallery Image Version.
+properties:
+  dataDiskImages:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:compute/v20220303:GalleryDataDiskImageResponse"
+    description: A list of data disk images.
+  osDiskImage:
+    type: object
+    $ref: "#/types/azure-native:compute/v20220303:GalleryOSDiskImageResponse"
+    description: This is the OS disk image.
+  source:
+    type: object
+    $ref: "#/types/azure-native:compute/v20220303:GalleryArtifactVersionFullSourceResponse"
+    description: The source of the gallery artifact version.
+type: object

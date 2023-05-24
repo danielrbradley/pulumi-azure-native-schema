@@ -1,0 +1,6 @@
+$token: azure-native:eventhub/v20221001preview:CleanupPolicyRetentionDescription
+description: Enumerates the possible values for cleanup policy
+type: string
+enum:
+  - value: Delete
+  - value: Compaction

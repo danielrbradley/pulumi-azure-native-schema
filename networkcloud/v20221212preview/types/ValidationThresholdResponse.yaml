@@ -1,0 +1,16 @@
+$token: azure-native:networkcloud/v20221212preview:ValidationThresholdResponse
+properties:
+  grouping:
+    type: string
+    description: Selection of how the type evaluation is applied to the cluster calculation.
+  type:
+    type: string
+    description: Selection of how the threshold should be evaluated.
+  value:
+    type: number
+    description: The numeric threshold value.
+type: object
+required:
+  - grouping
+  - type
+  - value

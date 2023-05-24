@@ -1,0 +1,6 @@
+$token: azure-native:machinelearningservices/v20230401preview:MonitoringThreshold
+properties:
+  value:
+    type: number
+    description: The threshold value. If null, the set default is dependent on the metric type.
+type: object

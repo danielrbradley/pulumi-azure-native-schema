@@ -1,0 +1,50 @@
+$token: azure-native:machinelearningservices/v20221201preview:RegistryComponentContainer
+description: Azure Resource Manager resource envelope.
+properties:
+  componentContainerProperties:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20221201preview:ComponentContainerResponse"
+    description: "[Required] Additional attributes of the entity."
+  name:
+    type: string
+    description: The name of the resource
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20221201preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - componentContainerProperties
+  - name
+  - systemData
+  - type
+inputProperties:
+  componentContainerProperties:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20221201preview:ComponentContainer"
+    description: "[Required] Additional attributes of the entity."
+  componentName:
+    type: string
+    description: Container name.
+    willReplaceOnChanges: true
+  registryName:
+    type: string
+    description: Name of Azure Machine Learning registry.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+requiredInputs:
+  - componentContainerProperties
+  - registryName
+  - resourceGroupName
+aliases:
+  - type: azure-native:machinelearningservices:RegistryComponentContainer
+  - type: azure-native:machinelearningservices/v20221001preview:RegistryComponentContainer
+  - type: azure-native:machinelearningservices/v20230201preview:RegistryComponentContainer
+  - type: azure-native:machinelearningservices/v20230401:RegistryComponentContainer
+  - type: azure-native:machinelearningservices/v20230401preview:RegistryComponentContainer

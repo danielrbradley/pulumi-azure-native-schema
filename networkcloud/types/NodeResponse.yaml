@@ -1,0 +1,27 @@
+$token: azure-native:networkcloud:NodeResponse
+properties:
+  bareMetalMachineId:
+    type: string
+    description: The resource ID of the bare metal machine that hosts this node.
+  imageId:
+    type: string
+    description: The machine image last used to deploy this node.
+  networkAttachments:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:networkcloud:NetworkAttachmentResponse"
+    description: The list of network attachments to the virtual machine.
+  nodeName:
+    type: string
+    description: The name of this node, as realized in the Hybrid AKS cluster.
+  powerState:
+    type: string
+    description: The power state (On | Off) of the node.
+type: object
+required:
+  - bareMetalMachineId
+  - imageId
+  - networkAttachments
+  - nodeName
+  - powerState

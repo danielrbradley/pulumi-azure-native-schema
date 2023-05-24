@@ -1,0 +1,14 @@
+$token: azure-native:dbformysql/v20220930preview:Identity
+description: Properties to configure Identity for Bring your Own Keys
+properties:
+  type:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:dbformysql/v20220930preview:ManagedServiceIdentityType"
+    description: Type of managed service identity.
+  userAssignedIdentities:
+    type: array
+    items:
+      type: string
+    description: Metadata of user assigned identity.
+type: object

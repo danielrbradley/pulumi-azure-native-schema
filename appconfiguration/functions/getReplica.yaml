@@ -1,0 +1,56 @@
+$token: azure-native:appconfiguration:getReplica
+description: |-
+  Gets the properties of the specified replica.
+  API Version: 2023-03-01.
+inputs:
+  properties:
+    configStoreName:
+      type: string
+      description: The name of the configuration store.
+      willReplaceOnChanges: true
+    replicaName:
+      type: string
+      description: The name of the replica.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group to which the container registry belongs.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - configStoreName
+    - replicaName
+    - resourceGroupName
+outputs:
+  description: The replica resource.
+  properties:
+    endpoint:
+      type: string
+      description: The URI of the replica where the replica API will be available.
+    id:
+      type: string
+      description: The resource ID.
+    location:
+      type: string
+      description: The location of the replica.
+    name:
+      type: string
+      description: The name of the replica.
+    provisioningState:
+      type: string
+      description: The provisioning state of the replica.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:appconfiguration:SystemDataResponse"
+      description: Resource system metadata.
+    type:
+      type: string
+      description: The type of the resource.
+  type: object
+  required:
+    - endpoint
+    - id
+    - name
+    - provisioningState
+    - systemData
+    - type

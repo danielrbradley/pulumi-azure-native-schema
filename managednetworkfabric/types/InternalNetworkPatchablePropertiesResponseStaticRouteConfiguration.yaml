@@ -1,0 +1,20 @@
+$token: azure-native:managednetworkfabric:InternalNetworkPatchablePropertiesResponseStaticRouteConfiguration
+description: staticRouteConfiguration model.
+properties:
+  bfdConfiguration:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric:BfdConfigurationResponse"
+    description: BFD configuration properties
+  ipv4Routes:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:managednetworkfabric:InternalNetworkPatchablePropertiesResponseIpv4Routes"
+    description: List with object IPv4Routes.
+  ipv6Routes:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:managednetworkfabric:InternalNetworkPatchablePropertiesResponseIpv6Routes"
+    description: List with object IPv6Routes.
+type: object

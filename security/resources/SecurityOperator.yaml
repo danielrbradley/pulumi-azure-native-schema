@@ -1,0 +1,29 @@
+$token: azure-native:security:SecurityOperator
+properties:
+  identity:
+    type: object
+    $ref: "#/types/azure-native:security:IdentityResponse"
+    description: Identity for the resource.
+  name:
+    type: string
+    description: Resource name
+  type:
+    type: string
+    description: Resource type
+type: object
+required:
+  - name
+  - type
+inputProperties:
+  pricingName:
+    type: string
+    description: name of the pricing configuration
+    willReplaceOnChanges: true
+  securityOperatorName:
+    type: string
+    description: name of the securityOperator
+    willReplaceOnChanges: true
+requiredInputs:
+  - pricingName
+aliases:
+  - type: azure-native:security/v20230101preview:SecurityOperator

@@ -1,0 +1,45 @@
+$token: azure-native:machinelearningservices/v20230201preview:listFeaturesetVersionFeatures
+description: A paginated list of Feature entities.
+inputs:
+  properties:
+    name:
+      type: string
+      description: Featureset name. This is case-sensitive.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    skip:
+      type: string
+      description: Continuation token for pagination.
+    tags:
+      type: string
+      description: "Comma-separated list of tag names (and optionally values). Example: tag1,tag2=value2"
+    version:
+      type: string
+      description: Featureset Version identifier. This is case-sensitive.
+      willReplaceOnChanges: true
+    workspaceName:
+      type: string
+      description: Name of Azure Machine Learning workspace.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - name
+    - resourceGroupName
+    - version
+    - workspaceName
+outputs:
+  description: A paginated list of Feature entities.
+  properties:
+    nextLink:
+      type: string
+      description: The link to the next page of Feature objects. If null, there are no additional pages.
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230201preview:FeatureResponse"
+      description: An array of objects of type Feature.
+  type: object

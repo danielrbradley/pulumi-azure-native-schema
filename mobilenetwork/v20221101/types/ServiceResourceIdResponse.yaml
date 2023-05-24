@@ -1,0 +1,9 @@
+$token: azure-native:mobilenetwork/v20221101:ServiceResourceIdResponse
+description: Reference to a service resource.
+properties:
+  id:
+    type: string
+    description: Service resource ID.
+type: object
+required:
+  - id

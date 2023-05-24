@@ -1,0 +1,142 @@
+$token: azure-native:managednetworkfabric/v20230201preview:InternalNetwork
+description: Defines the InternalNetwork item.
+properties:
+  administrativeState:
+    type: string
+    description: "Administrative state of the InternalNetwork. Example: Enabled | Disabled."
+  annotation:
+    type: string
+    description: Switch configuration description.
+  bfdDisabledOnResources:
+    type: array
+    items:
+      type: string
+    description: List of resources the BFD for BGP is disabled on. Can be either entire NetworkFabric or NetworkRack.
+  bfdForStaticRoutesDisabledOnResources:
+    type: array
+    items:
+      type: string
+    description: List of resources the BFD of StaticRoutes is disabled on. Can be either entire NetworkFabric or NetworkRack.
+  bgpConfiguration:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:InternalNetworkPatchablePropertiesResponseBgpConfiguration"
+    description: BGP configuration properties
+  bgpDisabledOnResources:
+    type: array
+    items:
+      type: string
+    description: List of resources the BGP is disabled on. Can be either entire NetworkFabric or NetworkRack.
+  connectedIPv4Subnets:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:InternalNetworkPatchablePropertiesResponseConnectedIPv4Subnets"
+    description: List with object connectedIPv4Subnets.
+  connectedIPv6Subnets:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:InternalNetworkPatchablePropertiesResponseConnectedIPv6Subnets"
+    description: List with object connectedIPv6Subnets.
+  disabledOnResources:
+    type: array
+    items:
+      type: string
+    description: List of resources the InternalNetwork is disabled on. Can be either entire NetworkFabric or NetworkRack.
+  exportRoutePolicyId:
+    type: string
+    description: ARM resource ID of importRoutePolicy.
+  importRoutePolicyId:
+    type: string
+    description: ARM resource ID of importRoutePolicy.
+  mtu:
+    type: integer
+    description: Maximum transmission unit. Default value is 1500.
+    default: 1500
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: Gets the provisioning state of the resource.
+  staticRouteConfiguration:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:InternalNetworkPatchablePropertiesResponseStaticRouteConfiguration"
+    description: staticRouteConfiguration model.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  vlanId:
+    type: integer
+    description: "Vlan identifier. Example: 1001."
+type: object
+required:
+  - administrativeState
+  - bfdDisabledOnResources
+  - bfdForStaticRoutesDisabledOnResources
+  - bgpDisabledOnResources
+  - disabledOnResources
+  - name
+  - provisioningState
+  - systemData
+  - type
+  - vlanId
+inputProperties:
+  annotation:
+    type: string
+    description: Switch configuration description.
+  bgpConfiguration:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:InternalNetworkPatchablePropertiesBgpConfiguration"
+    description: BGP configuration properties
+  connectedIPv4Subnets:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:InternalNetworkPatchablePropertiesConnectedIPv4Subnets"
+    description: List with object connectedIPv4Subnets.
+  connectedIPv6Subnets:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:InternalNetworkPatchablePropertiesConnectedIPv6Subnets"
+    description: List with object connectedIPv6Subnets.
+  exportRoutePolicyId:
+    type: string
+    description: ARM resource ID of importRoutePolicy.
+  importRoutePolicyId:
+    type: string
+    description: ARM resource ID of importRoutePolicy.
+  internalNetworkName:
+    type: string
+    description: Name of the InternalNetwork
+    willReplaceOnChanges: true
+  l3IsolationDomainName:
+    type: string
+    description: Name of the L3IsolationDomain
+    willReplaceOnChanges: true
+  mtu:
+    type: integer
+    description: Maximum transmission unit. Default value is 1500.
+    default: 1500
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  staticRouteConfiguration:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:InternalNetworkPatchablePropertiesStaticRouteConfiguration"
+    description: staticRouteConfiguration model.
+  vlanId:
+    type: integer
+    description: "Vlan identifier. Example: 1001."
+requiredInputs:
+  - l3IsolationDomainName
+  - resourceGroupName
+  - vlanId
+aliases:
+  - type: azure-native:managednetworkfabric:InternalNetwork

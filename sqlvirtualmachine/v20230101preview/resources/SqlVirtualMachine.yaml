@@ -1,0 +1,197 @@
+$token: azure-native:sqlvirtualmachine/v20230101preview:SqlVirtualMachine
+description: A SQL virtual machine.
+properties:
+  assessmentSettings:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:AssessmentSettingsResponse"
+    description: SQL best practices Assessment Settings.
+  autoBackupSettings:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:AutoBackupSettingsResponse"
+    description: Auto backup settings for SQL Server.
+  autoPatchingSettings:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:AutoPatchingSettingsResponse"
+    description: Auto patching settings for applying critical security updates to SQL virtual machine.
+  enableAutomaticUpgrade:
+    type: boolean
+    description: Enable automatic upgrade of Sql IaaS extension Agent.
+    default: false
+  identity:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:ResourceIdentityResponse"
+    description: Azure Active Directory identity of the server.
+  keyVaultCredentialSettings:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:KeyVaultCredentialSettingsResponse"
+    description: Key vault credential settings.
+  leastPrivilegeMode:
+    type: string
+    description: SQL IaaS Agent least privilege mode.
+    default: NotSet
+  location:
+    type: string
+    description: Resource location.
+  name:
+    type: string
+    description: Resource name.
+  provisioningState:
+    type: string
+    description: Provisioning state to track the async operation status.
+  serverConfigurationsManagementSettings:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:ServerConfigurationsManagementSettingsResponse"
+    description: SQL Server configuration management settings.
+  sqlImageOffer:
+    type: string
+    description: SQL image offer. Examples include SQL2016-WS2016, SQL2017-WS2016.
+  sqlImageSku:
+    type: string
+    description: SQL Server edition type.
+  sqlManagement:
+    type: string
+    description: "SQL Server Management type. NOTE: This parameter is not used anymore. API will automatically detect the Sql Management, refrain from using it."
+  sqlServerLicenseType:
+    type: string
+    description: SQL Server license type.
+  sqlVirtualMachineGroupResourceId:
+    type: string
+    description: ARM resource id of the SQL virtual machine group this SQL virtual machine is or will be part of.
+  storageConfigurationSettings:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:StorageConfigurationSettingsResponse"
+    description: Storage Configuration Settings.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  troubleshootingStatus:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:TroubleshootingStatusResponse"
+    description: Troubleshooting status
+  type:
+    type: string
+    description: Resource type.
+  virtualMachineResourceId:
+    type: string
+    description: ARM Resource id of underlying virtual machine created from SQL marketplace image.
+  wsfcDomainCredentials:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:WsfcDomainCredentialsResponse"
+    description: Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
+  wsfcStaticIp:
+    type: string
+    description: Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
+type: object
+required:
+  - location
+  - name
+  - provisioningState
+  - systemData
+  - troubleshootingStatus
+  - type
+inputProperties:
+  assessmentSettings:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:AssessmentSettings"
+    description: SQL best practices Assessment Settings.
+  autoBackupSettings:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:AutoBackupSettings"
+    description: Auto backup settings for SQL Server.
+  autoPatchingSettings:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:AutoPatchingSettings"
+    description: Auto patching settings for applying critical security updates to SQL virtual machine.
+  enableAutomaticUpgrade:
+    type: boolean
+    description: Enable automatic upgrade of Sql IaaS extension Agent.
+    default: false
+  identity:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:ResourceIdentity"
+    description: Azure Active Directory identity of the server.
+    willReplaceOnChanges: true
+  keyVaultCredentialSettings:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:KeyVaultCredentialSettings"
+    description: Key vault credential settings.
+  leastPrivilegeMode:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:LeastPrivilegeMode"
+    description: SQL IaaS Agent least privilege mode.
+    default: NotSet
+  location:
+    type: string
+    description: Resource location.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+    willReplaceOnChanges: true
+  serverConfigurationsManagementSettings:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:ServerConfigurationsManagementSettings"
+    description: SQL Server configuration management settings.
+  sqlImageOffer:
+    type: string
+    description: SQL image offer. Examples include SQL2016-WS2016, SQL2017-WS2016.
+    willReplaceOnChanges: true
+  sqlImageSku:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:SqlImageSku"
+    description: SQL Server edition type.
+  sqlManagement:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:SqlManagementMode"
+    description: "SQL Server Management type. NOTE: This parameter is not used anymore. API will automatically detect the Sql Management, refrain from using it."
+  sqlServerLicenseType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:SqlServerLicenseType"
+    description: SQL Server license type.
+  sqlVirtualMachineGroupResourceId:
+    type: string
+    description: ARM resource id of the SQL virtual machine group this SQL virtual machine is or will be part of.
+  sqlVirtualMachineName:
+    type: string
+    description: Name of the SQL virtual machine.
+    willReplaceOnChanges: true
+  storageConfigurationSettings:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:StorageConfigurationSettings"
+    description: Storage Configuration Settings.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  virtualMachineResourceId:
+    type: string
+    description: ARM Resource id of underlying virtual machine created from SQL marketplace image.
+    willReplaceOnChanges: true
+  wsfcDomainCredentials:
+    type: object
+    $ref: "#/types/azure-native:sqlvirtualmachine/v20230101preview:WsfcDomainCredentials"
+    description: Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
+  wsfcStaticIp:
+    type: string
+    description: Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
+requiredInputs:
+  - resourceGroupName
+aliases:
+  - type: azure-native:sqlvirtualmachine:SqlVirtualMachine
+  - type: azure-native:sqlvirtualmachine/v20170301preview:SqlVirtualMachine
+  - type: azure-native:sqlvirtualmachine/v20211101preview:SqlVirtualMachine
+  - type: azure-native:sqlvirtualmachine/v20220201:SqlVirtualMachine
+  - type: azure-native:sqlvirtualmachine/v20220201preview:SqlVirtualMachine
+  - type: azure-native:sqlvirtualmachine/v20220701preview:SqlVirtualMachine
+  - type: azure-native:sqlvirtualmachine/v20220801preview:SqlVirtualMachine

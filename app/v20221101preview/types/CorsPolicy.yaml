@@ -1,0 +1,32 @@
+$token: azure-native:app/v20221101preview:CorsPolicy
+description: Cross-Origin-Resource-Sharing policy
+properties:
+  allowCredentials:
+    type: boolean
+    description: Specifies whether the resource allows credentials
+  allowedHeaders:
+    type: array
+    items:
+      type: string
+    description: Specifies the content for the access-control-allow-headers header
+  allowedMethods:
+    type: array
+    items:
+      type: string
+    description: Specifies the content for the access-control-allow-methods header
+  allowedOrigins:
+    type: array
+    items:
+      type: string
+    description: Specifies the content for the access-control-allow-origins header
+  exposeHeaders:
+    type: array
+    items:
+      type: string
+    description: "Specifies the content for the access-control-expose-headers header "
+  maxAge:
+    type: integer
+    description: Specifies the content for the access-control-max-age header
+type: object
+required:
+  - allowedOrigins

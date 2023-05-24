@@ -1,0 +1,83 @@
+$token: azure-native:azurestackhci/v20210901preview:getMarketplacegalleryimage
+description: Gets marketplacegalleryimages by resource name
+inputs:
+  properties:
+    marketplacegalleryimagesName:
+      type: string
+      description: Name of the marketplace gallery image
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - marketplacegalleryimagesName
+    - resourceGroupName
+outputs:
+  description: The marketplace gallery image resource definition.
+  properties:
+    cloudInitDataSource:
+      type: string
+      description: Datasource for the gallery image when provisioning with cloud-init [Azure, NoCloud]
+    containerName:
+      type: string
+      description: Container Name for storage container
+    extendedLocation:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:ExtendedLocationResponse"
+      description: The extendedLocation of the resource.
+    hyperVGeneration:
+      type: string
+      description: The hypervisor generation of the Virtual Machine [V1, V2]
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    identifier:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:GalleryImageIdentifierResponse"
+      description: This is the gallery image definition identifier.
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    name:
+      type: string
+      description: The name of the resource
+    osType:
+      type: string
+      description: operating system type that the gallery image uses. Expected to be linux or windows
+    provisioningState:
+      type: string
+      description: Provisioning state of the gallery image.
+    resourceName:
+      type: string
+      description: name of the object to be used in moc
+    status:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:MarketplaceGalleryImageStatusResponse"
+      description: MarketplaceGalleryImageStatus defines the observed state of marketplacegalleryimages
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:SystemDataResponse"
+      description: Metadata pertaining to creation and last modification of the resource.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+    version:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:GalleryImageVersionResponse"
+      description: Specifies information about the gallery image version that you want to create or update.
+  type: object
+  required:
+    - id
+    - location
+    - name
+    - provisioningState
+    - status
+    - systemData
+    - type

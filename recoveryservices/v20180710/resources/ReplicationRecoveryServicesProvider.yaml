@@ -1,0 +1,69 @@
+$token: azure-native:recoveryservices/v20180710:ReplicationRecoveryServicesProvider
+description: Provider details.
+properties:
+  location:
+    type: string
+    description: Resource Location
+  name:
+    type: string
+    description: Resource Name
+  properties:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices/v20180710:RecoveryServicesProviderPropertiesResponse"
+    description: Provider properties.
+  type:
+    type: string
+    description: Resource Type
+type: object
+required:
+  - name
+  - properties
+  - type
+inputProperties:
+  fabricName:
+    type: string
+    description: Fabric name.
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:recoveryservices/v20180710:AddRecoveryServicesProviderInputProperties"
+    description: The properties of an add provider request.
+  providerName:
+    type: string
+    description: Recovery services provider name.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group where the recovery services vault is present.
+    willReplaceOnChanges: true
+  resourceName:
+    type: string
+    description: The name of the recovery services vault.
+    willReplaceOnChanges: true
+requiredInputs:
+  - fabricName
+  - properties
+  - resourceGroupName
+  - resourceName
+aliases:
+  - type: azure-native:recoveryservices:ReplicationRecoveryServicesProvider
+  - type: azure-native:recoveryservices/v20180110:ReplicationRecoveryServicesProvider
+  - type: azure-native:recoveryservices/v20210210:ReplicationRecoveryServicesProvider
+  - type: azure-native:recoveryservices/v20210301:ReplicationRecoveryServicesProvider
+  - type: azure-native:recoveryservices/v20210401:ReplicationRecoveryServicesProvider
+  - type: azure-native:recoveryservices/v20210601:ReplicationRecoveryServicesProvider
+  - type: azure-native:recoveryservices/v20210701:ReplicationRecoveryServicesProvider
+  - type: azure-native:recoveryservices/v20210801:ReplicationRecoveryServicesProvider
+  - type: azure-native:recoveryservices/v20211001:ReplicationRecoveryServicesProvider
+  - type: azure-native:recoveryservices/v20211101:ReplicationRecoveryServicesProvider
+  - type: azure-native:recoveryservices/v20211201:ReplicationRecoveryServicesProvider
+  - type: azure-native:recoveryservices/v20220101:ReplicationRecoveryServicesProvider
+  - type: azure-native:recoveryservices/v20220201:ReplicationRecoveryServicesProvider
+  - type: azure-native:recoveryservices/v20220301:ReplicationRecoveryServicesProvider
+  - type: azure-native:recoveryservices/v20220401:ReplicationRecoveryServicesProvider
+  - type: azure-native:recoveryservices/v20220501:ReplicationRecoveryServicesProvider
+  - type: azure-native:recoveryservices/v20220801:ReplicationRecoveryServicesProvider
+  - type: azure-native:recoveryservices/v20220910:ReplicationRecoveryServicesProvider
+  - type: azure-native:recoveryservices/v20221001:ReplicationRecoveryServicesProvider
+  - type: azure-native:recoveryservices/v20230101:ReplicationRecoveryServicesProvider
+  - type: azure-native:recoveryservices/v20230201:ReplicationRecoveryServicesProvider

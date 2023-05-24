@@ -1,0 +1,9 @@
+$token: azure-native:networkfunction/v20221101:EmissionPolicyDestination
+description: Emission policy destination properties.
+properties:
+  destinationType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:networkfunction/v20221101:DestinationType"
+    description: Emission destination type.
+type: object

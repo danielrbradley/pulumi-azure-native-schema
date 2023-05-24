@@ -1,0 +1,8 @@
+$token: azure-native:healthcareapis/v20221001preview:ServiceManagedIdentityType
+description: Type of identity being specified, currently SystemAssigned and None are allowed.
+type: string
+enum:
+  - value: None
+  - value: SystemAssigned
+  - value: UserAssigned
+  - value: SystemAssigned,UserAssigned

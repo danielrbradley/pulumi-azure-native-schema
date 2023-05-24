@@ -1,0 +1,43 @@
+$token: azure-native:automanage/v20200630preview:getConfigurationProfileAssignment
+description: Get information about a configuration profile assignment
+inputs:
+  properties:
+    configurationProfileAssignmentName:
+      type: string
+      description: The configuration profile assignment name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    vmName:
+      type: string
+      description: The name of the virtual machine.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - configurationProfileAssignmentName
+    - resourceGroupName
+    - vmName
+outputs:
+  description: Configuration profile assignment is an association between a VM and automanage profile configuration.
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    properties:
+      type: object
+      $ref: "#/types/azure-native:automanage/v20200630preview:ConfigurationProfileAssignmentPropertiesResponse"
+      description: Properties of the configuration profile assignment.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - type

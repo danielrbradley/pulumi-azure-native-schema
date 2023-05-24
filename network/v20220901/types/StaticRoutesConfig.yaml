@@ -1,0 +1,9 @@
+$token: azure-native:network/v20220901:StaticRoutesConfig
+description: Configuration for static routes on this HubVnetConnectionConfiguration for static routes on this HubVnetConnection.
+properties:
+  vnetLocalRouteOverrideCriteria:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:network/v20220901:VnetLocalRouteOverrideCriteria"
+    description: Parameter determining whether NVA in spoke vnet is bypassed for traffic with destination in spoke.
+type: object

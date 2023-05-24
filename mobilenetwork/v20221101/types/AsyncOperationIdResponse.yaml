@@ -1,0 +1,9 @@
+$token: azure-native:mobilenetwork/v20221101:AsyncOperationIdResponse
+description: Reference to an Azure Async Operation ID.
+properties:
+  id:
+    type: string
+    description: Azure Async Operation ID.
+type: object
+required:
+  - id

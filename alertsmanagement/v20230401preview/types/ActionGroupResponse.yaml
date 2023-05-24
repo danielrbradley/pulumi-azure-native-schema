@@ -1,0 +1,19 @@
+$token: azure-native:alertsmanagement/v20230401preview:ActionGroupResponse
+description: A pointer to an Azure Action Group.
+properties:
+  actionGroupId:
+    type: string
+    description: The resource ID of the Action Group. This cannot be null or empty.
+  actionProperties:
+    type: object
+    additionalProperties:
+      type: string
+    description: Predefined list of properties and configuration items for the action group.
+  webhookProperties:
+    type: object
+    additionalProperties:
+      type: string
+    description: the dictionary of custom properties to include with the post operation. These data are appended to the webhook payload.
+type: object
+required:
+  - actionGroupId

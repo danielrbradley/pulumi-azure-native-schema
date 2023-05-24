@@ -1,0 +1,9 @@
+$token: azure-native:azurearcdata/v20230115preview:SqlServerDatabaseResourcePropertiesResponseBackupInformation
+properties:
+  lastFullBackup:
+    type: string
+    description: Date time of last full backup.
+  lastLogBackup:
+    type: string
+    description: Date time of last log backup.
+type: object

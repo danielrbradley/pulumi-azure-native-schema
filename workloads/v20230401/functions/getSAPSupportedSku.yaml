@@ -1,0 +1,59 @@
+$token: azure-native:workloads/v20230401:getSAPSupportedSku
+description: Get a list of SAP supported SKUs for ASCS, Application and Database tier.
+inputs:
+  properties:
+    appLocation:
+      type: string
+      description: The geo-location where the resource is to be created.
+    databaseType:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:workloads/v20230401:SAPDatabaseType"
+      description: "The database type. Eg: HANA, DB2, etc"
+      willReplaceOnChanges: true
+    deploymentType:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:workloads/v20230401:SAPDeploymentType"
+      description: "The deployment type. Eg: SingleServer/ThreeTier"
+      willReplaceOnChanges: true
+    environment:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:workloads/v20230401:SAPEnvironmentType"
+      description: Defines the environment type - Production/Non Production.
+      willReplaceOnChanges: true
+    highAvailabilityType:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:workloads/v20230401:SAPHighAvailabilityType"
+      description: The high availability type.
+      willReplaceOnChanges: true
+    location:
+      type: string
+      description: The name of Azure region.
+      willReplaceOnChanges: true
+    sapProduct:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:workloads/v20230401:SAPProductType"
+      description: Defines the SAP Product type.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - appLocation
+    - databaseType
+    - deploymentType
+    - environment
+    - location
+    - sapProduct
+outputs:
+  description: The list of supported SKUs for different resources which are part of SAP deployment.
+  properties:
+    supportedSkus:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:workloads/v20230401:SAPSupportedSkuResponse"
+      description: Gets the list of SAP supported SKUs.
+  type: object

@@ -1,0 +1,8 @@
+$token: azure-native:storagecache:AmlFilesystemHsm
+description: Hydration and archive settings and status
+properties:
+  settings:
+    type: object
+    $ref: "#/types/azure-native:storagecache:AmlFilesystemHsmSettings"
+    description: Specifies HSM settings of the AML file system.
+type: object

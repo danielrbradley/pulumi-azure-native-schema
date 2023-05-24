@@ -1,0 +1,24 @@
+$token: azure-native:apimanagement/v20220901preview:CircuitBreakerFailureCondition
+description: The trip conditions of the circuit breaker
+properties:
+  count:
+    type: number
+    description: The threshold for opening the circuit.
+  errorReasons:
+    type: array
+    items:
+      type: string
+    description: The error reasons which are considered as failure.
+  interval:
+    type: string
+    description: The interval during which the failures are counted.
+  percentage:
+    type: number
+    description: The threshold for opening the circuit.
+  statusCodeRanges:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:apimanagement/v20220901preview:FailureStatusCodeRange"
+    description: The status code ranges which are considered as failure.
+type: object

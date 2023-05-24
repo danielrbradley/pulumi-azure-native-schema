@@ -1,0 +1,7 @@
+$token: azure-native:netapp:VolumeRelocationProperties
+description: Volume relocation properties
+properties:
+  relocationRequested:
+    type: boolean
+    description: Has relocation been requested for this volume
+type: object

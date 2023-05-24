@@ -1,0 +1,10 @@
+$token: azure-native:securityinsights/v20230401preview:AlertPropertyMappingResponse
+description: A single alert property mapping to override
+properties:
+  alertProperty:
+    type: string
+    description: The V3 alert property
+  value:
+    type: string
+    description: the column name to use to override this property
+type: object

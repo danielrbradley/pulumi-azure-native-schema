@@ -1,0 +1,16 @@
+$token: azure-native:machinelearningservices/v20230201preview:ConnectionCategory
+description: Category of the connection
+type: string
+enum:
+  - value: PythonFeed
+  - value: ContainerRegistry
+  - value: Git
+  - value: FeatureStore
+  - value: S3
+  - value: Snowflake
+  - value: AzureSqlDb
+  - value: AzureSynapseAnalytics
+  - value: AzureMySqlDb
+  - value: AzurePostgresDb
+  - value: AzureDataLakeGen2
+  - value: Redis

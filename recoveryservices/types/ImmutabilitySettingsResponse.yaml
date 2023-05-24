@@ -1,0 +1,6 @@
+$token: azure-native:recoveryservices:ImmutabilitySettingsResponse
+description: Immutability Settings of vault
+properties:
+  state:
+    type: string
+type: object

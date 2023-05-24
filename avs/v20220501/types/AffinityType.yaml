@@ -1,0 +1,6 @@
+$token: azure-native:avs/v20220501:AffinityType
+description: placement policy affinity type
+type: string
+enum:
+  - value: Affinity
+  - value: AntiAffinity

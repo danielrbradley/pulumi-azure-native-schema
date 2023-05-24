@@ -1,0 +1,6 @@
+$token: azure-native:servicelinker/v20221101preview:ActionType
+description: Optional. Indicates public network solution. If enable, enable public network access of target service with best try. Default is enable. If optOut, opt out public network access configuration.
+type: string
+enum:
+  - value: enable
+  - value: optOut

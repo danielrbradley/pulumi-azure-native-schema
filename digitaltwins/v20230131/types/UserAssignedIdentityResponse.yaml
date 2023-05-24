@@ -1,0 +1,13 @@
+$token: azure-native:digitaltwins/v20230131:UserAssignedIdentityResponse
+description: The information about the user assigned identity.
+properties:
+  clientId:
+    type: string
+    description: The client id of the User Assigned Identity Resource.
+  principalId:
+    type: string
+    description: The object id of the User Assigned Identity Resource.
+type: object
+required:
+  - clientId
+  - principalId

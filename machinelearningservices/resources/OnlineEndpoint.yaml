@@ -1,0 +1,105 @@
+$token: azure-native:machinelearningservices:OnlineEndpoint
+description: |
+  
+  API Version: 2022-10-01.
+  Previous API Version: 2021-03-01-preview. See https://github.com/pulumi/pulumi-azure-native/discussions/TODO for information on migrating from v1 to v2 of the provider.
+  ## Import
+
+  An existing resource can be imported using its type token, name, and identifier, e.g.
+
+  ```sh
+  $ pulumi import azure-native:machinelearningservices:OnlineEndpoint string string 
+  ```
+properties:
+  identity:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices:ManagedServiceIdentityResponse"
+    description: Managed service identity (system assigned and/or user assigned identities)
+  kind:
+    type: string
+    description: Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  onlineEndpointProperties:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices:OnlineEndpointResponse"
+    description: "[Required] Additional attributes of the entity."
+  sku:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices:SkuResponse"
+    description: Sku details required for ARM contract for Autoscaling.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - location
+  - name
+  - onlineEndpointProperties
+  - systemData
+  - type
+inputProperties:
+  endpointName:
+    type: string
+    description: Online Endpoint name.
+    willReplaceOnChanges: true
+  identity:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices:ManagedServiceIdentity"
+    description: Managed service identity (system assigned and/or user assigned identities)
+  kind:
+    type: string
+    description: Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  onlineEndpointProperties:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices:OnlineEndpoint"
+    description: "[Required] Additional attributes of the entity."
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  sku:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices:Sku"
+    description: Sku details required for ARM contract for Autoscaling.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  workspaceName:
+    type: string
+    description: Name of Azure Machine Learning workspace.
+    willReplaceOnChanges: true
+requiredInputs:
+  - onlineEndpointProperties
+  - resourceGroupName
+  - workspaceName
+aliases:
+  - type: azure-native:machinelearningservices/v20210301preview:OnlineEndpoint
+  - type: azure-native:machinelearningservices/v20220201preview:OnlineEndpoint
+  - type: azure-native:machinelearningservices/v20220501:OnlineEndpoint
+  - type: azure-native:machinelearningservices/v20220601preview:OnlineEndpoint
+  - type: azure-native:machinelearningservices/v20221001:OnlineEndpoint
+  - type: azure-native:machinelearningservices/v20221001preview:OnlineEndpoint
+  - type: azure-native:machinelearningservices/v20221201preview:OnlineEndpoint
+  - type: azure-native:machinelearningservices/v20230201preview:OnlineEndpoint
+  - type: azure-native:machinelearningservices/v20230401:OnlineEndpoint
+  - type: azure-native:machinelearningservices/v20230401preview:OnlineEndpoint

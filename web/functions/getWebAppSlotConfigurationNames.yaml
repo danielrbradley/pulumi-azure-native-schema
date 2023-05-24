@@ -1,0 +1,53 @@
+$token: azure-native:web:getWebAppSlotConfigurationNames
+description: |-
+  Description for Gets the names of app settings and connection strings that stick to the slot (not swapped).
+  API Version: 2022-09-01.
+inputs:
+  properties:
+    name:
+      type: string
+      description: Name of the app.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the resource group to which the resource belongs.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - name
+    - resourceGroupName
+outputs:
+  description: Slot Config names azure resource.
+  properties:
+    appSettingNames:
+      type: array
+      items:
+        type: string
+      description: List of application settings names.
+    azureStorageConfigNames:
+      type: array
+      items:
+        type: string
+      description: List of external Azure storage account identifiers.
+    connectionStringNames:
+      type: array
+      items:
+        type: string
+      description: List of connection string names.
+    id:
+      type: string
+      description: Resource Id.
+    kind:
+      type: string
+      description: Kind of resource.
+    name:
+      type: string
+      description: Resource Name.
+    type:
+      type: string
+      description: Resource type.
+  type: object
+  required:
+    - id
+    - name
+    - type

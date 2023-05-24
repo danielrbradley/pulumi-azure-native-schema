@@ -1,0 +1,8 @@
+$token: azure-native:containerservice/v20230302preview:Protocol
+description: The network protocol of the port.
+type: string
+enum:
+  - description: TCP protocol.
+    value: TCP
+  - description: UDP protocol.
+    value: UDP

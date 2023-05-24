@@ -1,0 +1,76 @@
+$token: azure-native:securityinsights/v20230401preview:getIncidentTask
+description: Gets an incident task.
+inputs:
+  properties:
+    incidentId:
+      type: string
+      description: Incident ID
+      willReplaceOnChanges: true
+    incidentTaskId:
+      type: string
+      description: Incident task ID
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    workspaceName:
+      type: string
+      description: The name of the workspace.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - incidentId
+    - incidentTaskId
+    - resourceGroupName
+    - workspaceName
+outputs:
+  properties:
+    createdBy:
+      type: object
+      $ref: "#/types/azure-native:securityinsights/v20230401preview:ClientInfoResponse"
+      description: Information on the client (user or application) that made some action
+    createdTimeUtc:
+      type: string
+      description: The time the task was created
+    description:
+      type: string
+      description: The description of the task
+    etag:
+      type: string
+      description: Etag of the azure resource
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    lastModifiedBy:
+      type: object
+      $ref: "#/types/azure-native:securityinsights/v20230401preview:ClientInfoResponse"
+      description: Information on the client (user or application) that made some action
+    lastModifiedTimeUtc:
+      type: string
+      description: The last time the task was updated
+    name:
+      type: string
+      description: The name of the resource
+    status:
+      type: string
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:securityinsights/v20230401preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    title:
+      type: string
+      description: The title of the task
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - createdTimeUtc
+    - id
+    - lastModifiedTimeUtc
+    - name
+    - status
+    - systemData
+    - title
+    - type

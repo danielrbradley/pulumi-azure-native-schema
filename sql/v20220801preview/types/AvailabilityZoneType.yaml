@@ -1,0 +1,8 @@
+$token: azure-native:sql/v20220801preview:AvailabilityZoneType
+description: Specifies the availability zone the pool's primary replica is pinned to.
+type: string
+enum:
+  - value: NoPreference
+  - value: "1"
+  - value: "2"
+  - value: "3"

@@ -1,0 +1,23 @@
+$token: azure-native:chaos/v20230415preview:ResourceIdentityResponse
+description: The identity of a resource.
+properties:
+  principalId:
+    type: string
+    description: GUID that represents the principal ID of this resource identity.
+  tenantId:
+    type: string
+    description: GUID that represents the tenant ID of this resource identity.
+  type:
+    type: string
+    description: String of the resource identity type.
+  userAssignedIdentities:
+    type: object
+    additionalProperties:
+      type: object
+      $ref: "#/types/azure-native:chaos/v20230415preview:UserAssignedIdentitiesResponseUserAssignedIdentities"
+    description: "The list of user identities associated with the experiment. The user identity dictionary key references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'."
+type: object
+required:
+  - principalId
+  - tenantId
+  - type

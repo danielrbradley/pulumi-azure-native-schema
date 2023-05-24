@@ -1,0 +1,43 @@
+$token: azure-native:appplatform/v20230301preview:GatewayProperties
+description: Spring Cloud Gateway properties payload
+properties:
+  apiMetadataProperties:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:GatewayApiMetadataProperties"
+    description: API metadata property for Spring Cloud Gateway
+  apmTypes:
+    type: array
+    items:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:appplatform/v20230301preview:ApmType"
+    description: Collection of APM type used in Spring Cloud Gateway
+  clientAuth:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:GatewayPropertiesClientAuth"
+    description: Client-Certification Authentication.
+  corsProperties:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:GatewayCorsProperties"
+    description: Cross-Origin Resource Sharing property
+  environmentVariables:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:GatewayPropertiesEnvironmentVariables"
+    description: Environment variables of Spring Cloud Gateway
+  httpsOnly:
+    type: boolean
+    description: Indicate if only https is allowed.
+    default: false
+  public:
+    type: boolean
+    description: Indicates whether the Spring Cloud Gateway exposes endpoint.
+    default: false
+  resourceRequests:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:GatewayResourceRequests"
+    description: The requested resource quantity for required CPU and Memory.
+  ssoProperties:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:SsoProperties"
+    description: Single sign-on related configuration
+type: object

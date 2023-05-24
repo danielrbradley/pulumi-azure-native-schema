@@ -1,0 +1,9 @@
+$token: azure-native:datafactory:AzureStorageAuthenticationType
+description: "The type used for authentication. Type: string."
+type: string
+enum:
+  - value: Anonymous
+  - value: AccountKey
+  - value: SasUri
+  - value: ServicePrincipal
+  - value: Msi

@@ -1,0 +1,45 @@
+$token: azure-native:azuresphere:listCatalogDeviceInsights
+description: |-
+  Lists device insights for catalog.
+  API Version: 2022-09-01-preview.
+inputs:
+  properties:
+    catalogName:
+      type: string
+      description: Name of catalog
+      willReplaceOnChanges: true
+    filter:
+      type: string
+      description: Filter the result list using the given expression
+    maxpagesize:
+      type: integer
+      description: The maximum number of result items per page.
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    skip:
+      type: integer
+      description: The number of result items to skip.
+    top:
+      type: integer
+      description: The number of result items to return.
+  type: object
+  required:
+    - catalogName
+    - resourceGroupName
+outputs:
+  description: Paged collection of DeviceInsight items
+  properties:
+    nextLink:
+      type: string
+      description: The link to the next page of items
+    value:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:azuresphere:DeviceInsightResponse"
+      description: The DeviceInsight items on this page
+  type: object
+  required:
+    - value

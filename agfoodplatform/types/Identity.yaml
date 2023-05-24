@@ -1,0 +1,7 @@
+$token: azure-native:agfoodplatform:Identity
+description: Identity for the resource.
+properties:
+  type:
+    $ref: "#/types/azure-native:agfoodplatform:ResourceIdentityType"
+    description: The identity type.
+type: object

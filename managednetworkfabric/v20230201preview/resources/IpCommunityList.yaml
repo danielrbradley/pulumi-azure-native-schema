@@ -1,0 +1,139 @@
+$token: azure-native:managednetworkfabric/v20230201preview:IpCommunityList
+description: The IpCommunityList resource definition.
+properties:
+  action:
+    type: string
+    description: "action. Example: allow | deny."
+  advertise:
+    type: string
+    description: "noAdvertise. Example: true | false."
+  annotation:
+    type: string
+    description: Switch configuration description.
+  communityMembers:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:IpCommunityListPropertiesResponseCommunityMembers"
+    description: Ip Community List communityMembers.
+  evpnEsImportRouteTargets:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:IpCommunityListPropertiesResponseEvpnEsImportRouteTargets"
+    description: Ip Community List evpnEsImportRouteTargets.
+  export:
+    type: string
+    description: "noExport. Example: true | false."
+  gshut:
+    type: string
+    description: " Graceful Shutdown (GSHUT). Example: true | false."
+  internet:
+    type: string
+    description: "Internet access. Example: true | false."
+  localAS:
+    type: string
+    description: "Local Autonomous System. Example: true | false."
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: Gets the provisioning state of the resource.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - action
+  - advertise
+  - export
+  - localAS
+  - location
+  - name
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  action:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:CommunityActionType"
+    description: "action. Example: allow | deny."
+  advertise:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:AdvertiseBoolean"
+    description: "noAdvertise. Example: true | false."
+  annotation:
+    type: string
+    description: Switch configuration description.
+  communityMembers:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:IpCommunityListPropertiesCommunityMembers"
+    description: Ip Community List communityMembers.
+  evpnEsImportRouteTargets:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:IpCommunityListPropertiesEvpnEsImportRouteTargets"
+    description: Ip Community List evpnEsImportRouteTargets.
+  export:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:ExportBoolean"
+    description: "noExport. Example: true | false."
+  gshut:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:GshutBoolean"
+    description: " Graceful Shutdown (GSHUT). Example: true | false."
+  internet:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:InternetBoolean"
+    description: "Internet access. Example: true | false."
+  ipCommunityListName:
+    type: string
+    description: Name of the Ip Community List
+    willReplaceOnChanges: true
+  localAS:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:managednetworkfabric/v20230201preview:LocalASBoolean"
+    description: "Local Autonomous System. Example: true | false."
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+requiredInputs:
+  - action
+  - advertise
+  - export
+  - localAS
+  - resourceGroupName
+aliases:
+  - type: azure-native:managednetworkfabric:IpCommunityList

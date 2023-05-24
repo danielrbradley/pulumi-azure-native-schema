@@ -1,0 +1,59 @@
+$token: azure-native:hdinsight:Application
+properties:
+  etag:
+    type: string
+    description: The ETag for the application
+  name:
+    type: string
+    description: The name of the resource
+  properties:
+    type: object
+    $ref: "#/types/azure-native:hdinsight:ApplicationPropertiesResponse"
+    description: The properties of the application.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:hdinsight:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: The tags for the application.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  applicationName:
+    type: string
+    description: The constant value for the application name.
+    willReplaceOnChanges: true
+  clusterName:
+    type: string
+    description: The name of the cluster.
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:hdinsight:ApplicationProperties"
+    description: The properties of the application.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: The tags for the application.
+requiredInputs:
+  - clusterName
+  - resourceGroupName
+aliases:
+  - type: azure-native:hdinsight/v20150301preview:Application
+  - type: azure-native:hdinsight/v20180601preview:Application
+  - type: azure-native:hdinsight/v20210601:Application

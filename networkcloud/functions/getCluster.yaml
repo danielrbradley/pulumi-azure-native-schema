@@ -1,0 +1,157 @@
+$token: azure-native:networkcloud:getCluster
+description: |-
+  Get properties of the provided cluster.
+  API Version: 2022-12-12-preview.
+inputs:
+  properties:
+    clusterName:
+      type: string
+      description: The name of the cluster.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - clusterName
+    - resourceGroupName
+outputs:
+  properties:
+    aggregatorOrSingleRackDefinition:
+      type: object
+      $ref: "#/types/azure-native:networkcloud:RackDefinitionResponse"
+      description: The rack definition that is intended to reflect only a single rack in a single rack cluster, or an aggregator rack in a multi-rack cluster.
+    analyticsWorkspaceId:
+      type: string
+      description: The resource ID of the Log Analytics Workspace that will be used for storing relevant logs.
+    availableUpgradeVersions:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:networkcloud:ClusterAvailableUpgradeVersionResponse"
+      description: The list of cluster runtime version upgrades available for this cluster.
+    clusterCapacity:
+      type: object
+      $ref: "#/types/azure-native:networkcloud:ClusterCapacityResponse"
+      description: The capacity supported by this cluster.
+    clusterConnectionStatus:
+      type: string
+      description: The latest heartbeat status between the cluster manager and the cluster.
+    clusterExtendedLocation:
+      type: object
+      $ref: "#/types/azure-native:networkcloud:ExtendedLocationResponse"
+      description: The extended location (custom location) that represents the cluster's control plane location. This extended location is used to route the requests of child objects of the cluster that are handled by the platform operator.
+    clusterLocation:
+      type: string
+      description: The customer-provided location information to identify where the cluster resides.
+    clusterManagerConnectionStatus:
+      type: string
+      description: The latest connectivity status between cluster manager and the cluster.
+    clusterManagerId:
+      type: string
+      description: The resource ID of the cluster manager that manages this cluster. This is set by the Cluster Manager when the cluster is created.
+    clusterServicePrincipal:
+      type: object
+      $ref: "#/types/azure-native:networkcloud:ServicePrincipalInformationResponse"
+      description: The service principal to be used by the cluster during Arc Appliance installation.
+    clusterType:
+      type: string
+      description: The type of rack configuration for the cluster.
+    clusterVersion:
+      type: string
+      description: The current runtime version of the cluster.
+    computeDeploymentThreshold:
+      type: object
+      $ref: "#/types/azure-native:networkcloud:ValidationThresholdResponse"
+      description: The validation threshold indicating the allowable failures of compute machines during environment validation and deployment.
+    computeRackDefinitions:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:networkcloud:RackDefinitionResponse"
+      description: |-
+        The list of rack definitions for the compute racks in a multi-rack
+        cluster, or an empty list in a single-rack cluster.
+    detailedStatus:
+      type: string
+      description: The current detailed status of the cluster.
+    detailedStatusMessage:
+      type: string
+      description: The descriptive message about the detailed status.
+    extendedLocation:
+      type: object
+      $ref: "#/types/azure-native:networkcloud:ExtendedLocationResponse"
+      description: The extended location of the cluster manager associated with the cluster.
+    hybridAksExtendedLocation:
+      type: object
+      $ref: "#/types/azure-native:networkcloud:ExtendedLocationResponse"
+      description: The extended location (custom location) that represents the Hybrid AKS control plane location. This extended location is used when creating provisioned clusters (Hybrid AKS clusters).
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    managedResourceGroupConfiguration:
+      type: object
+      $ref: "#/types/azure-native:networkcloud:ManagedResourceGroupConfigurationResponse"
+      description: The configuration of the managed resource group associated with the resource.
+    manualActionCount:
+      type: number
+      description: The count of Manual Action Taken (MAT) events that have not been validated.
+    name:
+      type: string
+      description: The name of the resource
+    networkFabricId:
+      type: string
+      description: The resource ID of the Network Fabric associated with the cluster.
+    provisioningState:
+      type: string
+      description: The provisioning state of the cluster.
+    supportExpiryDate:
+      type: string
+      description: The support end date of the runtime version of the cluster.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:networkcloud:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+    workloadResourceIds:
+      type: array
+      items:
+        type: string
+      description: The list of workload resource IDs that are hosted within this cluster.
+  type: object
+  required:
+    - aggregatorOrSingleRackDefinition
+    - analyticsWorkspaceId
+    - availableUpgradeVersions
+    - clusterCapacity
+    - clusterConnectionStatus
+    - clusterExtendedLocation
+    - clusterManagerConnectionStatus
+    - clusterManagerId
+    - clusterType
+    - clusterVersion
+    - detailedStatus
+    - detailedStatusMessage
+    - extendedLocation
+    - hybridAksExtendedLocation
+    - id
+    - location
+    - manualActionCount
+    - name
+    - networkFabricId
+    - provisioningState
+    - supportExpiryDate
+    - systemData
+    - type
+    - workloadResourceIds

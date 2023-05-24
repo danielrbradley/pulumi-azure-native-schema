@@ -1,0 +1,6 @@
+$token: azure-native:workloads/v20230401:ManagedServiceIdentityType
+description: Type of manage identity
+type: string
+enum:
+  - value: None
+  - value: UserAssigned

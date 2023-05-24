@@ -1,0 +1,21 @@
+$token: azure-native:security/v20220101preview:GovernanceRuleMetadataResponse
+description: The governance rule metadata
+properties:
+  createdBy:
+    type: string
+    description: Governance rule Created by object id (GUID)
+  createdOn:
+    type: string
+    description: Governance rule creation date
+  updatedBy:
+    type: string
+    description: Governance rule last updated by object id (GUID)
+  updatedOn:
+    type: string
+    description: Governance rule last update date
+type: object
+required:
+  - createdBy
+  - createdOn
+  - updatedBy
+  - updatedOn

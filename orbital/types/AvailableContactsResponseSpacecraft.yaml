@@ -1,0 +1,9 @@
+$token: azure-native:orbital:AvailableContactsResponseSpacecraft
+description: The reference to the spacecraft resource.
+properties:
+  id:
+    type: string
+    description: Resource ID.
+type: object
+required:
+  - id

@@ -1,0 +1,114 @@
+$token: azure-native:networkcloud:getL3Network
+description: |-
+  Get properties of the provided layer 3 (L3) network.
+  API Version: 2022-12-12-preview.
+inputs:
+  properties:
+    l3NetworkName:
+      type: string
+      description: The name of the L3 network.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - l3NetworkName
+    - resourceGroupName
+outputs:
+  properties:
+    clusterId:
+      type: string
+      description: The resource ID of the Network Cloud cluster this L3 network is associated with.
+    detailedStatus:
+      type: string
+      description: The more detailed status of the L3 network.
+    detailedStatusMessage:
+      type: string
+      description: The descriptive message about the current detailed status.
+    extendedLocation:
+      type: object
+      $ref: "#/types/azure-native:networkcloud:ExtendedLocationResponse"
+      description: The extended location of the cluster associated with the resource.
+    hybridAksClustersAssociatedIds:
+      type: array
+      items:
+        type: string
+      description: The list of Hybrid AKS cluster resource IDs that are associated with this L3 network.
+    hybridAksIpamEnabled:
+      type: string
+      description: The indicator of whether or not to disable IPAM allocation on the network attachment definition injected into the Hybrid AKS Cluster.
+      default: "True"
+    hybridAksPluginType:
+      type: string
+      description: The network plugin type for Hybrid AKS.
+      default: SRIOV
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    interfaceName:
+      type: string
+      description: The default interface name for this L3 network in the virtual machine. This name can be overridden by the name supplied in the network attachment configuration of that virtual machine.
+    ipAllocationType:
+      type: string
+      description: The type of the IP address allocation, defaulted to "DualStack".
+      default: DualStack
+    ipv4ConnectedPrefix:
+      type: string
+      description: |-
+        The IPV4 prefix (CIDR) assigned to this L3 network. Required when the IP allocation type
+        is IPV4 or DualStack.
+    ipv6ConnectedPrefix:
+      type: string
+      description: |-
+        The IPV6 prefix (CIDR) assigned to this L3 network. Required when the IP allocation type
+        is IPV6 or DualStack.
+    l3IsolationDomainId:
+      type: string
+      description: The resource ID of the Network Fabric l3IsolationDomain.
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+      description: The provisioning state of the L3 network.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:networkcloud:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+    virtualMachinesAssociatedIds:
+      type: array
+      items:
+        type: string
+      description: The list of virtual machine resource IDs, excluding any Hybrid AKS virtual machines, that are currently using this L3 network.
+    vlan:
+      type: number
+      description: The VLAN from the l3IsolationDomain that is used for this network.
+  type: object
+  required:
+    - clusterId
+    - detailedStatus
+    - detailedStatusMessage
+    - extendedLocation
+    - hybridAksClustersAssociatedIds
+    - id
+    - l3IsolationDomainId
+    - location
+    - name
+    - provisioningState
+    - systemData
+    - type
+    - virtualMachinesAssociatedIds
+    - vlan

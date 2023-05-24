@@ -1,0 +1,51 @@
+$token: azure-native:migrate:PrivateEndpointConnectionControllerPrivateEndpointConnection
+properties:
+  eTag:
+    type: string
+    description: Gets the tag for optimistic concurrency control.
+  name:
+    type: string
+    description: Gets the name of the resource.
+  properties:
+    type: object
+    $ref: "#/types/azure-native:migrate:PrivateEndpointConnectionPropertiesResponse"
+    description: Gets the properties of the object.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:migrate:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  type:
+    type: string
+    description: Gets the resource type.
+type: object
+required:
+  - eTag
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  eTag:
+    type: string
+    description: Gets the tag for optimistic concurrency control.
+  migrateProjectName:
+    type: string
+    description: Migrate project name.
+    willReplaceOnChanges: true
+  peConnectionName:
+    type: string
+    description: Private endpoint connection name.
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:migrate:ConnectionStateRequestBodyProperties"
+    description: Properties of Connection state request.
+  resourceGroupName:
+    type: string
+    description: Name of the Azure Resource Group that project is part of.
+    willReplaceOnChanges: true
+requiredInputs:
+  - migrateProjectName
+  - resourceGroupName
+aliases:
+  - type: azure-native:migrate/v20200501:PrivateEndpointConnectionControllerPrivateEndpointConnection

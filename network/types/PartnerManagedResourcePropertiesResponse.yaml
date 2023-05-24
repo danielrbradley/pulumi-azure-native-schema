@@ -1,0 +1,17 @@
+$token: azure-native:network:PartnerManagedResourcePropertiesResponse
+description: Properties of the partner managed resource.
+properties:
+  id:
+    type: string
+    description: The partner managed resource id.
+  internalLoadBalancerId:
+    type: string
+    description: The partner managed ILB resource id
+  standardLoadBalancerId:
+    type: string
+    description: The partner managed SLB resource id
+type: object
+required:
+  - id
+  - internalLoadBalancerId
+  - standardLoadBalancerId

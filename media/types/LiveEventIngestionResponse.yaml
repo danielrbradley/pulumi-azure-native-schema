@@ -1,0 +1,22 @@
+$token: azure-native:media:LiveEventIngestionResponse
+description: The live event ingestion telemetry data.
+properties:
+  begin:
+    type: string
+    description: Ingestion begin time in UTC.
+  end:
+    type: string
+    description: Ingestion end time in UTC. Empty if it's not stopped yet.
+  endReason:
+    type: string
+    description: Reason why ingestion stops. Empty if it's not stopped yet. E.g) Service Stopped. No Ingestion.
+  ingestInterruptions:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:media:LiveEventIngestInterruptionResponse"
+    description: IngestInterruption entry list.
+  streamName:
+    type: string
+    description: Ingestion stream name.
+type: object

@@ -1,0 +1,10 @@
+$token: azure-native:machinelearningservices/v20230201preview:FeatureWindowResponse
+description: Specifies the feature window
+properties:
+  featureWindowEnd:
+    type: string
+    description: Specifies the feature window end time
+  featureWindowStart:
+    type: string
+    description: Specifies the feature window start time
+type: object

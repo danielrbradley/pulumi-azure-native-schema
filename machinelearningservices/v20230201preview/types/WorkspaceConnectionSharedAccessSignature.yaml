@@ -1,0 +1,5 @@
+$token: azure-native:machinelearningservices/v20230201preview:WorkspaceConnectionSharedAccessSignature
+properties:
+  sas:
+    type: string
+type: object

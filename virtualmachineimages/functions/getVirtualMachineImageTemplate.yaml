@@ -1,0 +1,148 @@
+$token: azure-native:virtualmachineimages:getVirtualMachineImageTemplate
+description: |-
+  Get information about a virtual machine image template
+  API Version: 2022-07-01.
+inputs:
+  properties:
+    imageTemplateName:
+      type: string
+      description: The name of the image Template
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - imageTemplateName
+    - resourceGroupName
+outputs:
+  description: Image template is an ARM resource managed by Microsoft.VirtualMachineImages provider
+  properties:
+    buildTimeoutInMinutes:
+      type: integer
+      description: Maximum duration to wait while building the image template (includes all customizations, optimization, validations, and distributions). Omit or specify 0 to use the default (4 hours).
+      default: 0
+    customize:
+      type: array
+      items:
+        oneOf:
+          - type: object
+            $ref: "#/types/azure-native:virtualmachineimages:ImageTemplateFileCustomizerResponse"
+          - type: object
+            $ref: "#/types/azure-native:virtualmachineimages:ImageTemplatePowerShellCustomizerResponse"
+          - type: object
+            $ref: "#/types/azure-native:virtualmachineimages:ImageTemplateRestartCustomizerResponse"
+          - type: object
+            $ref: "#/types/azure-native:virtualmachineimages:ImageTemplateShellCustomizerResponse"
+          - type: object
+            $ref: "#/types/azure-native:virtualmachineimages:ImageTemplateWindowsUpdateCustomizerResponse"
+        discriminator:
+          propertyName: type
+          mapping:
+            File: "#/types/azure-native:virtualmachineimages:ImageTemplateFileCustomizerResponse"
+            PowerShell: "#/types/azure-native:virtualmachineimages:ImageTemplatePowerShellCustomizerResponse"
+            Shell: "#/types/azure-native:virtualmachineimages:ImageTemplateShellCustomizerResponse"
+            WindowsRestart: "#/types/azure-native:virtualmachineimages:ImageTemplateRestartCustomizerResponse"
+            WindowsUpdate: "#/types/azure-native:virtualmachineimages:ImageTemplateWindowsUpdateCustomizerResponse"
+      description: Specifies the properties used to describe the customization steps of the image, like Image source etc
+    distribute:
+      type: array
+      items:
+        oneOf:
+          - type: object
+            $ref: "#/types/azure-native:virtualmachineimages:ImageTemplateManagedImageDistributorResponse"
+          - type: object
+            $ref: "#/types/azure-native:virtualmachineimages:ImageTemplateSharedImageDistributorResponse"
+          - type: object
+            $ref: "#/types/azure-native:virtualmachineimages:ImageTemplateVhdDistributorResponse"
+        discriminator:
+          propertyName: type
+          mapping:
+            ManagedImage: "#/types/azure-native:virtualmachineimages:ImageTemplateManagedImageDistributorResponse"
+            SharedImage: "#/types/azure-native:virtualmachineimages:ImageTemplateSharedImageDistributorResponse"
+            VHD: "#/types/azure-native:virtualmachineimages:ImageTemplateVhdDistributorResponse"
+      description: The distribution targets where the image output needs to go to.
+    exactStagingResourceGroup:
+      type: string
+      description: The staging resource group id in the same subscription as the image template that will be used to build the image. This read-only field differs from 'stagingResourceGroup' only if the value specified in the 'stagingResourceGroup' field is empty.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    identity:
+      type: object
+      $ref: "#/types/azure-native:virtualmachineimages:ImageTemplateIdentityResponse"
+      description: The identity of the image template, if configured.
+    lastRunStatus:
+      type: object
+      $ref: "#/types/azure-native:virtualmachineimages:ImageTemplateLastRunStatusResponse"
+      description: State of 'run' that is currently executing or was last executed.
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    name:
+      type: string
+      description: The name of the resource
+    optimize:
+      type: object
+      $ref: "#/types/azure-native:virtualmachineimages:ImageTemplatePropertiesResponseOptimize"
+      description: Specifies optimization to be performed on image.
+    provisioningError:
+      type: object
+      $ref: "#/types/azure-native:virtualmachineimages:ProvisioningErrorResponse"
+      description: Provisioning error, if any
+    provisioningState:
+      type: string
+      description: Provisioning state of the resource
+    source:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:virtualmachineimages:ImageTemplateManagedImageSourceResponse"
+        - type: object
+          $ref: "#/types/azure-native:virtualmachineimages:ImageTemplatePlatformImageSourceResponse"
+        - type: object
+          $ref: "#/types/azure-native:virtualmachineimages:ImageTemplateSharedImageVersionSourceResponse"
+      discriminator:
+        propertyName: type
+        mapping:
+          ManagedImage: "#/types/azure-native:virtualmachineimages:ImageTemplateManagedImageSourceResponse"
+          PlatformImage: "#/types/azure-native:virtualmachineimages:ImageTemplatePlatformImageSourceResponse"
+          SharedImageVersion: "#/types/azure-native:virtualmachineimages:ImageTemplateSharedImageVersionSourceResponse"
+      description: Specifies the properties used to describe the source image.
+    stagingResourceGroup:
+      type: string
+      description: The staging resource group id in the same subscription as the image template that will be used to build the image. If this field is empty, a resource group with a random name will be created. If the resource group specified in this field doesn't exist, it will be created with the same name. If the resource group specified exists, it must be empty and in the same region as the image template. The resource group created will be deleted during template deletion if this field is empty or the resource group specified doesn't exist, but if the resource group specified exists the resources created in the resource group will be deleted during template deletion and the resource group itself will remain.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:virtualmachineimages:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+    validate:
+      type: object
+      $ref: "#/types/azure-native:virtualmachineimages:ImageTemplatePropertiesResponseValidate"
+      description: Configuration options and list of validations to be performed on the resulting image.
+    vmProfile:
+      type: object
+      $ref: "#/types/azure-native:virtualmachineimages:ImageTemplateVmProfileResponse"
+      description: Describes how virtual machine is set up to build images
+  type: object
+  required:
+    - distribute
+    - exactStagingResourceGroup
+    - id
+    - identity
+    - lastRunStatus
+    - location
+    - name
+    - provisioningError
+    - provisioningState
+    - source
+    - systemData
+    - type

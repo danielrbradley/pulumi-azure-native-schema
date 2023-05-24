@@ -1,0 +1,9 @@
+$token: azure-native:machinelearningservices/v20221201preview:AutologgerSettingsResponse
+description: Settings for Autologger.
+properties:
+  mlflowAutologger:
+    type: string
+    description: "[Required] Indicates whether mlflow autologger is enabled."
+type: object
+required:
+  - mlflowAutologger

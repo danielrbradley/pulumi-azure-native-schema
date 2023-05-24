@@ -1,0 +1,25 @@
+$token: azure-native:migrate/v20220501preview:WorkloadInstanceModelResponseSystemData
+properties:
+  createdAt:
+    type: string
+    description: Gets or sets the timestamp of resource creation (UTC).
+  createdBy:
+    type: string
+    description: Gets or sets identity that created the resource.
+  createdByType:
+    type: string
+    description: "Gets or sets the type of identity that created the resource: user, application,\r
+
+      managedIdentity."
+  lastModifiedAt:
+    type: string
+    description: Gets or sets the timestamp of resource last modification (UTC).
+  lastModifiedBy:
+    type: string
+    description: Gets or sets the identity that last modified the resource.
+  lastModifiedByType:
+    type: string
+    description: "Gets or sets the type of identity that last modified the resource: user, application,\r
+
+      managedIdentity."
+type: object

@@ -1,0 +1,47 @@
+$token: azure-native:servicebus/v20150801:getNamespaceAuthorizationRule
+description: Gets an authorization rule for a namespace by rule name.
+inputs:
+  properties:
+    authorizationRuleName:
+      type: string
+      description: The authorization rule name.
+      willReplaceOnChanges: true
+    namespaceName:
+      type: string
+      description: The namespace name
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the Resource group within the Azure subscription.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - authorizationRuleName
+    - namespaceName
+    - resourceGroupName
+outputs:
+  description: Description of a namespace authorization rule.
+  properties:
+    id:
+      type: string
+      description: Resource Id
+    location:
+      type: string
+      description: Resource location.
+    name:
+      type: string
+      description: Resource name
+    rights:
+      type: array
+      items:
+        type: string
+      description: The rights associated with the rule.
+    type:
+      type: string
+      description: Resource type
+  type: object
+  required:
+    - id
+    - name
+    - rights
+    - type

@@ -1,0 +1,16 @@
+$token: azure-native:migrate/v20220801:MoveCollectionProperties
+description: Defines the move collection properties.
+properties:
+  sourceRegion:
+    type: string
+    description: Gets or sets the source region.
+  targetRegion:
+    type: string
+    description: Gets or sets the target region.
+  version:
+    type: string
+    description: Gets or sets the version of move collection.
+type: object
+required:
+  - sourceRegion
+  - targetRegion

@@ -1,0 +1,28 @@
+$token: azure-native:apimanagement/v20220901preview:listNamedValue
+description: Gets the secret of the named value specified by its identifier.
+inputs:
+  properties:
+    namedValueId:
+      type: string
+      description: Identifier of the NamedValue.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    serviceName:
+      type: string
+      description: The name of the API Management service.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - namedValueId
+    - resourceGroupName
+    - serviceName
+outputs:
+  description: Client or app secret used in IdentityProviders, Aad, OpenID or OAuth.
+  properties:
+    value:
+      type: string
+      description: This is secret value of the NamedValue entity.
+  type: object

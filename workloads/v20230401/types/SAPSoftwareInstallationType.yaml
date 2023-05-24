@@ -1,0 +1,7 @@
+$token: azure-native:workloads/v20230401:SAPSoftwareInstallationType
+description: The SAP software installation Type.
+type: string
+enum:
+  - value: ServiceInitiated
+  - value: SAPInstallWithoutOSConfig
+  - value: External

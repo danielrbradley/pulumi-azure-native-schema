@@ -1,0 +1,9 @@
+$token: azure-native:appplatform/v20230301preview:ApmType
+description: Type of application performance monitoring
+type: string
+enum:
+  - value: ApplicationInsights
+  - value: AppDynamics
+  - value: Dynatrace
+  - value: NewRelic
+  - value: ElasticAPM

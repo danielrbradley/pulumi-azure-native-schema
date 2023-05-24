@@ -1,0 +1,45 @@
+$token: azure-native:dataprotection/v20230101:KubernetesClusterBackupDatasourceParametersResponse
+description: Parameters for Kubernetes Cluster Backup Datasource
+properties:
+  excludedNamespaces:
+    type: array
+    items:
+      type: string
+    description: Gets or sets the exclude namespaces property. This property sets the namespaces to be excluded during restore.
+  excludedResourceTypes:
+    type: array
+    items:
+      type: string
+    description: Gets or sets the exclude resource types property. This property sets the resource types to be excluded during restore.
+  includeClusterScopeResources:
+    type: boolean
+    description: Gets or sets the include cluster resources property. This property if enabled will include cluster scope resources during restore.
+  includedNamespaces:
+    type: array
+    items:
+      type: string
+    description: Gets or sets the include namespaces property. This property sets the namespaces to be included during restore.
+  includedResourceTypes:
+    type: array
+    items:
+      type: string
+    description: Gets or sets the include resource types property. This property sets the resource types to be included during restore.
+  labelSelectors:
+    type: array
+    items:
+      type: string
+    description: Gets or sets the LabelSelectors property. This property sets the resource with such label selectors to be included during restore.
+  objectType:
+    type: string
+    description: |-
+      Type of the specific object - used for deserializing
+      Expected value is 'KubernetesClusterBackupDatasourceParameters'.
+    const: KubernetesClusterBackupDatasourceParameters
+  snapshotVolumes:
+    type: boolean
+    description: Gets or sets the volume snapshot property. This property if enabled will take volume snapshots during restore.
+type: object
+required:
+  - includeClusterScopeResources
+  - objectType
+  - snapshotVolumes

@@ -1,0 +1,18 @@
+$token: azure-native:healthcareapis/v20221001preview:AnalyticsConnectorFhirToParquetMapping
+description: FHIR Service data mapping configuration for Analytics Connector.
+properties:
+  extensionSchemaReference:
+    type: string
+    description: Artifact reference for extension schema.
+  filterConfigurationReference:
+    type: string
+    description: Artifact reference for filter configurations.
+  type:
+    type: string
+    description: |-
+      Type of data mapping.
+      Expected value is 'fhirToParquet'.
+    const: fhirToParquet
+type: object
+required:
+  - type

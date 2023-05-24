@@ -1,0 +1,24 @@
+$token: azure-native:network/v20220501:RoutingConfigurationResponse
+description: Routing Configuration indicating the associated and propagated route tables for this connection.
+properties:
+  associatedRouteTable:
+    type: object
+    $ref: "#/types/azure-native:network/v20220501:SubResourceResponse"
+    description: The resource id RouteTable associated with this RoutingConfiguration.
+  inboundRouteMap:
+    type: object
+    $ref: "#/types/azure-native:network/v20220501:SubResourceResponse"
+    description: The resource id of the RouteMap associated with this RoutingConfiguration for inbound learned routes.
+  outboundRouteMap:
+    type: object
+    $ref: "#/types/azure-native:network/v20220501:SubResourceResponse"
+    description: The resource id of theRouteMap associated with this RoutingConfiguration for outbound advertised routes.
+  propagatedRouteTables:
+    type: object
+    $ref: "#/types/azure-native:network/v20220501:PropagatedRouteTableResponse"
+    description: The list of RouteTables to advertise the routes to.
+  vnetRoutes:
+    type: object
+    $ref: "#/types/azure-native:network/v20220501:VnetRouteResponse"
+    description: List of routes that control routing from VirtualHub into a virtual network connection.
+type: object

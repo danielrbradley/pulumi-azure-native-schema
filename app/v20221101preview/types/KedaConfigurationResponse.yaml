@@ -1,0 +1,9 @@
+$token: azure-native:app/v20221101preview:KedaConfigurationResponse
+description: Configuration properties Keda component
+properties:
+  version:
+    type: string
+    description: The version of Keda
+type: object
+required:
+  - version

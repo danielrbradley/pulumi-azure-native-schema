@@ -1,0 +1,54 @@
+$token: azure-native:devices:getDpsCertificate
+description: |-
+  Get the certificate from the provisioning service.
+  API Version: 2022-12-12.
+inputs:
+  properties:
+    certificateName:
+      type: string
+      description: Name of the certificate to retrieve.
+      willReplaceOnChanges: true
+    provisioningServiceName:
+      type: string
+      description: Name of the provisioning service the certificate is associated with.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Resource group identifier.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - certificateName
+    - provisioningServiceName
+    - resourceGroupName
+outputs:
+  description: The X509 Certificate.
+  properties:
+    etag:
+      type: string
+      description: The entity tag.
+    id:
+      type: string
+      description: The resource identifier.
+    name:
+      type: string
+      description: The name of the certificate.
+    properties:
+      type: object
+      $ref: "#/types/azure-native:devices:CertificatePropertiesResponse"
+      description: properties of a certificate
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:devices:SystemDataResponse"
+      description: Metadata pertaining to creation and last modification of the resource.
+    type:
+      type: string
+      description: The resource type.
+  type: object
+  required:
+    - etag
+    - id
+    - name
+    - properties
+    - systemData
+    - type

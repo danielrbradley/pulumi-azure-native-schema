@@ -1,0 +1,21 @@
+$token: azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesStorageProfile
+description: StorageProfile - contains information about the disks and storage information for the virtual machine
+properties:
+  dataDisks:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesDataDisks"
+    description: adds data disks to the virtual machine
+  imageReference:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesImageReference"
+    description: Which Image to use for the virtual machine
+  osDisk:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesOsDisk"
+    description: VHD to attach as OS disk
+  vmConfigContainerName:
+    type: string
+    description: Name of the storage container that hosts the VM configuration file
+type: object

@@ -1,0 +1,12 @@
+$token: azure-native:digitaltwins/v20230131:ManagedIdentityReference
+description: The properties of the Managed Identity.
+properties:
+  type:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:digitaltwins/v20230131:IdentityType"
+    description: The type of managed identity used.
+  userAssignedIdentity:
+    type: string
+    description: The user identity ARM resource id if the managed identity type is 'UserAssigned'.
+type: object

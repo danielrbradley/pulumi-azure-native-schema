@@ -1,0 +1,91 @@
+$token: azure-native:media:LiveEventStreamEventDataResponse
+description: The live event stream event data.
+properties:
+  bitrate:
+    type: number
+    description: Bitrate of the track.
+  currentFragmentTimestamp:
+    type: string
+    description: Current fragment timestamp in timescale.
+  discontinuityGap:
+    type: number
+    description: Length of the discontinuity gap in timescale.
+  duration:
+    type: string
+    description: Fragment duration.
+  fragmentDropReason:
+    type: string
+    description: Reason the fragment was dropped.
+  fragmentOneDuration:
+    type: string
+    description: Duration of first fragment used to make a comparison, in timescale.
+  fragmentOneTimestamp:
+    type: string
+    description: Timestamp of first fragment used to make a comparison, in timescale.
+  fragmentTwoDuration:
+    type: string
+    description: Duration of second fragment used to make a comparison, in timescale.
+  fragmentTwoTimestamp:
+    type: string
+    description: Timestamp of second fragment used to make a comparison, in timescale.
+  maxTime:
+    type: string
+    description: The larger timestamp of the two fragments compared.
+  maxTimeMediaType:
+    type: string
+    description: The media type of the larger timestamp of two fragments compared.
+  mediaTimestamp:
+    type: string
+    description: Fragment timestamp in timescale.
+  mediaType:
+    type: string
+    description: Type of the track.
+  minTime:
+    type: string
+    description: The smaller timestamp of the two fragments compared.
+  minTimeMediaType:
+    type: string
+    description: The media type of the smaller timestamp of two fragments compared.
+  previousFragmentDuration:
+    type: string
+    description: Previous fragment duration in timescale.
+  previousFragmentTimestamp:
+    type: string
+    description: Previous fragment timestamp in timescale.
+  remoteIp:
+    type: string
+    description: Truncated IP of the encoder.
+  remotePort:
+    type: string
+    description: Port of the encoder.
+  resolution:
+    type: string
+    description: Width x Height for video, null otherwise.
+  resultCode:
+    type: string
+    description: Result code.
+  resultMessage:
+    type: string
+    description: Result message.
+  streamId:
+    type: string
+    description: Stream ID in the format "trackName_bitrate"
+  streamName:
+    type: string
+    description: Identifier of the stream or connection. Encoder or customer is responsible to add this ID in the ingest URL.
+  timescale:
+    type: string
+    description: Timescale in which timestamps are expressed.
+  timescaleOfMaxTime:
+    type: string
+    description: Timescale of the fragment with the larger timestamp.
+  timescaleOfMinTime:
+    type: string
+    description: Timescale of the fragment with the smaller timestamp.
+  trackId:
+    type: integer
+    description: Track index.
+  trackName:
+    type: string
+    description: "Name of the track. "
+type: object

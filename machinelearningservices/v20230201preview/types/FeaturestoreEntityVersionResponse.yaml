@@ -1,0 +1,36 @@
+$token: azure-native:machinelearningservices/v20230201preview:FeaturestoreEntityVersionResponse
+description: Dto object representing feature entity version
+properties:
+  description:
+    type: string
+    description: The asset description text.
+  indexColumns:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20230201preview:IndexColumnResponse"
+    description: Specifies index columns
+  isAnonymous:
+    type: boolean
+    description: If the name version are system generated (anonymous registration).
+    default: false
+  isArchived:
+    type: boolean
+    description: Is the asset archived?
+    default: false
+  properties:
+    type: object
+    additionalProperties:
+      type: string
+    description: The asset property dictionary.
+  provisioningState:
+    type: string
+    description: Provisioning state for the featurestore entity version.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Tag dictionary. Tags can be added, removed, and updated.
+type: object
+required:
+  - provisioningState

@@ -1,0 +1,12 @@
+$token: azure-native:virtualmachineimages:ImageTemplateIdentity
+description: Identity for the image template.
+properties:
+  type:
+    $ref: "#/types/azure-native:virtualmachineimages:ResourceIdentityType"
+    description: The type of identity used for the image template. The type 'None' will remove any identities from the image template.
+  userAssignedIdentities:
+    type: array
+    items:
+      type: string
+    description: "The set of user assigned identities associated with the resource. The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}. The dictionary values can be empty objects ({}) in requests."
+type: object

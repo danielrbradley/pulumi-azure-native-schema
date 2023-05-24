@@ -1,0 +1,8 @@
+$token: azure-native:devhub/v20221011preview:WorkflowRun
+properties:
+  workflowRunStatus:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:devhub/v20221011preview:WorkflowRunStatus"
+    description: Describes the status of the workflow run
+type: object

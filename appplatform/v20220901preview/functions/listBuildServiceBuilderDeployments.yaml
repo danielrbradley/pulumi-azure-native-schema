@@ -1,0 +1,35 @@
+$token: azure-native:appplatform/v20220901preview:listBuildServiceBuilderDeployments
+description: List deployments that are using the builder.
+inputs:
+  properties:
+    buildServiceName:
+      type: string
+      description: The name of the build service resource.
+      willReplaceOnChanges: true
+    builderName:
+      type: string
+      description: The name of the builder resource.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+      willReplaceOnChanges: true
+    serviceName:
+      type: string
+      description: The name of the Service resource.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - buildServiceName
+    - builderName
+    - resourceGroupName
+    - serviceName
+outputs:
+  description: A list of deployments resource ids.
+  properties:
+    deployments:
+      type: array
+      items:
+        type: string
+      description: A list of deployment resource ids.
+  type: object

@@ -1,0 +1,6 @@
+$token: azure-native:azuresphere:OSFeedType
+description: Operating system feed type of the device group.
+type: string
+enum:
+  - value: Retail
+  - value: RetailEval

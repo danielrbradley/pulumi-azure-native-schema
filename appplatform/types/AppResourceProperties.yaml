@@ -1,0 +1,48 @@
+$token: azure-native:appplatform:AppResourceProperties
+description: App resource properties payload
+properties:
+  addonConfigs:
+    type: object
+    additionalProperties:
+      $ref: pulumi.json#/Any
+    description: Collection of addons
+  customPersistentDisks:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:appplatform:CustomPersistentDiskResource"
+    description: List of custom persistent disks
+  enableEndToEndTLS:
+    type: boolean
+    description: Indicate if end to end TLS is enabled.
+    default: false
+  httpsOnly:
+    type: boolean
+    description: Indicate if only https is allowed.
+    default: false
+  ingressSettings:
+    type: object
+    $ref: "#/types/azure-native:appplatform:IngressSettings"
+    description: App ingress settings payload.
+  loadedCertificates:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:appplatform:LoadedCertificate"
+    description: Collection of loaded certificates
+  persistentDisk:
+    type: object
+    $ref: "#/types/azure-native:appplatform:PersistentDisk"
+    description: Persistent disk settings
+  public:
+    type: boolean
+    description: Indicates whether the App exposes public endpoint
+  temporaryDisk:
+    type: object
+    $ref: "#/types/azure-native:appplatform:TemporaryDisk"
+    description: Temporary disk settings
+  vnetAddons:
+    type: object
+    $ref: "#/types/azure-native:appplatform:AppVNetAddons"
+    description: Additional App settings in vnet injection instance
+type: object

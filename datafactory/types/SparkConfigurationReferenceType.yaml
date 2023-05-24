@@ -1,0 +1,5 @@
+$token: azure-native:datafactory:SparkConfigurationReferenceType
+description: Spark configuration reference type.
+type: string
+enum:
+  - value: SparkConfigurationReference

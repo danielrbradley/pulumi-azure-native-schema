@@ -1,0 +1,13 @@
+$token: azure-native:machinelearningservices/v20230401preview:LabelingDataConfiguration
+description: Labeling data configuration definition
+properties:
+  dataId:
+    type: string
+    description: Resource Id of the data asset to perform labeling.
+  incrementalDataRefresh:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:machinelearningservices/v20230401preview:IncrementalDataRefresh"
+    description: Indicates whether to enable incremental data refresh.
+    default: Disabled
+type: object

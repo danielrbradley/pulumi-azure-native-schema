@@ -1,0 +1,14 @@
+$token: azure-native:managednetworkfabric/v20230201preview:RoutePolicyPropertiesSetSet
+description: Route policy set manipulations.
+properties:
+  ipCommunityListIds:
+    type: array
+    items:
+      type: string
+    description: ipCommunityListIds. Arm Resource Ids of IpCommunityLists.
+  ipExtendedCommunityListIds:
+    type: array
+    items:
+      type: string
+    description: ipExtendedCommunityListIds. Arm Resource Ids of IpCommunityLists.
+type: object

@@ -1,0 +1,37 @@
+$token: azure-native:machinelearningservices/v20221201preview:Registry
+description: Details of the Registry
+properties:
+  description:
+    type: string
+    description: The asset description text.
+  discoveryUrl:
+    type: string
+  intellectualPropertyPublisher:
+    type: string
+  managedResourceGroup:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20221201preview:ArmResourceId"
+    description: Managed resource group created for the registry
+  mlFlowRegistryUri:
+    type: string
+  privateLinkCount:
+    type: integer
+  properties:
+    type: object
+    additionalProperties:
+      type: string
+    description: The asset property dictionary.
+  publicNetworkAccess:
+    type: string
+  regionDetails:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20221201preview:RegistryRegionArmDetails"
+    description: Details of each region the registry is in
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Tag dictionary. Tags can be added, removed, and updated.
+type: object

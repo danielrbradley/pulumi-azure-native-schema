@@ -1,0 +1,17 @@
+$token: azure-native:media:LiveEventStreamEventResponse
+description: The live event stream event.
+properties:
+  data:
+    type: object
+    $ref: "#/types/azure-native:media:LiveEventStreamEventDataResponse"
+    description: Event data based on event type.
+  eventLevel:
+    type: string
+    description: Event level.
+  eventTime:
+    type: string
+    description: The time event raised.
+  eventType:
+    type: string
+    description: "The type of the stream event. Format: StreamEvent/{eventType}"
+type: object

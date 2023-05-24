@@ -1,0 +1,6 @@
+$token: azure-native:managednetworkfabric:GshutBoolean
+description: " Graceful Shutdown (GSHUT). Example: true | false."
+type: string
+enum:
+  - value: "true"
+  - value: "false"

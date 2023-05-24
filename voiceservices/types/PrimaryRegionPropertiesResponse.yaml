@@ -1,0 +1,26 @@
+$token: azure-native:voiceservices:PrimaryRegionPropertiesResponse
+description: The configuration used in this region as primary, and other regions as backup.
+properties:
+  allowedMediaSourceAddressPrefixes:
+    type: array
+    items:
+      type: string
+    description: The allowed source IP address or CIDR ranges for media
+  allowedSignalingSourceAddressPrefixes:
+    type: array
+    items:
+      type: string
+    description: The allowed source IP address or CIDR ranges for signaling
+  esrpAddresses:
+    type: array
+    items:
+      type: string
+    description: IP address to use to contact the ESRP from this region
+  operatorAddresses:
+    type: array
+    items:
+      type: string
+    description: IP address to use to contact the operator network from this region
+type: object
+required:
+  - operatorAddresses

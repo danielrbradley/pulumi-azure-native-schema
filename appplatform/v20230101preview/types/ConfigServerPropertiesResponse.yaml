@@ -1,0 +1,17 @@
+$token: azure-native:appplatform/v20230101preview:ConfigServerPropertiesResponse
+description: Config server git properties payload
+properties:
+  configServer:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230101preview:ConfigServerSettingsResponse"
+    description: Settings of config server.
+  error:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230101preview:ErrorResponse"
+    description: Error when apply config server settings.
+  provisioningState:
+    type: string
+    description: State of the config server.
+type: object
+required:
+  - provisioningState

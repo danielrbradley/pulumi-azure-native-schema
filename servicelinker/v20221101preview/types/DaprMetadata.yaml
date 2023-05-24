@@ -1,0 +1,13 @@
+$token: azure-native:servicelinker/v20221101preview:DaprMetadata
+description: The dapr component metadata.
+properties:
+  name:
+    type: string
+    description: Metadata property name.
+  secretRef:
+    type: string
+    description: The secret name where dapr could get value
+  value:
+    type: string
+    description: Metadata property value.
+type: object

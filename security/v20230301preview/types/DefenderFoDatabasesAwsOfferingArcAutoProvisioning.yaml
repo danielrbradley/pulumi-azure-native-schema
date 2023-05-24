@@ -1,0 +1,14 @@
+$token: azure-native:security/v20230301preview:DefenderFoDatabasesAwsOfferingArcAutoProvisioning
+description: The ARC autoprovisioning configuration
+properties:
+  cloudRoleArn:
+    type: string
+    description: The cloud role ARN in AWS for this feature
+  configuration:
+    type: object
+    $ref: "#/types/azure-native:security/v20230301preview:DefenderFoDatabasesAwsOfferingConfiguration"
+    description: Configuration for servers Arc auto provisioning
+  enabled:
+    type: boolean
+    description: Is arc auto provisioning enabled
+type: object

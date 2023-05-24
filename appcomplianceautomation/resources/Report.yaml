@@ -1,0 +1,35 @@
+$token: azure-native:appcomplianceautomation:Report
+properties:
+  name:
+    type: string
+    description: The name of the resource
+  properties:
+    type: object
+    $ref: "#/types/azure-native:appcomplianceautomation:ReportPropertiesResponse"
+    description: Report property.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:appcomplianceautomation:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  properties:
+    type: object
+    $ref: "#/types/azure-native:appcomplianceautomation:ReportProperties"
+    description: Report property.
+  reportName:
+    type: string
+    description: Report Name.
+    willReplaceOnChanges: true
+requiredInputs:
+  - properties
+aliases:
+  - type: azure-native:appcomplianceautomation/v20221116preview:Report

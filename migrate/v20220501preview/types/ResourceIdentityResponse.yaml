@@ -1,0 +1,14 @@
+$token: azure-native:migrate/v20220501preview:ResourceIdentityResponse
+properties:
+  principalId:
+    type: string
+  tenantId:
+    type: string
+  type:
+    type: string
+  userAssignedIdentities:
+    type: object
+    additionalProperties:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:UserAssignedIdentityResponse"
+type: object

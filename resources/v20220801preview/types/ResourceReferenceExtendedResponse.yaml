@@ -1,0 +1,13 @@
+$token: azure-native:resources/v20220801preview:ResourceReferenceExtendedResponse
+description: The resource Id extended model.
+properties:
+  error:
+    type: object
+    $ref: "#/types/azure-native:resources/v20220801preview:ErrorResponseResponse"
+    description: Common error response for all Azure Resource Manager APIs to return error details for failed operations. (This also follows the OData error response format.).
+  id:
+    type: string
+    description: The resourceId of a resource managed by the deployment stack.
+type: object
+required:
+  - id

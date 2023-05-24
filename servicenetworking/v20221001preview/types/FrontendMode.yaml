@@ -1,0 +1,5 @@
+$token: azure-native:servicenetworking/v20221001preview:FrontendMode
+description: Frontend Mode (Optional).
+type: string
+enum:
+  - value: public

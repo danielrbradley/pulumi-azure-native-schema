@@ -1,0 +1,32 @@
+$token: azure-native:network:ServiceEndpointPolicy
+description: Service End point policy resource.
+properties:
+  contextualServiceEndpointPolicies:
+    type: array
+    items:
+      type: string
+    description: A collection of contextual service endpoint policy.
+  etag:
+    type: string
+    description: A unique read-only string that changes whenever the resource is updated.
+  id:
+    type: string
+    description: Resource ID.
+  location:
+    type: string
+    description: Resource location.
+  serviceAlias:
+    type: string
+    description: The alias indicating if the policy belongs to a service
+  serviceEndpointPolicyDefinitions:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:network:ServiceEndpointPolicyDefinition"
+    description: A collection of service endpoint policy definitions of the service endpoint policy.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+type: object

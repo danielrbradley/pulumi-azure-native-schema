@@ -1,0 +1,18 @@
+$token: azure-native:digitaltwins:DigitalTwinsIdentity
+description: The managed identity for the DigitalTwinsInstance.
+properties:
+  type:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:digitaltwins:DigitalTwinsIdentityType"
+    description: The type of Managed Identity used by the DigitalTwinsInstance.
+  userAssignedIdentities:
+    type: array
+    items:
+      type: string
+    description: "The list of user identities associated with the resource. The user identity dictionary key references will be ARM resource ids in the form:\r
+
+      '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.\r
+
+      ."
+type: object

@@ -1,0 +1,36 @@
+$token: azure-native:appplatform:ClusterResourcePropertiesResponse
+description: Service properties payload
+properties:
+  fqdn:
+    type: string
+    description: Fully qualified dns name of the service instance
+  networkProfile:
+    type: object
+    $ref: "#/types/azure-native:appplatform:NetworkProfileResponse"
+    description: Network profile of the Service
+  powerState:
+    type: string
+    description: Power state of the Service
+  provisioningState:
+    type: string
+    description: Provisioning state of the Service
+  serviceId:
+    type: string
+    description: ServiceInstanceEntity GUID which uniquely identifies a created resource
+  version:
+    type: integer
+    description: Version of the Service
+  vnetAddons:
+    type: object
+    $ref: "#/types/azure-native:appplatform:ServiceVNetAddonsResponse"
+    description: Additional Service settings in vnet injection instance
+  zoneRedundant:
+    type: boolean
+    default: false
+type: object
+required:
+  - fqdn
+  - powerState
+  - provisioningState
+  - serviceId
+  - version

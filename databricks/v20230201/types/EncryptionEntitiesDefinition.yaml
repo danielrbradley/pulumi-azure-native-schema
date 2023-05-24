@@ -1,0 +1,12 @@
+$token: azure-native:databricks/v20230201:EncryptionEntitiesDefinition
+description: Encryption entities for databricks workspace resource.
+properties:
+  managedDisk:
+    type: object
+    $ref: "#/types/azure-native:databricks/v20230201:ManagedDiskEncryption"
+    description: Encryption properties for the databricks managed disks.
+  managedServices:
+    type: object
+    $ref: "#/types/azure-native:databricks/v20230201:EncryptionV2"
+    description: Encryption properties for the databricks managed services.
+type: object

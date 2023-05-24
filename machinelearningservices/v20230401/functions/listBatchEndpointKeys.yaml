@@ -1,0 +1,31 @@
+$token: azure-native:machinelearningservices/v20230401:listBatchEndpointKeys
+description: Keys for endpoint authentication.
+inputs:
+  properties:
+    endpointName:
+      type: string
+      description: Inference Endpoint name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    workspaceName:
+      type: string
+      description: Name of Azure Machine Learning workspace.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - endpointName
+    - resourceGroupName
+    - workspaceName
+outputs:
+  description: Keys for endpoint authentication.
+  properties:
+    primaryKey:
+      type: string
+      description: The primary key.
+    secondaryKey:
+      type: string
+      description: The secondary key.
+  type: object

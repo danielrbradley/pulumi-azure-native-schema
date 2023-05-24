@@ -1,0 +1,12 @@
+$token: azure-native:security/v20230301preview:DefenderCspmGcpOffering
+description: The CSPM P1 for GCP offering
+properties:
+  offeringType:
+    type: string
+    description: |-
+      The type of the security offering.
+      Expected value is 'DefenderCspmGcp'.
+    const: DefenderCspmGcp
+type: object
+required:
+  - offeringType

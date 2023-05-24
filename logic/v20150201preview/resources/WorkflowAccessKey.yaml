@@ -1,0 +1,43 @@
+$token: azure-native:logic/v20150201preview:WorkflowAccessKey
+properties:
+  name:
+    type: string
+    description: Gets the workflow access key name.
+  notAfter:
+    type: string
+    description: Gets or sets the not-after time.
+  notBefore:
+    type: string
+    description: Gets or sets the not-before time.
+  type:
+    type: string
+    description: Gets the workflow access key type.
+type: object
+required:
+  - name
+  - type
+inputProperties:
+  accessKeyName:
+    type: string
+    description: The workflow access key name.
+    willReplaceOnChanges: true
+  id:
+    type: string
+    description: Gets or sets the resource id.
+  notAfter:
+    type: string
+    description: Gets or sets the not-after time.
+  notBefore:
+    type: string
+    description: Gets or sets the not-before time.
+  resourceGroupName:
+    type: string
+    description: The resource group name.
+    willReplaceOnChanges: true
+  workflowName:
+    type: string
+    description: The workflow name.
+    willReplaceOnChanges: true
+requiredInputs:
+  - resourceGroupName
+  - workflowName

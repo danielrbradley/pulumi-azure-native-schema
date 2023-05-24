@@ -1,0 +1,7 @@
+$token: azure-native:machinelearningservices/v20230401preview:IsolationMode
+description: Isolation mode for the managed network of a machine learning workspace.
+type: string
+enum:
+  - value: Disabled
+  - value: AllowInternetOutbound
+  - value: AllowOnlyApprovedOutbound

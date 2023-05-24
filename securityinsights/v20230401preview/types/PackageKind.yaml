@@ -1,0 +1,6 @@
+$token: azure-native:securityinsights/v20230401preview:PackageKind
+description: the packageKind of the package contains this template
+type: string
+enum:
+  - value: Solution
+  - value: Standalone

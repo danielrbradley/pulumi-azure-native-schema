@@ -1,0 +1,58 @@
+$token: azure-native:sql:getPrivateEndpointConnection
+description: |-
+  Gets a private endpoint connection.
+  API Version: 2021-11-01.
+inputs:
+  properties:
+    privateEndpointConnectionName:
+      type: string
+      description: The name of the private endpoint connection.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+      willReplaceOnChanges: true
+    serverName:
+      type: string
+      description: The name of the server.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - privateEndpointConnectionName
+    - resourceGroupName
+    - serverName
+outputs:
+  description: A private endpoint connection
+  properties:
+    groupIds:
+      type: array
+      items:
+        type: string
+      description: Group IDs.
+    id:
+      type: string
+      description: Resource ID.
+    name:
+      type: string
+      description: Resource name.
+    privateEndpoint:
+      type: object
+      $ref: "#/types/azure-native:sql:PrivateEndpointPropertyResponse"
+      description: Private endpoint which the connection belongs to.
+    privateLinkServiceConnectionState:
+      type: object
+      $ref: "#/types/azure-native:sql:PrivateLinkServiceConnectionStatePropertyResponse"
+      description: Connection state of the private endpoint connection.
+    provisioningState:
+      type: string
+      description: State of the private endpoint connection.
+    type:
+      type: string
+      description: Resource type.
+  type: object
+  required:
+    - groupIds
+    - id
+    - name
+    - provisioningState
+    - type

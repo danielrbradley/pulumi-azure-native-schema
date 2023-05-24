@@ -1,0 +1,6 @@
+$token: azure-native:containerinstance/v20230201preview:Scheme
+description: The scheme.
+type: string
+enum:
+  - value: http
+  - value: https

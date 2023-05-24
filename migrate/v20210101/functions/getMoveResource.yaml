@@ -1,0 +1,43 @@
+$token: azure-native:migrate/v20210101:getMoveResource
+description: Gets the Move Resource.
+inputs:
+  properties:
+    moveCollectionName:
+      type: string
+      description: The Move Collection Name.
+      willReplaceOnChanges: true
+    moveResourceName:
+      type: string
+      description: The Move Resource Name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The Resource Group Name.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - moveCollectionName
+    - moveResourceName
+    - resourceGroupName
+outputs:
+  description: Defines the move resource.
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource Id for the resource.
+    name:
+      type: string
+      description: The name of the resource
+    properties:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20210101:MoveResourcePropertiesResponse"
+      description: Defines the move resource properties.
+    type:
+      type: string
+      description: The type of the resource.
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - type

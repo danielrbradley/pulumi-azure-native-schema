@@ -1,0 +1,17 @@
+$token: azure-native:search/v20220901:IdentityResponse
+description: Identity for the resource.
+properties:
+  principalId:
+    type: string
+    description: The principal ID of the system-assigned identity of the search service.
+  tenantId:
+    type: string
+    description: The tenant ID of the system-assigned identity of the search service.
+  type:
+    type: string
+    description: The identity type.
+type: object
+required:
+  - principalId
+  - tenantId
+  - type

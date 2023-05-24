@@ -1,0 +1,15 @@
+$token: azure-native:containerservice/v20230201:ManagedClusterSKU
+description: The SKU of a Managed Cluster.
+properties:
+  name:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:containerservice/v20230201:ManagedClusterSKUName"
+    description: The name of a managed cluster SKU.
+    willReplaceOnChanges: true
+  tier:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:containerservice/v20230201:ManagedClusterSKUTier"
+    description: If not specified, the default is 'Free'. See [AKS Pricing Tier](https://learn.microsoft.com/azure/aks/free-standard-pricing-tiers) for more details.
+type: object

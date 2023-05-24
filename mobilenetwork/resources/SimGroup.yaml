@@ -1,0 +1,77 @@
+$token: azure-native:mobilenetwork:SimGroup
+properties:
+  encryptionKey:
+    type: object
+    $ref: "#/types/azure-native:mobilenetwork:KeyVaultKeyResponse"
+    description: A key to encrypt the SIM data that belongs to this SIM group.
+  identity:
+    type: object
+    $ref: "#/types/azure-native:mobilenetwork:ManagedServiceIdentityResponse"
+    description: The identity used to retrieve the encryption key from Azure key vault.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  mobileNetwork:
+    type: object
+    $ref: "#/types/azure-native:mobilenetwork:MobileNetworkResourceIdResponse"
+    description: Mobile network that this SIM group belongs to. The mobile network must be in the same location as the SIM group.
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: The provisioning state of the SIM group resource.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:mobilenetwork:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - location
+  - name
+  - provisioningState
+  - systemData
+  - type
+inputProperties:
+  encryptionKey:
+    type: object
+    $ref: "#/types/azure-native:mobilenetwork:KeyVaultKey"
+    description: A key to encrypt the SIM data that belongs to this SIM group.
+  identity:
+    type: object
+    $ref: "#/types/azure-native:mobilenetwork:ManagedServiceIdentity"
+    description: The identity used to retrieve the encryption key from Azure key vault.
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  mobileNetwork:
+    type: object
+    $ref: "#/types/azure-native:mobilenetwork:MobileNetworkResourceId"
+    description: Mobile network that this SIM group belongs to. The mobile network must be in the same location as the SIM group.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  simGroupName:
+    type: string
+    description: The name of the SIM Group.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+requiredInputs:
+  - resourceGroupName
+aliases:
+  - type: azure-native:mobilenetwork/v20220401preview:SimGroup
+  - type: azure-native:mobilenetwork/v20221101:SimGroup

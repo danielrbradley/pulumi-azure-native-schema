@@ -1,0 +1,22 @@
+$token: azure-native:appplatform/v20230301preview:BuildProperties
+description: Build resource properties payload
+properties:
+  agentPool:
+    type: string
+    description: The resource id of agent pool
+  builder:
+    type: string
+    description: The resource id of builder to build the source code
+  env:
+    type: object
+    additionalProperties:
+      type: string
+    description: The environment variables for this build
+  relativePath:
+    type: string
+    description: The relative path of source code
+  resourceRequests:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:BuildResourceRequests"
+    description: The customized build resource for this build
+type: object

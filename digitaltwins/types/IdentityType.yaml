@@ -1,0 +1,6 @@
+$token: azure-native:digitaltwins:IdentityType
+description: The type of managed identity used.
+type: string
+enum:
+  - value: SystemAssigned
+  - value: UserAssigned

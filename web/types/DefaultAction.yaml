@@ -1,0 +1,6 @@
+$token: azure-native:web:DefaultAction
+description: Default action for scm access restriction if no rules are matched.
+type: string
+enum:
+  - value: Allow
+  - value: Deny

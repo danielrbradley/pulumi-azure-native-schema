@@ -1,0 +1,23 @@
+$token: azure-native:app/v20221101preview:ScaleRuleResponse
+description: Container App container scaling rule.
+properties:
+  azureQueue:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:QueueScaleRuleResponse"
+    description: Azure Queue based scaling.
+  custom:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:CustomScaleRuleResponse"
+    description: Custom scale rule.
+  http:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:HttpScaleRuleResponse"
+    description: HTTP requests based scaling.
+  name:
+    type: string
+    description: Scale Rule Name
+  tcp:
+    type: object
+    $ref: "#/types/azure-native:app/v20221101preview:TcpScaleRuleResponse"
+    description: Tcp requests based scaling.
+type: object

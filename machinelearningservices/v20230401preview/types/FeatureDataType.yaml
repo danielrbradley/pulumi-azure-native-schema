@@ -1,0 +1,12 @@
+$token: azure-native:machinelearningservices/v20230401preview:FeatureDataType
+description: Specifies the data type
+type: string
+enum:
+  - value: String
+  - value: Integer
+  - value: Long
+  - value: Float
+  - value: Double
+  - value: Binary
+  - value: Datetime
+  - value: Boolean

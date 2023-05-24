@@ -1,0 +1,108 @@
+$token: azure-native:machinelearningservices/v20230401preview:Forecasting
+description: Forecasting task in AutoML Table vertical.
+properties:
+  cvSplitColumnNames:
+    type: array
+    items:
+      type: string
+    description: Columns to use for CVSplit data.
+  featurizationSettings:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:TableVerticalFeaturizationSettings"
+    description: Featurization inputs needed for AutoML job.
+  fixedParameters:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:TableFixedParameters"
+    description: Model/training parameters that will remain constant throughout training.
+  forecastingSettings:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:ForecastingSettings"
+    description: Forecasting task specific inputs.
+  limitSettings:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:TableVerticalLimitSettings"
+    description: Execution constraints for AutoMLJob.
+  logVerbosity:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:machinelearningservices/v20230401preview:LogVerbosity"
+    description: Log verbosity for the job.
+    default: Info
+  nCrossValidations:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:AutoNCrossValidations"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:CustomNCrossValidations"
+    discriminator:
+      propertyName: mode
+      mapping:
+        Auto: "#/types/azure-native:machinelearningservices/v20230401preview:AutoNCrossValidations"
+        Custom: "#/types/azure-native:machinelearningservices/v20230401preview:CustomNCrossValidations"
+    description: "Number of cross validation folds to be applied on training dataset\r
+
+      when validation dataset is not provided."
+  primaryMetric:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:machinelearningservices/v20230401preview:ForecastingPrimaryMetrics"
+    description: Primary metric for forecasting task.
+    default: NormalizedRootMeanSquaredError
+  searchSpace:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20230401preview:TableParameterSubspace"
+    description: Search space for sampling different combinations of models and their hyperparameters.
+  sweepSettings:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:TableSweepSettings"
+    description: Settings for model sweeping and hyperparameter tuning.
+  targetColumnName:
+    type: string
+    description: "Target column name: This is prediction values column.\r
+
+      Also known as label column name in context of classification tasks."
+  taskType:
+    type: string
+    description: |-
+      AutoMLJob Task type.
+      Expected value is 'Forecasting'.
+    const: Forecasting
+  testData:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MLTableJobInput"
+    description: Test data input.
+  testDataSize:
+    type: number
+    description: "The fraction of test dataset that needs to be set aside for validation purpose.\r
+
+      Values between (0.0 , 1.0)\r
+
+      Applied when validation dataset is not provided."
+  trainingData:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MLTableJobInput"
+    description: "[Required] Training data input."
+  trainingSettings:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:ForecastingTrainingSettings"
+    description: Inputs for training phase for an AutoML Job.
+  validationData:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MLTableJobInput"
+    description: Validation data inputs.
+  validationDataSize:
+    type: number
+    description: "The fraction of training dataset that needs to be set aside for validation purpose.\r
+
+      Values between (0.0 , 1.0)\r
+
+      Applied when validation dataset is not provided."
+  weightColumnName:
+    type: string
+    description: The name of the sample weight column. Automated ML supports a weighted column as an input, causing rows in the data to be weighted up or down.
+type: object
+required:
+  - taskType
+  - trainingData

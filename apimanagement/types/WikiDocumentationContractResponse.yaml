@@ -1,0 +1,7 @@
+$token: azure-native:apimanagement:WikiDocumentationContractResponse
+description: Wiki documentation details.
+properties:
+  documentationId:
+    type: string
+    description: Documentation Identifier
+type: object

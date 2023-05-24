@@ -1,0 +1,12 @@
+$token: azure-native:machinelearningservices/v20230401preview:AutoDeleteSetting
+properties:
+  condition:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:machinelearningservices/v20230401preview:AutoDeleteCondition"
+    description: When to check if an asset is expired
+    default: CreatedGreaterThan
+  value:
+    type: string
+    description: Expiration condition value.
+type: object

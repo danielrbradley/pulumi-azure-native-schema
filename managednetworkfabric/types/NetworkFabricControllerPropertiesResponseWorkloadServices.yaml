@@ -1,0 +1,14 @@
+$token: azure-native:managednetworkfabric:NetworkFabricControllerPropertiesResponseWorkloadServices
+description: WorkloadServices IP ranges.
+properties:
+  ipv4AddressSpaces:
+    type: array
+    items:
+      type: string
+    description: The IPv4 Address space is optional, if the value is defined at the time of NFC creation, then the default value 10.0.0.0/19 is considered. The IPV4 address subnet is an optional attribute.
+  ipv6AddressSpaces:
+    type: array
+    items:
+      type: string
+    description: The IPv6 is not supported right now.
+type: object

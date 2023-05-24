@@ -1,0 +1,176 @@
+$token: azure-native:storagecache/v20230501:Cache
+description: "A cache instance. Follows Azure Resource Manager standards: https://github.com/Azure/azure-resource-manager-rpc/blob/master/v1.0/resource-api-reference.md"
+properties:
+  cacheSizeGB:
+    type: integer
+    description: The size of this Cache, in GB.
+  directoryServicesSettings:
+    type: object
+    $ref: "#/types/azure-native:storagecache/v20230501:CacheDirectorySettingsResponse"
+    description: Specifies Directory Services settings of the cache.
+  encryptionSettings:
+    type: object
+    $ref: "#/types/azure-native:storagecache/v20230501:CacheEncryptionSettingsResponse"
+    description: Specifies encryption settings of the cache.
+  health:
+    type: object
+    $ref: "#/types/azure-native:storagecache/v20230501:CacheHealthResponse"
+    description: Health of the cache.
+  identity:
+    type: object
+    $ref: "#/types/azure-native:storagecache/v20230501:CacheIdentityResponse"
+    description: The identity of the cache, if configured.
+  location:
+    type: string
+    description: Region name string.
+  mountAddresses:
+    type: array
+    items:
+      type: string
+    description: Array of IPv4 addresses that can be used by clients mounting this cache.
+  name:
+    type: string
+    description: Name of cache.
+  networkSettings:
+    type: object
+    $ref: "#/types/azure-native:storagecache/v20230501:CacheNetworkSettingsResponse"
+    description: Specifies network settings of the cache.
+  primingJobs:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:storagecache/v20230501:PrimingJobResponse"
+    description: Specifies the priming jobs defined in the cache.
+  provisioningState:
+    type: string
+    description: ARM provisioning state, see https://github.com/Azure/azure-resource-manager-rpc/blob/master/v1.0/Addendum.md#provisioningstate-property
+  securitySettings:
+    type: object
+    $ref: "#/types/azure-native:storagecache/v20230501:CacheSecuritySettingsResponse"
+    description: Specifies security settings of the cache.
+  sku:
+    type: object
+    $ref: "#/types/azure-native:storagecache/v20230501:CacheResponseSku"
+    description: SKU for the cache.
+  spaceAllocation:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:storagecache/v20230501:StorageTargetSpaceAllocationResponse"
+    description: Specifies the space allocation percentage for each storage target in the cache.
+  subnet:
+    type: string
+    description: Subnet used for the cache.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:storagecache/v20230501:SystemDataResponse"
+    description: The system meta data relating to this resource.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: Type of the cache; Microsoft.StorageCache/Cache
+  upgradeSettings:
+    type: object
+    $ref: "#/types/azure-native:storagecache/v20230501:CacheUpgradeSettingsResponse"
+    description: Upgrade settings of the cache.
+  upgradeStatus:
+    type: object
+    $ref: "#/types/azure-native:storagecache/v20230501:CacheUpgradeStatusResponse"
+    description: Upgrade status of the cache.
+  zones:
+    type: array
+    items:
+      type: string
+    description: Availability zones for resources. This field should only contain a single element in the array.
+type: object
+required:
+  - health
+  - mountAddresses
+  - name
+  - primingJobs
+  - provisioningState
+  - spaceAllocation
+  - systemData
+  - type
+  - upgradeStatus
+inputProperties:
+  cacheName:
+    type: string
+    description: Name of cache. Length of name must not be greater than 80 and chars must be from the [-0-9a-zA-Z_] char class.
+    willReplaceOnChanges: true
+  cacheSizeGB:
+    type: integer
+    description: The size of this Cache, in GB.
+    willReplaceOnChanges: true
+  directoryServicesSettings:
+    type: object
+    $ref: "#/types/azure-native:storagecache/v20230501:CacheDirectorySettings"
+    description: Specifies Directory Services settings of the cache.
+  encryptionSettings:
+    type: object
+    $ref: "#/types/azure-native:storagecache/v20230501:CacheEncryptionSettings"
+    description: Specifies encryption settings of the cache.
+  identity:
+    type: object
+    $ref: "#/types/azure-native:storagecache/v20230501:CacheIdentity"
+    description: The identity of the cache, if configured.
+    willReplaceOnChanges: true
+  location:
+    type: string
+    description: Region name string.
+    willReplaceOnChanges: true
+  networkSettings:
+    type: object
+    $ref: "#/types/azure-native:storagecache/v20230501:CacheNetworkSettings"
+    description: Specifies network settings of the cache.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  securitySettings:
+    type: object
+    $ref: "#/types/azure-native:storagecache/v20230501:CacheSecuritySettings"
+    description: Specifies security settings of the cache.
+  sku:
+    type: object
+    $ref: "#/types/azure-native:storagecache/v20230501:CacheSku"
+    description: SKU for the cache.
+    willReplaceOnChanges: true
+  subnet:
+    type: string
+    description: Subnet used for the cache.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  upgradeSettings:
+    type: object
+    $ref: "#/types/azure-native:storagecache/v20230501:CacheUpgradeSettings"
+    description: Upgrade settings of the cache.
+  zones:
+    type: array
+    items:
+      type: string
+    description: Availability zones for resources. This field should only contain a single element in the array.
+    willReplaceOnChanges: true
+requiredInputs:
+  - resourceGroupName
+aliases:
+  - type: azure-native:storagecache:Cache
+  - type: azure-native:storagecache/v20190801preview:Cache
+  - type: azure-native:storagecache/v20191101:Cache
+  - type: azure-native:storagecache/v20200301:Cache
+  - type: azure-native:storagecache/v20201001:Cache
+  - type: azure-native:storagecache/v20210301:Cache
+  - type: azure-native:storagecache/v20210501:Cache
+  - type: azure-native:storagecache/v20210901:Cache
+  - type: azure-native:storagecache/v20220101:Cache
+  - type: azure-native:storagecache/v20220501:Cache
+  - type: azure-native:storagecache/v20230101:Cache
+  - type: azure-native:storagecache/v20230301preview:Cache

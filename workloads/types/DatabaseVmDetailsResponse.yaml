@@ -1,0 +1,19 @@
+$token: azure-native:workloads:DatabaseVmDetailsResponse
+description: Database VM details.
+properties:
+  status:
+    type: string
+    description: Defines the SAP Instance status.
+  storageDetails:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:workloads:StorageInformationResponse"
+    description: Storage details of all the Storage Accounts attached to the Database Virtual Machine. For e.g. NFS on AFS Shared Storage.
+  virtualMachineId:
+    type: string
+type: object
+required:
+  - status
+  - storageDetails
+  - virtualMachineId

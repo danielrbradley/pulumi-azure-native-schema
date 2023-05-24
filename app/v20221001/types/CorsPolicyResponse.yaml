@@ -1,0 +1,32 @@
+$token: azure-native:app/v20221001:CorsPolicyResponse
+description: Cross-Origin-Resource-Sharing policy
+properties:
+  allowCredentials:
+    type: boolean
+    description: allow credential or not
+  allowedHeaders:
+    type: array
+    items:
+      type: string
+    description: allowed HTTP headers
+  allowedMethods:
+    type: array
+    items:
+      type: string
+    description: allowed HTTP methods
+  allowedOrigins:
+    type: array
+    items:
+      type: string
+    description: allowed origins
+  exposeHeaders:
+    type: array
+    items:
+      type: string
+    description: "expose HTTP headers "
+  maxAge:
+    type: integer
+    description: max time client can cache the result
+type: object
+required:
+  - allowedOrigins

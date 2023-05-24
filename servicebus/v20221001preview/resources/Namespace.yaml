@@ -1,0 +1,160 @@
+$token: azure-native:servicebus/v20221001preview:Namespace
+description: Description of a namespace resource.
+properties:
+  alternateName:
+    type: string
+    description: Alternate name for namespace
+  createdAt:
+    type: string
+    description: The time the namespace was created
+  disableLocalAuth:
+    type: boolean
+    description: This property disables SAS authentication for the Service Bus namespace.
+  encryption:
+    type: object
+    $ref: "#/types/azure-native:servicebus/v20221001preview:EncryptionResponse"
+    description: Properties of BYOK Encryption description
+  identity:
+    type: object
+    $ref: "#/types/azure-native:servicebus/v20221001preview:IdentityResponse"
+    description: Properties of BYOK Identity description
+  location:
+    type: string
+    description: The Geo-location where the resource lives
+  metricId:
+    type: string
+    description: Identifier for Azure Insights metrics
+  minimumTlsVersion:
+    type: string
+    description: The minimum TLS version for the cluster to support, e.g. '1.2'
+  name:
+    type: string
+    description: Resource name
+  premiumMessagingPartitions:
+    type: integer
+    description: The number of partitions of a Service Bus namespace. This property is only applicable to Premium SKU namespaces. The default value is 1 and possible values are 1, 2 and 4
+  privateEndpointConnections:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:servicebus/v20221001preview:PrivateEndpointConnectionResponse"
+    description: List of private endpoint connections.
+  provisioningState:
+    type: string
+    description: Provisioning state of the namespace.
+  publicNetworkAccess:
+    type: string
+    description: This determines if traffic is allowed over public network. By default it is enabled.
+    default: Enabled
+  serviceBusEndpoint:
+    type: string
+    description: Endpoint you can use to perform Service Bus operations.
+  sku:
+    type: object
+    $ref: "#/types/azure-native:servicebus/v20221001preview:SBSkuResponse"
+    description: Properties of SKU
+  status:
+    type: string
+    description: Status of the namespace.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:servicebus/v20221001preview:SystemDataResponse"
+    description: The system meta data relating to this resource.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags
+  type:
+    type: string
+    description: Resource type
+  updatedAt:
+    type: string
+    description: The time the namespace was updated.
+  zoneRedundant:
+    type: boolean
+    description: Enabling this property creates a Premium Service Bus Namespace in regions supported availability zones.
+type: object
+required:
+  - createdAt
+  - location
+  - metricId
+  - name
+  - provisioningState
+  - serviceBusEndpoint
+  - status
+  - systemData
+  - type
+  - updatedAt
+inputProperties:
+  alternateName:
+    type: string
+    description: Alternate name for namespace
+  disableLocalAuth:
+    type: boolean
+    description: This property disables SAS authentication for the Service Bus namespace.
+  encryption:
+    type: object
+    $ref: "#/types/azure-native:servicebus/v20221001preview:Encryption"
+    description: Properties of BYOK Encryption description
+  identity:
+    type: object
+    $ref: "#/types/azure-native:servicebus/v20221001preview:Identity"
+    description: Properties of BYOK Identity description
+  location:
+    type: string
+    description: The Geo-location where the resource lives
+    willReplaceOnChanges: true
+  minimumTlsVersion:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:servicebus/v20221001preview:TlsVersion"
+    description: The minimum TLS version for the cluster to support, e.g. '1.2'
+  namespaceName:
+    type: string
+    description: The namespace name.
+    willReplaceOnChanges: true
+  premiumMessagingPartitions:
+    type: integer
+    description: The number of partitions of a Service Bus namespace. This property is only applicable to Premium SKU namespaces. The default value is 1 and possible values are 1, 2 and 4
+  privateEndpointConnections:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:servicebus/v20221001preview:PrivateEndpointConnection"
+    description: List of private endpoint connections.
+  publicNetworkAccess:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:servicebus/v20221001preview:PublicNetworkAccess"
+    description: This determines if traffic is allowed over public network. By default it is enabled.
+    default: Enabled
+  resourceGroupName:
+    type: string
+    description: Name of the Resource group within the Azure subscription.
+    willReplaceOnChanges: true
+  sku:
+    type: object
+    $ref: "#/types/azure-native:servicebus/v20221001preview:SBSku"
+    description: Properties of SKU
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags
+  zoneRedundant:
+    type: boolean
+    description: Enabling this property creates a Premium Service Bus Namespace in regions supported availability zones.
+    willReplaceOnChanges: true
+requiredInputs:
+  - resourceGroupName
+aliases:
+  - type: azure-native:servicebus:Namespace
+  - type: azure-native:servicebus/v20140901:Namespace
+  - type: azure-native:servicebus/v20150801:Namespace
+  - type: azure-native:servicebus/v20170401:Namespace
+  - type: azure-native:servicebus/v20180101preview:Namespace
+  - type: azure-native:servicebus/v20210101preview:Namespace
+  - type: azure-native:servicebus/v20210601preview:Namespace
+  - type: azure-native:servicebus/v20211101:Namespace
+  - type: azure-native:servicebus/v20220101preview:Namespace

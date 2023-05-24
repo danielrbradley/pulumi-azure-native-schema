@@ -1,0 +1,49 @@
+$token: azure-native:peering/v20210101:getRegisteredAsn
+description: Gets an existing registered ASN with the specified name under the given subscription, resource group and peering.
+inputs:
+  properties:
+    peeringName:
+      type: string
+      description: The name of the peering.
+      willReplaceOnChanges: true
+    registeredAsnName:
+      type: string
+      description: The name of the registered ASN.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - peeringName
+    - registeredAsnName
+    - resourceGroupName
+outputs:
+  description: The customer's ASN that is registered by the peering service provider.
+  properties:
+    asn:
+      type: integer
+      description: The customer's ASN from which traffic originates.
+    id:
+      type: string
+      description: The ID of the resource.
+    name:
+      type: string
+      description: The name of the resource.
+    peeringServicePrefixKey:
+      type: string
+      description: The peering service prefix key that is to be shared with the customer.
+    provisioningState:
+      type: string
+      description: The provisioning state of the resource.
+    type:
+      type: string
+      description: The type of the resource.
+  type: object
+  required:
+    - id
+    - name
+    - peeringServicePrefixKey
+    - provisioningState
+    - type

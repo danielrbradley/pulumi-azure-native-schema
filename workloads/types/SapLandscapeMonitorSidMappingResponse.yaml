@@ -1,0 +1,12 @@
+$token: azure-native:workloads:SapLandscapeMonitorSidMappingResponse
+description: Gets or sets the mapping for SID to Environment/Applications.
+properties:
+  name:
+    type: string
+    description: Gets or sets the name of the grouping.
+  topSid:
+    type: array
+    items:
+      type: string
+    description: Gets or sets the list of SID's.
+type: object

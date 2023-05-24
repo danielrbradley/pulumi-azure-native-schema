@@ -1,0 +1,52 @@
+$token: azure-native:machinelearningservices/v20230401:Schedule
+description: Azure Resource Manager resource envelope.
+properties:
+  name:
+    type: string
+    description: The name of the resource
+  scheduleProperties:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401:ScheduleResponse"
+    description: "[Required] Additional attributes of the entity."
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - name
+  - scheduleProperties
+  - systemData
+  - type
+inputProperties:
+  name:
+    type: string
+    description: Schedule name.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  scheduleProperties:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401:Schedule"
+    description: "[Required] Additional attributes of the entity."
+  workspaceName:
+    type: string
+    description: Name of Azure Machine Learning workspace.
+    willReplaceOnChanges: true
+requiredInputs:
+  - resourceGroupName
+  - scheduleProperties
+  - workspaceName
+aliases:
+  - type: azure-native:machinelearningservices:Schedule
+  - type: azure-native:machinelearningservices/v20220601preview:Schedule
+  - type: azure-native:machinelearningservices/v20221001:Schedule
+  - type: azure-native:machinelearningservices/v20221001preview:Schedule
+  - type: azure-native:machinelearningservices/v20221201preview:Schedule
+  - type: azure-native:machinelearningservices/v20230201preview:Schedule
+  - type: azure-native:machinelearningservices/v20230401preview:Schedule

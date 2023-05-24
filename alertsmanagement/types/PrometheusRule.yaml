@@ -1,0 +1,44 @@
+$token: azure-native:alertsmanagement:PrometheusRule
+description: An Azure Prometheus alerting or recording rule.
+properties:
+  actions:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:alertsmanagement:PrometheusRuleGroupAction"
+    description: Actions that are performed when the alert rule becomes active, and when an alert condition is resolved.
+  alert:
+    type: string
+    description: Alert rule name.
+  annotations:
+    type: object
+    additionalProperties:
+      type: string
+    description: The annotations clause specifies a set of informational labels that can be used to store longer additional information such as alert descriptions or runbook links. The annotation values can be templated.
+  enabled:
+    type: boolean
+    description: Enable/disable rule.
+  expression:
+    type: string
+    description: The PromQL expression to evaluate. https://prometheus.io/docs/prometheus/latest/querying/basics/. Evaluated periodically as given by 'interval', and the result recorded as a new set of time series with the metric name as given by 'record'.
+  for:
+    type: string
+    description: The amount of time alert must be active before firing.
+  labels:
+    type: object
+    additionalProperties:
+      type: string
+    description: Labels to add or overwrite before storing the result.
+  record:
+    type: string
+    description: Recorded metrics name.
+  resolveConfiguration:
+    type: object
+    $ref: "#/types/azure-native:alertsmanagement:PrometheusRuleResolveConfiguration"
+    description: Defines the configuration for resolving fired alerts. Only relevant for alerts.
+  severity:
+    type: integer
+    description: The severity of the alerts fired by the rule. Must be between 0 and 4.
+type: object
+required:
+  - expression

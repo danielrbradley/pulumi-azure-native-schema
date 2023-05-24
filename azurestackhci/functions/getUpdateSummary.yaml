@@ -1,0 +1,68 @@
+$token: azure-native:azurestackhci:getUpdateSummary
+description: |-
+  Get all Update summaries under the HCI cluster
+  API Version: 2023-02-01.
+inputs:
+  properties:
+    clusterName:
+      type: string
+      description: The name of the cluster.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - clusterName
+    - resourceGroupName
+outputs:
+  description: Get the update summaries for the cluster
+  properties:
+    currentVersion:
+      type: string
+      description: Current Solution Bundle version of the stamp.
+    hardwareModel:
+      type: string
+      description: Name of the hardware model.
+    healthCheckDate:
+      type: string
+      description: Last time the package-specific checks were run.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    lastChecked:
+      type: string
+      description: Last time the update service successfully checked for updates
+    lastUpdated:
+      type: string
+      description: Last time an update installation completed successfully.
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    name:
+      type: string
+      description: The name of the resource
+    oemFamily:
+      type: string
+      description: OEM family name.
+    provisioningState:
+      type: string
+      description: Provisioning state of the UpdateSummaries proxy resource.
+    state:
+      type: string
+      description: Overall update state of the stamp.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:azurestackhci:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - provisioningState
+    - systemData
+    - type

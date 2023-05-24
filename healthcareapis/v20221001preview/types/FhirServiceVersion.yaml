@@ -1,0 +1,6 @@
+$token: azure-native:healthcareapis/v20221001preview:FhirServiceVersion
+description: The kind of FHIR Service.
+type: string
+enum:
+  - value: STU3
+  - value: R4

@@ -1,0 +1,6 @@
+$token: azure-native:azurestackhci/v20210901preview:IpAllocationMethodEnum
+description: "IPAllocationMethod - The IP address allocation method. Possible values include: 'Static', 'Dynamic'"
+type: string
+enum:
+  - value: Dynamic
+  - value: Static

@@ -1,0 +1,9 @@
+$token: azure-native:machinelearningservices/v20230401preview:ManagedNetworkProvisionStatusResponse
+description: Status of the Provisioning for the managed network of a machine learning workspace.
+properties:
+  sparkReady:
+    type: boolean
+  status:
+    type: string
+    description: Status for the managed network of a machine learning workspace.
+type: object

@@ -1,0 +1,17 @@
+$token: azure-native:storagecache/v20230301preview:AmlFilesystemHsmSettings
+description: AML file system HSM settings.
+properties:
+  container:
+    type: string
+    description: Resource ID of storage container used for hydrating the namespace and archiving from the namespace. The resource provider must have permission to create SAS tokens on the storage account.
+  importPrefix:
+    type: string
+    description: Only blobs in the non-logging container that start with this path/prefix get hydrated into the cluster namespace.
+    default: /
+  loggingContainer:
+    type: string
+    description: Resource ID of storage container used for logging events and errors.  Must be a separate container in the same storage account as the hydration and archive container. The resource provider must have permission to create SAS tokens on the storage account.
+type: object
+required:
+  - container
+  - loggingContainer

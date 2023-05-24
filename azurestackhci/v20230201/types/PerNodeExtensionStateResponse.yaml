@@ -1,0 +1,26 @@
+$token: azure-native:azurestackhci/v20230201:PerNodeExtensionStateResponse
+description: Status of Arc Extension for a particular node in HCI Cluster.
+properties:
+  extension:
+    type: string
+    description: Fully qualified resource ID for the particular Arc Extension on this node.
+  instanceView:
+    type: object
+    $ref: "#/types/azure-native:azurestackhci/v20230201:ExtensionInstanceViewResponse"
+    description: The extension instance view.
+  name:
+    type: string
+    description: Name of the node in HCI Cluster.
+  state:
+    type: string
+    description: State of Arc Extension in this node.
+  typeHandlerVersion:
+    type: string
+    description: Specifies the version of the script handler.
+type: object
+required:
+  - extension
+  - instanceView
+  - name
+  - state
+  - typeHandlerVersion

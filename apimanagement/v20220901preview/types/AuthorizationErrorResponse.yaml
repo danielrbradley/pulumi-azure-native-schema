@@ -1,0 +1,10 @@
+$token: azure-native:apimanagement/v20220901preview:AuthorizationErrorResponse
+description: Authorization error details.
+properties:
+  code:
+    type: string
+    description: Error code
+  message:
+    type: string
+    description: Error message
+type: object

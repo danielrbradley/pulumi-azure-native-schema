@@ -1,0 +1,40 @@
+$token: azure-native:workloads/v20230401:SingleServerConfigurationResponse
+description: Gets or sets the single server configuration. For prerequisites for creating the infrastructure, please see [here](https://go.microsoft.com/fwlink/?linkid=2212611&clcid=0x409)
+properties:
+  appResourceGroup:
+    type: string
+    description: The application resource group where SAP system resources will be deployed.
+  customResourceNames:
+    type: object
+    $ref: "#/types/azure-native:workloads/v20230401:SingleServerFullResourceNamesResponse"
+    description: The set of custom names to be used for underlying azure resources that are part of the SAP system.
+  databaseType:
+    type: string
+    description: The database type.
+  dbDiskConfiguration:
+    type: object
+    $ref: "#/types/azure-native:workloads/v20230401:DiskConfigurationResponse"
+    description: Gets or sets the disk configuration.
+  deploymentType:
+    type: string
+    description: |-
+      The type of SAP deployment, single server or Three tier.
+      Expected value is 'SingleServer'.
+    const: SingleServer
+  networkConfiguration:
+    type: object
+    $ref: "#/types/azure-native:workloads/v20230401:NetworkConfigurationResponse"
+    description: Network configuration for the server
+  subnetId:
+    type: string
+    description: The subnet id.
+  virtualMachineConfiguration:
+    type: object
+    $ref: "#/types/azure-native:workloads/v20230401:VirtualMachineConfigurationResponse"
+    description: Gets or sets the virtual machine configuration.
+type: object
+required:
+  - appResourceGroup
+  - deploymentType
+  - subnetId
+  - virtualMachineConfiguration

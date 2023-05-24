@@ -1,0 +1,38 @@
+$token: azure-native:hybridnetwork/v20200101preview:getVendorSkuPreview
+description: Gets the preview information of a vendor sku.
+inputs:
+  properties:
+    previewSubscription:
+      type: string
+      description: Preview subscription ID.
+      willReplaceOnChanges: true
+    skuName:
+      type: string
+      description: The name of the vendor sku.
+      willReplaceOnChanges: true
+    vendorName:
+      type: string
+      description: The name of the vendor.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - previewSubscription
+    - skuName
+    - vendorName
+outputs:
+  description: Customer subscription which can use a sku.
+  properties:
+    id:
+      type: string
+      description: The ARM ID of the resource.
+    name:
+      type: string
+      description: The preview subscription ID.
+    type:
+      type: string
+      description: The type of the resource.
+  type: object
+  required:
+    - id
+    - name
+    - type

@@ -1,0 +1,9 @@
+$token: azure-native:insights/v20220601:PrivateLinkScopedResourceResponse
+properties:
+  resourceId:
+    type: string
+    description: The resourceId of the Azure Monitor Private Link Scope Scoped Resource through which this DCE is associated with a Azure Monitor Private Link Scope.
+  scopeId:
+    type: string
+    description: The immutableId of the Azure Monitor Private Link Scope Resource to which the association is.
+type: object

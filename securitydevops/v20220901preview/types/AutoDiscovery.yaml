@@ -1,0 +1,5 @@
+$token: azure-native:securitydevops/v20220901preview:AutoDiscovery
+type: string
+enum:
+  - value: Disabled
+  - value: Enabled

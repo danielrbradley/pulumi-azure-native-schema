@@ -1,0 +1,66 @@
+$token: azure-native:devtestlab/v20150521preview:getScheduleResource
+description: Get schedule.
+inputs:
+  properties:
+    labName:
+      type: string
+      description: The name of the lab.
+      willReplaceOnChanges: true
+    name:
+      type: string
+      description: The name of the schedule.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - labName
+    - name
+    - resourceGroupName
+outputs:
+  description: A schedule.
+  properties:
+    dailyRecurrence:
+      type: object
+      $ref: "#/types/azure-native:devtestlab/v20150521preview:DayDetailsResponse"
+      description: The daily recurrence of the schedule.
+    hourlyRecurrence:
+      type: object
+      $ref: "#/types/azure-native:devtestlab/v20150521preview:HourDetailsResponse"
+      description: The hourly recurrence of the schedule.
+    id:
+      type: string
+      description: The identifier of the resource.
+    location:
+      type: string
+      description: The location of the resource.
+    name:
+      type: string
+      description: The name of the resource.
+    provisioningState:
+      type: string
+      description: The provisioning status of the resource.
+    status:
+      type: string
+      description: The status of the schedule.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: The tags of the resource.
+    taskType:
+      type: string
+      description: The task type of the schedule.
+    timeZoneId:
+      type: string
+      description: The time zone id.
+    type:
+      type: string
+      description: The type of the resource.
+    weeklyRecurrence:
+      type: object
+      $ref: "#/types/azure-native:devtestlab/v20150521preview:WeekDetailsResponse"
+      description: The weekly recurrence of the schedule.
+  type: object

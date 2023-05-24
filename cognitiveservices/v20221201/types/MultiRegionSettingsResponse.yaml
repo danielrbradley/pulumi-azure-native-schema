@@ -1,0 +1,12 @@
+$token: azure-native:cognitiveservices/v20221201:MultiRegionSettingsResponse
+description: The multiregion settings Cognitive Services account.
+properties:
+  regions:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:cognitiveservices/v20221201:RegionSettingResponse"
+  routingMethod:
+    type: string
+    description: Multiregion routing methods.
+type: object

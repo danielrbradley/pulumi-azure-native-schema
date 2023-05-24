@@ -1,0 +1,11 @@
+$token: azure-native:eventhub:NWRuleSetVirtualNetworkRules
+description: The response from the List namespace operation.
+properties:
+  ignoreMissingVnetServiceEndpoint:
+    type: boolean
+    description: Value that indicates whether to ignore missing Vnet Service Endpoint
+  subnet:
+    type: object
+    $ref: "#/types/azure-native:eventhub:Subnet"
+    description: Subnet properties
+type: object

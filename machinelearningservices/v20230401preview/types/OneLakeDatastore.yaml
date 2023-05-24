@@ -1,0 +1,75 @@
+$token: azure-native:machinelearningservices/v20230401preview:OneLakeDatastore
+description: OneLake (Trident) datastore configuration.
+properties:
+  artifact:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:LakeHouseArtifact"
+    description: "[Required] OneLake artifact backing the datastore."
+  credentials:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:AccountKeyDatastoreCredentials"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:CertificateDatastoreCredentials"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:KerberosKeytabCredentials"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:KerberosPasswordCredentials"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:NoneDatastoreCredentials"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:SasDatastoreCredentials"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:ServicePrincipalDatastoreCredentials"
+    discriminator:
+      propertyName: credentialsType
+      mapping:
+        AccountKey: "#/types/azure-native:machinelearningservices/v20230401preview:AccountKeyDatastoreCredentials"
+        Certificate: "#/types/azure-native:machinelearningservices/v20230401preview:CertificateDatastoreCredentials"
+        KerberosKeytab: "#/types/azure-native:machinelearningservices/v20230401preview:KerberosKeytabCredentials"
+        KerberosPassword: "#/types/azure-native:machinelearningservices/v20230401preview:KerberosPasswordCredentials"
+        None: "#/types/azure-native:machinelearningservices/v20230401preview:NoneDatastoreCredentials"
+        Sas: "#/types/azure-native:machinelearningservices/v20230401preview:SasDatastoreCredentials"
+        ServicePrincipal: "#/types/azure-native:machinelearningservices/v20230401preview:ServicePrincipalDatastoreCredentials"
+    description: "[Required] Account credentials."
+  datastoreType:
+    type: string
+    description: |-
+      Enum to determine the datastore contents type.
+      Expected value is 'OneLake'.
+    const: OneLake
+  description:
+    type: string
+    description: The asset description text.
+  endpoint:
+    type: string
+    description: OneLake endpoint to use for the datastore.
+  intellectualProperty:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:IntellectualProperty"
+    description: Intellectual Property details.
+  oneLakeWorkspaceName:
+    type: string
+    description: "[Required] OneLake workspace name."
+  properties:
+    type: object
+    additionalProperties:
+      type: string
+    description: The asset property dictionary.
+  serviceDataAccessAuthIdentity:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:machinelearningservices/v20230401preview:ServiceDataAccessAuthIdentity"
+    description: Indicates which identity to use to authenticate service data access to customer's storage.
+    default: None
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Tag dictionary. Tags can be added, removed, and updated.
+type: object
+required:
+  - artifact
+  - credentials
+  - datastoreType
+  - oneLakeWorkspaceName

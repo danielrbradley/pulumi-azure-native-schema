@@ -1,0 +1,16 @@
+$token: azure-native:networkcloud:KeySetUserResponse
+properties:
+  azureUserName:
+    type: string
+    description: The Azure Active Directory user name (email name).
+  description:
+    type: string
+    description: The free-form description for this user.
+  sshPublicKey:
+    type: object
+    $ref: "#/types/azure-native:networkcloud:SshPublicKeyResponse"
+    description: The SSH public key for this user.
+type: object
+required:
+  - azureUserName
+  - sshPublicKey

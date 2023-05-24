@@ -1,0 +1,22 @@
+$token: azure-native:machinelearningservices/v20230401preview:ServiceTagOutboundRuleResponse
+description: Service Tag Outbound Rule for the managed network of a machine learning workspace.
+properties:
+  category:
+    type: string
+    description: Category of a managed network Outbound Rule of a machine learning workspace.
+  destination:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:ServiceTagDestinationResponse"
+    description: Service Tag destination for a Service Tag Outbound Rule for the managed network of a machine learning workspace.
+  status:
+    type: string
+    description: Status of a managed network Outbound Rule of a machine learning workspace.
+  type:
+    type: string
+    description: |-
+      Type of a managed network Outbound Rule of a machine learning workspace.
+      Expected value is 'ServiceTag'.
+    const: ServiceTag
+type: object
+required:
+  - type

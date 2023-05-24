@@ -1,0 +1,8 @@
+$token: azure-native:hybridcontainerservice/v20220901preview:StorageSpacesPropertiesStatus
+description: HybridAKSStorageStatus defines the observed state of HybridAKSStorage
+properties:
+  provisioningStatus:
+    type: object
+    $ref: "#/types/azure-native:hybridcontainerservice/v20220901preview:StorageSpacesPropertiesProvisioningStatus"
+    description: Contains Provisioning errors
+type: object

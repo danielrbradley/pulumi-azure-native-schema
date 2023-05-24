@@ -1,0 +1,14 @@
+$token: azure-native:machinelearningservices/v20230201preview:TrainingMode
+description: "TrainingMode mode - Setting to 'auto' is same as setting it to 'non-distributed' for now, however in the future may result in mixed mode or heuristics based mode selection. Default is 'auto'.\r
+
+  If 'Distributed' then only distributed featurization is used and distributed algorithms are chosen.\r
+
+  If 'NonDistributed' then only non distributed algorithms are chosen."
+type: string
+enum:
+  - description: Auto mode
+    value: Auto
+  - description: Distributed training mode
+    value: Distributed
+  - description: Non distributed training mode
+    value: NonDistributed

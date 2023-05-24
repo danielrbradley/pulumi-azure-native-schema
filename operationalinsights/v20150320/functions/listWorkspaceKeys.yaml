@@ -1,0 +1,26 @@
+$token: azure-native:operationalinsights/v20150320:listWorkspaceKeys
+description: Gets the shared keys for a Log Analytics Workspace. These keys are used to connect Microsoft Operational Insights agents to the workspace.
+inputs:
+  properties:
+    resourceGroupName:
+      type: string
+      description: The Resource Group name.
+      willReplaceOnChanges: true
+    workspaceName:
+      type: string
+      description: The Log Analytics Workspace name.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - workspaceName
+outputs:
+  description: The shared keys for a workspace.
+  properties:
+    primarySharedKey:
+      type: string
+      description: The primary shared key of a workspace.
+    secondarySharedKey:
+      type: string
+      description: The secondary shared key of a workspace.
+  type: object

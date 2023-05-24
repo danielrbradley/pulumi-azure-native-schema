@@ -1,0 +1,11 @@
+$token: azure-native:avs:EncryptionResponse
+description: The properties of customer managed encryption key
+properties:
+  keyVaultProperties:
+    type: object
+    $ref: "#/types/azure-native:avs:EncryptionKeyVaultPropertiesResponse"
+    description: The key vault where the encryption key is stored
+  status:
+    type: string
+    description: Status of customer managed encryption key
+type: object

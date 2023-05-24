@@ -1,0 +1,13 @@
+$token: azure-native:machinelearningservices/v20230401preview:IntellectualPropertyResponse
+description: Intellectual Property details for a resource.
+properties:
+  protectionLevel:
+    type: string
+    description: Protection level of the Intellectual Property.
+    default: All
+  publisher:
+    type: string
+    description: "[Required] Publisher of the Intellectual Property. Must be the same as Registry publisher name."
+type: object
+required:
+  - publisher

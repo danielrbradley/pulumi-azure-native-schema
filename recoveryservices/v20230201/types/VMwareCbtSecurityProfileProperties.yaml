@@ -1,0 +1,21 @@
+$token: azure-native:recoveryservices/v20230201:VMwareCbtSecurityProfileProperties
+description: VMwareCbt security profile input.
+properties:
+  isTargetVmConfidentialEncryptionEnabled:
+    type: string
+    description: A value indicating whether confidential compute encryption to be enabled.
+  isTargetVmIntegrityMonitoringEnabled:
+    type: string
+    description: A value indicating whether integrity monitoring to be enabled.
+  isTargetVmSecureBootEnabled:
+    type: string
+    description: A value indicating whether secure boot to be enabled.
+  isTargetVmTpmEnabled:
+    type: string
+    description: A value indicating whether trusted platform module to be enabled.
+  targetVmSecurityType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:recoveryservices/v20230201:SecurityType"
+    description: The target VM security type.
+type: object

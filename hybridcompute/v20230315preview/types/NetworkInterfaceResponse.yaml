@@ -1,0 +1,10 @@
+$token: azure-native:hybridcompute/v20230315preview:NetworkInterfaceResponse
+description: Describes a network interface.
+properties:
+  ipAddresses:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:hybridcompute/v20230315preview:IpAddressResponse"
+    description: The list of IP addresses in this interface.
+type: object

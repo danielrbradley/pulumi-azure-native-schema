@@ -1,0 +1,6 @@
+$token: azure-native:recoveryservices:CrossSubscriptionRestoreSettingsResponse
+description: Settings for Cross Subscription Restore Settings
+properties:
+  crossSubscriptionRestoreState:
+    type: string
+type: object

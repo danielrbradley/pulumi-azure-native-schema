@@ -1,0 +1,17 @@
+$token: azure-native:machinelearningservices/v20230401preview:FileSystemSource
+properties:
+  connection:
+    type: string
+    description: Workspace connection for data import source storage
+  path:
+    type: string
+    description: Path on data import FileSystem source
+  sourceType:
+    type: string
+    description: |-
+      Enum to determine the type of data.
+      Expected value is 'file_system'.
+    const: file_system
+type: object
+required:
+  - sourceType

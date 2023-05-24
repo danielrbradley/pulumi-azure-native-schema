@@ -1,0 +1,5 @@
+$token: azure-native:machinelearningservices/v20230401:NodesValueType
+description: "[Required] Type of the Nodes value"
+type: string
+enum:
+  - value: All

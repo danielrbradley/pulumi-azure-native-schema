@@ -1,0 +1,63 @@
+$token: azure-native:azurearcdata:SqlServerAvailabilityGroup
+properties:
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  properties:
+    type: object
+    $ref: "#/types/azure-native:azurearcdata:SqlServerAvailabilityGroupResourcePropertiesResponse"
+    description: Properties of Arc Sql Server availability group
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:azurearcdata:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - location
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:azurearcdata:SqlServerAvailabilityGroupResourceProperties"
+    description: Properties of Arc Sql Server availability group
+  resourceGroupName:
+    type: string
+    description: The name of the Azure resource group
+    willReplaceOnChanges: true
+  sqlAvailabilityGroupName:
+    type: string
+    description: Name of SQL Availability Group
+    willReplaceOnChanges: true
+  sqlServerInstanceName:
+    type: string
+    description: Name of SQL Server Instance
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+requiredInputs:
+  - properties
+  - resourceGroupName
+  - sqlServerInstanceName
+aliases:
+  - type: azure-native:azurearcdata/v20230315preview:SqlServerAvailabilityGroup

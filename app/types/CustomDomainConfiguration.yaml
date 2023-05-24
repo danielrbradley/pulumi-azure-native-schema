@@ -1,0 +1,13 @@
+$token: azure-native:app:CustomDomainConfiguration
+description: Configuration properties for apps environment custom domain
+properties:
+  certificatePassword:
+    type: string
+    description: Certificate password
+  certificateValue:
+    type: string
+    description: PFX or PEM blob
+  dnsSuffix:
+    type: string
+    description: Dns suffix for the environment domain
+type: object

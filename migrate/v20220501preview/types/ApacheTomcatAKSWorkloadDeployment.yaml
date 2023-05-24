@@ -1,0 +1,62 @@
+$token: azure-native:migrate/v20220501preview:ApacheTomcatAKSWorkloadDeployment
+description: ApacheTomcat web application.
+properties:
+  automationArtifactProperties:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:AutomationArtifact"
+    description: Class for automation artifact.
+  bindings:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:Binding"
+    description: Gets or sets the bindings for the application.
+  buildContainerImages:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:ContainerImageProperties"
+    description: Gets or sets the build container images.
+  clusterProperties:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:AKSDeploymentProperties"
+    description: Class for AKSDeployment Properties.
+  configurations:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:WebApplicationConfiguration"
+    description: Gets or sets application configuration.
+  containerImageProperties:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:ContainerImageProperties"
+    description: Class for container image properties.
+  deploymentNamePrefix:
+    type: string
+    description: Gets or sets the deployment name prefix.
+  deploymentSpec:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:AKSDeploymentSpecification"
+    description: AKS Deployment Specification.
+  directories:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:WebApplicationDirectory"
+    description: Gets or sets application directories.
+  limits:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:ResourceRequirements"
+    description: Resource Requirements.
+  monitoringProperties:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:AppInsightMonitoringProperties"
+    description: Class for app insight monitoring properties.
+  requests:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:ResourceRequirements"
+    description: Resource Requirements.
+  targetPlatformIdentity:
+    type: string
+    description: Gets or sets the target platform managed identity.
+type: object

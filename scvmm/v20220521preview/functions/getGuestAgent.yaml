@@ -1,0 +1,70 @@
+$token: azure-native:scvmm/v20220521preview:getGuestAgent
+description: Implements GuestAgent GET method.
+inputs:
+  properties:
+    guestAgentName:
+      type: string
+      description: Name of the GuestAgent.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group.
+      willReplaceOnChanges: true
+    virtualMachineName:
+      type: string
+      description: Name of the vm.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - guestAgentName
+    - resourceGroupName
+    - virtualMachineName
+outputs:
+  description: Defines the GuestAgent.
+  properties:
+    credentials:
+      type: object
+      $ref: "#/types/azure-native:scvmm/v20220521preview:GuestCredentialResponse"
+      description: Username / Password Credentials to provision guest agent.
+    customResourceName:
+      type: string
+      description: Gets the name of the corresponding resource in Kubernetes.
+    httpProxyConfig:
+      type: object
+      $ref: "#/types/azure-native:scvmm/v20220521preview:HttpProxyConfigurationResponse"
+      description: HTTP Proxy configuration for the VM.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    provisioningAction:
+      type: string
+      description: Gets or sets the guest agent provisioning action.
+    provisioningState:
+      type: string
+      description: Gets or sets the provisioning state.
+    status:
+      type: string
+      description: Gets or sets the guest agent status.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:scvmm/v20220521preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+    uuid:
+      type: string
+      description: Gets or sets a unique identifier for this resource.
+  type: object
+  required:
+    - customResourceName
+    - id
+    - name
+    - provisioningState
+    - status
+    - systemData
+    - type
+    - uuid

@@ -1,0 +1,6 @@
+$token: azure-native:storage:AccountType
+description: Specifies the Active Directory account type for Azure Storage.
+type: string
+enum:
+  - value: User
+  - value: Computer

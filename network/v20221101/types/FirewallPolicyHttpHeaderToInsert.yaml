@@ -1,0 +1,10 @@
+$token: azure-native:network/v20221101:FirewallPolicyHttpHeaderToInsert
+description: name and value of HTTP/S header to insert
+properties:
+  headerName:
+    type: string
+    description: Contains the name of the header
+  headerValue:
+    type: string
+    description: Contains the value of the header
+type: object

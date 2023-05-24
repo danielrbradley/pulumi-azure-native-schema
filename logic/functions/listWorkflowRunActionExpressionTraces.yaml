@@ -1,0 +1,37 @@
+$token: azure-native:logic:listWorkflowRunActionExpressionTraces
+description: |-
+  Lists a workflow run expression trace.
+  API Version: 2019-05-01.
+inputs:
+  properties:
+    actionName:
+      type: string
+      description: The workflow action name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The resource group name.
+      willReplaceOnChanges: true
+    runName:
+      type: string
+      description: The workflow run name.
+      willReplaceOnChanges: true
+    workflowName:
+      type: string
+      description: The workflow name.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - actionName
+    - resourceGroupName
+    - runName
+    - workflowName
+outputs:
+  description: The expression traces.
+  properties:
+    inputs:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:logic:ExpressionRootResponse"
+  type: object

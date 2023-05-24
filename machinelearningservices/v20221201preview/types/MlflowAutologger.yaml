@@ -1,0 +1,6 @@
+$token: azure-native:machinelearningservices/v20221201preview:MlflowAutologger
+description: Indicates whether mlflow autologger is enabled for notebooks.
+type: string
+enum:
+  - value: Enabled
+  - value: Disabled

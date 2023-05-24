@@ -1,0 +1,66 @@
+$token: azure-native:sql/v20220801preview:getStartStopManagedInstanceSchedule
+description: Gets the managed instance's Start/Stop schedule.
+inputs:
+  properties:
+    managedInstanceName:
+      type: string
+      description: The name of the managed instance.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+      willReplaceOnChanges: true
+    startStopScheduleName:
+      type: string
+      description: Name of the managed instance Start/Stop schedule.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - managedInstanceName
+    - resourceGroupName
+    - startStopScheduleName
+outputs:
+  description: Managed instance's Start/Stop schedule.
+  properties:
+    description:
+      type: string
+      description: The description of the schedule.
+      default: ""
+    id:
+      type: string
+      description: Resource ID.
+    name:
+      type: string
+      description: Resource name.
+    nextExecutionTime:
+      type: string
+      description: Timestamp when the next action will be executed in the corresponding schedule time zone.
+    nextRunAction:
+      type: string
+      description: Next action to be executed (Start or Stop)
+    scheduleList:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:sql/v20220801preview:ScheduleItemResponse"
+      description: Schedule list.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:sql/v20220801preview:SystemDataResponse"
+      description: System data of the scheduled resource.
+    timeZoneId:
+      type: string
+      description: The time zone of the schedule.
+      default: UTC
+    type:
+      type: string
+      description: Resource type.
+  type: object
+  required:
+    - id
+    - name
+    - nextExecutionTime
+    - nextRunAction
+    - scheduleList
+    - systemData
+    - type

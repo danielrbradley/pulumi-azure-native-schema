@@ -1,0 +1,28 @@
+$token: azure-native:servicefabric/v20201201preview:listListUpgradableVersionPost
+description: If a target is not provided, it will get the minimum and maximum versions available from the current cluster version. If a target is given, it will provide the required path to get from the current cluster version to the target version.
+inputs:
+  properties:
+    clusterName:
+      type: string
+      description: The name of the cluster resource.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group.
+      willReplaceOnChanges: true
+    targetVersion:
+      type: string
+      description: The target code version.
+  type: object
+  required:
+    - clusterName
+    - resourceGroupName
+    - targetVersion
+outputs:
+  description: The list of intermediate cluster code versions for an upgrade or downgrade. Or minimum and maximum upgradable version if no target was given
+  properties:
+    supportedPath:
+      type: array
+      items:
+        type: string
+  type: object

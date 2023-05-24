@@ -1,0 +1,62 @@
+$token: azure-native:recoveryservices/v20160601:getProtectionPolicy
+description: Gets the details of the backup policy associated with the Recovery Services vault. This is an asynchronous operation. Use the GetPolicyOperationResult API to Get the operation status.
+inputs:
+  properties:
+    policyName:
+      type: string
+      description: The backup policy name used in this GET operation.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group associated with the Recovery Services vault.
+      willReplaceOnChanges: true
+    vaultName:
+      type: string
+      description: The name of the Recovery Services vault.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - policyName
+    - resourceGroupName
+    - vaultName
+outputs:
+  description: The base class for backup policy. Workload-specific backup policies are derived from this class.
+  properties:
+    eTag:
+      type: string
+      description: Optional ETag.
+    id:
+      type: string
+      description: Resource ID represents the complete path to the resource.
+    location:
+      type: string
+      description: Resource location.
+    name:
+      type: string
+      description: Resource name associated with the resource.
+    properties:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:recoveryservices/v20160601:AzureIaaSVMProtectionPolicyResponse"
+        - type: object
+          $ref: "#/types/azure-native:recoveryservices/v20160601:AzureSqlProtectionPolicyResponse"
+        - type: object
+          $ref: "#/types/azure-native:recoveryservices/v20160601:MabProtectionPolicyResponse"
+      discriminator:
+        propertyName: backupManagementType
+        mapping:
+          AzureIaasVM: "#/types/azure-native:recoveryservices/v20160601:AzureIaaSVMProtectionPolicyResponse"
+          AzureSql: "#/types/azure-native:recoveryservices/v20160601:AzureSqlProtectionPolicyResponse"
+          MAB: "#/types/azure-native:recoveryservices/v20160601:MabProtectionPolicyResponse"
+      description: The base class for a backup policy. Workload-specific backup policies are derived from this class.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: Resource type represents the complete path of the form Namespace/ResourceType/ResourceType/...
+  type: object
+  required:
+    - properties

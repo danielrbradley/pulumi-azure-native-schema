@@ -1,0 +1,10 @@
+$token: azure-native:containerservice/v20230102preview:ManagedClusterSKUResponse
+description: The SKU of a Managed Cluster.
+properties:
+  name:
+    type: string
+    description: The name of a managed cluster SKU.
+  tier:
+    type: string
+    description: If not specified, the default is 'Free'. See [AKS Pricing Tier](https://learn.microsoft.com/azure/aks/free-standard-pricing-tiers) for more details.
+type: object

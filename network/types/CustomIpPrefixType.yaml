@@ -1,0 +1,7 @@
+$token: azure-native:network:CustomIpPrefixType
+description: Type of custom IP prefix. Should be Singular, Parent, or Child.
+type: string
+enum:
+  - value: Singular
+  - value: Parent
+  - value: Child

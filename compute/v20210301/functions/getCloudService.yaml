@@ -1,0 +1,47 @@
+$token: azure-native:compute/v20210301:getCloudService
+description: Display information about a cloud service.
+inputs:
+  properties:
+    cloudServiceName:
+      type: string
+      description: Name of the cloud service.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the resource group.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - cloudServiceName
+    - resourceGroupName
+outputs:
+  description: Describes the cloud service.
+  properties:
+    id:
+      type: string
+      description: Resource Id.
+    location:
+      type: string
+      description: Resource location.
+    name:
+      type: string
+      description: Resource name.
+    properties:
+      type: object
+      $ref: "#/types/azure-native:compute/v20210301:CloudServicePropertiesResponse"
+      description: Cloud service properties
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: Resource type.
+  type: object
+  required:
+    - id
+    - location
+    - name
+    - properties
+    - type

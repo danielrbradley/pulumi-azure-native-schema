@@ -1,0 +1,30 @@
+$token: azure-native:alertsmanagement:ScheduleResponse
+description: Scheduling configuration for a given alert processing rule.
+properties:
+  effectiveFrom:
+    type: string
+    description: Scheduling effective from time. Date-Time in ISO-8601 format without timezone suffix.
+  effectiveUntil:
+    type: string
+    description: Scheduling effective until time. Date-Time in ISO-8601 format without timezone suffix.
+  recurrences:
+    type: array
+    items:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:alertsmanagement:DailyRecurrenceResponse"
+        - type: object
+          $ref: "#/types/azure-native:alertsmanagement:MonthlyRecurrenceResponse"
+        - type: object
+          $ref: "#/types/azure-native:alertsmanagement:WeeklyRecurrenceResponse"
+      discriminator:
+        propertyName: recurrenceType
+        mapping:
+          Daily: "#/types/azure-native:alertsmanagement:DailyRecurrenceResponse"
+          Monthly: "#/types/azure-native:alertsmanagement:MonthlyRecurrenceResponse"
+          Weekly: "#/types/azure-native:alertsmanagement:WeeklyRecurrenceResponse"
+    description: List of recurrences.
+  timeZone:
+    type: string
+    description: Scheduling time zone.
+type: object

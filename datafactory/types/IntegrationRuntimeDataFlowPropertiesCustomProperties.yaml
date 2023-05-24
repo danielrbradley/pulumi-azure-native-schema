@@ -1,0 +1,9 @@
+$token: azure-native:datafactory:IntegrationRuntimeDataFlowPropertiesCustomProperties
+properties:
+  name:
+    type: string
+    description: Name of custom property.
+  value:
+    type: string
+    description: Value of custom property.
+type: object

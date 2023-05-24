@@ -1,0 +1,40 @@
+$token: azure-native:resourcehealth/v20221001:EventImpactedResourceResponse
+description: Impacted resource for an event.
+properties:
+  id:
+    type: string
+    description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+  info:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:resourcehealth/v20221001:KeyValueItemResponse"
+    description: Additional information.
+  name:
+    type: string
+    description: The name of the resource
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:resourcehealth/v20221001:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  targetRegion:
+    type: string
+    description: Impacted resource region name.
+  targetResourceId:
+    type: string
+    description: Identity for resource within Microsoft cloud.
+  targetResourceType:
+    type: string
+    description: Resource type within Microsoft cloud.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - id
+  - name
+  - systemData
+  - targetRegion
+  - targetResourceId
+  - targetResourceType
+  - type

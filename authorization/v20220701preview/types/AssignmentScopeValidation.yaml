@@ -1,0 +1,8 @@
+$token: azure-native:authorization/v20220701preview:AssignmentScopeValidation
+description: The option whether validate the exemption is at or under the assignment scope.
+type: string
+enum:
+  - description: This option will validate the exemption is at or under the assignment scope.
+    value: Default
+  - description: This option will bypass the validation the exemption scope is at or under the policy assignment scope.
+    value: DoNotValidate

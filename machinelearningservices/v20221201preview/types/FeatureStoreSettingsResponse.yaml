@@ -1,0 +1,12 @@
+$token: azure-native:machinelearningservices/v20221201preview:FeatureStoreSettingsResponse
+properties:
+  allowRoleAssignmentsOnResourceGroupLevel:
+    type: boolean
+  computeRuntime:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20221201preview:ComputeRuntimeDtoResponse"
+  offlineStoreConnectionName:
+    type: string
+  onlineStoreConnectionName:
+    type: string
+type: object

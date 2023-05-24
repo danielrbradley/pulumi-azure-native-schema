@@ -1,0 +1,6 @@
+$token: azure-native:azuresphere:RegionalDataBoundary
+description: Regional data boundary for an image
+type: string
+enum:
+  - value: None
+  - value: EU

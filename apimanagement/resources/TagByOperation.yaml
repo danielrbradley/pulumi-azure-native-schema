@@ -1,0 +1,58 @@
+$token: azure-native:apimanagement:TagByOperation
+properties:
+  displayName:
+    type: string
+    description: Tag name.
+  name:
+    type: string
+    description: The name of the resource
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - displayName
+  - name
+  - type
+inputProperties:
+  apiId:
+    type: string
+    description: API revision identifier. Must be unique in the current API Management service instance. Non-current revision has ;rev=n as a suffix where n is the revision number.
+    willReplaceOnChanges: true
+  operationId:
+    type: string
+    description: Operation identifier within an API. Must be unique in the current API Management service instance.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  serviceName:
+    type: string
+    description: The name of the API Management service.
+    willReplaceOnChanges: true
+  tagId:
+    type: string
+    description: Tag identifier. Must be unique in the current API Management service instance.
+    willReplaceOnChanges: true
+requiredInputs:
+  - apiId
+  - operationId
+  - resourceGroupName
+  - serviceName
+aliases:
+  - type: azure-native:apimanagement/v20170301:TagByOperation
+  - type: azure-native:apimanagement/v20180101:TagByOperation
+  - type: azure-native:apimanagement/v20180601preview:TagByOperation
+  - type: azure-native:apimanagement/v20190101:TagByOperation
+  - type: azure-native:apimanagement/v20191201:TagByOperation
+  - type: azure-native:apimanagement/v20191201preview:TagByOperation
+  - type: azure-native:apimanagement/v20200601preview:TagByOperation
+  - type: azure-native:apimanagement/v20201201:TagByOperation
+  - type: azure-native:apimanagement/v20210101preview:TagByOperation
+  - type: azure-native:apimanagement/v20210401preview:TagByOperation
+  - type: azure-native:apimanagement/v20210801:TagByOperation
+  - type: azure-native:apimanagement/v20211201preview:TagByOperation
+  - type: azure-native:apimanagement/v20220401preview:TagByOperation
+  - type: azure-native:apimanagement/v20220801:TagByOperation
+  - type: azure-native:apimanagement/v20220901preview:TagByOperation

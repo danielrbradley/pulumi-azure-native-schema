@@ -1,0 +1,12 @@
+$token: azure-native:azurestackhci/v20210901preview:IPPool
+properties:
+  end:
+    type: string
+    description: end of the ip address pool
+  ipPoolType:
+    $ref: "#/types/azure-native:azurestackhci/v20210901preview:IPPoolTypeEnum"
+    description: ip pool type
+  start:
+    type: string
+    description: start of the ip address pool
+type: object

@@ -1,0 +1,6 @@
+$token: azure-native:networkcloud/v20221212preview:VirtualMachinePlacementHintPodAffinityScope
+description: The scope for the virtual machine affinity or anti-affinity placement hint. It should always be "Machine" in the case of node affinity.
+type: string
+enum:
+  - value: Rack
+  - value: Machine

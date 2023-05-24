@@ -1,0 +1,21 @@
+$token: azure-native:securityinsights/v20230401preview:Kind
+description: Type of the content item we depend on
+type: string
+enum:
+  - value: DataConnector
+  - value: DataType
+  - value: Workbook
+  - value: WorkbookTemplate
+  - value: Playbook
+  - value: PlaybookTemplate
+  - value: AnalyticsRuleTemplate
+  - value: AnalyticsRule
+  - value: HuntingQuery
+  - value: InvestigationQuery
+  - value: Parser
+  - value: Watchlist
+  - value: WatchlistTemplate
+  - value: Solution
+  - value: AzureFunction
+  - value: LogicAppsCustomConnector
+  - value: AutomationRule

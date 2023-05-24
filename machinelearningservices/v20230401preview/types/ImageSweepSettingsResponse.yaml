@@ -1,0 +1,24 @@
+$token: azure-native:machinelearningservices/v20230401preview:ImageSweepSettingsResponse
+description: Model sweeping and hyperparameter sweeping related settings.
+properties:
+  earlyTermination:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:BanditPolicyResponse"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MedianStoppingPolicyResponse"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230401preview:TruncationSelectionPolicyResponse"
+    discriminator:
+      propertyName: policyType
+      mapping:
+        Bandit: "#/types/azure-native:machinelearningservices/v20230401preview:BanditPolicyResponse"
+        MedianStopping: "#/types/azure-native:machinelearningservices/v20230401preview:MedianStoppingPolicyResponse"
+        TruncationSelection: "#/types/azure-native:machinelearningservices/v20230401preview:TruncationSelectionPolicyResponse"
+    description: Type of early termination policy.
+  samplingAlgorithm:
+    type: string
+    description: "[Required] Type of the hyperparameter sampling algorithms."
+type: object
+required:
+  - samplingAlgorithm

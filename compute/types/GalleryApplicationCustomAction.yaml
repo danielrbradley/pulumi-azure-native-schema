@@ -1,0 +1,22 @@
+$token: azure-native:compute:GalleryApplicationCustomAction
+description: A custom action that can be performed with a Gallery Application Version.
+properties:
+  description:
+    type: string
+    description: Description to help the users understand what this custom action does.
+  name:
+    type: string
+    description: The name of the custom action.  Must be unique within the Gallery Application Version.
+  parameters:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:compute:GalleryApplicationCustomActionParameter"
+    description: The parameters that this custom action uses
+  script:
+    type: string
+    description: The script to run when executing this custom action.
+type: object
+required:
+  - name
+  - script

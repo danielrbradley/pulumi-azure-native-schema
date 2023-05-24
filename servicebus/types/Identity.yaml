@@ -1,0 +1,12 @@
+$token: azure-native:servicebus:Identity
+description: Properties to configure User Assigned Identities for Bring your Own Keys
+properties:
+  type:
+    $ref: "#/types/azure-native:servicebus:ManagedServiceIdentityType"
+    description: Type of managed service identity.
+  userAssignedIdentities:
+    type: array
+    items:
+      type: string
+    description: Properties for User Assigned Identities
+type: object

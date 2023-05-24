@@ -1,0 +1,33 @@
+$token: azure-native:machinelearningservices/v20230401:CustomService
+description: Specifies the custom service configuration
+properties:
+  docker:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401:Docker"
+    description: Describes the docker settings for the image
+  endpoints:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20230401:Endpoint"
+    description: Configuring the endpoints for the container
+  environmentVariables:
+    type: object
+    additionalProperties:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20230401:EnvironmentVariable"
+    description: Environment Variable for the container
+  image:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401:Image"
+    description: Describes the Image Specifications
+  name:
+    type: string
+    description: Name of the Custom Service
+  volumes:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20230401:VolumeDefinition"
+    description: Configuring the volumes for the container
+type: object

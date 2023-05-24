@@ -1,0 +1,19 @@
+$token: azure-native:securityinsights/v20230301preview:AutomationRulePropertyValuesChangedCondition
+properties:
+  changeType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:securityinsights/v20230301preview:AutomationRulePropertyChangedConditionSupportedChangedType"
+  operator:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:securityinsights/v20230301preview:AutomationRulePropertyConditionSupportedOperator"
+  propertyName:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:securityinsights/v20230301preview:AutomationRulePropertyChangedConditionSupportedPropertyType"
+  propertyValues:
+    type: array
+    items:
+      type: string
+type: object

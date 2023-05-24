@@ -1,0 +1,20 @@
+$token: azure-native:networkcloud/v20221212preview:StorageApplianceConfigurationData
+properties:
+  adminCredentials:
+    type: object
+    $ref: "#/types/azure-native:networkcloud/v20221212preview:AdministrativeCredentials"
+    description: The credentials of the administrative interface on this storage appliance.
+  rackSlot:
+    type: number
+    description: The slot that storage appliance is in the rack based on the BOM configuration.
+  serialNumber:
+    type: string
+    description: The serial number of the appliance.
+  storageApplianceName:
+    type: string
+    description: The user-provided name for the storage appliance that will be created from this specification.
+type: object
+required:
+  - adminCredentials
+  - rackSlot
+  - serialNumber

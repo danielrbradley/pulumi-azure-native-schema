@@ -1,0 +1,22 @@
+$token: azure-native:networkcloud/v20221212preview:HardwareInventoryResponse
+properties:
+  additionalHostInformation:
+    type: string
+    description: Freeform data extracted from the environment about this machine. This information varies depending on the specific hardware and configuration.
+  interfaces:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:HardwareInventoryNetworkInterfaceResponse"
+    description: The list of network interfaces and associated details for the bare metal machine.
+  nics:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:NicResponse"
+    description: Field Deprecated. Will be removed in an upcoming version. The list of network interface cards and associated details for the bare metal machine.
+type: object
+required:
+  - additionalHostInformation
+  - interfaces
+  - nics

@@ -1,0 +1,39 @@
+$token: azure-native:machinelearningservices:listWorkspaceKeys
+description: |-
+  Lists all the keys associated with this workspace. This includes keys for the storage account, app insights and password for container registry
+  API Version: 2022-10-01.
+inputs:
+  properties:
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    workspaceName:
+      type: string
+      description: Name of Azure Machine Learning workspace.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - resourceGroupName
+    - workspaceName
+outputs:
+  properties:
+    appInsightsInstrumentationKey:
+      type: string
+    containerRegistryCredentials:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices:RegistryListCredentialsResultResponse"
+    notebookAccessKeys:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices:ListNotebookKeysResultResponse"
+    userStorageKey:
+      type: string
+    userStorageResourceId:
+      type: string
+  type: object
+  required:
+    - appInsightsInstrumentationKey
+    - containerRegistryCredentials
+    - notebookAccessKeys
+    - userStorageKey
+    - userStorageResourceId

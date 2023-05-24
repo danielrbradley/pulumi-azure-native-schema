@@ -1,0 +1,6 @@
+$token: azure-native:voiceservices:TestLinePurpose
+description: Purpose of this test line, e.g. automated or manual testing
+type: string
+enum:
+  - value: Manual
+  - value: Automated

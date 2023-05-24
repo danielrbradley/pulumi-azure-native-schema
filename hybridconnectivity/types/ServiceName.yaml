@@ -1,0 +1,6 @@
+$token: azure-native:hybridconnectivity:ServiceName
+description: Name of the service.
+type: string
+enum:
+  - value: SSH
+  - value: WAC

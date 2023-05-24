@@ -1,0 +1,23 @@
+$token: azure-native:app/v20221101preview:ManagedCertificateResponseProperties
+description: Certificate resource specific properties
+properties:
+  domainControlValidation:
+    type: string
+    description: Selected type of domain control validation for managed certificates.
+  error:
+    type: string
+    description: Any error occurred during the certificate provision.
+  provisioningState:
+    type: string
+    description: Provisioning state of the certificate.
+  subjectName:
+    type: string
+    description: Subject name of the certificate.
+  validationToken:
+    type: string
+    description: A TXT token used for DNS TXT domain control validation when issuing this type of managed certificates.
+type: object
+required:
+  - error
+  - provisioningState
+  - validationToken

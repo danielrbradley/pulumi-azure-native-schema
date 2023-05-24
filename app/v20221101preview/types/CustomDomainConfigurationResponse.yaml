@@ -1,0 +1,30 @@
+$token: azure-native:app/v20221101preview:CustomDomainConfigurationResponse
+description: Configuration properties for apps environment custom domain
+properties:
+  certificatePassword:
+    type: string
+    description: Certificate password
+  certificateValue:
+    type: string
+    description: PFX or PEM blob
+  customDomainVerificationId:
+    type: string
+    description: Id used to verify domain name ownership
+  dnsSuffix:
+    type: string
+    description: Dns suffix for the environment domain
+  expirationDate:
+    type: string
+    description: Certificate expiration date.
+  subjectName:
+    type: string
+    description: Subject name of the certificate.
+  thumbprint:
+    type: string
+    description: Certificate thumbprint.
+type: object
+required:
+  - customDomainVerificationId
+  - expirationDate
+  - subjectName
+  - thumbprint

@@ -1,0 +1,8 @@
+$token: azure-native:devhub/v20221011preview:GenerationManifestType
+description: Determines the type of manifests to be generated.
+type: string
+enum:
+  - description: Helm manifests
+    value: helm
+  - description: Kubernetes manifests
+    value: kube

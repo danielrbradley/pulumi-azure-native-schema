@@ -1,0 +1,57 @@
+$token: azure-native:apimanagement:PolicyFragment
+properties:
+  description:
+    type: string
+    description: Policy fragment description.
+  format:
+    type: string
+    description: Format of the policy fragment content.
+    default: xml
+  name:
+    type: string
+    description: The name of the resource
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  value:
+    type: string
+    description: Contents of the policy fragment.
+type: object
+required:
+  - name
+  - type
+  - value
+inputProperties:
+  description:
+    type: string
+    description: Policy fragment description.
+  format:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:apimanagement:PolicyFragmentContentFormat"
+    description: Format of the policy fragment content.
+    default: xml
+  id:
+    type: string
+    description: A resource identifier.
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  serviceName:
+    type: string
+    description: The name of the API Management service.
+    willReplaceOnChanges: true
+  value:
+    type: string
+    description: Contents of the policy fragment.
+requiredInputs:
+  - resourceGroupName
+  - serviceName
+  - value
+aliases:
+  - type: azure-native:apimanagement/v20211201preview:PolicyFragment
+  - type: azure-native:apimanagement/v20220401preview:PolicyFragment
+  - type: azure-native:apimanagement/v20220801:PolicyFragment
+  - type: azure-native:apimanagement/v20220901preview:PolicyFragment

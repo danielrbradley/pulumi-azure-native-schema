@@ -1,0 +1,7 @@
+$token: azure-native:sql/v20220801preview:ServerPublicNetworkAccessFlag
+description: Whether or not public endpoint access is allowed for this server.  Value is optional but if passed in, must be 'Enabled' or 'Disabled' or 'SecuredByPerimeter'
+type: string
+enum:
+  - value: Enabled
+  - value: Disabled
+  - value: SecuredByPerimeter

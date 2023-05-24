@@ -1,0 +1,34 @@
+$token: azure-native:testbase/v20220401preview:getPackageDownloadURL
+description: Gets the download URL of a package.
+inputs:
+  properties:
+    packageName:
+      type: string
+      description: The resource name of the Test Base Package.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group that contains the resource.
+      willReplaceOnChanges: true
+    testBaseAccountName:
+      type: string
+      description: The resource name of the Test Base Account.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - packageName
+    - resourceGroupName
+    - testBaseAccountName
+outputs:
+  description: The response of getting a download URL.
+  properties:
+    downloadUrl:
+      type: string
+      description: The download URL.
+    expirationTime:
+      type: string
+      description: Expiry date of the download URL.
+  type: object
+  required:
+    - downloadUrl
+    - expirationTime

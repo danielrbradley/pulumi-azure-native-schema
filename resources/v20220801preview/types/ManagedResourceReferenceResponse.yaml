@@ -1,0 +1,17 @@
+$token: azure-native:resources/v20220801preview:ManagedResourceReferenceResponse
+description: The managed resource model.
+properties:
+  denyStatus:
+    type: string
+    description: denyAssignment settings applied to the resource.
+    default: None
+  id:
+    type: string
+    description: The resourceId of a resource managed by the deployment stack.
+  status:
+    type: string
+    description: Current management state of the resource in the deployment stack.
+    default: None
+type: object
+required:
+  - id

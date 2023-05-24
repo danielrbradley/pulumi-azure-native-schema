@@ -1,0 +1,12 @@
+$token: azure-native:networkcloud/v20221212preview:HardwareValidationStatusResponse
+properties:
+  lastValidationTime:
+    type: string
+    description: The timestamp of the hardware validation execution.
+  result:
+    type: string
+    description: The outcome of the hardware validation.
+type: object
+required:
+  - lastValidationTime
+  - result

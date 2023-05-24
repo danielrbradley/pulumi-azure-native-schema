@@ -1,0 +1,21 @@
+$token: azure-native:migrate/v20220501preview:IdentityModelResponse
+description: Identity model.
+properties:
+  aadAuthority:
+    type: string
+    description: Gets or sets the authority of the SPN with which MigrateAgent communicates to service.
+  applicationId:
+    type: string
+    description: "Gets or sets the client/application Id of the SPN with which MigrateAgent communicates to\r
+
+      service."
+  audience:
+    type: string
+    description: Gets or sets the audience of the SPN with which MigrateAgent communicates to service.
+  objectId:
+    type: string
+    description: Gets or sets the object Id of the SPN with which MigrateAgent communicates to service.
+  tenantId:
+    type: string
+    description: Gets or sets the tenant Id of the SPN with which MigrateAgent communicates to service.
+type: object

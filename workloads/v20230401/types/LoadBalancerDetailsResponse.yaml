@@ -1,0 +1,8 @@
+$token: azure-native:workloads/v20230401:LoadBalancerDetailsResponse
+description: The Load Balancer details such as Load Balancer ID.
+properties:
+  id:
+    type: string
+type: object
+required:
+  - id

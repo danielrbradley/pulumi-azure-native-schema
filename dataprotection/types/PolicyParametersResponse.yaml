@@ -1,0 +1,24 @@
+$token: azure-native:dataprotection:PolicyParametersResponse
+description: Parameters in Policy
+properties:
+  backupDatasourceParametersList:
+    type: array
+    items:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:dataprotection:BlobBackupDatasourceParametersResponse"
+        - type: object
+          $ref: "#/types/azure-native:dataprotection:KubernetesClusterBackupDatasourceParametersResponse"
+      discriminator:
+        propertyName: objectType
+        mapping:
+          BlobBackupDatasourceParameters: "#/types/azure-native:dataprotection:BlobBackupDatasourceParametersResponse"
+          KubernetesClusterBackupDatasourceParameters: "#/types/azure-native:dataprotection:KubernetesClusterBackupDatasourceParametersResponse"
+    description: Gets or sets the Backup Data Source Parameters
+  dataStoreParametersList:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:dataprotection:AzureOperationalStoreParametersResponse"
+    description: Gets or sets the DataStore Parameters
+type: object

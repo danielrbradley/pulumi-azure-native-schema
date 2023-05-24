@@ -1,0 +1,7 @@
+$token: azure-native:labservices:Identity
+description: Identity for the resource.
+properties:
+  type:
+    $ref: "#/types/azure-native:labservices:ResourceIdentityType"
+    description: The identity type.
+type: object

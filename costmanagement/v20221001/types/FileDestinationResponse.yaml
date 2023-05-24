@@ -1,0 +1,9 @@
+$token: azure-native:costmanagement/v20221001:FileDestinationResponse
+description: Destination of the view data. This is optional. Currently only CSV format is supported.
+properties:
+  fileFormats:
+    type: array
+    items:
+      type: string
+    description: Destination of the view data. Currently only CSV format is supported.
+type: object

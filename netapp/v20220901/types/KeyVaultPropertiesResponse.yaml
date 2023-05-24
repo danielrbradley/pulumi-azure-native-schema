@@ -1,0 +1,25 @@
+$token: azure-native:netapp/v20220901:KeyVaultPropertiesResponse
+description: Properties of key vault.
+properties:
+  keyName:
+    type: string
+    description: The name of KeyVault key.
+  keyVaultId:
+    type: string
+    description: UUID v4 used to identify the Azure Key Vault configuration
+  keyVaultResourceId:
+    type: string
+    description: The resource ID of KeyVault.
+  keyVaultUri:
+    type: string
+    description: The Uri of KeyVault.
+  status:
+    type: string
+    description: Status of the KeyVault connection.
+type: object
+required:
+  - keyName
+  - keyVaultId
+  - keyVaultResourceId
+  - keyVaultUri
+  - status

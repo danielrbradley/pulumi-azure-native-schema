@@ -1,0 +1,15 @@
+$token: azure-native:dbforpostgresql/v20221201:DataEncryption
+description: Data encryption properties of a server
+properties:
+  primaryKeyURI:
+    type: string
+    description: URI for the key for data encryption for primary server.
+  primaryUserAssignedIdentityId:
+    type: string
+    description: Resource Id for the User assigned identity to be used for data encryption for primary server.
+  type:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:dbforpostgresql/v20221201:ArmServerKeyType"
+    description: Data encryption type to depict if it is System Managed vs Azure Key vault.
+type: object

@@ -1,0 +1,22 @@
+$token: azure-native:app/v20221101preview:JobTemplate
+description: Container Apps Job versioned application definition. Defines the desired state of an immutable revision. Any changes to this section Will result in a new revision being created
+properties:
+  containers:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:app/v20221101preview:Container"
+    description: List of container definitions for the Container App.
+  initContainers:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:app/v20221101preview:InitContainer"
+    description: List of specialized containers that run before app containers.
+  volumes:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:app/v20221101preview:Volume"
+    description: List of volume definitions for the Container App.
+type: object

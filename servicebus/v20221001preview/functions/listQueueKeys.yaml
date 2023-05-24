@@ -1,0 +1,59 @@
+$token: azure-native:servicebus/v20221001preview:listQueueKeys
+description: Primary and secondary connection strings to the queue.
+inputs:
+  properties:
+    authorizationRuleName:
+      type: string
+      description: The authorization rule name.
+      willReplaceOnChanges: true
+    namespaceName:
+      type: string
+      description: The namespace name
+      willReplaceOnChanges: true
+    queueName:
+      type: string
+      description: The queue name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the Resource group within the Azure subscription.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - authorizationRuleName
+    - namespaceName
+    - queueName
+    - resourceGroupName
+outputs:
+  description: Namespace/ServiceBus Connection String
+  properties:
+    aliasPrimaryConnectionString:
+      type: string
+      description: Primary connection string of the alias if GEO DR is enabled
+    aliasSecondaryConnectionString:
+      type: string
+      description: Secondary  connection string of the alias if GEO DR is enabled
+    keyName:
+      type: string
+      description: A string that describes the authorization rule.
+    primaryConnectionString:
+      type: string
+      description: Primary connection string of the created namespace authorization rule.
+    primaryKey:
+      type: string
+      description: A base64-encoded 256-bit primary key for signing and validating the SAS token.
+    secondaryConnectionString:
+      type: string
+      description: Secondary connection string of the created namespace authorization rule.
+    secondaryKey:
+      type: string
+      description: A base64-encoded 256-bit primary key for signing and validating the SAS token.
+  type: object
+  required:
+    - aliasPrimaryConnectionString
+    - aliasSecondaryConnectionString
+    - keyName
+    - primaryConnectionString
+    - primaryKey
+    - secondaryConnectionString
+    - secondaryKey

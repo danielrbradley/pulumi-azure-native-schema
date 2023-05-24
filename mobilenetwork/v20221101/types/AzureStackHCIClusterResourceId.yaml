@@ -1,0 +1,9 @@
+$token: azure-native:mobilenetwork/v20221101:AzureStackHCIClusterResourceId
+description: Reference to an Azure Stack HCI cluster resource.
+properties:
+  id:
+    type: string
+    description: Azure Stack HCI cluster resource ID.
+type: object
+required:
+  - id

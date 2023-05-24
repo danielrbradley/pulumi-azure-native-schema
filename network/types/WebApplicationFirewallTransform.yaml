@@ -1,0 +1,11 @@
+$token: azure-native:network:WebApplicationFirewallTransform
+description: Transforms applied before matching.
+type: string
+enum:
+  - value: Uppercase
+  - value: Lowercase
+  - value: Trim
+  - value: UrlDecode
+  - value: UrlEncode
+  - value: RemoveNulls
+  - value: HtmlEntityDecode

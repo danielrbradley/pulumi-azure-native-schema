@@ -1,0 +1,8 @@
+$token: azure-native:servicefabric/v20221001preview:ZonalUpdateMode
+description: Indicates the update mode for Cross Az clusters.
+type: string
+enum:
+  - description: The cluster will use 5 upgrade domains for Cross Az Node types.
+    value: Standard
+  - description: The cluster will use a maximum of 3 upgrade domains per zone instead of 5 for Cross Az Node types for faster deployments.
+    value: Fast

@@ -1,0 +1,13 @@
+$token: azure-native:datafactory:SparkConfigurationParametrizationReferenceResponse
+description: Spark configuration reference.
+properties:
+  referenceName:
+    $ref: pulumi.json#/Any
+    description: "Reference spark configuration name. Type: string (or Expression with resultType string)."
+  type:
+    type: string
+    description: Spark configuration reference type.
+type: object
+required:
+  - referenceName
+  - type

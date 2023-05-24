@@ -1,0 +1,44 @@
+$token: azure-native:domainregistration/v20220901:getDomainOwnershipIdentifier
+description: Description for Get ownership identifier for domain
+inputs:
+  properties:
+    domainName:
+      type: string
+      description: Name of domain.
+      willReplaceOnChanges: true
+    name:
+      type: string
+      description: Name of identifier.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Name of the resource group to which the resource belongs.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - domainName
+    - name
+    - resourceGroupName
+outputs:
+  description: Domain ownership Identifier.
+  properties:
+    id:
+      type: string
+      description: Resource Id.
+    kind:
+      type: string
+      description: Kind of resource.
+    name:
+      type: string
+      description: Resource Name.
+    ownershipId:
+      type: string
+      description: Ownership Id.
+    type:
+      type: string
+      description: Resource type.
+  type: object
+  required:
+    - id
+    - name
+    - type

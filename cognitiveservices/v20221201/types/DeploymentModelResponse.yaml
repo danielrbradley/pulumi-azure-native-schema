@@ -1,0 +1,19 @@
+$token: azure-native:cognitiveservices/v20221201:DeploymentModelResponse
+description: Properties of Cognitive Services account deployment model.
+properties:
+  callRateLimit:
+    type: object
+    $ref: "#/types/azure-native:cognitiveservices/v20221201:CallRateLimitResponse"
+    description: The call rate limit Cognitive Services account.
+  format:
+    type: string
+    description: Deployment model format.
+  name:
+    type: string
+    description: Deployment model name.
+  version:
+    type: string
+    description: Deployment model version.
+type: object
+required:
+  - callRateLimit

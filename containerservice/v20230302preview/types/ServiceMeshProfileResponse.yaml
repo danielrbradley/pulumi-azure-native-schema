@@ -1,0 +1,13 @@
+$token: azure-native:containerservice/v20230302preview:ServiceMeshProfileResponse
+description: Service mesh profile for a managed cluster.
+properties:
+  istio:
+    type: object
+    $ref: "#/types/azure-native:containerservice/v20230302preview:IstioServiceMeshResponse"
+    description: Istio service mesh configuration.
+  mode:
+    type: string
+    description: Mode of the service mesh.
+type: object
+required:
+  - mode

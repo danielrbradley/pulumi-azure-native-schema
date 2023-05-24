@@ -1,0 +1,56 @@
+$token: azure-native:migrate/v20220501preview:MigrateAgent
+description: MigrateAgent model.
+properties:
+  name:
+    type: string
+    description: Gets or sets the name of the resource.
+  properties:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:MigrateAgentModelPropertiesResponse"
+    description: MigrateAgent model properties.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:MigrateAgentModelResponseSystemData"
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Gets or sets the resource tags.
+  type:
+    type: string
+    description: Gets or sets the type of the resource.
+type: object
+required:
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  agentName:
+    type: string
+    description: MigrateAgent name.
+    willReplaceOnChanges: true
+  modernizeProjectName:
+    type: string
+    description: ModernizeProject name.
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:MigrateAgentModelProperties"
+    description: MigrateAgent model properties.
+  resourceGroupName:
+    type: string
+    description: Name of the Azure Resource Group that project is part of.
+    willReplaceOnChanges: true
+  subscriptionId:
+    type: string
+    description: Azure Subscription Id in which project was created.
+    willReplaceOnChanges: true
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Gets or sets the resource tags.
+requiredInputs:
+  - modernizeProjectName
+  - resourceGroupName

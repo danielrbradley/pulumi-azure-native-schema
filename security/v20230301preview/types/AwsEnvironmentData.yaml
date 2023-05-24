@@ -1,0 +1,29 @@
+$token: azure-native:security/v20230301preview:AwsEnvironmentData
+description: The AWS connector environment data
+properties:
+  environmentType:
+    type: string
+    description: |-
+      The type of the environment data.
+      Expected value is 'AwsAccount'.
+    const: AwsAccount
+  organizationalData:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:security/v20230301preview:AwsOrganizationalDataMaster"
+      - type: object
+        $ref: "#/types/azure-native:security/v20230301preview:AwsOrganizationalDataMember"
+    discriminator:
+      propertyName: organizationMembershipType
+      mapping:
+        Member: "#/types/azure-native:security/v20230301preview:AwsOrganizationalDataMember"
+        Organization: "#/types/azure-native:security/v20230301preview:AwsOrganizationalDataMaster"
+    description: The AWS account's organizational data
+  regions:
+    type: array
+    items:
+      type: string
+    description: list of regions to scan
+type: object
+required:
+  - environmentType

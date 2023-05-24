@@ -1,0 +1,9 @@
+$token: azure-native:azurestackhci/v20210901preview:StoragecontainersResponseExtendedLocation
+properties:
+  name:
+    type: string
+    description: The extended location name.
+  type:
+    type: string
+    description: The extended location type.
+type: object

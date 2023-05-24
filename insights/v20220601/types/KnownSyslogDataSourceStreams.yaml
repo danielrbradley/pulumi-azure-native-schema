@@ -1,0 +1,4 @@
+$token: azure-native:insights/v20220601:KnownSyslogDataSourceStreams
+type: string
+enum:
+  - value: Microsoft-Syslog

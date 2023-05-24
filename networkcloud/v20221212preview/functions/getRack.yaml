@@ -1,0 +1,83 @@
+$token: azure-native:networkcloud/v20221212preview:getRack
+description: Get properties of the provided rack.
+inputs:
+  properties:
+    rackName:
+      type: string
+      description: The name of the rack.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - rackName
+    - resourceGroupName
+outputs:
+  properties:
+    availabilityZone:
+      type: string
+      description: The value that will be used for machines in this rack to represent the availability zones that can be referenced by Hybrid AKS Clusters for node arrangement.
+    clusterId:
+      type: string
+      description: The resource ID of the cluster the rack is created for. This value is set when the rack is created by the cluster.
+    detailedStatus:
+      type: string
+      description: The more detailed status of the rack.
+    detailedStatusMessage:
+      type: string
+      description: The descriptive message about the current detailed status.
+    extendedLocation:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:ExtendedLocationResponse"
+      description: The extended location of the cluster associated with the resource.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+      description: The provisioning state of the rack resource.
+    rackLocation:
+      type: string
+      description: The free-form description of the rack location. (e.g. “DTN Datacenter, Floor 3, Isle 9, Rack 2B”)
+    rackSerialNumber:
+      type: string
+      description: The unique identifier for the rack within Network Cloud cluster. An alternate unique alphanumeric value other than a serial number may be provided if desired.
+    rackSkuId:
+      type: string
+      description: The SKU for the rack.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - availabilityZone
+    - clusterId
+    - detailedStatus
+    - detailedStatusMessage
+    - extendedLocation
+    - id
+    - location
+    - name
+    - provisioningState
+    - rackLocation
+    - rackSerialNumber
+    - rackSkuId
+    - systemData
+    - type

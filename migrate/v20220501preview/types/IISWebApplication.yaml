@@ -1,0 +1,78 @@
+$token: azure-native:migrate/v20220501preview:IISWebApplication
+description: IISWeb application.
+properties:
+  applicationId:
+    type: string
+    description: Gets or sets the web application id.
+  applicationName:
+    type: string
+    description: Gets or sets the web application name.
+  applicationScratchPath:
+    type: string
+    description: Gets or sets application scratch path.
+  applications:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:IISApplicationDetails"
+    description: Gets or sets the list of applications for the IIS web site.
+  bindings:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:Binding"
+    description: Gets or sets the bindings for the application.
+  configurations:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:WebApplicationConfiguration"
+    description: Gets or sets application configuration.
+  directories:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:WebApplicationDirectory"
+    description: Gets or sets application directories.
+  discoveredFrameworks:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:WebApplicationFramework"
+    description: Gets or sets the discovered frameworks of application.
+  displayName:
+    type: string
+    description: Gets or sets the display name.
+  iisWebServer:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:IISWebServer"
+    description: IISWeb server.
+  limits:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:ResourceRequirements"
+    description: Resource Requirements.
+  path:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:DirectoryPath"
+    description: Second level entity for virtual directories.
+  primaryFramework:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:WebApplicationFramework"
+    description: Framework specific data for a web application.
+  requests:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:ResourceRequirements"
+    description: Resource Requirements.
+  virtualApplications:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:migrate/v20220501preview:IISVirtualApplicationDetails"
+    description: Gets or sets the list of application units for the web site.
+  webServerId:
+    type: string
+    description: Gets or sets the web server id.
+  webServerName:
+    type: string
+    description: Gets or sets the web server name.
+type: object

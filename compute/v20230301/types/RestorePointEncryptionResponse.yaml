@@ -1,0 +1,11 @@
+$token: azure-native:compute/v20230301:RestorePointEncryptionResponse
+description: Encryption at rest settings for disk restore point. It is an optional property that can be specified in the input while creating a restore point.
+properties:
+  diskEncryptionSet:
+    type: object
+    $ref: "#/types/azure-native:compute/v20230301:DiskEncryptionSetParametersResponse"
+    description: Describes the parameter of customer managed disk encryption set resource id that can be specified for disk. **Note:** The disk encryption set resource id can only be specified for managed disk. Please refer https://aka.ms/mdssewithcmkoverview for more details.
+  type:
+    type: string
+    description: The type of key used to encrypt the data of the disk restore point.
+type: object

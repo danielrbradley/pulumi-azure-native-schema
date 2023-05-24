@@ -1,0 +1,8 @@
+$token: azure-native:workloads/v20230401:SAPVirtualInstanceErrorResponse
+description: An error response from the Virtual Instance for SAP Workload service.
+properties:
+  properties:
+    type: object
+    $ref: "#/types/azure-native:workloads/v20230401:ErrorDefinitionResponse"
+    description: The Virtual Instance for SAP error body.
+type: object

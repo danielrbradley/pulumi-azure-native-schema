@@ -1,0 +1,53 @@
+$token: azure-native:appplatform/v20230101preview:getApiPortalCustomDomain
+description: Get the API portal custom domain.
+inputs:
+  properties:
+    apiPortalName:
+      type: string
+      description: The name of API portal.
+      willReplaceOnChanges: true
+    domainName:
+      type: string
+      description: The name of the API portal custom domain.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+      willReplaceOnChanges: true
+    serviceName:
+      type: string
+      description: The name of the Service resource.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - apiPortalName
+    - domainName
+    - resourceGroupName
+    - serviceName
+outputs:
+  description: Custom domain of the API portal
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource Id for the resource.
+    name:
+      type: string
+      description: The name of the resource.
+    properties:
+      type: object
+      $ref: "#/types/azure-native:appplatform/v20230101preview:ApiPortalCustomDomainPropertiesResponse"
+      description: The properties of custom domain for API portal
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:appplatform/v20230101preview:SystemDataResponse"
+      description: Metadata pertaining to creation and last modification of the resource.
+    type:
+      type: string
+      description: The type of the resource.
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - systemData
+    - type

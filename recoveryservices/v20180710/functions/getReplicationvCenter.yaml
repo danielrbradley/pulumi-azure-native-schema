@@ -1,0 +1,51 @@
+$token: azure-native:recoveryservices/v20180710:getReplicationvCenter
+description: Gets the details of a registered vCenter server(Add vCenter server.)
+inputs:
+  properties:
+    fabricName:
+      type: string
+      description: Fabric name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group where the recovery services vault is present.
+      willReplaceOnChanges: true
+    resourceName:
+      type: string
+      description: The name of the recovery services vault.
+      willReplaceOnChanges: true
+    vCenterName:
+      type: string
+      description: vCenter name.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - fabricName
+    - resourceGroupName
+    - resourceName
+    - vCenterName
+outputs:
+  description: vCenter definition.
+  properties:
+    id:
+      type: string
+      description: Resource Id
+    location:
+      type: string
+      description: Resource Location
+    name:
+      type: string
+      description: Resource Name
+    properties:
+      type: object
+      $ref: "#/types/azure-native:recoveryservices/v20180710:VCenterPropertiesResponse"
+      description: VCenter related data.
+    type:
+      type: string
+      description: Resource Type
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - type

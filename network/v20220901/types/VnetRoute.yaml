@@ -1,0 +1,14 @@
+$token: azure-native:network/v20220901:VnetRoute
+description: List of routes that control routing from VirtualHub into a virtual network connection.
+properties:
+  staticRoutes:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:network/v20220901:StaticRoute"
+    description: List of all Static Routes.
+  staticRoutesConfig:
+    type: object
+    $ref: "#/types/azure-native:network/v20220901:StaticRoutesConfig"
+    description: Configuration for static routes on this HubVnetConnection.
+type: object

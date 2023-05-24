@@ -1,0 +1,12 @@
+$token: azure-native:appplatform:ConfigServerProperties
+description: Config server git properties payload
+properties:
+  configServer:
+    type: object
+    $ref: "#/types/azure-native:appplatform:ConfigServerSettings"
+    description: Settings of config server.
+  error:
+    type: object
+    $ref: "#/types/azure-native:appplatform:Error"
+    description: Error when apply config server settings.
+type: object

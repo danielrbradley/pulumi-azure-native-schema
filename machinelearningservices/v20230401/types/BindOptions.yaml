@@ -1,0 +1,13 @@
+$token: azure-native:machinelearningservices/v20230401:BindOptions
+description: Describes the bind options for the container
+properties:
+  createHostPath:
+    type: boolean
+    description: Indicate whether to create host path.
+  propagation:
+    type: string
+    description: Type of Bind Option
+  selinux:
+    type: string
+    description: Mention the selinux options.
+type: object

@@ -1,0 +1,42 @@
+$token: azure-native:managednetworkfabric/v20230201preview:getNetworkInterfaceStatus
+description: Get the running status of the Network Interface.
+inputs:
+  properties:
+    networkDeviceName:
+      type: string
+      description: Name of the NetworkDevice.
+      willReplaceOnChanges: true
+    networkInterfaceName:
+      type: string
+      description: Name of the NetworkInterface
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - networkDeviceName
+    - networkInterfaceName
+    - resourceGroupName
+outputs:
+  description: Interface running status properties
+  properties:
+    administrativeState:
+      type: string
+      description: The interface administrative state.
+    connectedTo:
+      type: string
+      description: Connected to ARM resource or external interface
+    operationalStatus:
+      type: string
+      description: The interface operational status.
+    phyStatus:
+      type: string
+      description: The physical status.
+    transceiverStatus:
+      type: string
+      description: "The interface transceiver type. Example: up or down"
+  type: object
+  required:
+    - administrativeState

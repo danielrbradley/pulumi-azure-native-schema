@@ -1,0 +1,6 @@
+$token: azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesUefiSettings
+properties:
+  secureBootEnabled:
+    type: boolean
+    description: Specifies whether secure boot should be enabled on the virtual machine.
+type: object

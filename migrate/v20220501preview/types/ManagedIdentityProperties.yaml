@@ -1,0 +1,15 @@
+$token: azure-native:migrate/v20220501preview:ManagedIdentityProperties
+properties:
+  clientId:
+    type: string
+  managedIdentityName:
+    type: string
+  principalId:
+    type: string
+  resourceGroup:
+    type: string
+  subscriptionId:
+    type: string
+  tenantId:
+    type: string
+type: object

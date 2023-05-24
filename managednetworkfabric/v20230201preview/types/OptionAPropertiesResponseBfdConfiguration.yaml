@@ -1,0 +1,13 @@
+$token: azure-native:managednetworkfabric/v20230201preview:OptionAPropertiesResponseBfdConfiguration
+description: BFD Configuration properties.
+properties:
+  interval:
+    type: integer
+    description: "interval in seconds. Example: 300."
+  multiplier:
+    type: integer
+    description: "multiplier. Example: 3."
+type: object
+required:
+  - interval
+  - multiplier

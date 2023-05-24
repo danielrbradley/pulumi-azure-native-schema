@@ -1,0 +1,7 @@
+$token: azure-native:recoveryservices:ResourceGuardOperationDetail
+properties:
+  defaultResourceRequest:
+    type: string
+  vaultCriticalOperation:
+    type: string
+type: object

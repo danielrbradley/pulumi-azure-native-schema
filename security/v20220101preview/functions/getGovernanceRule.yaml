@@ -1,0 +1,86 @@
+$token: azure-native:security/v20220101preview:getGovernanceRule
+description: Get a specific governance rule for the requested scope by ruleId
+inputs:
+  properties:
+    ruleId:
+      type: string
+      description: The governance rule key - unique key for the standard governance rule (GUID)
+      willReplaceOnChanges: true
+    scope:
+      type: string
+      description: "The scope of the Governance rules. Valid scopes are: management group (format: 'providers/Microsoft.Management/managementGroups/{managementGroup}'), subscription (format: 'subscriptions/{subscriptionId}'), or security connector (format: 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Security/securityConnectors/{securityConnectorName})'"
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - ruleId
+    - scope
+outputs:
+  description: Governance rule over a given scope
+  properties:
+    description:
+      type: string
+      description: Description of the governance rule
+    displayName:
+      type: string
+      description: Display name of the governance rule
+    excludedScopes:
+      type: array
+      items:
+        type: string
+      description: Excluded scopes, filter out the descendants of the scope (on management scopes)
+    governanceEmailNotification:
+      type: object
+      $ref: "#/types/azure-native:security/v20220101preview:GovernanceRuleEmailNotificationResponse"
+      description: The email notifications settings for the governance rule, states whether to disable notifications for mangers and owners
+    id:
+      type: string
+      description: Resource Id
+    includeMemberScopes:
+      type: boolean
+      description: Defines whether the rule is management scope rule (master connector as a single scope or management scope)
+    isDisabled:
+      type: boolean
+      description: Defines whether the rule is active/inactive
+    isGracePeriod:
+      type: boolean
+      description: Defines whether there is a grace period on the governance rule
+    metadata:
+      type: object
+      $ref: "#/types/azure-native:security/v20220101preview:GovernanceRuleMetadataResponse"
+      description: The governance rule metadata
+    name:
+      type: string
+      description: Resource name
+    ownerSource:
+      type: object
+      $ref: "#/types/azure-native:security/v20220101preview:GovernanceRuleOwnerSourceResponse"
+      description: The owner source for the governance rule - e.g. Manually by user@contoso.com - see example
+    remediationTimeframe:
+      type: string
+      description: Governance rule remediation timeframe - this is the time that will affect on the grace-period duration e.g. 7.00:00:00 - means 7 days
+    rulePriority:
+      type: integer
+      description: The governance rule priority, priority to the lower number. Rules with the same priority on the same scope will not be allowed
+    ruleType:
+      type: string
+      description: The rule type of the governance rule, defines the source of the rule e.g. Integrated
+    sourceResourceType:
+      type: string
+      description: The governance rule source, what the rule affects, e.g. Assessments
+    tenantId:
+      type: string
+      description: The tenantId (GUID)
+    type:
+      type: string
+      description: Resource type
+  type: object
+  required:
+    - displayName
+    - id
+    - name
+    - ownerSource
+    - rulePriority
+    - ruleType
+    - sourceResourceType
+    - tenantId
+    - type

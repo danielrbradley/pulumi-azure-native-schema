@@ -1,0 +1,6 @@
+$token: azure-native:documentdb:ManagedCassandraResourceIdentityType
+description: The type of the resource.
+type: string
+enum:
+  - value: SystemAssigned
+  - value: None

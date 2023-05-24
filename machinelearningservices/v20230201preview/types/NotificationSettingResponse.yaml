@@ -1,0 +1,14 @@
+$token: azure-native:machinelearningservices/v20230201preview:NotificationSettingResponse
+description: Configuration for notification.
+properties:
+  emailOn:
+    type: array
+    items:
+      type: string
+    description: Send email notification to user on specified notification type
+  emails:
+    type: array
+    items:
+      type: string
+    description: This is the email recipient list which has a limitation of 499 characters in total concat with comma separator
+type: object

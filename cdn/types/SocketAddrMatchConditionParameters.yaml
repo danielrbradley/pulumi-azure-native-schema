@@ -1,0 +1,30 @@
+$token: azure-native:cdn:SocketAddrMatchConditionParameters
+description: Defines the parameters for SocketAddress match conditions
+properties:
+  matchValues:
+    type: array
+    items:
+      type: string
+    description: The match value for the condition of the delivery rule
+  negateCondition:
+    type: boolean
+    description: Describes if this is negate condition or not
+    default: false
+  operator:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:cdn:SocketAddrOperator"
+    description: Describes operator to be matched
+  transforms:
+    type: array
+    items:
+      oneOf:
+        - type: string
+        - $ref: "#/types/azure-native:cdn:Transform"
+    description: List of transforms
+  typeName:
+    type: string
+type: object
+required:
+  - operator
+  - typeName

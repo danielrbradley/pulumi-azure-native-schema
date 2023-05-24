@@ -1,0 +1,25 @@
+$token: azure-native:resourceconnector/v20221027:SSHKeyResponse
+description: Appliance SSHKey definition.
+properties:
+  certificate:
+    type: string
+    description: Certificate associated with the public key if the key is signed.
+  creationTimeStamp:
+    type: number
+    description: Certificate creation timestamp (Unix).
+  expirationTimeStamp:
+    type: number
+    description: Certificate expiration timestamp (Unix).
+  privateKey:
+    type: string
+    description: Private Key.
+  publicKey:
+    type: string
+    description: Public Key.
+type: object
+required:
+  - certificate
+  - creationTimeStamp
+  - expirationTimeStamp
+  - privateKey
+  - publicKey

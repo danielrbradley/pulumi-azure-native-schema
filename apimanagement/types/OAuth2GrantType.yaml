@@ -1,0 +1,10 @@
+$token: azure-native:apimanagement:OAuth2GrantType
+description: OAuth2 grant type options
+type: string
+enum:
+  - name: AuthorizationCode
+    description: Authorization Code grant
+    value: AuthorizationCode
+  - name: ClientCredentials
+    description: Client Credential grant
+    value: ClientCredentials

@@ -1,0 +1,6 @@
+$token: azure-native:servicelinker/v20221101preview:DeleteOrUpdateBehavior
+description: Indicates whether to clean up previous operation when Linker is updating or deleting
+type: string
+enum:
+  - value: Default
+  - value: ForcedCleanup

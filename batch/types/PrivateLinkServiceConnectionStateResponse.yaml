@@ -1,0 +1,13 @@
+$token: azure-native:batch:PrivateLinkServiceConnectionStateResponse
+description: The private link service connection state of the private endpoint connection
+properties:
+  actionsRequired:
+    type: string
+  description:
+    type: string
+  status:
+    type: string
+type: object
+required:
+  - actionsRequired
+  - status

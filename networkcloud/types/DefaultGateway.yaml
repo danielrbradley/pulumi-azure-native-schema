@@ -1,0 +1,8 @@
+$token: azure-native:networkcloud:DefaultGateway
+description: |-
+  The indicator of whether this is the default gateway.
+  Only one of the attached networks (including the CloudServicesNetwork attachment) for a single machine may be specified as True.
+type: string
+enum:
+  - value: "True"
+  - value: "False"

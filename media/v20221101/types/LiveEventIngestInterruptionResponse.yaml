@@ -1,0 +1,16 @@
+$token: azure-native:media/v20221101:LiveEventIngestInterruptionResponse
+description: The live event ingest interruption data.
+properties:
+  begin:
+    type: string
+    description: UTC time of interruption start, encoder disconnected.
+  duration:
+    type: string
+    description: Duration of interruption in ISO 8601 time. For example, use PT1H30M to indicate 1 hour and 30 minutes.
+  end:
+    type: string
+    description: UTC time of interruption end, encoder re-connected.
+  reason:
+    type: string
+    description: Interruption reason.
+type: object

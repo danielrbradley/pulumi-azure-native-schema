@@ -1,0 +1,53 @@
+$token: azure-native:appplatform/v20230301preview:ConfigurationService
+description: Application Configuration Service resource
+properties:
+  name:
+    type: string
+    description: The name of the resource.
+  properties:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:ConfigurationServicePropertiesResponse"
+    description: Application Configuration Service properties payload
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  type:
+    type: string
+    description: The type of the resource.
+type: object
+required:
+  - name
+  - properties
+  - systemData
+  - type
+inputProperties:
+  configurationServiceName:
+    type: string
+    description: The name of Application Configuration Service.
+    willReplaceOnChanges: true
+  properties:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20230301preview:ConfigurationServiceProperties"
+    description: Application Configuration Service properties payload
+  resourceGroupName:
+    type: string
+    description: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+    willReplaceOnChanges: true
+  serviceName:
+    type: string
+    description: The name of the Service resource.
+    willReplaceOnChanges: true
+requiredInputs:
+  - resourceGroupName
+  - serviceName
+aliases:
+  - type: azure-native:appplatform:ConfigurationService
+  - type: azure-native:appplatform/v20220101preview:ConfigurationService
+  - type: azure-native:appplatform/v20220301preview:ConfigurationService
+  - type: azure-native:appplatform/v20220401:ConfigurationService
+  - type: azure-native:appplatform/v20220501preview:ConfigurationService
+  - type: azure-native:appplatform/v20220901preview:ConfigurationService
+  - type: azure-native:appplatform/v20221101preview:ConfigurationService
+  - type: azure-native:appplatform/v20221201:ConfigurationService
+  - type: azure-native:appplatform/v20230101preview:ConfigurationService

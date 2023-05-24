@@ -1,0 +1,99 @@
+$token: azure-native:alertsmanagement:PrometheusRuleGroup
+properties:
+  clusterName:
+    type: string
+    description: Apply rule to data from a specific cluster.
+  description:
+    type: string
+    description: Rule group description.
+  enabled:
+    type: boolean
+    description: Enable/disable rule group.
+  interval:
+    type: string
+    description: The interval in which to run the Prometheus rule group represented in ISO 8601 duration format. Should be between 1 and 15 minutes
+  location:
+    type: string
+    description: The geo-location where the resource lives
+  name:
+    type: string
+    description: The name of the resource
+  rules:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:alertsmanagement:PrometheusRuleResponse"
+    description: Defines the rules in the Prometheus rule group.
+  scopes:
+    type: array
+    items:
+      type: string
+    description: Target Azure Monitor workspaces resource ids. This api-version is currently limited to creating with one scope. This may change in future.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:alertsmanagement:SystemDataResponse"
+    description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - location
+  - name
+  - rules
+  - scopes
+  - systemData
+  - type
+inputProperties:
+  clusterName:
+    type: string
+    description: Apply rule to data from a specific cluster.
+  description:
+    type: string
+    description: Rule group description.
+  enabled:
+    type: boolean
+    description: Enable/disable rule group.
+  interval:
+    type: string
+    description: The interval in which to run the Prometheus rule group represented in ISO 8601 duration format. Should be between 1 and 15 minutes
+  location:
+    type: string
+    description: The geo-location where the resource lives
+    willReplaceOnChanges: true
+  resourceGroupName:
+    type: string
+    description: The name of the resource group. The name is case insensitive.
+    willReplaceOnChanges: true
+  ruleGroupName:
+    type: string
+    description: The name of the rule group.
+    willReplaceOnChanges: true
+  rules:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:alertsmanagement:PrometheusRule"
+    description: Defines the rules in the Prometheus rule group.
+  scopes:
+    type: array
+    items:
+      type: string
+    description: Target Azure Monitor workspaces resource ids. This api-version is currently limited to creating with one scope. This may change in future.
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Resource tags.
+requiredInputs:
+  - resourceGroupName
+  - rules
+  - scopes
+aliases:
+  - type: azure-native:alertsmanagement/v20210722preview:PrometheusRuleGroup
+  - type: azure-native:alertsmanagement/v20230301:PrometheusRuleGroup

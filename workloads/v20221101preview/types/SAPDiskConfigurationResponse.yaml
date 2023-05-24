@@ -1,0 +1,14 @@
+$token: azure-native:workloads/v20221101preview:SAPDiskConfigurationResponse
+description: The SAP Disk Configuration contains 'recommended disk' details and list of supported disks detail for a volume type.
+properties:
+  recommendedConfiguration:
+    type: object
+    $ref: "#/types/azure-native:workloads/v20221101preview:DiskVolumeConfigurationResponse"
+    description: The recommended disk details for a given VM Sku.
+  supportedConfigurations:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:workloads/v20221101preview:DiskDetailsResponse"
+    description: The list of supported disks for a given VM Sku.
+type: object

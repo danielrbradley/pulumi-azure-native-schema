@@ -1,0 +1,10 @@
+$token: azure-native:azurestackhci/v20210901preview:StorageContainerStatusResponseProvisioningStatus
+description: The provisioning status of the storage container
+properties:
+  operationId:
+    type: string
+    description: The ID of the operation performed on the storage container
+  status:
+    type: string
+    description: The status of the operation performed on the storage container [Succeeded, Failed, InProgress]
+type: object

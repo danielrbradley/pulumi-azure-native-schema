@@ -1,0 +1,43 @@
+$token: azure-native:migrate/v20220501preview:IISWebServer
+description: IISWeb server.
+properties:
+  displayName:
+    type: string
+    description: Gets or sets the display name.
+  ipAddresses:
+    type: array
+    items:
+      type: string
+    description: Gets or sets list of ip addresses.
+  machines:
+    type: array
+    items:
+      type: string
+    description: Gets or sets the list of machines.
+  operatingSystemDetails:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:OperatingSystemDetails"
+  rootConfigurationLocation:
+    type: string
+    description: Gets or sets the server root configuration location.
+  runAsAccountId:
+    type: string
+    description: Gets or sets the run as account id.
+  serverFqdn:
+    type: string
+    description: Gets or sets the server FQDN.
+  serverId:
+    type: string
+    description: Gets or sets the web server id.
+  serverName:
+    type: string
+    description: Gets or sets the web server name.
+  version:
+    type: string
+    description: Gets or sets the server version.
+  webApplications:
+    type: array
+    items:
+      type: string
+    description: Gets or sets the list of web applications.
+type: object

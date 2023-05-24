@@ -1,0 +1,6 @@
+$token: azure-native:machinelearningservices/v20230201preview:BatchDeploymentConfigurationType
+description: "[Required] The type of the deployment"
+type: string
+enum:
+  - value: Model
+  - value: PipelineComponent

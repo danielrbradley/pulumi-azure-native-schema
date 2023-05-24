@@ -1,0 +1,16 @@
+$token: azure-native:dbforpostgresql/v20221108:MaintenanceWindowResponse
+description: Schedule settings for regular cluster updates.
+properties:
+  customWindow:
+    type: string
+    description: Indicates whether custom maintenance window is enabled or not.
+  dayOfWeek:
+    type: integer
+    description: Preferred day of the week for maintenance window.
+  startHour:
+    type: integer
+    description: Start hour within preferred day of the week for maintenance window.
+  startMinute:
+    type: integer
+    description: Start minute within the start hour for maintenance window.
+type: object

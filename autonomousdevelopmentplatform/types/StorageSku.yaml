@@ -1,0 +1,11 @@
+$token: azure-native:autonomousdevelopmentplatform:StorageSku
+description: The Storage SKU.
+properties:
+  name:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:autonomousdevelopmentplatform:StorageSkuName"
+    description: The SKU name
+type: object
+required:
+  - name

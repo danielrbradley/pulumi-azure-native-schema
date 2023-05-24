@@ -1,0 +1,20 @@
+$token: azure-native:security/v20210115preview:listIngestionSettingTokens
+description: Returns the token that is used for correlating ingested telemetry with the resources in the subscription.
+inputs:
+  properties:
+    ingestionSettingName:
+      type: string
+      description: Name of the ingestion setting
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - ingestionSettingName
+outputs:
+  description: Configures how to correlate scan data and logs with resources associated with the subscription.
+  properties:
+    token:
+      type: string
+      description: The token is used for correlating security data and logs with the resources in the subscription.
+  type: object
+  required:
+    - token

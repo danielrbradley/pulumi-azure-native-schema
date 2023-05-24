@@ -1,0 +1,7 @@
+$token: azure-native:azurestackhci/v20210901preview:VirtualmachinesPropertiesOsDisk
+description: VHD to attach as OS disk
+properties:
+  id:
+    type: string
+    description: Specifies the virtual hard disk's ID
+type: object

@@ -1,0 +1,114 @@
+$token: azure-native:networkcloud/v20221212preview:getHybridAksCluster
+description: Get the additional details related to the provided Hybrid AKS provisioned cluster.
+inputs:
+  properties:
+    hybridAksClusterName:
+      type: string
+      description: The name of the Hybrid AKS cluster.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - hybridAksClusterName
+    - resourceGroupName
+outputs:
+  description: The details are specific to the Network Cloud use of the Hybrid AKS cluster.
+  properties:
+    associatedNetworkIds:
+      type: array
+      items:
+        type: string
+      description: The list of resource IDs for the workload networks associated with the Hybrid AKS cluster. It can be any of l2Networks, l3Networks, or trunkedNetworks resources. This field will also contain one cloudServicesNetwork and one defaultCniNetwork.
+    cloudServicesNetworkId:
+      type: string
+      description: The resource ID of the associated cloud services network.
+    clusterId:
+      type: string
+      description: The resource ID of the Network Cloud cluster hosting the Hybrid AKS cluster.
+    controlPlaneCount:
+      type: number
+      description: The number of control plane node VMs.
+    controlPlaneNodes:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:networkcloud/v20221212preview:NodeConfigurationResponse"
+      description: The list of node configurations detailing associated VMs that are part of the control plane nodes of this Hybrid AKS cluster.
+    defaultCniNetworkId:
+      type: string
+      description: The resource ID of the associated default CNI network.
+    detailedStatus:
+      type: string
+      description: The more detailed status of this Hybrid AKS cluster.
+    detailedStatusMessage:
+      type: string
+      description: The descriptive message about the current detailed status.
+    extendedLocation:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:ExtendedLocationResponse"
+      description: The extended location of the cluster associated with the resource.
+    hybridAksProvisionedClusterId:
+      type: string
+      description: The resource ID of the Hybrid AKS cluster that this additional information is for.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+      description: The provisioning state of the Hybrid AKS cluster resource.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:networkcloud/v20221212preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+    volumes:
+      type: array
+      items:
+        type: string
+      description: The resource IDs of volumes that are attached to the Hybrid AKS cluster.
+    workerCount:
+      type: number
+      description: The number of worker node VMs.
+    workerNodes:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:networkcloud/v20221212preview:NodeConfigurationResponse"
+      description: The list of node configurations detailing associated VMs that are part of the worker nodes of this Hybrid AKS cluster.
+  type: object
+  required:
+    - associatedNetworkIds
+    - cloudServicesNetworkId
+    - clusterId
+    - controlPlaneCount
+    - controlPlaneNodes
+    - defaultCniNetworkId
+    - detailedStatus
+    - detailedStatusMessage
+    - extendedLocation
+    - hybridAksProvisionedClusterId
+    - id
+    - location
+    - name
+    - provisioningState
+    - systemData
+    - type
+    - volumes
+    - workerCount
+    - workerNodes

@@ -1,0 +1,11 @@
+$token: azure-native:keyvault/v20230201:LifetimeAction
+properties:
+  action:
+    type: object
+    $ref: "#/types/azure-native:keyvault/v20230201:Action"
+    description: The action of key rotation policy lifetimeAction.
+  trigger:
+    type: object
+    $ref: "#/types/azure-native:keyvault/v20230201:Trigger"
+    description: The trigger of key rotation policy lifetimeAction.
+type: object

@@ -1,0 +1,27 @@
+$token: azure-native:networkcloud:ClusterCapacityResponse
+properties:
+  availableApplianceStorageGB:
+    type: number
+    description: The remaining appliance-based storage in GB available for workload use.
+  availableCoreCount:
+    type: number
+    description: The remaining number of cores that are available in this cluster for workload use.
+  availableHostStorageGB:
+    type: number
+    description: The remaining machine or host-based storage in GB available for workload use.
+  availableMemoryGB:
+    type: number
+    description: The remaining memory in GB that are available in this cluster for workload use.
+  totalApplianceStorageGB:
+    type: number
+    description: The total appliance-based storage in GB supported by this cluster for workload use.
+  totalCoreCount:
+    type: number
+    description: The total number of cores that are supported by this cluster for workload use.
+  totalHostStorageGB:
+    type: number
+    description: The total machine or host-based storage in GB supported by this cluster for workload use.
+  totalMemoryGB:
+    type: number
+    description: The total memory supported by this cluster for workload use.
+type: object

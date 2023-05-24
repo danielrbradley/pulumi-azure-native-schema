@@ -1,0 +1,20 @@
+$token: azure-native:machinelearningservices/v20230401preview:NotificationSettingResponse
+description: Configuration for notification.
+properties:
+  emailOn:
+    type: array
+    items:
+      type: string
+    description: Send email notification to user on specified notification type
+  emails:
+    type: array
+    items:
+      type: string
+    description: This is the email recipient list which has a limitation of 499 characters in total concat with comma separator
+  webhooks:
+    type: object
+    additionalProperties:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20230401preview:AzureDevOpsWebhookResponse"
+    description: Send webhook callback to a service. Key is a user-provided name for the webhook.
+type: object

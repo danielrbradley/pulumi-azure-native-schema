@@ -1,0 +1,9 @@
+$token: azure-native:servicenetworking:ResourceIDResponse
+description: Resource ID definition used by parent to reference child resources.
+properties:
+  id:
+    type: string
+    description: Resource ID of child resource.
+type: object
+required:
+  - id

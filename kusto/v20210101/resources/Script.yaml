@@ -1,0 +1,77 @@
+$token: azure-native:kusto/v20210101:Script
+description: Class representing a database script.
+properties:
+  continueOnErrors:
+    type: boolean
+    description: Flag that indicates whether to continue if one of the command fails.
+    default: false
+  forceUpdateTag:
+    type: string
+    description: A unique string. If changed the script will be applied again.
+  name:
+    type: string
+    description: The name of the resource
+  provisioningState:
+    type: string
+    description: The provisioned state of the resource.
+  scriptUrl:
+    type: string
+    description: The url to the KQL script blob file.
+  systemData:
+    type: object
+    $ref: "#/types/azure-native:kusto/v20210101:SystemDataResponse"
+    description: Metadata pertaining to creation and last modification of the resource.
+  type:
+    type: string
+    description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+type: object
+required:
+  - name
+  - provisioningState
+  - scriptUrl
+  - systemData
+  - type
+inputProperties:
+  clusterName:
+    type: string
+    description: The name of the Kusto cluster.
+    willReplaceOnChanges: true
+  continueOnErrors:
+    type: boolean
+    description: Flag that indicates whether to continue if one of the command fails.
+    default: false
+  databaseName:
+    type: string
+    description: The name of the database in the Kusto cluster.
+    willReplaceOnChanges: true
+  forceUpdateTag:
+    type: string
+    description: A unique string. If changed the script will be applied again.
+  resourceGroupName:
+    type: string
+    description: The name of the resource group containing the Kusto cluster.
+    willReplaceOnChanges: true
+  scriptName:
+    type: string
+    description: The name of the Kusto database script.
+    willReplaceOnChanges: true
+  scriptUrl:
+    type: string
+    description: The url to the KQL script blob file.
+  scriptUrlSasToken:
+    type: string
+    description: The SaS token.
+    willReplaceOnChanges: true
+requiredInputs:
+  - clusterName
+  - databaseName
+  - resourceGroupName
+  - scriptUrl
+  - scriptUrlSasToken
+aliases:
+  - type: azure-native:kusto:Script
+  - type: azure-native:kusto/v20210827:Script
+  - type: azure-native:kusto/v20220201:Script
+  - type: azure-native:kusto/v20220707:Script
+  - type: azure-native:kusto/v20221111:Script
+  - type: azure-native:kusto/v20221229:Script

@@ -1,0 +1,109 @@
+$token: azure-native:networkcloud:getBareMetalMachineKeySet
+description: |-
+  Get bare metal machine key set of the provided cluster.
+  API Version: 2022-12-12-preview.
+inputs:
+  properties:
+    bareMetalMachineKeySetName:
+      type: string
+      description: The name of the bare metal machine key set.
+      willReplaceOnChanges: true
+    clusterName:
+      type: string
+      description: The name of the cluster.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - bareMetalMachineKeySetName
+    - clusterName
+    - resourceGroupName
+outputs:
+  properties:
+    azureGroupId:
+      type: string
+      description: The object ID of Azure Active Directory group that all users in the list must be in for access to be granted. Users that are not in the group will not have access.
+    detailedStatus:
+      type: string
+      description: The more detailed status of the key set.
+    detailedStatusMessage:
+      type: string
+      description: The descriptive message about the current detailed status.
+    expiration:
+      type: string
+      description: The date and time after which the users in this key set will be removed from the bare metal machines.
+    extendedLocation:
+      type: object
+      $ref: "#/types/azure-native:networkcloud:ExtendedLocationResponse"
+      description: The extended location of the cluster associated with the resource.
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    jumpHostsAllowed:
+      type: array
+      items:
+        type: string
+      description: The list of IP addresses of jump hosts with management network access from which a login will be allowed for the users.
+    lastValidation:
+      type: string
+      description: The last time this key set was validated.
+    location:
+      type: string
+      description: The geo-location where the resource lives
+    name:
+      type: string
+      description: The name of the resource
+    osGroupName:
+      type: string
+      description: The name of the group that users will be assigned to on the operating system of the machines.
+    privilegeLevel:
+      type: string
+      description: The access level allowed for the users in this key set.
+    provisioningState:
+      type: string
+      description: The provisioning state of the bare metal machine key set.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:networkcloud:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: Resource tags.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+    userList:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:networkcloud:KeySetUserResponse"
+      description: The unique list of permitted users.
+    userListStatus:
+      type: array
+      items:
+        type: object
+        $ref: "#/types/azure-native:networkcloud:KeySetUserStatusResponse"
+      description: The status evaluation of each user.
+  type: object
+  required:
+    - azureGroupId
+    - detailedStatus
+    - detailedStatusMessage
+    - expiration
+    - extendedLocation
+    - id
+    - jumpHostsAllowed
+    - lastValidation
+    - location
+    - name
+    - privilegeLevel
+    - provisioningState
+    - systemData
+    - type
+    - userList
+    - userListStatus

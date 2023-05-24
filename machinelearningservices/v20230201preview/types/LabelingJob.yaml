@@ -1,0 +1,109 @@
+$token: azure-native:machinelearningservices/v20230201preview:LabelingJob
+description: Labeling job definition
+properties:
+  componentId:
+    type: string
+    description: ARM resource ID of the component resource.
+  computeId:
+    type: string
+    description: ARM resource ID of the compute resource.
+  dataConfiguration:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230201preview:LabelingDataConfiguration"
+    description: Configuration of data used in the job.
+  description:
+    type: string
+    description: The asset description text.
+  displayName:
+    type: string
+    description: Display name of job.
+  experimentName:
+    type: string
+    description: The name of the experiment the job belongs to. If not set, the job is placed in the "Default" experiment.
+    default: Default
+  identity:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230201preview:AmlToken"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230201preview:ManagedIdentity"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230201preview:UserIdentity"
+    discriminator:
+      propertyName: identityType
+      mapping:
+        AMLToken: "#/types/azure-native:machinelearningservices/v20230201preview:AmlToken"
+        Managed: "#/types/azure-native:machinelearningservices/v20230201preview:ManagedIdentity"
+        UserIdentity: "#/types/azure-native:machinelearningservices/v20230201preview:UserIdentity"
+    description: "Identity configuration. If set, this should be one of AmlToken, ManagedIdentity, UserIdentity or null.\r
+
+      Defaults to AmlToken if null."
+  isArchived:
+    type: boolean
+    description: Is the asset archived?
+    default: false
+  jobInstructions:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230201preview:LabelingJobInstructions"
+    description: Labeling instructions of the job.
+  jobType:
+    type: string
+    description: |-
+      Enum to determine the type of job.
+      Expected value is 'Labeling'.
+    const: Labeling
+  labelCategories:
+    type: object
+    additionalProperties:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20230201preview:LabelCategory"
+    description: Label categories of the job.
+  labelingJobMediaProperties:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230201preview:LabelingJobImageProperties"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230201preview:LabelingJobTextProperties"
+    discriminator:
+      propertyName: mediaType
+      mapping:
+        Image: "#/types/azure-native:machinelearningservices/v20230201preview:LabelingJobImageProperties"
+        Text: "#/types/azure-native:machinelearningservices/v20230201preview:LabelingJobTextProperties"
+    description: Media type specific properties in the job.
+  mlAssistConfiguration:
+    oneOf:
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230201preview:MLAssistConfigurationDisabled"
+      - type: object
+        $ref: "#/types/azure-native:machinelearningservices/v20230201preview:MLAssistConfigurationEnabled"
+    discriminator:
+      propertyName: mlAssist
+      mapping:
+        Disabled: "#/types/azure-native:machinelearningservices/v20230201preview:MLAssistConfigurationDisabled"
+        Enabled: "#/types/azure-native:machinelearningservices/v20230201preview:MLAssistConfigurationEnabled"
+    description: Configuration of MLAssist feature in the job.
+  notificationSetting:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230201preview:NotificationSetting"
+    description: Notification setting for the job
+  properties:
+    type: object
+    additionalProperties:
+      type: string
+    description: The asset property dictionary.
+  services:
+    type: object
+    additionalProperties:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20230201preview:JobService"
+    description: "List of JobEndpoints.\r
+
+      For local jobs, a job endpoint will have an endpoint value of FileStreamObject."
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: Tag dictionary. Tags can be added, removed, and updated.
+type: object
+required:
+  - jobType

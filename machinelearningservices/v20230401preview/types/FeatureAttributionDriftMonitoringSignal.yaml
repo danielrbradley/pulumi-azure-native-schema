@@ -1,0 +1,41 @@
+$token: azure-native:machinelearningservices/v20230401preview:FeatureAttributionDriftMonitoringSignal
+properties:
+  baselineData:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MonitoringInputData"
+    description: "[Required] The data to calculate drift against."
+  lookbackPeriod:
+    type: string
+    description: The amount of time a single monitor should look back over the target data on a given run.
+  metricThreshold:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:FeatureAttributionMetricThreshold"
+    description: "[Required] A list of metrics to calculate and their associated thresholds."
+  mode:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MonitoringNotificationMode"
+    description: The current notification mode for this signal.
+    default: Disabled
+  modelType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MonitoringModelType"
+    description: "[Required] The type of task the model performs."
+  signalType:
+    type: string
+    description: |-
+      
+      Expected value is 'FeatureAttributionDrift'.
+    const: FeatureAttributionDrift
+  targetData:
+    type: object
+    $ref: "#/types/azure-native:machinelearningservices/v20230401preview:MonitoringInputData"
+    description: "[Required] The data which drift will be calculated for."
+type: object
+required:
+  - baselineData
+  - metricThreshold
+  - modelType
+  - signalType
+  - targetData

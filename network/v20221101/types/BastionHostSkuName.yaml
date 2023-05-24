@@ -1,0 +1,6 @@
+$token: azure-native:network/v20221101:BastionHostSkuName
+description: The name of this Bastion Host.
+type: string
+enum:
+  - value: Basic
+  - value: Standard

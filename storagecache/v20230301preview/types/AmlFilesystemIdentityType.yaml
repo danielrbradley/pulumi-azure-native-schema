@@ -1,0 +1,6 @@
+$token: azure-native:storagecache/v20230301preview:AmlFilesystemIdentityType
+description: The type of identity used for the resource.
+type: string
+enum:
+  - value: UserAssigned
+  - value: None

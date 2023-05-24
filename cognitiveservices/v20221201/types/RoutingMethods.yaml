@@ -1,0 +1,7 @@
+$token: azure-native:cognitiveservices/v20221201:RoutingMethods
+description: Multiregion routing methods.
+type: string
+enum:
+  - value: Priority
+  - value: Weighted
+  - value: Performance

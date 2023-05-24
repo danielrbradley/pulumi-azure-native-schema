@@ -1,0 +1,28 @@
+$token: azure-native:migrate/v20220501preview:IISWorkloadInstanceModelCustomPropertiesResponse
+description: IIS workload instance model custom properties.
+properties:
+  containerName:
+    type: string
+    description: Gets or sets the container Id.
+  fileshareName:
+    type: string
+    description: Gets or sets the fileshare name.
+  iisWebApplication:
+    type: object
+    $ref: "#/types/azure-native:migrate/v20220501preview:IISWebApplicationResponse"
+    description: IISWeb application.
+  instanceType:
+    type: string
+    description: |-
+      Gets or sets the instance type.
+      Expected value is 'IISWorkloadInstanceModelCustomProperties'.
+    const: IISWorkloadInstanceModelCustomProperties
+  webAppArmId:
+    type: string
+    description: Gets or sets the Web application ARM id.
+  webAppSiteName:
+    type: string
+    description: Gets or sets the Web application site name.
+type: object
+required:
+  - instanceType

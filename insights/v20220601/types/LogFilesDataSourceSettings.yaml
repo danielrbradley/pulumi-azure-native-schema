@@ -1,0 +1,8 @@
+$token: azure-native:insights/v20220601:LogFilesDataSourceSettings
+description: The log files specific settings.
+properties:
+  text:
+    type: object
+    $ref: "#/types/azure-native:insights/v20220601:LogFileSettingsText"
+    description: Text settings
+type: object

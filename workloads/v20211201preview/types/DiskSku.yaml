@@ -1,0 +1,9 @@
+$token: azure-native:workloads/v20211201preview:DiskSku
+description: The disk sku.
+properties:
+  name:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:workloads/v20211201preview:DiskSkuName"
+    description: Defines the disk sku name.
+type: object

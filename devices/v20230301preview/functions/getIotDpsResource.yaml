@@ -1,0 +1,70 @@
+$token: azure-native:devices/v20230301preview:getIotDpsResource
+description: Get the metadata of the provisioning service without SAS keys.
+inputs:
+  properties:
+    provisioningServiceName:
+      type: string
+      description: Name of the provisioning service to retrieve.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: Resource group name.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - provisioningServiceName
+    - resourceGroupName
+outputs:
+  description: The description of the provisioning service.
+  properties:
+    etag:
+      type: string
+      description: The Etag field is *not* required. If it is provided in the response body, it must also be provided as a header per the normal ETag convention.
+    id:
+      type: string
+      description: The resource identifier.
+    identity:
+      type: object
+      $ref: "#/types/azure-native:devices/v20230301preview:ManagedServiceIdentityResponse"
+      description: The managed identities for a provisioning service.
+    location:
+      type: string
+      description: The resource location.
+    name:
+      type: string
+      description: The resource name.
+    properties:
+      type: object
+      $ref: "#/types/azure-native:devices/v20230301preview:IotDpsPropertiesDescriptionResponse"
+      description: Service specific properties for a provisioning service
+    resourcegroup:
+      type: string
+      description: The resource group of the resource.
+    sku:
+      type: object
+      $ref: "#/types/azure-native:devices/v20230301preview:IotDpsSkuInfoResponse"
+      description: Sku info for a provisioning Service.
+    subscriptionid:
+      type: string
+      description: The subscription id of the resource.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:devices/v20230301preview:SystemDataResponse"
+      description: Metadata pertaining to creation and last modification of the resource.
+    tags:
+      type: object
+      additionalProperties:
+        type: string
+      description: The resource tags.
+    type:
+      type: string
+      description: The resource type.
+  type: object
+  required:
+    - id
+    - location
+    - name
+    - properties
+    - sku
+    - systemData
+    - type

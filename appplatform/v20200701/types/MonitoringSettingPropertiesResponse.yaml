@@ -1,0 +1,19 @@
+$token: azure-native:appplatform/v20200701:MonitoringSettingPropertiesResponse
+description: Monitoring Setting properties payload
+properties:
+  appInsightsInstrumentationKey:
+    type: string
+    description: Target application insight instrumentation key
+  error:
+    type: object
+    $ref: "#/types/azure-native:appplatform/v20200701:ErrorResponse"
+    description: Error when apply Monitoring Setting changes.
+  provisioningState:
+    type: string
+    description: State of the Monitoring Setting.
+  traceEnabled:
+    type: boolean
+    description: Indicates whether enable the trace functionality
+type: object
+required:
+  - provisioningState

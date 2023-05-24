@@ -1,0 +1,11 @@
+$token: azure-native:compute/v20221101:ScheduledEventsProfileResponse
+properties:
+  osImageNotificationProfile:
+    type: object
+    $ref: "#/types/azure-native:compute/v20221101:OSImageNotificationProfileResponse"
+    description: Specifies OS Image Scheduled Event related configurations.
+  terminateNotificationProfile:
+    type: object
+    $ref: "#/types/azure-native:compute/v20221101:TerminateNotificationProfileResponse"
+    description: Specifies Terminate Scheduled Event related configurations.
+type: object

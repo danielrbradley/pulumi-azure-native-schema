@@ -1,0 +1,39 @@
+$token: azure-native:security:getSecurityOperator
+description: |-
+  Get a specific security operator for the requested scope.
+  API Version: 2023-01-01-preview.
+inputs:
+  properties:
+    pricingName:
+      type: string
+      description: name of the pricing configuration
+      willReplaceOnChanges: true
+    securityOperatorName:
+      type: string
+      description: name of the securityOperator
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - pricingName
+    - securityOperatorName
+outputs:
+  description: Security operator under a given subscription and pricing
+  properties:
+    id:
+      type: string
+      description: Resource Id
+    identity:
+      type: object
+      $ref: "#/types/azure-native:security:IdentityResponse"
+      description: Identity for the resource.
+    name:
+      type: string
+      description: Resource name
+    type:
+      type: string
+      description: Resource type
+  type: object
+  required:
+    - id
+    - name
+    - type

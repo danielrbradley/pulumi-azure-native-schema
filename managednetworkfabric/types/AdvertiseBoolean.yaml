@@ -1,0 +1,6 @@
+$token: azure-native:managednetworkfabric:AdvertiseBoolean
+description: "noAdvertise. Example: true | false."
+type: string
+enum:
+  - value: "true"
+  - value: "false"

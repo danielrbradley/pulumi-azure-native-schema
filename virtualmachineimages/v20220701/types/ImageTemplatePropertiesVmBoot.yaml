@@ -1,0 +1,7 @@
+$token: azure-native:virtualmachineimages/v20220701:ImageTemplatePropertiesVmBoot
+description: Optimization is applied on the image for a faster VM boot.
+properties:
+  state:
+    $ref: "#/types/azure-native:virtualmachineimages/v20220701:VMBootOptimizationState"
+    description: Enabling this field will improve VM boot time by optimizing the final customized image output.
+type: object

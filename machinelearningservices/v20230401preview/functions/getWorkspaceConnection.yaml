@@ -1,0 +1,68 @@
+$token: azure-native:machinelearningservices/v20230401preview:getWorkspaceConnection
+inputs:
+  properties:
+    connectionName:
+      type: string
+      description: Friendly name of the workspace connection
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+    workspaceName:
+      type: string
+      description: Name of Azure Machine Learning workspace.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - connectionName
+    - resourceGroupName
+    - workspaceName
+outputs:
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    name:
+      type: string
+      description: The name of the resource
+    properties:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:AccessKeyAuthTypeWorkspaceConnectionPropertiesResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:ManagedIdentityAuthTypeWorkspaceConnectionPropertiesResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:NoneAuthTypeWorkspaceConnectionPropertiesResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:PATAuthTypeWorkspaceConnectionPropertiesResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:SASAuthTypeWorkspaceConnectionPropertiesResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:ServicePrincipalAuthTypeWorkspaceConnectionPropertiesResponse"
+        - type: object
+          $ref: "#/types/azure-native:machinelearningservices/v20230401preview:UsernamePasswordAuthTypeWorkspaceConnectionPropertiesResponse"
+      discriminator:
+        propertyName: authType
+        mapping:
+          AccessKey: "#/types/azure-native:machinelearningservices/v20230401preview:AccessKeyAuthTypeWorkspaceConnectionPropertiesResponse"
+          ManagedIdentity: "#/types/azure-native:machinelearningservices/v20230401preview:ManagedIdentityAuthTypeWorkspaceConnectionPropertiesResponse"
+          None: "#/types/azure-native:machinelearningservices/v20230401preview:NoneAuthTypeWorkspaceConnectionPropertiesResponse"
+          PAT: "#/types/azure-native:machinelearningservices/v20230401preview:PATAuthTypeWorkspaceConnectionPropertiesResponse"
+          SAS: "#/types/azure-native:machinelearningservices/v20230401preview:SASAuthTypeWorkspaceConnectionPropertiesResponse"
+          ServicePrincipal: "#/types/azure-native:machinelearningservices/v20230401preview:ServicePrincipalAuthTypeWorkspaceConnectionPropertiesResponse"
+          UsernamePassword: "#/types/azure-native:machinelearningservices/v20230401preview:UsernamePasswordAuthTypeWorkspaceConnectionPropertiesResponse"
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:machinelearningservices/v20230401preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - systemData
+    - type

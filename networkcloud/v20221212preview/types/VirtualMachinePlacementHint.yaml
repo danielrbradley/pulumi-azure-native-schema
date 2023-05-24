@@ -1,0 +1,26 @@
+$token: azure-native:networkcloud/v20221212preview:VirtualMachinePlacementHint
+properties:
+  hintType:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:networkcloud/v20221212preview:VirtualMachinePlacementHintType"
+    description: The specification of whether this hint supports affinity or anti-affinity with the referenced resources.
+  resourceId:
+    type: string
+    description: The resource ID of the target object that the placement hints will be checked against, e.g., the bare metal node to host the virtual machine.
+  schedulingExecution:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:networkcloud/v20221212preview:VirtualMachineSchedulingExecution"
+    description: The indicator of whether the hint is a hard or soft requirement during scheduling.
+  scope:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:networkcloud/v20221212preview:VirtualMachinePlacementHintPodAffinityScope"
+    description: The scope for the virtual machine affinity or anti-affinity placement hint. It should always be "Machine" in the case of node affinity.
+type: object
+required:
+  - hintType
+  - resourceId
+  - schedulingExecution
+  - scope

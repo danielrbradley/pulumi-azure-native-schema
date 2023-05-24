@@ -1,0 +1,42 @@
+$token: azure-native:datalakestore/v20161101:getTrustedIdProvider
+description: Gets the specified Data Lake Store trusted identity provider.
+inputs:
+  properties:
+    accountName:
+      type: string
+      description: The name of the Data Lake Store account.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the Azure resource group.
+      willReplaceOnChanges: true
+    trustedIdProviderName:
+      type: string
+      description: The name of the trusted identity provider to retrieve.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - accountName
+    - resourceGroupName
+    - trustedIdProviderName
+outputs:
+  description: Data Lake Store trusted identity provider information.
+  properties:
+    id:
+      type: string
+      description: The resource identifier.
+    idProvider:
+      type: string
+      description: The URL of this trusted identity provider.
+    name:
+      type: string
+      description: The resource name.
+    type:
+      type: string
+      description: The resource type.
+  type: object
+  required:
+    - id
+    - idProvider
+    - name
+    - type

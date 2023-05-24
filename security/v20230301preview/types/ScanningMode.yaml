@@ -1,0 +1,5 @@
+$token: azure-native:security/v20230301preview:ScanningMode
+description: The scanning mode for the VM scan.
+type: string
+enum:
+  - value: Default

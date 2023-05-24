@@ -1,0 +1,29 @@
+$token: azure-native:networkcloud:CniBgpConfigurationResponse
+properties:
+  bgpPeers:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:networkcloud:BgpPeerResponse"
+    description: The list of BgpPeer entities that the Hybrid AKS cluster will peer with in addition to peering that occurs automatically with the switch fabric.
+  communityAdvertisements:
+    type: array
+    items:
+      type: object
+      $ref: "#/types/azure-native:networkcloud:CommunityAdvertisementResponse"
+    description: |-
+      The list of prefix community advertisement properties. Each prefix community specifies a prefix, and the
+      communities that should be associated with that prefix when it is announced.
+  serviceExternalPrefixes:
+    type: array
+    items:
+      type: string
+    description: The subnet blocks in CIDR format for Kubernetes service external IPs to be advertised over BGP.
+  serviceLoadBalancerPrefixes:
+    type: array
+    items:
+      type: string
+    description: |-
+      The subnet blocks in CIDR format for Kubernetes load balancers. Load balancer IPs will only be advertised if they
+      are within one of these blocks.
+type: object

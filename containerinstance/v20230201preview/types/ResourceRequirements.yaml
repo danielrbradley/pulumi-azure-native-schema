@@ -1,0 +1,14 @@
+$token: azure-native:containerinstance/v20230201preview:ResourceRequirements
+description: The resource requirements.
+properties:
+  limits:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230201preview:ResourceLimits"
+    description: The resource limits of this container instance.
+  requests:
+    type: object
+    $ref: "#/types/azure-native:containerinstance/v20230201preview:ResourceRequests"
+    description: The resource requests of this container instance.
+type: object
+required:
+  - requests

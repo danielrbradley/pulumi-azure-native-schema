@@ -1,0 +1,51 @@
+$token: azure-native:peering/v20190801preview:getPeeringServicePrefix
+description: Gets the peering service prefix.
+inputs:
+  properties:
+    peeringServiceName:
+      type: string
+      description: The peering service name.
+      willReplaceOnChanges: true
+    prefixName:
+      type: string
+      description: The prefix name.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The resource group name.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - peeringServiceName
+    - prefixName
+    - resourceGroupName
+outputs:
+  description: The peering service prefix class.
+  properties:
+    id:
+      type: string
+      description: The ID of the resource.
+    learnedType:
+      type: string
+      description: The prefix learned type
+    name:
+      type: string
+      description: The name of the resource.
+    prefix:
+      type: string
+      description: Valid route prefix
+    prefixValidationState:
+      type: string
+      description: The prefix validation state
+    provisioningState:
+      type: string
+      description: The provisioning state of the resource.
+    type:
+      type: string
+      description: The type of the resource.
+  type: object
+  required:
+    - id
+    - name
+    - provisioningState
+    - type

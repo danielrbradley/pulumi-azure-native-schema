@@ -1,0 +1,9 @@
+$token: azure-native:appplatform/v20230301preview:ApplicationInsightsAgentVersionsResponse
+description: Application Insights agent versions properties payload
+properties:
+  java:
+    type: string
+    description: Indicates the version of application insight java agent
+type: object
+required:
+  - java

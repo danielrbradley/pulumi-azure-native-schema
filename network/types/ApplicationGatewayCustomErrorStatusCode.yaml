@@ -1,0 +1,14 @@
+$token: azure-native:network:ApplicationGatewayCustomErrorStatusCode
+description: Status code of the application gateway custom error.
+type: string
+enum:
+  - value: HttpStatus400
+  - value: HttpStatus403
+  - value: HttpStatus404
+  - value: HttpStatus405
+  - value: HttpStatus408
+  - value: HttpStatus499
+  - value: HttpStatus500
+  - value: HttpStatus502
+  - value: HttpStatus503
+  - value: HttpStatus504

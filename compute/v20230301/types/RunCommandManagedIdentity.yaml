@@ -1,0 +1,9 @@
+$token: azure-native:compute/v20230301:RunCommandManagedIdentity
+properties:
+  clientId:
+    type: string
+    description: Client Id (GUID value) of the user-assigned managed identity. ObjectId should not be used if this is provided.
+  objectId:
+    type: string
+    description: Object Id (GUID value) of the user-assigned managed identity. ClientId should not be used if this is provided.
+type: object

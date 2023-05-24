@@ -1,0 +1,59 @@
+$token: azure-native:avs:getAddon
+description: |-
+  An addon resource
+  API Version: 2022-05-01.
+inputs:
+  properties:
+    addonName:
+      type: string
+      description: Name of the addon for the private cloud
+      willReplaceOnChanges: true
+    privateCloudName:
+      type: string
+      description: Name of the private cloud
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group. The name is case insensitive.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - addonName
+    - privateCloudName
+    - resourceGroupName
+outputs:
+  description: An addon resource
+  properties:
+    id:
+      type: string
+      description: Resource ID.
+    name:
+      type: string
+      description: Resource name.
+    properties:
+      oneOf:
+        - type: object
+          $ref: "#/types/azure-native:avs:AddonArcPropertiesResponse"
+        - type: object
+          $ref: "#/types/azure-native:avs:AddonHcxPropertiesResponse"
+        - type: object
+          $ref: "#/types/azure-native:avs:AddonSrmPropertiesResponse"
+        - type: object
+          $ref: "#/types/azure-native:avs:AddonVrPropertiesResponse"
+      discriminator:
+        propertyName: addonType
+        mapping:
+          Arc: "#/types/azure-native:avs:AddonArcPropertiesResponse"
+          HCX: "#/types/azure-native:avs:AddonHcxPropertiesResponse"
+          SRM: "#/types/azure-native:avs:AddonSrmPropertiesResponse"
+          VR: "#/types/azure-native:avs:AddonVrPropertiesResponse"
+      description: The properties of an addon resource
+    type:
+      type: string
+      description: Resource type.
+  type: object
+  required:
+    - id
+    - name
+    - properties
+    - type

@@ -1,0 +1,58 @@
+$token: azure-native:scvmm/v20220521preview:getHybridIdentityMetadata
+description: Implements HybridIdentityMetadata GET method.
+inputs:
+  properties:
+    metadataName:
+      type: string
+      description: Name of the HybridIdentityMetadata.
+      willReplaceOnChanges: true
+    resourceGroupName:
+      type: string
+      description: The name of the resource group.
+      willReplaceOnChanges: true
+    virtualMachineName:
+      type: string
+      description: Name of the vm.
+      willReplaceOnChanges: true
+  type: object
+  required:
+    - metadataName
+    - resourceGroupName
+    - virtualMachineName
+outputs:
+  description: Defines the HybridIdentityMetadata.
+  properties:
+    id:
+      type: string
+      description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+    identity:
+      type: object
+      $ref: "#/types/azure-native:scvmm/v20220521preview:IdentityResponse"
+      description: The identity of the resource.
+    name:
+      type: string
+      description: The name of the resource
+    provisioningState:
+      type: string
+      description: Gets or sets the provisioning state.
+    publicKey:
+      type: string
+      description: Gets or sets the Public Key.
+    resourceUid:
+      type: string
+      description: Gets or sets the Vm Id.
+    systemData:
+      type: object
+      $ref: "#/types/azure-native:scvmm/v20220521preview:SystemDataResponse"
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information.
+    type:
+      type: string
+      description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+  type: object
+  required:
+    - id
+    - identity
+    - name
+    - provisioningState
+    - systemData
+    - type

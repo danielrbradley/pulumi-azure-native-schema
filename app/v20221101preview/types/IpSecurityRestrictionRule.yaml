@@ -1,0 +1,22 @@
+$token: azure-native:app/v20221101preview:IpSecurityRestrictionRule
+description: Rule to restrict incoming IP address.
+properties:
+  action:
+    oneOf:
+      - type: string
+      - $ref: "#/types/azure-native:app/v20221101preview:Action"
+    description: "Allow or Deny rules to determine for incoming IP. Note: Rules can only consist of ALL Allow or ALL Deny"
+  description:
+    type: string
+    description: Describe the IP restriction rule that is being sent to the container-app. This is an optional field.
+  ipAddressRange:
+    type: string
+    description: CIDR notation to match incoming IP address
+  name:
+    type: string
+    description: Name for the IP restriction rule.
+type: object
+required:
+  - action
+  - ipAddressRange
+  - name
